@@ -1,7 +1,7 @@
 import React, { Component}  from "react";
 import axios from 'axios';
 
-const baseUrl = "http://192.168.15.9:7000/DiegoCarvalho";
+const baseUrl = "http://192.168.15.211:7000/DiegoCarvalho";
 const initialState = {
     atividade: {
         OS: '',
@@ -59,13 +59,13 @@ export default class AtividadeCrud extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.renderRows()}
+                    {this.renderRows(() => this.load(this.load))}
                 </tbody>
             </table>
         )
     }
 
-    renderRows() {
+    renderRows(props) {
         return this.state.list.map(atividade => {
             return (
                 <tr key={(atividade.id)}>
@@ -79,16 +79,31 @@ export default class AtividadeCrud extends Component {
                     <td>{atividade.Observacao}</td>
                     <td>{atividade.Status}</td>
                     <td>
+                    <button className='btn btn-warning'
+                            onClick={props.load}>
+                            <i className="fa fa-pencil"></i>
+                        </button>
                         <button className="btn btn-danger ml-2"
                             onClick={() => this.remove(atividade)}>
                             <i className="fa fa-trash"></i>
                         </button>
+
                     </td>
                 </tr>
             )
         })
     }
+
+    updateField(event) {
+        const atividade = { ...this.state.atividade }
+        atividade[event.target.name] = event.target.value
+        this.setState({ atividade })
+    }
     
+    load(atividade) {
+        this.setState({ atividade })
+    }
+
     render() {
         return (
                 this.renderTable()

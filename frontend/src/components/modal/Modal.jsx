@@ -26,7 +26,7 @@ function Modal() {
                         </button>
                     </div>
                 </div>
-                <Formulario />
+                <Formulario  />
 
             </ReactModal>
 

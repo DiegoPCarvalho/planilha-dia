@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, {Component} from "react";
 
-const baseUrl = "http://192.168.15.9:7000/DiegoCarvalho";
+const baseUrl = "http://192.168.15.211:7000/DiegoCarvalho";
 const initialState = {
     atividade: {
         OS: '',
@@ -29,7 +29,11 @@ class Formulario extends Component {
         )
     }
 
-    formulario() {
+    load(atividade) {
+        this.setState({ atividade })
+    }
+
+    formulario(props) {
         return (
             <div className="form">
                 <div className="row">
@@ -39,7 +43,7 @@ class Formulario extends Component {
                             <input type="text" className="form-control"
                                 name="OS"
                                 value={this.state.atividade.OS}
-                                onChange={e => this.updateField(e)}
+                                onChange={props.fild}
                                 placeholder="Digite a OS..." />
                         </div>
                     </div>
