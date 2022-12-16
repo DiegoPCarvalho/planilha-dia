@@ -1,0 +1,9 @@
+.espaco {
+    margin-left: 10px;
+}
+.voltar {
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color:green;
+}
