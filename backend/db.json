@@ -24,5 +24,12 @@
       "Status": "asdsadasd",
       "id": 2
     }
+  ],
+  "LoginUsuario": [
+    {
+      "id": 1,
+      "Usuario":"diego.carvalho@zhaz.com.br",
+      "Senha": "12345"
+    }
   ]
 }

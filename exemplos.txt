@@ -1,0 +1,29 @@
+					Login
+***********************************************************************************
+										     	
+app.get("/", async (req, res) =>{
+    const login = await axios("http://192.168.15.211:7000/LoginUsuario");
+    const tabela = login.data
+
+    let dado = []
+
+    for(let i = 0; i < tabela.length; i++){
+        dado.push({
+            Usuario: tabela[i].Usuario,
+            Senha: tabela[i].Senha
+        });
+    }   
+
+    const user = Object.assign(dado);
+
+    const id = "diego.carvalho@zhaz.com.br";
+    const pass = "12345"
+
+    if((id === user[0].Usuario)&&(pass === user[0].Senha)){
+        res.send("funcionou")
+    }else{
+        res.send("não funcionou")
+    }
+})
+
+*************************************************************************************
