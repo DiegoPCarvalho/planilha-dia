@@ -8,7 +8,9 @@
 }
 
 .formLogin {
-  margin: 200px 150px 150px 400px;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
 }
 
 .imagem2 > img {
@@ -25,8 +27,8 @@
 }
 
 .tamanho {
-  height: 500px;
-  width: 1000px;
+  height: 650px;
+  width: 500px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
@@ -38,13 +40,7 @@
   overflow: hidden;
 }
 
-@media(max-width: 1400px){
-  .formLogin{
-    margin: 100px 150px 150px 200px;
-  }
-  .tamanho {
-    height: 500px;
-    width: 900px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  }
-}
+
+
+
+
