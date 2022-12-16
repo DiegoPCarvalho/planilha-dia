@@ -1,6 +1,6 @@
 import React from "react";
-import Main from "../template/Main";
-import Modal from "../modal/Modal";
+import Main from "../Template/Main";
+import Modal from "../Modal/Modal";
 
 const headerProps = {
     icon: 'newspaper-o',

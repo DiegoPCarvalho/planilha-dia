@@ -1,18 +1,14 @@
 import './Nav.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import DropNav from '../Navbar/Navbar';
+// import DropNavSmart from '../Dropdowns/DropNavSmart';
 
-export default props => 
-  <aside className="menu-area">
-      <nav className="menu">
-        <Link to="/">
-            <i className="fa fa-home"></i> Inicio
-        </Link>
-        <Link to="/atividade">
-            <i className="fa fa-newspaper-o"></i> Atividade
-        </Link>
-        <Link to="/relatorio">
-            <i className="fa fa-database"></i> Relatório
-        </Link>
-      </nav>
-  </aside>
+export default props =>
+    <aside className="menu-area">
+        <nav className='menu'>
+            <DropNav />
+        </nav>
+        <div className='menu2'>
+             {/* <DropNavSmart /> */}
+        </div>
+    </aside>

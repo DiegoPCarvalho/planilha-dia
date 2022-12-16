@@ -2,16 +2,19 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 //componentes
-import Home from '../components/home/Home';
-import AtividadeCrud from '../components/atividades/AtividadeCrud';
-import NovaAtividade from '../components/atividades/NovaAtividade';
-import Relatorio from "../components/Relatorio/Relatorio";
+import Login from '../Login/Login';
+import Home from '../Components/Home/Home';
+import AtividadeCrud from '../Components/Atividades/AtividadeCrud';
+
+// import Relatorio from "../components/Relatorio/Relatorio";
 
 export default props =>(
     <Routes>
-        <Route exact path="/" element = {<Home />}/>
-        <Route path="/atividade" element = {<AtividadeCrud />}/>
-        <Route path="/relatorio" element = {<Relatorio />}/>
-        <Route path="*" element = {<Home />}/>
+        <Route exact path="/" element = {<Login />}/>
+        <Route path="/atividade" element = {<Home />}>
+            <Route index element={<AtividadeCrud />}/>
+        </Route>
+        {/* <Route path="/relatorio" element = {<Relatorio />}/> */}
+        <Route path="*" element = {<Login />}/>
     </Routes>
 );

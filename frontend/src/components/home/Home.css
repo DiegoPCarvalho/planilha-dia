@@ -1,7 +1,7 @@
 :root {
     --bg-dark: #464e52;
     --header-height: 60px;
-    --aside-with: 225px;
+    --aside-with: 250px;
     --footer-height: 40px;
 
     --shadow: 
@@ -17,7 +17,7 @@
 
 /* Layout da Aplicação */
 
-.app {
+.App {
     margin: 0px;
     display: grid;
     grid-template-columns: var(--aside-with) 1fr;

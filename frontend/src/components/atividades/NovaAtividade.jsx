@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Main from '../template/Main';
+import Main from '../Template/Main';
 import axios from 'axios';
 import './NovaAtividade.css';
 import { Link } from "react-router-dom";

@@ -18,9 +18,7 @@ const initialState = {
 }
 
 class Formulario extends Component {
-    constructor(props){
-        super(props)
-    }
+   
     state = { ...initialState}
 
     render(){
@@ -43,7 +41,7 @@ class Formulario extends Component {
                             <input type="text" className="form-control"
                                 name="OS"
                                 value={this.state.atividade.OS}
-                                onChange={props.fild}
+                                onChange={e => this.updateField(e)}
                                 placeholder="Digite a OS..." />
                         </div>
                     </div>
