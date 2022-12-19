@@ -157,7 +157,7 @@ export default class LoginMain extends React.Component {
                             </button>
                         </div>
                         <div className="col-6">
-                            <button className="btn btn-info text-light fw-bold" onClick={(e) => this.newData(e)}>
+                            <button className="btn btn-secondary text-light fw-bold" onClick={(e) => this.newData(e)}>
                                 Novo Usuário
                             </button>
                         </div>
