@@ -78,6 +78,7 @@ export default class LoginMain extends React.Component {
                 textoErro.innerText = "";
                 
                 window.location.pathname = "/Atividade";
+                localStorage.logado = 1;
 
             } else {
                 userErro.innerText = "Usuario:*";

@@ -20,8 +20,16 @@ export default function Home(){
         <Nav />
         <Outlet />
         <Footer />
+        {Logado()}
     </div>
     )
+
+    function Logado(){
+        if(localStorage.logado === "0"){
+            window.location.pathname = '/'
+        }
+    }
 }
 
     
+

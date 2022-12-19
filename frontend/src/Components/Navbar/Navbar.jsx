@@ -26,7 +26,8 @@ export default props =>
         </ul>
     </li>
     <li>
-        <a href="javascript:void(0);" className='text-light'><i className="fa fa-smile-o"></i>Satisfação do CLiente</a>
+        <a className='text-light' ><i className="fa fa-smile-o"></i>Satisfação do CLiente</a>
+       
         {/* <ul>
             <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
@@ -42,7 +43,7 @@ export default props =>
         <li>
             <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
             <ul>
-                <li><a href="/" className='text-light'><i className="fa fa-sign-out"></i>Sair</a></li>
+                <li><a onClick={sair}   className='text-light' id="meu-link"><i className="fa fa-sign-out"></i>Sair</a></li>
             </ul>
         </li>
     {/* <li>
@@ -56,6 +57,16 @@ export default props =>
     </li> */}
 </ul>
 </div>
+
+function sair() {
+    if(localStorage.logado === "1"){
+        window.location.pathname = "/";
+        localStorage.logado = 0;
+    }
+}
+
+
+
 
 $(document).ready(function() {
     $("#accordian a").click(function() {
