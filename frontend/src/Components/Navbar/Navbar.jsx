@@ -7,27 +7,21 @@ export default props =>
 <div id="accordian">
 <ul className="show-dropdown">
     <li>
-        <Link to="/Dashboard" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</Link>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</a>
         <ul>
-            <li><Link to="/Dashboard" className='text-light'><i className="fa fa-database"></i>Geral</Link></li>
-            <li><Link to="/Dashboard/AtendimentoOnSite" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
-            <li><Link to="/Dashboard/Contrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/Dashboard/Avulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
-            <li><Link to="/Dashboard/HelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
+            <li><Link to="/Dashboard" className='text-light'><i className="fa fa-database"></i>Gerência</Link></li>
+            <li><Link to="/Dashboard/AtendimentoOnSite" className='text-light'><i className="fa fa-sitemap"></i>Diretoria</Link></li>
+            <li><Link to="/Dashboard/Contrato" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li>
         </ul>
     </li>
     <li>
-        <Link to="/OrdemServico" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</Link>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
         <ul>
-            <li><Link to="/OrdemServico/MpAtendimento" className='text-light'><i className="fa fa-plane"></i>Atendimento On-site</Link></li>
-            <li><Link to="/OrdemServico/MpContrato" className='text-light'><i className="fa fa-university"></i>Contrato</Link></li>
-            <li><Link to="/OrdemServico/MpAvulso" className='text-light'><i className="fa fa-fort-awesome"></i>Avulso</Link></li>
-            <li><Link to="/OrdemServico/MpHelpDesk" className='text-light'><i className="fa fa-info-circle"></i>Atendimento Help Desk</Link></li>
+            <li><Link to="/OrdemServico/MpAtendimento" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+            <li><Link to="/OrdemServico/MpContrato" className='text-light'><i className="fa fa-files-o"></i>Relatório Pessoal</Link></li>
         </ul>
     </li>
-    <li>
-        <a className='text-light' ><i className="fa fa-smile-o"></i>Satisfação do CLiente</a>
-       
+    <li>       
         {/* <ul>
             <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
