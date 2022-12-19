@@ -12,13 +12,23 @@ export default class LoginMain extends React.Component {
         const textoErro = document.getElementById("texto_erro");
 
         if ((login === '') || (senha === '')) {
-           textoErro.innerText="Campos não Preenchidos";
-           userErro.innerText = "Usuario:*"
-           userErro.classList.add("text-danger")
-           
-           loginErro.innerText="Senha:*"
-           loginErro.classList.add("text-danger")
-           
+            if ((login === '') && (senha === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+                userErro.innerText = "Usuario:*";
+                userErro.classList.add("text-danger");
+
+                loginErro.innerText = "Senha:*";
+                loginErro.classList.add("text-danger");
+            }else if(login === ''){
+                 textoErro.innerText = "Campo * Obrigatório";
+                 userErro.innerText = "Usuario:*";
+                 userErro.classList.add("text-danger");
+            }else if(senha === ''){
+                textoErro.innerText = "Campos * Obrigatórios";
+                loginErro.innerText = "Senha:*";
+                loginErro.classList.add("text-danger");
+            }
+
         } else {
             this.login()
         }
@@ -29,11 +39,11 @@ export default class LoginMain extends React.Component {
     }
 
     login() {
-        return window.location.href = "/Atividade";
+        return window.location.pathname = "/Atividade";
     }
 
     newData() {
-        return window.location.href = "/NovoUsuario";
+        return window.location.pathname = "/NovoUsuario";
     }
 
     render() {
