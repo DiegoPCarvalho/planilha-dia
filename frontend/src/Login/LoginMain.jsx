@@ -1,7 +1,10 @@
 import React from 'react';
 import LogoZhaz from '../Assets/Imgs/logoZhaz.png';
+import axios from 'axios';
+import Url from '../Components/Url/Url';
 
-
+const banco = "LoginUsuario";
+const baseUrl = Url(banco);
 
 export default class LoginMain extends React.Component {
     verificar() {
@@ -19,17 +22,18 @@ export default class LoginMain extends React.Component {
 
                 loginErro.innerText = "Senha:*";
                 loginErro.classList.add("text-danger");
-            }else if(login === ''){
-                 textoErro.innerText = "Campo * Obrigatório";
-                 userErro.innerText = "Usuario:*";
-                 userErro.classList.add("text-danger");
-            }else if(senha === ''){
+            } else if (login === '') {
+                textoErro.innerText = "Campo * Obrigatório";
+                userErro.innerText = "Usuario:*";
+                userErro.classList.add("text-danger");
+            } else if (senha === '') {
                 textoErro.innerText = "Campos * Obrigatórios";
                 loginErro.innerText = "Senha:*";
                 loginErro.classList.add("text-danger");
             }
 
         } else {
+
             this.login()
         }
     }
@@ -38,8 +42,66 @@ export default class LoginMain extends React.Component {
         return mensagem
     }
 
-    login() {
-        return window.location.pathname = "/Atividade";
+    async login() {
+        const dataLogin = await axios(`${baseUrl}`);
+        const tabela = dataLogin.data
+
+
+        const login = document.getElementById("user_id").value;
+        const senha = document.getElementById("senha").value;
+        const textoErro = document.getElementById("texto_erro");
+        const loginErro = document.getElementById("texto_senha");
+        const userErro = document.getElementById("texto_usuario");
+
+        let dado = []
+        try {
+            for (let i = 0; i < tabela.length; i++) {
+                const id = document.getElementById("user_id").value;
+                if (id === tabela[i].email) {
+                    dado.push({
+                        Email: tabela[i].email,
+                        Senha: tabela[i].senha
+                    });
+                }
+            }
+
+            const user = Object.assign(dado);
+            // console.log(user)
+
+            if ((login === user[0].Email) && (senha === user[0].Senha)) {
+                userErro.innerText = "Usuario:";
+                userErro.classList.add("text-dark");
+
+                loginErro.innerText = "Senha:";
+                loginErro.classList.add("text-dark");
+
+                textoErro.innerText = "";
+                
+                window.location.pathname = "/Atividade";
+
+            } else {
+                userErro.innerText = "Usuario:*";
+                userErro.classList.add("text-danger");
+
+                loginErro.innerText = "Senha:*";
+                loginErro.classList.add("text-danger");
+
+                textoErro.innerText = "Usuário ou Senha Inválidas";
+            }
+        } catch (erro) {
+            userErro.innerText = "Usuario:*";
+            userErro.classList.add("text-danger");
+
+            loginErro.innerText = "Senha:*";
+            loginErro.classList.add("text-danger");
+
+            document.getElementById("user_id").value = '';
+            document.getElementById("senha").value = '';
+
+            textoErro.innerText = "Usuário ou Senha Inválidas";
+        }
+
+
     }
 
     newData() {

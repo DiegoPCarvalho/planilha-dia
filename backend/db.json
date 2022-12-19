@@ -27,9 +27,18 @@
   ],
   "LoginUsuario": [
     {
-      "id": 1,
-      "Usuario":"diego.carvalho@zhaz.com.br",
-      "Senha": "12345"
+      "nomeCompleto": "Diego Carvalho",
+      "email": "diego.carvalho@zhaz.com.br",
+      "senha": "78451296",
+      "departamento": "Laboratório",
+      "id": 1
+    },
+    {
+      "nomeCompleto": "Natanael Silva Lima",
+      "email": "natanael.lima@zhaz.com.br",
+      "senha": "123456",
+      "departamento": "Técnico",
+      "id": 2
     }
   ]
 }
