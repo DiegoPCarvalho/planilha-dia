@@ -9,6 +9,8 @@ import Home from '../Components/Home/Home';
 import AtividadeCrud from '../Components/Atividades/AtividadeCrud';
 
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
+import Formulario from "../Components/Atividade/Formulario";
+import Tabela from "../Components/Atividade/Tabela";
 
 
 export default function Rotas(){
@@ -20,9 +22,13 @@ export default function Rotas(){
         </Route>
         <Route path="/Dashboard" element = {<Home />}>
             <Route index element={<AtividadeCrud />}/>
+            
         </Route>
-        <Route path="/Atividade" element={<Home />}>
-            <Route index element={<CrudAtividade />} />
+        <Route element={<Home />}>
+            <Route path="/Atividade"element={<CrudAtividade />}>
+                <Route path="Formulario" element={<Formulario />} />
+                <Route path="Tabela" element={<Tabela />}/>
+            </Route>
         </Route>
         <Route path="*" element = {<Login />}/>
     </Routes>

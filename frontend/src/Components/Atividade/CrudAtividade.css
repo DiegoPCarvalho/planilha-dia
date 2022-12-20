@@ -1,0 +1,24 @@
+.sombra {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.link:hover {
+    color:#fff;
+    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+}
+
+
+.imagem{
+    border-radius: 5px;
+    width: 150px;
+    height: 75px;
+}
