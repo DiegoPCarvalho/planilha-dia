@@ -25,6 +25,36 @@
       "id": 2
     }
   ],
+  "Geral": [
+    {
+      "Data": "19/12/2022 21:14:42",
+      "OS": "asdasd",
+      "Cliente": "asdsa",
+      "Equipamento": "dsad",
+      "Modelo": "aaaaa",
+      "NS": "12345",
+      "Servico": "dasd",
+      "Classificacao": "asd",
+      "Observacao": "asdasdas",
+      "Status": "asdasd",
+      "Tecnico": "",
+      "id": 1
+    },
+    {
+      "Data": "19/12/2022 21:26:49",
+      "OS": "asdas",
+      "Cliente": "asdsa",
+      "Equipamento": "dsad",
+      "Modelo": "sadsad",
+      "NS": "asdsa",
+      "Servico": "dsadsa",
+      "Classificacao": "dsadsad",
+      "Observacao": "sadsad",
+      "Status": "sadsad",
+      "Tecnico": "Diego Carvalho",
+      "id": 2
+    }
+  ],
   "LoginUsuario": [
     {
       "nomeCompleto": "Diego Carvalho",

@@ -8,18 +8,24 @@ import NovoLogin from '../Login/NovoLogin';
 import Home from '../Components/Home/Home';
 import AtividadeCrud from '../Components/Atividades/AtividadeCrud';
 
-// import Relatorio from "../components/Relatorio/Relatorio";
+import CrudAtividade from '../Components/Atividade/CrudAtividade';
 
-export default props =>(
-    <Routes>
+
+export default function Rotas(){
+    return(
+        <Routes>
         <Route exact path="/" element = {<Login />}>
             <Route index element={<LoginMain />}/>
             <Route path="/NovoUsuario" element={<NovoLogin />}/>
         </Route>
-        <Route path="/Atividade" element = {<Home />}>
+        <Route path="/Dashboard" element = {<Home />}>
             <Route index element={<AtividadeCrud />}/>
         </Route>
-        {/* <Route path="/relatorio" element = {<Relatorio />}/> */}
+        <Route path="/Atividade" element={<Home />}>
+            <Route index element={<CrudAtividade />} />
+        </Route>
         <Route path="*" element = {<Login />}/>
     </Routes>
-);
+    )
+}
+    

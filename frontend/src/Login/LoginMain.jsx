@@ -60,7 +60,8 @@ export default class LoginMain extends React.Component {
                 if (id === tabela[i].email) {
                     dado.push({
                         Email: tabela[i].email,
-                        Senha: tabela[i].senha
+                        Senha: tabela[i].senha,
+                        Usuario: tabela[i].nomeCompleto
                     });
                 }
             }
@@ -79,6 +80,7 @@ export default class LoginMain extends React.Component {
                 
                 window.location.pathname = "/Atividade";
                 localStorage.logado = 1;
+                localStorage.usuario = user[0].Usuario;
 
             } else {
                 userErro.innerText = "Usuario:*";

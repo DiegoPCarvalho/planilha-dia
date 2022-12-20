@@ -17,7 +17,7 @@ export default props =>
     <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
         <ul>
-            <li><Link to="/OrdemServico/MpAtendimento" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
             <li><Link to="/OrdemServico/MpContrato" className='text-light'><i className="fa fa-files-o"></i>Relatório Pessoal</Link></li>
         </ul>
     </li>
