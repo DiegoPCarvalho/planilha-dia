@@ -11,6 +11,7 @@ import AtividadeCrud from '../Components/Atividades/AtividadeCrud';
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import Formulario from "../Components/Atividade/Formulario";
 import Tabela from "../Components/Atividade/Tabela";
+import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 
 
 export default function Rotas(){
@@ -28,6 +29,7 @@ export default function Rotas(){
             <Route path="/Atividade"element={<CrudAtividade />}>
                 <Route path="Formulario" element={<Formulario />} />
                 <Route path="Tabela" element={<Tabela />}/>
+                <Route path="Relatorio" element={<RelatorioPessoal/>}/>
             </Route>
         </Route>
         <Route path="*" element = {<Login />}/>
