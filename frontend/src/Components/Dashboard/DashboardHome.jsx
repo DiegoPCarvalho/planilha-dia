@@ -2,15 +2,14 @@ import React from 'react';
 import Main from '../Template/Main';
 
 const HeaderProps = {
-    icon: "database",
-    title: "Gerencia" 
+    icon: "home",
+    title: "Home" 
 }
-
-export default class DashboardGerencia extends React.Component {
+export default class DashboardHome extends React.Component {
     render(){
         return(
             <Main {...HeaderProps}>
-                <h1>Sou Dashboard Gerencia</h1>
+                <h1>Sou Dashboard Home</h1>
             </Main>
         )
     }

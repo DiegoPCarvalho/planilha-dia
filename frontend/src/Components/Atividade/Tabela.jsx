@@ -170,21 +170,21 @@ export default class Tabela extends React.Component {
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>Equipamento</label>
-                            <input type="text" className="form-control"
-                                list="listaEquipamentos"
+                            <select class="form-select" aria-label="Default select example"
                                 name="Equipamento"
-                                value={this.state.Atividade.Equipamento}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o tipo de Equpamento..." />
-                            <datalist id="listaEquipamentos">
-                                <option value="Coletor de Dados"></option>
-                                <option value="Leitor de Dados"></option>
-                                <option value="Impressora Térmica"></option>
-                                <option value="Carregador de 4 Posições"></option>
-                                <option value="Carregador de 6 Posições"></option>
-                                <option value="Berço de Comunicação"></option>
-                                <option value="Fonte de Alimentação"></option>
-                            </datalist>
+                                value={this.state.Atividade.Equipamento}>
+                                <option selected>Selecione o Equipamento</option>
+                                <option>Coletor de Dados</option>
+                                <option>Leitor de Dados</option>
+                                <option>Busca Preço</option>
+                                <option>Impressora Térmica</option>
+                                <option>Carregador de 4 Posições</option>
+                                <option>Carregador de 5 Posições</option>
+                                <option>Carregador de 6 Posições</option>
+                                <option>Berço de Comunicação</option>
+                                <option>Fonte de Alimentação</option>
+                            </select>
                         </div>
                     </div>
                     <div className="col-12 col-md-6">
@@ -210,39 +210,33 @@ export default class Tabela extends React.Component {
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>Serviço</label>
-                            <input type="text" className="form-control"
-                                list="listaServico"
+                            <select class="form-select" aria-label="Default select example"
                                 name="Servico"
-                                value={this.state.Atividade.Servico}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o Serviço..." />
+                                value={this.state.Atividade.Servico}>
+                                <option selected>Selecione o Serviço</option>
+                                <option>Chamado On-Site</option>
+                                <option>Suporte Remoto</option>
+                                <option>Laudo</option>
+                                <option>Manutenção Concluída</option>
+                                <option>Revisão de Manutenção</option>
+                                <option>Revisão de Venda</option>
+                            </select>
                         </div>
-                        <datalist id="listaServico">
-                            <option value="Atendimento OnSite" />
-                            <option value="Atendimento Parceiro" />
-                            <option value="Laudo" />
-                            <option value="Manutenção" />
-                            <option value="Suporte Remoto" />
-                            <option value="Revisão de Manutenção" />
-                            <option value="Revisão de Venda" />
-                            <option value="Preventiva" />
-                        </datalist>
                     </div>
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>Classificação</label>
-                            <input type="text" className="form-control"
-                                list="listaClassificacao"
+                            <select class="form-select" aria-label="Default select example"
                                 name="Classificacao"
-                                value={this.state.Atividade.Classificacao}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite a Classificação..." />
+                                value={this.state.Atividade.Classificacao}>
+                                <option selected>Selecione a Classificação</option>
+                                <option>Desgaste de Uso</option>
+                                <option>Defeito</option>
+                                <option>Uso Indevido</option>
+                            </select>
                         </div>
-                        <datalist id="listaClassificacao">
-                            <option value="Desgaste de Uso" />
-                            <option value="Defeito" />
-                            <option value="Uso Indevido" />
-                        </datalist>
                     </div>
                     <div className="col-12">
                         <div className="form-group">
@@ -257,22 +251,19 @@ export default class Tabela extends React.Component {
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>Status</label>
-                            <input type="text" className="form-control"
-                                list="listaStatus"
+                            <select class="form-select" aria-label="Default select example"
                                 name="Status"
-                                value={this.state.Atividade.Status}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o Status..." />
+                                value={this.state.Atividade.Status}>
+                                <option selected>Selecione a Status</option>
+                                <option>Pronto</option>
+                                <option>Enviar p/Zhaz</option>
+                                <option>Excede - Aguardando Aprovação</option>
+                                <option>Aguardando Aprovação</option>
+                                <option>Reprovado</option>
+                                <option>Revisado</option>
+                            </select>
                         </div>
-                        <datalist id="listaStatus">
-                            <option value="Pronto" />
-                            <option value="Enviar p/Zhaz" />
-                            <option value="Excede - Aguardando Aprovação" />
-                            <option value="Aguardando Aprovação" />
-                            <option value="Reprovado" />
-                            <option value="Revisado" />
-                            <option value="Resolvido-Revisado" />
-                        </datalist>
                     </div>
                 </div>
                 <div className="row">

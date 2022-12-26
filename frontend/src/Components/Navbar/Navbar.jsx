@@ -9,16 +9,16 @@ export default props =>
     <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</a>
         <ul>
-            <li><Link to="/Dashboard" className='text-light'><i className="fa fa-database"></i>Gerência</Link></li>
-            <li><Link to="/Dashboard/AtendimentoOnSite" className='text-light'><i className="fa fa-sitemap"></i>Diretoria</Link></li>
-            <li><Link to="/Dashboard/Contrato" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li>
+            <li><Link to="/Dashboard" className='text-light'><i className="fa fa-home"></i>Home</Link></li>
+            <li><Link to="/Dashboard/Gerencia" className='text-light'><i className="fa fa-database"></i>Gerência</Link></li>
+            <li><Link to="/Dashboard/Diretoria" className='text-light'><i className="fa fa-sitemap"></i>Diretoria</Link></li>
+            <li><Link to="/Dashboard/Tecnico" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li>
         </ul>
     </li>
     <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
         <ul>
             <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
-            <li><Link to="/OrdemServico/MpContrato" className='text-light'><i className="fa fa-files-o"></i>Relatório Pessoal</Link></li>
         </ul>
     </li>
     <li>       
