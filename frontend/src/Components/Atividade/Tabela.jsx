@@ -10,7 +10,7 @@ import $ from 'jquery';
 
 const initialState = {
     Atividade: {
-        Data: data(),
+        Data: '',
         OS: '',
         Cliente: '',
         Equipamento: '',
@@ -29,10 +29,6 @@ const banco = "Geral";
 
 const baseUrl = Url(banco);
 
-function data() {
-    let da = new Date();
-    return da
-}
 
 export default class Tabela extends React.Component {
 
@@ -59,11 +55,14 @@ export default class Tabela extends React.Component {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
         let dadoNome = []
 
+        await this.formataData(tabelaNome)
+
+
         for (let i = 0; i < tabelaNome.length; i++) {
             if (localStorage.usuario == tabelaNome[i].Tecnico) {
                 dadoNome.push({
                     id: tabelaNome[i].id,
-                    Data: this.dataCerta(tabelaNome[i].Data),
+                    Data: tabelaNome[i].Data,
                     OS: tabelaNome[i].OS,
                     Cliente: tabelaNome[i].Cliente,
                     Equipamento: tabelaNome[i].Equipamento,
@@ -72,6 +71,7 @@ export default class Tabela extends React.Component {
                     Servico: tabelaNome[i].Servico,
                     Classificacao: tabelaNome[i].Classificacao,
                     Observacao: tabelaNome[i].Observacao,
+                    Tecnico: tabelaNome[i].Tecnico,
                     Status: tabelaNome[i].Status
                 })
             }
@@ -86,6 +86,14 @@ export default class Tabela extends React.Component {
         return dt
     }
 
+
+    async formataData(dataItem){
+        for (var i = 0; i < dataItem.length; i++) {
+            var dataA = dataItem[i];
+            var dataF = await dataA.Data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$1/$2/$3-$4:$5');
+            dataA.Data = await dataF;
+        }
+    }
 
 
     confirmar(Atividade) {
