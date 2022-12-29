@@ -87,6 +87,7 @@ export default class Formulário extends React.Component {
                                 <option>Leitor de Dados</option>
                                 <option>Busca Preço</option>
                                 <option>Impressora Térmica</option>
+                                <option>Carregador de 3 Posições</option>
                                 <option>Carregador de 4 Posições</option>
                                 <option>Carregador de 5 Posições</option>
                                 <option>Carregador de 6 Posições</option>
