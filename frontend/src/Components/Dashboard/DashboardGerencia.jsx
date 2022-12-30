@@ -7,7 +7,19 @@ const HeaderProps = {
 }
 
 export default class DashboardGerencia extends React.Component {
-    render(){
+    
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmG === "0") {
+             window.location.pathname = "/Dashboard";
+             alert("Não Tem Permissão Para Acessar essa Área")
+        }
+    }
+
+   render(){
         return(
             <Main {...HeaderProps}>
                 <h1>Sou Dashboard Gerencia</h1>

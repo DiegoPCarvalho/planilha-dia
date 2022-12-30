@@ -9,7 +9,7 @@ const banco = "LoginUsuario";
 const baseUrl = Url(banco);
 
 const initialState = {
-    usuario: {nomeCompleto: '', email: '', senha: '', departamento: ''}
+    usuario: {nomeCompleto: '', email: '', senha: '', departamento: '', AdmA: 0, AdmG: 0, AdmD: 0, AdmT: 0 }
 }
 export default class LoginMain extends React.Component {
 

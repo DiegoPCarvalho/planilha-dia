@@ -11,6 +11,8 @@ import $ from 'jquery';
 const initialState = {
     Atividade: {
         Data: '',
+        Mes: mes(),
+        Ano: ano(),
         OS: '',
         Cliente: '',
         Equipamento: '',
@@ -23,6 +25,18 @@ const initialState = {
         Tecnico: localStorage.usuario
     },
     list: []
+}
+
+function mes(){
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    return mes
+}
+
+function ano(){
+    let data = new Date();
+    let ano = data.getFullYear();
+    return ano
 }
 
 const banco = "Geral";
@@ -59,10 +73,12 @@ export default class Tabela extends React.Component {
 
 
         for (let i = 0; i < tabelaNome.length; i++) {
-            if (localStorage.usuario == tabelaNome[i].Tecnico) {
+            if (localStorage.usuario === tabelaNome[i].Tecnico) {
                 dadoNome.push({
                     id: tabelaNome[i].id,
                     Data: tabelaNome[i].Data,
+                    Mes: tabelaNome[i].Mes,
+                    Ano: tabelaNome[i].Ano,
                     OS: tabelaNome[i].OS,
                     Cliente: tabelaNome[i].Cliente,
                     Equipamento: tabelaNome[i].Equipamento,
@@ -90,7 +106,7 @@ export default class Tabela extends React.Component {
     async formataData(dataItem){
         for (var i = 0; i < dataItem.length; i++) {
             var dataA = dataItem[i];
-            var dataF = await dataA.Data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$1/$2/$3-$4:$5');
+            var dataF = await dataA.Data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1');
             dataA.Data = await dataF;
         }
     }

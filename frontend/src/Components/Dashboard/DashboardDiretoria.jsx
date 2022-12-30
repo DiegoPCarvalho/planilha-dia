@@ -7,6 +7,16 @@ const HeaderProps = {
 }
 
 export default class DashboardDiretoria extends React.Component {
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmD === "0") {
+             window.location.pathname = "/Dashboard";
+             alert("Não Tem Permissão Para Acessar essa Área")
+        }
+    }
     render(){
         return(
             <Main {...HeaderProps}>

@@ -2,7 +2,7 @@ import React from "react";
 import Main from '../Template/Main';
 import Logo from '../../Assets/Imgs/logoZhaz.png';
 import './CrudAtividade.css'
-import { Link, Outlet} from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import FotoTecnico from '../../Assets/Imgs/fotoTecnico.jpg';
 
 const headerProps = {
@@ -12,6 +12,17 @@ const headerProps = {
 
 
 export default class AtividadeCrud extends React.Component {
+
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmA === "0") {
+             window.location.pathname = "/Dashboard";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
 
     render() {
         return (
@@ -26,7 +37,7 @@ export default class AtividadeCrud extends React.Component {
                             <ModalAtendimento corModal="success" Ititulo="plus fa-2x"
                                 classe="d-flex justify-content-center align-items-center" relatorio={this.formulario()}
                                 nome={this.renderI()} /> */}
-                                <Link to="/Atividade"><img src={FotoTecnico} alt="" className="imagem" /></Link>
+                            <Link to="/Atividade"><img src={FotoTecnico} alt="" className="imagem" /></Link>
                         </div>
                     </div>
                     {/* <div className="row mt-4">
@@ -53,3 +64,5 @@ export default class AtividadeCrud extends React.Component {
         )
     }
 }
+
+

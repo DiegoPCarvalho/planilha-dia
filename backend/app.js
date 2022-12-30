@@ -1,16 +1,8 @@
+const data = new Date()
 
+const dia = data.getDate()
+const mes = data.getMonth() + 1
+const ano = data.getFullYear()
 
-
-
-
-
-function retorne(){
-    
-    const state = [
-        {name:"Manutenção Concluída", data: 1 }
-    ]
-        
-    return state
-}
-
+console.log(dia, mes, ano)
 

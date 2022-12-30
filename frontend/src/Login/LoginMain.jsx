@@ -61,7 +61,11 @@ export default class LoginMain extends React.Component {
                     dado.push({
                         Email: tabela[i].email,
                         Senha: tabela[i].senha,
-                        Usuario: tabela[i].nomeCompleto
+                        Usuario: tabela[i].nomeCompleto,
+                        AdmA: tabela[i].AdmA,
+                        AdmD: tabela[i].AdmD,
+                        AdmG: tabela[i].AdmG,
+                        AdmT: tabela[i].AdmT
                     });
                 }
             }
@@ -78,9 +82,13 @@ export default class LoginMain extends React.Component {
 
                 textoErro.innerText = "";
                 
-                window.location.pathname = "/Atividade";
+                window.location.pathname = "/Dashboard";
                 localStorage.logado = 1;
                 localStorage.usuario = user[0].Usuario;
+                localStorage.AdmA = user[0].AdmA;
+                localStorage.AdmD = user[0].AdmD;
+                localStorage.AdmG = user[0].AdmG;
+                localStorage.AdmT = user[0].AdmT;
 
             } else {
                 userErro.innerText = "Usuario:*";
@@ -98,8 +106,8 @@ export default class LoginMain extends React.Component {
             loginErro.innerText = "Senha:*";
             loginErro.classList.add("text-danger");
 
-            document.getElementById("user_id").value = '';
-            document.getElementById("senha").value = '';
+            // document.getElementById("user_id").value = '';
+            // document.getElementById("senha").value = '';
 
             textoErro.innerText = "Usuário ou Senha Inválidas";
         }

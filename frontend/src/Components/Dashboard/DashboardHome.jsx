@@ -5,6 +5,7 @@ const HeaderProps = {
     icon: "home",
     title: "Home" 
 }
+
 export default class DashboardHome extends React.Component {
     render(){
         return(

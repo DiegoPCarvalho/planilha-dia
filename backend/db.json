@@ -3,6 +3,8 @@
     {
       "id": 9,
       "Data": "26/12/2022",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "12345",
       "Cliente": "C&A",
       "Equipamento": "Coletor de Dados",
@@ -16,6 +18,8 @@
     {
       "id": 10,
       "Data": "27/12/2022-18:52",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "1",
       "Cliente": "1",
       "Equipamento": "Coletor de Dados",
@@ -30,6 +34,8 @@
     {
       "id": 11,
       "Data": "27/12/2022-18:52",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "2",
       "Cliente": "2",
       "Equipamento": "Leitor de Dados",
@@ -44,6 +50,8 @@
     {
       "id": 12,
       "Data": "2022/12/27-18:52",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "3",
       "Cliente": "3",
       "Equipamento": "Busca Preço",
@@ -57,6 +65,8 @@
     },
     {
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "4",
       "Cliente": "4",
       "Equipamento": "Leitor de Dados",
@@ -71,6 +81,8 @@
     },
     {
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "5",
       "Cliente": "5",
       "Equipamento": "Impressora Térmica",
@@ -85,6 +97,8 @@
     },
     {
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "6",
       "Cliente": "6",
       "Equipamento": "Carregador de 4 Posições",
@@ -99,6 +113,8 @@
     },
     {
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "7",
       "Cliente": "7",
       "Equipamento": "Carregador de 5 Posições",
@@ -114,6 +130,8 @@
     {
       "id": 17,
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "8",
       "Cliente": "8",
       "Equipamento": "Carregador de 6 Posições",
@@ -128,6 +146,8 @@
     {
       "id": 18,
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "9",
       "Cliente": "9",
       "Equipamento": "Coletor de Dados",
@@ -142,6 +162,8 @@
     {
       "id": 19,
       "Data": "2022-12-27T18:52:14.805Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "10",
       "Cliente": "10",
       "Equipamento": "Leitor de Dados",
@@ -156,6 +178,8 @@
     {
       "id": 20,
       "Data": "2022/12/27-18:52",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "11",
       "Cliente": "11",
       "Equipamento": "Coletor de Dados",
@@ -169,6 +193,8 @@
     },
     {
       "Data": "2022-12-27T20:11:49.809Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "12",
       "Cliente": "12",
       "Equipamento": "Leitor de Dados",
@@ -183,6 +209,8 @@
     },
     {
       "Data": "2022-12-29T20:20:11.126Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "13",
       "Cliente": "13",
       "Equipamento": "Impressora Térmica",
@@ -197,6 +225,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "14",
       "Cliente": "14",
       "Equipamento": "Carregador de 3 Posições",
@@ -211,6 +241,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "15",
       "Cliente": "15",
       "Equipamento": "Berço de Comunicação",
@@ -225,6 +257,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "16",
       "Cliente": "16",
       "Equipamento": "Berço de Comunicação",
@@ -239,6 +273,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "17",
       "Cliente": "17",
       "Equipamento": "Leitor de Dados",
@@ -253,6 +289,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "18",
       "Cliente": "18",
       "Equipamento": "Carregador de 4 Posições",
@@ -267,6 +305,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "19",
       "Cliente": "",
       "Equipamento": "Carregador de 6 Posições",
@@ -281,6 +321,8 @@
     },
     {
       "Data": "2022-12-29T20:36:48.759Z",
+      "Mes": 12,
+      "Ano": 2022,
       "OS": "20",
       "Cliente": "",
       "Equipamento": "Fonte de Alimentação",
@@ -292,6 +334,118 @@
       "Status": "",
       "Tecnico": "Diego Carvalho",
       "id": 29
+    },
+    {
+      "Data": "2022-12-30T15:24:17.639Z",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "1",
+      "Cliente": "1",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "1",
+      "NS": "asdas",
+      "Servico": "Suporte Remoto",
+      "Classificacao": "Desgaste de Uso",
+      "Observacao": "1",
+      "Status": "Reprovado",
+      "Tecnico": "Natanael Silva Lima",
+      "id": 30
+    },
+    {
+      "Data": "2022-12-30T15:24:17.639Z",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "2",
+      "Cliente": "2",
+      "Equipamento": "Leitor de Dados",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Chamado On-Site",
+      "Classificacao": "Desgaste de Uso",
+      "Observacao": "2",
+      "Status": "",
+      "Tecnico": "Natanael Silva Lima",
+      "id": 31
+    },
+    {
+      "Data": "2022-12-30T15:24:17.639Z",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "3",
+      "Cliente": "3",
+      "Equipamento": "Impressora Térmica",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Manutenção Concluída",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Natanael Silva Lima",
+      "id": 32
+    },
+    {
+      "Data": "2022-12-30T15:24:17.639Z",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "4",
+      "Cliente": "4",
+      "Equipamento": "Berço de Comunicação",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Revisão de Manutenção",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Natanael Silva Lima",
+      "id": 33
+    },
+    {
+      "Data": "2022-12-30T15:24:17.639Z",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "5",
+      "Cliente": "5",
+      "Equipamento": "Carregador de 3 Posições",
+      "Modelo": "5",
+      "NS": "",
+      "Servico": "Revisão de Venda",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Natanael Silva Lima",
+      "id": 34
+    },
+    {
+      "id": 35,
+      "Data": "30/12/2022",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "6",
+      "Cliente": "6",
+      "Equipamento": "Carregador de 5 Posições",
+      "Modelo": "6",
+      "NS": "",
+      "Servico": "Laudo",
+      "Classificacao": "",
+      "Observacao": "",
+      "Tecnico": "Natanael Silva Lima",
+      "Status": ""
+    },
+    {
+      "id": 36,
+      "Data": "30/12/2022",
+      "Mes": 12,
+      "Ano": 2022,
+      "OS": "7",
+      "Cliente": "77",
+      "Equipamento": "Carregador de 4 Posições",
+      "Modelo": "7",
+      "NS": "",
+      "Servico": "Manutenção Concluída",
+      "Classificacao": "",
+      "Observacao": "",
+      "Tecnico": "Natanael Silva Lima",
+      "Status": ""
     }
   ],
   "LoginUsuario": [
@@ -300,6 +454,10 @@
       "email": "diego.carvalho@zhaz.com.br",
       "senha": "78451296",
       "departamento": "Laboratório",
+      "AdmA": 1,
+      "AdmG": 1,
+      "AdmD": 1,
+      "AdmT": 1,
       "id": 1
     },
     {
@@ -307,6 +465,10 @@
       "email": "natanael.lima@zhaz.com.br",
       "senha": "123456",
       "departamento": "Técnico",
+      "AdmA": 0,
+      "AdmG": 0,
+      "AdmD": 0,
+      "AdmT": 1,
       "id": 2
     }
   ]
