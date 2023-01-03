@@ -4,6 +4,8 @@ import "./Relatorio.css";
 import axios from 'axios';
 import Url from '../Url/Url';
 
+
+
 const initialState = {
     //Ordem de Serviço
     listarMC: [],
@@ -12,6 +14,8 @@ const initialState = {
     listarRM: [],
     listarCO: [],
     listarRV: [],
+    listarCC: [],
+    listarMMV: [],
 
     //Equipamento Manutenção
     listarMCCOl: [],
@@ -24,6 +28,7 @@ const initialState = {
     listarMCCar6: [],
     listarMCBerco: [],
     listarMCFonte: [],
+    listarMCCabo: [],
 
     //Equipamento Laudo
     listarLACOl: [],
@@ -36,6 +41,7 @@ const initialState = {
     listarLACar6: [],
     listarLABerco: [],
     listarLAFonte: [],
+    listarLACabo: [],
 
     //Equipamento Suporte
     listarSPCOl: [],
@@ -48,6 +54,7 @@ const initialState = {
     listarSPCar6: [],
     listarSPBerco: [],
     listarSPFonte: [],
+    listarSPCabo: [],
 
     //Equipamento Revisão M
     listarRMCOl: [],
@@ -60,6 +67,7 @@ const initialState = {
     listarRMCar6: [],
     listarRMBerco: [],
     listarRMFonte: [],
+    listarRMCabo: [],
 
     //Equipamento Chamado On-site
     listarCOCOl: [],
@@ -72,8 +80,9 @@ const initialState = {
     listarCOCar6: [],
     listarCOBerco: [],
     listarCOFonte: [],
+    listarCOCabo: [],
 
-    //Equipamento Chamado Revisão V
+    //Equipamento Revisão V
     listarRVCOl: [],
     listarRVImp: [],
     listarRVLei: [],
@@ -84,6 +93,23 @@ const initialState = {
     listarRVCar6: [],
     listarRVBerco: [],
     listarRVFonte: [],
+    listarRVCabo: [],
+
+    //Equipamento Cabo
+    listarCCCabo: [],
+
+    //Equipamento Montagem e Manutenção de Venda
+    listarMMVCOl: [],
+    listarMMVImp: [],
+    listarMMVLei: [],
+    listarMMVBusca: [],
+    listarMMVCar3: [],
+    listarMMVCar4: [],
+    listarMMVCar5: [],
+    listarMMVCar6: [],
+    listarMMVBerco: [],
+    listarMMVFonte: [],
+    listarMMVCabo: [],
 
     //Total Equipamentos
     listartTotalCol: [],
@@ -96,6 +122,7 @@ const initialState = {
     listarTotalCar6: [],
     listarTotalBerco: [],
     listarTotalFonte: [],
+    listarTotalCabos: []
 }
 
 const banco = "Geral";
@@ -120,6 +147,8 @@ export default class Relatorio extends React.Component {
         let dadoRM = [];
         let dadoCO = [];
         let dadoRV = [];
+        let dadoCC = [];
+        let dadoMMV = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)) {
@@ -127,47 +156,42 @@ export default class Relatorio extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
-        }
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)) {
-                dadoLA.push({
-                    OS: tabelaNome[i].OS
-                })
-            }
-        }
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)) {
-                dadoSR.push({
-                    OS: tabelaNome[i].OS
-                })
-            }
-        }
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                dadoRM.push({
-                    OS: tabelaNome[i].OS
-                })
-            }
-        }
-
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)) {
-                dadoCO.push({
-                    OS: tabelaNome[i].OS
-                })
-            }
-        }
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)) {
-                dadoRV.push({
-                    OS: tabelaNome[i].OS
-                })
-            }
+            else
+                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)) {
+                    dadoLA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)) {
+                    dadoSR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                    dadoRM.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)) {
+                    dadoCO.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)) {
+                    dadoRV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                    dadoCC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                    dadoMMV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
         }
 
         const totalMC = Object.keys(dadoMC).length;
@@ -176,6 +200,8 @@ export default class Relatorio extends React.Component {
         const totalRM = Object.keys(dadoRM).length;
         const totalCO = Object.keys(dadoCO).length;
         const totalRV = Object.keys(dadoRV).length;
+        const totalCC = Object.keys(dadoCC).length;
+        const totalMMV = Object.keys(dadoMMV).length;
 
         return this.setState({
             listarMC: totalMC,
@@ -183,11 +209,13 @@ export default class Relatorio extends React.Component {
             listarSR: totalSR,
             listarRM: totalRM,
             listarCO: totalCO,
-            listarRV: totalRV
+            listarRV: totalRV,
+            listarCC: totalCC,
+            listarMMV: totalMMV
         })
     }
 
-    async buscarEquipamento(estagio) {
+    async buscarEquipamento() {
         try {
             const tabelaNome = await axios(baseUrl).then(resp => resp.data)
 
@@ -203,6 +231,7 @@ export default class Relatorio extends React.Component {
             let dadoMCCar6 = [];
             let dadoMCBerco = [];
             let dadoMCFonte = [];
+            let dadoMCCabo = [];
 
             //Variavel Laudo
             let dadoLACol = [];
@@ -215,6 +244,7 @@ export default class Relatorio extends React.Component {
             let dadoLACar6 = [];
             let dadoLABerco = [];
             let dadoLAFonte = [];
+            let dadoLACabo = [];
 
             //Variavel Suporte
             let dadoSPCol = [];
@@ -227,6 +257,7 @@ export default class Relatorio extends React.Component {
             let dadoSPCar6 = [];
             let dadoSPBerco = [];
             let dadoSPFonte = [];
+            let dadoSPCabo = [];
 
             //Variavel Revisão M
             let dadoRMCol = [];
@@ -239,6 +270,7 @@ export default class Relatorio extends React.Component {
             let dadoRMCar6 = [];
             let dadoRMBerco = [];
             let dadoRMFonte = [];
+            let dadoRMCabo = [];
 
             //Variavel On-Site
             let dadoCOCol = [];
@@ -251,6 +283,7 @@ export default class Relatorio extends React.Component {
             let dadoCOCar6 = [];
             let dadoCOBerco = [];
             let dadoCOFonte = [];
+            let dadoCOCabo = [];
 
             //Variavel Revisão V
             let dadoRVCol = [];
@@ -263,6 +296,23 @@ export default class Relatorio extends React.Component {
             let dadoRVCar6 = [];
             let dadoRVBerco = [];
             let dadoRVFonte = [];
+            let dadoRVCabo = [];
+
+            //variavel dos Cabos
+            let dadoCCCabo = [];
+
+            //Variavel Montagem/Manutenção de Venda
+            let dadoMMVCol = [];
+            let dadoMMVLei = [];
+            let dadoMMVImp = [];
+            let dadoMMVBusca = [];
+            let dadoMMVCar3 = [];
+            let dadoMMVCar4 = [];
+            let dadoMMVCar5 = [];
+            let dadoMMVCar6 = [];
+            let dadoMMVBerco = [];
+            let dadoMMVFonte = [];
+            let dadoMMVCabo = [];
             //#endregion
 
             for (let i = 0; i < tabelaNome.length; i++) {
@@ -317,10 +367,15 @@ export default class Relatorio extends React.Component {
                     dadoMCFonte.push({
                         OS: tabelaNome[i].OS
                     })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)
+                    && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                    dadoMCCabo.push({
+                        OS: tabelaNome[i].OS
+                    })
                 } else
-                //#endregion
+                    //#endregion
 
-                //#region Laudo
+                    //#region Laudo
                     if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
                         && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoLACol.push({
@@ -371,10 +426,15 @@ export default class Relatorio extends React.Component {
                         dadoLAFonte.push({
                             OS: tabelaNome[i].OS
                         })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
+                        && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoLACabo.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } else
                         //#endregion
 
-                //#region Suporte Remoto
+                        //#region Suporte Remoto
 
                         if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)
                             && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
@@ -426,171 +486,260 @@ export default class Relatorio extends React.Component {
                             dadoSPFonte.push({
                                 OS: tabelaNome[i].OS
                             })
-                        }else
-                //#endregion
-                        
-                //#region Revisão M
-                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                    dadoRMCol.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                    dadoRMLei.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Busca Preço" === tabelaNome[i].Equipamento)) {
-                    dadoRMBusca.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                    dadoRMImp.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRMCar4.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRMCar3.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRMCar5.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRMCar6.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                    dadoRMBerco.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
-                    && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                    dadoRMFonte.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }else
-                //#endregion
-            
-                //#region On-Site
-                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                    dadoCOCol.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                    dadoCOLei.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Busca Preço" === tabelaNome[i].Equipamento)) {
-                    dadoCOBusca.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                    dadoCOImp.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoCOCar4.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoCOCar3.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoCOCar5.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoCOCar6.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                    dadoCOBerco.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
-                    && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                    dadoCOFonte.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }else
-                //#endregion
+                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)
+                            && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoSPCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else
+                            //#endregion
 
-                //#region Revisão V
-                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                    dadoRVCol.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                    dadoRVLei.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Busca Preço" === tabelaNome[i].Equipamento)) {
-                    dadoRVBusca.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                    dadoRVImp.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRVCar4.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRVCar3.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRVCar5.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                    dadoRVCar6.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                    dadoRVBerco.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
-                    && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                    dadoRVFonte.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                //#endregion
+                            //#region Revisão M
+                            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoRMCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoRMLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoRMBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoRMImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoRMCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoRMCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoRMCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoRMCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoRMBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoRMFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoRMCabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else
+                                //#endregion
 
+                                //#region On-Site
+                                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoCOCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoCOLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoCOBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoCOImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoCOCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoCOCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoCOCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoCOCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoCOBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoCOFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                    dadoCOCabo.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else
+                                    //#endregion
+
+                                    //#region Revisão V
+                                    if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoRVCol.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoRVLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                        dadoRVBusca.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                        dadoRVImp.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoRVCar4.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoRVCar3.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoRVCar5.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoRVCar6.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                        dadoRVBerco.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                        dadoRVFonte.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                        dadoRVCabo.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    }
+                                    //#endregion
+
+                                    //#region Confecção de Cabos
+                                    else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Confecção de Cabos" === tabelaNome[i].Servico)
+                                        && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                        dadoCCCabo.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else
+
+                                        //#endregion
+
+                                        //#region Montagem/Manutenção de Venda
+                                        if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVCabo.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        }
+
+                //#endregion
             }
 
             //#region Totais Object
@@ -605,6 +754,7 @@ export default class Relatorio extends React.Component {
             let totalMCCar6 = Object.keys(dadoMCCar6).length;
             let totalMCBerco = Object.keys(dadoMCBerco).length;
             let totalMCFonte = Object.keys(dadoMCFonte).length;
+            let totalMCCabo = Object.keys(dadoMCCabo).length;
 
             //Total Laudo
             let totalLACol = Object.keys(dadoLACol).length;
@@ -617,6 +767,7 @@ export default class Relatorio extends React.Component {
             let totalLACar6 = Object.keys(dadoLACar6).length;
             let totalLABerco = Object.keys(dadoLABerco).length;
             let totalLAFonte = Object.keys(dadoLAFonte).length;
+            let totalLACabo = Object.keys(dadoLACabo).length;
 
             //Total Suporte
             let totalSPCol = Object.keys(dadoSPCol).length;
@@ -629,6 +780,7 @@ export default class Relatorio extends React.Component {
             let totalSPCar6 = Object.keys(dadoSPCar6).length;
             let totalSPBerco = Object.keys(dadoSPBerco).length;
             let totalSPFonte = Object.keys(dadoSPFonte).length;
+            let totalSPCabo = Object.keys(dadoSPCabo).length;
 
             //Total Revisão M
             let totalRMCol = Object.keys(dadoRMCol).length;
@@ -641,6 +793,7 @@ export default class Relatorio extends React.Component {
             let totalRMCar6 = Object.keys(dadoRMCar6).length;
             let totalRMBerco = Object.keys(dadoRMBerco).length;
             let totalRMFonte = Object.keys(dadoRMFonte).length;
+            let totalRMCabo = Object.keys(dadoRMCabo).length;
 
             //Total On-Site
             let totalCOCol = Object.keys(dadoCOCol).length;
@@ -653,6 +806,7 @@ export default class Relatorio extends React.Component {
             let totalCOCar6 = Object.keys(dadoCOCar6).length;
             let totalCOBerco = Object.keys(dadoCOBerco).length;
             let totalCOFonte = Object.keys(dadoCOFonte).length;
+            let totalCOCabo = Object.keys(dadoCOCabo).length;
 
             //Total Revisão V
             let totalRVCol = Object.keys(dadoRVCol).length;
@@ -665,6 +819,23 @@ export default class Relatorio extends React.Component {
             let totalRVCar6 = Object.keys(dadoRVCar6).length;
             let totalRVBerco = Object.keys(dadoRVBerco).length;
             let totalRVFonte = Object.keys(dadoRVFonte).length;
+            let totalRVCabo = Object.keys(dadoRVCabo).length;
+
+            //Total Confeção de Cabos
+            let totalCCCabos = Object.keys(dadoCCCabo).length;
+
+            //Total Montagem/Manutenção de Venda
+            let totalMMVCol = Object.keys(dadoMMVCol).length;
+            let totalMMVLei = Object.keys(dadoMMVLei).length;
+            let totalMMVBusca = Object.keys(dadoMMVBusca).length;
+            let totalMMVImp = Object.keys(dadoMMVImp).length;
+            let totalMMVCar3 = Object.keys(dadoMMVCar3).length;
+            let totalMMVCar4 = Object.keys(dadoMMVCar4).length;
+            let totalMMVCar5 = Object.keys(dadoMMVCar5).length;
+            let totalMMVCar6 = Object.keys(dadoMMVCar6).length;
+            let totalMMVBerco = Object.keys(dadoMMVBerco).length;
+            let totalMMVFonte = Object.keys(dadoMMVFonte).length;
+            let totalMMVCabo = Object.keys(dadoMMVCabo).length;
             //#endregion
 
             //#region Return arrays
@@ -680,6 +851,7 @@ export default class Relatorio extends React.Component {
                 listarMCCar6: totalMCCar6,
                 listarMCBerco: totalMCBerco,
                 listarMCFonte: totalMCFonte,
+                listarMCCabo: totalMCCabo,
 
                 //Listar Laudo
                 listarLACOl: totalLACol,
@@ -692,6 +864,7 @@ export default class Relatorio extends React.Component {
                 listarLACar6: totalLACar6,
                 listarLABerco: totalLABerco,
                 listarLAFonte: totalLAFonte,
+                listarLACabo: totalLACabo,
 
                 //Listar Suporte
                 listarSPCOl: totalSPCol,
@@ -704,6 +877,7 @@ export default class Relatorio extends React.Component {
                 listarSPCar6: totalSPCar6,
                 listarSPBerco: totalSPBerco,
                 listarSPFonte: totalSPFonte,
+                listarSPCabo: totalSPCabo,
 
                 //Listar Revisão M
                 listarRMCOl: totalRMCol,
@@ -716,6 +890,7 @@ export default class Relatorio extends React.Component {
                 listarRMCar6: totalRMCar6,
                 listarRMBerco: totalRMBerco,
                 listarRMFonte: totalRMFonte,
+                listarRMCabo: totalRMCabo,
 
                 //Listar On-Site
                 listarCOCOl: totalCOCol,
@@ -728,6 +903,7 @@ export default class Relatorio extends React.Component {
                 listarCOCar6: totalCOCar6,
                 listarCOBerco: totalCOBerco,
                 listarCOFonte: totalCOFonte,
+                listarCOCabo: totalCOCabo,
 
                 //Listar Revisão V
                 listarRVCOl: totalRVCol,
@@ -739,10 +915,27 @@ export default class Relatorio extends React.Component {
                 listarRVCar5: totalRVCar5,
                 listarRVCar6: totalRVCar6,
                 listarRVBerco: totalRVBerco,
-                listarRVFonte: totalRVFonte
+                listarRVFonte: totalRVFonte,
+                listarRVCabo: totalRVCabo,
+
+                //listar Cofecção de Cabos
+                listarCCCabo: totalCCCabos,
+
+                //Listar Montagem/Manutenção de Venda
+                listarMMVCOl: totalMMVCol,
+                listarMMVLei: totalMMVLei,
+                listarMMVBusca: totalMMVBusca,
+                listarMMVImp: totalMMVImp,
+                listarMMVCar3: totalMMVCar3,
+                listarMMVCar4: totalMMVCar4,
+                listarMMVCar5: totalMMVCar5,
+                listarMMVCar6: totalMMVCar6,
+                listarMMVBerco: totalMMVBerco,
+                listarMMVFonte: totalMMVFonte,
+                listarMMVCabo: totalMMVCabo,
             })
             //#endregion
-        
+
         } catch (error) {
             console.log("Error: " + error)
         }
@@ -761,7 +954,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarMCCar5 },
                 { name: "Carregador 6 P", y: this.state.listarMCCar6 },
                 { name: "Berço", y: this.state.listarMCBerco },
-                { name: "Fonte", y: this.state.listarMCFonte }
+                { name: "Fonte", y: this.state.listarMCFonte },
+                { name: "Cabo C", y: this.state.listarMCCabo }
             ]
 
             return data
@@ -777,7 +971,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarLACar5 },
                 { name: "Carregador 6 P", y: this.state.listarLACar6 },
                 { name: "Berço", y: this.state.listarLABerco },
-                { name: "Fonte", y: this.state.listarLAFonte }
+                { name: "Fonte", y: this.state.listarLAFonte },
+                { name: "Cabo C", y: this.state.listarLACabo }
             ]
 
             return data
@@ -793,7 +988,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarSPCar5 },
                 { name: "Carregador 6 P", y: this.state.listarSPCar6 },
                 { name: "Berço", y: this.state.listarSPBerco },
-                { name: "Fonte", y: this.state.listarSPFonte }
+                { name: "Fonte", y: this.state.listarSPFonte },
+                { name: "Cabo C", y: this.state.listarSPCabo }
             ]
 
             return data
@@ -809,7 +1005,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarRMCar5 },
                 { name: "Carregador 6 P", y: this.state.listarRMCar6 },
                 { name: "Berço", y: this.state.listarRMBerco },
-                { name: "Fonte", y: this.state.listarRMFonte }
+                { name: "Fonte", y: this.state.listarRMFonte },
+                { name: "Cabo C", y: this.state.listarRMCabo }
             ]
 
             return data
@@ -825,7 +1022,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarCOCar5 },
                 { name: "Carregador 6 P", y: this.state.listarCOCar6 },
                 { name: "Berço", y: this.state.listarCOBerco },
-                { name: "Fonte", y: this.state.listarCOFonte }
+                { name: "Fonte", y: this.state.listarCOFonte },
+                { name: "Cabo C", y: this.state.listarCOCabo }
             ]
 
             return data
@@ -841,7 +1039,31 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarRVCar5 },
                 { name: "Carregador 6 P", y: this.state.listarRVCar6 },
                 { name: "Berço", y: this.state.listarRVBerco },
-                { name: "Fonte", y: this.state.listarRVFonte }
+                { name: "Fonte", y: this.state.listarRVFonte },
+                { name: "Cabo C", y: this.state.listarRVCabo }
+            ]
+
+            return data
+        }
+        else if (estagio === "Conf C") {
+            const data = [
+                { name: "Cabo C", y: this.state.listarCCCabo },
+            ]
+
+            return data
+        } else if (estagio === "M/M de Venda") {
+            const data = [
+                { name: "Coletor", y: this.state.listarMMVCOl },
+                { name: "Leitor", y: this.state.listarMMVLei },
+                { name: "Busca Preço", y: this.state.listarMMVBusca },
+                { name: "Impressora", y: this.state.listarMMVImp },
+                { name: "Carregador 3 P", y: this.state.listarMMVCar3 },
+                { name: "Carregador 4 P", y: this.state.listarMMVCar4 },
+                { name: "Carregador 5 P", y: this.state.listarMMVCar5 },
+                { name: "Carregador 6 P", y: this.state.listarMMVCar6 },
+                { name: "Berço", y: this.state.listarMMVBerco },
+                { name: "Fonte", y: this.state.listarMMVFonte },
+                { name: "Cabo C", y: this.state.listarMMVCabo }
             ]
 
             return data
@@ -860,6 +1082,7 @@ export default class Relatorio extends React.Component {
         let dadoCar6 = [];
         let dadoBerco = [];
         let dadoFonte = [];
+        let dadoCabo = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
@@ -906,6 +1129,10 @@ export default class Relatorio extends React.Component {
                 dadoFonte.push({
                     OS: tabelaNome[i].OS
                 })
+            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                dadoCabo.push({
+                    OS: tabelaNome[i].OS
+                })
             }
         }
 
@@ -919,6 +1146,7 @@ export default class Relatorio extends React.Component {
         let totalCar6 = Object.keys(dadoCar6).length;
         let totalBerco = Object.keys(dadoBerco).length;
         let totalFonte = Object.keys(dadoFonte).length;
+        let totalCabo = Object.keys(dadoCabo).length;
 
 
         return this.setState({
@@ -931,94 +1159,171 @@ export default class Relatorio extends React.Component {
             listarTotalCar5: totalCar5,
             listarTotalCar6: totalCar6,
             listarTotalBerco: totalBerco,
-            listarTotalFonte: totalFonte
+            listarTotalFonte: totalFonte,
+            listarTotalCabos: totalCabo
         })
+    }
+
+    filtrarDados() {
+        let ano = document.getElementById("ano").value;
+        let mes = document.getElementById("mes").value;
+
+        if ((ano === "Todos") && (mes === "Todos")) {
+            this.buscarDados()
+            this.buscarEquipamento()
+            this.totalPorEquipamento()
+            console.log("Sem Filtro")
+        } else if ((ano === "Todos") && (mes !== "Todos")) {
+            console.log("Filtrando Apenas Mes" + mes)
+        } else if ((ano !== "Todos") && (mes === "Todos")) {
+            console.log("Filtrando Apenas O Ano" + ano)
+        } else if ((ano !== "Todos") && (mes !== "Todos")) {
+            console.log("Filtando os dois " + mes + " " + ano)
+        }
     }
 
     render() {
         return (
-            <div className='row mt-4 d-flex justify-content-around'>
-                <div className="col-12 col-md-5 flex-fill mx-3 sombra">
-                    <Grafico tipo="pie" titulo="Ordens de Serviço"
-                        formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                        texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                        nomeSerie="Ordem de Serviço"
-                        dado={[
-                            { name: "Manutenção Concluída", y: this.state.listarMC },
-                            { name: "Laudo", y: this.state.listarLA },
-                            { name: "Suporte Remoto", y: this.state.listarSR },
-                            { name: "Revisão de Manutenção", y: this.state.listarRM },
-                            { name: "Chamado On-Site", y: this.state.listarCO },
-                            { name: "Revisão de Venda", y: this.state.listarRV },
-                        ]}
-                    />
-                </div>
-                <div className="col-12 col-md-5 sombra flex-fill">
-                    <Grafico tipo="column" titulo="Ordens de Serviço"
-                        formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                        texto='{point.y:1f}'
-                        nomeSerie="Ordem de Serviço"
-                        dado={[
-                            { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
-                            { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
-                            { name: "Suporte", y: this.state.listarSR, drilldown: "Suporte" },
-                            { name: "Revisão M", y: this.state.listarRM, drilldown: "Revisão M" },
-                            { name: "On-Site", y: this.state.listarCO, drilldown: "On-site" },
-                            { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
-                        ]}
-                        serie={[
-                            {
-                                name: "Manutenção",
-                                id: "Manutenção",
-                                data: this.mostrarEquipamento("Manutenção")
-                            },
-                            {
-                                name: "Laudo",
-                                id: "Laudo",
-                                data: this.mostrarEquipamento("Laudo")
-                            },
-                            {
-                                name: "Suporte",
-                                id: "Suporte",
-                                data: this.mostrarEquipamento("Suporte")
-                            },
-                            {
-                                name: "Revisão M",
-                                id: "Revisão M",
-                                data: this.mostrarEquipamento("Revisão M")
-                            },
-                            {
-                                name: "On-site",
-                                id: "On-site",
-                                data: this.mostrarEquipamento("On-site")
-                            },
-                            {
-                                name: "Revisão V",
-                                id: "Revisão V",
-                                data: this.mostrarEquipamento("Revisão V")
-                            }
-
-                        ]}
-                    />
-                </div>
+            <div>
                 <div className="row mt-4">
-                    <div className="col-12 sombra mx-2">
-                        <Grafico tipo="column" titulo="Equipamentos"
+                    <div className="col-3 d-flex flex-row justify-content-center align-items-center">
+                        <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
+                    </div>
+                    <div className="col-3">
+                        <label>Mês: </label>
+                        <select id="mes" class="form-select" aria-label="Default select example">
+                            <option selected>Todos</option>
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                    </div>
+                    <div className="col-3">
+                        <label>Ano: </label>
+                        <select id="ano" class="form-select" aria-label="Default select example">
+                            <option selected>Todos</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                            <option>2030</option>
+                        </select>
+                    </div>
+                    <div className="col-3 d-flex align-items-end">
+                        <button className="btn btn-success" onClick={e => this.filtrarDados(e)}>Buscar</button>
+                    </div>
+                </div>
+                <div className='row mt-4 d-flex justify-content-around'>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">
+                        <Grafico tipo="pie" titulo="Ordens de Serviço"
+                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                            texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                            nomeSerie="Ordem de Serviço"
+                            dado={[
+                                { name: "Manutenção Concluída", y: this.state.listarMC },
+                                { name: "Laudo", y: this.state.listarLA },
+                                { name: "Suporte Remoto", y: this.state.listarSR },
+                                { name: "Revisão de Manutenção", y: this.state.listarRM },
+                                { name: "Chamado On-Site", y: this.state.listarCO },
+                                { name: "Revisão de Venda", y: this.state.listarRV },
+                                { name: "Confecção de Cabos", y: this.state.listarCC },
+                                { name: "M/M de Venda", y: this.state.listarMMV },
+                            ]}
+                        />
+                    </div>
+                    <div className="col-12 col-md-5 sombra flex-fill">
+                        <Grafico tipo="column" titulo="Ordens de Serviço"
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
-                            nomeSerie="Equipamento"
+                            nomeSerie="Ordem de Serviço"
                             dado={[
-                                { name: "Coletor", y: this.state.listarTotalCOl },
-                                { name: "Leitor", y: this.state.listarTotalLei },
-                                { name: "Busca Preço", y: this.state.listarTotalBusca },
-                                { name: "Impressora", y: this.state.listarTotalImp },
-                                { name: "Carregador 3 P", y: this.state.listarTotalCar3 },
-                                { name: "Carregador 4 P", y: this.state.listarTotalCar4 },
-                                { name: "Carregador 5 P", y: this.state.listarTotalCar5 },
-                                { name: "Carregador 6 P", y: this.state.listarTotalCar6 },
-                                { name: "Berço", y: this.state.listarTotalBerco },
-                                { name: "Fonte", y: this.state.listarTotalFonte }
-                            ]} />
+                                { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
+                                { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
+                                { name: "Suporte", y: this.state.listarSR, drilldown: "Suporte" },
+                                { name: "Revisão M", y: this.state.listarRM, drilldown: "Revisão M" },
+                                { name: "On-Site", y: this.state.listarCO, drilldown: "On-site" },
+                                { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
+                                { name: "Confecção de Cabos", y: this.state.listarCC, drilldown: "Conf C" },
+                                { name: "M/M de Venda", y: this.state.listarMMV, drilldown: "M/M de Venda" },
+                            ]}
+                            serie={[
+                                {
+                                    name: "Manutenção",
+                                    id: "Manutenção",
+                                    data: this.mostrarEquipamento("Manutenção")
+                                },
+                                {
+                                    name: "Laudo",
+                                    id: "Laudo",
+                                    data: this.mostrarEquipamento("Laudo")
+                                },
+                                {
+                                    name: "Suporte",
+                                    id: "Suporte",
+                                    data: this.mostrarEquipamento("Suporte")
+                                },
+                                {
+                                    name: "Revisão M",
+                                    id: "Revisão M",
+                                    data: this.mostrarEquipamento("Revisão M")
+                                },
+                                {
+                                    name: "On-site",
+                                    id: "On-site",
+                                    data: this.mostrarEquipamento("On-site")
+                                },
+                                {
+                                    name: "Revisão V",
+                                    id: "Revisão V",
+                                    data: this.mostrarEquipamento("Revisão V")
+                                },
+                                {
+                                    name: "Conf C",
+                                    id: "Conf C",
+                                    data: this.mostrarEquipamento("Conf C")
+                                },
+                                {
+                                    name: "M/M de Venda",
+                                    id: "M/M de Venda",
+                                    data: this.mostrarEquipamento("M/M de Venda")
+                                }
+
+                            ]}
+                        />
+                    </div>
+                    <div className="row mt-4">
+                        <div className="col-12 sombra mx-2">
+                            <Grafico tipo="column" titulo="Equipamentos"
+                                formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                texto='{point.y:1f}'
+                                nomeSerie="Equipamento"
+                                dado={[
+                                    { name: "Coletor", y: this.state.listarTotalCOl },
+                                    { name: "Leitor", y: this.state.listarTotalLei },
+                                    { name: "Busca Preço", y: this.state.listarTotalBusca },
+                                    { name: "Impressora", y: this.state.listarTotalImp },
+                                    { name: "Carregador 3 P", y: this.state.listarTotalCar3 },
+                                    { name: "Carregador 4 P", y: this.state.listarTotalCar4 },
+                                    { name: "Carregador 5 P", y: this.state.listarTotalCar5 },
+                                    { name: "Carregador 6 P", y: this.state.listarTotalCar6 },
+                                    { name: "Berço", y: this.state.listarTotalBerco },
+                                    { name: "Fonte", y: this.state.listarTotalFonte },
+                                    { name: "Cabo C", y: this.state.listarTotalCabos }
+                                ]} />
+                        </div>
                     </div>
                 </div>
             </div>

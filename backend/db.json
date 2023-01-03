@@ -446,6 +446,38 @@
       "Observacao": "",
       "Tecnico": "Natanael Silva Lima",
       "Status": ""
+    },
+    {
+      "Data": "2023-01-03T11:28:32.481Z",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "29",
+      "Cliente": "",
+      "Equipamento": "Cabo Confeccionado",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Confecção de Cabos",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 37
+    },
+    {
+      "Data": "2023-01-03T11:28:32.481Z",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "30",
+      "Cliente": "",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Montagem/Manutenção de Venda",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 38
     }
   ],
   "LoginUsuario": [

@@ -107,6 +107,7 @@ export default class Formulário extends React.Component {
                                 <option>Carregador de 6 Posições</option>
                                 <option>Berço de Comunicação</option>
                                 <option>Fonte de Alimentação</option>
+                                <option>Cabo Confeccionado</option>
                             </select>
                         </div>
                     </div>
@@ -144,6 +145,8 @@ export default class Formulário extends React.Component {
                                 <option>Manutenção Concluída</option>
                                 <option>Revisão de Manutenção</option>
                                 <option>Revisão de Venda</option>
+                                <option>Confecção de Cabos</option>
+                                <option>Montagem/Manutenção de Venda</option>
                             </select>
                         </div>
                     </div>
