@@ -1,8 +1,20 @@
-const data = new Date()
+const axios = require("axios");
 
-const dia = data.getDate()
-const mes = data.getMonth() + 1
-const ano = data.getFullYear()
+const baseUrl = `http://192.168.15.211:7000/Geral`
 
-console.log(dia, mes, ano)
+async function Mostrar(mes, ano){
+    const tabelaNome = await axios(baseUrl).then(resp => resp.data)
 
+    for (let i = 0; i < tabelaNome.length; i++) {
+        if ((mes === tabelaNome[i].Mes) && (ano === 'Todos')){
+             console.log("funcionou Mes")
+        } else if ((ano === tabelaNome[i].Ano) && (mes === 'Todos')) {
+            console.log("funcionou Ano")
+        } else if ((mes === tabelaNome[i].Mes) && (ano === tabelaNome[i].Ano)) {
+            console.log("funcionou Mes e Ano")
+        } 
+    }
+}
+    
+
+Mostrar('Todos', 2023)

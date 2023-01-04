@@ -6,6 +6,7 @@ import Url from '../Url/Url';
 
 
 
+
 const initialState = {
     //Ordem de Serviço
     listarMC: [],
@@ -129,14 +130,16 @@ const banco = "Geral";
 
 const baseUrl = Url(banco);
 
+
+
 export default class Relatorio extends React.Component {
 
     state = { ...initialState }
 
     componentWillMount() {
-        this.buscarDados()
-        this.buscarEquipamento()
-        this.totalPorEquipamento()
+        // this.buscarDados()
+        // this.buscarEquipamento()
+        // this.totalPorEquipamento()
     }
 
     async buscarDados() {
@@ -1164,9 +1167,35 @@ export default class Relatorio extends React.Component {
         })
     }
 
+    async buscarDadosFiltro(mes, ano) {
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+
+        // let dadoMC = [];
+        // let dadoLA = [];
+        // let dadoSR = [];
+        // let dadoRM = [];
+        // let dadoCO = [];
+        // let dadoRV = [];
+        // let dadoCC = [];
+        // let dadoMMV = [];
+
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if ((mes === `${tabelaNome[i].Mes}`) && (ano === "Todos")) {
+                console.log("funcionou Mes")
+            }
+            else if ((ano === `${tabelaNome[i].Ano}`) && (mes === "Todos")) {
+                console.log("funcionou Ano")
+            } else if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                console.log("funcionou Mes e Ano")
+            }
+        }
+
+    }
+
+
     filtrarDados() {
-        let ano = document.getElementById("ano").value;
-        let mes = document.getElementById("mes").value;
+        const ano = document.getElementById("ano").value;
+        const mes = document.getElementById("mes").value;
 
         if ((ano === "Todos") && (mes === "Todos")) {
             this.buscarDados()
@@ -1174,10 +1203,14 @@ export default class Relatorio extends React.Component {
             this.totalPorEquipamento()
             console.log("Sem Filtro")
         } else if ((ano === "Todos") && (mes !== "Todos")) {
+            this.buscarDadosFiltro(mes, ano)
+
             console.log("Filtrando Apenas Mes" + mes)
         } else if ((ano !== "Todos") && (mes === "Todos")) {
+            this.buscarDadosFiltro(mes, ano)
             console.log("Filtrando Apenas O Ano" + ano)
         } else if ((ano !== "Todos") && (mes !== "Todos")) {
+            this.buscarDadosFiltro(mes, ano)
             console.log("Filtando os dois " + mes + " " + ano)
         }
     }
