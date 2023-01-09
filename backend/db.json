@@ -448,7 +448,8 @@
       "Status": ""
     },
     {
-      "Data": "2023-01-03T11:28:32.481Z",
+      "id": 37,
+      "Data": "03/01/2023",
       "Mes": 1,
       "Ano": 2023,
       "OS": "29",
@@ -457,11 +458,10 @@
       "Modelo": "",
       "NS": "",
       "Servico": "Confecção de Cabos",
-      "Classificacao": "",
-      "Observacao": "",
-      "Status": "",
+      "Classificacao": "Defeito",
+      "Observacao": "aaaaaaaa",
       "Tecnico": "Diego Carvalho",
-      "id": 37
+      "Status": ""
     },
     {
       "Data": "2023-01-03T11:28:32.481Z",

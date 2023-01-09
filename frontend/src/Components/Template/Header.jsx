@@ -15,7 +15,7 @@ export default props =>
                     </h1>
                 </div>
                 <div className="col-9 d-flex justify-content-end">
-                    <h5 className='text-light mt-3  d-flex justify-content-end'><span className='mx-1'>Bem vindo</span><i class="fa fa-flag-checkered" aria-hidden="true"></i>{localStorage.usuario}</h5>
+                    <h5 className='text-light mt-3  d-flex justify-content-end'><span className='mx-1'>Bem vindo ao ZhazSys</span><i class="fa fa-flag-checkered" aria-hidden="true"></i> {localStorage.usuario}</h5>
                 </div>
             </div>
         </div>

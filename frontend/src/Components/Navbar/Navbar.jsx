@@ -9,16 +9,46 @@ export default props =>
     <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-bar-chart"></i>Dashboard</a>
         <ul>
-            <li><Link to="/Dashboard" className='text-light'><i className="fa fa-home"></i>Home</Link></li>
+            {/* <li><Link to="/Dashboard" className='text-light'><i className="fa fa-home"></i>Home</Link></li> */}
             <li><Link to="/Dashboard/Gerencia" className='text-light'><i className="fa fa-database"></i>Gerência</Link></li>
             <li><Link to="/Dashboard/Diretoria" className='text-light'><i className="fa fa-sitemap"></i>Diretoria</Link></li>
-            <li><Link to="/Dashboard/Tecnico" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li>
+            {/* <li><Link to="/Dashboard/Tecnico" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li> */}
         </ul>
     </li>
     <li>
-        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Ordem de Serviço</a>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-clone"></i>Laboratório</a>
         <ul>
             <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-cogs"></i>Cadastro de Peça</Link></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-money"></i>Financeiro</a>
+        <ul>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-credit-card"></i>Compras</a>
+        <ul>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Peças Solicitadas</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-stack-overflow"></i>Estoque</a>
+        <ul>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:void(0);" className='text-light'><i className="fa fa-truck"></i>Logistica</a>
+        <ul>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+            <li><Link to="/Atividade" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
         </ul>
     </li>
     <li>       
@@ -37,6 +67,7 @@ export default props =>
         <li>
             <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
             <ul>
+                <li><Link to="/AlterarUser"   className='text-light' id="meu-link"><i className="fa fa-user-plus"></i>Perfil</Link></li>
                 <li><a onClick={sair}   className='text-light' id="meu-link"><i className="fa fa-sign-out"></i>Sair</a></li>
             </ul>
         </li>
