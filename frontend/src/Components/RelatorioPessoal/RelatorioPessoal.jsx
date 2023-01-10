@@ -137,9 +137,9 @@ export default class Relatorio extends React.Component {
     state = { ...initialState }
 
     componentWillMount() {
-        // this.buscarDados()
-        // this.buscarEquipamento()
-        // this.totalPorEquipamento()
+        this.buscarDados()
+        this.buscarEquipamento()
+        this.totalPorEquipamento()
     }
 
     async buscarDados() {
@@ -1170,197 +1170,702 @@ export default class Relatorio extends React.Component {
     async buscarDadosFiltro(mes, ano) {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
 
-        // let dadoMC = [];
-        // let dadoLA = [];
-        // let dadoSR = [];
-        // let dadoRM = [];
-        // let dadoCO = [];
-        // let dadoRV = [];
-        // let dadoCC = [];
-        // let dadoMMV = [];
+        //dados gerais
+        let dadoFMC = [];
+        let dadoFLA = [];
+        let dadoFSR = [];
+        let dadoFRM = [];
+        let dadoFCO = [];
+        let dadoFRV = [];
+        let dadoFCC = [];
+        let dadoFMMV = [];
 
+        //dados manutenção equipamento
+        let dadoFMCCol = [];
+        let dadoFMCLei = [];
+        let dadoFMCImp = [];
+        let dadoFMCBusca = [];
+        let dadoFMCCar3 = [];
+        let dadoFMCCar4 = [];
+        let dadoFMCCar5 = [];
+        let dadoFMCCar6 = [];
+        let dadoFMCBerco = [];
+        let dadoFMCFonte = [];
+        let dadoFMCCabo = [];
+
+
+        //Variavel Laudo
+        let dadoFLACol = [];
+        let dadoFLALei = [];
+        let dadoFLAImp = [];
+        let dadoFLABusca = [];
+        let dadoFLACar3 = [];
+        let dadoFLACar4 = [];
+        let dadoFLACar5 = [];
+        let dadoFLACar6 = [];
+        let dadoFLABerco = [];
+        let dadoFLAFonte = [];
+        let dadoFLACabo = [];
+
+        //Variavel Suporte
+        let dadoFSPCol = [];
+        let dadoFSPLei = [];
+        let dadoFSPImp = [];
+        let dadoFSPBusca = [];
+        let dadoFSPCar3 = [];
+        let dadoFSPCar4 = [];
+        let dadoFSPCar5 = [];
+        let dadoFSPCar6 = [];
+        let dadoFSPBerco = [];
+        let dadoFSPFonte = [];
+        let dadoFSPCabo = [];
+
+        //Variavel Revisão M
+        let dadoFRMCol = [];
+        let dadoFRMLei = [];
+        let dadoFRMImp = [];
+        let dadoFRMBusca = [];
+        let dadoFRMCar3 = [];
+        let dadoFRMCar4 = [];
+        let dadoFRMCar5 = [];
+        let dadoFRMCar6 = [];
+        let dadoFRMBerco = [];
+        let dadoFRMFonte = [];
+        let dadoFRMCabo = [];
+
+         //Variavel On-Site
+         let dadoFCOCol = [];
+         let dadoFCOLei = [];
+         let dadoFCOImp = [];
+         let dadoFCOBusca = [];
+         let dadoFCOCar3 = [];
+         let dadoFCOCar4 = [];
+         let dadoFCOCar5 = [];
+         let dadoFCOCar6 = [];
+         let dadoFCOBerco = [];
+         let dadoFCOFonte = [];
+         let dadoFCOCabo = [];
+                
         for (let i = 0; i < tabelaNome.length; i++) {
-            if ((mes === `${tabelaNome[i].Mes}`) && (ano === "Todos")) {
-                console.log("funcionou Mes")
+            if ((mes === `${tabelaNome[i].Mes}`) && (ano === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico)) {
+               //#region Manutenção
+                if ("Manutenção Concluída" === tabelaNome[i].Servico) {
+                    dadoFMC.push({
+                        OS: tabelaNome[i].OS
+                    })
+
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFMCCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFMCLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoFMCBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoFMCImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFMCCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFMCCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFMCCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFMCCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoFMCBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFMCFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoFMCCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } 
+                }else 
+                //#endregion
+            
+             //#region Laudo
+                if ("Laudo" === tabelaNome[i].Servico) {
+                        dadoFLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFLACol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFLALei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoFLABusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoFLAImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFLACar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFLACar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFLACar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFLACar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoFLABerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFLAFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoFLACabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+
+                } else 
+            //#endregion
+                
+            //#region Suporte
+                if ("Suporte Remoto" === tabelaNome[i].Servico) {
+                        dadoFSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFSPCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFSPLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoFSPBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoFSPImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFSPCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFSPCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFSPCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFSPCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoFSPBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFSPFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoFSPCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                } else 
+            //#endregion
+
+            //#region Revisão M
+                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
+                        dadoFRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFRMCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoFRMLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoFRMBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoFRMImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFRMCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFRMCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFRMCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoFRMCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoFRMBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFRMFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoFRMCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    
+                } else
+                
+            //#endregion
+
+            //#region On-Site
+                if ("Chamado On-Site" === tabelaNome[i].Servico) {
+                        dadoFCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                    dadoFCOCabo.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                         }
+                } else
+            //#endregion
+
+
+                if ("Revisão de Venda" === tabelaNome[i].Servico) {
+                        dadoFRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                } else if ("Confecção de Cabos" === tabelaNome[i].Servico) {
+                        dadoFCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                } else if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
+                        dadoFMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+                else if ((ano === `${tabelaNome[i].Ano}`) && (mes === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico)) {
+                    console.log("funcionou Ano")
+                } else if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`) && (localStorage.usuario === tabelaNome[i].Tecnico)) {
+                    console.log("funcionou Mes e Ano")
+                }
             }
-            else if ((ano === `${tabelaNome[i].Ano}`) && (mes === "Todos")) {
-                console.log("funcionou Ano")
-            } else if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                console.log("funcionou Mes e Ano")
+
+            //Total Geral
+            let totalFMC = Object.keys(dadoFMC).length;
+            let totalFLA = Object.keys(dadoFLA).length;
+            let totalFSR = Object.keys(dadoFSR).length;
+            let totalFRM = Object.keys(dadoFRM).length;
+            let totalFCO = Object.keys(dadoFCO).length;
+            let totalFRV = Object.keys(dadoFRV).length;
+            let totalFCC = Object.keys(dadoFCC).length;
+            let totalFMMV = Object.keys(dadoFMMV).length;
+
+            //Total Manutenção
+            let totalFMCCol = Object.keys(dadoFMCCol).length;
+            let totalFMCLei = Object.keys(dadoFMCLei).length;
+            let totalFMCBusca = Object.keys(dadoFMCBusca).length;
+            let totalFMCImp = Object.keys(dadoFMCImp).length;
+            let totalFMCCar3 = Object.keys(dadoFMCCar3).length;
+            let totalFMCCar4 = Object.keys(dadoFMCCar4).length;
+            let totalFMCCar5 = Object.keys(dadoFMCCar5).length;
+            let totalFMCCar6 = Object.keys(dadoFMCCar6).length;
+            let totalFMCBerco = Object.keys(dadoFMCBerco).length;
+            let totalFMCFonte = Object.keys(dadoFMCFonte).length;
+            let totalFMCCabo = Object.keys(dadoFMCCabo).length;
+
+            //Total Laudo
+            let totalFLACol = Object.keys(dadoFLACol).length;
+            let totalFLALei = Object.keys(dadoFLALei).length;
+            let totalFLABusca = Object.keys(dadoFLABusca).length;
+            let totalFLAImp = Object.keys(dadoFLAImp).length;
+            let totalFLACar3 = Object.keys(dadoFLACar3).length;
+            let totalFLACar4 = Object.keys(dadoFLACar4).length;
+            let totalFLACar5 = Object.keys(dadoFLACar5).length;
+            let totalFLACar6 = Object.keys(dadoFLACar6).length;
+            let totalFLABerco = Object.keys(dadoFLABerco).length;
+            let totalFLAFonte = Object.keys(dadoFLAFonte).length;
+            let totalFLACabo = Object.keys(dadoFLACabo).length;
+
+            //Total Suporte
+            let totalFSPCol = Object.keys(dadoFSPCol).length;
+            let totalFSPLei = Object.keys(dadoFSPLei).length;
+            let totalFSPBusca = Object.keys(dadoFSPBusca).length;
+            let totalFSPImp = Object.keys(dadoFSPImp).length;
+            let totalFSPCar3 = Object.keys(dadoFSPCar3).length;
+            let totalFSPCar4 = Object.keys(dadoFSPCar4).length;
+            let totalFSPCar5 = Object.keys(dadoFSPCar5).length;
+            let totalFSPCar6 = Object.keys(dadoFSPCar6).length;
+            let totalFSPBerco = Object.keys(dadoFSPBerco).length;
+            let totalFSPFonte = Object.keys(dadoFSPFonte).length;
+            let totalFSPCabo = Object.keys(dadoFSPCabo).length;
+
+             //Total Revisão M
+             let totalFRMCol = Object.keys(dadoFRMCol).length;
+             let totalFRMLei = Object.keys(dadoFRMLei).length;
+             let totalFRMBusca = Object.keys(dadoFRMBusca).length;
+             let totalFRMImp = Object.keys(dadoFRMImp).length;
+             let totalFRMCar3 = Object.keys(dadoFRMCar3).length;
+             let totalFRMCar4 = Object.keys(dadoFRMCar4).length;
+             let totalFRMCar5 = Object.keys(dadoFRMCar5).length;
+             let totalFRMCar6 = Object.keys(dadoFRMCar6).length;
+             let totalFRMBerco = Object.keys(dadoFRMBerco).length;
+             let totalFRMFonte = Object.keys(dadoFRMFonte).length;
+             let totalFRMCabo = Object.keys(dadoFRMCabo).length;
+
+             //Total On-Site
+            let totalFCOCol = Object.keys(dadoFCOCol).length;
+            let totalFCOLei = Object.keys(dadoFCOLei).length;
+            let totalFCOBusca = Object.keys(dadoFCOBusca).length;
+            let totalFCOImp = Object.keys(dadoFCOImp).length;
+            let totalFCOCar3 = Object.keys(dadoFCOCar3).length;
+            let totalFCOCar4 = Object.keys(dadoFCOCar4).length;
+            let totalFCOCar5 = Object.keys(dadoFCOCar5).length;
+            let totalFCOCar6 = Object.keys(dadoFCOCar6).length;
+            let totalFCOBerco = Object.keys(dadoFCOBerco).length;
+            let totalFCOFonte = Object.keys(dadoFCOFonte).length;
+            let totalFCOCabo = Object.keys(dadoFCOCabo).length;
+
+
+            return this.setState({
+                //Listar Geral
+                listarMC: totalFMC,
+                listarLA: totalFLA,
+                listarSR: totalFSR,
+                listarRM: totalFRM,
+                listarCO: totalFCO,
+                listarRV: totalFRV,
+                listarCC: totalFCC,
+                listarMMV: totalFMMV,
+                
+                //Listar Manutenção
+                listarMCCOl: totalFMCCol,
+                listarMCLei: totalFMCLei,
+                listarMCBusca: totalFMCBusca,
+                listarMCImp: totalFMCImp,
+                listarMCCar3: totalFMCCar3,
+                listarMCCar4: totalFMCCar4,
+                listarMCCar5: totalFMCCar5,
+                listarMCCar6: totalFMCCar6,
+                listarMCBerco: totalFMCBerco,
+                listarMCFonte: totalFMCFonte,
+                listarMCCabo: totalFMCCabo,
+
+                //Listar Laudo
+                listarLACOl: totalFLACol,
+                listarLALei: totalFLALei,
+                listarLABusca: totalFLABusca,
+                listarLAImp: totalFLAImp,
+                listarLACar3: totalFLACar3,
+                listarLACar4: totalFLACar4,
+                listarLACar5: totalFLACar5,
+                listarLACar6: totalFLACar6,
+                listarLABerco: totalFLABerco,
+                listarLAFonte: totalFLAFonte,
+                listarLACabo: totalFLACabo,
+
+                 //Listar Suporte
+                 listarSPCOl: totalFSPCol,
+                 listarSPLei: totalFSPLei,
+                 listarSPBusca: totalFSPBusca,
+                 listarSPImp: totalFSPImp,
+                 listarSPCar3: totalFSPCar3,
+                 listarSPCar4: totalFSPCar4,
+                 listarSPCar5: totalFSPCar5,
+                 listarSPCar6: totalFSPCar6,
+                 listarSPBerco: totalFSPBerco,
+                 listarSPFonte: totalFSPFonte,
+                 listarSPCabo: totalFSPCabo,
+
+                //Listar Revisão M
+                listarRMCOl: totalFRMCol,
+                listarRMLei: totalFRMLei,
+                listarRMBusca: totalFRMBusca,
+                listarRMImp: totalFRMImp,
+                listarRMCar3: totalFRMCar3,
+                listarRMCar4: totalFRMCar4,
+                listarRMCar5: totalFRMCar5,
+                listarRMCar6: totalFRMCar6,
+                listarRMBerco: totalFRMBerco,
+                listarRMFonte: totalFRMFonte,
+                listarRMCabo: totalFRMCabo,
+
+                //Listar On-Site
+                listarCOCOl: totalFCOCol,
+                listarCOLei: totalFCOLei,
+                listarCOBusca: totalFCOBusca,
+                listarCOImp: totalFCOImp,
+                listarCOCar3: totalFCOCar3,
+                listarCOCar4: totalFCOCar4,
+                listarCOCar5: totalFCOCar5,
+                listarCOCar6: totalFCOCar6,
+                listarCOBerco: totalFCOBerco,
+                listarCOFonte: totalFCOFonte,
+                listarCOCabo: totalFCOCabo,
+            })
+        }
+
+
+        filtrarDados() {
+            const ano = document.getElementById("ano").value;
+            const mes = document.getElementById("mes").value;
+
+            if ((ano === "Todos") && (mes === "Todos")) {
+                this.buscarDados()
+                this.buscarEquipamento()
+                this.totalPorEquipamento()
+                console.log("Sem Filtro")
+            } else if ((ano === "Todos") && (mes !== "Todos")) {
+                this.buscarDadosFiltro(mes, ano)
+
+                console.log("Filtrando Apenas Mes" + mes)
+            } else if ((ano !== "Todos") && (mes === "Todos")) {
+                this.buscarDadosFiltro(mes, ano)
+                console.log("Filtrando Apenas O Ano" + ano)
+            } else if ((ano !== "Todos") && (mes !== "Todos")) {
+                this.buscarDadosFiltro(mes, ano)
+                console.log("Filtando os dois " + mes + " " + ano)
             }
         }
 
-    }
-
-
-    filtrarDados() {
-        const ano = document.getElementById("ano").value;
-        const mes = document.getElementById("mes").value;
-
-        if ((ano === "Todos") && (mes === "Todos")) {
-            this.buscarDados()
-            this.buscarEquipamento()
-            this.totalPorEquipamento()
-            console.log("Sem Filtro")
-        } else if ((ano === "Todos") && (mes !== "Todos")) {
-            this.buscarDadosFiltro(mes, ano)
-
-            console.log("Filtrando Apenas Mes" + mes)
-        } else if ((ano !== "Todos") && (mes === "Todos")) {
-            this.buscarDadosFiltro(mes, ano)
-            console.log("Filtrando Apenas O Ano" + ano)
-        } else if ((ano !== "Todos") && (mes !== "Todos")) {
-            this.buscarDadosFiltro(mes, ano)
-            console.log("Filtando os dois " + mes + " " + ano)
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                <div className="row mt-4">
-                    <div className="col-3 d-flex flex-row justify-content-center align-items-center">
-                        <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
-                    </div>
-                    <div className="col-3">
-                        <label>Mês: </label>
-                        <select id="mes" class="form-select" aria-label="Default select example">
-                            <option selected>Todos</option>
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
-                            <option>07</option>
-                            <option>08</option>
-                            <option>09</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                        </select>
-                    </div>
-                    <div className="col-3">
-                        <label>Ano: </label>
-                        <select id="ano" class="form-select" aria-label="Default select example">
-                            <option selected>Todos</option>
-                            <option>2022</option>
-                            <option>2023</option>
-                            <option>2024</option>
-                            <option>2025</option>
-                            <option>2026</option>
-                            <option>2027</option>
-                            <option>2028</option>
-                            <option>2029</option>
-                            <option>2030</option>
-                        </select>
-                    </div>
-                    <div className="col-3 d-flex align-items-end">
-                        <button className="btn btn-success" onClick={e => this.filtrarDados(e)}>Buscar</button>
-                    </div>
-                </div>
-                <div className='row mt-4 d-flex justify-content-around'>
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">
-                        <Grafico tipo="pie" titulo="Ordens de Serviço"
-                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                            texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                            nomeSerie="Ordem de Serviço"
-                            dado={[
-                                { name: "Manutenção Concluída", y: this.state.listarMC },
-                                { name: "Laudo", y: this.state.listarLA },
-                                { name: "Suporte Remoto", y: this.state.listarSR },
-                                { name: "Revisão de Manutenção", y: this.state.listarRM },
-                                { name: "Chamado On-Site", y: this.state.listarCO },
-                                { name: "Revisão de Venda", y: this.state.listarRV },
-                                { name: "Confecção de Cabos", y: this.state.listarCC },
-                                { name: "M/M de Venda", y: this.state.listarMMV },
-                            ]}
-                        />
-                    </div>
-                    <div className="col-12 col-md-5 sombra flex-fill">
-                        <Grafico tipo="column" titulo="Ordens de Serviço"
-                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                            texto='{point.y:1f}'
-                            nomeSerie="Ordem de Serviço"
-                            dado={[
-                                { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
-                                { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
-                                { name: "Suporte", y: this.state.listarSR, drilldown: "Suporte" },
-                                { name: "Revisão M", y: this.state.listarRM, drilldown: "Revisão M" },
-                                { name: "On-Site", y: this.state.listarCO, drilldown: "On-site" },
-                                { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
-                                { name: "Confecção de Cabos", y: this.state.listarCC, drilldown: "Conf C" },
-                                { name: "M/M de Venda", y: this.state.listarMMV, drilldown: "M/M de Venda" },
-                            ]}
-                            serie={[
-                                {
-                                    name: "Manutenção",
-                                    id: "Manutenção",
-                                    data: this.mostrarEquipamento("Manutenção")
-                                },
-                                {
-                                    name: "Laudo",
-                                    id: "Laudo",
-                                    data: this.mostrarEquipamento("Laudo")
-                                },
-                                {
-                                    name: "Suporte",
-                                    id: "Suporte",
-                                    data: this.mostrarEquipamento("Suporte")
-                                },
-                                {
-                                    name: "Revisão M",
-                                    id: "Revisão M",
-                                    data: this.mostrarEquipamento("Revisão M")
-                                },
-                                {
-                                    name: "On-site",
-                                    id: "On-site",
-                                    data: this.mostrarEquipamento("On-site")
-                                },
-                                {
-                                    name: "Revisão V",
-                                    id: "Revisão V",
-                                    data: this.mostrarEquipamento("Revisão V")
-                                },
-                                {
-                                    name: "Conf C",
-                                    id: "Conf C",
-                                    data: this.mostrarEquipamento("Conf C")
-                                },
-                                {
-                                    name: "M/M de Venda",
-                                    id: "M/M de Venda",
-                                    data: this.mostrarEquipamento("M/M de Venda")
-                                }
-
-                            ]}
-                        />
-                    </div>
+        render() {
+            return (
+                <div>
                     <div className="row mt-4">
-                        <div className="col-12 sombra mx-2">
-                            <Grafico tipo="column" titulo="Equipamentos"
+                        <div className="col-3 d-flex flex-row justify-content-center align-items-center">
+                            <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
+                        </div>
+                        <div className="col-3">
+                            <label>Mês: </label>
+                            <select id="mes" class="form-select" aria-label="Default select example">
+                                <option selected>Todos</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+                        <div className="col-3">
+                            <label>Ano: </label>
+                            <select id="ano" class="form-select" aria-label="Default select example">
+                                <option selected>Todos</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                            </select>
+                        </div>
+                        <div className="col-3 d-flex align-items-end">
+                            <button className="btn btn-success" onClick={e => this.filtrarDados(e)}>Buscar</button>
+                        </div>
+                    </div>
+                    <div className='row mt-4 d-flex justify-content-around'>
+                        <div className="col-12 col-md-5 flex-fill mx-3 sombra">
+                            <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                nomeSerie="Ordem de Serviço"
+                                dado={[
+                                    { name: "Manutenção Concluída", y: this.state.listarMC },
+                                    { name: "Laudo", y: this.state.listarLA },
+                                    { name: "Suporte Remoto", y: this.state.listarSR },
+                                    { name: "Revisão de Manutenção", y: this.state.listarRM },
+                                    { name: "Chamado On-Site", y: this.state.listarCO },
+                                    { name: "Revisão de Venda", y: this.state.listarRV },
+                                    { name: "Confecção de Cabos", y: this.state.listarCC },
+                                    { name: "M/M de Venda", y: this.state.listarMMV },
+                                ]}
+                            />
+                        </div>
+                        <div className="col-12 col-md-5 sombra flex-fill">
+                            <Grafico tipo="column" titulo="Ordens de Serviço"
                                 formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                 texto='{point.y:1f}'
-                                nomeSerie="Equipamento"
+                                nomeSerie="Ordem de Serviço"
                                 dado={[
-                                    { name: "Coletor", y: this.state.listarTotalCOl },
-                                    { name: "Leitor", y: this.state.listarTotalLei },
-                                    { name: "Busca Preço", y: this.state.listarTotalBusca },
-                                    { name: "Impressora", y: this.state.listarTotalImp },
-                                    { name: "Carregador 3 P", y: this.state.listarTotalCar3 },
-                                    { name: "Carregador 4 P", y: this.state.listarTotalCar4 },
-                                    { name: "Carregador 5 P", y: this.state.listarTotalCar5 },
-                                    { name: "Carregador 6 P", y: this.state.listarTotalCar6 },
-                                    { name: "Berço", y: this.state.listarTotalBerco },
-                                    { name: "Fonte", y: this.state.listarTotalFonte },
-                                    { name: "Cabo C", y: this.state.listarTotalCabos }
-                                ]} />
+                                    { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
+                                    { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
+                                    { name: "Suporte", y: this.state.listarSR, drilldown: "Suporte" },
+                                    { name: "Revisão M", y: this.state.listarRM, drilldown: "Revisão M" },
+                                    { name: "On-Site", y: this.state.listarCO, drilldown: "On-site" },
+                                    { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
+                                    { name: "Confecção de Cabos", y: this.state.listarCC, drilldown: "Conf C" },
+                                    { name: "M/M de Venda", y: this.state.listarMMV, drilldown: "M/M de Venda" },
+                                ]}
+                                serie={[
+                                    {
+                                        name: "Manutenção",
+                                        id: "Manutenção",
+                                        data: this.mostrarEquipamento("Manutenção")
+                                    },
+                                    {
+                                        name: "Laudo",
+                                        id: "Laudo",
+                                        data: this.mostrarEquipamento("Laudo")
+                                    },
+                                    {
+                                        name: "Suporte",
+                                        id: "Suporte",
+                                        data: this.mostrarEquipamento("Suporte")
+                                    },
+                                    {
+                                        name: "Revisão M",
+                                        id: "Revisão M",
+                                        data: this.mostrarEquipamento("Revisão M")
+                                    },
+                                    {
+                                        name: "On-site",
+                                        id: "On-site",
+                                        data: this.mostrarEquipamento("On-site")
+                                    },
+                                    {
+                                        name: "Revisão V",
+                                        id: "Revisão V",
+                                        data: this.mostrarEquipamento("Revisão V")
+                                    },
+                                    {
+                                        name: "Conf C",
+                                        id: "Conf C",
+                                        data: this.mostrarEquipamento("Conf C")
+                                    },
+                                    {
+                                        name: "M/M de Venda",
+                                        id: "M/M de Venda",
+                                        data: this.mostrarEquipamento("M/M de Venda")
+                                    }
+
+                                ]}
+                            />
+                        </div>
+                        <div className="row mt-4">
+                            <div className="col-12 sombra mx-2">
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarTotalCOl },
+                                        { name: "Leitor", y: this.state.listarTotalLei },
+                                        { name: "Busca Preço", y: this.state.listarTotalBusca },
+                                        { name: "Impressora", y: this.state.listarTotalImp },
+                                        { name: "Carregador 3 P", y: this.state.listarTotalCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarTotalCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarTotalCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarTotalCar6 },
+                                        { name: "Berço", y: this.state.listarTotalBerco },
+                                        { name: "Fonte", y: this.state.listarTotalFonte },
+                                        { name: "Cabo C", y: this.state.listarTotalCabos }
+                                    ]} />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
 
+        }
     }
-}
