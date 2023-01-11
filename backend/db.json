@@ -478,6 +478,22 @@
       "Status": "",
       "Tecnico": "Diego Carvalho",
       "id": 38
+    },
+    {
+      "Data": "2023-01-11T12:17:00.545Z",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "50456",
+      "Cliente": "C$a",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "TC51",
+      "NS": "47895515671818",
+      "Servico": "Laudo",
+      "Classificacao": "Defeito",
+      "Observacao": "",
+      "Status": "Pronto",
+      "Tecnico": "Diego Carvalho",
+      "id": 39
     }
   ],
   "LoginUsuario": [
