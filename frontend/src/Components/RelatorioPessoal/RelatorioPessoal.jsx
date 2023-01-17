@@ -9,121 +9,149 @@ import Url from '../Url/Url';
 
 const initialState = {
     //Ordem de Serviço
-    listarMC: [],
-    listarLA: [],
-    listarSR: [],
-    listarRM: [],
-    listarCO: [],
-    listarRV: [],
-    listarCC: [],
-    listarMMV: [],
+    listarMC: [0],
+    listarLA: [0],
+    listarSR: [0],
+    listarRM: [0],
+    listarCO: [0],
+    listarRV: [0],
+    listarCC: [0],
+    listarMMV: [0],
+    listartRP:[0],
+    listarLP: [0],
 
     //Equipamento Manutenção
-    listarMCCOl: [],
-    listarMCImp: [],
-    listarMCLei: [],
-    listarMCBusca: [],
-    listarMCCar3: [],
-    listarMCCar4: [],
-    listarMCCar5: [],
-    listarMCCar6: [],
-    listarMCBerco: [],
-    listarMCFonte: [],
-    listarMCCabo: [],
+    listarMCCOl: [0],
+    listarMCImp: [0],
+    listarMCLei: [0],
+    listarMCBusca: [0],
+    listarMCCar3: [0],
+    listarMCCar4: [0],
+    listarMCCar5: [0],
+    listarMCCar6: [0],
+    listarMCBerco: [0],
+    listarMCFonte: [0],
+    listarMCCabo: [0],
 
     //Equipamento Laudo
-    listarLACOl: [],
-    listarLAImp: [],
-    listarLALei: [],
-    listarLABusca: [],
-    listarLACar3: [],
-    listarLACar4: [],
-    listarLACar5: [],
-    listarLACar6: [],
-    listarLABerco: [],
-    listarLAFonte: [],
-    listarLACabo: [],
+    listarLACOl: [0],
+    listarLAImp: [0],
+    listarLALei: [0],
+    listarLABusca: [0],
+    listarLACar3: [0],
+    listarLACar4: [0],
+    listarLACar5: [0],
+    listarLACar6: [0],
+    listarLABerco: [0],
+    listarLAFonte: [0],
+    listarLACabo: [0],
 
     //Equipamento Suporte
-    listarSPCOl: [],
-    listarSPImp: [],
-    listarSPLei: [],
-    listarSPBusca: [],
-    listarSPCar3: [],
-    listarSPCar4: [],
-    listarSPCar5: [],
-    listarSPCar6: [],
-    listarSPBerco: [],
-    listarSPFonte: [],
-    listarSPCabo: [],
+    listarSPCOl: [0],
+    listarSPImp: [0],
+    listarSPLei: [0],
+    listarSPBusca: [0],
+    listarSPCar3: [0],
+    listarSPCar4: [0],
+    listarSPCar5: [0],
+    listarSPCar6: [0],
+    listarSPBerco: [0],
+    listarSPFonte: [0],
+    listarSPCabo: [0],
 
     //Equipamento Revisão M
-    listarRMCOl: [],
-    listarRMImp: [],
-    listarRMLei: [],
-    listarRMBusca: [],
-    listarRMCar3: [],
-    listarRMCar4: [],
-    listarRMCar5: [],
-    listarRMCar6: [],
-    listarRMBerco: [],
-    listarRMFonte: [],
-    listarRMCabo: [],
+    listarRMCOl: [0],
+    listarRMImp: [0],
+    listarRMLei: [0],
+    listarRMBusca: [0],
+    listarRMCar3: [0],
+    listarRMCar4: [0],
+    listarRMCar5: [0],
+    listarRMCar6: [0],
+    listarRMBerco: [0],
+    listarRMFonte: [0],
+    listarRMCabo: [0],
 
     //Equipamento Chamado On-site
-    listarCOCOl: [],
-    listarCOImp: [],
-    listarCOLei: [],
-    listarCOBusca: [],
-    listarCOCar3: [],
-    listarCOCar4: [],
-    listarCOCar5: [],
-    listarCOCar6: [],
-    listarCOBerco: [],
-    listarCOFonte: [],
-    listarCOCabo: [],
+    listarCOCOl: [0],
+    listarCOImp: [0],
+    listarCOLei: [0],
+    listarCOBusca: [0],
+    listarCOCar3: [0],
+    listarCOCar4: [0],
+    listarCOCar5: [0],
+    listarCOCar6: [0],
+    listarCOBerco: [0],
+    listarCOFonte: [0],
+    listarCOCabo: [0],
 
     //Equipamento Revisão V
-    listarRVCOl: [],
-    listarRVImp: [],
-    listarRVLei: [],
-    listarRVBusca: [],
-    listarRVCar3: [],
-    listarRVCar4: [],
-    listarRVCar5: [],
-    listarRVCar6: [],
-    listarRVBerco: [],
-    listarRVFonte: [],
-    listarRVCabo: [],
+    listarRVCOl: [0],
+    listarRVImp: [0],
+    listarRVLei: [0],
+    listarRVBusca: [0],
+    listarRVCar3: [0],
+    listarRVCar4: [0],
+    listarRVCar5: [0],
+    listarRVCar6: [0],
+    listarRVBerco: [0],
+    listarRVFonte: [0],
+    listarRVCabo: [0],
 
     //Equipamento Cabo
-    listarCCCabo: [],
+    listarCCCabo: [0],
 
     //Equipamento Montagem e Manutenção de Venda
-    listarMMVCOl: [],
-    listarMMVImp: [],
-    listarMMVLei: [],
-    listarMMVBusca: [],
-    listarMMVCar3: [],
-    listarMMVCar4: [],
-    listarMMVCar5: [],
-    listarMMVCar6: [],
-    listarMMVBerco: [],
-    listarMMVFonte: [],
-    listarMMVCabo: [],
+    listarMMVCOl: [0],
+    listarMMVImp: [0],
+    listarMMVLei: [0],
+    listarMMVBusca: [0],
+    listarMMVCar3: [0],
+    listarMMVCar4: [0],
+    listarMMVCar5: [0],
+    listarMMVCar6: [0],
+    listarMMVBerco: [0],
+    listarMMVFonte: [0],
+    listarMMVCabo: [0],
+
+    //Equipamento Recuperação Placa
+    listarRPCOl: [0],
+    listarRPImp: [0],
+    listarRPLei: [0],
+    listarRPBusca: [0],
+    listarRPCar3: [0],
+    listarRPCar4: [0],
+    listarRPCar5: [0],
+    listarRPCar6: [0],
+    listarRPBerco: [0],
+    listarRPFonte: [0],
+    listarRPCabo: [0],
+
+    //Equipamento Limpeza
+    listarLPCOl: [0],
+    listarLPImp: [0],
+    listarLPLei: [0],
+    listarLPBusca: [0],
+    listarLPCar3: [0],
+    listarLPCar4: [0],
+    listarLPCar5: [0],
+    listarLPCar6: [0],
+    listarLPBerco: [0],
+    listarLPFonte: [0],
+    listarLPCabo: [0],
 
     //Total Equipamentos
-    listartTotalCol: [],
-    listarTotalImp: [],
-    listarTotalLei: [],
-    listarTotalBusca: [],
-    listarTotalCar3: [],
-    listarTotalCar4: [],
-    listarTotalCar5: [],
-    listarTotalCar6: [],
-    listarTotalBerco: [],
-    listarTotalFonte: [],
-    listarTotalCabos: [],
+    listartTotalCol: [0],
+    listarTotalImp: [0],
+    listarTotalLei: [0],
+    listarTotalBusca: [0],
+    listarTotalCar3: [0],
+    listarTotalCar4: [0],
+    listarTotalCar5: [0],
+    listarTotalCar6: [0],
+    listarTotalBerco: [0],
+    listarTotalFonte: [0],
+    listarTotalCabos: [0],
 
     //total Equipamentos
     listarTotalEquip: [0]
@@ -155,6 +183,8 @@ export default class Relatorio extends React.Component {
         let dadoRV = [];
         let dadoCC = [];
         let dadoMMV = [];
+        let dadoRP = [];
+        let dadoLP = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)) {
@@ -197,6 +227,14 @@ export default class Relatorio extends React.Component {
                     dadoMMV.push({
                         OS: tabelaNome[i].OS
                     })
+                }else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                    dadoRP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)) {
+                    dadoLP.push({
+                        OS: tabelaNome[i].OS
+                    })
                 }
         }
 
@@ -208,9 +246,11 @@ export default class Relatorio extends React.Component {
         const totalRV = Object.keys(dadoRV).length;
         const totalCC = Object.keys(dadoCC).length;
         const totalMMV = Object.keys(dadoMMV).length;
+        const totalRP = Object.keys(dadoRP).length;
+        const totalLP = Object.keys(dadoLP).length;
 
         const totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV + 
-            totalCC + totalMMV
+            totalCC + totalMMV + totalRP + totalLP
 
         return this.setState({
             listarMC: totalMC,
@@ -221,6 +261,8 @@ export default class Relatorio extends React.Component {
             listarRV: totalRV,
             listarCC: totalCC,
             listarMMV: totalMMV,
+            listarRP: totalRP,
+            listarLP: totalLP,
 
             listarTotalEquip: totalEquip
         })
@@ -324,6 +366,33 @@ export default class Relatorio extends React.Component {
             let dadoMMVBerco = [];
             let dadoMMVFonte = [];
             let dadoMMVCabo = [];
+
+            //Variavel Recuperação Placa
+            let dadoRPCol = [];
+            let dadoRPLei = [];
+            let dadoRPImp = [];
+            let dadoRPBusca = [];
+            let dadoRPCar3 = [];
+            let dadoRPCar4 = [];
+            let dadoRPCar5 = [];
+            let dadoRPCar6 = [];
+            let dadoRPBerco = [];
+            let dadoRPFonte = [];
+            let dadoRPCabo = [];
+
+             //Variavel Limpeza
+             let dadoLPCol = [];
+             let dadoLPLei = [];
+             let dadoLPImp = [];
+             let dadoLPBusca = [];
+             let dadoLPCar3 = [];
+             let dadoLPCar4 = [];
+             let dadoLPCar5 = [];
+             let dadoLPCar6 = [];
+             let dadoLPBerco = [];
+             let dadoLPFonte = [];
+             let dadoLPCabo = [];
+
             //#endregion
 
             for (let i = 0; i < tabelaNome.length; i++) {
@@ -748,9 +817,130 @@ export default class Relatorio extends React.Component {
                                             dadoMMVCabo.push({
                                                 OS: tabelaNome[i].OS
                                             })
+                                        } else
+
+                                        //#endregion
+
+                                        //#region Recuperação Placa
+
+                                        if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoRPCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoRPLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoRPBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoRPImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoRPCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoRPCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoRPCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoRPCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoRPBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoRPFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                            && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                            dadoRPCabo.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        }else
+
+                                        //#endregion
+
+                                        //#region Limpeza
+                                        if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoLPCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoLPLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoLPBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoLPImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoLPCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoLPCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoLPCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoLPCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoLPBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoLPFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                            && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                            dadoLPCabo.push({
+                                                OS: tabelaNome[i].OS
+                                            })
                                         }
 
-                //#endregion
+                                        //#endregion
             }
 
             //#region Totais Object
@@ -847,6 +1037,32 @@ export default class Relatorio extends React.Component {
             let totalMMVBerco = Object.keys(dadoMMVBerco).length;
             let totalMMVFonte = Object.keys(dadoMMVFonte).length;
             let totalMMVCabo = Object.keys(dadoMMVCabo).length;
+
+            //Total Recuperação Placa
+            let totalRPCol = Object.keys(dadoRPCol).length;
+            let totalRPLei = Object.keys(dadoRPLei).length;
+            let totalRPBusca = Object.keys(dadoRPBusca).length;
+            let totalRPImp = Object.keys(dadoRPImp).length;
+            let totalRPCar3 = Object.keys(dadoRPCar3).length;
+            let totalRPCar4 = Object.keys(dadoRPCar4).length;
+            let totalRPCar5 = Object.keys(dadoRPCar5).length;
+            let totalRPCar6 = Object.keys(dadoRPCar6).length;
+            let totalRPBerco = Object.keys(dadoRPBerco).length;
+            let totalRPFonte = Object.keys(dadoRPFonte).length;
+            let totalRPCabo = Object.keys(dadoRPCabo).length;
+
+            //Total Limpeza
+            let totalLPCol = Object.keys(dadoLPCol).length;
+            let totalLPLei = Object.keys(dadoLPLei).length;
+            let totalLPBusca = Object.keys(dadoLPBusca).length;
+            let totalLPImp = Object.keys(dadoLPImp).length;
+            let totalLPCar3 = Object.keys(dadoLPCar3).length;
+            let totalLPCar4 = Object.keys(dadoLPCar4).length;
+            let totalLPCar5 = Object.keys(dadoLPCar5).length;
+            let totalLPCar6 = Object.keys(dadoLPCar6).length;
+            let totalLPBerco = Object.keys(dadoLPBerco).length;
+            let totalLPFonte = Object.keys(dadoLPFonte).length;
+            let totalLPCabo = Object.keys(dadoLPCabo).length;
             //#endregion
 
             //#region Return arrays
@@ -944,6 +1160,32 @@ export default class Relatorio extends React.Component {
                 listarMMVBerco: totalMMVBerco,
                 listarMMVFonte: totalMMVFonte,
                 listarMMVCabo: totalMMVCabo,
+
+                //Listar Recuperação Placa
+                listarRPCOl: totalRPCol,
+                listarRPLei: totalRPLei,
+                listarRPBusca: totalRPBusca,
+                listarRPImp: totalRPImp,
+                listarRPCar3: totalRPCar3,
+                listarRPCar4: totalRPCar4,
+                listarRPCar5: totalRPCar5,
+                listarRPCar6: totalRPCar6,
+                listarRPBerco: totalRPBerco,
+                listarRPFonte: totalRPFonte,
+                listarRPCabo: totalRPCabo,
+
+                //Listar Limpeza
+                listarLPCOl: totalLPCol,
+                listarLPLei: totalLPLei,
+                listarLPBusca: totalLPBusca,
+                listarLPImp: totalLPImp,
+                listarLPCar3: totalLPCar3,
+                listarLPCar4: totalLPCar4,
+                listarLPCar5: totalLPCar5,
+                listarLPCar6: totalLPCar6,
+                listarLPBerco: totalLPBerco,
+                listarLPFonte: totalLPFonte,
+                listarLPCabo: totalLPCabo,
             })
             //#endregion
 
@@ -1078,6 +1320,36 @@ export default class Relatorio extends React.Component {
             ]
 
             return data
+        }else if (estagio === "Rec Placa") {
+            const data = [
+                { name: "Coletor", y: this.state.listarRPCOl },
+                { name: "Leitor", y: this.state.listarRPLei },
+                { name: "Busca Preço", y: this.state.listarRPBusca },
+                { name: "Impressora", y: this.state.listarRPImp },
+                { name: "Carregador 3 P", y: this.state.listarRPCar3 },
+                { name: "Carregador 4 P", y: this.state.listarRPCar4 },
+                { name: "Carregador 5 P", y: this.state.listarRPCar5 },
+                { name: "Carregador 6 P", y: this.state.listarRPCar6 },
+                { name: "Berço", y: this.state.listarRPBerco },
+                { name: "Fonte", y: this.state.listarRPFonte }
+            ]
+
+            return data
+        }else if (estagio === "Limpeza") {
+            const data = [
+                { name: "Coletor", y: this.state.listarLPCOl },
+                { name: "Leitor", y: this.state.listarLPLei },
+                { name: "Busca Preço", y: this.state.listarLPBusca },
+                { name: "Impressora", y: this.state.listarLPImp },
+                { name: "Carregador 3 P", y: this.state.listarLPCar3 },
+                { name: "Carregador 4 P", y: this.state.listarLPCar4 },
+                { name: "Carregador 5 P", y: this.state.listarLPCar5 },
+                { name: "Carregador 6 P", y: this.state.listarLPCar6 },
+                { name: "Berço", y: this.state.listarLPBerco },
+                { name: "Fonte", y: this.state.listarLPFonte }
+            ]
+
+            return data
         }
     }
 
@@ -1189,6 +1461,8 @@ export default class Relatorio extends React.Component {
         let dadoFRV = [];
         let dadoFCC = [];
         let dadoFMMV = [];
+        let dadoFRP = [];
+        let dadoFLP = [];
 
         //dados manutenção equipamento
         let dadoFMCCol = [];
@@ -1284,6 +1558,31 @@ export default class Relatorio extends React.Component {
         let dadoFMMVBerco = [];
         let dadoFMMVFonte = [];
         let dadoFMMVCabo = [];
+
+        //Variavel Recuperação Placa
+        let dadoFRPCol = [];
+        let dadoFRPLei = [];
+        let dadoFRPImp = [];
+        let dadoFRPBusca = [];
+        let dadoFRPCar3 = [];
+        let dadoFRPCar4 = [];
+        let dadoFRPCar5 = [];
+        let dadoFRPCar6 = [];
+        let dadoFRPBerco = [];
+        let dadoFRPFonte = [];
+
+        //Variavel Limpeza
+        let dadoFLPCol = [];
+        let dadoFLPLei = [];
+        let dadoFLPImp = [];
+        let dadoFLPBusca = [];
+        let dadoFLPCar3 = [];
+        let dadoFLPCar4 = [];
+        let dadoFLPCar5 = [];
+        let dadoFLPCar6 = [];
+        let dadoFLPBerco = [];
+        let dadoFLPFonte = [];
+       
         //#endregion
                 
         for (let i = 0; i < tabelaNome.length; i++) {
@@ -1681,9 +1980,112 @@ export default class Relatorio extends React.Component {
                                                 OS: tabelaNome[i].OS
                                             })
                         }
-                    }
+                    } else
             //#endregion
-                } else
+                
+            //#region Recuperação Placa
+            if ("Recuperação de Placa" === tabelaNome[i].Servico) {
+                dadoFRP.push({
+                    OS: tabelaNome[i].OS
+                })
+
+                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                }
+            }else
+
+            //#endregion
+        
+            //#region Limpeza
+            if ("Limpeza" === tabelaNome[i].Servico) {
+                dadoFLP.push({
+                    OS: tabelaNome[i].OS
+                })
+
+                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                }
+            }
+
+            //#endregion
+        
+            } else
             //#endregion
                  
             //#region ano
@@ -2080,9 +2482,112 @@ export default class Relatorio extends React.Component {
                                                 OS: tabelaNome[i].OS
                                             })
                         }
-                    }
+                    }else
             //#endregion
-                } else
+                
+            //#region Recuperação Placa
+            if ("Recuperação de Placa" === tabelaNome[i].Servico) {
+                dadoFRP.push({
+                    OS: tabelaNome[i].OS
+                })
+
+                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFRPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                }
+            }
+
+            //#endregion
+        
+            //#region Limpeza
+            if ("Limpeza" === tabelaNome[i].Servico) {
+                dadoFLP.push({
+                    OS: tabelaNome[i].OS
+                })
+
+                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFLPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                }
+            }
+
+            //#endregion
+        
+        } else
             //#endregion
 
             //#region mês e ano
@@ -2481,7 +2986,111 @@ export default class Relatorio extends React.Component {
                         }
                     }
             //#endregion
-                }
+            
+                       //#region Recuperação Placa
+                       if ("Recuperação de Placa" === tabelaNome[i].Servico) {
+                        dadoFRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+        
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoFRPFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        }
+                    }
+        
+                    //#endregion
+                
+                    //#region Limpeza
+                    if ("Limpeza" === tabelaNome[i].Servico) {
+                        dadoFLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+        
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoFLPFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                        }
+                    }
+        
+                    //#endregion
+                
+        
+        }
             //#endregion
             }
 
@@ -2495,6 +3104,8 @@ export default class Relatorio extends React.Component {
             let totalFRV = Object.keys(dadoFRV).length;
             let totalFCC = Object.keys(dadoFCC).length;
             let totalFMMV = Object.keys(dadoFMMV).length;
+            let totalFRP = Object.keys(dadoFRP).length;
+            let totalFLP = Object.keys(dadoFLP).length;
 
             //Total Manutenção
             let totalFMCCol = Object.keys(dadoFMCCol).length;
@@ -2590,27 +3201,51 @@ export default class Relatorio extends React.Component {
             let totalFMMVFonte = Object.keys(dadoFMMVFonte).length;
             let totalFMMVCabo = Object.keys(dadoFMMVCabo).length;
 
+            //Total Recuperação Placa
+            let totalFRPCol = Object.keys(dadoFRPCol).length;
+            let totalFRPLei = Object.keys(dadoFRPLei).length;
+            let totalFRPBusca = Object.keys(dadoFRPBusca).length;
+            let totalFRPImp = Object.keys(dadoFRPImp).length;
+            let totalFRPCar3 = Object.keys(dadoFRPCar3).length;
+            let totalFRPCar4 = Object.keys(dadoFRPCar4).length;
+            let totalFRPCar5 = Object.keys(dadoFRPCar5).length;
+            let totalFRPCar6 = Object.keys(dadoFRPCar6).length;
+            let totalFRPBerco = Object.keys(dadoFRPBerco).length;
+            let totalFRPFonte = Object.keys(dadoFRPFonte).length;
+
+            //Total Recuperação Placa
+            let totalFLPCol = Object.keys(dadoFLPCol).length;
+            let totalFLPLei = Object.keys(dadoFLPLei).length;
+            let totalFLPBusca = Object.keys(dadoFLPBusca).length;
+            let totalFLPImp = Object.keys(dadoFLPImp).length;
+            let totalFLPCar3 = Object.keys(dadoFLPCar3).length;
+            let totalFLPCar4 = Object.keys(dadoFLPCar4).length;
+            let totalFLPCar5 = Object.keys(dadoFLPCar5).length;
+            let totalFLPCar6 = Object.keys(dadoFLPCar6).length;
+            let totalFLPBerco = Object.keys(dadoFLPBerco).length;
+            let totalFLPFonte = Object.keys(dadoFLPFonte).length;
+
             //total por equipamento
             let totalFilCol = totalFMCCol + totalFLACol + totalFSPCol + totalFRMCol + 
-                totalFCOCol + totalFRVCol + totalFMMVCol
+                totalFCOCol + totalFRVCol + totalFMMVCol + totalFRPCol + totalFLPCol
             let totalFilLei = totalFMCLei + totalFLALei + totalFSPLei + totalFRMLei + 
-                totalFCOLei + totalFRVLei + totalFMMVLei
+                totalFCOLei + totalFRVLei + totalFMMVLei + totalFRPLei + totalFLPLei
             let totalFilBusca = totalFMCBusca + totalFLABusca + totalFSPBusca + totalFRMBusca + 
-                totalFCOBusca + totalFRVBusca + totalFMMVBusca
+                totalFCOBusca + totalFRVBusca + totalFMMVBusca + totalFRPBusca + totalFLPBusca
             let totalFilImp = totalFMCImp + totalFLAImp + totalFSPImp + totalFRMImp + 
-                totalFCOImp + totalFRVImp + totalFMMVImp
+                totalFCOImp + totalFRVImp + totalFMMVImp + totalFRPImp + totalFLPImp
             let totalFilCar3 = totalFMCCar3 + totalFLACar3 + totalFSPCar3 + totalFRMCar3 + 
-                totalFCOCar3 + totalFRVCar3 + totalFMMVCar3
+                totalFCOCar3 + totalFRVCar3 + totalFMMVCar3 + totalFRPCar3 + totalFLPCar3
             let totalFilCar4 = totalFMCCar4 + totalFLACar4 + totalFSPCar4 + totalFRMCar4 + 
-                totalFCOCar4 + totalFRVCar4 + totalFMMVCar4
+                totalFCOCar4 + totalFRVCar4 + totalFMMVCar4 + totalFRPCar4 + totalFLPCar4
             let totalFilCar5 = totalFMCCar5 + totalFLACar5 + totalFSPCar5 + totalFRMCar5 + 
-                totalFCOCar5 + totalFRVCar5 + totalFMMVCar5
+                totalFCOCar5 + totalFRVCar5 + totalFMMVCar5 + totalFRPCar5 + totalFLPCar5
             let totalFilCar6 = totalFMCCar6 + totalFLACar6 + totalFSPCar6 + totalFRMCar6 + 
-                totalFCOCar6 + totalFRVCar6 + totalFMMVCar6
+                totalFCOCar6 + totalFRVCar6 + totalFMMVCar6  + totalFRPCar6 + totalFLPCar6
             let totalFilBerco = totalFMCBerco + totalFLABerco + totalFSPBerco + totalFRMBerco + 
-                totalFCOBerco + totalFRVBerco + totalFMMVBerco
+                totalFCOBerco + totalFRVBerco + totalFMMVBerco + totalFRPBerco + totalFLPBerco
             let totalFilFonte = totalFMCFonte + totalFLAFonte + totalFSPFonte + totalFRMFonte + 
-                totalFCOFonte + totalFRVFonte + totalFMMVFonte
+                totalFCOFonte + totalFRVFonte + totalFMMVFonte + totalFRPFonte + totalFLPFonte
             let totalFilCabo = totalFCCCabos
 
             //total equipamentos
@@ -2630,6 +3265,8 @@ export default class Relatorio extends React.Component {
                 listarRV: totalFRV,
                 listarCC: totalFCC,
                 listarMMV: totalFMMV,
+                listarRP: totalFRP,
+                listarLP: totalFLP,
                 
                 //Listar Manutenção
                 listarMCCOl: totalFMCCol,
@@ -2724,6 +3361,30 @@ export default class Relatorio extends React.Component {
                 listarMMVBerco: totalFMMVBerco,
                 listarMMVFonte: totalFMMVFonte,
                 listarMMVCabo: totalFMMVCabo,
+
+                //Listar Recuperação Placa
+                listarRPCOl: totalFRPCol,
+                listarRPLei: totalFRPLei,
+                listarRPBusca: totalFRPBusca,
+                listarRPImp: totalFRPImp,
+                listarRPCar3: totalFRPCar3,
+                listarRPCar4: totalFRPCar4,
+                listarRPCar5: totalFRPCar5,
+                listarRPCar6: totalFRPCar6,
+                listarRPBerco: totalFRPBerco,
+                listarRPFonte: totalFRPFonte,
+
+                //Listar Limpeza
+                listarLPCOl: totalFLPCol,
+                listarLPLei: totalFLPLei,
+                listarLPBusca: totalFLPBusca,
+                listarLPImp: totalFLPImp,
+                listarLPCar3: totalFLPCar3,
+                listarLPCar4: totalFLPCar4,
+                listarLPCar5: totalFLPCar5,
+                listarLPCar6: totalFLPCar6,
+                listarLPBerco: totalFLPBerco,
+                listarLPFonte: totalFLPFonte,
 
                 //total por equipamento
                 listarTotalCOl: totalFilCol,
@@ -2836,6 +3497,8 @@ export default class Relatorio extends React.Component {
                                     { name: "Revisão de Venda", y: this.state.listarRV },
                                     { name: "Confecção de Cabos", y: this.state.listarCC },
                                     { name: "M/M de Venda", y: this.state.listarMMV },
+                                    { name: "Recuperação Placa", y: this.state.listarRP },
+                                    { name: "Limpeza", y: this.state.listarLP },
                                 ]}
                             />
                         </div>
@@ -2853,6 +3516,8 @@ export default class Relatorio extends React.Component {
                                     { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
                                     { name: "Confecção de Cabos", y: this.state.listarCC, drilldown: "Conf C" },
                                     { name: "M/M de Venda", y: this.state.listarMMV, drilldown: "M/M de Venda" },
+                                    { name: "Recuperação Placa", y: this.state.listarRP, drilldown:"Rec Placa"},
+                                    { name: "Limpeza", y: this.state.listarLP, drilldown: "Limpeza" },
                                 ]}
                                 serie={[
                                     {
@@ -2894,6 +3559,16 @@ export default class Relatorio extends React.Component {
                                         name: "M/M de Venda",
                                         id: "M/M de Venda",
                                         data: this.mostrarEquipamento("M/M de Venda")
+                                    },
+                                    {
+                                        name: "Rec Placa",
+                                        id: "Rec Placa",
+                                        data: this.mostrarEquipamento("Rec Placa")
+                                    },
+                                    {
+                                        name: "Limpeza",
+                                        id: "Limpeza",
+                                        data: this.mostrarEquipamento("Limpeza")
                                     }
 
                                 ]}

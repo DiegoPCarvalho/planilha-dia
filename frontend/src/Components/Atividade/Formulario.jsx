@@ -147,6 +147,8 @@ export default class Formulário extends React.Component {
                                 <option>Revisão de Venda</option>
                                 <option>Confecção de Cabos</option>
                                 <option>Montagem/Manutenção de Venda</option>
+                                <option>Recuperação de Placa</option>
+                                <option>Limpeza</option>
                             </select>
                         </div>
                     </div>

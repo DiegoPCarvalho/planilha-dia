@@ -494,6 +494,38 @@
       "Status": "Pronto",
       "Tecnico": "Diego Carvalho",
       "id": 39
+    },
+    {
+      "Data": "2023-01-17T01:16:10.137Z",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "33",
+      "Cliente": "33",
+      "Equipamento": "Leitor de Dados",
+      "Modelo": "33",
+      "NS": "",
+      "Servico": "Recuperação de Placa",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 40
+    },
+    {
+      "Data": "2023-01-17T01:16:10.137Z",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "34",
+      "Cliente": "34",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "34",
+      "NS": "",
+      "Servico": "Limpeza",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 41
     }
   ],
   "LoginUsuario": [

@@ -51,7 +51,7 @@ export default function graficoGeral(props) {
         xAxis: {
             type: 'category',
             labels: {
-                rotation: -65,
+                rotation: props.rotacao,
                 style: {
                     fontSize: '15px',
                 }
