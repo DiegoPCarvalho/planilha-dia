@@ -26,7 +26,21 @@ const initialState = {
     listarCC: [0],
     listarMMV: [0],
     listarRP: [0],
-    listarLP: [0]
+    listarLP: [0],
+
+    //Tecnicos: 
+    listarDiegoC: [0],
+    listarNatanael: [0],
+    listarMateus: [0],
+    listarBruno: [0],
+    listarVinicius: [0],
+    listarMarcio: [0],
+    listarGabriel: [0],
+    listarLucas: [1],
+    listarDiogo: [0],
+    listarDiegoA: [0],
+    listarAllan: [0],
+    listarCida: [0]
 }
 
 const banco = "Geral";
@@ -140,6 +154,7 @@ export default class DashboardGerencia extends React.Component {
             listarMMV: totalMMV,
             listarRP: totalRP,
             listarLP: totalLP,
+            
 
             listarTotalEquip: totalEquip
         })
@@ -160,7 +175,7 @@ export default class DashboardGerencia extends React.Component {
                     <div className="col-3">
                     <label>Mês: </label>
                         <select id="mes" class="form-select" aria-label="Default select example">
-                            <option selected>Geral</option>
+                            <option selected>Todos</option>
                             <option>01</option>
                             <option>02</option>
                             <option>03</option>
@@ -178,7 +193,7 @@ export default class DashboardGerencia extends React.Component {
                     <div className="col-3">
                     <label>Ano: </label>
                         <select id="ano" class="form-select" aria-label="Default select example">
-                            <option selected>Geral</option>
+                            <option selected>Todos</option>
                             <option>2022</option>
                             <option>2023</option>
                             <option>2024</option>
@@ -241,23 +256,45 @@ export default class DashboardGerencia extends React.Component {
                     </div>
                 </div>
                 <div className="row mt-4">
-                <div className="col-12 col-md-5 sombra flex-fill">
-                            <Grafico tipo="bar" titulo="Ordens de Serviço"
+                <div className="col-12 col-md-5 sombra mx-3 flex-fill">
+                            <Grafico tipo="bar" titulo="Técnicos"
                                 formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                 texto='{point.y:1f}'
-                                nomeSerie="Ordem de Serviço"
+                                nomeSerie="Ordens de Serviço"
                                 dado={[
-                                    { name: "Diego C", y: this.state.listarTotalCOl },
-                                        { name: "Natanael", y: this.state.listarTotalLei },
-                                        { name: "Bruno", y: this.state.listarTotalBusca },
-                                        { name: "Vinicius", y: this.state.listarTotalImp },
-                                        { name: "Mateus", y: this.state.listarTotalCar3 },
-                                        { name: "Marcio", y: this.state.listarTotalCar4 },
-                                        { name: "Gabriel", y: this.state.listarTotalCar5 },
-                                        { name: "Lucas", y: this.state.listarTotalCar6 },
-                                        { name: "Diogo", y: this.state.listarTotalBerco },
-                                        { name: "Allan", y: this.state.listarTotalFonte },
-                                        { name: "Cida", y: this.state.listarTotalCabos }
+                                        { name: "Diego C", y: this.state.listarDiegoC },
+                                        { name: "Natanael", y: this.state.listarNatanael },
+                                        { name: "Bruno", y: this.state.listarBruno },
+                                        { name: "Vinicius", y: this.state.listarVinicius },
+                                        { name: "Mateus", y: this.state.listarMateus },
+                                        { name: "Marcio", y: this.state.listarMarcio },
+                                        { name: "Gabriel", y: this.state.listarGabriel },
+                                        { name: "Lucas", y: this.state.listarLucas },
+                                        { name: "Diogo", y: this.state.listarDiogo },
+                                        { name: "Diego A", y: this.state.listarDiegoA },
+                                        { name: "Allan", y: this.state.listarAllan },
+                                        { name: "Cida", y: this.state.listarCida }
+                                ]}
+                                />
+                    </div>
+                    <div className="col-12 col-md-5 sombra flex-fill">
+                            <Grafico tipo="pie" titulo="Técnicos"
+                                formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                nomeSerie="Ordens de Serviço"
+                                dado={[
+                                        { name: "Diego C", y: this.state.listarDiegoC },
+                                        { name: "Natanael", y: this.state.listarNatanael },
+                                        { name: "Bruno", y: this.state.listarBruno },
+                                        { name: "Vinicius", y: this.state.listarVinicius },
+                                        { name: "Mateus", y: this.state.listarMateus },
+                                        { name: "Marcio", y: this.state.listarMarcio },
+                                        { name: "Gabriel", y: this.state.listarGabriel },
+                                        { name: "Lucas", y: this.state.listarLucas },
+                                        { name: "Diogo", y: this.state.listarDiogo },
+                                        { name: "Diego A", y: this.state.listarDiegoA },
+                                        { name: "Allan", y: this.state.listarAllan },
+                                        { name: "Cida", y: this.state.listarCida }
                                 ]}
                                 />
                     </div>
