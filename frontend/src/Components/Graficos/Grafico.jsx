@@ -43,7 +43,13 @@ export default function graficoGeral(props) {
                 enabled: true,
                 format: '{point.y:1f}'
               }
-            }
+            },
+            bar: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:1f}'
+                  }
+                }
         },
         legend: {
             enabled: false
