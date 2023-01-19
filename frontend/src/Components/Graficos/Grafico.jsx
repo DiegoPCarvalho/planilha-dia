@@ -49,7 +49,13 @@ export default function graficoGeral(props) {
                     enabled: true,
                     format: '{point.y:1f}'
                   }
-                }
+            },
+            spline: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y:1f}'
+                      }
+            }
         },
         legend: {
             enabled: false
@@ -72,10 +78,11 @@ export default function graficoGeral(props) {
         series: [
             {
                 name: props.nomeSerie,
-                colorByPoint: true,
+                colorByPoint: props.cor,
                 data: props.dado,
                
             }
+            
         ],
         drilldown: {
             breadcrumbs: {

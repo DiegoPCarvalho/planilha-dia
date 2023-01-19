@@ -526,6 +526,22 @@
       "Status": "",
       "Tecnico": "Diego Carvalho",
       "id": 41
+    },
+    {
+      "Data": "2023-01-19T12:46:19.892Z",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "55",
+      "Cliente": "55",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Laudo",
+      "Classificacao": "Defeito",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Cida",
+      "id": 42
     }
   ],
   "LoginUsuario": [
@@ -550,6 +566,17 @@
       "AdmD": 0,
       "AdmT": 1,
       "id": 2
+    },
+    {
+      "nomeCompleto": "Bruno Bedani",
+      "email": "bruno@zhaz.com.br",
+      "senha": "78945",
+      "departamento": "lab",
+      "AdmA": 1,
+      "AdmG": 0,
+      "AdmD": 0,
+      "AdmT": 0,
+      "id": 3
     }
   ]
 }

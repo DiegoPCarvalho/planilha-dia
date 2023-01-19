@@ -3488,6 +3488,7 @@ export default class Relatorio extends React.Component {
                                 formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
                                 texto='<b>{point.name}</b>: {point.percentage:.1f} %'
                                 nomeSerie="Ordem de Serviço"
+                                cor = {true}
                                 dado={[
                                     { name: "Manutenção Concluída", y: this.state.listarMC },
                                     { name: "Laudo", y: this.state.listarLA },
@@ -3507,6 +3508,7 @@ export default class Relatorio extends React.Component {
                                 formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                 texto='{point.y:1f}'
                                 nomeSerie="Ordem de Serviço"
+                                cor = {true}
                                 dado={[
                                     { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
                                     { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
@@ -3580,6 +3582,7 @@ export default class Relatorio extends React.Component {
                                     formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                     texto='{point.y:1f}'
                                     nomeSerie="Equipamento"
+                                    cor = {true}
                                     dado={[
                                         { name: "Coletor", y: this.state.listarTotalCOl },
                                         { name: "Leitor", y: this.state.listarTotalLei },
