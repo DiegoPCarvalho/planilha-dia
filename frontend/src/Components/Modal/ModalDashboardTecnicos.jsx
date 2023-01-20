@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Image from 'react-bootstrap/Image';
 
 export default function ModalAtendimento(props) {
   const [show, setShow] = useState(false);
@@ -10,14 +11,15 @@ export default function ModalAtendimento(props) {
 
   return (
     <>
-      <Button variant={props.corModal} onClick={handleShow} style={props.estilo}  className={props.classe}>
+      {/* <Button variant={props.corModal} onClick={handleShow} style={props.estilo}  className={props.classe}>
          <div>
-            <h2 className='text-light'><strong>{props.nome}</strong></h2>
-            <p className='fw-bold h3 text-light'>{props.qtd}</p>
-            <p>{props.situacao}</p>
+            <img src={props.imagem} alt="" />
          </div>
         
-      </Button>
+      </Button> */}
+      <Image src={props.imagem} onClick={handleShow} className={props.classe} style={props.estilo}>
+  
+      </Image>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
