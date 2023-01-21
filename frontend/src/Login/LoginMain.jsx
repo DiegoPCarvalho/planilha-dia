@@ -62,10 +62,21 @@ export default class LoginMain extends React.Component {
                         Email: tabela[i].email,
                         Senha: tabela[i].senha,
                         Usuario: tabela[i].nomeCompleto,
-                        AdmA: tabela[i].AdmA,
-                        AdmD: tabela[i].AdmD,
-                        AdmG: tabela[i].AdmG,
-                        AdmT: tabela[i].AdmT
+                        AdmDiretoria: tabela[i].AdmDiretoria,
+                        AdmGerencia: tabela[i].AdmGerencia,
+                        AdmFinanceiro: tabela[i].AdmFinanceiro,
+                        AdmCompras: tabela[i].AdmCompras,
+                        AdmFiscal: tabela[i].AdmFiscal,
+                        AdmRH: tabela[i].AdmRH,
+                        AdmEstoque: tabela[i].AdmEstoque,
+                        AdmExpedicao: tabela[i].AdmExpedicao,
+                        AdmLogistica: tabela[i].AdmLogistica,
+                        AdmRecpecao: tabela[i].AdmRecpecao,
+                        AdmLaboratorio: tabela[i].AdmLaboratorio,
+                        AdmComercial: tabela[i].AdmComercial,
+                        AdmGeral: tabela[i].AdmGeral,
+                        AdmLider: tabela[i].AdmLider,
+                        
                     });
                 }
             }
@@ -81,15 +92,25 @@ export default class LoginMain extends React.Component {
                 loginErro.classList.add("text-dark");
 
                 textoErro.innerText = "";
-                
+
                 window.location.pathname = "/Dashboard";
                 localStorage.logado = 1;
                 localStorage.usuario = user[0].Usuario;
-                localStorage.AdmA = user[0].AdmA;
-                localStorage.AdmD = user[0].AdmD;
-                localStorage.AdmG = user[0].AdmG;
-                localStorage.AdmT = user[0].AdmT;
-
+                localStorage.AdmDiretoria = user[0].AdmDiretoria;
+                localStorage.AdmGerencia = user[0].AdmGerencia;
+                localStorage.AdmFinanceiro = user[0].AdmFinanceiro;
+                localStorage.AdmCompras = user[0].AdmCompras;
+                localStorage.AdmFiscal = user[0].AdmFiscal;
+                localStorage.AdmRH = user[0].AdmRH;
+                localStorage.AdmEstoque = user[0].AdmEstoque;
+                localStorage.AdmExpedicao = user[0].AdmExpedicao;
+                localStorage.AdmLogistica = user[0].AdmLogistica;
+                localStorage.AdmRecpecao = user[0].AdmRecpecao;
+                localStorage.AdmLaboratorio = user[0].AdmLaboratorio;
+                localStorage.AdmComercial = user[0].AdmComercial;
+                localStorage.AdmLider = user[0].AdmLider;
+                localStorage.AdmGeral = user[0].AdmGeral;
+        
             } else {
                 userErro.innerText = "Usuario:*";
                 userErro.classList.add("text-danger");

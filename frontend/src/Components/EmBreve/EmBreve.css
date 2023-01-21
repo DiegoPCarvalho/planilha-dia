@@ -1,0 +1,18 @@
+@keyframes btn-pisca {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+.btn-pisca {
+  background-color:#0e8f26;
+  color:#fff;
+  padding: 0.6em 0.8em;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px; 
+  -webkit-animation: btn-pisca 1.9s linear infinite;
+  -moz-animation: btn-pisca 1.9s linear infinite;
+  -ms-animation: btn-pisca 1.9s linear infinite;
+  -o-animation: btn-pisca 1.9s linear infinite;
+  animation: btn-pisca 1.9s linear infinite;
+}

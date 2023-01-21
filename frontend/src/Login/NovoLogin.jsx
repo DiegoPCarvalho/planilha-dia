@@ -9,8 +9,29 @@ const banco = "LoginUsuario";
 const baseUrl = Url(banco);
 
 const initialState = {
-    usuario: {nomeCompleto: '', email: '', senha: '', departamento: '', AdmA: 0, AdmG: 0, AdmD: 0, AdmT: 0 }
+    usuario: {
+        nomeCompleto: '',
+        email: '',
+        senha: '',
+        departamento: '',
+        AdmDiretoria: 0,
+        AdmGerencia: 0,
+        AdmFinanceiro: 0,
+        AdmCompras: 0,
+        AdmFiscal: 0,
+        AdmRH: 0,
+        AdmEstoque: 0,
+        AdmExpedicao: 0,
+        AdmLogistica: 0,
+        AdmRecpecao: 0,
+        AdmLaboratorio: 0,
+        AdmComercial: 0,
+        AdmGeral: 0,
+        AdmLider: 0
+    }
 }
+
+
 export default class LoginMain extends React.Component {
 
     state = { ...initialState }
@@ -32,9 +53,9 @@ export default class LoginMain extends React.Component {
         const textoErro = document.getElementById("texto-erro-cad");
 
         if ((user_cad === '') || (email_cad === '') || (senha_cad === '') || (depar_cad === '')) {
-            if ((user_cad === '') && (email_cad === '')&&(senha_cad === '') && (depar_cad === '')) {
+            if ((user_cad === '') && (email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
@@ -47,9 +68,9 @@ export default class LoginMain extends React.Component {
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
 
-            }else if((user_cad === '') && (email_cad === '')&&(senha_cad === '') ){
+            } else if ((user_cad === '') && (email_cad === '') && (senha_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
@@ -59,22 +80,22 @@ export default class LoginMain extends React.Component {
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
 
-            }else if((user_cad === '') && (email_cad === '')&&(depar_cad === '') ){
+            } else if ((user_cad === '') && (email_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
                 email_text.innerText = "E-mail:*";
                 email_text.classList.add("text-danger");
 
-                
+
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
 
-            }else if((user_cad === '') && (senha_cad === '')&&(depar_cad === '')){
+            } else if ((user_cad === '') && (senha_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
@@ -83,7 +104,7 @@ export default class LoginMain extends React.Component {
 
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            }else if((email_cad === '') && (senha_cad === '')&&(depar_cad === '')){
+            } else if ((email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 email_text.innerText = "E-mail:*";
@@ -94,31 +115,31 @@ export default class LoginMain extends React.Component {
 
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            }else if((user_cad === '') && (email_cad === '')){
+            } else if ((user_cad === '') && (email_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
                 email_text.innerText = "E-mail:*";
                 email_text.classList.add("text-danger");
-            }else if((user_cad === '') && (senha_cad === '')){
+            } else if ((user_cad === '') && (senha_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
-            }else if((user_cad === '') && (depar_cad === '')){
+            } else if ((user_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 user_text.innerText = "Usuario:*";
                 user_text.classList.add("text-danger");
 
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            }else if((email_cad === '')&&(senha_cad === '')){
+            } else if ((email_cad === '') && (senha_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 email_text.innerText = "E-mail:*";
@@ -126,46 +147,83 @@ export default class LoginMain extends React.Component {
 
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
-            }else if((email_cad === '')&&(depar_cad === '')){
+            } else if ((email_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 email_text.innerText = "E-mail:*";
                 email_text.classList.add("text-danger");
 
-                
+
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            }else if((senha_cad === '')&&(depar_cad === '')){
+            } else if ((senha_cad === '') && (depar_cad === '')) {
                 textoErro.innerText = "Campos * Obrigatórios";
-                
+
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
 
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            }else if(user_cad === ''){
-                textoErro.innerText = "Campo * Obrigatórios";
-                
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-            }else if(email_cad === ''){
+            } else if (user_cad === '') {
                 textoErro.innerText = "Campo * Obrigatórios";
 
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+            } else if (email_cad === '') {
+                textoErro.innerText = "Campo * Obrigatórios";
+
                 email_text.innerText = "E-mail:*";
                 email_text.classList.add("text-danger");
-            }else if(senha_cad === ''){
+            } else if (senha_cad === '') {
                 textoErro.innerText = "Campo * Obrigatórios";
-                
+
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
-            }else if(depar_cad === ''){
+            } else if (depar_cad === '') {
                 textoErro.innerText = "Campo * Obrigatórios";
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
             }
-            
+
         } else {
+
+            if (depar_cad === "Diretoria") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmDiretoria = 1;
+
+                this.save()
+
+            } if (depar_cad === "Gerência") {
+                let nomeUsuario = user_cad
+                if ((nomeUsuario.match(/Douglas/)) || (nomeUsuario.match(/Kleiton/)) || (nomeUsuario.match(/douglas/)) || (nomeUsuario.match(/kleiton/))) {
+                    this.state.usuario.AdmLaboratorio = 1
+                    this.state.usuario.AdmLider = 1
+
+                } if ((nomeUsuario.match(/Thiago/)) || (nomeUsuario.match(/thiago/)) || (nomeUsuario.match(/Tiago/) || (nomeUsuario.match(/tiago/)))) {
+                    this.state.usuario.AdmCompras = 1;
+                    this.state.usuario.AdmFinanceiro = 1;
+                    this.state.usuario.AdmFiscal = 1;
+                    this.state.usuario.AdmRH = 1;
+                    this.state.usuario.AdmEstoque = 1;
+                    this.state.usuario.AdmExpedicao = 1;
+                    this.state.usuario.AdmLogistica = 1;
+                    this.state.usuario.AdmRecpecao = 1;
+                    this.state.usuario.AdmLider = 1; 
+                }
 
                 user_text.innerText = "Usuario:";
                 user_text.classList.add("text-dark");
@@ -181,7 +239,219 @@ export default class LoginMain extends React.Component {
 
                 textoErro.innerText = ''
 
-            this.save()
+                this.state.usuario.AdmGerencia = 1;
+                this.save()
+                
+            } if (depar_cad === "Financeiro") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmFinanceiro = 1;
+
+                this.save()
+
+            } if (depar_cad === "Fiscal") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmFiscal = 1;
+
+                this.save()
+
+            } if (depar_cad === "Compras") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmCompras = 1;
+
+                this.save()
+
+            } if (depar_cad === "RH") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmRH = 1;
+
+                this.save()
+
+            } if (depar_cad === "Estoque") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmEstoque = 1;
+
+                this.save()
+
+            } if (depar_cad === "Expedição") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmExpedicao = 1;
+
+                this.save()
+
+            } if (depar_cad === "Logística") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmLogistica = 1;
+
+                this.save()
+
+            } if (depar_cad === "Recepção") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmRecpecao = 1;
+
+                this.save()
+
+            } if (depar_cad === "Comercial") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmComercial = 1;
+
+                this.save()
+
+            } if (depar_cad === "Laborátorio") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmLaboratorio = 1;
+
+                this.save()
+
+            }
+            else if (depar_cad === "...") {
+                alert("Departamento Ausente")
+            }
+
+            // user_text.innerText = "Usuario:";
+            // user_text.classList.add("text-dark");
+
+            // email_text.innerText = "E-mail:";
+            // email_text.classList.add("text-dark");
+
+            // senha_text.innerText = "Senha:";
+            // senha_text.classList.add("text-dark")
+
+            // depar_text.innerText = "Departamento:"
+            // depar_text.classList.add("text-dark");
+
+            // textoErro.innerText = ''
+
+            // this.save()
         }
     }
 
@@ -193,7 +463,7 @@ export default class LoginMain extends React.Component {
         axios[method](url, usuario)
             .then(resp => {
                 // const list = this.getUpdateList(resp.data)
-                this.setState({ usuario: initialState.usuario})
+                this.setState({ usuario: initialState.usuario })
             })
     }
 
@@ -218,7 +488,7 @@ export default class LoginMain extends React.Component {
                     </div>
                     <div className="row mt-2">
                         <div className="row mb-3">
-                        <div className="col-12">
+                            <div className="col-12">
                                 <div className="row mx-5">
                                     <div className="col-12">
                                         <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
@@ -228,10 +498,10 @@ export default class LoginMain extends React.Component {
                                     <div className="col-12">
                                         <div className="input-group mb-3">
                                             <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
-                                            <input type="text" id="user-cad" 
-                                                className="form-control" placeholder="Nome e Sobrenome" 
-                                                name="nomeCompleto"  value={this.state.usuario.nomeCompleto} 
-                                                onChange={e => this.updateField(e)}/>
+                                            <input type="text" id="user-cad"
+                                                className="form-control" placeholder="Nome e Sobrenome"
+                                                name="nomeCompleto" value={this.state.usuario.nomeCompleto}
+                                                onChange={e => this.updateField(e)} />
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +516,7 @@ export default class LoginMain extends React.Component {
                                     <div className="col-12">
                                         <div className="input-group mb-3">
                                             <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-envelope"></i></span>
-                                            <input type="text" id="email-cad" 
+                                            <input type="text" id="email-cad"
                                                 className="form-control" placeholder="E-mail"
                                                 onChange={e => this.updateField(e)}
                                                 name="email" value={this.state.usuario.email} />
@@ -264,10 +534,10 @@ export default class LoginMain extends React.Component {
                                     <div className="col-12">
                                         <div className="input-group mb-2">
                                             <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
-                                            <input type="password" id="senha-cad" 
-                                            className="form-control" placeholder="Senha" 
-                                            onChange={e => this.updateField(e)}
-                                            name="senha" value={this.state.usuario.senha}/>
+                                            <input type="password" id="senha-cad"
+                                                className="form-control" placeholder="Senha"
+                                                onChange={e => this.updateField(e)}
+                                                name="senha" value={this.state.usuario.senha} />
                                         </div>
                                     </div>
                                 </div>
@@ -282,10 +552,25 @@ export default class LoginMain extends React.Component {
                                     <div className="col-12">
                                         <div className="input-group mb-3">
                                             <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-cube"></i></span>
-                                            <input type="text" id="depar-cad" 
-                                                className="form-control" placeholder="Departamento" 
-                                                name="departamento" value={this.state.usuario.departamento}
-                                                onChange={e => this.updateField(e)}/>
+                                            <select className="form-select" id="depar-cad"
+                                                name='departamento'
+                                                onChange={e => this.updateField(e)}
+                                                value={this.state.usuario.departamento}
+                                            >
+                                                <option selected>...</option>
+                                                <option>Diretoria</option>
+                                                <option>Gerência</option>
+                                                <option>Financeiro</option>
+                                                <option>Fiscal</option>
+                                                <option>Compras</option>
+                                                <option>RH</option>
+                                                <option>Estoque</option>
+                                                <option>Expedição</option>
+                                                <option>Logística</option>
+                                                <option>Recepção</option>
+                                                <option>Laborátorio</option>
+                                                <option>Comercial</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

@@ -9,6 +9,7 @@ export default function ModalAtendimento(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   return (
     <>
       {/* <Button variant={props.corModal} onClick={handleShow} style={props.estilo}  className={props.classe}>
@@ -18,17 +19,39 @@ export default function ModalAtendimento(props) {
         
       </Button> */}
       <Image src={props.imagem} onClick={handleShow} className={props.classe} style={props.estilo}>
-  
+
       </Image>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered>
         <Modal.Header closeButton>
-                 <Modal.Title>{props.nome}</Modal.Title>
+          <Modal.Title>
+                <img src={props.nome} style={props.estiloFoto} className={props.classeFoto}></img>
+                {props.titulo}
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>{props.relatorio}</Modal.Body>
-        <Modal.Footer>
-            {props.link}
-        </Modal.Footer>
+        <Modal.Body>
+          <div className="row mb-4 d-flex justify-content-center">
+            <div className="col-3 d-flex flex-column justify-content-center bg-success text-light rounded">
+                        <h3 className='fw-bold d-flex justify-content-center'>Total</h3>
+                        <p className='h6 d-flex justify-content-center'>{props.total}</p>
+            </div>
+          </div>
+          <div className='row'>
+            <div className="col-md-5 sombra mx-2 flex-fill">
+             {props.grafico1}
+            </div>
+            <div className="col-md-5 sombra mx-2 flex-fill">
+            {props.grafico2}
+            </div>
+          </div>
+          <div className="row mt-2">
+            <div className="col-12 sombra">
+            {props.grafico3}
+            </div>
+          </div>
+        </Modal.Body>
       </Modal>
     </>
   );

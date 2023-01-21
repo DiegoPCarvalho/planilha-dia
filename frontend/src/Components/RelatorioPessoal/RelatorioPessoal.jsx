@@ -3413,22 +3413,18 @@ export default class Relatorio extends React.Component {
         filtrarDados() {
             const ano = document.getElementById("ano").value;
             const mes = document.getElementById("mes").value;
+            // const dia = document.getElementById("dia").value;
 
             if ((ano === "Todos") && (mes === "Todos")) {
                 this.buscarDados()
                 this.buscarEquipamento()
                 this.totalPorEquipamento()
-                console.log("Sem Filtro")
             } else if ((ano === "Todos") && (mes !== "Todos")) {
                 this.buscarDadosFiltro(mes, ano)
-
-                console.log("Filtrando Apenas Mes" + mes)
             } else if ((ano !== "Todos") && (mes === "Todos")) {
                 this.buscarDadosFiltro(mes, ano)
-                console.log("Filtrando Apenas O Ano" + ano)
             } else if ((ano !== "Todos") && (mes !== "Todos")) {
                 this.buscarDadosFiltro(mes, ano)
-                console.log("Filtando os dois " + mes + " " + ano)
             }
         }
 

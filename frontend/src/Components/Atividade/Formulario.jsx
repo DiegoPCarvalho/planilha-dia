@@ -8,6 +8,7 @@ const baseUrl = Url(banco);
 const initialState = {
     Atividade: {
         Data: data(),
+        Dia: dia(),
         Mes: mes(),
         Ano: ano(),
         OS: '',
@@ -39,6 +40,13 @@ function ano(){
     let data = new Date();
     let ano = data.getFullYear();
     return ano
+}
+
+function dia(){
+    let data = new Date();
+    let dia = data.getDate();
+
+    return dia
 }
 
 export default class Formulário extends React.Component {

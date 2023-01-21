@@ -16,8 +16,10 @@ import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 //dashboard
 import DashboardDiretoria from "../Components/Dashboard/DashboardDiretoria";
 import DashboardGerencia from "../Components/Dashboard/DashboardGerencia";
-import DashboardTecnico from "../Components/Dashboard/DashboardTecnicos";
-import DashboardHome from "../Components/Dashboard/DashboardHome";
+
+
+//Em Breve
+import EmBreve from "../Components/EmBreve/EmBreve";
 
 export default function Rotas(){
     return(
@@ -27,11 +29,9 @@ export default function Rotas(){
             <Route path="/NovoUsuario" element={<NovoLogin />}/>
         </Route>
         <Route path="/Dashboard" element = {<Home />}>
-                <Route index element={<DashboardHome />} />
+                <Route index element={<EmBreve />} />
                 <Route path="Gerencia" element={<DashboardGerencia />}/>
                 <Route path="Diretoria" element={<DashboardDiretoria />}/>
-                <Route path="Tecnico" element={<DashboardTecnico />}/>
-
         </Route>
         <Route element={<Home />}>
             <Route path="/Atividade"element={<CrudAtividade />}>
@@ -39,6 +39,9 @@ export default function Rotas(){
                 <Route path="Tabela" element={<Tabela />}/>
                 <Route path="Relatorio" element={<RelatorioPessoal/>}/>
             </Route>
+        </Route>
+        <Route path="/EmBreve" element={<Home />}>
+            <Route index element={<EmBreve />}/>
         </Route>
         <Route path="*" element = {<Login />}/>
     </Routes>

@@ -10,7 +10,7 @@ export default class DashboardHome extends React.Component {
     render(){
         return(
             <Main {...HeaderProps}>
-                <h1>Sou Dashboard Home</h1>
+                <h1>Bem Vindo !!!</h1>
             </Main>
         )
     }
