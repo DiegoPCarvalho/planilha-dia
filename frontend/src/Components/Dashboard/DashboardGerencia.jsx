@@ -59,6 +59,9 @@ const initialState = {
     listarDiegoA: [0],
     listarAllan: [0],
     listarCida: [0],
+    listarAnderson: [0],
+    listarDouglas: [0],
+    listarKleiton: [0],
 
     //mese do ano
     listarJan: [0],
@@ -182,6 +185,78 @@ const initialState = {
     listarDiegoARP: [0],
     listarDiegoALP: [0],
 
+    //Ordem de Serviço Anderson
+    listarAndersonMC: [0],
+    listarAndersonLA: [0],
+    listarAndersonSR: [0],
+    listarAndersonRM: [0],
+    listarAndersonCO: [0],
+    listarAndersonRV: [0],
+    listarAndersonCC: [0],
+    listarAndersonMMV: [0],
+    listarAndersonRP: [0],
+    listarAndersonLP: [0],
+
+    //Ordem de Serviço Marcio
+    listarMarcioMC: [0],
+    listarMarcioLA: [0],
+    listarMarcioSR: [0],
+    listarMarcioRM: [0],
+    listarMarcioCO: [0],
+    listarMarcioRV: [0],
+    listarMarcioCC: [0],
+    listarMarcioMMV: [0],
+    listarMarcioRP: [0],
+    listarMarcioLP: [0],
+
+    //Ordem de Serviço Cida
+    listarCidaMC: [0],
+    listarCidaLA: [0],
+    listarCidaSR: [0],
+    listarCidaRM: [0],
+    listarCidaCO: [0],
+    listarCidaRV: [0],
+    listarCidaCC: [0],
+    listarCidaMMV: [0],
+    listarCidaRP: [0],
+    listarCidaLP: [0],
+
+    //Ordem de Serviço Allan
+    listarAllanMC: [0],
+    listarAllanLA: [0],
+    listarAllanSR: [0],
+    listarAllanRM: [0],
+    listarAllanCO: [0],
+    listarAllanRV: [0],
+    listarAllanCC: [0],
+    listarAllanMMV: [0],
+    listarAllanRP: [0],
+    listarAllanLP: [0],
+
+    //Ordem de Serviço Douglas
+    listarDouglasMC: [0],
+    listarDouglasLA: [0],
+    listarDouglasSR: [0],
+    listarDouglasRM: [0],
+    listarDouglasCO: [0],
+    listarDouglasRV: [0],
+    listarDouglasCC: [0],
+    listarDouglasMMV: [0],
+    listarDouglasRP: [0],
+    listarDouglasLP: [0],
+
+    //Ordem de Serviço Kleiton
+    listarKleitonMC: [0],
+    listarKleitonLA: [0],
+    listarKleitonSR: [0],
+    listarKleitonRM: [0],
+    listarKleitonCO: [0],
+    listarKleitonRV: [0],
+    listarKleitonCC: [0],
+    listarKleitonMMV: [0],
+    listarKleitonRP: [0],
+    listarKleitonLP: [0],
+
 
     //total por tecnico
     listarTotalDiegoC: [0],
@@ -198,6 +273,7 @@ const initialState = {
     listarTotalLucas: [0],
     listarTotalAllan: [0],
     listarTotalCida: [0],
+    listarTotalAnderson: [0],
 
     //total por equipamento:
     //Total Equipamentos Diego Carvaho
@@ -265,7 +341,7 @@ const initialState = {
     listarDiogoBerco: [0],
     listarDiogoFonte: [0],
     listarDiogoCabos: [0],
-    
+
     //Total Equipamentos Gabriel
     listarGabrielCol: [0],
     listarGabrielImp: [0],
@@ -317,6 +393,84 @@ const initialState = {
     listarDiegoABerco: [0],
     listarDiegoAFonte: [0],
     listarDiegoACabos: [0],
+
+    //Total Equipamentos Anderson
+    listarAndersonCol: [0],
+    listarAndersonImp: [0],
+    listarAndersonLei: [0],
+    listarAndersonBusca: [0],
+    listarAndersonCar3: [0],
+    listarAndersonCar4: [0],
+    listarAndersonCar5: [0],
+    listarAndersonCar6: [0],
+    listarAndersonBerco: [0],
+    listarAndersonFonte: [0],
+    listarAndersonCabos: [0],
+
+    //Total Equipamentos Marcio
+    listarMarcioCol: [0],
+    listarMarcioImp: [0],
+    listarMarcioLei: [0],
+    listarMarcioBusca: [0],
+    listarMarcioCar3: [0],
+    listarMarcioCar4: [0],
+    listarMarcioCar5: [0],
+    listarMarcioCar6: [0],
+    listarMarcioBerco: [0],
+    listarMarcioFonte: [0],
+    listarMarcioCabos: [0],
+
+    //Total Equipamentos Cida
+    listarCidaCol: [0],
+    listarCidaImp: [0],
+    listarCidaLei: [0],
+    listarCidaBusca: [0],
+    listarCidaCar3: [0],
+    listarCidaCar4: [0],
+    listarCidaCar5: [0],
+    listarCidaCar6: [0],
+    listarCidaBerco: [0],
+    listarCidaFonte: [0],
+    listarCidaCabos: [0],
+
+    //Total Equipamentos Allan
+    listarAllanCol: [0],
+    listarAllanImp: [0],
+    listarAllanLei: [0],
+    listarAllanBusca: [0],
+    listarAllanCar3: [0],
+    listarAllanCar4: [0],
+    listarAllanCar5: [0],
+    listarAllanCar6: [0],
+    listarAllanBerco: [0],
+    listarAllanFonte: [0],
+    listarAllanCabos: [0],
+
+    //Total Equipamentos Douglas
+    listarDouglasCol: [0],
+    listarDouglasImp: [0],
+    listarDouglasLei: [0],
+    listarDouglasBusca: [0],
+    listarDouglasCar3: [0],
+    listarDouglasCar4: [0],
+    listarDouglasCar5: [0],
+    listarDouglasCar6: [0],
+    listarDouglasBerco: [0],
+    listarDouglasFonte: [0],
+    listarDouglasCabos: [0],
+
+    //Total Equipamentos Kleiton
+    listarKleitonCol: [0],
+    listarKleitonImp: [0],
+    listarKleitonLei: [0],
+    listarKleitonBusca: [0],
+    listarKleitonCar3: [0],
+    listarKleitonCar4: [0],
+    listarKleitonCar5: [0],
+    listarKleitonCar6: [0],
+    listarKleitonBerco: [0],
+    listarKleitonFonte: [0],
+    listarKleitonCabos: [0],
 }
 
 const banco = "Geral";
@@ -338,6 +492,12 @@ export default class DashboardGerencia extends React.Component {
         this.buscaPorTecnico("Bruno Bedani")
         this.buscaPorTecnico("Vinicius Gomes")
         this.buscaPorTecnico("Diego Almeida")
+        this.buscaPorTecnico("Anderson Ramos")
+        this.buscaPorTecnico("Marcio")
+        this.buscaPorTecnico("Cida Zani")
+        this.buscaPorTecnico("Allan Zulino")
+        this.buscaPorTecnico("Douglas Altenfelder")
+        this.buscaPorTecnico("Kleiton Paulino")
     }
 
     validacao() {
@@ -375,6 +535,9 @@ export default class DashboardGerencia extends React.Component {
         let dadoDiegoA = [];
         let dadoAllan = [];
         let dadoCida = [];
+        let dadoAnderson = [];
+        let dadoDouglas = [];
+        let dadoKleiton = [];
 
         //variavel mês
         let dadoJan = [];
@@ -504,6 +667,21 @@ export default class DashboardGerencia extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
+            if (v.match(/Anderson/)) {
+                dadoAnderson.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Douglas/)) {
+                dadoDouglas.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Kleiton/)) {
+                dadoKleiton.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
             if (1 === tabelaNome[i].Mes) {
                 dadoJan.push({
                     OS: tabelaNome[i].OS
@@ -595,6 +773,9 @@ export default class DashboardGerencia extends React.Component {
         let totalDiegoA = Object.keys(dadoDiegoA).length;
         let totalAllan = Object.keys(dadoAllan).length;
         let totalCida = Object.keys(dadoCida).length;
+        let totalAnderson = Object.keys(dadoAnderson).length;
+        let totalDouglas = Object.keys(dadoDouglas).length;
+        let totalKleiton = Object.keys(dadoKleiton).length;
 
         //variavel Meses
         let totalJan = Object.keys(dadoJan).length;
@@ -640,6 +821,9 @@ export default class DashboardGerencia extends React.Component {
             listarDiegoA: totalDiegoA,
             listarAllan: totalAllan,
             listarCida: totalCida,
+            listarAnderson: totalAnderson,
+            listarDouglas: totalDouglas,
+            listarKleiton: totalKleiton,
 
             //busca Meses
             listarJan: totalJan,
@@ -685,6 +869,9 @@ export default class DashboardGerencia extends React.Component {
         let dadoFDiegoA = [];
         let dadoFAllan = [];
         let dadoFCida = [];
+        let dadoFAnderson = [];
+        let dadoFDouglas = [];
+        let dadoFKleiton = [];
 
         //variavel mês
         let dadoFJan = [];
@@ -702,122 +889,9 @@ export default class DashboardGerencia extends React.Component {
 
         for (let i = 0; i < tabelaNome.length; i++) {
             let v = `${tabelaNome[i].Tecnico}`;
-            //#region Mês
-            if ((dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === "Todos")) {
-                if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                    dadoFMC.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Laudo" === tabelaNome[i].Servico)) {
-                    dadoFLA.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                    dadoFSR.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                    dadoFRM.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                    dadoFCO.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                    dadoFRV.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                    dadoFCC.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                    dadoFMMV.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                    dadoFRP.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Limpeza" === tabelaNome[i].Servico)) {
-                    dadoFLP.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Diego C/)) {
-                    dadoFDiegoC.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Natanael/)) {
-                    dadoFNatanael.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Bruno/)) {
-                    dadoFBruno.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Vinicius/)) {
-                    dadoFVinicius.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Mateus/)) {
-                    dadoFMateus.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Marcio/)) {
-                    dadoFMarcio.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Gabriel/)) {
-                    dadoFGabriel.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Lucas/)) {
-                    dadoFLucas.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Diogo/)) {
-                    dadoFDiogo.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Diego A/)) {
-                    dadoFDiegoA.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Allan/)) {
-                    dadoFAllan.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Cida/)) {
-                    dadoFCida.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-            }
-            //#endregion
 
             //#region Ano
+            
             if ((dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                     dadoFMC.push({
@@ -929,6 +1003,21 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if (v.match(/Anderson/)) {
+                    dadoFAnderson.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Douglas/)) {
+                    dadoFDouglas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Kleiton/)) {
+                    dadoFKleiton.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
                 if (1 === tabelaNome[i].Mes) {
                     dadoFJan.push({
                         OS: tabelaNome[i].OS
@@ -990,8 +1079,8 @@ export default class DashboardGerencia extends React.Component {
                     })
                 }
             }
-            //#endregion
-
+            //#endregion 
+            
             //#region Mes Ano
             if ((dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
@@ -1101,6 +1190,21 @@ export default class DashboardGerencia extends React.Component {
                 }
                 if (v.match(/Cida/)) {
                     dadoFCida.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Anderson/)) {
+                    dadoFAnderson.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Douglas/)) {
+                    dadoFDouglas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Kleiton/)) {
+                    dadoFKleiton.push({
                         OS: tabelaNome[i].OS
                     })
                 }
@@ -1279,6 +1383,21 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if (v.match(/Anderson/)) {
+                    dadoFAnderson.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Douglas/)) {
+                    dadoFDouglas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Kleiton/)) {
+                    dadoFKleiton.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
                 if (1 === tabelaNome[i].Mes) {
                     dadoFJan.push({
                         OS: tabelaNome[i].OS
@@ -1372,6 +1491,9 @@ export default class DashboardGerencia extends React.Component {
         let totalFDiegoA = Object.keys(dadoFDiegoA).length;
         let totalFAllan = Object.keys(dadoFAllan).length;
         let totalFCida = Object.keys(dadoFCida).length;
+        let totalFAnderson = Object.keys(dadoFAnderson).length;
+        let totalFDouglas = Object.keys(dadoFDouglas).length;
+        let totalFKleiton = Object.keys(dadoFKleiton).length;
 
         //variavel Meses
         let totalFJan = Object.keys(dadoFJan).length;
@@ -1417,6 +1539,9 @@ export default class DashboardGerencia extends React.Component {
             listarDiegoA: totalFDiegoA,
             listarAllan: totalFAllan,
             listarCida: totalFCida,
+            listarAnderson: totalFAnderson,
+            listarDouglas: totalFDouglas,
+            listarKleiton: totalFKleiton,
 
             //busca Meses
             listarJan: totalFJan,
@@ -1442,20 +1567,76 @@ export default class DashboardGerencia extends React.Component {
 
         if ((dia === "Todos") && (ano === "Todos") && (mes === "Todos")) {
             this.buscarDados()
+            this.buscaPorTecnico("Diego Carvalho")
+            this.buscaPorTecnico("Natanael Silva Lima")
+            this.buscaPorTecnico("Mateus Doval")
+            this.buscaPorTecnico("Lucas Feliciano")
+            this.buscaPorTecnico("Diogo Selmini")
+            this.buscaPorTecnico("Gabriel Kaique")
+            this.buscaPorTecnico("Bruno Bedani")
+            this.buscaPorTecnico("Vinicius Gomes")
+            this.buscaPorTecnico("Diego Almeida")
+            this.buscaPorTecnico("Anderson Ramos")
+            this.buscaPorTecnico("Marcio")
+            this.buscaPorTecnico("Cida Zani")
+            this.buscaPorTecnico("Allan Zulino")
+            this.buscaPorTecnico("Douglas Altenfelder")
+            this.buscaPorTecnico("Kleiton Paulino")
             console.log("Sem Filtro")
-        } else if ((dia === "Todos") && (ano === "Todos") && (mes !== "Todos")) {
-            this.buscarDadosFiltro(dia, mes, ano)
-
-            console.log("Filtrando Apenas Mes" + mes)
-        } else if ((dia === "Todos") && (ano !== "Todos") && (mes === "Todos")) {
-            this.buscarDadosFiltro(dia, mes, ano)
-            console.log("Filtrando Apenas O Ano" + ano)
         } else if ((dia === "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
+            this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Mateus Doval", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Lucas Feliciano", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Diogo Selmini", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Gabriel Kaique", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
-            console.log("Filtando os dois " + mes + " " + ano)
+            console.log("Filtando apenas o  " + ano)
         } else if ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
+            this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Mateus Doval", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Lucas Feliciano", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Diogo Selmini", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Gabriel Kaique", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
             console.log("Filtando os tres " + dia + " " + mes + " " + ano)
+        } else if ((dia === "Todos") && (ano !== "Todos") && (mes === "Todos")) {
+            this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Mateus Doval", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Lucas Feliciano", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Diogo Selmini", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Gabriel Kaique", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
+            this.buscarDadosFiltro(dia, mes, ano)
+            console.log("Filtando apenas o  " + ano)
         }
     }
 
@@ -1579,11 +1760,7 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }  if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
                             OS: tabelaNome[i].OS
                         })
@@ -3158,6 +3335,9614 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoACabos: totalCabo
             })
         }
+
+        if (tecnico === "Anderson Ramos") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarAndersonMC: totalTMC,
+                listarAndersonLA: totalTLA,
+                listarAndersonSR: totalTSR,
+                listarAndersonRM: totalTRM,
+                listarAndersonCO: totalTCO,
+                listarAndersonRV: totalTRV,
+                listarAndersonCC: totalTCC,
+                listarAndersonMMV: totalTMMV,
+                listarAndersonRP: totalTRP,
+                listarAndersonLP: totalTLP,
+
+                //busca total
+                listarTotalAnderson: totalTEquip,
+
+                //listart total por equipamento
+                listarAndersonCol: totalCol,
+                listarAndersonImp: totalImp,
+                listarAndersonLei: totalLei,
+                listarAndersonBusca: totalBusca,
+                listarAndersonCar3: totalCar3,
+                listarAndersonCar4: totalCar4,
+                listarAndersonCar5: totalCar5,
+                listarAndersonCar6: totalCar6,
+                listarAndersonBerco: totalBerco,
+                listarAndersonFonte: totalFonte,
+                listarAndersonCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Marcio") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarMarcioMC: totalTMC,
+                listarMarcioLA: totalTLA,
+                listarMarcioSR: totalTSR,
+                listarMarcioRM: totalTRM,
+                listarMarcioCO: totalTCO,
+                listarMarcioRV: totalTRV,
+                listarMarcioCC: totalTCC,
+                listarMarcioMMV: totalTMMV,
+                listarMarcioRP: totalTRP,
+                listarMarcioLP: totalTLP,
+
+                //busca total
+                listarTotalMarcio: totalTEquip,
+
+                //listart total por equipamento
+                listarMarcioCol: totalCol,
+                listarMarcioImp: totalImp,
+                listarMarcioLei: totalLei,
+                listarMarcioBusca: totalBusca,
+                listarMarcioCar3: totalCar3,
+                listarMarcioCar4: totalCar4,
+                listarMarcioCar5: totalCar5,
+                listarMarcioCar6: totalCar6,
+                listarMarcioBerco: totalBerco,
+                listarMarcioFonte: totalFonte,
+                listarMarcioCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Cida Zani") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarCidaMC: totalTMC,
+                listarCidaLA: totalTLA,
+                listarCidaSR: totalTSR,
+                listarCidaRM: totalTRM,
+                listarCidaCO: totalTCO,
+                listarCidaRV: totalTRV,
+                listarCidaCC: totalTCC,
+                listarCidaMMV: totalTMMV,
+                listarCidaRP: totalTRP,
+                listarCidaLP: totalTLP,
+
+                //busca total
+                listarTotalCida: totalTEquip,
+
+                //listart total por equipamento
+                listarCidaCol: totalCol,
+                listarCidaImp: totalImp,
+                listarCidaLei: totalLei,
+                listarCidaBusca: totalBusca,
+                listarCidaCar3: totalCar3,
+                listarCidaCar4: totalCar4,
+                listarCidaCar5: totalCar5,
+                listarCidaCar6: totalCar6,
+                listarCidaBerco: totalBerco,
+                listarCidaFonte: totalFonte,
+                listarCidaCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Allan Zulino") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarAllanMC: totalTMC,
+                listarAllanLA: totalTLA,
+                listarAllanSR: totalTSR,
+                listarAllanRM: totalTRM,
+                listarAllanCO: totalTCO,
+                listarAllanRV: totalTRV,
+                listarAllanCC: totalTCC,
+                listarAllanMMV: totalTMMV,
+                listarAllanRP: totalTRP,
+                listarAllanLP: totalTLP,
+
+                //busca total
+                listarTotalAllan: totalTEquip,
+
+                //listart total por equipamento
+                listarAllanCol: totalCol,
+                listarAllanImp: totalImp,
+                listarAllanLei: totalLei,
+                listarAllanBusca: totalBusca,
+                listarAllanCar3: totalCar3,
+                listarAllanCar4: totalCar4,
+                listarAllanCar5: totalCar5,
+                listarAllanCar6: totalCar6,
+                listarAllanBerco: totalBerco,
+                listarAllanFonte: totalFonte,
+                listarAllanCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Douglas Altenfelder") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarDouglasMC: totalTMC,
+                listarDouglasLA: totalTLA,
+                listarDouglasSR: totalTSR,
+                listarDouglasRM: totalTRM,
+                listarDouglasCO: totalTCO,
+                listarDouglasRV: totalTRV,
+                listarDouglasCC: totalTCC,
+                listarDouglasMMV: totalTMMV,
+                listarDouglasRP: totalTRP,
+                listarDouglasLP: totalTLP,
+
+                //busca total
+                listarTotalDouglas: totalTEquip,
+
+                //listart total por equipamento
+                listarDouglasCol: totalCol,
+                listarDouglasImp: totalImp,
+                listarDouglasLei: totalLei,
+                listarDouglasBusca: totalBusca,
+                listarDouglasCar3: totalCar3,
+                listarDouglasCar4: totalCar4,
+                listarDouglasCar5: totalCar5,
+                listarDouglasCar6: totalCar6,
+                listarDouglasBerco: totalBerco,
+                listarDouglasFonte: totalFonte,
+                listarDouglasCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Kleiton Paulino") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarKleitonMC: totalTMC,
+                listarKleitonLA: totalTLA,
+                listarKleitonSR: totalTSR,
+                listarKleitonRM: totalTRM,
+                listarKleitonCO: totalTCO,
+                listarKleitonRV: totalTRV,
+                listarKleitonCC: totalTCC,
+                listarKleitonMMV: totalTMMV,
+                listarKleitonRP: totalTRP,
+                listarKleitonLP: totalTLP,
+
+                //busca total
+                listarTotalKleiton: totalTEquip,
+
+                //listart total por equipamento
+                listarKleitonCol: totalCol,
+                listarKleitonImp: totalImp,
+                listarKleitonLei: totalLei,
+                listarKleitonBusca: totalBusca,
+                listarKleitonCar3: totalCar3,
+                listarKleitonCar4: totalCar4,
+                listarKleitonCar5: totalCar5,
+                listarKleitonCar6: totalCar6,
+                listarKleitonBerco: totalBerco,
+                listarKleitonFonte: totalFonte,
+                listarKleitonCabos: totalCabo
+            })
+        }
+    }
+
+    async buscarPorTecnicoFiltro(tecnico, dia, mes, ano) {
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+
+        //#region Ano
+        if ((dia === "Todos") && (ano !== "Todos") && (mes === "Todos")) {
+
+            if (tecnico === "Diego Carvalho") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiegoCMC: totalTMC,
+                    listarDiegoCLA: totalTLA,
+                    listarDiegoCSR: totalTSR,
+                    listarDiegoCRM: totalTRM,
+                    listarDiegoCCO: totalTCO,
+                    listarDiegoCRV: totalTRV,
+                    listarDiegoCCC: totalTCC,
+                    listarDiegoCMMV: totalTMMV,
+                    listarDiegoCRP: totalTRP,
+                    listarDiegoCLP: totalTLP,
+
+                    //busca total
+                    listarTotalDiegoC: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiegoCCol: totalCol,
+                    listarDiegoCImp: totalImp,
+                    listarDiegoCLei: totalLei,
+                    listarDiegoCBusca: totalBusca,
+                    listarDiegoCCar3: totalCar3,
+                    listarDiegoCCar4: totalCar4,
+                    listarDiegoCCar5: totalCar5,
+                    listarDiegoCCar6: totalCar6,
+                    listarDiegoCBerco: totalBerco,
+                    listarDiegoCFonte: totalFonte,
+                    listarDiegoCCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Natanael Silva Lima") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarNataMC: totalTMC,
+                    listarNataLA: totalTLA,
+                    listarNataSR: totalTSR,
+                    listarNataRM: totalTRM,
+                    listarNataCO: totalTCO,
+                    listarNataRV: totalTRV,
+                    listarNataCC: totalTCC,
+                    listarNataMMV: totalTMMV,
+                    listarNataRP: totalTRP,
+                    listarNataLP: totalTLP,
+
+                    //busca total
+                    listarTotalNata: totalTEquip,
+
+                    //listart total por equipamento
+                    listarNataCol: totalCol,
+                    listarNataImp: totalImp,
+                    listarNataLei: totalLei,
+                    listarNataBusca: totalBusca,
+                    listarNataCar3: totalCar3,
+                    listarNataCar4: totalCar4,
+                    listarNataCar5: totalCar5,
+                    listarNataCar6: totalCar6,
+                    listarNataBerco: totalBerco,
+                    listarNataFonte: totalFonte,
+                    listarNataCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Mateus Doval") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarMateusMC: totalTMC,
+                    listarMateusLA: totalTLA,
+                    listarMateusSR: totalTSR,
+                    listarMateusRM: totalTRM,
+                    listarMateusCO: totalTCO,
+                    listarMateusRV: totalTRV,
+                    listarMateusCC: totalTCC,
+                    listarMateusMMV: totalTMMV,
+                    listarMateusRP: totalTRP,
+                    listarMateusLP: totalTLP,
+
+                    //busca total
+                    listarTotalMateus: totalTEquip,
+
+                    //listart total por equipamento
+                    listarMateusCol: totalCol,
+                    listarMateusImp: totalImp,
+                    listarMateusLei: totalLei,
+                    listarMateusBusca: totalBusca,
+                    listarMateusCar3: totalCar3,
+                    listarMateusCar4: totalCar4,
+                    listarMateusCar5: totalCar5,
+                    listarMateusCar6: totalCar6,
+                    listarMateusBerco: totalBerco,
+                    listarMateusFonte: totalFonte,
+                    listarMateusCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Lucas Feliciano") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarLucasMC: totalTMC,
+                    listarLucasLA: totalTLA,
+                    listarLucasSR: totalTSR,
+                    listarLucasRM: totalTRM,
+                    listarLucasCO: totalTCO,
+                    listarLucasRV: totalTRV,
+                    listarLucasCC: totalTCC,
+                    listarLucasMMV: totalTMMV,
+                    listarLucasRP: totalTRP,
+                    listarLucasLP: totalTLP,
+
+                    //busca total
+                    listarTotalLucas: totalTEquip,
+
+                    //listart total por equipamento
+                    listarLucasCol: totalCol,
+                    listarLucasImp: totalImp,
+                    listarLucasLei: totalLei,
+                    listarLucasBusca: totalBusca,
+                    listarLucasCar3: totalCar3,
+                    listarLucasCar4: totalCar4,
+                    listarLucasCar5: totalCar5,
+                    listarLucasCar6: totalCar6,
+                    listarLucasBerco: totalBerco,
+                    listarLucasFonte: totalFonte,
+                    listarLucasCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Diogo Selmini") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiogoMC: totalTMC,
+                    listarDiogoLA: totalTLA,
+                    listarDiogoSR: totalTSR,
+                    listarDiogoRM: totalTRM,
+                    listarDiogoCO: totalTCO,
+                    listarDiogoRV: totalTRV,
+                    listarDiogoCC: totalTCC,
+                    listarDiogoMMV: totalTMMV,
+                    listarDiogoRP: totalTRP,
+                    listarDiogoLP: totalTLP,
+
+                    //busca total
+                    listarTotalDiogo: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiogoCol: totalCol,
+                    listarDiogoImp: totalImp,
+                    listarDiogoLei: totalLei,
+                    listarDiogoBusca: totalBusca,
+                    listarDiogoCar3: totalCar3,
+                    listarDiogoCar4: totalCar4,
+                    listarDiogoCar5: totalCar5,
+                    listarDiogoCar6: totalCar6,
+                    listarDiogoBerco: totalBerco,
+                    listarDiogoFonte: totalFonte,
+                    listarDiogoCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Gabriel Kaique") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarGabrielMC: totalTMC,
+                    listarGabrielLA: totalTLA,
+                    listarGabrielSR: totalTSR,
+                    listarGabrielRM: totalTRM,
+                    listarGabrielCO: totalTCO,
+                    listarGabrielRV: totalTRV,
+                    listarGabrielCC: totalTCC,
+                    listarGabrielMMV: totalTMMV,
+                    listarGabrielRP: totalTRP,
+                    listarGabrielLP: totalTLP,
+
+                    //busca total
+                    listarTotalGabriel: totalTEquip,
+
+                    //listart total por equipamento
+                    listarGabrielCol: totalCol,
+                    listarGabrielImp: totalImp,
+                    listarGabrielLei: totalLei,
+                    listarGabrielBusca: totalBusca,
+                    listarGabrielCar3: totalCar3,
+                    listarGabrielCar4: totalCar4,
+                    listarGabrielCar5: totalCar5,
+                    listarGabrielCar6: totalCar6,
+                    listarGabrielBerco: totalBerco,
+                    listarGabrielFonte: totalFonte,
+                    listarGabrielCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Bruno Bedani") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarBrunoMC: totalTMC,
+                    listarBrunoLA: totalTLA,
+                    listarBrunoSR: totalTSR,
+                    listarBrunoRM: totalTRM,
+                    listarBrunoCO: totalTCO,
+                    listarBrunoRV: totalTRV,
+                    listarBrunoCC: totalTCC,
+                    listarBrunoMMV: totalTMMV,
+                    listarBrunoRP: totalTRP,
+                    listarBrunoLP: totalTLP,
+
+                    //busca total
+                    listarTotalBruno: totalTEquip,
+
+                    //listart total por equipamento
+                    listarBrunoCol: totalCol,
+                    listarBrunoImp: totalImp,
+                    listarBrunoLei: totalLei,
+                    listarBrunoBusca: totalBusca,
+                    listarBrunoCar3: totalCar3,
+                    listarBrunoCar4: totalCar4,
+                    listarBrunoCar5: totalCar5,
+                    listarBrunoCar6: totalCar6,
+                    listarBrunoBerco: totalBerco,
+                    listarBrunoFonte: totalFonte,
+                    listarBrunoCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Vinicius Gomes") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarViniciusMC: totalTMC,
+                    listarViniciusLA: totalTLA,
+                    listarViniciusSR: totalTSR,
+                    listarViniciusRM: totalTRM,
+                    listarViniciusCO: totalTCO,
+                    listarViniciusRV: totalTRV,
+                    listarViniciusCC: totalTCC,
+                    listarViniciusMMV: totalTMMV,
+                    listarViniciusRP: totalTRP,
+                    listarViniciusLP: totalTLP,
+
+                    //busca total
+                    listarTotalVinicius: totalTEquip,
+
+                    //listart total por equipamento
+                    listarViniciusCol: totalCol,
+                    listarViniciusImp: totalImp,
+                    listarViniciusLei: totalLei,
+                    listarViniciusBusca: totalBusca,
+                    listarViniciusCar3: totalCar3,
+                    listarViniciusCar4: totalCar4,
+                    listarViniciusCar5: totalCar5,
+                    listarViniciusCar6: totalCar6,
+                    listarViniciusBerco: totalBerco,
+                    listarViniciusFonte: totalFonte,
+                    listarViniciusCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Diego Almeida") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiegoAMC: totalTMC,
+                    listarDiegoALA: totalTLA,
+                    listarDiegoASR: totalTSR,
+                    listarDiegoARM: totalTRM,
+                    listarDiegoACO: totalTCO,
+                    listarDiegoARV: totalTRV,
+                    listarDiegoACC: totalTCC,
+                    listarDiegoAMMV: totalTMMV,
+                    listarDiegoARP: totalTRP,
+                    listarDiegoALP: totalTLP,
+
+                    //busca total
+                    listarTotalDiegoA: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiegoACol: totalCol,
+                    listarDiegoAImp: totalImp,
+                    listarDiegoALei: totalLei,
+                    listarDiegoABusca: totalBusca,
+                    listarDiegoACar3: totalCar3,
+                    listarDiegoACar4: totalCar4,
+                    listarDiegoACar5: totalCar5,
+                    listarDiegoACar6: totalCar6,
+                    listarDiegoABerco: totalBerco,
+                    listarDiegoAFonte: totalFonte,
+                    listarDiegoACabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Anderson Ramos") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarAndersonMC: totalTMC,
+                    listarAndersonLA: totalTLA,
+                    listarAndersonSR: totalTSR,
+                    listarAndersonRM: totalTRM,
+                    listarAndersonCO: totalTCO,
+                    listarAndersonRV: totalTRV,
+                    listarAndersonCC: totalTCC,
+                    listarAndersonMMV: totalTMMV,
+                    listarAndersonRP: totalTRP,
+                    listarAndersonLP: totalTLP,
+
+                    //busca total
+                    listarTotalAnderson: totalTEquip,
+
+                    //listart total por equipamento
+                    listarAndersonCol: totalCol,
+                    listarAndersonImp: totalImp,
+                    listarAndersonLei: totalLei,
+                    listarAndersonBusca: totalBusca,
+                    listarAndersonCar3: totalCar3,
+                    listarAndersonCar4: totalCar4,
+                    listarAndersonCar5: totalCar5,
+                    listarAndersonCar6: totalCar6,
+                    listarAndersonBerco: totalBerco,
+                    listarAndersonFonte: totalFonte,
+                    listarAndersonCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Marcio") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarMarcioMC: totalTMC,
+                    listarMarcioLA: totalTLA,
+                    listarMarcioSR: totalTSR,
+                    listarMarcioRM: totalTRM,
+                    listarMarcioCO: totalTCO,
+                    listarMarcioRV: totalTRV,
+                    listarMarcioCC: totalTCC,
+                    listarMarcioMMV: totalTMMV,
+                    listarMarcioRP: totalTRP,
+                    listarMarcioLP: totalTLP,
+
+                    //busca total
+                    listarTotalMarcio: totalTEquip,
+
+                    //listart total por equipamento
+                    listarMarcioCol: totalCol,
+                    listarMarcioImp: totalImp,
+                    listarMarcioLei: totalLei,
+                    listarMarcioBusca: totalBusca,
+                    listarMarcioCar3: totalCar3,
+                    listarMarcioCar4: totalCar4,
+                    listarMarcioCar5: totalCar5,
+                    listarMarcioCar6: totalCar6,
+                    listarMarcioBerco: totalBerco,
+                    listarMarcioFonte: totalFonte,
+                    listarMarcioCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Cida Zani") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarCidaMC: totalTMC,
+                    listarCidaLA: totalTLA,
+                    listarCidaSR: totalTSR,
+                    listarCidaRM: totalTRM,
+                    listarCidaCO: totalTCO,
+                    listarCidaRV: totalTRV,
+                    listarCidaCC: totalTCC,
+                    listarCidaMMV: totalTMMV,
+                    listarCidaRP: totalTRP,
+                    listarCidaLP: totalTLP,
+
+                    //busca total
+                    listarTotalCida: totalTEquip,
+
+                    //listart total por equipamento
+                    listarCidaCol: totalCol,
+                    listarCidaImp: totalImp,
+                    listarCidaLei: totalLei,
+                    listarCidaBusca: totalBusca,
+                    listarCidaCar3: totalCar3,
+                    listarCidaCar4: totalCar4,
+                    listarCidaCar5: totalCar5,
+                    listarCidaCar6: totalCar6,
+                    listarCidaBerco: totalBerco,
+                    listarCidaFonte: totalFonte,
+                    listarCidaCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Allan Zulino") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarAllanMC: totalTMC,
+                    listarAllanLA: totalTLA,
+                    listarAllanSR: totalTSR,
+                    listarAllanRM: totalTRM,
+                    listarAllanCO: totalTCO,
+                    listarAllanRV: totalTRV,
+                    listarAllanCC: totalTCC,
+                    listarAllanMMV: totalTMMV,
+                    listarAllanRP: totalTRP,
+                    listarAllanLP: totalTLP,
+
+                    //busca total
+                    listarTotalAllan: totalTEquip,
+
+                    //listart total por equipamento
+                    listarAllanCol: totalCol,
+                    listarAllanImp: totalImp,
+                    listarAllanLei: totalLei,
+                    listarAllanBusca: totalBusca,
+                    listarAllanCar3: totalCar3,
+                    listarAllanCar4: totalCar4,
+                    listarAllanCar5: totalCar5,
+                    listarAllanCar6: totalCar6,
+                    listarAllanBerco: totalBerco,
+                    listarAllanFonte: totalFonte,
+                    listarAllanCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Douglas Altenfelder") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDouglasMC: totalTMC,
+                    listarDouglasLA: totalTLA,
+                    listarDouglasSR: totalTSR,
+                    listarDouglasRM: totalTRM,
+                    listarDouglasCO: totalTCO,
+                    listarDouglasRV: totalTRV,
+                    listarDouglasCC: totalTCC,
+                    listarDouglasMMV: totalTMMV,
+                    listarDouglasRP: totalTRP,
+                    listarDouglasLP: totalTLP,
+
+                    //busca total
+                    listarTotalDouglas: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDouglasCol: totalCol,
+                    listarDouglasImp: totalImp,
+                    listarDouglasLei: totalLei,
+                    listarDouglasBusca: totalBusca,
+                    listarDouglasCar3: totalCar3,
+                    listarDouglasCar4: totalCar4,
+                    listarDouglasCar5: totalCar5,
+                    listarDouglasCar6: totalCar6,
+                    listarDouglasBerco: totalBerco,
+                    listarDouglasFonte: totalFonte,
+                    listarDouglasCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Kleiton Paulino") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarKleitonMC: totalTMC,
+                    listarKleitonLA: totalTLA,
+                    listarKleitonSR: totalTSR,
+                    listarKleitonRM: totalTRM,
+                    listarKleitonCO: totalTCO,
+                    listarKleitonRV: totalTRV,
+                    listarKleitonCC: totalTCC,
+                    listarKleitonMMV: totalTMMV,
+                    listarKleitonRP: totalTRP,
+                    listarKleitonLP: totalTLP,
+
+                    //busca total
+                    listarTotalKleiton: totalTEquip,
+
+                    //listart total por equipamento
+                    listarKleitonCol: totalCol,
+                    listarKleitonImp: totalImp,
+                    listarKleitonLei: totalLei,
+                    listarKleitonBusca: totalBusca,
+                    listarKleitonCar3: totalCar3,
+                    listarKleitonCar4: totalCar4,
+                    listarKleitonCar5: totalCar5,
+                    listarKleitonCar6: totalCar6,
+                    listarKleitonBerco: totalBerco,
+                    listarKleitonFonte: totalFonte,
+                    listarKleitonCabos: totalCabo
+                })
+            }
+        }
+        //#endregion
+
+        //#region Mês e Ano
+        if ((dia === "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
+
+            if (tecnico === "Diego Carvalho") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiegoCMC: totalTMC,
+                    listarDiegoCLA: totalTLA,
+                    listarDiegoCSR: totalTSR,
+                    listarDiegoCRM: totalTRM,
+                    listarDiegoCCO: totalTCO,
+                    listarDiegoCRV: totalTRV,
+                    listarDiegoCCC: totalTCC,
+                    listarDiegoCMMV: totalTMMV,
+                    listarDiegoCRP: totalTRP,
+                    listarDiegoCLP: totalTLP,
+
+                    //busca total
+                    listarTotalDiegoC: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiegoCCol: totalCol,
+                    listarDiegoCImp: totalImp,
+                    listarDiegoCLei: totalLei,
+                    listarDiegoCBusca: totalBusca,
+                    listarDiegoCCar3: totalCar3,
+                    listarDiegoCCar4: totalCar4,
+                    listarDiegoCCar5: totalCar5,
+                    listarDiegoCCar6: totalCar6,
+                    listarDiegoCBerco: totalBerco,
+                    listarDiegoCFonte: totalFonte,
+                    listarDiegoCCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Natanael Silva Lima") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarNataMC: totalTMC,
+                    listarNataLA: totalTLA,
+                    listarNataSR: totalTSR,
+                    listarNataRM: totalTRM,
+                    listarNataCO: totalTCO,
+                    listarNataRV: totalTRV,
+                    listarNataCC: totalTCC,
+                    listarNataMMV: totalTMMV,
+                    listarNataRP: totalTRP,
+                    listarNataLP: totalTLP,
+
+                    //busca total
+                    listarTotalNata: totalTEquip,
+
+                    //listart total por equipamento
+                    listarNataCol: totalCol,
+                    listarNataImp: totalImp,
+                    listarNataLei: totalLei,
+                    listarNataBusca: totalBusca,
+                    listarNataCar3: totalCar3,
+                    listarNataCar4: totalCar4,
+                    listarNataCar5: totalCar5,
+                    listarNataCar6: totalCar6,
+                    listarNataBerco: totalBerco,
+                    listarNataFonte: totalFonte,
+                    listarNataCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Mateus Doval") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarMateusMC: totalTMC,
+                    listarMateusLA: totalTLA,
+                    listarMateusSR: totalTSR,
+                    listarMateusRM: totalTRM,
+                    listarMateusCO: totalTCO,
+                    listarMateusRV: totalTRV,
+                    listarMateusCC: totalTCC,
+                    listarMateusMMV: totalTMMV,
+                    listarMateusRP: totalTRP,
+                    listarMateusLP: totalTLP,
+
+                    //busca total
+                    listarTotalMateus: totalTEquip,
+
+                    //listart total por equipamento
+                    listarMateusCol: totalCol,
+                    listarMateusImp: totalImp,
+                    listarMateusLei: totalLei,
+                    listarMateusBusca: totalBusca,
+                    listarMateusCar3: totalCar3,
+                    listarMateusCar4: totalCar4,
+                    listarMateusCar5: totalCar5,
+                    listarMateusCar6: totalCar6,
+                    listarMateusBerco: totalBerco,
+                    listarMateusFonte: totalFonte,
+                    listarMateusCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Lucas Feliciano") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarLucasMC: totalTMC,
+                    listarLucasLA: totalTLA,
+                    listarLucasSR: totalTSR,
+                    listarLucasRM: totalTRM,
+                    listarLucasCO: totalTCO,
+                    listarLucasRV: totalTRV,
+                    listarLucasCC: totalTCC,
+                    listarLucasMMV: totalTMMV,
+                    listarLucasRP: totalTRP,
+                    listarLucasLP: totalTLP,
+
+                    //busca total
+                    listarTotalLucas: totalTEquip,
+
+                    //listart total por equipamento
+                    listarLucasCol: totalCol,
+                    listarLucasImp: totalImp,
+                    listarLucasLei: totalLei,
+                    listarLucasBusca: totalBusca,
+                    listarLucasCar3: totalCar3,
+                    listarLucasCar4: totalCar4,
+                    listarLucasCar5: totalCar5,
+                    listarLucasCar6: totalCar6,
+                    listarLucasBerco: totalBerco,
+                    listarLucasFonte: totalFonte,
+                    listarLucasCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Diogo Selmini") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiogoMC: totalTMC,
+                    listarDiogoLA: totalTLA,
+                    listarDiogoSR: totalTSR,
+                    listarDiogoRM: totalTRM,
+                    listarDiogoCO: totalTCO,
+                    listarDiogoRV: totalTRV,
+                    listarDiogoCC: totalTCC,
+                    listarDiogoMMV: totalTMMV,
+                    listarDiogoRP: totalTRP,
+                    listarDiogoLP: totalTLP,
+
+                    //busca total
+                    listarTotalDiogo: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiogoCol: totalCol,
+                    listarDiogoImp: totalImp,
+                    listarDiogoLei: totalLei,
+                    listarDiogoBusca: totalBusca,
+                    listarDiogoCar3: totalCar3,
+                    listarDiogoCar4: totalCar4,
+                    listarDiogoCar5: totalCar5,
+                    listarDiogoCar6: totalCar6,
+                    listarDiogoBerco: totalBerco,
+                    listarDiogoFonte: totalFonte,
+                    listarDiogoCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Gabriel Kaique") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarGabrielMC: totalTMC,
+                    listarGabrielLA: totalTLA,
+                    listarGabrielSR: totalTSR,
+                    listarGabrielRM: totalTRM,
+                    listarGabrielCO: totalTCO,
+                    listarGabrielRV: totalTRV,
+                    listarGabrielCC: totalTCC,
+                    listarGabrielMMV: totalTMMV,
+                    listarGabrielRP: totalTRP,
+                    listarGabrielLP: totalTLP,
+
+                    //busca total
+                    listarTotalGabriel: totalTEquip,
+
+                    //listart total por equipamento
+                    listarGabrielCol: totalCol,
+                    listarGabrielImp: totalImp,
+                    listarGabrielLei: totalLei,
+                    listarGabrielBusca: totalBusca,
+                    listarGabrielCar3: totalCar3,
+                    listarGabrielCar4: totalCar4,
+                    listarGabrielCar5: totalCar5,
+                    listarGabrielCar6: totalCar6,
+                    listarGabrielBerco: totalBerco,
+                    listarGabrielFonte: totalFonte,
+                    listarGabrielCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Bruno Bedani") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarBrunoMC: totalTMC,
+                    listarBrunoLA: totalTLA,
+                    listarBrunoSR: totalTSR,
+                    listarBrunoRM: totalTRM,
+                    listarBrunoCO: totalTCO,
+                    listarBrunoRV: totalTRV,
+                    listarBrunoCC: totalTCC,
+                    listarBrunoMMV: totalTMMV,
+                    listarBrunoRP: totalTRP,
+                    listarBrunoLP: totalTLP,
+
+                    //busca total
+                    listarTotalBruno: totalTEquip,
+
+                    //listart total por equipamento
+                    listarBrunoCol: totalCol,
+                    listarBrunoImp: totalImp,
+                    listarBrunoLei: totalLei,
+                    listarBrunoBusca: totalBusca,
+                    listarBrunoCar3: totalCar3,
+                    listarBrunoCar4: totalCar4,
+                    listarBrunoCar5: totalCar5,
+                    listarBrunoCar6: totalCar6,
+                    listarBrunoBerco: totalBerco,
+                    listarBrunoFonte: totalFonte,
+                    listarBrunoCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Vinicius Gomes") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarViniciusMC: totalTMC,
+                    listarViniciusLA: totalTLA,
+                    listarViniciusSR: totalTSR,
+                    listarViniciusRM: totalTRM,
+                    listarViniciusCO: totalTCO,
+                    listarViniciusRV: totalTRV,
+                    listarViniciusCC: totalTCC,
+                    listarViniciusMMV: totalTMMV,
+                    listarViniciusRP: totalTRP,
+                    listarViniciusLP: totalTLP,
+
+                    //busca total
+                    listarTotalVinicius: totalTEquip,
+
+                    //listart total por equipamento
+                    listarViniciusCol: totalCol,
+                    listarViniciusImp: totalImp,
+                    listarViniciusLei: totalLei,
+                    listarViniciusBusca: totalBusca,
+                    listarViniciusCar3: totalCar3,
+                    listarViniciusCar4: totalCar4,
+                    listarViniciusCar5: totalCar5,
+                    listarViniciusCar6: totalCar6,
+                    listarViniciusBerco: totalBerco,
+                    listarViniciusFonte: totalFonte,
+                    listarViniciusCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Diego Almeida") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiegoAMC: totalTMC,
+                    listarDiegoALA: totalTLA,
+                    listarDiegoASR: totalTSR,
+                    listarDiegoARM: totalTRM,
+                    listarDiegoACO: totalTCO,
+                    listarDiegoARV: totalTRV,
+                    listarDiegoACC: totalTCC,
+                    listarDiegoAMMV: totalTMMV,
+                    listarDiegoARP: totalTRP,
+                    listarDiegoALP: totalTLP,
+
+                    //busca total
+                    listarTotalDiegoA: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiegoACol: totalCol,
+                    listarDiegoAImp: totalImp,
+                    listarDiegoALei: totalLei,
+                    listarDiegoABusca: totalBusca,
+                    listarDiegoACar3: totalCar3,
+                    listarDiegoACar4: totalCar4,
+                    listarDiegoACar5: totalCar5,
+                    listarDiegoACar6: totalCar6,
+                    listarDiegoABerco: totalBerco,
+                    listarDiegoAFonte: totalFonte,
+                    listarDiegoACabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Anderson Ramos") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarAndersonMC: totalTMC,
+                    listarAndersonLA: totalTLA,
+                    listarAndersonSR: totalTSR,
+                    listarAndersonRM: totalTRM,
+                    listarAndersonCO: totalTCO,
+                    listarAndersonRV: totalTRV,
+                    listarAndersonCC: totalTCC,
+                    listarAndersonMMV: totalTMMV,
+                    listarAndersonRP: totalTRP,
+                    listarAndersonLP: totalTLP,
+
+                    //busca total
+                    listarTotalAnderson: totalTEquip,
+
+                    //listart total por equipamento
+                    listarAndersonCol: totalCol,
+                    listarAndersonImp: totalImp,
+                    listarAndersonLei: totalLei,
+                    listarAndersonBusca: totalBusca,
+                    listarAndersonCar3: totalCar3,
+                    listarAndersonCar4: totalCar4,
+                    listarAndersonCar5: totalCar5,
+                    listarAndersonCar6: totalCar6,
+                    listarAndersonBerco: totalBerco,
+                    listarAndersonFonte: totalFonte,
+                    listarAndersonCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Marcio") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarMarcioMC: totalTMC,
+                    listarMarcioLA: totalTLA,
+                    listarMarcioSR: totalTSR,
+                    listarMarcioRM: totalTRM,
+                    listarMarcioCO: totalTCO,
+                    listarMarcioRV: totalTRV,
+                    listarMarcioCC: totalTCC,
+                    listarMarcioMMV: totalTMMV,
+                    listarMarcioRP: totalTRP,
+                    listarMarcioLP: totalTLP,
+
+                    //busca total
+                    listarTotalMarcio: totalTEquip,
+
+                    //listart total por equipamento
+                    listarMarcioCol: totalCol,
+                    listarMarcioImp: totalImp,
+                    listarMarcioLei: totalLei,
+                    listarMarcioBusca: totalBusca,
+                    listarMarcioCar3: totalCar3,
+                    listarMarcioCar4: totalCar4,
+                    listarMarcioCar5: totalCar5,
+                    listarMarcioCar6: totalCar6,
+                    listarMarcioBerco: totalBerco,
+                    listarMarcioFonte: totalFonte,
+                    listarMarcioCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Cida Zani") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarCidaMC: totalTMC,
+                    listarCidaLA: totalTLA,
+                    listarCidaSR: totalTSR,
+                    listarCidaRM: totalTRM,
+                    listarCidaCO: totalTCO,
+                    listarCidaRV: totalTRV,
+                    listarCidaCC: totalTCC,
+                    listarCidaMMV: totalTMMV,
+                    listarCidaRP: totalTRP,
+                    listarCidaLP: totalTLP,
+
+                    //busca total
+                    listarTotalCida: totalTEquip,
+
+                    //listart total por equipamento
+                    listarCidaCol: totalCol,
+                    listarCidaImp: totalImp,
+                    listarCidaLei: totalLei,
+                    listarCidaBusca: totalBusca,
+                    listarCidaCar3: totalCar3,
+                    listarCidaCar4: totalCar4,
+                    listarCidaCar5: totalCar5,
+                    listarCidaCar6: totalCar6,
+                    listarCidaBerco: totalBerco,
+                    listarCidaFonte: totalFonte,
+                    listarCidaCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Allan Zulino") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarAllanMC: totalTMC,
+                    listarAllanLA: totalTLA,
+                    listarAllanSR: totalTSR,
+                    listarAllanRM: totalTRM,
+                    listarAllanCO: totalTCO,
+                    listarAllanRV: totalTRV,
+                    listarAllanCC: totalTCC,
+                    listarAllanMMV: totalTMMV,
+                    listarAllanRP: totalTRP,
+                    listarAllanLP: totalTLP,
+
+                    //busca total
+                    listarTotalAllan: totalTEquip,
+
+                    //listart total por equipamento
+                    listarAllanCol: totalCol,
+                    listarAllanImp: totalImp,
+                    listarAllanLei: totalLei,
+                    listarAllanBusca: totalBusca,
+                    listarAllanCar3: totalCar3,
+                    listarAllanCar4: totalCar4,
+                    listarAllanCar5: totalCar5,
+                    listarAllanCar6: totalCar6,
+                    listarAllanBerco: totalBerco,
+                    listarAllanFonte: totalFonte,
+                    listarAllanCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Douglas Altenfelder") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDouglasMC: totalTMC,
+                    listarDouglasLA: totalTLA,
+                    listarDouglasSR: totalTSR,
+                    listarDouglasRM: totalTRM,
+                    listarDouglasCO: totalTCO,
+                    listarDouglasRV: totalTRV,
+                    listarDouglasCC: totalTCC,
+                    listarDouglasMMV: totalTMMV,
+                    listarDouglasRP: totalTRP,
+                    listarDouglasLP: totalTLP,
+
+                    //busca total
+                    listarTotalDouglas: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDouglasCol: totalCol,
+                    listarDouglasImp: totalImp,
+                    listarDouglasLei: totalLei,
+                    listarDouglasBusca: totalBusca,
+                    listarDouglasCar3: totalCar3,
+                    listarDouglasCar4: totalCar4,
+                    listarDouglasCar5: totalCar5,
+                    listarDouglasCar6: totalCar6,
+                    listarDouglasBerco: totalBerco,
+                    listarDouglasFonte: totalFonte,
+                    listarDouglasCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Kleiton Paulino") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarKleitonMC: totalTMC,
+                    listarKleitonLA: totalTLA,
+                    listarKleitonSR: totalTSR,
+                    listarKleitonRM: totalTRM,
+                    listarKleitonCO: totalTCO,
+                    listarKleitonRV: totalTRV,
+                    listarKleitonCC: totalTCC,
+                    listarKleitonMMV: totalTMMV,
+                    listarKleitonRP: totalTRP,
+                    listarKleitonLP: totalTLP,
+
+                    //busca total
+                    listarTotalKleiton: totalTEquip,
+
+                    //listart total por equipamento
+                    listarKleitonCol: totalCol,
+                    listarKleitonImp: totalImp,
+                    listarKleitonLei: totalLei,
+                    listarKleitonBusca: totalBusca,
+                    listarKleitonCar3: totalCar3,
+                    listarKleitonCar4: totalCar4,
+                    listarKleitonCar5: totalCar5,
+                    listarKleitonCar6: totalCar6,
+                    listarKleitonBerco: totalBerco,
+                    listarKleitonFonte: totalFonte,
+                    listarKleitonCabos: totalCabo
+                })
+            }
+        }
+        //#endregion
+
+        //#region Dia Mês Ano
+        if ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
+
+            if (tecnico === "Diego Carvalho") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiegoCMC: totalTMC,
+                    listarDiegoCLA: totalTLA,
+                    listarDiegoCSR: totalTSR,
+                    listarDiegoCRM: totalTRM,
+                    listarDiegoCCO: totalTCO,
+                    listarDiegoCRV: totalTRV,
+                    listarDiegoCCC: totalTCC,
+                    listarDiegoCMMV: totalTMMV,
+                    listarDiegoCRP: totalTRP,
+                    listarDiegoCLP: totalTLP,
+
+                    //busca total
+                    listarTotalDiegoC: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiegoCCol: totalCol,
+                    listarDiegoCImp: totalImp,
+                    listarDiegoCLei: totalLei,
+                    listarDiegoCBusca: totalBusca,
+                    listarDiegoCCar3: totalCar3,
+                    listarDiegoCCar4: totalCar4,
+                    listarDiegoCCar5: totalCar5,
+                    listarDiegoCCar6: totalCar6,
+                    listarDiegoCBerco: totalBerco,
+                    listarDiegoCFonte: totalFonte,
+                    listarDiegoCCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Natanael Silva Lima") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarNataMC: totalTMC,
+                    listarNataLA: totalTLA,
+                    listarNataSR: totalTSR,
+                    listarNataRM: totalTRM,
+                    listarNataCO: totalTCO,
+                    listarNataRV: totalTRV,
+                    listarNataCC: totalTCC,
+                    listarNataMMV: totalTMMV,
+                    listarNataRP: totalTRP,
+                    listarNataLP: totalTLP,
+
+                    //busca total
+                    listarTotalNata: totalTEquip,
+
+                    //listart total por equipamento
+                    listarNataCol: totalCol,
+                    listarNataImp: totalImp,
+                    listarNataLei: totalLei,
+                    listarNataBusca: totalBusca,
+                    listarNataCar3: totalCar3,
+                    listarNataCar4: totalCar4,
+                    listarNataCar5: totalCar5,
+                    listarNataCar6: totalCar6,
+                    listarNataBerco: totalBerco,
+                    listarNataFonte: totalFonte,
+                    listarNataCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Mateus Doval") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarMateusMC: totalTMC,
+                    listarMateusLA: totalTLA,
+                    listarMateusSR: totalTSR,
+                    listarMateusRM: totalTRM,
+                    listarMateusCO: totalTCO,
+                    listarMateusRV: totalTRV,
+                    listarMateusCC: totalTCC,
+                    listarMateusMMV: totalTMMV,
+                    listarMateusRP: totalTRP,
+                    listarMateusLP: totalTLP,
+
+                    //busca total
+                    listarTotalMateus: totalTEquip,
+
+                    //listart total por equipamento
+                    listarMateusCol: totalCol,
+                    listarMateusImp: totalImp,
+                    listarMateusLei: totalLei,
+                    listarMateusBusca: totalBusca,
+                    listarMateusCar3: totalCar3,
+                    listarMateusCar4: totalCar4,
+                    listarMateusCar5: totalCar5,
+                    listarMateusCar6: totalCar6,
+                    listarMateusBerco: totalBerco,
+                    listarMateusFonte: totalFonte,
+                    listarMateusCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Lucas Feliciano") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarLucasMC: totalTMC,
+                    listarLucasLA: totalTLA,
+                    listarLucasSR: totalTSR,
+                    listarLucasRM: totalTRM,
+                    listarLucasCO: totalTCO,
+                    listarLucasRV: totalTRV,
+                    listarLucasCC: totalTCC,
+                    listarLucasMMV: totalTMMV,
+                    listarLucasRP: totalTRP,
+                    listarLucasLP: totalTLP,
+
+                    //busca total
+                    listarTotalLucas: totalTEquip,
+
+                    //listart total por equipamento
+                    listarLucasCol: totalCol,
+                    listarLucasImp: totalImp,
+                    listarLucasLei: totalLei,
+                    listarLucasBusca: totalBusca,
+                    listarLucasCar3: totalCar3,
+                    listarLucasCar4: totalCar4,
+                    listarLucasCar5: totalCar5,
+                    listarLucasCar6: totalCar6,
+                    listarLucasBerco: totalBerco,
+                    listarLucasFonte: totalFonte,
+                    listarLucasCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Diogo Selmini") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiogoMC: totalTMC,
+                    listarDiogoLA: totalTLA,
+                    listarDiogoSR: totalTSR,
+                    listarDiogoRM: totalTRM,
+                    listarDiogoCO: totalTCO,
+                    listarDiogoRV: totalTRV,
+                    listarDiogoCC: totalTCC,
+                    listarDiogoMMV: totalTMMV,
+                    listarDiogoRP: totalTRP,
+                    listarDiogoLP: totalTLP,
+
+                    //busca total
+                    listarTotalDiogo: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiogoCol: totalCol,
+                    listarDiogoImp: totalImp,
+                    listarDiogoLei: totalLei,
+                    listarDiogoBusca: totalBusca,
+                    listarDiogoCar3: totalCar3,
+                    listarDiogoCar4: totalCar4,
+                    listarDiogoCar5: totalCar5,
+                    listarDiogoCar6: totalCar6,
+                    listarDiogoBerco: totalBerco,
+                    listarDiogoFonte: totalFonte,
+                    listarDiogoCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Gabriel Kaique") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarGabrielMC: totalTMC,
+                    listarGabrielLA: totalTLA,
+                    listarGabrielSR: totalTSR,
+                    listarGabrielRM: totalTRM,
+                    listarGabrielCO: totalTCO,
+                    listarGabrielRV: totalTRV,
+                    listarGabrielCC: totalTCC,
+                    listarGabrielMMV: totalTMMV,
+                    listarGabrielRP: totalTRP,
+                    listarGabrielLP: totalTLP,
+
+                    //busca total
+                    listarTotalGabriel: totalTEquip,
+
+                    //listart total por equipamento
+                    listarGabrielCol: totalCol,
+                    listarGabrielImp: totalImp,
+                    listarGabrielLei: totalLei,
+                    listarGabrielBusca: totalBusca,
+                    listarGabrielCar3: totalCar3,
+                    listarGabrielCar4: totalCar4,
+                    listarGabrielCar5: totalCar5,
+                    listarGabrielCar6: totalCar6,
+                    listarGabrielBerco: totalBerco,
+                    listarGabrielFonte: totalFonte,
+                    listarGabrielCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Bruno Bedani") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarBrunoMC: totalTMC,
+                    listarBrunoLA: totalTLA,
+                    listarBrunoSR: totalTSR,
+                    listarBrunoRM: totalTRM,
+                    listarBrunoCO: totalTCO,
+                    listarBrunoRV: totalTRV,
+                    listarBrunoCC: totalTCC,
+                    listarBrunoMMV: totalTMMV,
+                    listarBrunoRP: totalTRP,
+                    listarBrunoLP: totalTLP,
+
+                    //busca total
+                    listarTotalBruno: totalTEquip,
+
+                    //listart total por equipamento
+                    listarBrunoCol: totalCol,
+                    listarBrunoImp: totalImp,
+                    listarBrunoLei: totalLei,
+                    listarBrunoBusca: totalBusca,
+                    listarBrunoCar3: totalCar3,
+                    listarBrunoCar4: totalCar4,
+                    listarBrunoCar5: totalCar5,
+                    listarBrunoCar6: totalCar6,
+                    listarBrunoBerco: totalBerco,
+                    listarBrunoFonte: totalFonte,
+                    listarBrunoCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Vinicius Gomes") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarViniciusMC: totalTMC,
+                    listarViniciusLA: totalTLA,
+                    listarViniciusSR: totalTSR,
+                    listarViniciusRM: totalTRM,
+                    listarViniciusCO: totalTCO,
+                    listarViniciusRV: totalTRV,
+                    listarViniciusCC: totalTCC,
+                    listarViniciusMMV: totalTMMV,
+                    listarViniciusRP: totalTRP,
+                    listarViniciusLP: totalTLP,
+
+                    //busca total
+                    listarTotalVinicius: totalTEquip,
+
+                    //listart total por equipamento
+                    listarViniciusCol: totalCol,
+                    listarViniciusImp: totalImp,
+                    listarViniciusLei: totalLei,
+                    listarViniciusBusca: totalBusca,
+                    listarViniciusCar3: totalCar3,
+                    listarViniciusCar4: totalCar4,
+                    listarViniciusCar5: totalCar5,
+                    listarViniciusCar6: totalCar6,
+                    listarViniciusBerco: totalBerco,
+                    listarViniciusFonte: totalFonte,
+                    listarViniciusCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Diego Almeida") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDiegoAMC: totalTMC,
+                    listarDiegoALA: totalTLA,
+                    listarDiegoASR: totalTSR,
+                    listarDiegoARM: totalTRM,
+                    listarDiegoACO: totalTCO,
+                    listarDiegoARV: totalTRV,
+                    listarDiegoACC: totalTCC,
+                    listarDiegoAMMV: totalTMMV,
+                    listarDiegoARP: totalTRP,
+                    listarDiegoALP: totalTLP,
+
+                    //busca total
+                    listarTotalDiegoA: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDiegoACol: totalCol,
+                    listarDiegoAImp: totalImp,
+                    listarDiegoALei: totalLei,
+                    listarDiegoABusca: totalBusca,
+                    listarDiegoACar3: totalCar3,
+                    listarDiegoACar4: totalCar4,
+                    listarDiegoACar5: totalCar5,
+                    listarDiegoACar6: totalCar6,
+                    listarDiegoABerco: totalBerco,
+                    listarDiegoAFonte: totalFonte,
+                    listarDiegoACabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Anderson Ramos") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarAndersonMC: totalTMC,
+                    listarAndersonLA: totalTLA,
+                    listarAndersonSR: totalTSR,
+                    listarAndersonRM: totalTRM,
+                    listarAndersonCO: totalTCO,
+                    listarAndersonRV: totalTRV,
+                    listarAndersonCC: totalTCC,
+                    listarAndersonMMV: totalTMMV,
+                    listarAndersonRP: totalTRP,
+                    listarAndersonLP: totalTLP,
+
+                    //busca total
+                    listarTotalAnderson: totalTEquip,
+
+                    //listart total por equipamento
+                    listarAndersonCol: totalCol,
+                    listarAndersonImp: totalImp,
+                    listarAndersonLei: totalLei,
+                    listarAndersonBusca: totalBusca,
+                    listarAndersonCar3: totalCar3,
+                    listarAndersonCar4: totalCar4,
+                    listarAndersonCar5: totalCar5,
+                    listarAndersonCar6: totalCar6,
+                    listarAndersonBerco: totalBerco,
+                    listarAndersonFonte: totalFonte,
+                    listarAndersonCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Marcio") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarMarcioMC: totalTMC,
+                    listarMarcioLA: totalTLA,
+                    listarMarcioSR: totalTSR,
+                    listarMarcioRM: totalTRM,
+                    listarMarcioCO: totalTCO,
+                    listarMarcioRV: totalTRV,
+                    listarMarcioCC: totalTCC,
+                    listarMarcioMMV: totalTMMV,
+                    listarMarcioRP: totalTRP,
+                    listarMarcioLP: totalTLP,
+
+                    //busca total
+                    listarTotalMarcio: totalTEquip,
+
+                    //listart total por equipamento
+                    listarMarcioCol: totalCol,
+                    listarMarcioImp: totalImp,
+                    listarMarcioLei: totalLei,
+                    listarMarcioBusca: totalBusca,
+                    listarMarcioCar3: totalCar3,
+                    listarMarcioCar4: totalCar4,
+                    listarMarcioCar5: totalCar5,
+                    listarMarcioCar6: totalCar6,
+                    listarMarcioBerco: totalBerco,
+                    listarMarcioFonte: totalFonte,
+                    listarMarcioCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Cida Zani") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarCidaMC: totalTMC,
+                    listarCidaLA: totalTLA,
+                    listarCidaSR: totalTSR,
+                    listarCidaRM: totalTRM,
+                    listarCidaCO: totalTCO,
+                    listarCidaRV: totalTRV,
+                    listarCidaCC: totalTCC,
+                    listarCidaMMV: totalTMMV,
+                    listarCidaRP: totalTRP,
+                    listarCidaLP: totalTLP,
+
+                    //busca total
+                    listarTotalCida: totalTEquip,
+
+                    //listart total por equipamento
+                    listarCidaCol: totalCol,
+                    listarCidaImp: totalImp,
+                    listarCidaLei: totalLei,
+                    listarCidaBusca: totalBusca,
+                    listarCidaCar3: totalCar3,
+                    listarCidaCar4: totalCar4,
+                    listarCidaCar5: totalCar5,
+                    listarCidaCar6: totalCar6,
+                    listarCidaBerco: totalBerco,
+                    listarCidaFonte: totalFonte,
+                    listarCidaCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Allan Zulino") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarAllanMC: totalTMC,
+                    listarAllanLA: totalTLA,
+                    listarAllanSR: totalTSR,
+                    listarAllanRM: totalTRM,
+                    listarAllanCO: totalTCO,
+                    listarAllanRV: totalTRV,
+                    listarAllanCC: totalTCC,
+                    listarAllanMMV: totalTMMV,
+                    listarAllanRP: totalTRP,
+                    listarAllanLP: totalTLP,
+
+                    //busca total
+                    listarTotalAllan: totalTEquip,
+
+                    //listart total por equipamento
+                    listarAllanCol: totalCol,
+                    listarAllanImp: totalImp,
+                    listarAllanLei: totalLei,
+                    listarAllanBusca: totalBusca,
+                    listarAllanCar3: totalCar3,
+                    listarAllanCar4: totalCar4,
+                    listarAllanCar5: totalCar5,
+                    listarAllanCar6: totalCar6,
+                    listarAllanBerco: totalBerco,
+                    listarAllanFonte: totalFonte,
+                    listarAllanCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Douglas Altenfelder") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarDouglasMC: totalTMC,
+                    listarDouglasLA: totalTLA,
+                    listarDouglasSR: totalTSR,
+                    listarDouglasRM: totalTRM,
+                    listarDouglasCO: totalTCO,
+                    listarDouglasRV: totalTRV,
+                    listarDouglasCC: totalTCC,
+                    listarDouglasMMV: totalTMMV,
+                    listarDouglasRP: totalTRP,
+                    listarDouglasLP: totalTLP,
+
+                    //busca total
+                    listarTotalDouglas: totalTEquip,
+
+                    //listart total por equipamento
+                    listarDouglasCol: totalCol,
+                    listarDouglasImp: totalImp,
+                    listarDouglasLei: totalLei,
+                    listarDouglasBusca: totalBusca,
+                    listarDouglasCar3: totalCar3,
+                    listarDouglasCar4: totalCar4,
+                    listarDouglasCar5: totalCar5,
+                    listarDouglasCar6: totalCar6,
+                    listarDouglasBerco: totalBerco,
+                    listarDouglasFonte: totalFonte,
+                    listarDouglasCabos: totalCabo
+                })
+            }
+
+            if (tecnico === "Kleiton Paulino") {
+
+                //variavel servico
+                let dadoTMC = [];
+                let dadoTLA = [];
+                let dadoTSR = [];
+                let dadoTRM = [];
+                let dadoTCO = [];
+                let dadoTRV = [];
+                let dadoTCC = [];
+                let dadoTMMV = [];
+                let dadoTRP = [];
+                let dadoTLP = [];
+
+                //dados por equipamento
+                let dadoCol = [];
+                let dadoLei = [];
+                let dadoImp = [];
+                let dadoBusca = [];
+                let dadoCar3 = [];
+                let dadoCar4 = [];
+                let dadoCar5 = [];
+                let dadoCar6 = [];
+                let dadoBerco = [];
+                let dadoFonte = [];
+                let dadoCabo = [];
+
+                for (let i = 0; i < tabelaNome.length; i++) {
+
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+
+                //variavel servico
+                let totalTMC = Object.keys(dadoTMC).length;
+                let totalTLA = Object.keys(dadoTLA).length;
+                let totalTSR = Object.keys(dadoTSR).length;
+                let totalTRM = Object.keys(dadoTRM).length;
+                let totalTCO = Object.keys(dadoTCO).length;
+                let totalTRV = Object.keys(dadoTRV).length;
+                let totalTCC = Object.keys(dadoTCC).length;
+                let totalTMMV = Object.keys(dadoTMMV).length;
+                let totalTRP = Object.keys(dadoTRP).length;
+                let totalTLP = Object.keys(dadoTLP).length;
+
+                //total
+                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                    totalTCC + totalTMMV + totalTRP + totalTLP
+
+                //Variavel Total por equipamento
+                let totalCol = Object.keys(dadoCol).length;
+                let totalLei = Object.keys(dadoLei).length;
+                let totalImp = Object.keys(dadoImp).length;
+                let totalBusca = Object.keys(dadoBusca).length;
+                let totalCar3 = Object.keys(dadoCar3).length;
+                let totalCar4 = Object.keys(dadoCar4).length;
+                let totalCar5 = Object.keys(dadoCar5).length;
+                let totalCar6 = Object.keys(dadoCar6).length;
+                let totalBerco = Object.keys(dadoBerco).length;
+                let totalFonte = Object.keys(dadoFonte).length;
+                let totalCabo = Object.keys(dadoCabo).length;
+
+                return this.setState({
+                    //busca servico
+                    listarKleitonMC: totalTMC,
+                    listarKleitonLA: totalTLA,
+                    listarKleitonSR: totalTSR,
+                    listarKleitonRM: totalTRM,
+                    listarKleitonCO: totalTCO,
+                    listarKleitonRV: totalTRV,
+                    listarKleitonCC: totalTCC,
+                    listarKleitonMMV: totalTMMV,
+                    listarKleitonRP: totalTRP,
+                    listarKleitonLP: totalTLP,
+
+                    //busca total
+                    listarTotalKleiton: totalTEquip,
+
+                    //listart total por equipamento
+                    listarKleitonCol: totalCol,
+                    listarKleitonImp: totalImp,
+                    listarKleitonLei: totalLei,
+                    listarKleitonBusca: totalBusca,
+                    listarKleitonCar3: totalCar3,
+                    listarKleitonCar4: totalCar4,
+                    listarKleitonCar5: totalCar5,
+                    listarKleitonCar6: totalCar6,
+                    listarKleitonBerco: totalBerco,
+                    listarKleitonFonte: totalFonte,
+                    listarKleitonCabos: totalCabo
+                })
+            }
+        }
+        //#endregion
+
     }
 
     render() {
@@ -3313,7 +13098,10 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "Diogo", y: this.state.listarDiogo },
                                 { name: "Diego A", y: this.state.listarDiegoA },
                                 { name: "Allan", y: this.state.listarAllan },
-                                { name: "Cida", y: this.state.listarCida }
+                                { name: "Cida", y: this.state.listarCida },
+                                { name: "Anderson", y: this.state.listarAnderson },
+                                { name: "Douglas", y: this.state.listarDouglas },
+                                { name: "Kleiton", y: this.state.listarKleiton },
                             ]}
                         />
                     </div>
@@ -3335,7 +13123,10 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "Diogo", y: this.state.listarDiogo },
                                 { name: "Diego A", y: this.state.listarDiegoA },
                                 { name: "Allan", y: this.state.listarAllan },
-                                { name: "Cida", y: this.state.listarCida }
+                                { name: "Cida", y: this.state.listarCida },
+                                { name: "Anderson", y: this.state.listarAnderson },
+                                { name: "Douglas", y: this.state.listarDouglas },
+                                { name: "Kleiton", y: this.state.listarKleiton },
                             ]}
                         />
                     </div>
@@ -3653,7 +13444,7 @@ export default class DashboardGerencia extends React.Component {
                         <ModalTecnicos imagem={imgDiogo} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgDiogo} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" 
+                            classeFoto="rounded-circle"
                             total={this.state.listarTotalDiogo}
                             grafico1={
                                 <Grafico tipo="pie" titulo="Ordens de Serviço"
@@ -3717,7 +13508,7 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
-                            />
+                        />
                         <ModalTecnicos imagem={imgGabriel} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgGabriel} estiloFoto={{ heigth: 100, width: 50 }}
@@ -3785,13 +13576,13 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
-                            />
+                        />
                     </div>
                     <div className="col-md-3 d-flex d-flex justify-content-around">
                         <ModalTecnicos imagem={imgBruno} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgBruno} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" 
+                            classeFoto="rounded-circle"
                             total={this.state.listarTotalBruno}
                             grafico1={
                                 <Grafico tipo="pie" titulo="Ordens de Serviço"
@@ -3855,11 +13646,11 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
-                            />
+                        />
                         <ModalTecnicos imagem={imgVinicius} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgVinicius} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" 
+                            classeFoto="rounded-circle"
                             total={this.state.listarTotalVinicius}
                             grafico1={
                                 <Grafico tipo="pie" titulo="Ordens de Serviço"
@@ -3923,7 +13714,7 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
-                            />
+                        />
                     </div>
                 </div>
                 <div className="row mt-3">
@@ -3995,21 +13786,359 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
-                            />
+                        />
                         <ModalTecnicos imagem={imgAnderson} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgAnderson} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalAnderson}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarAndersonMC },
+                                        { name: "Laudo", y: this.state.listarAndersonLA },
+                                        { name: "Suporte Remoto", y: this.state.listarAndersonSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarAndersonRM },
+                                        { name: "Chamado On-Site", y: this.state.listarAndersonCO },
+                                        { name: "Revisão de Venda", y: this.state.listarAndersonRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAndersonCC },
+                                        { name: "M/M de Venda", y: this.state.listarAndersonMMV },
+                                        { name: "Rec Placa", y: this.state.listarAndersonRP },
+                                        { name: "Limpeza", y: this.state.listarAndersonLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarAndersonMC },
+                                        { name: "Laudo", y: this.state.listarAndersonLA },
+                                        { name: "Suporte", y: this.state.listarAndersonSR },
+                                        { name: "Revisão M", y: this.state.listarAndersonRM },
+                                        { name: "On-Site", y: this.state.listarAndersonCO },
+                                        { name: "Revisão V", y: this.state.listarAndersonRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAndersonCC },
+                                        { name: "M/M de Venda", y: this.state.listarAndersonMMV },
+                                        { name: "Rec Placa", y: this.state.listarAndersonRP },
+                                        { name: "Limpeza", y: this.state.listarAndersonLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarAndersonCol },
+                                        { name: "Leitor", y: this.state.listarAndersonLei },
+                                        { name: "Busca Preço", y: this.state.listarAndersonBusca },
+                                        { name: "Impressora", y: this.state.listarAndersonImp },
+                                        { name: "Carregador 3 P", y: this.state.listarAndersonCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarAndersonCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarAndersonCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarAndersonCar6 },
+                                        { name: "Berço", y: this.state.listarAndersonBerco },
+                                        { name: "Fonte", y: this.state.listarAndersonFonte },
+                                        { name: "Cabo C", y: this.state.listarAndersonCabos }
+                                    ]} />
+
+                            }
+                        />
                     </div>
                     <div className="col-3 d-flex justify-content-around">
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            // nome={imgMarcio} 
+                            titulo="Marcio"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalMarcio}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarMarcioMC },
+                                        { name: "Laudo", y: this.state.listarMarcioLA },
+                                        { name: "Suporte Remoto", y: this.state.listarMarcioSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarMarcioRM },
+                                        { name: "Chamado On-Site", y: this.state.listarMarcioCO },
+                                        { name: "Revisão de Venda", y: this.state.listarMarcioRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
+                                        { name: "M/M de Venda", y: this.state.listarMarcioMMV },
+                                        { name: "Rec Placa", y: this.state.listarMarcioRP },
+                                        { name: "Limpeza", y: this.state.listarMarcioLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarMarcioMC },
+                                        { name: "Laudo", y: this.state.listarMarcioLA },
+                                        { name: "Suporte", y: this.state.listarMarcioSR },
+                                        { name: "Revisão M", y: this.state.listarMarcioRM },
+                                        { name: "On-Site", y: this.state.listarMarcioCO },
+                                        { name: "Revisão V", y: this.state.listarMarcioRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
+                                        { name: "M/M de Venda", y: this.state.listarMarcioMMV },
+                                        { name: "Rec Placa", y: this.state.listarMarcioRP },
+                                        { name: "Limpeza", y: this.state.listarMarcioLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarMarcioCol },
+                                        { name: "Leitor", y: this.state.listarMarcioLei },
+                                        { name: "Busca Preço", y: this.state.listarMarcioBusca },
+                                        { name: "Impressora", y: this.state.listarMarcioImp },
+                                        { name: "Carregador 3 P", y: this.state.listarMarcioCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarMarcioCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarMarcioCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarMarcioCar6 },
+                                        { name: "Berço", y: this.state.listarMarcioBerco },
+                                        { name: "Fonte", y: this.state.listarMarcioFonte },
+                                        { name: "Cabo C", y: this.state.listarMarcioCabos }
+                                    ]} />
+
+                            }
+                        />
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            // nome={imgMarcio} 
+                            titulo="Cida"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalCida}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarCidaMC },
+                                        { name: "Laudo", y: this.state.listarCidaLA },
+                                        { name: "Suporte Remoto", y: this.state.listarCidaSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarCidaRM },
+                                        { name: "Chamado On-Site", y: this.state.listarCidaCO },
+                                        { name: "Revisão de Venda", y: this.state.listarCidaRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarCidaCC },
+                                        { name: "M/M de Venda", y: this.state.listarCidaMMV },
+                                        { name: "Rec Placa", y: this.state.listarCidaRP },
+                                        { name: "Limpeza", y: this.state.listarCidaLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarCidaMC },
+                                        { name: "Laudo", y: this.state.listarCidaLA },
+                                        { name: "Suporte", y: this.state.listarCidaSR },
+                                        { name: "Revisão M", y: this.state.listarCidaRM },
+                                        { name: "On-Site", y: this.state.listarCidaCO },
+                                        { name: "Revisão V", y: this.state.listarCidaRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarCidaCC },
+                                        { name: "M/M de Venda", y: this.state.listarCidaMMV },
+                                        { name: "Rec Placa", y: this.state.listarCidaRP },
+                                        { name: "Limpeza", y: this.state.listarCidaLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarCidaCol },
+                                        { name: "Leitor", y: this.state.listarCidaLei },
+                                        { name: "Busca Preço", y: this.state.listarCidaBusca },
+                                        { name: "Impressora", y: this.state.listarCidaImp },
+                                        { name: "Carregador 3 P", y: this.state.listarCidaCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarCidaCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarCidaCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarCidaCar6 },
+                                        { name: "Berço", y: this.state.listarCidaBerco },
+                                        { name: "Fonte", y: this.state.listarCidaFonte },
+                                        { name: "Cabo C", y: this.state.listarCidaCabos }
+                                    ]} />
+
+                            }
+                        />
+                    </div>
+                    <div className="col-3 d-flex justify-content-start">
+                        <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
+                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
+                            // nome={imgMarcio} 
+                            titulo="Allan"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalAllan}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarAllanMC },
+                                        { name: "Laudo", y: this.state.listarAllanLA },
+                                        { name: "Suporte Remoto", y: this.state.listarAllanSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarAllanRM },
+                                        { name: "Chamado On-Site", y: this.state.listarAllanCO },
+                                        { name: "Revisão de Venda", y: this.state.listarAllanRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
+                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
+                                        { name: "Rec Placa", y: this.state.listarAllanRP },
+                                        { name: "Limpeza", y: this.state.listarAllanLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarAllanMC },
+                                        { name: "Laudo", y: this.state.listarAllanLA },
+                                        { name: "Suporte", y: this.state.listarAllanSR },
+                                        { name: "Revisão M", y: this.state.listarAllanRM },
+                                        { name: "On-Site", y: this.state.listarAllanCO },
+                                        { name: "Revisão V", y: this.state.listarAllanRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
+                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
+                                        { name: "Rec Placa", y: this.state.listarAllanRP },
+                                        { name: "Limpeza", y: this.state.listarAllanLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarAllanCol },
+                                        { name: "Leitor", y: this.state.listarAllanLei },
+                                        { name: "Busca Preço", y: this.state.listarAllanBusca },
+                                        { name: "Impressora", y: this.state.listarAllanImp },
+                                        { name: "Carregador 3 P", y: this.state.listarAllanCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarAllanCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarAllanCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarAllanCar6 },
+                                        { name: "Berço", y: this.state.listarAllanBerco },
+                                        { name: "Fonte", y: this.state.listarAllanFonte },
+                                        { name: "Cabo C", y: this.state.listarAllanCabos }
+                                    ]} />
+
+                            }
+                        />
+                        {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
+                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
+                            // nome={imgMarcio} 
+                            titulo = "Cida"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalCida}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarCidaMC },
+                                        { name: "Laudo", y: this.state.listarCidaLA },
+                                        { name: "Suporte Remoto", y: this.state.listarCidaSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarCidaRM },
+                                        { name: "Chamado On-Site", y: this.state.listarCidaCO },
+                                        { name: "Revisão de Venda", y: this.state.listarCidaRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarCidaCC },
+                                        { name: "M/M de Venda", y: this.state.listarCidaMMV },
+                                        { name: "Rec Placa", y: this.state.listarCidaRP },
+                                        { name: "Limpeza", y: this.state.listarCidaLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarCidaMC },
+                                        { name: "Laudo", y: this.state.listarCidaLA },
+                                        { name: "Suporte", y: this.state.listarCidaSR },
+                                        { name: "Revisão M", y: this.state.listarCidaRM },
+                                        { name: "On-Site", y: this.state.listarCidaCO },
+                                        { name: "Revisão V", y: this.state.listarCidaRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarCidaCC },
+                                        { name: "M/M de Venda", y: this.state.listarCidaMMV },
+                                        { name: "Rec Placa", y: this.state.listarCidaRP },
+                                        { name: "Limpeza", y: this.state.listarCidaLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarCidaCol },
+                                        { name: "Leitor", y: this.state.listarCidaLei },
+                                        { name: "Busca Preço", y: this.state.listarCidaBusca },
+                                        { name: "Impressora", y: this.state.listarCidaImp },
+                                        { name: "Carregador 3 P", y: this.state.listarCidaCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarCidaCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarCidaCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarCidaCar6 },
+                                        { name: "Berço", y: this.state.listarCidaBerco },
+                                        { name: "Fonte", y: this.state.listarCidaFonte },
+                                        { name: "Cabo C", y: this.state.listarCidaCabos }
+                                    ]} />
+
+                            }
+                            /> */}
                     </div>
                 </div>
                 <div className="row mt-5 d-flex justify-content-center">
@@ -4024,13 +14153,141 @@ export default class DashboardGerencia extends React.Component {
                         <ModalTecnicos imagem={imgDouglas} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgDouglas} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalDouglas}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarDouglasMC },
+                                        { name: "Laudo", y: this.state.listarDouglasLA },
+                                        { name: "Suporte Remoto", y: this.state.listarDouglasSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarDouglasRM },
+                                        { name: "Chamado On-Site", y: this.state.listarDouglasCO },
+                                        { name: "Revisão de Venda", y: this.state.listarDouglasRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarDouglasCC },
+                                        { name: "M/M de Venda", y: this.state.listarDouglasMMV },
+                                        { name: "Rec Placa", y: this.state.listarDouglasRP },
+                                        { name: "Limpeza", y: this.state.listarDouglasLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarDouglasMC },
+                                        { name: "Laudo", y: this.state.listarDouglasLA },
+                                        { name: "Suporte", y: this.state.listarDouglasSR },
+                                        { name: "Revisão M", y: this.state.listarDouglasRM },
+                                        { name: "On-Site", y: this.state.listarDouglasCO },
+                                        { name: "Revisão V", y: this.state.listarDouglasRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarDouglasCC },
+                                        { name: "M/M de Venda", y: this.state.listarDouglasMMV },
+                                        { name: "Rec Placa", y: this.state.listarDouglasRP },
+                                        { name: "Limpeza", y: this.state.listarDouglasLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarDouglasCol },
+                                        { name: "Leitor", y: this.state.listarDouglasLei },
+                                        { name: "Busca Preço", y: this.state.listarDouglasBusca },
+                                        { name: "Impressora", y: this.state.listarDouglasImp },
+                                        { name: "Carregador 3 P", y: this.state.listarDouglasCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarDouglasCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarDouglasCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarDouglasCar6 },
+                                        { name: "Berço", y: this.state.listarDouglasBerco },
+                                        { name: "Fonte", y: this.state.listarDouglasFonte },
+                                        { name: "Cabo C", y: this.state.listarDouglasCabos }
+                                    ]} />
+
+                            }
+                        />
                     </div>
                     <div className="col-3 d-flex justify-content-around mx-4 mt-2">
                         <ModalTecnicos imagem={imgKleiton} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgKleiton} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalKleiton}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarKleitonMC },
+                                        { name: "Laudo", y: this.state.listarKleitonLA },
+                                        { name: "Suporte Remoto", y: this.state.listarKleitonSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarKleitonRM },
+                                        { name: "Chamado On-Site", y: this.state.listarKleitonCO },
+                                        { name: "Revisão de Venda", y: this.state.listarKleitonRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarKleitonCC },
+                                        { name: "M/M de Venda", y: this.state.listarKleitonMMV },
+                                        { name: "Rec Placa", y: this.state.listarKleitonRP },
+                                        { name: "Limpeza", y: this.state.listarKleitonLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarKleitonMC },
+                                        { name: "Laudo", y: this.state.listarKleitonLA },
+                                        { name: "Suporte", y: this.state.listarKleitonSR },
+                                        { name: "Revisão M", y: this.state.listarKleitonRM },
+                                        { name: "On-Site", y: this.state.listarKleitonCO },
+                                        { name: "Revisão V", y: this.state.listarKleitonRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarKleitonCC },
+                                        { name: "M/M de Venda", y: this.state.listarKleitonMMV },
+                                        { name: "Rec Placa", y: this.state.listarKleitonRP },
+                                        { name: "Limpeza", y: this.state.listarKleitonLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarKleitonCol },
+                                        { name: "Leitor", y: this.state.listarKleitonLei },
+                                        { name: "Busca Preço", y: this.state.listarKleitonBusca },
+                                        { name: "Impressora", y: this.state.listarKleitonImp },
+                                        { name: "Carregador 3 P", y: this.state.listarKleitonCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarKleitonCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarKleitonCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarKleitonCar6 },
+                                        { name: "Berço", y: this.state.listarKleitonBerco },
+                                        { name: "Fonte", y: this.state.listarKleitonFonte },
+                                        { name: "Cabo C", y: this.state.listarKleitonCabos }
+                                    ]} />
+
+                            }
+                        />
                     </div>
                 </div>
             </Main>

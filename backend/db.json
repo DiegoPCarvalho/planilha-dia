@@ -132,7 +132,7 @@
       "Classificacao": "Desgaste de Uso",
       "Observacao": "7",
       "Status": "Pronto",
-      "Tecnico": "Diego Carvalho",
+      "Tecnico": "Kleiton Paulino",
       "id": 16
     },
     {
@@ -166,7 +166,7 @@
       "Servico": "Manutenção Concluída",
       "Classificacao": "Defeito",
       "Observacao": "9",
-      "Tecnico": "Diego Carvalho",
+      "Tecnico": "Allan Zulino",
       "Status": "Aguardando Aprovação"
     },
     {
@@ -182,7 +182,7 @@
       "Servico": "Suporte Remoto",
       "Classificacao": "Defeito",
       "Observacao": "10",
-      "Tecnico": "Diego Carvalho",
+      "Tecnico": "Douglas Altenfelder",
       "Status": "Pronto"
     },
     {
@@ -350,7 +350,7 @@
       "Classificacao": "",
       "Observacao": "",
       "Status": "",
-      "Tecnico": "Diego Carvalho",
+      "Tecnico": "Anderson Ramos",
       "id": 29
     },
     {
@@ -564,7 +564,7 @@
       "Classificacao": "Defeito",
       "Observacao": "",
       "Status": "",
-      "Tecnico": "Cida",
+      "Tecnico": "Cida Zani",
       "id": 42
     },
     {
@@ -685,6 +685,23 @@
       "Status": "",
       "Tecnico": "Gabriel Kaique",
       "id": 49
+    },
+    {
+      "Data": "2023-01-22T10:51:07.175Z",
+      "Dia": 22,
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "150",
+      "Cliente": "",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Suporte Remoto",
+      "Classificacao": "Desgaste de Uso",
+      "Observacao": "",
+      "Status": "Excede - Aguardando Aprovação",
+      "Tecnico": "Cida Zani",
+      "id": 50
     }
   ],
   "LoginUsuario": [
@@ -960,6 +977,48 @@
       "AdmGeral": 0,
       "AdmLider": 0,
       "id": 13
+    },
+    {
+      "nomeCompleto": "Allan Zulino",
+      "email": "allan.zulino@zhaz.com.br",
+      "senha": "123456",
+      "departamento": "Laborátorio",
+      "AdmDiretoria": 0,
+      "AdmGerencia": 0,
+      "AdmFinanceiro": 0,
+      "AdmCompras": 0,
+      "AdmFiscal": 0,
+      "AdmRH": 0,
+      "AdmEstoque": 0,
+      "AdmExpedicao": 0,
+      "AdmLogistica": 0,
+      "AdmRecpecao": 0,
+      "AdmLaboratorio": 1,
+      "AdmComercial": 0,
+      "AdmGeral": 0,
+      "AdmLider": 0,
+      "id": 14
+    },
+    {
+      "nomeCompleto": "Cida Zani",
+      "email": "cida.zani@zhaz.com.br",
+      "senha": "123456",
+      "departamento": "Laborátorio",
+      "AdmDiretoria": 0,
+      "AdmGerencia": 0,
+      "AdmFinanceiro": 0,
+      "AdmCompras": 0,
+      "AdmFiscal": 0,
+      "AdmRH": 0,
+      "AdmEstoque": 0,
+      "AdmExpedicao": 0,
+      "AdmLogistica": 0,
+      "AdmRecpecao": 0,
+      "AdmLaboratorio": 1,
+      "AdmComercial": 0,
+      "AdmGeral": 0,
+      "AdmLider": 0,
+      "id": 15
     }
   ]
 }
