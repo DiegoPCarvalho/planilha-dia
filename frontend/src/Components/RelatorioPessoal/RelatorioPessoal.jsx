@@ -1404,10 +1404,6 @@ export default class Relatorio extends React.Component {
                 dadoBerco.push({
                     OS: tabelaNome[i].OS
                 })
-            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                dadoBerco.push({
-                    OS: tabelaNome[i].OS
-                })
             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
                 dadoFonte.push({
                     OS: tabelaNome[i].OS

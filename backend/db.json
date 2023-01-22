@@ -532,7 +532,7 @@
       "Classificacao": "",
       "Observacao": "",
       "Status": "",
-      "Tecnico": "Diego Carvalho",
+      "Tecnico": "Diego Almeida",
       "id": 40
     },
     {
@@ -548,7 +548,7 @@
       "Classificacao": "",
       "Observacao": "",
       "Status": "",
-      "Tecnico": "Diego Carvalho",
+      "Tecnico": "Vinicius Gomes",
       "id": 41
     },
     {
@@ -668,6 +668,23 @@
       "Status": "Pronto",
       "Tecnico": "Diogo Selmini",
       "id": 48
+    },
+    {
+      "Data": "2023-01-21T23:57:16.193Z",
+      "Dia": 21,
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "105",
+      "Cliente": "105",
+      "Equipamento": "Berço de Comunicação",
+      "Modelo": "",
+      "NS": "",
+      "Servico": "Chamado On-Site",
+      "Classificacao": "Defeito",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Gabriel Kaique",
+      "id": 49
     }
   ],
   "LoginUsuario": [

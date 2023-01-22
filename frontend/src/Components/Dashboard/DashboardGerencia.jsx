@@ -134,6 +134,54 @@ const initialState = {
     listarDiogoRP: [0],
     listarDiogoLP: [0],
 
+    //Ordem de Serviço Gabriel
+    listarGabrielMC: [0],
+    listarGabrielLA: [0],
+    listarGabrielSR: [0],
+    listarGabrielRM: [0],
+    listarGabrielCO: [0],
+    listarGabrielRV: [0],
+    listarGabrielCC: [0],
+    listarGabrielMMV: [0],
+    listarGabrielRP: [0],
+    listarGabrielLP: [0],
+
+    //Ordem de Serviço Bruno
+    listarBrunoMC: [0],
+    listarBrunoLA: [0],
+    listarBrunoSR: [0],
+    listarBrunoRM: [0],
+    listarBrunoCO: [0],
+    listarBrunoRV: [0],
+    listarBrunoCC: [0],
+    listarBrunoMMV: [0],
+    listarBrunoRP: [0],
+    listarBrunoLP: [0],
+
+    //Ordem de Serviço Vinicius
+    listarViniciusMC: [0],
+    listarViniciusLA: [0],
+    listarViniciusSR: [0],
+    listarViniciusRM: [0],
+    listarViniciusCO: [0],
+    listarViniciusRV: [0],
+    listarViniciusCC: [0],
+    listarViniciusMMV: [0],
+    listarViniciusRP: [0],
+    listarViniciusLP: [0],
+
+    //Ordem de Serviço DiegoA
+    listarDiegoAMC: [0],
+    listarDiegoALA: [0],
+    listarDiegoASR: [0],
+    listarDiegoARM: [0],
+    listarDiegoACO: [0],
+    listarDiegoARV: [0],
+    listarDiegoACC: [0],
+    listarDiegoAMMV: [0],
+    listarDiegoARP: [0],
+    listarDiegoALP: [0],
+
 
     //total por tecnico
     listarTotalDiegoC: [0],
@@ -217,6 +265,58 @@ const initialState = {
     listarDiogoBerco: [0],
     listarDiogoFonte: [0],
     listarDiogoCabos: [0],
+    
+    //Total Equipamentos Gabriel
+    listarGabrielCol: [0],
+    listarGabrielImp: [0],
+    listarGabrielLei: [0],
+    listarGabrielBusca: [0],
+    listarGabrielCar3: [0],
+    listarGabrielCar4: [0],
+    listarGabrielCar5: [0],
+    listarGabrielCar6: [0],
+    listarGabrielBerco: [0],
+    listarGabrielFonte: [0],
+    listarGabrielCabos: [0],
+
+    //Total Equipamentos Bruno
+    listarBrunoCol: [0],
+    listarBrunoImp: [0],
+    listarBrunoLei: [0],
+    listarBrunoBusca: [0],
+    listarBrunoCar3: [0],
+    listarBrunoCar4: [0],
+    listarBrunoCar5: [0],
+    listarBrunoCar6: [0],
+    listarBrunoBerco: [0],
+    listarBrunoFonte: [0],
+    listarBrunoCabos: [0],
+
+    //Total Equipamentos Vinicius
+    listarViniciusCol: [0],
+    listarViniciusImp: [0],
+    listarViniciusLei: [0],
+    listarViniciusBusca: [0],
+    listarViniciusCar3: [0],
+    listarViniciusCar4: [0],
+    listarViniciusCar5: [0],
+    listarViniciusCar6: [0],
+    listarViniciusBerco: [0],
+    listarViniciusFonte: [0],
+    listarViniciusCabos: [0],
+
+    //Total Equipamentos DiegoA
+    listarDiegoACol: [0],
+    listarDiegoAImp: [0],
+    listarDiegoALei: [0],
+    listarDiegoABusca: [0],
+    listarDiegoACar3: [0],
+    listarDiegoACar4: [0],
+    listarDiegoACar5: [0],
+    listarDiegoACar6: [0],
+    listarDiegoABerco: [0],
+    listarDiegoAFonte: [0],
+    listarDiegoACabos: [0],
 }
 
 const banco = "Geral";
@@ -234,6 +334,10 @@ export default class DashboardGerencia extends React.Component {
         this.buscaPorTecnico("Mateus Doval")
         this.buscaPorTecnico("Lucas Feliciano")
         this.buscaPorTecnico("Diogo Selmini")
+        this.buscaPorTecnico("Gabriel Kaique")
+        this.buscaPorTecnico("Bruno Bedani")
+        this.buscaPorTecnico("Vinicius Gomes")
+        this.buscaPorTecnico("Diego Almeida")
     }
 
     validacao() {
@@ -1479,11 +1583,7 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                    }  if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
                             OS: tabelaNome[i].OS
                         })
@@ -1661,10 +1761,6 @@ export default class DashboardGerencia extends React.Component {
                         })
                     } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
                         dadoCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
                     } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
@@ -1853,10 +1949,6 @@ export default class DashboardGerencia extends React.Component {
                         })
                     } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
                         dadoCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
                     } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
@@ -2243,10 +2335,6 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
                         dadoFonte.push({
                             OS: tabelaNome[i].OS
@@ -2319,6 +2407,757 @@ export default class DashboardGerencia extends React.Component {
             })
         }
 
+        if (tecnico === "Gabriel Kaique") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarGabrielMC: totalTMC,
+                listarGabrielLA: totalTLA,
+                listarGabrielSR: totalTSR,
+                listarGabrielRM: totalTRM,
+                listarGabrielCO: totalTCO,
+                listarGabrielRV: totalTRV,
+                listarGabrielCC: totalTCC,
+                listarGabrielMMV: totalTMMV,
+                listarGabrielRP: totalTRP,
+                listarGabrielLP: totalTLP,
+
+                //busca total
+                listarTotalGabriel: totalTEquip,
+
+                //listart total por equipamento
+                listarGabrielCol: totalCol,
+                listarGabrielImp: totalImp,
+                listarGabrielLei: totalLei,
+                listarGabrielBusca: totalBusca,
+                listarGabrielCar3: totalCar3,
+                listarGabrielCar4: totalCar4,
+                listarGabrielCar5: totalCar5,
+                listarGabrielCar6: totalCar6,
+                listarGabrielBerco: totalBerco,
+                listarGabrielFonte: totalFonte,
+                listarGabrielCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Bruno Bedani") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarBrunoMC: totalTMC,
+                listarBrunoLA: totalTLA,
+                listarBrunoSR: totalTSR,
+                listarBrunoRM: totalTRM,
+                listarBrunoCO: totalTCO,
+                listarBrunoRV: totalTRV,
+                listarBrunoCC: totalTCC,
+                listarBrunoMMV: totalTMMV,
+                listarBrunoRP: totalTRP,
+                listarBrunoLP: totalTLP,
+
+                //busca total
+                listarTotalBruno: totalTEquip,
+
+                //listart total por equipamento
+                listarBrunoCol: totalCol,
+                listarBrunoImp: totalImp,
+                listarBrunoLei: totalLei,
+                listarBrunoBusca: totalBusca,
+                listarBrunoCar3: totalCar3,
+                listarBrunoCar4: totalCar4,
+                listarBrunoCar5: totalCar5,
+                listarBrunoCar6: totalCar6,
+                listarBrunoBerco: totalBerco,
+                listarBrunoFonte: totalFonte,
+                listarBrunoCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Vinicius Gomes") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarViniciusMC: totalTMC,
+                listarViniciusLA: totalTLA,
+                listarViniciusSR: totalTSR,
+                listarViniciusRM: totalTRM,
+                listarViniciusCO: totalTCO,
+                listarViniciusRV: totalTRV,
+                listarViniciusCC: totalTCC,
+                listarViniciusMMV: totalTMMV,
+                listarViniciusRP: totalTRP,
+                listarViniciusLP: totalTLP,
+
+                //busca total
+                listarTotalVinicius: totalTEquip,
+
+                //listart total por equipamento
+                listarViniciusCol: totalCol,
+                listarViniciusImp: totalImp,
+                listarViniciusLei: totalLei,
+                listarViniciusBusca: totalBusca,
+                listarViniciusCar3: totalCar3,
+                listarViniciusCar4: totalCar4,
+                listarViniciusCar5: totalCar5,
+                listarViniciusCar6: totalCar6,
+                listarViniciusBerco: totalBerco,
+                listarViniciusFonte: totalFonte,
+                listarViniciusCabos: totalCabo
+            })
+        }
+
+        if (tecnico === "Diego Almeida") {
+
+            //variavel servico
+            let dadoTMC = [];
+            let dadoTLA = [];
+            let dadoTSR = [];
+            let dadoTRM = [];
+            let dadoTCO = [];
+            let dadoTRV = [];
+            let dadoTCC = [];
+            let dadoTMMV = [];
+            let dadoTRP = [];
+            let dadoTLP = [];
+
+            //dados por equipamento
+            let dadoCol = [];
+            let dadoLei = [];
+            let dadoImp = [];
+            let dadoBusca = [];
+            let dadoCar3 = [];
+            let dadoCar4 = [];
+            let dadoCar5 = [];
+            let dadoCar6 = [];
+            let dadoBerco = [];
+            let dadoFonte = [];
+            let dadoCabo = [];
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                if (tecnico === tabelaNome[i].Tecnico) {
+                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                        dadoTMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Laudo" === tabelaNome[i].Servico)) {
+                        dadoTLA.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                        dadoTSR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                        dadoTRM.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                        dadoTCO.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                        dadoTRV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                        dadoTCC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                        dadoTMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                        dadoTRP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Limpeza" === tabelaNome[i].Servico)) {
+                        dadoTLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                        dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                }
+            }
+
+            //variavel servico
+            let totalTMC = Object.keys(dadoTMC).length;
+            let totalTLA = Object.keys(dadoTLA).length;
+            let totalTSR = Object.keys(dadoTSR).length;
+            let totalTRM = Object.keys(dadoTRM).length;
+            let totalTCO = Object.keys(dadoTCO).length;
+            let totalTRV = Object.keys(dadoTRV).length;
+            let totalTCC = Object.keys(dadoTCC).length;
+            let totalTMMV = Object.keys(dadoTMMV).length;
+            let totalTRP = Object.keys(dadoTRP).length;
+            let totalTLP = Object.keys(dadoTLP).length;
+
+            //total
+            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+                totalTCC + totalTMMV + totalTRP + totalTLP
+
+            //Variavel Total por equipamento
+            let totalCol = Object.keys(dadoCol).length;
+            let totalLei = Object.keys(dadoLei).length;
+            let totalImp = Object.keys(dadoImp).length;
+            let totalBusca = Object.keys(dadoBusca).length;
+            let totalCar3 = Object.keys(dadoCar3).length;
+            let totalCar4 = Object.keys(dadoCar4).length;
+            let totalCar5 = Object.keys(dadoCar5).length;
+            let totalCar6 = Object.keys(dadoCar6).length;
+            let totalBerco = Object.keys(dadoBerco).length;
+            let totalFonte = Object.keys(dadoFonte).length;
+            let totalCabo = Object.keys(dadoCabo).length;
+
+            return this.setState({
+                //busca servico
+                listarDiegoAMC: totalTMC,
+                listarDiegoALA: totalTLA,
+                listarDiegoASR: totalTSR,
+                listarDiegoARM: totalTRM,
+                listarDiegoACO: totalTCO,
+                listarDiegoARV: totalTRV,
+                listarDiegoACC: totalTCC,
+                listarDiegoAMMV: totalTMMV,
+                listarDiegoARP: totalTRP,
+                listarDiegoALP: totalTLP,
+
+                //busca total
+                listarTotalDiegoA: totalTEquip,
+
+                //listart total por equipamento
+                listarDiegoACol: totalCol,
+                listarDiegoAImp: totalImp,
+                listarDiegoALei: totalLei,
+                listarDiegoABusca: totalBusca,
+                listarDiegoACar3: totalCar3,
+                listarDiegoACar4: totalCar4,
+                listarDiegoACar5: totalCar5,
+                listarDiegoACar6: totalCar6,
+                listarDiegoABerco: totalBerco,
+                listarDiegoAFonte: totalFonte,
+                listarDiegoACabos: totalCabo
+            })
+        }
     }
 
     render() {
@@ -2882,17 +3721,209 @@ export default class DashboardGerencia extends React.Component {
                         <ModalTecnicos imagem={imgGabriel} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgGabriel} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalGabriel}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarGabrielMC },
+                                        { name: "Laudo", y: this.state.listarGabrielLA },
+                                        { name: "Suporte Remoto", y: this.state.listarGabrielSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarGabrielRM },
+                                        { name: "Chamado On-Site", y: this.state.listarGabrielCO },
+                                        { name: "Revisão de Venda", y: this.state.listarGabrielRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarGabrielCC },
+                                        { name: "M/M de Venda", y: this.state.listarGabrielMMV },
+                                        { name: "Rec Placa", y: this.state.listarGabrielRP },
+                                        { name: "Limpeza", y: this.state.listarGabrielLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarGabrielMC },
+                                        { name: "Laudo", y: this.state.listarGabrielLA },
+                                        { name: "Suporte", y: this.state.listarGabrielSR },
+                                        { name: "Revisão M", y: this.state.listarGabrielRM },
+                                        { name: "On-Site", y: this.state.listarGabrielCO },
+                                        { name: "Revisão V", y: this.state.listarGabrielRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarGabrielCC },
+                                        { name: "M/M de Venda", y: this.state.listarGabrielMMV },
+                                        { name: "Rec Placa", y: this.state.listarGabrielRP },
+                                        { name: "Limpeza", y: this.state.listarGabrielLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarGabrielCol },
+                                        { name: "Leitor", y: this.state.listarGabrielLei },
+                                        { name: "Busca Preço", y: this.state.listarGabrielBusca },
+                                        { name: "Impressora", y: this.state.listarGabrielImp },
+                                        { name: "Carregador 3 P", y: this.state.listarGabrielCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarGabrielCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarGabrielCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarGabrielCar6 },
+                                        { name: "Berço", y: this.state.listarGabrielBerco },
+                                        { name: "Fonte", y: this.state.listarGabrielFonte },
+                                        { name: "Cabo C", y: this.state.listarGabrielCabos }
+                                    ]} />
+
+                            }
+                            />
                     </div>
                     <div className="col-md-3 d-flex d-flex justify-content-around">
                         <ModalTecnicos imagem={imgBruno} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgBruno} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle" 
+                            total={this.state.listarTotalBruno}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarBrunoMC },
+                                        { name: "Laudo", y: this.state.listarBrunoLA },
+                                        { name: "Suporte Remoto", y: this.state.listarBrunoSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarBrunoRM },
+                                        { name: "Chamado On-Site", y: this.state.listarBrunoCO },
+                                        { name: "Revisão de Venda", y: this.state.listarBrunoRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarBrunoCC },
+                                        { name: "M/M de Venda", y: this.state.listarBrunoMMV },
+                                        { name: "Rec Placa", y: this.state.listarBrunoRP },
+                                        { name: "Limpeza", y: this.state.listarBrunoLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarBrunoMC },
+                                        { name: "Laudo", y: this.state.listarBrunoLA },
+                                        { name: "Suporte", y: this.state.listarBrunoSR },
+                                        { name: "Revisão M", y: this.state.listarBrunoRM },
+                                        { name: "On-Site", y: this.state.listarBrunoCO },
+                                        { name: "Revisão V", y: this.state.listarBrunoRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarBrunoCC },
+                                        { name: "M/M de Venda", y: this.state.listarBrunoMMV },
+                                        { name: "Rec Placa", y: this.state.listarBrunoRP },
+                                        { name: "Limpeza", y: this.state.listarBrunoLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarBrunoCol },
+                                        { name: "Leitor", y: this.state.listarBrunoLei },
+                                        { name: "Busca Preço", y: this.state.listarBrunoBusca },
+                                        { name: "Impressora", y: this.state.listarBrunoImp },
+                                        { name: "Carregador 3 P", y: this.state.listarBrunoCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarBrunoCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarBrunoCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarBrunoCar6 },
+                                        { name: "Berço", y: this.state.listarBrunoBerco },
+                                        { name: "Fonte", y: this.state.listarBrunoFonte },
+                                        { name: "Cabo C", y: this.state.listarBrunoCabos }
+                                    ]} />
+
+                            }
+                            />
                         <ModalTecnicos imagem={imgVinicius} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgVinicius} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle" 
+                            total={this.state.listarTotalVinicius}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarViniciusMC },
+                                        { name: "Laudo", y: this.state.listarViniciusLA },
+                                        { name: "Suporte Remoto", y: this.state.listarViniciusSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarViniciusRM },
+                                        { name: "Chamado On-Site", y: this.state.listarViniciusCO },
+                                        { name: "Revisão de Venda", y: this.state.listarViniciusRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarViniciusCC },
+                                        { name: "M/M de Venda", y: this.state.listarViniciusMMV },
+                                        { name: "Rec Placa", y: this.state.listarViniciusRP },
+                                        { name: "Limpeza", y: this.state.listarViniciusLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarViniciusMC },
+                                        { name: "Laudo", y: this.state.listarViniciusLA },
+                                        { name: "Suporte", y: this.state.listarViniciusSR },
+                                        { name: "Revisão M", y: this.state.listarViniciusRM },
+                                        { name: "On-Site", y: this.state.listarViniciusCO },
+                                        { name: "Revisão V", y: this.state.listarViniciusRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarViniciusCC },
+                                        { name: "M/M de Venda", y: this.state.listarViniciusMMV },
+                                        { name: "Rec Placa", y: this.state.listarViniciusRP },
+                                        { name: "Limpeza", y: this.state.listarViniciusLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarViniciusCol },
+                                        { name: "Leitor", y: this.state.listarViniciusLei },
+                                        { name: "Busca Preço", y: this.state.listarViniciusBusca },
+                                        { name: "Impressora", y: this.state.listarViniciusImp },
+                                        { name: "Carregador 3 P", y: this.state.listarViniciusCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarViniciusCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarViniciusCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarViniciusCar6 },
+                                        { name: "Berço", y: this.state.listarViniciusBerco },
+                                        { name: "Fonte", y: this.state.listarViniciusFonte },
+                                        { name: "Cabo C", y: this.state.listarViniciusCabos }
+                                    ]} />
+
+                            }
+                            />
                     </div>
                 </div>
                 <div className="row mt-3">
@@ -2900,7 +3931,71 @@ export default class DashboardGerencia extends React.Component {
                         <ModalTecnicos imagem={imgDiegoA} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgDiegoA} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle" />
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalDiegoA}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarDiegoAMC },
+                                        { name: "Laudo", y: this.state.listarDiegoALA },
+                                        { name: "Suporte Remoto", y: this.state.listarDiegoASR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarDiegoARM },
+                                        { name: "Chamado On-Site", y: this.state.listarDiegoACO },
+                                        { name: "Revisão de Venda", y: this.state.listarDiegoARV },
+                                        { name: "Confecção de Cabos", y: this.state.listarDiegoACC },
+                                        { name: "M/M de Venda", y: this.state.listarDiegoAMMV },
+                                        { name: "Rec Placa", y: this.state.listarDiegoARP },
+                                        { name: "Limpeza", y: this.state.listarDiegoALP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarDiegoAMC },
+                                        { name: "Laudo", y: this.state.listarDiegoALA },
+                                        { name: "Suporte", y: this.state.listarDiegoASR },
+                                        { name: "Revisão M", y: this.state.listarDiegoARM },
+                                        { name: "On-Site", y: this.state.listarDiegoACO },
+                                        { name: "Revisão V", y: this.state.listarDiegoARV },
+                                        { name: "Confecção de Cabos", y: this.state.listarDiegoACC },
+                                        { name: "M/M de Venda", y: this.state.listarDiegoAMMV },
+                                        { name: "Rec Placa", y: this.state.listarDiegoARP },
+                                        { name: "Limpeza", y: this.state.listarDiegoALP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarDiegoACol },
+                                        { name: "Leitor", y: this.state.listarDiegoALei },
+                                        { name: "Busca Preço", y: this.state.listarDiegoABusca },
+                                        { name: "Impressora", y: this.state.listarDiegoAImp },
+                                        { name: "Carregador 3 P", y: this.state.listarDiegoACar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarDiegoACar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarDiegoACar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarDiegoACar6 },
+                                        { name: "Berço", y: this.state.listarDiegoABerco },
+                                        { name: "Fonte", y: this.state.listarDiegoAFonte },
+                                        { name: "Cabo C", y: this.state.listarDiegoACabos }
+                                    ]} />
+
+                            }
+                            />
                         <ModalTecnicos imagem={imgAnderson} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgAnderson} estiloFoto={{ heigth: 100, width: 50 }}
