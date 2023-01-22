@@ -69,7 +69,7 @@ export default props =>
             <li>
                 <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
                 <ul>
-                    <li><Link to="/AlterarUser" className='text-light' id="meu-link"><i className="fa fa-user-plus"></i>Perfil</Link></li>
+                    <li><Link to="/PerfilUsuario" className='text-light' id="meu-link"><i className="fa fa-user-plus"></i>Perfil</Link></li>
                     <li><a onClick={sair} className='text-light' id="meu-link"><i className="fa fa-sign-out"></i>Sair</a></li>
                 </ul>
             </li>

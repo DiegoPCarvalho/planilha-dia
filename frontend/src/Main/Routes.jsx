@@ -21,6 +21,9 @@ import DashboardGerencia from "../Components/Dashboard/DashboardGerencia";
 //Em Breve
 import EmBreve from "../Components/EmBreve/EmBreve";
 
+//Perfil
+import PerfilUsuario from '../Components/Usuario/Perfil';
+
 export default function Rotas(){
     return(
         <Routes>
@@ -39,6 +42,10 @@ export default function Rotas(){
                 <Route path="Tabela" element={<Tabela />}/>
                 <Route path="Relatorio" element={<RelatorioPessoal/>}/>
             </Route>
+        </Route>
+        <Route path="/PerfilUsuario" element = {<Home />}>
+                <Route index element={<PerfilUsuario />} />
+                
         </Route>
         <Route path="/EmBreve" element={<Home />}>
             <Route index element={<EmBreve />}/>
