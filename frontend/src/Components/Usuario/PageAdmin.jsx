@@ -1,44 +1,7 @@
-// import React from 'react';
-// import Main from '../Template/Main';
-
-// import PageAdmin from './PageAdmin';
-
-// const HeaderProps = {
-//     icon: 'user-plus',
-//     title: 'Perfil do Usuario'
-// }
-
-// export default class Perfil extends React.Component{
-
-//     renderirar(tecnico){
-//         if(tecnico == 1){
-//             return (
-//                 <Main {...HeaderProps}>
-//                     <PageAdmin />
-//                 </Main>
-//             )
-//         }else if(tecnico == 0){
-//             return (
-//                 <Main {...HeaderProps}>
-//                     <div>Não sou o Numero 1 e sim o numero {tecnico}</div>
-//                 </Main>
-//             )
-//         }
-//     }
-
-//     render(){
-//         return(
-//             <div>
-//                 {this.renderirar(localStorage.AdmGeral)}
-//             </div>
-//         )
-//     }
-// }
-
 import React from "react";
 import Logo from '../../Assets/Imgs/logoZhaz.png';
 import axios from 'axios';
-import Main from '../Template/Main'
+import Main from "../Template/Main";
 
 //TECNICOS
 import imgDiegoC from '../../Assets/imagensTecnicos/DIEGO CARVALHO.png';

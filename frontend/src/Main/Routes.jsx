@@ -22,7 +22,9 @@ import DashboardGerencia from "../Components/Dashboard/DashboardGerencia";
 import EmBreve from "../Components/EmBreve/EmBreve";
 
 //Perfil
-import PerfilUsuario from '../Components/Usuario/Perfil';
+// import PerfilUser from '../Components/Usuario/PageUser';
+import PerfilAdmin from '../Components/Usuario/PageAdmin';
+
 
 export default function Rotas(){
     return(
@@ -43,10 +45,12 @@ export default function Rotas(){
                 <Route path="Relatorio" element={<RelatorioPessoal/>}/>
             </Route>
         </Route>
-        <Route path="/PerfilUsuario" element = {<Home />}>
-                <Route index element={<PerfilUsuario />} />
-                
+        <Route path="/PerfilAdmin" element = {<Home />}>
+                <Route index element={<PerfilAdmin />} />
         </Route>
+        {/* <Route path="/PerfilUser" element = {<Home />}>
+                <Route index element={<PerfilUser />} />
+        </Route> */}
         <Route path="/EmBreve" element={<Home />}>
             <Route index element={<EmBreve />}/>
         </Route>

@@ -1019,6 +1019,48 @@
       "AdmGeral": 0,
       "AdmLider": 0,
       "id": 15
+    },
+    {
+      "nomeCompleto": "teste1",
+      "email": "teste1",
+      "senha": "teste",
+      "departamento": "Laborátorio",
+      "AdmDiretoria": 0,
+      "AdmGerencia": 0,
+      "AdmFinanceiro": 0,
+      "AdmCompras": 0,
+      "AdmFiscal": 0,
+      "AdmRH": 0,
+      "AdmEstoque": 0,
+      "AdmExpedicao": 0,
+      "AdmLogistica": 0,
+      "AdmRecpecao": 0,
+      "AdmLaboratorio": 1,
+      "AdmComercial": 0,
+      "AdmGeral": 0,
+      "AdmLider": 0,
+      "id": 16
+    },
+    {
+      "nomeCompleto": "teste2",
+      "email": "teste2",
+      "senha": "teste2",
+      "departamento": "Laborátorio",
+      "AdmDiretoria": 0,
+      "AdmGerencia": 0,
+      "AdmFinanceiro": 0,
+      "AdmCompras": 0,
+      "AdmFiscal": 0,
+      "AdmRH": 0,
+      "AdmEstoque": 0,
+      "AdmExpedicao": 0,
+      "AdmLogistica": 0,
+      "AdmRecpecao": 0,
+      "AdmLaboratorio": 1,
+      "AdmComercial": 0,
+      "AdmGeral": 0,
+      "AdmLider": 0,
+      "id": 17
     }
   ]
 }
