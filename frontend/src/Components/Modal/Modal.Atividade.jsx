@@ -11,7 +11,7 @@ export default function ModalAtendimento(props) {
   return (
     <>
       <Button variant={props.corModal} onClick={handleShow} className={props.classe}>
-         <i className={`fa fa-${props.Ititulo}`}></i>
+         <i className={`fa fa-${props.Ititulo} mx-2`}></i><span className='mx-2'>{props.nomeBotao}</span>
       </Button>
 
       <Modal show={show} onHide={handleClose}>

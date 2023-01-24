@@ -29,11 +29,13 @@ import Url from '../Url/Url';
 import CardGeral from "../Card/Card";
 import CardUser from '../Card/CardUser';
 
+import Modal from '../Modal/Modal.Atividade';
+
 const banco = "LoginUsuario";
 const baseUrl = Url(banco);
 
 const initialState = {
-    usuarioUnico: {
+    usuario: {
         nomeCompleto: '',
         email: '',
         senha: '',
@@ -53,8 +55,8 @@ const initialState = {
         AdmGeral: 0,
         AdmLider: 0
     },
-    usuarios: [],
-    usuarioList: []
+    // usuarios: [],
+    list: []
 }
 
 const headerProps = {
@@ -69,49 +71,49 @@ export default class PageAdmin extends React.Component {
     componentWillMount() {
         // this.validacao()
         this.consultarBanco()
-        this.consultaBancoUsuario()
+        // this.consultaBancoUsuario()
     }
 
     consultarBanco() {
         axios(baseUrl).then(resp => {
-            this.setState({ usuarios: resp.data })
+            this.setState({ list: resp.data })
         })
     }
 
-    async consultaBancoUsuario() {
-        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-        let dadoUsuario = []
+    // async consultaBancoUsuario() {
+    //     const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+    //     let dadoUsuario = []
 
 
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if (localStorage.usuario === tabelaNome[i].nomeCompleto) {
-                dadoUsuario.push({
-                    Id: tabelaNome[i].id,
-                    Email: tabelaNome[i].email,
-                    Senha: tabelaNome[i].senha,
-                    Usuario: tabelaNome[i].nomeCompleto,
-                    Departamento: tabelaNome[i].departamento,
-                    AdmDiretoria: tabelaNome[i].AdmDiretoria,
-                    AdmGerencia: tabelaNome[i].AdmGerencia,
-                    AdmFinanceiro: tabelaNome[i].AdmFinanceiro,
-                    AdmCompras: tabelaNome[i].AdmCompras,
-                    AdmFiscal: tabelaNome[i].AdmFiscal,
-                    AdmRH: tabelaNome[i].AdmRH,
-                    AdmEstoque: tabelaNome[i].AdmEstoque,
-                    AdmExpedicao: tabelaNome[i].AdmExpedicao,
-                    AdmLogistica: tabelaNome[i].AdmLogistica,
-                    AdmRecpecao: tabelaNome[i].AdmRecpecao,
-                    AdmLaboratorio: tabelaNome[i].AdmLaboratorio,
-                    AdmComercial: tabelaNome[i].AdmComercial,
-                    AdmGeral: tabelaNome[i].AdmGeral,
-                    AdmLider: tabelaNome[i].AdmLider,
-                })
-            }
+    //     for (let i = 0; i < tabelaNome.length; i++) {
+    //         if (localStorage.usuario === tabelaNome[i].nomeCompleto) {
+    //             dadoUsuario.push({
+    //                 Id: tabelaNome[i].id,
+    //                 Email: tabelaNome[i].email,
+    //                 Senha: tabelaNome[i].senha,
+    //                 Usuario: tabelaNome[i].nomeCompleto,
+    //                 Departamento: tabelaNome[i].departamento,
+    //                 AdmDiretoria: tabelaNome[i].AdmDiretoria,
+    //                 AdmGerencia: tabelaNome[i].AdmGerencia,
+    //                 AdmFinanceiro: tabelaNome[i].AdmFinanceiro,
+    //                 AdmCompras: tabelaNome[i].AdmCompras,
+    //                 AdmFiscal: tabelaNome[i].AdmFiscal,
+    //                 AdmRH: tabelaNome[i].AdmRH,
+    //                 AdmEstoque: tabelaNome[i].AdmEstoque,
+    //                 AdmExpedicao: tabelaNome[i].AdmExpedicao,
+    //                 AdmLogistica: tabelaNome[i].AdmLogistica,
+    //                 AdmRecpecao: tabelaNome[i].AdmRecpecao,
+    //                 AdmLaboratorio: tabelaNome[i].AdmLaboratorio,
+    //                 AdmComercial: tabelaNome[i].AdmComercial,
+    //                 AdmGeral: tabelaNome[i].AdmGeral,
+    //                 AdmLider: tabelaNome[i].AdmLider,
+    //             })
+    //         }
 
-        }
+    //     }
 
-        return this.setState({ usuarioList: dadoUsuario })
-    }
+    //     return this.setState({ list: dadoUsuario })
+    // }
 
     mostarFotoAdmin(tecnico) {
         if ("Diego Carvalho" === tecnico) {
@@ -120,6 +122,10 @@ export default class PageAdmin extends React.Component {
         if ("Natanael Silva Lima" === tecnico) {
             return imgNata
         }
+    }
+
+    clear() {
+        this.setState({ Usuario: initialState.Usuario })
     }
 
     mostarFotoUser(tecnico) {
@@ -158,17 +164,15 @@ export default class PageAdmin extends React.Component {
         }
     }
 
-
-
     cardAdmin() {
-        return this.state.usuarios.map(usuario => {
+        return this.state.list.map(Usuario => {
             return (
                 <div className="col-md-auto mb-4">
-                    <CardGeral nomeUsuario={usuario.nomeCompleto}
-                        email={usuario.email}
-                        departamento={usuario.departamento}
+                    <CardGeral nomeUsuario={Usuario.nomeCompleto}
+                        email={Usuario.email}
+                        departamento={Usuario.departamento}
                         alterar={<button className="btn btn-warning p-2 mx-2"><i className="fa fa-pencil"></i></button>}
-                        deletar={<button className="btn btn-danger p-2 mx-2" onClick={() => this.confirmar(usuario)}><i className="fa fa-trash"></i></button>}
+                        deletar={<button className="btn btn-danger p-2 mx-2" onClick={() => this.confirmar(Usuario)}><i className="fa fa-trash"></i></button>}
                     />
                 </div>
             )
@@ -197,20 +201,32 @@ export default class PageAdmin extends React.Component {
     remove(Usuario) {
         axios.delete(`${baseUrl}/${Usuario.id}`)
             .then(resp => {
-                const usuarioList = this.getUpdatedList(Usuario, false)
-                this.setState({ usuarioList })
-                window.location.pathname = '/PerfilUsuario';
+                const list = this.getUpdatedList(Usuario, false)
+                this.setState({ list })
+                // window.location.pathname = '/PerfilUsuario';
             })
     }
 
-    getUpdatedList(Usuario, add = true) {
-        const usuarioList = this.state.usuarioList.filter(u => u.id !== Usuario.id)
-        if (add) usuarioList.unshift(Usuario)
-        return usuarioList
-    }
+    save() {
+        const usuario = this.state.usuario
+        const method = usuario.id ? 'put' : 'post'
+        const url = usuario.id ? `${baseUrl}/${usuario.id}` : baseUrl
 
+        axios[method](url, usuario)
+            .then(resp => {
+                // const list = this.getUpdateList(resp.data)
+                this.setState({ usuario: initialState.usuario })
+            })
+    }
+    
+    updateField(event) {
+        const usuario = { ...this.state.usuario }
+        usuario[event.target.name] = event.target.value
+        this.setState({ usuario })
+    }
+  
     cardUser() {
-        return this.state.usuarioList.map(usuario => {
+        return this.state.list.map(usuario => {
             return (
                 <div className="col-md-auto mb-4 d-flex justify-content-center">
                     <CardUser nomeUsuario={usuario.Usuario}
@@ -231,8 +247,117 @@ export default class PageAdmin extends React.Component {
         }
     }
 
-  
-    
+    formularioAdmin() {
+        return (
+            <div className="row mt-2">
+                <div className="row mb-3">
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
+                                    <input type="text" id="user-cad"
+                                        className="form-control" placeholder="Nome e Sobrenome"
+                                        name="nomeCompleto" value={this.state.usuario.nomeCompleto}
+                                        onChange={e => this.updateField(e)} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="email-text" className="fw-bold h5">E-mail:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-envelope"></i></span>
+                                    <input type="text" id="email-cad"
+                                        className="form-control" placeholder="E-mail"
+                                        onChange={e => this.updateField(e)}
+                                        name="email" value={this.state.usuario.email} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="senha-text" className="fw-bold h5">Senha:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5 mb-2">
+                            <div className="col-12">
+                                <div className="input-group mb-2">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
+                                    <input type="password" id="senha-cad"
+                                        className="form-control" placeholder="Senha"
+                                        onChange={e => this.updateField(e)}
+                                        name="senha" value={this.state.usuario.senha} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="depar-text" className="fw-bold h5">Departamento:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5 mb-3">
+                            <div className="col-12">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-cube"></i></span>
+                                    <select className="form-select" id="depar-cad"
+                                        name='departamento'
+                                        onChange={e => this.updateField(e)}
+                                        value={this.state.usuario.departamento}
+                                    >
+                                        <option selected>...</option>
+                                        <option>Diretoria</option>
+                                        <option>Gerência</option>
+                                        <option>Financeiro</option>
+                                        <option>Fiscal</option>
+                                        <option>Compras</option>
+                                        <option>RH</option>
+                                        <option>Estoque</option>
+                                        <option>Expedição</option>
+                                        <option>Logística</option>
+                                        <option>Recepção</option>
+                                        <option>Laborátorio</option>
+                                        <option>Comercial</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="texto-erro-cad" className='text-danger fw-bold h6 mx-3'></p>
+                    </div>
+                </div>
+                <div className="row mt-5">
+                    <div className="col-9 d-flex justify-content-end">
+                        {/* <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
+                            Salvar
+                        </button>*/}
+                        <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
+                            Salvar
+                        </button>
+                        <button className="btn btn-danger fw-bold mx-1" onClick={e => this.clear(e)}>
+                            Cancelar
+                        </button> 
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+
     renderAdmin() {
         return (
             <div className="container-fluid overflow-auto">
@@ -241,6 +366,9 @@ export default class PageAdmin extends React.Component {
                         <img src={Logo} alt="" />
                     </div>
                     <div className="col-6 d-flex align-items-center justify-content-end">
+                        <div className="mx-3"><Modal Ititulo="plus" nomeBotao="Novo Usuario"
+                            corModal="primary" nome="Cadastro Usuário" 
+                            relatorio={this.formularioAdmin()}/></div>
                         <img src={this.mostarFotoAdmin(localStorage.usuario)} alt="" className="imagem rounded-circle" />
                     </div>
                 </div>
