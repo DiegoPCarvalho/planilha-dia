@@ -18,7 +18,7 @@ import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
 import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
 import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
 import imgAnderson from '../../Assets/imagensTecnicos/ANDERSON RAMOS (1).png';
-import imgMarcio from '../../Assets/Imgs/logo.png';
+import imgMarcio from "../../Assets/Imgs/user.png";
 
 //GERENTES
 import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
@@ -13859,7 +13859,7 @@ export default class DashboardGerencia extends React.Component {
                     <div className="col-3 d-flex justify-content-around">
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            // nome={imgMarcio} 
+                            nome={imgMarcio} 
                             titulo="Marcio"
                             estiloFoto={{ heigth: 100, width: 50 }}
                             classeFoto="rounded-circle"
@@ -13929,7 +13929,7 @@ export default class DashboardGerencia extends React.Component {
                         />
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            // nome={imgMarcio} 
+                            nome={imgMarcio} 
                             titulo="Cida"
                             estiloFoto={{ heigth: 100, width: 50 }}
                             classeFoto="rounded-circle"
@@ -14001,7 +14001,7 @@ export default class DashboardGerencia extends React.Component {
                     <div className="col-3 d-flex justify-content-start">
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            // nome={imgMarcio} 
+                            nome={imgMarcio} 
                             titulo="Allan"
                             estiloFoto={{ heigth: 100, width: 50 }}
                             classeFoto="rounded-circle"
