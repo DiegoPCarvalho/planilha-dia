@@ -116,7 +116,7 @@ export default class PageAdmin extends React.Component {
 
         return this.setState({ userLocal: dadoUsuario })
     }
- 
+
     verificar() {
         //inputs
         const user_cad = document.getElementById("user-cad").value;
@@ -133,139 +133,8 @@ export default class PageAdmin extends React.Component {
         //mensagem-erro
         const textoErro = document.getElementById("texto-erro-cad");
 
-        if ((user_cad === '') || (email_cad === '') || (senha_cad === '') || (depar_cad === '')) {
-            if ((user_cad === '') && (email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-
-            } else if ((user_cad === '') && (email_cad === '') && (senha_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-            } else if ((user_cad === '') && (email_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-
-            } else if ((user_cad === '') && (senha_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((user_cad === '') && (email_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-            } else if ((user_cad === '') && (senha_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-            } else if ((user_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((email_cad === '') && (senha_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-            } else if ((email_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((senha_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if (user_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-            } else if (email_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-            } else if (senha_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-            } else if (depar_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            }
+        if ((user_cad === '') || (email_cad === '') || (senha_cad === '') || (depar_cad === '...')) {
+               
 
         } else {
 
@@ -303,7 +172,7 @@ export default class PageAdmin extends React.Component {
                     this.state.usuario.AdmExpedicao = 1;
                     this.state.usuario.AdmLogistica = 1;
                     this.state.usuario.AdmRecpecao = 1;
-                    this.state.usuario.AdmLider = 1; 
+                    this.state.usuario.AdmLider = 1;
                 }
 
                 user_text.innerText = "Usuario:";
@@ -322,7 +191,7 @@ export default class PageAdmin extends React.Component {
 
                 this.state.usuario.AdmGerencia = 1;
                 this.save()
-                
+
             } if (depar_cad === "Financeiro") {
                 user_text.innerText = "Usuario:";
                 user_text.classList.add("text-dark");
@@ -514,9 +383,6 @@ export default class PageAdmin extends React.Component {
                 this.save()
 
             }
-            else if (depar_cad === "...") {
-                alert("Departamento Ausente")
-            }
         }
     }
 
@@ -577,7 +443,7 @@ export default class PageAdmin extends React.Component {
                         email={usuario.email}
                         departamento={usuario.departamento}
                         alterar={<Modal corModal="warning" Ititulo="expand" nome="Alterar Usuario"
-                        relatorio={this.formularioAdmin()} load={this.renderButtonPencil(usuario)} />}
+                            relatorio={this.formularioAdmin()} load={this.renderButtonPencil(usuario)} />}
                         deletar={<button className="btn btn-danger p-3 mx-2" onClick={() => this.confirmar(usuario)}><i className="fa fa-trash"></i></button>}
                     />
                 </div>
@@ -610,7 +476,7 @@ export default class PageAdmin extends React.Component {
             .then(resp => {
                 const list = this.getUpdatedList(usuario, false)
                 this.setState({ list })
-                // window.location.pathname = '/PerfilUsuario';
+                
             })
     }
 
@@ -622,8 +488,8 @@ export default class PageAdmin extends React.Component {
         axios[method](url, usuario)
             .then(resp => {
                 // const list = this.getUpdateList(resp.data)
-               this.setState({ usuario: initialState.usuario})
-               window.location.pathname = '/PerfilUsuario';
+                this.setState({ usuario: initialState.usuario })
+                window.location.pathname = '/PerfilUsuario';
             })
     }
 
@@ -631,7 +497,7 @@ export default class PageAdmin extends React.Component {
         this.setState({ usuario })
     }
 
-    
+
     renderButtonPencil(usuario) {
         return (
             <button className="btn btn-warning" onClick={() => this.load(usuario)}>
@@ -646,13 +512,13 @@ export default class PageAdmin extends React.Component {
         if (add) list.unshift(usuario)
         return list
     }
-    
+
     updateField(event) {
         const usuario = { ...this.state.usuario }
         usuario[event.target.name] = event.target.value
         this.setState({ usuario })
     }
-  
+
     cardUser() {
         return this.state.userLocal.map(usuario => {
             return (
@@ -661,7 +527,7 @@ export default class PageAdmin extends React.Component {
                         email={usuario.email}
                         departamento={usuario.departamento}
                         alterar={<Modal corModal="warning" Ititulo="expand" nome="Alterar Usuario"
-                        relatorio={this.formularioUser()} load={this.renderButtonPencil(usuario)} />}
+                            relatorio={this.formularioUser()} load={this.renderButtonPencil(usuario)} />}
                     />
                 </div>
             )
@@ -678,22 +544,25 @@ export default class PageAdmin extends React.Component {
 
     formularioAdmin() {
         return (
-            <div className="row mt-2">
-                <div className="row mb-3">
-                    <div className="col-12">
-                        <div className="row mx-5">
-                            <div className="col-12">
-                                <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
-                            </div>
-                        </div>
-                        <div className="row mx-5">
-                            <div className="col-12">
+            <form class="row g-3">
+                <div className="row mt-2">
+                 <div className="row mb-3">
+                     <div className="col-12">
+                         <div className="row mx-5">
+                             <div className="col-12">
+                                 <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
+                             </div>
+                         </div>
+                         <div className="row mx-5">
+                             <div className="col-12">
                                 <div className="input-group mb-3">
                                     <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
                                     <input type="text" id="user-cad"
                                         className="form-control" placeholder="Nome e Sobrenome"
                                         name="nomeCompleto" value={this.state.usuario.nomeCompleto}
-                                        onChange={e => this.updateField(e)} />
+                                        onChange={e => this.updateField(e)}
+                                        required
+                                         />
                                 </div>
                             </div>
                         </div>
@@ -701,7 +570,7 @@ export default class PageAdmin extends React.Component {
                     <div className="col-12">
                         <div className="row mx-5">
                             <div className="col-12">
-                                <label for="User" id="email-text" className="fw-bold h5">E-mail:</label>
+                                <label for="User" id="email-text" className="fw-bold h5" >E-mail:</label>
                             </div>
                         </div>
                         <div className="row mx-5">
@@ -711,7 +580,8 @@ export default class PageAdmin extends React.Component {
                                     <input type="text" id="email-cad"
                                         className="form-control" placeholder="E-mail"
                                         onChange={e => this.updateField(e)}
-                                        name="email" value={this.state.usuario.email} />
+                                        name="email" value={this.state.usuario.email}
+                                        required />
                                 </div>
                             </div>
                         </div>
@@ -729,7 +599,8 @@ export default class PageAdmin extends React.Component {
                                     <input type="text" id="senha-cad"
                                         className="form-control" placeholder="Senha"
                                         onChange={e => this.updateField(e)}
-                                        name="senha" value={this.state.usuario.senha} />
+                                        name="senha" value={this.state.usuario.senha}
+                                        required />
                                 </div>
                             </div>
                         </div>
@@ -748,8 +619,9 @@ export default class PageAdmin extends React.Component {
                                         name='departamento'
                                         onChange={e => this.updateField(e)}
                                         value={this.state.usuario.departamento}
+                                        required
                                     >
-                                        <option selected>...</option>
+                                        <option selected disabled value="">...</option>
                                         <option>Diretoria</option>
                                         <option>Gerência</option>
                                         <option>Financeiro</option>
@@ -771,9 +643,12 @@ export default class PageAdmin extends React.Component {
                 </div>
                 <div className="row mt-5">
                     <div className="col-9 d-flex justify-content-end">
-                        <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
+                        <button className="btn btn-primary fw-bold mx-2" 
+                        onClick={(e) => this.verificar(e)}
+                        >
                             Salvar
                         </button>
+                        
                         {/* <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
                             Salvar
                         </button> */}
@@ -783,27 +658,31 @@ export default class PageAdmin extends React.Component {
                     </div>
                 </div>
             </div>
+        </form>
         )
     }
 
     formularioUser() {
         return (
-            <div className="row mt-2">
-                <div className="row mb-3">
-                    <div className="col-12">
-                        <div className="row mx-5">
-                            <div className="col-12">
-                                <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
-                            </div>
-                        </div>
-                        <div className="row mx-5">
-                            <div className="col-12">
+            <form class="row g-3">
+                <div className="row mt-2">
+                 <div className="row mb-3">
+                     <div className="col-12">
+                         <div className="row mx-5">
+                             <div className="col-12">
+                                 <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
+                             </div>
+                         </div>
+                         <div className="row mx-5">
+                             <div className="col-12">
                                 <div className="input-group mb-3">
                                     <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
                                     <input type="text" id="user-cad"
                                         className="form-control" placeholder="Nome e Sobrenome"
                                         name="nomeCompleto" value={this.state.usuario.nomeCompleto}
-                                        onChange={e => this.updateField(e)} />
+                                        onChange={e => this.updateField(e)}
+                                        required
+                                         />
                                 </div>
                             </div>
                         </div>
@@ -811,7 +690,7 @@ export default class PageAdmin extends React.Component {
                     <div className="col-12">
                         <div className="row mx-5">
                             <div className="col-12">
-                                <label for="User" id="email-text" className="fw-bold h5">E-mail:</label>
+                                <label for="User" id="email-text" className="fw-bold h5" >E-mail:</label>
                             </div>
                         </div>
                         <div className="row mx-5">
@@ -821,7 +700,8 @@ export default class PageAdmin extends React.Component {
                                     <input type="text" id="email-cad"
                                         className="form-control" placeholder="E-mail"
                                         onChange={e => this.updateField(e)}
-                                        name="email" value={this.state.usuario.email} />
+                                        name="email" value={this.state.usuario.email}
+                                        required />
                                 </div>
                             </div>
                         </div>
@@ -839,7 +719,8 @@ export default class PageAdmin extends React.Component {
                                     <input type="text" id="senha-cad"
                                         className="form-control" placeholder="Senha"
                                         onChange={e => this.updateField(e)}
-                                        name="senha" value={this.state.usuario.senha} />
+                                        name="senha" value={this.state.usuario.senha}
+                                        required />
                                 </div>
                             </div>
                         </div>
@@ -858,8 +739,9 @@ export default class PageAdmin extends React.Component {
                                         name='departamento'
                                         onChange={e => this.updateField(e)}
                                         value={this.state.usuario.departamento}
+                                        required
                                     >
-                                        <option selected>...</option>
+                                        <option selected disabled value="">...</option>
                                         <option>Diretoria</option>
                                         <option>Gerência</option>
                                         <option>Financeiro</option>
@@ -881,18 +763,18 @@ export default class PageAdmin extends React.Component {
                 </div>
                 <div className="row mt-5">
                     <div className="col-9 d-flex justify-content-end">
-                        <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
+                        <button className="btn btn-primary fw-bold mx-2" 
+                        onClick={(e) => this.verificar(e)}
+                        >
                             Salvar
                         </button>
-                        {/* <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
-                            Salvar
-                        </button> */}
                         <button className="btn btn-danger fw-bold mx-1" onClick={e => this.clear(e)}>
                             Cancelar
                         </button> 
                     </div>
                 </div>
             </div>
+        </form>
         )
     }
 
@@ -906,8 +788,8 @@ export default class PageAdmin extends React.Component {
                     </div>
                     <div className="col-6 d-flex align-items-center justify-content-end">
                         <div className="mx-3"><Modal Ititulo="plus" nomeBotao="Novo Usuario"
-                            corModal="primary" nome="Cadastro Usuário" 
-                            relatorio={this.formularioAdmin()}/></div>
+                            corModal="primary" nome="Cadastro Usuário"
+                            relatorio={this.formularioAdmin()} /></div>
                         <img src={this.mostarFotoAdmin(localStorage.usuario)} alt="" className="imagem rounded-circle" />
                     </div>
                 </div>

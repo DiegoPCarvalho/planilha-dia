@@ -53,138 +53,7 @@ export default class LoginMain extends React.Component {
         const textoErro = document.getElementById("texto-erro-cad");
 
         if ((user_cad === '') || (email_cad === '') || (senha_cad === '') || (depar_cad === '')) {
-            if ((user_cad === '') && (email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
 
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-
-            } else if ((user_cad === '') && (email_cad === '') && (senha_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-            } else if ((user_cad === '') && (email_cad === '') && (depar_cad === '...')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-
-            } else if ((user_cad === '') && (senha_cad === '') && (depar_cad === '...')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((email_cad === '') && (senha_cad === '') && (depar_cad === '...')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((user_cad === '') && (email_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-            } else if ((user_cad === '') && (senha_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-            } else if ((user_cad === '') && (depar_cad === '...')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((email_cad === '') && (senha_cad === '')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-            } else if ((email_cad === '') && (depar_cad === '...')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if ((senha_cad === '') && (depar_cad === '...')) {
-                textoErro.innerText = "Campos * Obrigatórios";
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            } else if (user_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-
-                user_text.innerText = "Usuario:*";
-                user_text.classList.add("text-danger");
-
-            } else if (email_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-
-                email_text.innerText = "E-mail:*";
-                email_text.classList.add("text-danger");
-            } else if (senha_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-
-                senha_text.innerText = "Senha:*";
-                senha_text.classList.add("text-danger")
-            } else if (depar_cad === '') {
-                textoErro.innerText = "Campo * Obrigatórios";
-                depar_text.innerText = "Departamento:*"
-                depar_text.classList.add("text-danger");
-            }
 
         } else {
 
@@ -222,7 +91,7 @@ export default class LoginMain extends React.Component {
                     this.state.usuario.AdmExpedicao = 1;
                     this.state.usuario.AdmLogistica = 1;
                     this.state.usuario.AdmRecpecao = 1;
-                    this.state.usuario.AdmLider = 1; 
+                    this.state.usuario.AdmLider = 1;
                 }
 
                 user_text.innerText = "Usuario:";
@@ -241,7 +110,7 @@ export default class LoginMain extends React.Component {
 
                 this.state.usuario.AdmGerencia = 1;
                 this.save()
-                
+
             } if (depar_cad === "Financeiro") {
                 user_text.innerText = "Usuario:";
                 user_text.classList.add("text-dark");
@@ -486,113 +355,127 @@ export default class LoginMain extends React.Component {
                             <img src={LogoZhaz} alt="" />
                         </div>
                     </div>
-                    <div className="row mt-2">
-                        <div className="row mb-3">
-                            <div className="col-12">
-                                <div className="row mx-5">
-                                    <div className="col-12">
-                                        <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
-                                    </div>
-                                </div>
-                                <div className="row mx-5">
-                                    <div className="col-12">
-                                        <div className="input-group mb-3">
-                                            <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
-                                            <input type="text" id="user-cad"
-                                                className="form-control" placeholder="Nome e Sobrenome"
-                                                name="nomeCompleto" value={this.state.usuario.nomeCompleto}
-                                                onChange={e => this.updateField(e)} />
+                    <form class="row g-3">
+                        <div className="row mt-2">
+                            <div className="row mb-3">
+                                <div className="col-12">
+                                    <div className="row mx-5">
+                                        <div className="col-12">
+                                            <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
                                         </div>
                                     </div>
+                                    <div className="row mx-5">
+                                        <div className="col-12">
+                                            <div className="input-group mb-3">
+                                                <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
+                                                <input type="text" id="user-cad"
+                                                    className="form-control" placeholder="Nome e Sobrenome"
+                                                    name="nomeCompleto" value={this.state.usuario.nomeCompleto}
+                                                    onChange={e => this.updateField(e)}
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="row mx-5">
+                                        <div className="col-12">
+                                            <label for="User" id="email-text" className="fw-bold h5" >E-mail:</label>
+                                        </div>
+                                    </div>
+                                    <div className="row mx-5">
+                                        <div className="col-12">
+                                            <div className="input-group mb-3">
+                                                <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-envelope"></i></span>
+                                                <input type="text" id="email-cad"
+                                                    className="form-control" placeholder="E-mail"
+                                                    onChange={e => this.updateField(e)}
+                                                    name="email" value={this.state.usuario.email}
+                                                    required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="row mx-5">
+                                        <div className="col-12">
+                                            <label for="User" id="senha-text" className="fw-bold h5">Senha:</label>
+                                        </div>
+                                    </div>
+                                    <div className="row mx-5 mb-2">
+                                        <div className="col-12">
+                                            <div className="input-group mb-2">
+                                                <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
+                                                <input type="text" id="senha-cad"
+                                                    className="form-control" placeholder="Senha"
+                                                    onChange={e => this.updateField(e)}
+                                                    name="senha" value={this.state.usuario.senha}
+                                                    required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="row mx-5">
+                                        <div className="col-12">
+                                            <label for="User" id="depar-text" className="fw-bold h5">Departamento:</label>
+                                        </div>
+                                    </div>
+                                    <div className="row mx-5 mb-3">
+                                        <div className="col-12">
+                                            <div className="input-group mb-3">
+                                                <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-cube"></i></span>
+                                                <select className="form-select" id="depar-cad"
+                                                    name='departamento'
+                                                    onChange={e => this.updateField(e)}
+                                                    value={this.state.usuario.departamento}
+                                                    required
+                                                >
+                                                    <option selected disabled value="">...</option>
+                                                    <option>Diretoria</option>
+                                                    <option>Gerência</option>
+                                                    <option>Financeiro</option>
+                                                    <option>Fiscal</option>
+                                                    <option>Compras</option>
+                                                    <option>RH</option>
+                                                    <option>Estoque</option>
+                                                    <option>Expedição</option>
+                                                    <option>Logística</option>
+                                                    <option>Recepção</option>
+                                                    <option>Laborátorio</option>
+                                                    <option>Comercial</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p id="texto-erro-cad" className='text-danger fw-bold h6 mx-3'></p>
                                 </div>
                             </div>
-                            <div className="col-12">
-                                <div className="row mx-5">
-                                    <div className="col-12">
-                                        <label for="User" id="email-text" className="fw-bold h5">E-mail:</label>
-                                    </div>
+                            <div className="row mt-5">
+                                <div className="col-2 d-flex justify-content-start align-items-center">
+                                    <Link to="/" className='btn btn-dark mx-3 fw-bold'>Voltar</Link>
                                 </div>
-                                <div className="row mx-5">
-                                    <div className="col-12">
-                                        <div className="input-group mb-3">
-                                            <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-envelope"></i></span>
-                                            <input type="text" id="email-cad"
-                                                className="form-control" placeholder="E-mail"
-                                                onChange={e => this.updateField(e)}
-                                                name="email" value={this.state.usuario.email} />
-                                        </div>
-                                    </div>
+                                <div className="col-9 d-flex justify-content-end">
+                                    <button className="btn btn-primary fw-bold mx-2"
+                                        onClick={(e) => this.verificar(e)}
+                                    >
+                                        Salvar
+                                    </button>
+
+                                    {/* <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
+                            Salvar
+                        </button> */}
+                                    <button className="btn btn-danger fw-bold mx-1" onClick={e => this.clear(e)}>
+                                        Cancelar
+                                    </button>
                                 </div>
-                            </div>
-                            <div className="col-12">
-                                <div className="row mx-5">
-                                    <div className="col-12">
-                                        <label for="User" id="senha-text" className="fw-bold h5">Senha:</label>
-                                    </div>
-                                </div>
-                                <div className="row mx-5 mb-2">
-                                    <div className="col-12">
-                                        <div className="input-group mb-2">
-                                            <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
-                                            <input type="password" id="senha-cad"
-                                                className="form-control" placeholder="Senha"
-                                                onChange={e => this.updateField(e)}
-                                                name="senha" value={this.state.usuario.senha} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <div className="row mx-5">
-                                    <div className="col-12">
-                                        <label for="User" id="depar-text" className="fw-bold h5">Departamento:</label>
-                                    </div>
-                                </div>
-                                <div className="row mx-5 mb-3">
-                                    <div className="col-12">
-                                        <div className="input-group mb-3">
-                                            <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-cube"></i></span>
-                                            <select className="form-select" id="depar-cad"
-                                                name='departamento'
-                                                onChange={e => this.updateField(e)}
-                                                value={this.state.usuario.departamento}
-                                            >
-                                                <option selected>...</option>
-                                                <option>Diretoria</option>
-                                                <option>Gerência</option>
-                                                <option>Financeiro</option>
-                                                <option>Fiscal</option>
-                                                <option>Compras</option>
-                                                <option>RH</option>
-                                                <option>Estoque</option>
-                                                <option>Expedição</option>
-                                                <option>Logística</option>
-                                                <option>Recepção</option>
-                                                <option>Laborátorio</option>
-                                                <option>Comercial</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p id="texto-erro-cad" className='text-danger fw-bold h6 mx-3'></p>
                             </div>
                         </div>
-                        <div className="row mt-5">
-                            <div className="col-2 d-flex justify-content-start align-items-center">
-                                <Link to="/" className='btn btn-dark mx-3 fw-bold'>Voltar</Link>
-                            </div>
-                            <div className="col-9 d-flex justify-content-end">
-                                <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
-                                    Salvar
-                                </button>
-                                <button className="btn btn-danger fw-bold mx-1" onClick={(e) => this.clear(e)}>
-                                    Cancelar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         )
     }
 }
+

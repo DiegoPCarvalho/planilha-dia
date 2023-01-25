@@ -3,10 +3,15 @@ import LogoZhaz from '../Assets/Imgs/logoZhaz.png';
 import axios from 'axios';
 import Url from '../Components/Url/Url';
 
+import $ from 'jquery';
+
 const banco = "LoginUsuario";
 const baseUrl = Url(banco);
 
 export default class LoginMain extends React.Component {
+    componentWillMount(){
+        this.enterLogin()
+    }
     verificar() {
         const userErro = document.getElementById("texto_usuario");
         const login = document.getElementById("user_id").value;
@@ -136,6 +141,12 @@ export default class LoginMain extends React.Component {
 
     }
 
+    enterLogin(){
+        $(document).keypress(function(e) {
+            if(e.which == 13) $('#meuBotao').click();
+        });
+    }
+
     newData() {
         return window.location.pathname = "/NovoUsuario";
     }
@@ -184,7 +195,7 @@ export default class LoginMain extends React.Component {
                     </div>
                     <div className="row mt-5 d-flex justify-content-around">
                         <div className="col-6 d-flex justify-content-center">
-                            <button className="btn btn-success fw-bold text-light" onClick={(e) => this.verificar(e)}>
+                            <button className="btn btn-success fw-bold text-light" id="meuBotao" onClick={(e) => this.verificar(e)}>
                                 Entrar
                             </button>
                         </div>
