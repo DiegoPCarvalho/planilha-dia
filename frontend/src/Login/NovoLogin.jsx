@@ -80,7 +80,7 @@ export default class LoginMain extends React.Component {
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
 
-            } else if ((user_cad === '') && (email_cad === '') && (depar_cad === '')) {
+            } else if ((user_cad === '') && (email_cad === '') && (depar_cad === '...')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 user_text.innerText = "Usuario:*";
@@ -93,7 +93,7 @@ export default class LoginMain extends React.Component {
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
 
-            } else if ((user_cad === '') && (senha_cad === '') && (depar_cad === '')) {
+            } else if ((user_cad === '') && (senha_cad === '') && (depar_cad === '...')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 user_text.innerText = "Usuario:*";
@@ -104,7 +104,7 @@ export default class LoginMain extends React.Component {
 
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            } else if ((email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
+            } else if ((email_cad === '') && (senha_cad === '') && (depar_cad === '...')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 email_text.innerText = "E-mail:*";
@@ -131,7 +131,7 @@ export default class LoginMain extends React.Component {
 
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
-            } else if ((user_cad === '') && (depar_cad === '')) {
+            } else if ((user_cad === '') && (depar_cad === '...')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 user_text.innerText = "Usuario:*";
@@ -147,7 +147,7 @@ export default class LoginMain extends React.Component {
 
                 senha_text.innerText = "Senha:*";
                 senha_text.classList.add("text-danger")
-            } else if ((email_cad === '') && (depar_cad === '')) {
+            } else if ((email_cad === '') && (depar_cad === '...')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 email_text.innerText = "E-mail:*";
@@ -156,7 +156,7 @@ export default class LoginMain extends React.Component {
 
                 depar_text.innerText = "Departamento:*"
                 depar_text.classList.add("text-danger");
-            } else if ((senha_cad === '') && (depar_cad === '')) {
+            } else if ((senha_cad === '') && (depar_cad === '...')) {
                 textoErro.innerText = "Campos * Obrigatórios";
 
                 senha_text.innerText = "Senha:*";

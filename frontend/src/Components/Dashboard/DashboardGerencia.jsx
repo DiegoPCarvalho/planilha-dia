@@ -17,7 +17,7 @@ import imgGabriel from '../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
 import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
 import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
 import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
-import imgAnderson from '../../Assets/imagensTecnicos/ANDERSON RAMOS (1).png';
+// import imgAnderson from '../../Assets/imagensTecnicos/ANDERSON RAMOS (1).png';
 import imgMarcio from "../../Assets/Imgs/user.png";
 
 //GERENTES
@@ -59,7 +59,7 @@ const initialState = {
     listarDiegoA: [0],
     listarAllan: [0],
     listarCida: [0],
-    listarAnderson: [0],
+    // listarAnderson: [0],
     listarDouglas: [0],
     listarKleiton: [0],
 
@@ -185,17 +185,17 @@ const initialState = {
     listarDiegoARP: [0],
     listarDiegoALP: [0],
 
-    //Ordem de Serviço Anderson
-    listarAndersonMC: [0],
-    listarAndersonLA: [0],
-    listarAndersonSR: [0],
-    listarAndersonRM: [0],
-    listarAndersonCO: [0],
-    listarAndersonRV: [0],
-    listarAndersonCC: [0],
-    listarAndersonMMV: [0],
-    listarAndersonRP: [0],
-    listarAndersonLP: [0],
+    // //Ordem de Serviço Anderson
+    // listarAndersonMC: [0],
+    // listarAndersonLA: [0],
+    // listarAndersonSR: [0],
+    // listarAndersonRM: [0],
+    // listarAndersonCO: [0],
+    // listarAndersonRV: [0],
+    // listarAndersonCC: [0],
+    // listarAndersonMMV: [0],
+    // listarAndersonRP: [0],
+    // listarAndersonLP: [0],
 
     //Ordem de Serviço Marcio
     listarMarcioMC: [0],
@@ -273,7 +273,7 @@ const initialState = {
     listarTotalLucas: [0],
     listarTotalAllan: [0],
     listarTotalCida: [0],
-    listarTotalAnderson: [0],
+    // listarTotalAnderson: [0],
 
     //total por equipamento:
     //Total Equipamentos Diego Carvaho
@@ -394,18 +394,18 @@ const initialState = {
     listarDiegoAFonte: [0],
     listarDiegoACabos: [0],
 
-    //Total Equipamentos Anderson
-    listarAndersonCol: [0],
-    listarAndersonImp: [0],
-    listarAndersonLei: [0],
-    listarAndersonBusca: [0],
-    listarAndersonCar3: [0],
-    listarAndersonCar4: [0],
-    listarAndersonCar5: [0],
-    listarAndersonCar6: [0],
-    listarAndersonBerco: [0],
-    listarAndersonFonte: [0],
-    listarAndersonCabos: [0],
+    // //Total Equipamentos Anderson
+    // listarAndersonCol: [0],
+    // listarAndersonImp: [0],
+    // listarAndersonLei: [0],
+    // listarAndersonBusca: [0],
+    // listarAndersonCar3: [0],
+    // listarAndersonCar4: [0],
+    // listarAndersonCar5: [0],
+    // listarAndersonCar6: [0],
+    // listarAndersonBerco: [0],
+    // listarAndersonFonte: [0],
+    // listarAndersonCabos: [0],
 
     //Total Equipamentos Marcio
     listarMarcioCol: [0],
@@ -492,7 +492,7 @@ export default class DashboardGerencia extends React.Component {
         this.buscaPorTecnico("Bruno Bedani")
         this.buscaPorTecnico("Vinicius Gomes")
         this.buscaPorTecnico("Diego Almeida")
-        this.buscaPorTecnico("Anderson Ramos")
+        // this.buscaPorTecnico("Anderson Ramos")
         this.buscaPorTecnico("Marcio")
         this.buscaPorTecnico("Cida Zani")
         this.buscaPorTecnico("Allan Zulino")
@@ -535,7 +535,7 @@ export default class DashboardGerencia extends React.Component {
         let dadoDiegoA = [];
         let dadoAllan = [];
         let dadoCida = [];
-        let dadoAnderson = [];
+        // let dadoAnderson = [];
         let dadoDouglas = [];
         let dadoKleiton = [];
 
@@ -667,11 +667,11 @@ export default class DashboardGerencia extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
-            if (v.match(/Anderson/)) {
-                dadoAnderson.push({
-                    OS: tabelaNome[i].OS
-                })
-            }
+            // if (v.match(/Anderson/)) {
+            //     dadoAnderson.push({
+            //         OS: tabelaNome[i].OS
+            //     })
+            // }
             if (v.match(/Douglas/)) {
                 dadoDouglas.push({
                     OS: tabelaNome[i].OS
@@ -773,7 +773,7 @@ export default class DashboardGerencia extends React.Component {
         let totalDiegoA = Object.keys(dadoDiegoA).length;
         let totalAllan = Object.keys(dadoAllan).length;
         let totalCida = Object.keys(dadoCida).length;
-        let totalAnderson = Object.keys(dadoAnderson).length;
+        // let totalAnderson = Object.keys(dadoAnderson).length;
         let totalDouglas = Object.keys(dadoDouglas).length;
         let totalKleiton = Object.keys(dadoKleiton).length;
 
@@ -821,7 +821,7 @@ export default class DashboardGerencia extends React.Component {
             listarDiegoA: totalDiegoA,
             listarAllan: totalAllan,
             listarCida: totalCida,
-            listarAnderson: totalAnderson,
+            // listarAnderson: totalAnderson,
             listarDouglas: totalDouglas,
             listarKleiton: totalKleiton,
 
@@ -869,7 +869,7 @@ export default class DashboardGerencia extends React.Component {
         let dadoFDiegoA = [];
         let dadoFAllan = [];
         let dadoFCida = [];
-        let dadoFAnderson = [];
+        // let dadoFAnderson = [];
         let dadoFDouglas = [];
         let dadoFKleiton = [];
 
@@ -1003,11 +1003,11 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
-                if (v.match(/Anderson/)) {
-                    dadoFAnderson.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
+                // if (v.match(/Anderson/)) {
+                //     dadoFAnderson.push({
+                //         OS: tabelaNome[i].OS
+                //     })
+                // }
                 if (v.match(/Douglas/)) {
                     dadoFDouglas.push({
                         OS: tabelaNome[i].OS
@@ -1193,11 +1193,11 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
-                if (v.match(/Anderson/)) {
-                    dadoFAnderson.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
+                // if (v.match(/Anderson/)) {
+                //     dadoFAnderson.push({
+                //         OS: tabelaNome[i].OS
+                //     })
+                // }
                 if (v.match(/Douglas/)) {
                     dadoFDouglas.push({
                         OS: tabelaNome[i].OS
@@ -1383,11 +1383,11 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
-                if (v.match(/Anderson/)) {
-                    dadoFAnderson.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
+                // if (v.match(/Anderson/)) {
+                //     dadoFAnderson.push({
+                //         OS: tabelaNome[i].OS
+                //     })
+                // }
                 if (v.match(/Douglas/)) {
                     dadoFDouglas.push({
                         OS: tabelaNome[i].OS
@@ -1491,7 +1491,7 @@ export default class DashboardGerencia extends React.Component {
         let totalFDiegoA = Object.keys(dadoFDiegoA).length;
         let totalFAllan = Object.keys(dadoFAllan).length;
         let totalFCida = Object.keys(dadoFCida).length;
-        let totalFAnderson = Object.keys(dadoFAnderson).length;
+        // let totalFAnderson = Object.keys(dadoFAnderson).length;
         let totalFDouglas = Object.keys(dadoFDouglas).length;
         let totalFKleiton = Object.keys(dadoFKleiton).length;
 
@@ -1539,7 +1539,7 @@ export default class DashboardGerencia extends React.Component {
             listarDiegoA: totalFDiegoA,
             listarAllan: totalFAllan,
             listarCida: totalFCida,
-            listarAnderson: totalFAnderson,
+            // listarAnderson: totalFAnderson,
             listarDouglas: totalFDouglas,
             listarKleiton: totalFKleiton,
 
@@ -1576,7 +1576,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscaPorTecnico("Bruno Bedani")
             this.buscaPorTecnico("Vinicius Gomes")
             this.buscaPorTecnico("Diego Almeida")
-            this.buscaPorTecnico("Anderson Ramos")
+            // this.buscaPorTecnico("Anderson Ramos")
             this.buscaPorTecnico("Marcio")
             this.buscaPorTecnico("Cida Zani")
             this.buscaPorTecnico("Allan Zulino")
@@ -1593,7 +1593,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
-            this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
+            // this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
@@ -1611,7 +1611,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
-            this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
+            // this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
@@ -1629,7 +1629,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
-            this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
+            // this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
@@ -3336,193 +3336,193 @@ export default class DashboardGerencia extends React.Component {
             })
         }
 
-        if (tecnico === "Anderson Ramos") {
+        // if (tecnico === "Anderson Ramos") {
 
-            //variavel servico
-            let dadoTMC = [];
-            let dadoTLA = [];
-            let dadoTSR = [];
-            let dadoTRM = [];
-            let dadoTCO = [];
-            let dadoTRV = [];
-            let dadoTCC = [];
-            let dadoTMMV = [];
-            let dadoTRP = [];
-            let dadoTLP = [];
+        //     //variavel servico
+        //     let dadoTMC = [];
+        //     let dadoTLA = [];
+        //     let dadoTSR = [];
+        //     let dadoTRM = [];
+        //     let dadoTCO = [];
+        //     let dadoTRV = [];
+        //     let dadoTCC = [];
+        //     let dadoTMMV = [];
+        //     let dadoTRP = [];
+        //     let dadoTLP = [];
 
-            //dados por equipamento
-            let dadoCol = [];
-            let dadoLei = [];
-            let dadoImp = [];
-            let dadoBusca = [];
-            let dadoCar3 = [];
-            let dadoCar4 = [];
-            let dadoCar5 = [];
-            let dadoCar6 = [];
-            let dadoBerco = [];
-            let dadoFonte = [];
-            let dadoCabo = [];
+        //     //dados por equipamento
+        //     let dadoCol = [];
+        //     let dadoLei = [];
+        //     let dadoImp = [];
+        //     let dadoBusca = [];
+        //     let dadoCar3 = [];
+        //     let dadoCar4 = [];
+        //     let dadoCar5 = [];
+        //     let dadoCar6 = [];
+        //     let dadoBerco = [];
+        //     let dadoFonte = [];
+        //     let dadoCabo = [];
 
-            for (let i = 0; i < tabelaNome.length; i++) {
+        //     for (let i = 0; i < tabelaNome.length; i++) {
 
-                if (tecnico === tabelaNome[i].Tecnico) {
-                    if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                        dadoTMC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Laudo" === tabelaNome[i].Servico)) {
-                        dadoTLA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                        dadoTSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                        dadoTRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                        dadoTCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                        dadoTRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                        dadoTCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                        dadoTMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                        dadoTRP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Limpeza" === tabelaNome[i].Servico)) {
-                        dadoTLP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                }
-            }
+        //         if (tecnico === tabelaNome[i].Tecnico) {
+        //             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+        //                 dadoTMC.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Laudo" === tabelaNome[i].Servico)) {
+        //                 dadoTLA.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+        //                 dadoTSR.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+        //                 dadoTRM.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+        //                 dadoTCO.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+        //                 dadoTRV.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+        //                 dadoTCC.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+        //                 dadoTMMV.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+        //                 dadoTRP.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Limpeza" === tabelaNome[i].Servico)) {
+        //                 dadoTLP.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+        //                 dadoCol.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+        //                 dadoLei.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+        //                 dadoImp.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+        //                 dadoBusca.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+        //                 dadoCar3.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+        //                 dadoCar4.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+        //                 dadoCar5.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+        //                 dadoCar6.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+        //                 dadoBerco.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+        //                 dadoFonte.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+        //                 dadoCabo.push({
+        //                     OS: tabelaNome[i].OS
+        //                 })
+        //             }
+        //         }
+        //     }
 
-            //variavel servico
-            let totalTMC = Object.keys(dadoTMC).length;
-            let totalTLA = Object.keys(dadoTLA).length;
-            let totalTSR = Object.keys(dadoTSR).length;
-            let totalTRM = Object.keys(dadoTRM).length;
-            let totalTCO = Object.keys(dadoTCO).length;
-            let totalTRV = Object.keys(dadoTRV).length;
-            let totalTCC = Object.keys(dadoTCC).length;
-            let totalTMMV = Object.keys(dadoTMMV).length;
-            let totalTRP = Object.keys(dadoTRP).length;
-            let totalTLP = Object.keys(dadoTLP).length;
+        //     //variavel servico
+        //     let totalTMC = Object.keys(dadoTMC).length;
+        //     let totalTLA = Object.keys(dadoTLA).length;
+        //     let totalTSR = Object.keys(dadoTSR).length;
+        //     let totalTRM = Object.keys(dadoTRM).length;
+        //     let totalTCO = Object.keys(dadoTCO).length;
+        //     let totalTRV = Object.keys(dadoTRV).length;
+        //     let totalTCC = Object.keys(dadoTCC).length;
+        //     let totalTMMV = Object.keys(dadoTMMV).length;
+        //     let totalTRP = Object.keys(dadoTRP).length;
+        //     let totalTLP = Object.keys(dadoTLP).length;
 
-            //total
-            let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+        //     //total
+        //     let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+        //         totalTCC + totalTMMV + totalTRP + totalTLP
 
-            //Variavel Total por equipamento
-            let totalCol = Object.keys(dadoCol).length;
-            let totalLei = Object.keys(dadoLei).length;
-            let totalImp = Object.keys(dadoImp).length;
-            let totalBusca = Object.keys(dadoBusca).length;
-            let totalCar3 = Object.keys(dadoCar3).length;
-            let totalCar4 = Object.keys(dadoCar4).length;
-            let totalCar5 = Object.keys(dadoCar5).length;
-            let totalCar6 = Object.keys(dadoCar6).length;
-            let totalBerco = Object.keys(dadoBerco).length;
-            let totalFonte = Object.keys(dadoFonte).length;
-            let totalCabo = Object.keys(dadoCabo).length;
+        //     //Variavel Total por equipamento
+        //     let totalCol = Object.keys(dadoCol).length;
+        //     let totalLei = Object.keys(dadoLei).length;
+        //     let totalImp = Object.keys(dadoImp).length;
+        //     let totalBusca = Object.keys(dadoBusca).length;
+        //     let totalCar3 = Object.keys(dadoCar3).length;
+        //     let totalCar4 = Object.keys(dadoCar4).length;
+        //     let totalCar5 = Object.keys(dadoCar5).length;
+        //     let totalCar6 = Object.keys(dadoCar6).length;
+        //     let totalBerco = Object.keys(dadoBerco).length;
+        //     let totalFonte = Object.keys(dadoFonte).length;
+        //     let totalCabo = Object.keys(dadoCabo).length;
 
-            return this.setState({
-                //busca servico
-                listarAndersonMC: totalTMC,
-                listarAndersonLA: totalTLA,
-                listarAndersonSR: totalTSR,
-                listarAndersonRM: totalTRM,
-                listarAndersonCO: totalTCO,
-                listarAndersonRV: totalTRV,
-                listarAndersonCC: totalTCC,
-                listarAndersonMMV: totalTMMV,
-                listarAndersonRP: totalTRP,
-                listarAndersonLP: totalTLP,
+        //     return this.setState({
+        //         //busca servico
+        //         listarAndersonMC: totalTMC,
+        //         listarAndersonLA: totalTLA,
+        //         listarAndersonSR: totalTSR,
+        //         listarAndersonRM: totalTRM,
+        //         listarAndersonCO: totalTCO,
+        //         listarAndersonRV: totalTRV,
+        //         listarAndersonCC: totalTCC,
+        //         listarAndersonMMV: totalTMMV,
+        //         listarAndersonRP: totalTRP,
+        //         listarAndersonLP: totalTLP,
 
-                //busca total
-                listarTotalAnderson: totalTEquip,
+        //         //busca total
+        //         listarTotalAnderson: totalTEquip,
 
-                //listart total por equipamento
-                listarAndersonCol: totalCol,
-                listarAndersonImp: totalImp,
-                listarAndersonLei: totalLei,
-                listarAndersonBusca: totalBusca,
-                listarAndersonCar3: totalCar3,
-                listarAndersonCar4: totalCar4,
-                listarAndersonCar5: totalCar5,
-                listarAndersonCar6: totalCar6,
-                listarAndersonBerco: totalBerco,
-                listarAndersonFonte: totalFonte,
-                listarAndersonCabos: totalCabo
-            })
-        }
+        //         //listart total por equipamento
+        //         listarAndersonCol: totalCol,
+        //         listarAndersonImp: totalImp,
+        //         listarAndersonLei: totalLei,
+        //         listarAndersonBusca: totalBusca,
+        //         listarAndersonCar3: totalCar3,
+        //         listarAndersonCar4: totalCar4,
+        //         listarAndersonCar5: totalCar5,
+        //         listarAndersonCar6: totalCar6,
+        //         listarAndersonBerco: totalBerco,
+        //         listarAndersonFonte: totalFonte,
+        //         listarAndersonCabos: totalCabo
+        //     })
+        // }
 
         if (tecnico === "Marcio") {
 
@@ -6163,193 +6163,193 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            if (tecnico === "Anderson Ramos") {
+            // if (tecnico === "Anderson Ramos") {
 
-                //variavel servico
-                let dadoTMC = [];
-                let dadoTLA = [];
-                let dadoTSR = [];
-                let dadoTRM = [];
-                let dadoTCO = [];
-                let dadoTRV = [];
-                let dadoTCC = [];
-                let dadoTMMV = [];
-                let dadoTRP = [];
-                let dadoTLP = [];
+            //     //variavel servico
+            //     let dadoTMC = [];
+            //     let dadoTLA = [];
+            //     let dadoTSR = [];
+            //     let dadoTRM = [];
+            //     let dadoTCO = [];
+            //     let dadoTRV = [];
+            //     let dadoTCC = [];
+            //     let dadoTMMV = [];
+            //     let dadoTRP = [];
+            //     let dadoTLP = [];
 
-                //dados por equipamento
-                let dadoCol = [];
-                let dadoLei = [];
-                let dadoImp = [];
-                let dadoBusca = [];
-                let dadoCar3 = [];
-                let dadoCar4 = [];
-                let dadoCar5 = [];
-                let dadoCar6 = [];
-                let dadoBerco = [];
-                let dadoFonte = [];
-                let dadoCabo = [];
+            //     //dados por equipamento
+            //     let dadoCol = [];
+            //     let dadoLei = [];
+            //     let dadoImp = [];
+            //     let dadoBusca = [];
+            //     let dadoCar3 = [];
+            //     let dadoCar4 = [];
+            //     let dadoCar5 = [];
+            //     let dadoCar6 = [];
+            //     let dadoBerco = [];
+            //     let dadoFonte = [];
+            //     let dadoCabo = [];
 
-                for (let i = 0; i < tabelaNome.length; i++) {
+            //     for (let i = 0; i < tabelaNome.length; i++) {
 
-                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                            dadoTMC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Laudo" === tabelaNome[i].Servico)) {
-                            dadoTLA.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                            dadoTSR.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                            dadoTRM.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                            dadoTCO.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                            dadoTRV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                            dadoTCC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                            dadoTMMV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                            dadoTRP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Limpeza" === tabelaNome[i].Servico)) {
-                            dadoTLP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoCol.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoLei.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                            dadoImp.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                            dadoBusca.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar3.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar4.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar5.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar6.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                            dadoBerco.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                            dadoFonte.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                            dadoCabo.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                    }
-                }
+            //         if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+            //             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+            //                 dadoTMC.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Laudo" === tabelaNome[i].Servico)) {
+            //                 dadoTLA.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+            //                 dadoTSR.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+            //                 dadoTRM.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+            //                 dadoTCO.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+            //                 dadoTRV.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+            //                 dadoTCC.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+            //                 dadoTMMV.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+            //                 dadoTRP.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Limpeza" === tabelaNome[i].Servico)) {
+            //                 dadoTLP.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+            //                 dadoCol.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+            //                 dadoLei.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+            //                 dadoImp.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+            //                 dadoBusca.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar3.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar4.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar5.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar6.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+            //                 dadoBerco.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+            //                 dadoFonte.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+            //                 dadoCabo.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //         }
+            //     }
 
-                //variavel servico
-                let totalTMC = Object.keys(dadoTMC).length;
-                let totalTLA = Object.keys(dadoTLA).length;
-                let totalTSR = Object.keys(dadoTSR).length;
-                let totalTRM = Object.keys(dadoTRM).length;
-                let totalTCO = Object.keys(dadoTCO).length;
-                let totalTRV = Object.keys(dadoTRV).length;
-                let totalTCC = Object.keys(dadoTCC).length;
-                let totalTMMV = Object.keys(dadoTMMV).length;
-                let totalTRP = Object.keys(dadoTRP).length;
-                let totalTLP = Object.keys(dadoTLP).length;
+            //     //variavel servico
+            //     let totalTMC = Object.keys(dadoTMC).length;
+            //     let totalTLA = Object.keys(dadoTLA).length;
+            //     let totalTSR = Object.keys(dadoTSR).length;
+            //     let totalTRM = Object.keys(dadoTRM).length;
+            //     let totalTCO = Object.keys(dadoTCO).length;
+            //     let totalTRV = Object.keys(dadoTRV).length;
+            //     let totalTCC = Object.keys(dadoTCC).length;
+            //     let totalTMMV = Object.keys(dadoTMMV).length;
+            //     let totalTRP = Object.keys(dadoTRP).length;
+            //     let totalTLP = Object.keys(dadoTLP).length;
 
-                //total
-                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                    totalTCC + totalTMMV + totalTRP + totalTLP
+            //     //total
+            //     let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+            //         totalTCC + totalTMMV + totalTRP + totalTLP
 
-                //Variavel Total por equipamento
-                let totalCol = Object.keys(dadoCol).length;
-                let totalLei = Object.keys(dadoLei).length;
-                let totalImp = Object.keys(dadoImp).length;
-                let totalBusca = Object.keys(dadoBusca).length;
-                let totalCar3 = Object.keys(dadoCar3).length;
-                let totalCar4 = Object.keys(dadoCar4).length;
-                let totalCar5 = Object.keys(dadoCar5).length;
-                let totalCar6 = Object.keys(dadoCar6).length;
-                let totalBerco = Object.keys(dadoBerco).length;
-                let totalFonte = Object.keys(dadoFonte).length;
-                let totalCabo = Object.keys(dadoCabo).length;
+            //     //Variavel Total por equipamento
+            //     let totalCol = Object.keys(dadoCol).length;
+            //     let totalLei = Object.keys(dadoLei).length;
+            //     let totalImp = Object.keys(dadoImp).length;
+            //     let totalBusca = Object.keys(dadoBusca).length;
+            //     let totalCar3 = Object.keys(dadoCar3).length;
+            //     let totalCar4 = Object.keys(dadoCar4).length;
+            //     let totalCar5 = Object.keys(dadoCar5).length;
+            //     let totalCar6 = Object.keys(dadoCar6).length;
+            //     let totalBerco = Object.keys(dadoBerco).length;
+            //     let totalFonte = Object.keys(dadoFonte).length;
+            //     let totalCabo = Object.keys(dadoCabo).length;
 
-                return this.setState({
-                    //busca servico
-                    listarAndersonMC: totalTMC,
-                    listarAndersonLA: totalTLA,
-                    listarAndersonSR: totalTSR,
-                    listarAndersonRM: totalTRM,
-                    listarAndersonCO: totalTCO,
-                    listarAndersonRV: totalTRV,
-                    listarAndersonCC: totalTCC,
-                    listarAndersonMMV: totalTMMV,
-                    listarAndersonRP: totalTRP,
-                    listarAndersonLP: totalTLP,
+            //     return this.setState({
+            //         //busca servico
+            //         listarAndersonMC: totalTMC,
+            //         listarAndersonLA: totalTLA,
+            //         listarAndersonSR: totalTSR,
+            //         listarAndersonRM: totalTRM,
+            //         listarAndersonCO: totalTCO,
+            //         listarAndersonRV: totalTRV,
+            //         listarAndersonCC: totalTCC,
+            //         listarAndersonMMV: totalTMMV,
+            //         listarAndersonRP: totalTRP,
+            //         listarAndersonLP: totalTLP,
 
-                    //busca total
-                    listarTotalAnderson: totalTEquip,
+            //         //busca total
+            //         listarTotalAnderson: totalTEquip,
 
-                    //listart total por equipamento
-                    listarAndersonCol: totalCol,
-                    listarAndersonImp: totalImp,
-                    listarAndersonLei: totalLei,
-                    listarAndersonBusca: totalBusca,
-                    listarAndersonCar3: totalCar3,
-                    listarAndersonCar4: totalCar4,
-                    listarAndersonCar5: totalCar5,
-                    listarAndersonCar6: totalCar6,
-                    listarAndersonBerco: totalBerco,
-                    listarAndersonFonte: totalFonte,
-                    listarAndersonCabos: totalCabo
-                })
-            }
+            //         //listart total por equipamento
+            //         listarAndersonCol: totalCol,
+            //         listarAndersonImp: totalImp,
+            //         listarAndersonLei: totalLei,
+            //         listarAndersonBusca: totalBusca,
+            //         listarAndersonCar3: totalCar3,
+            //         listarAndersonCar4: totalCar4,
+            //         listarAndersonCar5: totalCar5,
+            //         listarAndersonCar6: totalCar6,
+            //         listarAndersonBerco: totalBerco,
+            //         listarAndersonFonte: totalFonte,
+            //         listarAndersonCabos: totalCabo
+            //     })
+            // }
 
             if (tecnico === "Marcio") {
 
@@ -8988,193 +8988,193 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            if (tecnico === "Anderson Ramos") {
+            // if (tecnico === "Anderson Ramos") {
 
-                //variavel servico
-                let dadoTMC = [];
-                let dadoTLA = [];
-                let dadoTSR = [];
-                let dadoTRM = [];
-                let dadoTCO = [];
-                let dadoTRV = [];
-                let dadoTCC = [];
-                let dadoTMMV = [];
-                let dadoTRP = [];
-                let dadoTLP = [];
+            //     //variavel servico
+            //     let dadoTMC = [];
+            //     let dadoTLA = [];
+            //     let dadoTSR = [];
+            //     let dadoTRM = [];
+            //     let dadoTCO = [];
+            //     let dadoTRV = [];
+            //     let dadoTCC = [];
+            //     let dadoTMMV = [];
+            //     let dadoTRP = [];
+            //     let dadoTLP = [];
 
-                //dados por equipamento
-                let dadoCol = [];
-                let dadoLei = [];
-                let dadoImp = [];
-                let dadoBusca = [];
-                let dadoCar3 = [];
-                let dadoCar4 = [];
-                let dadoCar5 = [];
-                let dadoCar6 = [];
-                let dadoBerco = [];
-                let dadoFonte = [];
-                let dadoCabo = [];
+            //     //dados por equipamento
+            //     let dadoCol = [];
+            //     let dadoLei = [];
+            //     let dadoImp = [];
+            //     let dadoBusca = [];
+            //     let dadoCar3 = [];
+            //     let dadoCar4 = [];
+            //     let dadoCar5 = [];
+            //     let dadoCar6 = [];
+            //     let dadoBerco = [];
+            //     let dadoFonte = [];
+            //     let dadoCabo = [];
 
-                for (let i = 0; i < tabelaNome.length; i++) {
+            //     for (let i = 0; i < tabelaNome.length; i++) {
 
-                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                            dadoTMC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Laudo" === tabelaNome[i].Servico)) {
-                            dadoTLA.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                            dadoTSR.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                            dadoTRM.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                            dadoTCO.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                            dadoTRV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                            dadoTCC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                            dadoTMMV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                            dadoTRP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Limpeza" === tabelaNome[i].Servico)) {
-                            dadoTLP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoCol.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoLei.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                            dadoImp.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                            dadoBusca.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar3.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar4.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar5.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar6.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                            dadoBerco.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                            dadoFonte.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                            dadoCabo.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                    }
-                }
+            //         if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+            //             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+            //                 dadoTMC.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Laudo" === tabelaNome[i].Servico)) {
+            //                 dadoTLA.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+            //                 dadoTSR.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+            //                 dadoTRM.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+            //                 dadoTCO.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+            //                 dadoTRV.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+            //                 dadoTCC.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+            //                 dadoTMMV.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+            //                 dadoTRP.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Limpeza" === tabelaNome[i].Servico)) {
+            //                 dadoTLP.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+            //                 dadoCol.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+            //                 dadoLei.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+            //                 dadoImp.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+            //                 dadoBusca.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar3.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar4.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar5.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar6.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+            //                 dadoBerco.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+            //                 dadoFonte.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+            //                 dadoCabo.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //         }
+            //     }
 
-                //variavel servico
-                let totalTMC = Object.keys(dadoTMC).length;
-                let totalTLA = Object.keys(dadoTLA).length;
-                let totalTSR = Object.keys(dadoTSR).length;
-                let totalTRM = Object.keys(dadoTRM).length;
-                let totalTCO = Object.keys(dadoTCO).length;
-                let totalTRV = Object.keys(dadoTRV).length;
-                let totalTCC = Object.keys(dadoTCC).length;
-                let totalTMMV = Object.keys(dadoTMMV).length;
-                let totalTRP = Object.keys(dadoTRP).length;
-                let totalTLP = Object.keys(dadoTLP).length;
+            //     //variavel servico
+            //     let totalTMC = Object.keys(dadoTMC).length;
+            //     let totalTLA = Object.keys(dadoTLA).length;
+            //     let totalTSR = Object.keys(dadoTSR).length;
+            //     let totalTRM = Object.keys(dadoTRM).length;
+            //     let totalTCO = Object.keys(dadoTCO).length;
+            //     let totalTRV = Object.keys(dadoTRV).length;
+            //     let totalTCC = Object.keys(dadoTCC).length;
+            //     let totalTMMV = Object.keys(dadoTMMV).length;
+            //     let totalTRP = Object.keys(dadoTRP).length;
+            //     let totalTLP = Object.keys(dadoTLP).length;
 
-                //total
-                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                    totalTCC + totalTMMV + totalTRP + totalTLP
+            //     //total
+            //     let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+            //         totalTCC + totalTMMV + totalTRP + totalTLP
 
-                //Variavel Total por equipamento
-                let totalCol = Object.keys(dadoCol).length;
-                let totalLei = Object.keys(dadoLei).length;
-                let totalImp = Object.keys(dadoImp).length;
-                let totalBusca = Object.keys(dadoBusca).length;
-                let totalCar3 = Object.keys(dadoCar3).length;
-                let totalCar4 = Object.keys(dadoCar4).length;
-                let totalCar5 = Object.keys(dadoCar5).length;
-                let totalCar6 = Object.keys(dadoCar6).length;
-                let totalBerco = Object.keys(dadoBerco).length;
-                let totalFonte = Object.keys(dadoFonte).length;
-                let totalCabo = Object.keys(dadoCabo).length;
+            //     //Variavel Total por equipamento
+            //     let totalCol = Object.keys(dadoCol).length;
+            //     let totalLei = Object.keys(dadoLei).length;
+            //     let totalImp = Object.keys(dadoImp).length;
+            //     let totalBusca = Object.keys(dadoBusca).length;
+            //     let totalCar3 = Object.keys(dadoCar3).length;
+            //     let totalCar4 = Object.keys(dadoCar4).length;
+            //     let totalCar5 = Object.keys(dadoCar5).length;
+            //     let totalCar6 = Object.keys(dadoCar6).length;
+            //     let totalBerco = Object.keys(dadoBerco).length;
+            //     let totalFonte = Object.keys(dadoFonte).length;
+            //     let totalCabo = Object.keys(dadoCabo).length;
 
-                return this.setState({
-                    //busca servico
-                    listarAndersonMC: totalTMC,
-                    listarAndersonLA: totalTLA,
-                    listarAndersonSR: totalTSR,
-                    listarAndersonRM: totalTRM,
-                    listarAndersonCO: totalTCO,
-                    listarAndersonRV: totalTRV,
-                    listarAndersonCC: totalTCC,
-                    listarAndersonMMV: totalTMMV,
-                    listarAndersonRP: totalTRP,
-                    listarAndersonLP: totalTLP,
+            //     return this.setState({
+            //         //busca servico
+            //         listarAndersonMC: totalTMC,
+            //         listarAndersonLA: totalTLA,
+            //         listarAndersonSR: totalTSR,
+            //         listarAndersonRM: totalTRM,
+            //         listarAndersonCO: totalTCO,
+            //         listarAndersonRV: totalTRV,
+            //         listarAndersonCC: totalTCC,
+            //         listarAndersonMMV: totalTMMV,
+            //         listarAndersonRP: totalTRP,
+            //         listarAndersonLP: totalTLP,
 
-                    //busca total
-                    listarTotalAnderson: totalTEquip,
+            //         //busca total
+            //         listarTotalAnderson: totalTEquip,
 
-                    //listart total por equipamento
-                    listarAndersonCol: totalCol,
-                    listarAndersonImp: totalImp,
-                    listarAndersonLei: totalLei,
-                    listarAndersonBusca: totalBusca,
-                    listarAndersonCar3: totalCar3,
-                    listarAndersonCar4: totalCar4,
-                    listarAndersonCar5: totalCar5,
-                    listarAndersonCar6: totalCar6,
-                    listarAndersonBerco: totalBerco,
-                    listarAndersonFonte: totalFonte,
-                    listarAndersonCabos: totalCabo
-                })
-            }
+            //         //listart total por equipamento
+            //         listarAndersonCol: totalCol,
+            //         listarAndersonImp: totalImp,
+            //         listarAndersonLei: totalLei,
+            //         listarAndersonBusca: totalBusca,
+            //         listarAndersonCar3: totalCar3,
+            //         listarAndersonCar4: totalCar4,
+            //         listarAndersonCar5: totalCar5,
+            //         listarAndersonCar6: totalCar6,
+            //         listarAndersonBerco: totalBerco,
+            //         listarAndersonFonte: totalFonte,
+            //         listarAndersonCabos: totalCabo
+            //     })
+            // }
 
             if (tecnico === "Marcio") {
 
@@ -11813,193 +11813,193 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            if (tecnico === "Anderson Ramos") {
+            // if (tecnico === "Anderson Ramos") {
 
-                //variavel servico
-                let dadoTMC = [];
-                let dadoTLA = [];
-                let dadoTSR = [];
-                let dadoTRM = [];
-                let dadoTCO = [];
-                let dadoTRV = [];
-                let dadoTCC = [];
-                let dadoTMMV = [];
-                let dadoTRP = [];
-                let dadoTLP = [];
+            //     //variavel servico
+            //     let dadoTMC = [];
+            //     let dadoTLA = [];
+            //     let dadoTSR = [];
+            //     let dadoTRM = [];
+            //     let dadoTCO = [];
+            //     let dadoTRV = [];
+            //     let dadoTCC = [];
+            //     let dadoTMMV = [];
+            //     let dadoTRP = [];
+            //     let dadoTLP = [];
 
-                //dados por equipamento
-                let dadoCol = [];
-                let dadoLei = [];
-                let dadoImp = [];
-                let dadoBusca = [];
-                let dadoCar3 = [];
-                let dadoCar4 = [];
-                let dadoCar5 = [];
-                let dadoCar6 = [];
-                let dadoBerco = [];
-                let dadoFonte = [];
-                let dadoCabo = [];
+            //     //dados por equipamento
+            //     let dadoCol = [];
+            //     let dadoLei = [];
+            //     let dadoImp = [];
+            //     let dadoBusca = [];
+            //     let dadoCar3 = [];
+            //     let dadoCar4 = [];
+            //     let dadoCar5 = [];
+            //     let dadoCar6 = [];
+            //     let dadoBerco = [];
+            //     let dadoFonte = [];
+            //     let dadoCabo = [];
 
-                for (let i = 0; i < tabelaNome.length; i++) {
+            //     for (let i = 0; i < tabelaNome.length; i++) {
 
-                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                            dadoTMC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Laudo" === tabelaNome[i].Servico)) {
-                            dadoTLA.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                            dadoTSR.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                            dadoTRM.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                            dadoTCO.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                            dadoTRV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                            dadoTCC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                            dadoTMMV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                            dadoTRP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Limpeza" === tabelaNome[i].Servico)) {
-                            dadoTLP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoCol.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoLei.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                            dadoImp.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                            dadoBusca.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar3.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar4.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar5.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar6.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                            dadoBerco.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                            dadoFonte.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                            dadoCabo.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                    }
-                }
+            //         if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+            //             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+            //                 dadoTMC.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Laudo" === tabelaNome[i].Servico)) {
+            //                 dadoTLA.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+            //                 dadoTSR.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+            //                 dadoTRM.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+            //                 dadoTCO.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+            //                 dadoTRV.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+            //                 dadoTCC.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+            //                 dadoTMMV.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+            //                 dadoTRP.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Limpeza" === tabelaNome[i].Servico)) {
+            //                 dadoTLP.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+            //                 dadoCol.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+            //                 dadoLei.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+            //                 dadoImp.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+            //                 dadoBusca.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar3.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar4.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar5.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+            //                 dadoCar6.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+            //                 dadoBerco.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+            //                 dadoFonte.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+            //                 dadoCabo.push({
+            //                     OS: tabelaNome[i].OS
+            //                 })
+            //             }
+            //         }
+            //     }
 
-                //variavel servico
-                let totalTMC = Object.keys(dadoTMC).length;
-                let totalTLA = Object.keys(dadoTLA).length;
-                let totalTSR = Object.keys(dadoTSR).length;
-                let totalTRM = Object.keys(dadoTRM).length;
-                let totalTCO = Object.keys(dadoTCO).length;
-                let totalTRV = Object.keys(dadoTRV).length;
-                let totalTCC = Object.keys(dadoTCC).length;
-                let totalTMMV = Object.keys(dadoTMMV).length;
-                let totalTRP = Object.keys(dadoTRP).length;
-                let totalTLP = Object.keys(dadoTLP).length;
+            //     //variavel servico
+            //     let totalTMC = Object.keys(dadoTMC).length;
+            //     let totalTLA = Object.keys(dadoTLA).length;
+            //     let totalTSR = Object.keys(dadoTSR).length;
+            //     let totalTRM = Object.keys(dadoTRM).length;
+            //     let totalTCO = Object.keys(dadoTCO).length;
+            //     let totalTRV = Object.keys(dadoTRV).length;
+            //     let totalTCC = Object.keys(dadoTCC).length;
+            //     let totalTMMV = Object.keys(dadoTMMV).length;
+            //     let totalTRP = Object.keys(dadoTRP).length;
+            //     let totalTLP = Object.keys(dadoTLP).length;
 
-                //total
-                let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                    totalTCC + totalTMMV + totalTRP + totalTLP
+            //     //total
+            //     let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
+            //         totalTCC + totalTMMV + totalTRP + totalTLP
 
-                //Variavel Total por equipamento
-                let totalCol = Object.keys(dadoCol).length;
-                let totalLei = Object.keys(dadoLei).length;
-                let totalImp = Object.keys(dadoImp).length;
-                let totalBusca = Object.keys(dadoBusca).length;
-                let totalCar3 = Object.keys(dadoCar3).length;
-                let totalCar4 = Object.keys(dadoCar4).length;
-                let totalCar5 = Object.keys(dadoCar5).length;
-                let totalCar6 = Object.keys(dadoCar6).length;
-                let totalBerco = Object.keys(dadoBerco).length;
-                let totalFonte = Object.keys(dadoFonte).length;
-                let totalCabo = Object.keys(dadoCabo).length;
+            //     //Variavel Total por equipamento
+            //     let totalCol = Object.keys(dadoCol).length;
+            //     let totalLei = Object.keys(dadoLei).length;
+            //     let totalImp = Object.keys(dadoImp).length;
+            //     let totalBusca = Object.keys(dadoBusca).length;
+            //     let totalCar3 = Object.keys(dadoCar3).length;
+            //     let totalCar4 = Object.keys(dadoCar4).length;
+            //     let totalCar5 = Object.keys(dadoCar5).length;
+            //     let totalCar6 = Object.keys(dadoCar6).length;
+            //     let totalBerco = Object.keys(dadoBerco).length;
+            //     let totalFonte = Object.keys(dadoFonte).length;
+            //     let totalCabo = Object.keys(dadoCabo).length;
 
-                return this.setState({
-                    //busca servico
-                    listarAndersonMC: totalTMC,
-                    listarAndersonLA: totalTLA,
-                    listarAndersonSR: totalTSR,
-                    listarAndersonRM: totalTRM,
-                    listarAndersonCO: totalTCO,
-                    listarAndersonRV: totalTRV,
-                    listarAndersonCC: totalTCC,
-                    listarAndersonMMV: totalTMMV,
-                    listarAndersonRP: totalTRP,
-                    listarAndersonLP: totalTLP,
+            //     return this.setState({
+            //         //busca servico
+            //         listarAndersonMC: totalTMC,
+            //         listarAndersonLA: totalTLA,
+            //         listarAndersonSR: totalTSR,
+            //         listarAndersonRM: totalTRM,
+            //         listarAndersonCO: totalTCO,
+            //         listarAndersonRV: totalTRV,
+            //         listarAndersonCC: totalTCC,
+            //         listarAndersonMMV: totalTMMV,
+            //         listarAndersonRP: totalTRP,
+            //         listarAndersonLP: totalTLP,
 
-                    //busca total
-                    listarTotalAnderson: totalTEquip,
+            //         //busca total
+            //         listarTotalAnderson: totalTEquip,
 
-                    //listart total por equipamento
-                    listarAndersonCol: totalCol,
-                    listarAndersonImp: totalImp,
-                    listarAndersonLei: totalLei,
-                    listarAndersonBusca: totalBusca,
-                    listarAndersonCar3: totalCar3,
-                    listarAndersonCar4: totalCar4,
-                    listarAndersonCar5: totalCar5,
-                    listarAndersonCar6: totalCar6,
-                    listarAndersonBerco: totalBerco,
-                    listarAndersonFonte: totalFonte,
-                    listarAndersonCabos: totalCabo
-                })
-            }
+            //         //listart total por equipamento
+            //         listarAndersonCol: totalCol,
+            //         listarAndersonImp: totalImp,
+            //         listarAndersonLei: totalLei,
+            //         listarAndersonBusca: totalBusca,
+            //         listarAndersonCar3: totalCar3,
+            //         listarAndersonCar4: totalCar4,
+            //         listarAndersonCar5: totalCar5,
+            //         listarAndersonCar6: totalCar6,
+            //         listarAndersonBerco: totalBerco,
+            //         listarAndersonFonte: totalFonte,
+            //         listarAndersonCabos: totalCabo
+            //     })
+            // }
 
             if (tecnico === "Marcio") {
 
@@ -13099,7 +13099,7 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "Diego A", y: this.state.listarDiegoA },
                                 { name: "Allan", y: this.state.listarAllan },
                                 { name: "Cida", y: this.state.listarCida },
-                                { name: "Anderson", y: this.state.listarAnderson },
+                                // { name: "Anderson", y: this.state.listarAnderson },
                                 { name: "Douglas", y: this.state.listarDouglas },
                                 { name: "Kleiton", y: this.state.listarKleiton },
                             ]}
@@ -13124,7 +13124,7 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "Diego A", y: this.state.listarDiegoA },
                                 { name: "Allan", y: this.state.listarAllan },
                                 { name: "Cida", y: this.state.listarCida },
-                                { name: "Anderson", y: this.state.listarAnderson },
+                                // { name: "Anderson", y: this.state.listarAnderson },
                                 { name: "Douglas", y: this.state.listarDouglas },
                                 { name: "Kleiton", y: this.state.listarKleiton },
                             ]}
@@ -13787,7 +13787,7 @@ export default class DashboardGerencia extends React.Component {
 
                             }
                         />
-                        <ModalTecnicos imagem={imgAnderson} classe="rounded rounded-circle"
+                        {/* <ModalTecnicos imagem={imgAnderson} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgAnderson} estiloFoto={{ heigth: 100, width: 50 }}
                             classeFoto="rounded-circle"
@@ -13854,9 +13854,7 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
-                        />
-                    </div>
-                    <div className="col-3 d-flex justify-content-around">
+                        /> */}
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgMarcio} 
@@ -13927,6 +13925,78 @@ export default class DashboardGerencia extends React.Component {
 
                             }
                         />
+                    </div>
+                    <div className="col-3 d-flex justify-content-around">
+                        {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
+                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
+                            nome={imgMarcio} 
+                            titulo="Marcio"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalMarcio}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarMarcioMC },
+                                        { name: "Laudo", y: this.state.listarMarcioLA },
+                                        { name: "Suporte Remoto", y: this.state.listarMarcioSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarMarcioRM },
+                                        { name: "Chamado On-Site", y: this.state.listarMarcioCO },
+                                        { name: "Revisão de Venda", y: this.state.listarMarcioRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
+                                        { name: "M/M de Venda", y: this.state.listarMarcioMMV },
+                                        { name: "Rec Placa", y: this.state.listarMarcioRP },
+                                        { name: "Limpeza", y: this.state.listarMarcioLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarMarcioMC },
+                                        { name: "Laudo", y: this.state.listarMarcioLA },
+                                        { name: "Suporte", y: this.state.listarMarcioSR },
+                                        { name: "Revisão M", y: this.state.listarMarcioRM },
+                                        { name: "On-Site", y: this.state.listarMarcioCO },
+                                        { name: "Revisão V", y: this.state.listarMarcioRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
+                                        { name: "M/M de Venda", y: this.state.listarMarcioMMV },
+                                        { name: "Rec Placa", y: this.state.listarMarcioRP },
+                                        { name: "Limpeza", y: this.state.listarMarcioLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarMarcioCol },
+                                        { name: "Leitor", y: this.state.listarMarcioLei },
+                                        { name: "Busca Preço", y: this.state.listarMarcioBusca },
+                                        { name: "Impressora", y: this.state.listarMarcioImp },
+                                        { name: "Carregador 3 P", y: this.state.listarMarcioCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarMarcioCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarMarcioCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarMarcioCar6 },
+                                        { name: "Berço", y: this.state.listarMarcioBerco },
+                                        { name: "Fonte", y: this.state.listarMarcioFonte },
+                                        { name: "Cabo C", y: this.state.listarMarcioCabos }
+                                    ]} />
+
+                            }
+                        /> */}
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgMarcio} 
@@ -13997,8 +14067,6 @@ export default class DashboardGerencia extends React.Component {
 
                             }
                         />
-                    </div>
-                    <div className="col-3 d-flex justify-content-start">
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgMarcio} 
@@ -14069,6 +14137,78 @@ export default class DashboardGerencia extends React.Component {
 
                             }
                         />
+                    </div>
+                    <div className="col-3 d-flex justify-content-start">
+                        {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
+                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
+                            nome={imgMarcio} 
+                            titulo="Allan"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalAllan}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarAllanMC },
+                                        { name: "Laudo", y: this.state.listarAllanLA },
+                                        { name: "Suporte Remoto", y: this.state.listarAllanSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarAllanRM },
+                                        { name: "Chamado On-Site", y: this.state.listarAllanCO },
+                                        { name: "Revisão de Venda", y: this.state.listarAllanRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
+                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
+                                        { name: "Rec Placa", y: this.state.listarAllanRP },
+                                        { name: "Limpeza", y: this.state.listarAllanLP },
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção", y: this.state.listarAllanMC },
+                                        { name: "Laudo", y: this.state.listarAllanLA },
+                                        { name: "Suporte", y: this.state.listarAllanSR },
+                                        { name: "Revisão M", y: this.state.listarAllanRM },
+                                        { name: "On-Site", y: this.state.listarAllanCO },
+                                        { name: "Revisão V", y: this.state.listarAllanRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
+                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
+                                        { name: "Rec Placa", y: this.state.listarAllanRP },
+                                        { name: "Limpeza", y: this.state.listarAllanLP },
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarAllanCol },
+                                        { name: "Leitor", y: this.state.listarAllanLei },
+                                        { name: "Busca Preço", y: this.state.listarAllanBusca },
+                                        { name: "Impressora", y: this.state.listarAllanImp },
+                                        { name: "Carregador 3 P", y: this.state.listarAllanCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarAllanCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarAllanCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarAllanCar6 },
+                                        { name: "Berço", y: this.state.listarAllanBerco },
+                                        { name: "Fonte", y: this.state.listarAllanFonte },
+                                        { name: "Cabo C", y: this.state.listarAllanCabos }
+                                    ]} />
+
+                            }
+                        /> */}
                         {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             // nome={imgMarcio} 

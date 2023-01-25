@@ -22,8 +22,10 @@ import DashboardGerencia from "../Components/Dashboard/DashboardGerencia";
 import EmBreve from "../Components/EmBreve/EmBreve";
 
 //Perfil
-
 import Perfil from '../Components/Usuario/Perfil';
+
+//setores
+import Financeiro from "../Components/Setores/Financeiro/Financeiro";
 
 
 export default function Rotas(){
@@ -37,6 +39,9 @@ export default function Rotas(){
                 <Route index element={<EmBreve />} />
                 <Route path="Gerencia" element={<DashboardGerencia />}/>
                 <Route path="Diretoria" element={<DashboardDiretoria />}/>
+        </Route>
+        <Route path="/Financeiro" element = {<Home />}>
+                <Route index element={<Financeiro/>} />
         </Route>
         <Route element={<Home />}>
             <Route path="/Atividade"element={<CrudAtividade />}>

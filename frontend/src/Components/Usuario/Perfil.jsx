@@ -31,6 +31,8 @@ import CardUser from '../Card/CardUser';
 
 import Modal from '../Modal/Modal.Atividade';
 
+// import $ from 'jquery';
+
 const banco = "LoginUsuario";
 const baseUrl = Url(banco);
 
@@ -55,7 +57,7 @@ const initialState = {
         AdmGeral: 0,
         AdmLider: 0
     },
-    // usuarios: [],
+    userLocal: [],
     list: []
 }
 
@@ -71,7 +73,7 @@ export default class PageAdmin extends React.Component {
     componentWillMount() {
         // this.validacao()
         this.consultarBanco()
-        // this.consultaBancoUsuario()
+        this.consultaBancoUsuario()
     }
 
     consultarBanco() {
@@ -80,40 +82,443 @@ export default class PageAdmin extends React.Component {
         })
     }
 
-    // async consultaBancoUsuario() {
-    //     const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-    //     let dadoUsuario = []
+    async consultaBancoUsuario() {
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+        let dadoUsuario = []
 
 
-    //     for (let i = 0; i < tabelaNome.length; i++) {
-    //         if (localStorage.usuario === tabelaNome[i].nomeCompleto) {
-    //             dadoUsuario.push({
-    //                 Id: tabelaNome[i].id,
-    //                 Email: tabelaNome[i].email,
-    //                 Senha: tabelaNome[i].senha,
-    //                 Usuario: tabelaNome[i].nomeCompleto,
-    //                 Departamento: tabelaNome[i].departamento,
-    //                 AdmDiretoria: tabelaNome[i].AdmDiretoria,
-    //                 AdmGerencia: tabelaNome[i].AdmGerencia,
-    //                 AdmFinanceiro: tabelaNome[i].AdmFinanceiro,
-    //                 AdmCompras: tabelaNome[i].AdmCompras,
-    //                 AdmFiscal: tabelaNome[i].AdmFiscal,
-    //                 AdmRH: tabelaNome[i].AdmRH,
-    //                 AdmEstoque: tabelaNome[i].AdmEstoque,
-    //                 AdmExpedicao: tabelaNome[i].AdmExpedicao,
-    //                 AdmLogistica: tabelaNome[i].AdmLogistica,
-    //                 AdmRecpecao: tabelaNome[i].AdmRecpecao,
-    //                 AdmLaboratorio: tabelaNome[i].AdmLaboratorio,
-    //                 AdmComercial: tabelaNome[i].AdmComercial,
-    //                 AdmGeral: tabelaNome[i].AdmGeral,
-    //                 AdmLider: tabelaNome[i].AdmLider,
-    //             })
-    //         }
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if (localStorage.usuario === tabelaNome[i].nomeCompleto) {
+                dadoUsuario.push({
+                    id: tabelaNome[i].id,
+                    email: tabelaNome[i].email,
+                    senha: tabelaNome[i].senha,
+                    nomeCompleto: tabelaNome[i].nomeCompleto,
+                    departamento: tabelaNome[i].departamento,
+                    AdmDiretoria: tabelaNome[i].AdmDiretoria,
+                    AdmGerencia: tabelaNome[i].AdmGerencia,
+                    AdmFinanceiro: tabelaNome[i].AdmFinanceiro,
+                    AdmCompras: tabelaNome[i].AdmCompras,
+                    AdmFiscal: tabelaNome[i].AdmFiscal,
+                    AdmRH: tabelaNome[i].AdmRH,
+                    AdmEstoque: tabelaNome[i].AdmEstoque,
+                    AdmExpedicao: tabelaNome[i].AdmExpedicao,
+                    AdmLogistica: tabelaNome[i].AdmLogistica,
+                    AdmRecpecao: tabelaNome[i].AdmRecpecao,
+                    AdmLaboratorio: tabelaNome[i].AdmLaboratorio,
+                    AdmComercial: tabelaNome[i].AdmComercial,
+                    AdmGeral: tabelaNome[i].AdmGeral,
+                    AdmLider: tabelaNome[i].AdmLider,
+                })
+            }
 
-    //     }
+        }
 
-    //     return this.setState({ list: dadoUsuario })
-    // }
+        return this.setState({ userLocal: dadoUsuario })
+    }
+ 
+    verificar() {
+        //inputs
+        const user_cad = document.getElementById("user-cad").value;
+        const email_cad = document.getElementById("email-cad").value;
+        const senha_cad = document.getElementById("senha-cad").value;
+        const depar_cad = document.getElementById("depar-cad").value;
+
+        //inputs-erro
+        const user_text = document.getElementById("user-text");
+        const email_text = document.getElementById("email-text");
+        const senha_text = document.getElementById("senha-text");
+        const depar_text = document.getElementById("depar-text");
+
+        //mensagem-erro
+        const textoErro = document.getElementById("texto-erro-cad");
+
+        if ((user_cad === '') || (email_cad === '') || (senha_cad === '') || (depar_cad === '')) {
+            if ((user_cad === '') && (email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+
+            } else if ((user_cad === '') && (email_cad === '') && (senha_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+
+            } else if ((user_cad === '') && (email_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+
+            } else if ((user_cad === '') && (senha_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+            } else if ((email_cad === '') && (senha_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+            } else if ((user_cad === '') && (email_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+            } else if ((user_cad === '') && (senha_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+            } else if ((user_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+            } else if ((email_cad === '') && (senha_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+            } else if ((email_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+            } else if ((senha_cad === '') && (depar_cad === '')) {
+                textoErro.innerText = "Campos * Obrigatórios";
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+            } else if (user_cad === '') {
+                textoErro.innerText = "Campo * Obrigatórios";
+
+                user_text.innerText = "Usuario:*";
+                user_text.classList.add("text-danger");
+
+            } else if (email_cad === '') {
+                textoErro.innerText = "Campo * Obrigatórios";
+
+                email_text.innerText = "E-mail:*";
+                email_text.classList.add("text-danger");
+            } else if (senha_cad === '') {
+                textoErro.innerText = "Campo * Obrigatórios";
+
+                senha_text.innerText = "Senha:*";
+                senha_text.classList.add("text-danger")
+            } else if (depar_cad === '') {
+                textoErro.innerText = "Campo * Obrigatórios";
+                depar_text.innerText = "Departamento:*"
+                depar_text.classList.add("text-danger");
+            }
+
+        } else {
+
+            if (depar_cad === "Diretoria") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmDiretoria = 1;
+
+                this.save()
+
+            } if (depar_cad === "Gerência") {
+                let nomeUsuario = user_cad
+                if ((nomeUsuario.match(/Douglas/)) || (nomeUsuario.match(/Kleiton/)) || (nomeUsuario.match(/douglas/)) || (nomeUsuario.match(/kleiton/))) {
+                    this.state.usuario.AdmLaboratorio = 1
+                    this.state.usuario.AdmLider = 1
+
+                } if ((nomeUsuario.match(/Thiago/)) || (nomeUsuario.match(/thiago/)) || (nomeUsuario.match(/Tiago/) || (nomeUsuario.match(/tiago/)))) {
+                    this.state.usuario.AdmCompras = 1;
+                    this.state.usuario.AdmFinanceiro = 1;
+                    this.state.usuario.AdmFiscal = 1;
+                    this.state.usuario.AdmRH = 1;
+                    this.state.usuario.AdmEstoque = 1;
+                    this.state.usuario.AdmExpedicao = 1;
+                    this.state.usuario.AdmLogistica = 1;
+                    this.state.usuario.AdmRecpecao = 1;
+                    this.state.usuario.AdmLider = 1; 
+                }
+
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmGerencia = 1;
+                this.save()
+                
+            } if (depar_cad === "Financeiro") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmFinanceiro = 1;
+
+                this.save()
+
+            } if (depar_cad === "Fiscal") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmFiscal = 1;
+
+                this.save()
+
+            } if (depar_cad === "Compras") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmCompras = 1;
+
+                this.save()
+
+            } if (depar_cad === "RH") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmRH = 1;
+
+                this.save()
+
+            } if (depar_cad === "Estoque") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmEstoque = 1;
+
+                this.save()
+
+            } if (depar_cad === "Expedição") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmExpedicao = 1;
+
+                this.save()
+
+            } if (depar_cad === "Logística") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmLogistica = 1;
+
+                this.save()
+
+            } if (depar_cad === "Recepção") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmRecpecao = 1;
+
+                this.save()
+
+            } if (depar_cad === "Comercial") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmComercial = 1;
+
+                this.save()
+
+            } if (depar_cad === "Laborátorio") {
+                user_text.innerText = "Usuario:";
+                user_text.classList.add("text-dark");
+
+                email_text.innerText = "E-mail:";
+                email_text.classList.add("text-dark");
+
+                senha_text.innerText = "Senha:";
+                senha_text.classList.add("text-dark")
+
+                depar_text.innerText = "Departamento:"
+                depar_text.classList.add("text-dark");
+
+                textoErro.innerText = ''
+
+                this.state.usuario.AdmLaboratorio = 1;
+
+                this.save()
+
+            }
+            else if (depar_cad === "...") {
+                alert("Departamento Ausente")
+            }
+        }
+    }
 
     mostarFotoAdmin(tecnico) {
         if ("Diego Carvalho" === tecnico) {
@@ -125,7 +530,7 @@ export default class PageAdmin extends React.Component {
     }
 
     clear() {
-        this.setState({ Usuario: initialState.Usuario })
+        this.setState({ usuario: initialState.usuario })
     }
 
     mostarFotoUser(tecnico) {
@@ -165,19 +570,21 @@ export default class PageAdmin extends React.Component {
     }
 
     cardAdmin() {
-        return this.state.list.map(Usuario => {
+        return this.state.list.map(usuario => {
             return (
-                <div className="col-md-auto mb-4">
-                    <CardGeral nomeUsuario={Usuario.nomeCompleto}
-                        email={Usuario.email}
-                        departamento={Usuario.departamento}
-                        alterar={<button className="btn btn-warning p-2 mx-2"><i className="fa fa-pencil"></i></button>}
-                        deletar={<button className="btn btn-danger p-2 mx-2" onClick={() => this.confirmar(Usuario)}><i className="fa fa-trash"></i></button>}
+                <div className="col-md-auto mb-4" >
+                    <CardGeral nomeUsuario={usuario.nomeCompleto}
+                        email={usuario.email}
+                        departamento={usuario.departamento}
+                        alterar={<Modal corModal="warning" Ititulo="expand" nome="Alterar Usuario"
+                        relatorio={this.formularioAdmin()} load={this.renderButtonPencil(usuario)} />}
+                        deletar={<button className="btn btn-danger p-3 mx-2" onClick={() => this.confirmar(usuario)}><i className="fa fa-trash"></i></button>}
                     />
                 </div>
             )
         })
     }
+
 
     confirmar(Usuario) {
         confirmAlert({
@@ -198,10 +605,10 @@ export default class PageAdmin extends React.Component {
 
     }
 
-    remove(Usuario) {
-        axios.delete(`${baseUrl}/${Usuario.id}`)
+    remove(usuario) {
+        axios.delete(`${baseUrl}/${usuario.id}`)
             .then(resp => {
-                const list = this.getUpdatedList(Usuario, false)
+                const list = this.getUpdatedList(usuario, false)
                 this.setState({ list })
                 // window.location.pathname = '/PerfilUsuario';
             })
@@ -215,8 +622,29 @@ export default class PageAdmin extends React.Component {
         axios[method](url, usuario)
             .then(resp => {
                 // const list = this.getUpdateList(resp.data)
-                this.setState({ usuario: initialState.usuario })
+               this.setState({ usuario: initialState.usuario})
+               window.location.pathname = '/PerfilUsuario';
             })
+    }
+
+    load(usuario) {
+        this.setState({ usuario })
+    }
+
+    
+    renderButtonPencil(usuario) {
+        return (
+            <button className="btn btn-warning" onClick={() => this.load(usuario)}>
+                <i className="fa fa-pencil"></i>
+            </button>
+        )
+    }
+
+
+    getUpdatedList(usuario, add = true) {
+        const list = this.state.list.filter(u => u.id !== usuario.id)
+        if (add) list.unshift(usuario)
+        return list
     }
     
     updateField(event) {
@@ -226,13 +654,14 @@ export default class PageAdmin extends React.Component {
     }
   
     cardUser() {
-        return this.state.list.map(usuario => {
+        return this.state.userLocal.map(usuario => {
             return (
                 <div className="col-md-auto mb-4 d-flex justify-content-center">
-                    <CardUser nomeUsuario={usuario.Usuario}
-                        email={usuario.Email}
-                        departamento={usuario.Departamento}
-                        alterar={<button className="btn btn-warning p-3 mx-2"><i className="fa-2x fa fa-pencil"></i></button>}
+                    <CardUser nomeUsuario={usuario.nomeCompleto}
+                        email={usuario.email}
+                        departamento={usuario.departamento}
+                        alterar={<Modal corModal="warning" Ititulo="expand" nome="Alterar Usuario"
+                        relatorio={this.formularioUser()} load={this.renderButtonPencil(usuario)} />}
                     />
                 </div>
             )
@@ -297,7 +726,7 @@ export default class PageAdmin extends React.Component {
                             <div className="col-12">
                                 <div className="input-group mb-2">
                                     <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
-                                    <input type="password" id="senha-cad"
+                                    <input type="text" id="senha-cad"
                                         className="form-control" placeholder="Senha"
                                         onChange={e => this.updateField(e)}
                                         name="senha" value={this.state.usuario.senha} />
@@ -342,12 +771,122 @@ export default class PageAdmin extends React.Component {
                 </div>
                 <div className="row mt-5">
                     <div className="col-9 d-flex justify-content-end">
-                        {/* <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
-                            Salvar
-                        </button>*/}
-                        <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
+                        <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
                             Salvar
                         </button>
+                        {/* <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
+                            Salvar
+                        </button> */}
+                        <button className="btn btn-danger fw-bold mx-1" onClick={e => this.clear(e)}>
+                            Cancelar
+                        </button> 
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    formularioUser() {
+        return (
+            <div className="row mt-2">
+                <div className="row mb-3">
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
+                                    <input type="text" id="user-cad"
+                                        className="form-control" placeholder="Nome e Sobrenome"
+                                        name="nomeCompleto" value={this.state.usuario.nomeCompleto}
+                                        onChange={e => this.updateField(e)} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="email-text" className="fw-bold h5">E-mail:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-envelope"></i></span>
+                                    <input type="text" id="email-cad"
+                                        className="form-control" placeholder="E-mail"
+                                        onChange={e => this.updateField(e)}
+                                        name="email" value={this.state.usuario.email} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="senha-text" className="fw-bold h5">Senha:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5 mb-2">
+                            <div className="col-12">
+                                <div className="input-group mb-2">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
+                                    <input type="text" id="senha-cad"
+                                        className="form-control" placeholder="Senha"
+                                        onChange={e => this.updateField(e)}
+                                        name="senha" value={this.state.usuario.senha} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mx-5">
+                            <div className="col-12">
+                                <label for="User" id="depar-text" className="fw-bold h5">Departamento:</label>
+                            </div>
+                        </div>
+                        <div className="row mx-5 mb-3">
+                            <div className="col-12">
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-cube"></i></span>
+                                    <select className="form-select" id="depar-cad"
+                                        name='departamento'
+                                        onChange={e => this.updateField(e)}
+                                        value={this.state.usuario.departamento}
+                                    >
+                                        <option selected>...</option>
+                                        <option>Diretoria</option>
+                                        <option>Gerência</option>
+                                        <option>Financeiro</option>
+                                        <option>Fiscal</option>
+                                        <option>Compras</option>
+                                        <option>RH</option>
+                                        <option>Estoque</option>
+                                        <option>Expedição</option>
+                                        <option>Logística</option>
+                                        <option>Recepção</option>
+                                        <option>Laborátorio</option>
+                                        <option>Comercial</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="texto-erro-cad" className='text-danger fw-bold h6 mx-3'></p>
+                    </div>
+                </div>
+                <div className="row mt-5">
+                    <div className="col-9 d-flex justify-content-end">
+                        <button className="btn btn-primary fw-bold mx-2" onClick={(e) => this.verificar(e)}>
+                            Salvar
+                        </button>
+                        {/* <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
+                            Salvar
+                        </button> */}
                         <button className="btn btn-danger fw-bold mx-1" onClick={e => this.clear(e)}>
                             Cancelar
                         </button> 
@@ -380,6 +919,7 @@ export default class PageAdmin extends React.Component {
 
                 <div className="row row-cols-auto">
                     {this.cardAdmin()}
+                    {/* {this.renderTable()} */}
                 </div>
 
             </div>

@@ -35,7 +35,7 @@ export default props =>
             <li>
                 <a href="javascript:void(0);" className='text-light'><i className="fa fa-archive"></i>ADM</a>
                 <ul>
-                    <li><Link to="/EmBreve" className='text-light'><i className="fa fa-money"></i>Financeiro</Link></li>
+                    <li><Link to="/Financeiro" className='text-light'><i className="fa fa-money"></i>Financeiro</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-shopping-cart"></i>Compras</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-file-text-o"></i>Fiscal</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-handshake-o"></i>RH e DP</Link></li>
