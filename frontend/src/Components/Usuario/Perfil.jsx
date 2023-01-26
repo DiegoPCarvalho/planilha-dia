@@ -488,7 +488,7 @@ export default class PageAdmin extends React.Component {
         axios[method](url, usuario)
             .then(resp => {
                 // const list = this.getUpdateList(resp.data)
-                this.setState({ usuario: initialState.usuario })
+                this.setState({ usuario: initialState.usuario})
                 window.location.pathname = '/PerfilUsuario';
             })
     }
@@ -544,7 +544,7 @@ export default class PageAdmin extends React.Component {
 
     formularioAdmin() {
         return (
-            <form class="row g-3">
+            <form className="row g-3" action="javascript:myFunction(); return false;">
                 <div className="row mt-2">
                  <div className="row mb-3">
                      <div className="col-12">
