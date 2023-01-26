@@ -1,3 +1,3 @@
 export default function Url(banco){
-    return `http://192.168.15.211:7000/${banco}`
+    return `http://192.168.1.227:7000/${banco}`
 }

@@ -27,6 +27,7 @@ import Perfil from '../Components/Usuario/Perfil';
 //setores
 import Financeiro from "../Components/Setores/Financeiro/Financeiro";
 import CentroCusto from "../Components/Setores/Financeiro/CentroCusto";
+import CadastroCusto from '../Components/Setores/Financeiro/CadastroCusto';
 
 
 export default function Rotas(){
@@ -43,7 +44,9 @@ export default function Rotas(){
         </Route>
         <Route element = {<Home />}>
                 <Route path="/Financeiro" element={<Financeiro/>}>
-                <Route path="CentroCusto" element={<CentroCusto />} />
+                <Route path="CentroCusto" element={<CentroCusto />}>
+                    <Route  path="CadCusto" element={<CadastroCusto />}/>
+                </Route>
                 {/* <Route path="Tabela" element={<Tabela />}/>
                 <Route path="Relatorio" element={<RelatorioPessoal/>}/> */}
                 </Route>
