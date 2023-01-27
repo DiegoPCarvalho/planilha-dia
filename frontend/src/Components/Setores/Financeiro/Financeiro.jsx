@@ -25,6 +25,7 @@ export default class Financeiro extends React.Component {
                         <Link to="/Financeiro/CentroCusto" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link>
                         <Link to="/Financeiro/CentroCusto" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Em Análise</Link>
                         <Link to="/Financeiro/CentroCusto" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Aprovadas</Link>
+                        <Link to="/Financeiro/CentroCusto" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Reprovados</Link>
                         <Link to="/Financeiro/CentroCusto" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Finalizadas</Link>
                         {/* </div>
                         {/* <div className="col-6"> */}

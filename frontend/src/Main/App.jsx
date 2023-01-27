@@ -7,6 +7,7 @@ import "datatables.net-buttons/js/dataTables.buttons.min.js";
 import "datatables.net-buttons/js/buttons.html5.min.js";
 import"datatables.net-buttons/js/buttons.print.min.js";
 import "../Explorer/dataTables.buttons.min.css";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 import "pdfmake/build/pdfmake";
 import "pdfmake/build/vfs_fonts";

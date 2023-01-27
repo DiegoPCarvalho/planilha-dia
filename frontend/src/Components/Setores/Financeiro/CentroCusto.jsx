@@ -9,7 +9,7 @@ export default class CentroCusto extends React.Component {
                     <div className="d-flex flex-row">
                         {/* <div className="col-6"> */}
                         <Link to="/Financeiro/CentroCusto/CadCusto" className="rounded-start flex-fill link bg-primary fw-bold d-flex justify-content-center">Cadastro de Custo</Link>
-                        <Link to="/Financeiro/CentroCusto" className="rounded-end flex-fill link bg-primary fw-bold d-flex justify-content-center">Soliçitações</Link>
+                        <Link to="/Financeiro/CentroCusto/Solicitar" className="rounded-end flex-fill link bg-primary fw-bold d-flex justify-content-center">Solicitar</Link>
                         {/* </div>
                 {/* <div className="col-6"> */}
                         {/* <Link to="/Atividade/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}

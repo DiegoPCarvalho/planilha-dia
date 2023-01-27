@@ -25,9 +25,13 @@ import EmBreve from "../Components/EmBreve/EmBreve";
 import Perfil from '../Components/Usuario/Perfil';
 
 //setores
+//financeiro
 import Financeiro from "../Components/Setores/Financeiro/Financeiro";
 import CentroCusto from "../Components/Setores/Financeiro/CentroCusto";
 import CadastroCusto from '../Components/Setores/Financeiro/CadastroCusto';
+
+//Solicitar
+import Solicitar from '../Components/Setores/Solicitar/Solicitar';
 
 
 export default function Rotas(){
@@ -46,6 +50,7 @@ export default function Rotas(){
                 <Route path="/Financeiro" element={<Financeiro/>}>
                 <Route path="CentroCusto" element={<CentroCusto />}>
                     <Route  path="CadCusto" element={<CadastroCusto />}/>
+                    <Route  path="Solicitar" element={<Solicitar />}/>
                 </Route>
                 {/* <Route path="Tabela" element={<Tabela />}/>
                 <Route path="Relatorio" element={<RelatorioPessoal/>}/> */}

@@ -1002,13 +1002,11 @@
   ],
   "CentroCustoRecurso": [
     {
-      "Data": "2023-01-26T20:41:12.819Z",
-      "Dia": 26,
+      "Dia": 27,
       "Mes": 1,
       "Ano": 2023,
-      "Departamento": "",
-      "Recurso": "22343351",
-      "Usuario": "Diego Carvalho",
+      "Departamento": "Diretoria",
+      "Recurso": "11255236.23",
       "id": 1
     }
   ],
