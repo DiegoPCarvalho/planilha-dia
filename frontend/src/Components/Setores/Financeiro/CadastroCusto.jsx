@@ -90,9 +90,9 @@ export default class CadCusto extends React.Component {
         const money = document.getElementById("money").value
         const depar_cad = document.getElementById("depar-cad").value;
 
-        if ((money === '') || (depar_cad === ('...'))) {
+        if ((money === '') || (depar_cad === '...')) {
 
-        } else if ((money !== '') || depar_cad !== ("...")) {
+        } else if ((money !== '') && (depar_cad !== "...")) {
             this.save()
         }
     }
@@ -294,7 +294,7 @@ export default class CadCusto extends React.Component {
                 <div id="Formulario">
                     {this.formulario()}
                 </div>
-                <div className="mt-5 col-12" id="Tabela">
+                <div className="mt-5 col-12 mb-5" id="Tabela">
                     {this.renderTable()}
                 </div>
             </div>

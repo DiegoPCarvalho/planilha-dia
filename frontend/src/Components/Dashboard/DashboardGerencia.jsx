@@ -1,6 +1,4 @@
 import React from 'react';
-import Main from '../Template/Main';
-import Logo from '../../Assets/Imgs/logo.png';
 import axios from 'axios';
 import Url from '../Url/Url';
 import Grafico from '../Graficos/Grafico';
@@ -23,12 +21,6 @@ import imgMarcio from "../../Assets/Imgs/user.png";
 //GERENTES
 import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
 import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
-
-
-const HeaderProps = {
-    icon: "database",
-    title: "Gerencia"
-}
 
 const initialState = {
     //total equipamento
@@ -12947,12 +12939,7 @@ export default class DashboardGerencia extends React.Component {
 
     render() {
         return (
-            <Main {...HeaderProps}>
-                <div className="row">
-                    <div className="col-12 d-flex justify-content-center">
-                        <img src={Logo} alt="" />
-                    </div>
-                </div>
+            <div className='content-fluid'>
                 <div className="row mt-4 d-flex justify-content-center">
                     <div className="col-3 d-flex flex-row justify-content-center align-items-center">
                         <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
@@ -14430,7 +14417,7 @@ export default class DashboardGerencia extends React.Component {
                         />
                     </div>
                 </div>
-            </Main>
+            </div>
         )
     }
 }

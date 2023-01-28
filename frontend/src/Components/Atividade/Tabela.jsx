@@ -325,8 +325,8 @@ export default class Tabela extends React.Component {
                         <th>Modelo</th>
                         <th>NS</th>
                         <th>Serviço</th>
-                        <th>Classificação</th>
-                        <th>Status</th>
+                       {/* <th>Classificação</th>
+                        <th>Status</th> */}
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -348,8 +348,8 @@ export default class Tabela extends React.Component {
                     <td>{Atividade.Modelo}</td>
                     <td>{Atividade.NS}</td>
                     <td>{Atividade.Servico}</td>
-                    <td>{Atividade.Classificacao}</td>
-                    <td>{Atividade.Status}</td>
+                    {/* <td>{Atividade.Classificacao}</td>
+                    <td>{Atividade.Status}</td> */}
                     <td className="d-flex justify-content-around">
                         {/* <button className='btn btn-warning mx-1'
                         onClick={() => this.load(atividade)}>

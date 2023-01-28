@@ -84,13 +84,15 @@ export default class LoginMain extends React.Component {
 
                 } if ((nomeUsuario.match(/Thiago/)) || (nomeUsuario.match(/thiago/)) || (nomeUsuario.match(/Tiago/) || (nomeUsuario.match(/tiago/)))) {
                     this.state.usuario.AdmCompras = 1;
-                    this.state.usuario.AdmFinanceiro = 1;
                     this.state.usuario.AdmFiscal = 1;
                     this.state.usuario.AdmRH = 1;
                     this.state.usuario.AdmEstoque = 1;
                     this.state.usuario.AdmExpedicao = 1;
                     this.state.usuario.AdmLogistica = 1;
                     this.state.usuario.AdmRecpecao = 1;
+                    this.state.usuario.AdmLider = 1;
+                }if ((nomeUsuario.match(/Ingrid/)) || (nomeUsuario.match(/ingrid/))) {
+                    this.state.usuario.AdmFinanceiro = 1;
                     this.state.usuario.AdmLider = 1;
                 }
 

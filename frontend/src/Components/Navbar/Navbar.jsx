@@ -9,7 +9,7 @@ export default props =>
             <li>
                 <a href="javascript:void(0);" className='text-light'><i className="fa fa-credit-card"></i>Diretoria</a>
                 <ul>
-                    <li><Link to="/Dashboard/Diretoria" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
+                    <li><Link to="/Diretoria" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li>
                 </ul>
@@ -37,9 +37,10 @@ export default props =>
                 <ul>
                     <li><Link to="/Financeiro" className='text-light'><i className="fa fa-money"></i>Financeiro</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-shopping-cart"></i>Compras</Link></li>
-                    <li><Link to="/EmBreve" className='text-light'><i className="fa fa-file-text-o"></i>Fiscal</Link></li>
+                    <li><Link to="/EmBreve" className='text-light'><i className="fa fa-file-text-o"></i>Faturamento/Fiscal</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-handshake-o"></i>RH e DP</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-stack-overflow"></i>Estoque</Link></li>
+                    <li><Link to="/EmBreve" className='text-light'><i className="fa fa-stack-overflow"></i>Marketing</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-gift"></i>Expedição</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-truck"></i>Logística</Link></li>
                     <li><Link to="/EmBreve" className='text-light'><i className="fa fa-users"></i>Recepção</Link></li>

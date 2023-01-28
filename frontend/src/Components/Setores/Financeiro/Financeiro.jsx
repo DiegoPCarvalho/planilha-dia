@@ -22,11 +22,11 @@ export default class Financeiro extends React.Component {
                     </div>
                     <div className="d-flex flex-row">
                         {/* <div className="col-6"> */}
-                        <Link to="/Financeiro/CentroCusto" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link>
-                        <Link to="/Financeiro/CentroCusto" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Em Análise</Link>
-                        <Link to="/Financeiro/CentroCusto" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Aprovadas</Link>
-                        <Link to="/Financeiro/CentroCusto" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Reprovados</Link>
-                        <Link to="/Financeiro/CentroCusto" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Finalizadas</Link>
+                        <Link to="/Financeiro/Solicitar" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Solicitar</Link>
+                        <Link to="/Financeiro/EmAnalise" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Em Análise</Link>
+                        <Link to="/Financeiro/Aprovados" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Aprovadas</Link>
+                        <Link to="/Financeiro/Reprovados" className=" flex-fill link bg-secondary fw-bold d-flex justify-content-center">Reprovados</Link>
+                        <Link to="/Financeiro/Finalizados" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Finalizadas</Link>
                         {/* </div>
                         {/* <div className="col-6"> */}
                         {/* <Link to="/Atividade/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}

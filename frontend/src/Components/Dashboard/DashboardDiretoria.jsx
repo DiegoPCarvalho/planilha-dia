@@ -1,15 +1,9 @@
 import React from 'react';
-import Main from '../Template/Main';
-import Logo from '../../Assets/Imgs/logo.png';
 import axios from 'axios';
 import Url from '../Url/Url';
 import Grafico from '../Graficos/Grafico';
 
 
-const HeaderProps = {
-    icon: "credit-card",
-    title: "Diretoria"
-}
 
 const initialState = {
     //total equipamento
@@ -96,7 +90,7 @@ export default class DashboardDiretoria extends React.Component {
         let dadoBruno = [];
         let dadoVinicius = [];
         let dadoMateus = [];
-        let dadoMarcio =  [];
+        let dadoMarcio = [];
         let dadoGabriel = [];
         let dadoLucas = [];
         let dadoDiogo = [];
@@ -120,178 +114,178 @@ export default class DashboardDiretoria extends React.Component {
 
         for (let i = 0; i < tabelaNome.length; i++) {
 
-        var v = `${tabelaNome[i].Tecnico}`;
-       
+            var v = `${tabelaNome[i].Tecnico}`;
+
             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                 dadoMC.push({
                     OS: tabelaNome[i].OS
                 })
             }
-                 if (("Laudo" === tabelaNome[i].Servico)) {
-                    dadoLA.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                    dadoSR.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                    dadoRM.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                    dadoCO.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                    dadoRV.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                    dadoCC.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                    dadoMMV.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                 if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                    dadoRP.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (("Limpeza" === tabelaNome[i].Servico)) {
-                    dadoLP.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } 
-               if (v.match(/Diego C/)) {
-                    dadoDiegoC.push({
-                        OS: tabelaNome[i].OS
-                    })
-                } 
-                 if (v.match(/Natanael/)){
-                    dadoNatanael.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Bruno/)){
-                    dadoBruno.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Vinicius/)){
-                    dadoVinicius.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Mateus/)){
-                    dadoMateus.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Marcio/)){
-                    dadoMarcio.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Gabriel/)){
-                    dadoGabriel.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Lucas/)){
-                    dadoLucas.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Diogo/)){
-                    dadoDiogo.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Diego A/)){
-                    dadoDiegoA.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Allan/)){
-                    dadoAllan.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if (v.match(/Cida/)){
-                    dadoCida.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(1 === tabelaNome[i].Mes){
-                    dadoJan.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(2 === tabelaNome[i].Mes){
-                    dadoFev.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(3 === tabelaNome[i].Mes){
-                    dadoMar.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(4 === tabelaNome[i].Mes){
-                    dadoAbr.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(5 === tabelaNome[i].Mes){
-                    dadoMai.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(6 === tabelaNome[i].Mes){
-                    dadoJun.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(7 === tabelaNome[i].Mes){
-                    dadoJul.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(8 === tabelaNome[i].Mes){
-                    dadoAgo.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(9 === tabelaNome[i].Mes){
-                    dadoSet.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(10 === tabelaNome[i].Mes){
-                    dadoOut.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(11 === tabelaNome[i].Mes){
-                    dadoNov.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
-                if(12 === tabelaNome[i].Mes){
-                    dadoDez.push({
-                        OS: tabelaNome[i].OS
-                    })
-                }
+            if (("Laudo" === tabelaNome[i].Servico)) {
+                dadoLA.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                dadoSR.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                dadoRM.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                dadoCO.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                dadoRV.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                dadoCC.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                dadoMMV.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                dadoRP.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Limpeza" === tabelaNome[i].Servico)) {
+                dadoLP.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Diego C/)) {
+                dadoDiegoC.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Natanael/)) {
+                dadoNatanael.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Bruno/)) {
+                dadoBruno.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Vinicius/)) {
+                dadoVinicius.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Mateus/)) {
+                dadoMateus.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Marcio/)) {
+                dadoMarcio.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Gabriel/)) {
+                dadoGabriel.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Lucas/)) {
+                dadoLucas.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Diogo/)) {
+                dadoDiogo.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Diego A/)) {
+                dadoDiegoA.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Allan/)) {
+                dadoAllan.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (v.match(/Cida/)) {
+                dadoCida.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (1 === tabelaNome[i].Mes) {
+                dadoJan.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (2 === tabelaNome[i].Mes) {
+                dadoFev.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (3 === tabelaNome[i].Mes) {
+                dadoMar.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (4 === tabelaNome[i].Mes) {
+                dadoAbr.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (5 === tabelaNome[i].Mes) {
+                dadoMai.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (6 === tabelaNome[i].Mes) {
+                dadoJun.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (7 === tabelaNome[i].Mes) {
+                dadoJul.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (8 === tabelaNome[i].Mes) {
+                dadoAgo.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (9 === tabelaNome[i].Mes) {
+                dadoSet.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (10 === tabelaNome[i].Mes) {
+                dadoOut.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (11 === tabelaNome[i].Mes) {
+                dadoNov.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (12 === tabelaNome[i].Mes) {
+                dadoDez.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
         }
 
         //variavel servico
@@ -337,7 +331,7 @@ export default class DashboardDiretoria extends React.Component {
         let totalOut = Object.keys(dadoOut).length;
         let totalNov = Object.keys(dadoNov).length;
         let totalDez = Object.keys(dadoDez).length;
-        
+
         return this.setState({
             //busca servico
             listarMC: totalMC,
@@ -385,7 +379,7 @@ export default class DashboardDiretoria extends React.Component {
         })
     }
 
-    async buscarDadosFiltro(dia, mes, ano){
+    async buscarDadosFiltro(dia, mes, ano) {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
 
         //variavel servico
@@ -406,7 +400,7 @@ export default class DashboardDiretoria extends React.Component {
         let dadoFBruno = [];
         let dadoFVinicius = [];
         let dadoFMateus = [];
-        let dadoFMarcio =  [];
+        let dadoFMarcio = [];
         let dadoFGabriel = [];
         let dadoFLucas = [];
         let dadoFDiogo = [];
@@ -428,664 +422,664 @@ export default class DashboardDiretoria extends React.Component {
         let dadoFNov = [];
         let dadoFDez = [];
 
-        for (let i = 0; i < tabelaNome.length; i++){
+        for (let i = 0; i < tabelaNome.length; i++) {
             let v = `${tabelaNome[i].Tecnico}`;
             //#region Mês
-            if((dia === "Todos" ) && (mes === `${tabelaNome[i].Mes}`) && (ano === "Todos")){
+            if ((dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === "Todos")) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                     dadoFMC.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                     if (("Laudo" === tabelaNome[i].Servico)) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                        dadoFSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                        dadoFMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                        dadoFRP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Limpeza" === tabelaNome[i].Servico)) {
-                        dadoFLP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                   if (v.match(/Diego C/)) {
-                        dadoFDiegoC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                     if (v.match(/Natanael/)){
-                        dadoFNatanael.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Bruno/)){
-                        dadoFBruno.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Vinicius/)){
-                        dadoFVinicius.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Mateus/)){
-                        dadoFMateus.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Marcio/)){
-                        dadoFMarcio.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Gabriel/)){
-                        dadoFGabriel.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Lucas/)){
-                        dadoFLucas.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diogo/)){
-                        dadoFDiogo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diego A/)){
-                        dadoFDiegoA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Allan/)){
-                        dadoFAllan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Cida/)){
-                        dadoFCida.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
+                if (("Laudo" === tabelaNome[i].Servico)) {
+                    dadoFLA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                    dadoFSR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                    dadoFRM.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                    dadoFCO.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                    dadoFRV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                    dadoFCC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                    dadoFMMV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                    dadoFRP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Limpeza" === tabelaNome[i].Servico)) {
+                    dadoFLP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego C/)) {
+                    dadoFDiegoC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Natanael/)) {
+                    dadoFNatanael.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Bruno/)) {
+                    dadoFBruno.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Vinicius/)) {
+                    dadoFVinicius.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Mateus/)) {
+                    dadoFMateus.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Marcio/)) {
+                    dadoFMarcio.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Gabriel/)) {
+                    dadoFGabriel.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Lucas/)) {
+                    dadoFLucas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diogo/)) {
+                    dadoFDiogo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego A/)) {
+                    dadoFDiegoA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Allan/)) {
+                    dadoFAllan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Cida/)) {
+                    dadoFCida.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion
 
             //#region Ano
-            if((dia === "Todos" ) && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)){       
+            if ((dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                     dadoFMC.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                     if (("Laudo" === tabelaNome[i].Servico)) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                        dadoFSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                        dadoFMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                        dadoFRP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Limpeza" === tabelaNome[i].Servico)) {
-                        dadoFLP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                   if (v.match(/Diego C/)) {
-                        dadoFDiegoC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                     if (v.match(/Natanael/)){
-                        dadoFNatanael.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Bruno/)){
-                        dadoFBruno.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Vinicius/)){
-                        dadoFVinicius.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Mateus/)){
-                        dadoFMateus.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Marcio/)){
-                        dadoFMarcio.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Gabriel/)){
-                        dadoFGabriel.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Lucas/)){
-                        dadoFLucas.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diogo/)){
-                        dadoFDiogo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diego A/)){
-                        dadoFDiegoA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Allan/)){
-                        dadoFAllan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Cida/)){
-                        dadoFCida.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(1 === tabelaNome[i].Mes){
-                        dadoFJan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(2 === tabelaNome[i].Mes){
-                        dadoFFev.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(3 === tabelaNome[i].Mes){
-                        dadoFMar.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(4 === tabelaNome[i].Mes){
-                        dadoFAbr.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(5 === tabelaNome[i].Mes){
-                        dadoFMai.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(6 === tabelaNome[i].Mes){
-                        dadoFJun.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(7 === tabelaNome[i].Mes){
-                        dadoFJul.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(8 === tabelaNome[i].Mes){
-                        dadoFAgo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(9 === tabelaNome[i].Mes){
-                        dadoFSet.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(10 === tabelaNome[i].Mes){
-                        dadoFOut.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(11 === tabelaNome[i].Mes){
-                        dadoFNov.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(12 === tabelaNome[i].Mes){
-                        dadoFDez.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
+                if (("Laudo" === tabelaNome[i].Servico)) {
+                    dadoFLA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                    dadoFSR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                    dadoFRM.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                    dadoFCO.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                    dadoFRV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                    dadoFCC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                    dadoFMMV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                    dadoFRP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Limpeza" === tabelaNome[i].Servico)) {
+                    dadoFLP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego C/)) {
+                    dadoFDiegoC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Natanael/)) {
+                    dadoFNatanael.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Bruno/)) {
+                    dadoFBruno.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Vinicius/)) {
+                    dadoFVinicius.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Mateus/)) {
+                    dadoFMateus.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Marcio/)) {
+                    dadoFMarcio.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Gabriel/)) {
+                    dadoFGabriel.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Lucas/)) {
+                    dadoFLucas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diogo/)) {
+                    dadoFDiogo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego A/)) {
+                    dadoFDiegoA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Allan/)) {
+                    dadoFAllan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Cida/)) {
+                    dadoFCida.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (1 === tabelaNome[i].Mes) {
+                    dadoFJan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (2 === tabelaNome[i].Mes) {
+                    dadoFFev.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (3 === tabelaNome[i].Mes) {
+                    dadoFMar.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (4 === tabelaNome[i].Mes) {
+                    dadoFAbr.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (5 === tabelaNome[i].Mes) {
+                    dadoFMai.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (6 === tabelaNome[i].Mes) {
+                    dadoFJun.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (7 === tabelaNome[i].Mes) {
+                    dadoFJul.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (8 === tabelaNome[i].Mes) {
+                    dadoFAgo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (9 === tabelaNome[i].Mes) {
+                    dadoFSet.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (10 === tabelaNome[i].Mes) {
+                    dadoFOut.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (11 === tabelaNome[i].Mes) {
+                    dadoFNov.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (12 === tabelaNome[i].Mes) {
+                    dadoFDez.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion
 
             //#region Mes Ano
-            if((dia === "Todos" ) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){       
+            if ((dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                     dadoFMC.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                     if (("Laudo" === tabelaNome[i].Servico)) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                        dadoFSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                        dadoFMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                        dadoFRP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Limpeza" === tabelaNome[i].Servico)) {
-                        dadoFLP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                   if (v.match(/Diego C/)) {
-                        dadoFDiegoC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                     if (v.match(/Natanael/)){
-                        dadoFNatanael.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Bruno/)){
-                        dadoFBruno.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Vinicius/)){
-                        dadoFVinicius.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Mateus/)){
-                        dadoFMateus.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Marcio/)){
-                        dadoFMarcio.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Gabriel/)){
-                        dadoFGabriel.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Lucas/)){
-                        dadoFLucas.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diogo/)){
-                        dadoFDiogo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diego A/)){
-                        dadoFDiegoA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Allan/)){
-                        dadoFAllan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Cida/)){
-                        dadoFCida.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(1 === tabelaNome[i].Mes){
-                        dadoFJan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(2 === tabelaNome[i].Mes){
-                        dadoFFev.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(3 === tabelaNome[i].Mes){
-                        dadoFMar.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(4 === tabelaNome[i].Mes){
-                        dadoFAbr.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(5 === tabelaNome[i].Mes){
-                        dadoFMai.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(6 === tabelaNome[i].Mes){
-                        dadoFJun.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(7 === tabelaNome[i].Mes){
-                        dadoFJul.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(8 === tabelaNome[i].Mes){
-                        dadoFAgo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(9 === tabelaNome[i].Mes){
-                        dadoFSet.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(10 === tabelaNome[i].Mes){
-                        dadoFOut.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(11 === tabelaNome[i].Mes){
-                        dadoFNov.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(12 === tabelaNome[i].Mes){
-                        dadoFDez.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
+                if (("Laudo" === tabelaNome[i].Servico)) {
+                    dadoFLA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                    dadoFSR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                    dadoFRM.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                    dadoFCO.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                    dadoFRV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                    dadoFCC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                    dadoFMMV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                    dadoFRP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Limpeza" === tabelaNome[i].Servico)) {
+                    dadoFLP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego C/)) {
+                    dadoFDiegoC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Natanael/)) {
+                    dadoFNatanael.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Bruno/)) {
+                    dadoFBruno.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Vinicius/)) {
+                    dadoFVinicius.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Mateus/)) {
+                    dadoFMateus.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Marcio/)) {
+                    dadoFMarcio.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Gabriel/)) {
+                    dadoFGabriel.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Lucas/)) {
+                    dadoFLucas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diogo/)) {
+                    dadoFDiogo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego A/)) {
+                    dadoFDiegoA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Allan/)) {
+                    dadoFAllan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Cida/)) {
+                    dadoFCida.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (1 === tabelaNome[i].Mes) {
+                    dadoFJan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (2 === tabelaNome[i].Mes) {
+                    dadoFFev.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (3 === tabelaNome[i].Mes) {
+                    dadoFMar.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (4 === tabelaNome[i].Mes) {
+                    dadoFAbr.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (5 === tabelaNome[i].Mes) {
+                    dadoFMai.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (6 === tabelaNome[i].Mes) {
+                    dadoFJun.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (7 === tabelaNome[i].Mes) {
+                    dadoFJul.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (8 === tabelaNome[i].Mes) {
+                    dadoFAgo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (9 === tabelaNome[i].Mes) {
+                    dadoFSet.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (10 === tabelaNome[i].Mes) {
+                    dadoFOut.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (11 === tabelaNome[i].Mes) {
+                    dadoFNov.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (12 === tabelaNome[i].Mes) {
+                    dadoFDez.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion 
 
             //#region Dia Mes Ano 
-            if((dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){       
+            if ((dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                     dadoFMC.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                     if (("Laudo" === tabelaNome[i].Servico)) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                        dadoFSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                        dadoFMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                     if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                        dadoFRP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (("Limpeza" === tabelaNome[i].Servico)) {
-                        dadoFLP.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                   if (v.match(/Diego C/)) {
-                        dadoFDiegoC.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                     if (v.match(/Natanael/)){
-                        dadoFNatanael.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Bruno/)){
-                        dadoFBruno.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Vinicius/)){
-                        dadoFVinicius.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Mateus/)){
-                        dadoFMateus.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Marcio/)){
-                        dadoFMarcio.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Gabriel/)){
-                        dadoFGabriel.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Lucas/)){
-                        dadoFLucas.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diogo/)){
-                        dadoFDiogo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Diego A/)){
-                        dadoFDiegoA.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Allan/)){
-                        dadoFAllan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if (v.match(/Cida/)){
-                        dadoFCida.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(1 === tabelaNome[i].Mes){
-                        dadoFJan.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(2 === tabelaNome[i].Mes){
-                        dadoFFev.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(3 === tabelaNome[i].Mes){
-                        dadoFMar.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(4 === tabelaNome[i].Mes){
-                        dadoFAbr.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(5 === tabelaNome[i].Mes){
-                        dadoFMai.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(6 === tabelaNome[i].Mes){
-                        dadoFJun.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(7 === tabelaNome[i].Mes){
-                        dadoFJul.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(8 === tabelaNome[i].Mes){
-                        dadoFAgo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(9 === tabelaNome[i].Mes){
-                        dadoFSet.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(10 === tabelaNome[i].Mes){
-                        dadoFOut.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(11 === tabelaNome[i].Mes){
-                        dadoFNov.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    if(12 === tabelaNome[i].Mes){
-                        dadoFDez.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
+                if (("Laudo" === tabelaNome[i].Servico)) {
+                    dadoFLA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                    dadoFSR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                    dadoFRM.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                    dadoFCO.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                    dadoFRV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                    dadoFCC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                    dadoFMMV.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                    dadoFRP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Limpeza" === tabelaNome[i].Servico)) {
+                    dadoFLP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego C/)) {
+                    dadoFDiegoC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Natanael/)) {
+                    dadoFNatanael.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Bruno/)) {
+                    dadoFBruno.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Vinicius/)) {
+                    dadoFVinicius.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Mateus/)) {
+                    dadoFMateus.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Marcio/)) {
+                    dadoFMarcio.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Gabriel/)) {
+                    dadoFGabriel.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Lucas/)) {
+                    dadoFLucas.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diogo/)) {
+                    dadoFDiogo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Diego A/)) {
+                    dadoFDiegoA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Allan/)) {
+                    dadoFAllan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (v.match(/Cida/)) {
+                    dadoFCida.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (1 === tabelaNome[i].Mes) {
+                    dadoFJan.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (2 === tabelaNome[i].Mes) {
+                    dadoFFev.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (3 === tabelaNome[i].Mes) {
+                    dadoFMar.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (4 === tabelaNome[i].Mes) {
+                    dadoFAbr.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (5 === tabelaNome[i].Mes) {
+                    dadoFMai.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (6 === tabelaNome[i].Mes) {
+                    dadoFJun.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (7 === tabelaNome[i].Mes) {
+                    dadoFJul.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (8 === tabelaNome[i].Mes) {
+                    dadoFAgo.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (9 === tabelaNome[i].Mes) {
+                    dadoFSet.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (10 === tabelaNome[i].Mes) {
+                    dadoFOut.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (11 === tabelaNome[i].Mes) {
+                    dadoFNov.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (12 === tabelaNome[i].Mes) {
+                    dadoFDez.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion
         }
 
-         //variavel servico
-         let totalFMC = Object.keys(dadoFMC).length;
-         let totalFLA = Object.keys(dadoFLA).length;
-         let totalFSR = Object.keys(dadoFSR).length;
-         let totalFRM = Object.keys(dadoFRM).length;
-         let totalFCO = Object.keys(dadoFCO).length;
-         let totalFRV = Object.keys(dadoFRV).length;
-         let totalFCC = Object.keys(dadoFCC).length;
-         let totalFMMV = Object.keys(dadoFMMV).length;
-         let totalFRP = Object.keys(dadoFRP).length;
-         let totalFLP = Object.keys(dadoFLP).length;
- 
-         //variavel total
-         let totalFEquip = totalFMC + totalFLA + totalFSR + totalFRM + totalFCO + totalFRV +
-             totalFCC + totalFMMV + totalFRP + totalFLP
+        //variavel servico
+        let totalFMC = Object.keys(dadoFMC).length;
+        let totalFLA = Object.keys(dadoFLA).length;
+        let totalFSR = Object.keys(dadoFSR).length;
+        let totalFRM = Object.keys(dadoFRM).length;
+        let totalFCO = Object.keys(dadoFCO).length;
+        let totalFRV = Object.keys(dadoFRV).length;
+        let totalFCC = Object.keys(dadoFCC).length;
+        let totalFMMV = Object.keys(dadoFMMV).length;
+        let totalFRP = Object.keys(dadoFRP).length;
+        let totalFLP = Object.keys(dadoFLP).length;
+
+        //variavel total
+        let totalFEquip = totalFMC + totalFLA + totalFSR + totalFRM + totalFCO + totalFRV +
+            totalFCC + totalFMMV + totalFRP + totalFLP
 
         //variavel tecnico
         let totalFDiegoC = Object.keys(dadoFDiegoC).length;
@@ -1115,52 +1109,52 @@ export default class DashboardDiretoria extends React.Component {
         let totalFNov = Object.keys(dadoFNov).length;
         let totalFDez = Object.keys(dadoFDez).length;
 
-             return this.setState({
-                //busca servico
-                listarMC: totalFMC,
-                listarLA: totalFLA,
-                listarSR: totalFSR,
-                listarRM: totalFRM,
-                listarCO: totalFCO,
-                listarRV: totalFRV,
-                listarCC: totalFCC,
-                listarMMV: totalFMMV,
-                listarRP: totalFRP,
-                listarLP: totalFLP,
-    
-    
-                //busca totalF
-                listarTotalEquip: totalFEquip,
-    
-                //busca tecnico
-                listarDiegoC: totalFDiegoC,
-                listarNatanael: totalFNatanael,
-                listarBruno: totalFBruno,
-                listarVinicius: totalFVinicius,
-                listarMateus: totalFMateus,
-                listarMarcio: totalFMarcio,
-                listarGabriel: totalFGabriel,
-                listarLucas: totalFLucas,
-                listarDiogo: totalFDiogo,
-                listarDiegoA: totalFDiegoA,
-                listarAllan: totalFAllan,
-                listarCida: totalFCida,
-    
-                //busca Meses
-                listarJan: totalFJan,
-                listarFev: totalFFev,
-                listarMar: totalFMar,
-                listarAbr: totalFAbr,
-                listarMai: totalFMai,
-                listarJun: totalFJun,
-                listarJul: totalFJul,
-                listarAgo: totalFAgo,
-                listarSet: totalFSet,
-                listarOut: totalFOut,
-                listarNov: totalFNov,
-                listarDez: totalFDez
-            })
-        
+        return this.setState({
+            //busca servico
+            listarMC: totalFMC,
+            listarLA: totalFLA,
+            listarSR: totalFSR,
+            listarRM: totalFRM,
+            listarCO: totalFCO,
+            listarRV: totalFRV,
+            listarCC: totalFCC,
+            listarMMV: totalFMMV,
+            listarRP: totalFRP,
+            listarLP: totalFLP,
+
+
+            //busca totalF
+            listarTotalEquip: totalFEquip,
+
+            //busca tecnico
+            listarDiegoC: totalFDiegoC,
+            listarNatanael: totalFNatanael,
+            listarBruno: totalFBruno,
+            listarVinicius: totalFVinicius,
+            listarMateus: totalFMateus,
+            listarMarcio: totalFMarcio,
+            listarGabriel: totalFGabriel,
+            listarLucas: totalFLucas,
+            listarDiogo: totalFDiogo,
+            listarDiegoA: totalFDiegoA,
+            listarAllan: totalFAllan,
+            listarCida: totalFCida,
+
+            //busca Meses
+            listarJan: totalFJan,
+            listarFev: totalFFev,
+            listarMar: totalFMar,
+            listarAbr: totalFAbr,
+            listarMai: totalFMai,
+            listarJun: totalFJun,
+            listarJul: totalFJul,
+            listarAgo: totalFAgo,
+            listarSet: totalFSet,
+            listarOut: totalFOut,
+            listarNov: totalFNov,
+            listarDez: totalFDez
+        })
+
     }
 
     filtrarDados() {
@@ -1181,7 +1175,7 @@ export default class DashboardDiretoria extends React.Component {
         } else if ((dia === "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
             this.buscarDadosFiltro(dia, mes, ano)
             console.log("Filtando os dois " + mes + " " + ano)
-        }else if  ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
+        } else if ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
             this.buscarDadosFiltro(dia, mes, ano)
             console.log("Filtando os tres " + dia + " " + mes + " " + ano)
         }
@@ -1190,12 +1184,7 @@ export default class DashboardDiretoria extends React.Component {
 
     render() {
         return (
-            <Main {...HeaderProps}>
-                <div className="row">
-                    <div className="col-12 d-flex justify-content-center">
-                        <img src={Logo} alt="" />
-                    </div>
-                </div>
+            <div className='content-fluid'>
                 <div className="row mt-4 d-flex justify-content-center">
                     <div className="col-3 d-flex flex-row justify-content-center align-items-center">
                         <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
@@ -1286,7 +1275,7 @@ export default class DashboardDiretoria extends React.Component {
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
                             texto='<b>{point.name}</b>: {point.percentage:.1f} %'
                             nomeSerie="Ordem de Serviço"
-                            cor = {true}
+                            cor={true}
                             dado={[
                                 { name: "Manutenção Concluída", y: this.state.listarMC },
                                 { name: "Laudo", y: this.state.listarLA },
@@ -1306,7 +1295,7 @@ export default class DashboardDiretoria extends React.Component {
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
                             nomeSerie="Ordem de Serviço"
-                            cor = {true}
+                            cor={true}
                             dado={[
                                 { name: "Manutenção", y: this.state.listarMC },
                                 { name: "Laudo", y: this.state.listarLA },
@@ -1328,7 +1317,7 @@ export default class DashboardDiretoria extends React.Component {
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
                             nomeSerie="Ordens de Serviço"
-                            cor = {true}
+                            cor={true}
                             dado={[
                                 { name: "Diego C", y: this.state.listarDiegoC },
                                 { name: "Natanael", y: this.state.listarNatanael },
@@ -1350,7 +1339,7 @@ export default class DashboardDiretoria extends React.Component {
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
                             texto='<b>{point.name}</b>: {point.percentage:.1f} %'
                             nomeSerie="Ordens de Serviço"
-                            cor = {true}
+                            cor={true}
                             dado={[
                                 { name: "Diego C", y: this.state.listarDiegoC },
                                 { name: "Natanael", y: this.state.listarNatanael },
@@ -1370,7 +1359,7 @@ export default class DashboardDiretoria extends React.Component {
                 </div>
                 <div className="row mt-4 d-flex justify-content-center">
                     <div className="col-11 sombra">
-                    <Grafico tipo="spline" titulo="Quantidade por Mês"
+                        <Grafico tipo="spline" titulo="Quantidade por Mês"
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
                             nomeSerie="Ordem de Serviço"
@@ -1391,7 +1380,7 @@ export default class DashboardDiretoria extends React.Component {
                         />
                     </div>
                 </div>
-            </Main>
+            </div>
         )
     }
 }

@@ -67,6 +67,7 @@ export default class LoginMain extends React.Component {
                         Email: tabela[i].email,
                         Senha: tabela[i].senha,
                         Usuario: tabela[i].nomeCompleto,
+                        Departamento: tabela[i].departamento,
                         AdmDiretoria: tabela[i].AdmDiretoria,
                         AdmGerencia: tabela[i].AdmGerencia,
                         AdmFinanceiro: tabela[i].AdmFinanceiro,
@@ -98,9 +99,10 @@ export default class LoginMain extends React.Component {
 
                 textoErro.innerText = "";
 
-                window.location.pathname = "/Dashboard";
+                window.location.pathname = "/Home";
                 localStorage.logado = 1;
                 localStorage.usuario = user[0].Usuario;
+                localStorage.departamento = user[0].Departamento;
                 localStorage.AdmDiretoria = user[0].AdmDiretoria;
                 localStorage.AdmGerencia = user[0].AdmGerencia;
                 localStorage.AdmFinanceiro = user[0].AdmFinanceiro;

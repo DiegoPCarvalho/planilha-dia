@@ -702,6 +702,55 @@
       "Status": "Excede - Aguardando Aprovação",
       "Tecnico": "Cida Zani",
       "id": 50
+    },
+    {
+      "id": 51,
+      "Data": "28/01/2023",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "12345",
+      "Cliente": "12345",
+      "Equipamento": "Busca Preço",
+      "Modelo": "tc520",
+      "NS": "",
+      "Servico": "Suporte Remoto",
+      "Classificacao": "",
+      "Observacao": "",
+      "Tecnico": "Diego Carvalho",
+      "Status": ""
+    },
+    {
+      "id": 52,
+      "Data": "28/01/2023",
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "12312312",
+      "Cliente": "123123",
+      "Equipamento": "Carregador de 4 Posições",
+      "Modelo": "tc21",
+      "NS": "",
+      "Servico": "Laudo",
+      "Classificacao": "",
+      "Observacao": "",
+      "Tecnico": "Diego Carvalho",
+      "Status": ""
+    },
+    {
+      "Data": "2023-01-28T12:56:13.478Z",
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "525236",
+      "Cliente": "cliente",
+      "Equipamento": "Leitor de Dados",
+      "Modelo": "tc51",
+      "NS": "",
+      "Servico": "Suporte Remoto",
+      "Classificacao": "",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 53
     }
   ],
   "LoginUsuario": [
@@ -1008,7 +1057,86 @@
       "Departamento": "Diretoria",
       "Recurso": "11255236.23",
       "id": 1
+    },
+    {
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "Departamento": "Fiscal",
+      "Recurso": "1500",
+      "id": 2
+    },
+    {
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "Departamento": "Compras",
+      "Recurso": "3500",
+      "id": 3
+    },
+    {
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "Departamento": "Logística",
+      "Recurso": "5000",
+      "id": 4
+    },
+    {
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "Departamento": "Expedição",
+      "Recurso": "10000",
+      "id": 5
     }
   ],
-  "centroCustoSolicitacao": []
+  "CentroCustoSolicitacao": [
+    {
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "TipoCompra": "Fixo/Fixo",
+      "FornecedorID": "2501",
+      "RazaoSocial": "Honeywell",
+      "Categoria": "Combustível",
+      "Departamento": "Laborátorio",
+      "Gerencia": "Thiago Ribeiro",
+      "ValorTotal": "1500",
+      "DataUtilizacao": "2023-01-31",
+      "Usuario": "Diego Carvalho",
+      "FormaPagamento": "",
+      "opcaoPagamento": "",
+      "NParcelas": "",
+      "DataPagto": "",
+      "AprovacaoGerenteLocal": "Em Análse",
+      "AprovacaoFinanceiro": "Em Análise",
+      "AprovacaoDiretoria": "Em Análise",
+      "Finalizado": "Não",
+      "id": 1
+    },
+    {
+      "Dia": 28,
+      "Mes": 1,
+      "Ano": 2023,
+      "TipoCompra": "Fixo/Variavel",
+      "FornecedorID": "aasdasdas",
+      "RazaoSocial": "asdasdas",
+      "Categoria": "Limpeza",
+      "Departamento": "Laborátorio",
+      "Gerencia": "Luanda Achcar",
+      "ValorTotal": "46816",
+      "DataUtilizacao": "2023-01-28",
+      "Usuario": "Diego Carvalho",
+      "FormaPagamento": "",
+      "opcaoPagamento": "",
+      "NParcelas": "",
+      "DataPagto": "",
+      "AprovacaoGerenteLocal": "Em Análse",
+      "AprovacaoFinanceiro": "Em Análise",
+      "AprovacaoDiretoria": "Em Análise",
+      "Finalizado": "Não",
+      "id": 2
+    }
+  ]
 }
