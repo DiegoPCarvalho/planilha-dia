@@ -18,8 +18,11 @@ const initialState = {
         Categoria: '',
         Departamento: localStorage.departamento,
         Gerencia: '',
+        ValorUni: '',
+        Quantidade: '',
         ValorTotal: '',
         DataUtilizacao: '',
+        Observacao: '',
         Usuario: localStorage.usuario,
         FormaPagamento: '',
         opcaoPagamento: '',
@@ -60,7 +63,7 @@ export default class Solicitar extends React.Component {
     clear() {
         this.setState({ Solicitar: initialState.Solicitar })
     }
-    
+
     updateField(event) {
         const Solicitar = { ...this.state.Solicitar }
         Solicitar[event.target.name] = event.target.value
@@ -89,11 +92,14 @@ export default class Solicitar extends React.Component {
         let RazaoSocial = document.getElementById("RazaoSocial").value;
         let Categoria = document.getElementById("Categoria").value;
         let Gerencia = document.getElementById("Gerencia").value;
+        let ValorUni = document.getElementById("ValorUni").value;
+        let Quantidade = document.getElementById("Quantidade").value;
         let ValorTotal = document.getElementById("ValorTotal").value;
         let DataUtilizacao = document.getElementById("DataUtilizacao").value;
-    
 
-        if ((TipoCompra === '') || (FornecedorID === '') || (RazaoSocial === '') || (Categoria === '') || (Gerencia === '') || (ValorTotal = '') || (DataUtilizacao === '')) {
+
+        if ((TipoCompra === '') || (FornecedorID === '') || (RazaoSocial === '') || (Categoria === '')
+            || (Gerencia === '') || (ValorTotal = '') || (DataUtilizacao === '') || (ValorUni === '') || (Quantidade === '')) {
 
         } else {
             this.save()
@@ -206,7 +212,38 @@ export default class Solicitar extends React.Component {
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
-                        <label>Valor:</label>
+                        <label>Valor Unitário:</label>
+                        <div className="input-group">
+                            <span className="input-group-text bg-success fw-bold text-light" id="basic-addon1">R$</span>
+                            <input id="ValorUni"
+                                type="number"
+                                className="form-control"
+                                name="ValorUni"
+                                placeholder="0,00"
+                                value={this.state.Solicitar.ValorUni}
+                                onChange={e => this.updateField(e)}
+                                min="0.00" step="0.01"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <label>Quantidade:</label>
+                        <div className="form-group">
+                            <input id="Quantidade"
+                                type="number"
+                                className="form-control"
+                                name="Quantidade"
+                                placeholder="0"
+                                value={this.state.Solicitar.Quantidade}
+                                onChange={e => this.updateField(e)}
+                                min="0" step="1"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <label>Valor Total:</label>
                         <div className="input-group">
                             <span className="input-group-text bg-success fw-bold text-light" id="basic-addon1">R$</span>
                             <input id="ValorTotal"
@@ -221,10 +258,12 @@ export default class Solicitar extends React.Component {
                             />
                         </div>
                     </div>
+                </div>
+                <div className="row mt-3">
                     <div className="col-6 col-md-3">
                         <div className="form-group">
                             <label>Data de Utilização:</label>
-                            <input className='form-control' 
+                            <input className='form-control'
                                 type="date" name="DataUtilizacao" id="DataUtilizacao"
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.DataUtilizacao}
@@ -234,23 +273,35 @@ export default class Solicitar extends React.Component {
                     </div>
                 </div>
                 <div className="row mt-3">
-                        <div className="col-12 col-md-6 d-flex align-items-center">
-                            <div class="alert-box success">Salvo com Sucesso!!!</div>
-                        </div>
-                        <div className="col-12 col-md-6 d-flex justify-content-end">
-                            <button className="btn btn-primary mx-2"
-                                onClick={e => this.verificar(e)}
-                            >
-                                Salvar
-                            </button>
-
-                            <button className="btn btn-danger"
-                                onClick={e => this.clear(e)}
-                            >
-                                Cancelar
-                            </button>
+                    <div className="col-12">
+                        <div className="form-group">
+                            <label>Observação</label>
+                            <textarea className="form-control"
+                                name="Observacao" rows="5"
+                                value={this.state.Solicitar.Observacao}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite a sua Observação..." />
                         </div>
                     </div>
+                </div>
+                <div className="row mt-4">
+                    <div className="col-12 col-md-6 d-flex align-items-center">
+                        <div class="alert-box success">Salvo com Sucesso!!!</div>
+                    </div>
+                    <div className="col-12 col-md-6 d-flex justify-content-end">
+                        <button className="btn btn-primary mx-2"
+                            onClick={e => this.verificar(e)}
+                        >
+                            Salvar
+                        </button>
+
+                        <button className="btn btn-danger"
+                            onClick={e => this.clear(e)}
+                        >
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
             </form>
         )
     }

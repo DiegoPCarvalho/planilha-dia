@@ -45,6 +45,7 @@ import PageFinanceiroPro from '../Components/Setores/Gerencia/PageFinanceiroProc
 
 //Laboratorio
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
+import EmAnaliseLab from "../Components/Setores/Laboratorio/EmAnalise";
 
 //Solicitar
 import Solicitar from '../Components/Setores/Solicitar/Solicitar';
@@ -126,7 +127,7 @@ export default function Rotas() {
                 </Route>
                 <Route path="/CentroCustoLab" element={<CentroCustoLab />}>
                     <Route path="Solicitar" element={<Solicitar />}/>
-                    <Route path="EmAnalise" element={<EmBreveSmart />}/>
+                    <Route path="EmAnalise" element={<EmAnaliseLab />}/>
                     <Route path="Aprovados" element={<EmBreveSmart />}/>
                     <Route path="Reprovados" element={<EmBreveSmart />}/>
                     <Route path="Finalizados" element={<EmBreveSmart />}/>

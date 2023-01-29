@@ -1051,59 +1051,30 @@
   ],
   "CentroCustoRecurso": [
     {
-      "Dia": 27,
+      "Dia": 29,
       "Mes": 1,
       "Ano": 2023,
-      "Departamento": "Diretoria",
-      "Recurso": "11255236.23",
+      "Departamento": "Laborátorio",
+      "Recurso": "23000",
       "id": 1
-    },
-    {
-      "Dia": 28,
-      "Mes": 1,
-      "Ano": 2023,
-      "Departamento": "Fiscal",
-      "Recurso": "1500",
-      "id": 2
-    },
-    {
-      "Dia": 28,
-      "Mes": 1,
-      "Ano": 2023,
-      "Departamento": "Compras",
-      "Recurso": "3500",
-      "id": 3
-    },
-    {
-      "Dia": 28,
-      "Mes": 1,
-      "Ano": 2023,
-      "Departamento": "Logística",
-      "Recurso": "5000",
-      "id": 4
-    },
-    {
-      "Dia": 28,
-      "Mes": 1,
-      "Ano": 2023,
-      "Departamento": "Expedição",
-      "Recurso": "10000",
-      "id": 5
     }
   ],
   "CentroCustoSolicitacao": [
     {
-      "Dia": 28,
+      "Dia": 29,
       "Mes": 1,
       "Ano": 2023,
-      "TipoCompra": "Fixo/Fixo",
-      "FornecedorID": "2501",
-      "RazaoSocial": "Honeywell",
-      "Categoria": "Combustível",
+      "TipoCompra": "Avulso",
+      "FornecedorID": "2705",
+      "RazaoSocial": "Unidos Por São Paulo",
+      "Categoria": "Insumos",
       "Departamento": "Laborátorio",
-      "Gerencia": "Thiago Ribeiro",
+      "Gerencia": "Douglas Altenfelder",
+      "ValorUni": "50",
+      "Quantidade": "30",
       "ValorTotal": "1500",
-      "DataUtilizacao": "2023-01-31",
+      "DataUtilizacao": "2023-02-04",
+      "Observacao": "",
       "Usuario": "Diego Carvalho",
       "FormaPagamento": "",
       "opcaoPagamento": "",
@@ -1114,29 +1085,6 @@
       "AprovacaoDiretoria": "Em Análise",
       "Finalizado": "Não",
       "id": 1
-    },
-    {
-      "Dia": 28,
-      "Mes": 1,
-      "Ano": 2023,
-      "TipoCompra": "Fixo/Variavel",
-      "FornecedorID": "aasdasdas",
-      "RazaoSocial": "asdasdas",
-      "Categoria": "Limpeza",
-      "Departamento": "Laborátorio",
-      "Gerencia": "Luanda Achcar",
-      "ValorTotal": "46816",
-      "DataUtilizacao": "2023-01-28",
-      "Usuario": "Diego Carvalho",
-      "FormaPagamento": "",
-      "opcaoPagamento": "",
-      "NParcelas": "",
-      "DataPagto": "",
-      "AprovacaoGerenteLocal": "Em Análse",
-      "AprovacaoFinanceiro": "Em Análise",
-      "AprovacaoDiretoria": "Em Análise",
-      "Finalizado": "Não",
-      "id": 2
     }
   ]
 }
