@@ -14,21 +14,25 @@ export default function cardGeral(props) {
                 </Card.Header>
                 <Card.Body>
                     <Card.Text>
-                        <div>
-                            <div className="row">
-                                <div className="col-12 h5">
-                                    <i className="fa fa-bar-chart fw-bold"></i><span className='fw-bold'>Gerencia Local: </span> <span id="AprovGerencia">{props.AprovGerencia}</span> <span id="certoGeren" className='badge'></span>
-                                </div>
-                            </div>
-
+                        <div className='container-fluid'>
                             <div className="row mt-2">
                                 <div className="col-12 h5">
-                                    <i className='fa fa-money fw-bold'></i><span className='fw-bold'>Financeiro:</span> <span id="AprovFinanceiro">{props.AprovFinanceiro}</span> <span id="certoFinan" className='badge'></span>
+                                    <i className="fa fa-bar-chart fw-bold"></i><span className='fw-bold'>Gerencia Local:</span> <span className="Aprov">{props.AprovGerenciaLocal}</span>
                                 </div>
                             </div>
                             <div className="row mt-2">
                                 <div className="col-12 h5">
-                                    <i className="fa fa-credit-card fw-bold"></i><span className='fw-bold'>Diretoria:</span> <span id="AprovDiretoria">{props.AprovDiretoria}</span> <span id="certoDire" className='badge'></span>
+                                    <i className='fa fa-money fw-bold'></i><span className='fw-bold'>Financeiro:</span> <span className="Aprov">{props.AprovFinanceiro}</span>
+                                </div>
+                            </div>
+                            <div className="row mt-2">
+                                <div className="col-12 h5">
+                                    <i className="fa fa-credit-card fw-bold"></i><span className='fw-bold'>Diretoria:</span> <span className="Aprov">{props.AprovDiretoria}</span>
+                                </div>
+                            </div>
+                            <div className="row mt-2">
+                                <div className="col-12 h5">
+                                    <i className="fa fa-shopping-cart fw-bold"></i><span className='fw-bold'>Comprado:</span> <span className="Compras">{props.Compras}</span>
                                 </div>
                             </div>
                             <div className="row mt-3">
@@ -44,3 +48,4 @@ export default function cardGeral(props) {
         </>
     );
 }
+

@@ -28,7 +28,7 @@ const initialState = {
         opcaoPagamento: '',
         NParcelas: '',
         DataPagto: '',
-        AprovacaoGerenteLocal: 'Em Análse',
+        AprovacaoGerenteLocal: 'Em Análise',
         AprovacaoFinanceiro: 'Em Análise',
         AprovacaoDiretoria: 'Em Análise',
         Finalizado: 'Não'
