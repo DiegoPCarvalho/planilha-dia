@@ -682,6 +682,7 @@ export default class PageAdmin extends React.Component {
                                         name="nomeCompleto" value={this.state.usuario.nomeCompleto}
                                         onChange={e => this.updateField(e)}
                                         required
+                                        disabled
                                          />
                                 </div>
                             </div>
@@ -701,7 +702,8 @@ export default class PageAdmin extends React.Component {
                                         className="form-control" placeholder="E-mail"
                                         onChange={e => this.updateField(e)}
                                         name="email" value={this.state.usuario.email}
-                                        required />
+                                        required
+                                        disabled />
                                 </div>
                             </div>
                         </div>
@@ -740,6 +742,7 @@ export default class PageAdmin extends React.Component {
                                         onChange={e => this.updateField(e)}
                                         value={this.state.usuario.departamento}
                                         required
+                                        disabled
                                     >
                                         <option selected disabled value="">...</option>
                                         <option>Diretoria</option>

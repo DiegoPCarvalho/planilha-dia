@@ -19,6 +19,7 @@
     "jquery": "^3.6.1",
     "jszip": "^3.10.1",
     "nodemon": "^2.0.20",
+    "path": "^0.12.7",
     "pdfmake": "^0.2.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
@@ -37,7 +38,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "serve -s build",
+    "exp": "node server.js",
+    "dev": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [

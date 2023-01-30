@@ -7,13 +7,9 @@ export default class CentroCusto extends React.Component {
             <div className="container-fluid">
                 <div className="row d-flex justify-content-between mb-2">
                     <div className="d-flex flex-row">
-                        {/* <div className="col-6"> */}
-                        <Link to="/Financeiro/CentroCusto/CadCusto" className="rounded-start flex-fill link bg-primary fw-bold d-flex justify-content-center">Cadastro de Custo</Link>
-                {/* <div className="col-6"> */}
-                        {/* <Link to="/Atividade/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}
-                        {/* <Link to="/Atividade/Tabela" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}
-                        {/* </div> */}
-                        {/*Link to="/Atividade/Relatorio" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Relatório</Link> */}
+                        <Link to="/Financeiro/CentroCusto/Solicitar" className="rounded-start flex-fill link bg-primary fw-bold d-flex justify-content-center">Solicitar</Link>
+                        <Link to="/Financeiro/CentroCusto/EmAnalise" className=" flex-fill link bg-primary fw-bold d-flex justify-content-center">Em Análise</Link>
+                        <Link to="/Financeiro/CentroCusto/Finalizados" className="rounded-end flex-fill link bg-primary fw-bold d-flex justify-content-center">Finalizados</Link>
                     </div>
                 </div>
                 <div className="row ">

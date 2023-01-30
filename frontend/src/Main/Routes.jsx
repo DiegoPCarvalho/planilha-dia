@@ -29,6 +29,7 @@ import Perfil from '../Components/Usuario/Perfil';
 //financeiro
 import Financeiro from "../Components/Setores/Financeiro/Financeiro";
 import CadastroCusto from '../Components/Setores/Financeiro/CadastroCusto';
+import CentroCusto from "../Components/Setores/Financeiro/CentroCusto";
 
 //Diretoria
 import Diretoria from '../Components/Setores/Diretoria/HomeLabDiretoria';
@@ -77,10 +78,10 @@ export default function Rotas() {
 
                 <Route path="Gerencia" element={<DashboardGerencia />} />
             </Route>
-            <Route element ={<Home />}>
+            <Route element={<Home />}>
                 <Route path="/GerenciaLab" element={<HomeGerenciaLab />}>
                     <Route path="Dashboard" element={<DashboardHomeGerencia />}>
-                        <Route path="DashboardAtividade" element={<DashboardGerencia />}/>
+                        <Route path="DashboardAtividade" element={<DashboardGerencia />} />
                         <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
@@ -91,32 +92,33 @@ export default function Rotas() {
                     </Route>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>
-                        <Route path="Financeiro" element={<PageFinanceiro />}>
-                            <Route path="Dashboard" element={<EmBreveSmart />}/>
-                            <Route path="CentroCusto" element={<PageFinanceiroPro />}>
-                                <Route path="CadCusto" element={<CadastroCusto />} />
-                                <Route path="Solicitacoes" element={<EmBreveSmart />} />
-                                <Route path="Aprovados" element={<EmBreveSmart />} />
-                                <Route path="Reprovados" element={<EmBreveSmart />} />
-                                <Route path="Finalizados" element={<EmBreveSmart />} />
-                            </Route>
+                    <Route path="Financeiro" element={<PageFinanceiro />}>
+                        <Route path="Dashboard" element={<EmBreveSmart />} />
+                        <Route path="CentroCusto" element={<PageFinanceiroPro />}>
+                            <Route path="CadCusto" element={<CadastroCusto />} />
+                            <Route path="Solicitacoes" element={<EmBreveSmart />} />
+                            <Route path="Aprovados" element={<EmBreveSmart />} />
+                            <Route path="Reprovados" element={<EmBreveSmart />} />
+                            <Route path="Finalizados" element={<EmBreveSmart />} />
                         </Route>
-                        <Route path="Compras" element={<EmBreveSmart />} />
-                        <Route path="Faturamento-Fiscal" element={<EmBreveSmart />} />
-                        <Route path="RH-DP" element={<EmBreveSmart />} />
-                        <Route path="Estoque" element={<EmBreveSmart />} />
-                        <Route path="Marketing" element={<EmBreveSmart />} />
-                        <Route path="Expedicao-Logistica" element={<EmBreveSmart />} />
-                        <Route path="Recepcao" element={<EmBreveSmart />} />
+                    </Route>
+                    <Route path="Compras" element={<EmBreveSmart />} />
+                    <Route path="Faturamento-Fiscal" element={<EmBreveSmart />} />
+                    <Route path="RH-DP" element={<EmBreveSmart />} />
+                    <Route path="Estoque" element={<EmBreveSmart />} />
+                    <Route path="Marketing" element={<EmBreveSmart />} />
+                    <Route path="Expedicao-Logistica" element={<EmBreveSmart />} />
+                    <Route path="Recepcao" element={<EmBreveSmart />} />
                 </Route>
             </Route>
             <Route element={<Home />}>
                 <Route path="/Financeiro" element={<Financeiro />}>
-                    <Route path="Solicitar" element={<Solicitar />} />
-                    <Route path="EmAnalise" element={<EmBreveSmart />} />
-                    <Route path="Aprovados" element={<EmBreveSmart />} />
-                    <Route path="Reprovados" element={<EmBreveSmart />} />
-                    <Route path="Finalizados" element={<EmBreveSmart />} />
+                    <Route path="CentroCusto" element={<CentroCusto />}>
+                        <Route path="Solicitar" element={<Solicitar />} />
+                        <Route path="EmAnalise" element={<EmBreveSmart />} />
+                        <Route path="Finalizados" element={<EmBreveSmart />} />
+                    </Route>
+                   <Route path="Solicitacoes" element={<EmBreveSmart />} />
                 </Route>
             </Route>
             <Route element={<Home />}>
@@ -126,11 +128,9 @@ export default function Rotas() {
                     <Route path="Relatorio" element={<RelatorioPessoal />} />
                 </Route>
                 <Route path="/CentroCustoLab" element={<CentroCustoLab />}>
-                    <Route path="Solicitar" element={<Solicitar />}/>
-                    <Route path="EmAnalise" element={<EmAnaliseLab />}/>
-                    <Route path="Aprovados" element={<EmBreveSmart />}/>
-                    <Route path="Reprovados" element={<EmBreveSmart />}/>
-                    <Route path="Finalizados" element={<EmBreveSmart />}/>
+                    <Route path="Solicitar" element={<Solicitar />} />
+                    <Route path="EmAnalise" element={<EmAnaliseLab />} />
+                    <Route path="Finalizados" element={<EmBreveSmart />} />
                 </Route>
             </Route>
             <Route path="/PerfilUsuario" element={<Home />}>

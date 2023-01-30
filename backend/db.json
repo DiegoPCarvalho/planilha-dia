@@ -751,6 +751,23 @@
       "Status": "",
       "Tecnico": "Diego Carvalho",
       "id": 53
+    },
+    {
+      "Data": "2023-01-30T11:48:10.877Z",
+      "Dia": 30,
+      "Mes": 1,
+      "Ano": 2023,
+      "OS": "333",
+      "Cliente": "3333",
+      "Equipamento": "Coletor de Dados",
+      "Modelo": "333",
+      "NS": "333",
+      "Servico": "Suporte Remoto",
+      "Classificacao": "Defeito",
+      "Observacao": "33333",
+      "Status": "Garantia",
+      "Tecnico": "Diego Carvalho",
+      "id": 54
     }
   ],
   "LoginUsuario": [
