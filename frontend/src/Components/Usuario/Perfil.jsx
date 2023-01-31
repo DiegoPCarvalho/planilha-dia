@@ -418,7 +418,7 @@ export default class PageAdmin extends React.Component {
         if ("Bruno Bedani" === tecnico) {
             return imgBruno
         }
-        if ("vinicius Gomes" === tecnico) {
+        if ("Vinicius Gomes" === tecnico) {
             return imgVinicius
         }
         if ("Diego Almeida" === tecnico) {
