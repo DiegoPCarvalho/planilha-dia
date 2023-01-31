@@ -27,3 +27,34 @@ app.get("/", async (req, res) =>{
 })
 
 *************************************************************************************
+
+// $(document).ready(function () {
+        //     if ($(".AprovDiretoria").text() === "Em Análise") {
+        //         $('.certoDire').addClass('bg-secondary');
+        //         $('.certoDire').append('<i class="fa fa-minus" aria-hidden="true"></i>');
+        //     } if ($(".AprovDiretoria").text() === "Reprovado") {
+        //         $('.certoDire').addClass('bg-danger');
+        //         $('.certoDire').append('<i class="fa fa-times" aria-hidden="true"></i>');
+        //     } if ($(".AprovDiretoria").text() === "Aprovado") {
+        //         $('.certoDire').addClass('bg-success');
+        //         $('.certoDire').append('<i class="fa fa-check" aria-hidden="true"></i>');
+        //     } if ($(".AprovGerencia").text() === "Em Análise") {
+        //         $('.certoGeren').addClass('bg-secondary');
+        //         $('.certoGeren').append('<i class="fa fa-minus" aria-hidden="true"></i>');
+        //     } if ($(".AprovGerencia").text() === "Reprovado") {
+        //         $('.certoGeren').addClass('bg-danger');
+        //         $('.certoGeren').append('<i class="fa fa-times" aria-hidden="true"></i>');
+        //     } if ($(".AprovGerencia").text() === "Aprovado") {
+        //         $('.certoGeren').addClass('bg-success');
+        //         $('.certoGeren').append('<i class="fa fa-check" aria-hidden="true"></i>');
+        //     } if ($(".AprovFinanceiro").text() === "Em Análise") {
+        //         $('.certoFinan').addClass('bg-secondary');
+        //         $('.certoFinan').append('<i class="fa fa-minus" aria-hidden="true"></i>');
+        //     } if ($(".AprovFinanceiro").text() === "Reprovado") {
+        //         $('.certoFinan').addClass('bg-danger');
+        //         $('.certoFinan').append('<i class="fa fa-times" aria-hidden="true"></i>');
+        //     } if ($(".AprovFinanceiro").text() === "Aprovado") {
+        //         $('.certoFinan').addClass('bg-success');
+        //         $('.certoFinan').append('<i class="fa fa-check" aria-hidden="true"></i>');
+        //     }
+        // });

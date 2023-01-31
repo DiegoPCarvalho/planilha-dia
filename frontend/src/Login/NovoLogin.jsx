@@ -357,7 +357,7 @@ export default class LoginMain extends React.Component {
                             <img src={LogoZhaz} alt="" />
                         </div>
                     </div>
-                    <form class="row g-3">
+                    <form class="row g-3" action="javascript:myFunction(); return false;">
                         <div className="row mt-2">
                             <div className="row mb-3">
                                 <div className="col-12">

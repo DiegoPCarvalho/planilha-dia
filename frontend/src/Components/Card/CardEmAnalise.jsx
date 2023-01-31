@@ -15,6 +15,11 @@ export default function cardGeral(props) {
                 <Card.Body>
                     <Card.Text>
                         <div className='container-fluid'>
+                        <div className="row mt-2">
+                                <div className="col-12 h5">
+                                    <i className="fa fa-qrcode fw-bold"></i><span className='fw-bold'>Nº Solicitação:</span> <span className="Aprov badge bg-primary">{props.Nid}</span>
+                                </div>
+                            </div>
                             <div className="row mt-2">
                                 <div className="col-12 h5">
                                     <i className="fa fa-bar-chart fw-bold"></i><span className='fw-bold'>Gerencia Local:</span> <span className="Aprov">{props.AprovGerenciaLocal}</span>

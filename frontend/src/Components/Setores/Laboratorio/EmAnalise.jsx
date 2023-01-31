@@ -5,6 +5,8 @@ import $ from 'jquery';
 
 import CardEmAnalise from '../../Card/CardEmAnalise';
 
+import ModalAlterar from '../../Modal/Modal.Atividade';
+
 const initialState = {
     totalDisponivel: [100],
     totalGasto: [0],
@@ -67,63 +69,32 @@ export default class EmAnalise extends React.Component {
         this.buscarValorTotalReal()
         // this.mudarStatus()
         this.consultaBancoDepartamento()
-        this.tempo()
+        this.Tempo()
     }
 
-    tempo() {
-        setInterval(() => {
+    Tempo(){
+        setTimeout(() => {
             this.mudarStatus()
-        }, 500)
+        }, 500);
     }
 
     mudarStatus() {
-        // $(document).ready(function () {
-        //     if ($(".AprovDiretoria").text() === "Em Análise") {
-        //         $('.certoDire').addClass('bg-secondary');
-        //         $('.certoDire').append('<i class="fa fa-minus" aria-hidden="true"></i>');
-        //     } if ($(".AprovDiretoria").text() === "Reprovado") {
-        //         $('.certoDire').addClass('bg-danger');
-        //         $('.certoDire').append('<i class="fa fa-times" aria-hidden="true"></i>');
-        //     } if ($(".AprovDiretoria").text() === "Aprovado") {
-        //         $('.certoDire').addClass('bg-success');
-        //         $('.certoDire').append('<i class="fa fa-check" aria-hidden="true"></i>');
-        //     } if ($(".AprovGerencia").text() === "Em Análise") {
-        //         $('.certoGeren').addClass('bg-secondary');
-        //         $('.certoGeren').append('<i class="fa fa-minus" aria-hidden="true"></i>');
-        //     } if ($(".AprovGerencia").text() === "Reprovado") {
-        //         $('.certoGeren').addClass('bg-danger');
-        //         $('.certoGeren').append('<i class="fa fa-times" aria-hidden="true"></i>');
-        //     } if ($(".AprovGerencia").text() === "Aprovado") {
-        //         $('.certoGeren').addClass('bg-success');
-        //         $('.certoGeren').append('<i class="fa fa-check" aria-hidden="true"></i>');
-        //     } if ($(".AprovFinanceiro").text() === "Em Análise") {
-        //         $('.certoFinan').addClass('bg-secondary');
-        //         $('.certoFinan').append('<i class="fa fa-minus" aria-hidden="true"></i>');
-        //     } if ($(".AprovFinanceiro").text() === "Reprovado") {
-        //         $('.certoFinan').addClass('bg-danger');
-        //         $('.certoFinan').append('<i class="fa fa-times" aria-hidden="true"></i>');
-        //     } if ($(".AprovFinanceiro").text() === "Aprovado") {
-        //         $('.certoFinan').addClass('bg-success');
-        //         $('.certoFinan').append('<i class="fa fa-check" aria-hidden="true"></i>');
-        //     }
-        // });
-
-        $(document).ready(function () {          
+        $(document).ready(function () {
             $(".Aprov").each(function () {
                 if (($(this).text() === "Em Análise")) {
                     $(this).addClass('bg-secondary badge');
 
-                }else if ($(this).text() === "Reprovado") {
+                } else if ($(this).text() === "Reprovado") {
                     $(this).addClass('bg-danger badge');
 
-                }else if ($(this).text() === "Aprovado") {
+                } else if ($(this).text() === "Aprovado") {
                     $(this).addClass('bg-success badge');
                 }
             });
-            $('.Compras').each(function(){
-                if($(this).text() === 'Não'){
+            $('.Compras').each(function () {
+                if ($(this).text() === 'Não') {
                     $(this).addClass('bg-danger badge')
-                }else if($(this).text() === 'Sim'){
+                } else if ($(this).text() === 'Sim') {
                     $(this).addClass('bg-success badge')
                 }
             })
@@ -131,14 +102,12 @@ export default class EmAnalise extends React.Component {
 
     }
 
-    load(Solicitar) {
-        this.setState({ Solicitar })
-    }
+        
 
     async consultaBancoDepartamento() {
         const tabelaNome = await axios(baseUrl2).then(resp => resp.data)
         let dadoSolicitacao = []
-
+        
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if (localStorage.departamento === tabelaNome[i].Departamento) {
@@ -172,14 +141,33 @@ export default class EmAnalise extends React.Component {
 
         }
 
-        return this.setState({ list: dadoSolicitacao })
+        const ValorTotal = Object.assign(dadoSolicitacao)
+
+        let total = 0
+
+        for(let i = 0; i < ValorTotal.length; i++){
+            total += parseInt(ValorTotal[i].ValorTotal)
+        }
+
+        let Resultado = this.state.totalDisponivel * total
+
+        let ResultadoGasto = Resultado / this.state.totalReal
+
+        let ResultadoDisponivel = this.state.totalDisponivel - ResultadoGasto
+
+        return this.setState({ 
+            list: dadoSolicitacao,
+            totalGasto: ResultadoGasto.toFixed(2),
+            totalDisponivel: ResultadoDisponivel.toFixed(2)
+        })
     }
 
     cardDepartamento() {
         return this.state.list.map(Solicitar => {
             return (
                 <div className="col-md-auto mb-4" >
-                    <CardEmAnalise nomeSolicitante={Solicitar.Usuario}
+                    <CardEmAnalise Nid={Solicitar.id}
+                     nomeSolicitante={Solicitar.Usuario}
                         AprovGerenciaLocal={Solicitar.AprovacaoGerenteLocal}
                         AprovFinanceiro={Solicitar.AprovacaoFinanceiro}
                         AprovDiretoria={Solicitar.AprovacaoDiretoria}
@@ -190,6 +178,8 @@ export default class EmAnalise extends React.Component {
             )
         })
     }
+
+    
 
     async buscarValorTotalReal() {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
