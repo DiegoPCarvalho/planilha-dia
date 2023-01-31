@@ -478,7 +478,7 @@ export default class DashboardGerencia extends React.Component {
         this.buscaPorTecnico("Diego Carvalho")
         this.buscaPorTecnico("Natanael Silva Lima")
         this.buscaPorTecnico("Mateus Doval")
-        this.buscaPorTecnico("Lucas Feliciano")
+        this.buscaPorTecnico("Lucas Felician")
         this.buscaPorTecnico("Diogo Selmini")
         this.buscaPorTecnico("Gabriel Kaique")
         this.buscaPorTecnico("Bruno Bedani")
@@ -1562,7 +1562,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscaPorTecnico("Diego Carvalho")
             this.buscaPorTecnico("Natanael Silva Lima")
             this.buscaPorTecnico("Mateus Doval")
-            this.buscaPorTecnico("Lucas Feliciano")
+            this.buscaPorTecnico("Lucas Felician")
             this.buscaPorTecnico("Diogo Selmini")
             this.buscaPorTecnico("Gabriel Kaique")
             this.buscaPorTecnico("Bruno Bedani")
@@ -1579,7 +1579,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Mateus Doval", dia, mes, ano)
-            this.buscarPorTecnicoFiltro("Lucas Feliciano", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Lucas Felician", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diogo Selmini", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Gabriel Kaique", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
@@ -1597,7 +1597,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Mateus Doval", dia, mes, ano)
-            this.buscarPorTecnicoFiltro("Lucas Feliciano", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Lucas Felician", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diogo Selmini", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Gabriel Kaique", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
@@ -1615,7 +1615,7 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Mateus Doval", dia, mes, ano)
-            this.buscarPorTecnicoFiltro("Lucas Feliciano", dia, mes, ano)
+            this.buscarPorTecnicoFiltro("Lucas Felician", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diogo Selmini", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Gabriel Kaique", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
@@ -2196,7 +2196,7 @@ export default class DashboardGerencia extends React.Component {
             })
         }
 
-        if (tecnico === "Lucas Feliciano") {
+        if (tecnico === "Lucas Felician") {
 
             //variavel servico
             let dadoTMC = [];
@@ -5023,7 +5023,7 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            if (tecnico === "Lucas Feliciano") {
+            if (tecnico === "Lucas Felician") {
 
                 //variavel servico
                 let dadoTMC = [];
@@ -7848,7 +7848,7 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            if (tecnico === "Lucas Feliciano") {
+            if (tecnico === "Lucas Felician") {
 
                 //variavel servico
                 let dadoTMC = [];
@@ -10673,7 +10673,7 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            if (tecnico === "Lucas Feliciano") {
+            if (tecnico === "Lucas Felician") {
 
                 //variavel servico
                 let dadoTMC = [];
