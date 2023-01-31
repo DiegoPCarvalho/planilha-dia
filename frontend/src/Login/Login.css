@@ -11,11 +11,11 @@
   z-index: 1;
 }
 
-.formLogin {
+/* .formLogin {
   display: flex;
   justify-content: center;
-  margin-top: 90px;
-}
+  /* margin-top: 90px; 
+} */
 
 .imagem2 > img {
   overflow: hidden;

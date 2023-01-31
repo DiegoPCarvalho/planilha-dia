@@ -5,7 +5,7 @@ import $ from 'jquery';
 
 import CardEmAnalise from '../../Card/CardEmAnalise';
 
-import ModalAlterar from '../../Modal/Modal.Atividade';
+
 
 const initialState = {
     totalDisponivel: [100],
@@ -72,7 +72,7 @@ export default class EmAnalise extends React.Component {
         this.Tempo()
     }
 
-    Tempo(){
+    Tempo() {
         setTimeout(() => {
             this.mudarStatus()
         }, 500);
@@ -102,41 +102,50 @@ export default class EmAnalise extends React.Component {
 
     }
 
-        
+
 
     async consultaBancoDepartamento() {
         const tabelaNome = await axios(baseUrl2).then(resp => resp.data)
         let dadoSolicitacao = []
-        
+
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if (localStorage.departamento === tabelaNome[i].Departamento) {
-                dadoSolicitacao.push({
-                    id: tabelaNome[i].id,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
-                    TipoCompra: tabelaNome[i].TipoCompra,
-                    FornecedorID: tabelaNome[i].FornecedorID,
-                    RazaoSocial: tabelaNome[i].RazaoSocial,
-                    Categoria: tabelaNome[i].Categoria,
-                    Departamento: tabelaNome[i].Departamento,
-                    Gerencia: tabelaNome[i].Gerencia,
-                    ValorUni: tabelaNome[i].ValorUni,
-                    Quantidade: tabelaNome[i].Quantidade,
-                    ValorTotal: tabelaNome[i].ValorTotal,
-                    DataUtilizacao: tabelaNome[i].DataUtilizacao,
-                    Observacao: tabelaNome[i].Observacao,
-                    Usuario: tabelaNome[i].Usuario,
-                    FormaPagamento: tabelaNome[i].FormaPagamento,
-                    opcaoPagamento: tabelaNome[i].opcaoPagamento,
-                    NParcelas: tabelaNome[i].NParcelas,
-                    DataPagto: tabelaNome[i].DataPagto,
-                    AprovacaoGerenteLocal: tabelaNome[i].AprovacaoGerenteLocal,
-                    AprovacaoFinanceiro: tabelaNome[i].AprovacaoFinanceiro,
-                    AprovacaoDiretoria: tabelaNome[i].AprovacaoDiretoria,
-                    Finalizado: tabelaNome[i].Finalizado
-                })
+                if (tabelaNome[i].Finalizado === "Não") {
+                    if ((tabelaNome[i].AprovacaoGerenteLocal === "Em Análise") || (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")) {
+                        if ((tabelaNome[i].AprovacaoFinanceiro === "Em Análise") || (tabelaNome[i].AprovacaoFinanceiro === "Aprovado")) {
+                            if ((tabelaNome[i].AprovacaoDiretoria === "Em Análise") || (tabelaNome[i].AprovacaoDiretoria === "Aprovado")) {
+                                dadoSolicitacao.push({
+                                    id: tabelaNome[i].id,
+                                    Dia: tabelaNome[i].Dia,
+                                    Mes: tabelaNome[i].Mes,
+                                    Ano: tabelaNome[i].Ano,
+                                    TipoCompra: tabelaNome[i].TipoCompra,
+                                    FornecedorID: tabelaNome[i].FornecedorID,
+                                    RazaoSocial: tabelaNome[i].RazaoSocial,
+                                    Categoria: tabelaNome[i].Categoria,
+                                    Departamento: tabelaNome[i].Departamento,
+                                    Gerencia: tabelaNome[i].Gerencia,
+                                    ValorUni: tabelaNome[i].ValorUni,
+                                    Quantidade: tabelaNome[i].Quantidade,
+                                    ValorTotal: tabelaNome[i].ValorTotal,
+                                    DataUtilizacao: tabelaNome[i].DataUtilizacao,
+                                    Observacao: tabelaNome[i].Observacao,
+                                    Usuario: tabelaNome[i].Usuario,
+                                    FormaPagamento: tabelaNome[i].FormaPagamento,
+                                    opcaoPagamento: tabelaNome[i].opcaoPagamento,
+                                    NParcelas: tabelaNome[i].NParcelas,
+                                    DataPagto: tabelaNome[i].DataPagto,
+                                    AprovacaoGerenteLocal: tabelaNome[i].AprovacaoGerenteLocal,
+                                    AprovacaoFinanceiro: tabelaNome[i].AprovacaoFinanceiro,
+                                    AprovacaoDiretoria: tabelaNome[i].AprovacaoDiretoria,
+                                    Finalizado: tabelaNome[i].Finalizado
+
+                                })
+                            }
+                        }
+                    }
+                }
             }
 
         }
@@ -145,7 +154,7 @@ export default class EmAnalise extends React.Component {
 
         let total = 0
 
-        for(let i = 0; i < ValorTotal.length; i++){
+        for (let i = 0; i < ValorTotal.length; i++) {
             total += parseInt(ValorTotal[i].ValorTotal)
         }
 
@@ -155,7 +164,11 @@ export default class EmAnalise extends React.Component {
 
         let ResultadoDisponivel = this.state.totalDisponivel - ResultadoGasto
 
-        return this.setState({ 
+        if (this.state.totalDisponivel >= 0) {
+
+        }
+
+        return this.setState({
             list: dadoSolicitacao,
             totalGasto: ResultadoGasto.toFixed(2),
             totalDisponivel: ResultadoDisponivel.toFixed(2)
@@ -167,7 +180,7 @@ export default class EmAnalise extends React.Component {
             return (
                 <div className="col-md-auto mb-4" >
                     <CardEmAnalise Nid={Solicitar.id}
-                     nomeSolicitante={Solicitar.Usuario}
+                        nomeSolicitante={Solicitar.Usuario}
                         AprovGerenciaLocal={Solicitar.AprovacaoGerenteLocal}
                         AprovFinanceiro={Solicitar.AprovacaoFinanceiro}
                         AprovDiretoria={Solicitar.AprovacaoDiretoria}
@@ -179,7 +192,7 @@ export default class EmAnalise extends React.Component {
         })
     }
 
-    
+
 
     async buscarValorTotalReal() {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)

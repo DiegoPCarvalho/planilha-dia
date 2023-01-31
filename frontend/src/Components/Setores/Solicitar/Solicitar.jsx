@@ -4,10 +4,16 @@ import Url from '../../Url/Url';
 
 import $ from 'jquery';
 
-const banco = "CentroCustoSolicitacao";
-const baseUrl = Url(banco);
+
+const baseUrl2 = Url("CentroCustoSolicitacao");
+
+const baseUrl = Url("CentroCustoRecurso");
+
 
 const initialState = {
+    totalDisponivel: [100],
+    totalGasto: [0],
+    totalReal: [],
     Solicitar: {
         Dia: dia(),
         Mes: mes(),
@@ -32,8 +38,7 @@ const initialState = {
         AprovacaoFinanceiro: 'Em Análise',
         AprovacaoDiretoria: 'Em Análise',
         Finalizado: 'Não'
-    },
-    list: []
+    }
 }
 
 function mes() {
@@ -60,6 +65,11 @@ export default class Solicitar extends React.Component {
 
     state = { ...initialState }
 
+    componentWillMount() {
+        this.buscarValorTotalReal()
+        this.consultaBancoDepartamento()
+    }
+
     clear() {
         this.setState({ Solicitar: initialState.Solicitar })
     }
@@ -73,18 +83,91 @@ export default class Solicitar extends React.Component {
     save() {
         const Solicitar = this.state.Solicitar
         const method = Solicitar.id ? 'put' : 'post'
-        const url = Solicitar.id ? `${baseUrl}/${Solicitar.id}` : baseUrl
+        const url = Solicitar.id ? `${baseUrl2}/${Solicitar.id}` : baseUrl2
         axios[method](url, Solicitar)
             .then(resp => {
                 this.setState({ Solicitar: initialState.Solicitar })
+                window.location.pathname = '/CentroCustoLab/Solicitar'
             })
     }
+
+    async consultaBancoDepartamento() {
+        const tabelaNome = await axios(baseUrl2).then(resp => resp.data)
+        let dadoSolicitacao = []
+
+
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if (localStorage.departamento === tabelaNome[i].Departamento) {
+                if (tabelaNome[i].Finalizado === "Não") {
+                    if ((tabelaNome[i].AprovacaoGerenteLocal === "Em Análise") || (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")) {
+                        if ((tabelaNome[i].AprovacaoFinanceiro === "Em Análise") || (tabelaNome[i].AprovacaoFinanceiro === "Aprovado")) {
+                            if ((tabelaNome[i].AprovacaoDiretoria === "Em Análise") || (tabelaNome[i].AprovacaoDiretoria === "Aprovado")) {
+                                dadoSolicitacao.push({
+                                    ValorTotal: tabelaNome[i].ValorTotal,
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        const ValorTotal = Object.assign(dadoSolicitacao)
+
+        let total = 0
+
+        for (let i = 0; i < ValorTotal.length; i++) {
+            total += parseInt(ValorTotal[i].ValorTotal)
+        }
+
+        let Resultado = this.state.totalDisponivel * total
+
+        let ResultadoGasto = Resultado / this.state.totalReal
+
+        let ResultadoDisponivel = this.state.totalDisponivel - ResultadoGasto
+
+
+        // if(this.state.totalDisponivel >= 0){
+
+        // }
+
+        return this.setState({
+            list: dadoSolicitacao,
+            totalGasto: ResultadoGasto.toFixed(2),
+            totalDisponivel: ResultadoDisponivel.toFixed(2)
+        })
+    }
+
+    async buscarValorTotalReal() {
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+
+        let totalRealDado = []
+
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if (localStorage.departamento === tabelaNome[i].Departamento) {
+                totalRealDado.push({
+                    Recurso: tabelaNome[i].Recurso
+                })
+            }
+        }
+
+        const totalObjReal = Object.assign(totalRealDado)
+
+
+        // console.log(totalObjReal)
+        return this.setState({
+            totalReal: totalObjReal[0].Recurso
+        })
+    }
+
 
     mensagemSalvo() {
         $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
             $("div.success").fadeIn(300).delay(1500).fadeOut(400);
         });
     }
+
 
     verificar() {
         let TipoCompra = document.getElementById("TipoCompra").value;
@@ -102,8 +185,13 @@ export default class Solicitar extends React.Component {
             || (Gerencia === '') || (ValorTotal = '') || (DataUtilizacao === '') || (ValorUni === '') || (Quantidade === '')) {
 
         } else {
-            this.save()
-            this.mensagemSalvo()
+            if (this.state.totalDisponivel <= 0) {
+                alert("Centro de Custo Estorado")
+            }
+            else {
+                this.save()
+                this.mensagemSalvo()
+            }
         }
     }
 
@@ -286,7 +374,7 @@ export default class Solicitar extends React.Component {
                 </div>
                 <div className="row mt-4">
                     <div className="col-12 col-md-6 d-flex align-items-center">
-                        <div class="alert-box success">Salvo com Sucesso!!!</div>
+                        <div className="alert-box success">Salvo com Sucesso!!!</div>
                     </div>
                     <div className="col-12 col-md-6 d-flex justify-content-end">
                         <button className="btn btn-primary mx-2"
@@ -309,18 +397,26 @@ export default class Solicitar extends React.Component {
     render() {
         return (
             <div className="container-fluid mt-3">
-                <div className="row mt-2">
+                <div className="row mt-2 d-flex justify-content-between">
                     <div className="col-1">
 
                         <i class="fa fa-address-card-o fa-5x"></i>
                     </div>
-                    <div className="col-11 justify-content-center d-flex align-items-center">
+                    <div className="col-6 justify-content-center d-flex align-items-center">
                         <div className="d-flex justify-content-center">
                             <h3 class="p-2 fw-bold bg-dark text-light rounded">Solicitar Material</h3>
                         </div>
                     </div>
+                    <div className="col-3 col-md-2 d-flex flex-column justify-content-center bg-success  text-light rounded">
+                        <h3 className='fw-bold d-flex justify-content-center mb-3'>Orçamento</h3>
+                        <p className='h5 d-flex justify-content-center'>Disponivel: <span id="limite" className='mx-1'>{this.state.totalDisponivel}%</span></p>
+                        <p className='h6 d-flex justify-content-center'>Gasto: <span className='mx-1'>{this.state.totalGasto}%</span></p>
+                    </div>
 
                 </div>
+
+
+
                 <div id="Formulario" className='mt-3'>
                     {this.formularioGeral()}
                 </div>
