@@ -101,7 +101,7 @@ export default class SolicitarSet extends React.Component {
         axios[method](url, Solicitar)
             .then(resp => {
                 this.setState({ Solicitar: initialState.Solicitar })
-                window.location.pathname = '/GerenciaLab/CentroCusto/Solicitacoes'
+                window.location.pathname = '/Financeiro/CentroCustoSetores/Solicitacoes'
             })
     }
 
