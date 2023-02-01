@@ -32,7 +32,7 @@ export default class Financeiro extends React.Component {
                         {/* </div> */}
                         {/*Link to="/Atividade/Relatorio" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Relatório</Link> */}
                         <Link to="/Financeiro/CentroCusto" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link>
-                        <Link to="/Financeiro/Solicitacoes" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Solicitações Setores</Link>
+                        <Link to="/Financeiro/CentroCustoSetores" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo Setores</Link>
                     </div>
                     <div className="row mt-2 ">
                         <Outlet />

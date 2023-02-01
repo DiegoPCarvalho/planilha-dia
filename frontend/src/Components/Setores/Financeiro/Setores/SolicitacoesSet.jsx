@@ -7,9 +7,6 @@ import ModalAtendimento from "../../../Modal/Modal.Atividade";
 import CardEmAnalise from '../../../Card/CardEmAnalise';
 
 const initialState = {
-    totalDisponivel: [100],
-    totalGasto: [0],
-    totalReal: [0],
     Solicitar: {
         Dia: '',
         Mes: '',
@@ -42,20 +39,18 @@ const initialState = {
 const baseUrl = Url("CentroCustoRecurso");
 const baseUrl2 = Url("CentroCustoSolicitacao");
 
-export default class SolicitacoesLab extends React.Component {
+export default class SolicitarSet extends React.Component {
 
     state = { ...initialState }
 
     componentWillMount() {
         this.consultaBancoDepartamento()
-        this.buscarValorTotalReal()
         this.Tempo()
     }
 
     Tempo() {
         setTimeout(() => {
             this.mudarStatus()
-            this.consultarOrcamento()
         }, 100);
     }
 
@@ -81,6 +76,10 @@ export default class SolicitacoesLab extends React.Component {
             })
         });
 
+    }
+
+    clear() {
+        this.setState({ Solicitar: initialState.Solicitar })
     }
 
     mensagemSalvo() {
@@ -138,114 +137,44 @@ export default class SolicitacoesLab extends React.Component {
 
 
         for (let i = 0; i < tabelaNome.length; i++) {
-            if ("Laborátorio" === tabelaNome[i].Departamento) {
-                if ((tabelaNome[i].Finalizado === "Não") && (tabelaNome[i].AprovacaoGerenteLocal === "Em Análise")
-                    && (tabelaNome[i].AprovacaoFinanceiro === "Em Análise")
-                    && (tabelaNome[i].AprovacaoDiretoria === "Em Análise")) {
-                    dadoSolicitacao.push({
-                        id: tabelaNome[i].id,
-                        Dia: tabelaNome[i].Dia,
-                        Mes: tabelaNome[i].Mes,
-                        Ano: tabelaNome[i].Ano,
-                        TipoCompra: tabelaNome[i].TipoCompra,
-                        FornecedorID: tabelaNome[i].FornecedorID,
-                        RazaoSocial: tabelaNome[i].RazaoSocial,
-                        Categoria: tabelaNome[i].Categoria,
-                        Departamento: tabelaNome[i].Departamento,
-                        Gerencia: tabelaNome[i].Gerencia,
-                        ValorUni: tabelaNome[i].ValorUni,
-                        Quantidade: tabelaNome[i].Quantidade,
-                        ValorTotal: tabelaNome[i].ValorTotal,
-                        DataUtilizacao: tabelaNome[i].DataUtilizacao,
-                        Observacao: tabelaNome[i].Observacao,
-                        Usuario: tabelaNome[i].Usuario,
-                        FormaPagamento: tabelaNome[i].FormaPagamento,
-                        opcaoPagamento: tabelaNome[i].opcaoPagamento,
-                        NParcelas: tabelaNome[i].NParcelas,
-                        DataPagto: tabelaNome[i].DataPagto,
-                        AprovacaoGerenteLocal: tabelaNome[i].AprovacaoGerenteLocal,
-                        AprovacaoFinanceiro: tabelaNome[i].AprovacaoFinanceiro,
-                        AprovacaoDiretoria: tabelaNome[i].AprovacaoDiretoria,
-                        Finalizado: tabelaNome[i].Finalizado
+            if ((tabelaNome[i].Finalizado === "Não") && (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")
+                && (tabelaNome[i].AprovacaoFinanceiro === "Em Análise")
+                && (tabelaNome[i].AprovacaoDiretoria === "Em Análise")) {
+                dadoSolicitacao.push({
+                    id: tabelaNome[i].id,
+                    Dia: tabelaNome[i].Dia,
+                    Mes: tabelaNome[i].Mes,
+                    Ano: tabelaNome[i].Ano,
+                    TipoCompra: tabelaNome[i].TipoCompra,
+                    FornecedorID: tabelaNome[i].FornecedorID,
+                    RazaoSocial: tabelaNome[i].RazaoSocial,
+                    Categoria: tabelaNome[i].Categoria,
+                    Departamento: tabelaNome[i].Departamento,
+                    Gerencia: tabelaNome[i].Gerencia,
+                    ValorUni: tabelaNome[i].ValorUni,
+                    Quantidade: tabelaNome[i].Quantidade,
+                    ValorTotal: tabelaNome[i].ValorTotal,
+                    DataUtilizacao: tabelaNome[i].DataUtilizacao,
+                    Observacao: tabelaNome[i].Observacao,
+                    Usuario: tabelaNome[i].Usuario,
+                    FormaPagamento: tabelaNome[i].FormaPagamento,
+                    opcaoPagamento: tabelaNome[i].opcaoPagamento,
+                    NParcelas: tabelaNome[i].NParcelas,
+                    DataPagto: tabelaNome[i].DataPagto,
+                    AprovacaoGerenteLocal: tabelaNome[i].AprovacaoGerenteLocal,
+                    AprovacaoFinanceiro: tabelaNome[i].AprovacaoFinanceiro,
+                    AprovacaoDiretoria: tabelaNome[i].AprovacaoDiretoria,
+                    Finalizado: tabelaNome[i].Finalizado
 
-                    })
-                }
-            }
-
-        }
-
-        return this.setState({
-            list: dadoSolicitacao
-        })
-    }
-
-    async consultarOrcamento() {
-        const tabelaNome = await axios(baseUrl2).then(resp => resp.data)
-        let dadoOrcamento = []
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ("Laborátorio" === tabelaNome[i].Departamento) {
-                if (tabelaNome[i].Finalizado === "Não") {
-                    if ((tabelaNome[i].AprovacaoGerenteLocal === "Em Análise") || (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")) {
-                        if ((tabelaNome[i].AprovacaoFinanceiro === "Em Análise") || (tabelaNome[i].AprovacaoFinanceiro === "Aprovado")) {
-                            if ((tabelaNome[i].AprovacaoDiretoria === "Em Análise") || (tabelaNome[i].AprovacaoDiretoria === "Aprovado")) {
-                                dadoOrcamento.push({
-                                    ValorTotal: tabelaNome[i].ValorTotal,
-                                })
-                            }
-                        }
-                    }
-                }
-            }
-
-        }
-
-        const ValorTotal = Object.assign(dadoOrcamento)
-
-        let total = 0
-
-        for (let i = 0; i < ValorTotal.length; i++) {
-            total += parseInt(ValorTotal[i].ValorTotal)
-        }
-
-        let Resultado = this.state.totalDisponivel * total
-
-        let ResultadoGasto = Resultado / this.state.totalReal
-
-        let ResultadoDisponivel = this.state.totalDisponivel - ResultadoGasto
-
-
-        return this.setState({
-            totalGasto: ResultadoGasto.toFixed(2),
-            totalDisponivel: ResultadoDisponivel.toFixed(2)
-        })
-
-    }
-
-    async buscarValorTotalReal() {
-        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-
-        let totalReal = []
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if (localStorage.departamento === tabelaNome[i].Departamento) {
-                totalReal.push({
-                    Recurso: tabelaNome[i].Recurso
                 })
             }
         }
 
-        const totalObjReal = Object.assign(totalReal)
-
 
 
         return this.setState({
-            totalReal: totalObjReal[0].Recurso
+            list: dadoSolicitacao
         })
-    }
-
-    clear() {
-        this.setState({ Solicitar: initialState.Solicitar })
     }
 
     cardDepartamento() {
@@ -254,6 +183,7 @@ export default class SolicitacoesLab extends React.Component {
                 <div className="col-md-auto mb-4" >
                     <CardEmAnalise Nid={Solicitar.id}
                         nomeSolicitante={Solicitar.Usuario}
+                        nomeDepartamento={Solicitar.Departamento}
                         AprovGerenciaLocal={Solicitar.AprovacaoGerenteLocal}
                         AprovFinanceiro={Solicitar.AprovacaoFinanceiro}
                         AprovDiretoria={Solicitar.AprovacaoDiretoria}
@@ -302,6 +232,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.TipoCompra}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Fixo/Fixo</option>
@@ -318,7 +249,9 @@ export default class SolicitacoesLab extends React.Component {
                                 value={this.state.Solicitar.FornecedorID}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digite ..."
-                                required />
+                                required
+                                disabled
+                            />
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
@@ -329,7 +262,9 @@ export default class SolicitacoesLab extends React.Component {
                                 value={this.state.Solicitar.RazaoSocial}
                                 onChange={e => this.updateField(e)}
                                 placeholder="Digite ..."
-                                required />
+                                required
+                                disabled
+                            />
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
@@ -340,6 +275,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.Categoria}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Compra Peças</option>
@@ -384,6 +320,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.Gerencia}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Luanda Achcar</option>
@@ -407,6 +344,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 min="0.00" step="0.01"
                                 required
+                                disabled
                             />
                         </div>
                     </div>
@@ -422,6 +360,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 min="0" step="1"
                                 required
+                                disabled
                             />
                         </div>
                     </div>
@@ -438,6 +377,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 min="0.00" step="0.01"
                                 required
+                                disabled
                             />
                         </div>
                     </div>
@@ -451,6 +391,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.DataUtilizacao}
                                 required
+                                disabled
                             />
                         </div>
                     </div>
@@ -464,7 +405,79 @@ export default class SolicitacoesLab extends React.Component {
                                 value={this.state.Solicitar.Usuario} />
                         </div>
                     </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label className="fw-bold">Forma Pagamento:</label>
+                            <select class="form-select" aria-label="Default select example"
+                                name="FormaPagamento" id="FormaPagamento"
+                                onChange={e => this.updateField(e)}
+                                value={this.state.Solicitar.FormaPagamento}
+                                required
+                            >
+                                <option selected disabled value="">Selecione</option>
+                                <option>Cartão de Crédito</option>
+                                <option>Boleto</option>
+                                <option>Dinheiro</option>
+                                <option>Transferência</option>
+                                <option>Pix</option>
+                                <option>DOC</option>
+                                <option>TED</option>
+                                <option>Cartão Pré Pago</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label className="fw-bold">Opção Pagamento:</label>
+                            <select class="form-select" aria-label="Default select example"
+                                name="opcaoPagamento" id="opcaoPagamento"
+                                onChange={e => this.updateField(e)}
+                                value={this.state.Solicitar.opcaoPagamento}
+                                required
+                            >
+                                <option selected disabled value="">Selecione</option>
+                                <option>À Vista</option>
+                                <option>À Prazo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col-6 col-md-2">
+                        <div className="form-group">
+                            <label className="fw-bold">Nª Parcelas</label>
+                            <select class="form-select" aria-label="Default select example"
+                                name="NParcelas" id="NParcelas"
+                                onChange={e => this.updateField(e)}
+                                value={this.state.Solicitar.NParcelas}
+                                required
+                            >
+                                <option selected disabled value="">Selecione</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>+10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                            <div className="form-group">
+                                <label className='fw-bold'>Data pagamento:</label>
+                                <input className='form-control'
+                                    type="date" name="DataPagto" id="DataPagto"
+                                    onChange={e => this.updateField(e)}
+                                    value={this.state.Solicitar.DataPagto}
+                                    required
 
+                                />
+                            </div>
+                        </div>
                 </div>
                 <div className="row mt-3">
                     <div className="col-6 col-md-4">
@@ -475,6 +488,7 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.AprovacaoGerenteLocal}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Aprovado</option>
@@ -491,7 +505,6 @@ export default class SolicitacoesLab extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.AprovacaoFinanceiro}
                                 required
-                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Aprovado</option>
@@ -554,21 +567,10 @@ export default class SolicitacoesLab extends React.Component {
 
     render() {
         return (
-            <div className='container-fluid'>
+            <div className="container-fluid">
                 <div className="row mt-2 d-flex justify-content-center">
                     <div className="col-5">
                         <h3 className='bg-dark text-light fw-bold p-2 rounded d-flex justify-content-center'>Solicitações</h3>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="row my-3 d-flex justify-content-center ">
-                            <div className="col-6 col-md-3 d-flex flex-column justify-content-center bg-success p-2 text-light rounded">
-                                <h1 className='fw-bold d-flex justify-content-center mb-3'>Orçamento</h1>
-                                <p className='h3 d-flex justify-content-center'>Disponivel: {this.state.totalDisponivel}%</p>
-                                <p className='h4 d-flex justify-content-center'>Gasto: {this.state.totalGasto}%</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className='row row-cols-auto mt-4'>

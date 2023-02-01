@@ -67,7 +67,13 @@ export default class Solicitar extends React.Component {
 
     componentWillMount() {
         this.buscarValorTotalReal()
-        this.consultaBancoDepartamento()
+        this.Tempo()
+    }
+
+    Tempo() {
+        setTimeout(() => {
+            this.consultaBancoDepartamento()
+        }, 100);
     }
 
     clear() {
@@ -133,7 +139,6 @@ export default class Solicitar extends React.Component {
         // }
 
         return this.setState({
-            list: dadoSolicitacao,
             totalGasto: ResultadoGasto.toFixed(2),
             totalDisponivel: ResultadoDisponivel.toFixed(2)
         })
@@ -201,7 +206,7 @@ export default class Solicitar extends React.Component {
                 <div className="row">
                     <div className="col-6 col-md-3">
                         <div className="form-group">
-                            <label>Tipo de Compra:</label>
+                            <label className='fw-bold'>Tipo de Compra:</label>
                             <select class="form-select" aria-label="Default select example"
                                 name="TipoCompra" id="TipoCompra"
                                 onChange={e => this.updateField(e)}
@@ -217,7 +222,7 @@ export default class Solicitar extends React.Component {
                     </div>
                     <div className="col-6 col-md-3">
                         <div className="form-group">
-                            <label>Fornecedor ID:</label>
+                            <label className='fw-bold'>Fornecedor ID:</label>
                             <input type="text" className="form-control"
                                 name="FornecedorID" id="FornecedorID"
                                 value={this.state.Solicitar.FornecedorID}
@@ -228,7 +233,7 @@ export default class Solicitar extends React.Component {
                     </div>
                     <div className="col-6 col-md-3">
                         <div className="form-group">
-                            <label>Razão Social:</label>
+                            <label className='fw-bold'>Razão Social:</label>
                             <input type="text" className="form-control"
                                 name="RazaoSocial" id="RazaoSocial"
                                 value={this.state.Solicitar.RazaoSocial}
@@ -239,7 +244,7 @@ export default class Solicitar extends React.Component {
                     </div>
                     <div className="col-6 col-md-3">
                         <div className="form-group">
-                            <label>Categoria:</label>
+                            <label className='fw-bold'>Categoria:</label>
                             <select class="form-select" aria-label="Default select example"
                                 name="Categoria" id="Categoria"
                                 onChange={e => this.updateField(e)}
@@ -283,7 +288,7 @@ export default class Solicitar extends React.Component {
                 <div className="row mt-3">
                     <div className="col-6 col-md-3">
                         <div className="form-group">
-                            <label>Gerente: </label>
+                            <label className='fw-bold'>Gerente: </label>
                             <select class="form-select" aria-label="Default select example"
                                 name="Gerencia" id="Gerencia"
                                 onChange={e => this.updateField(e)}
@@ -300,7 +305,7 @@ export default class Solicitar extends React.Component {
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
-                        <label>Valor Unitário:</label>
+                        <label className='fw-bold'>Valor Unitário:</label>
                         <div className="input-group">
                             <span className="input-group-text bg-success fw-bold text-light" id="basic-addon1">R$</span>
                             <input id="ValorUni"
@@ -316,7 +321,7 @@ export default class Solicitar extends React.Component {
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
-                        <label>Quantidade:</label>
+                        <label className='fw-bold'>Quantidade:</label>
                         <div className="form-group">
                             <input id="Quantidade"
                                 type="number"
@@ -331,7 +336,7 @@ export default class Solicitar extends React.Component {
                         </div>
                     </div>
                     <div className="col-6 col-md-3">
-                        <label>Valor Total:</label>
+                        <label className='fw-bold'>Valor Total:</label>
                         <div className="input-group">
                             <span className="input-group-text bg-success fw-bold text-light" id="basic-addon1">R$</span>
                             <input id="ValorTotal"
@@ -350,7 +355,7 @@ export default class Solicitar extends React.Component {
                 <div className="row mt-3">
                     <div className="col-6 col-md-3">
                         <div className="form-group">
-                            <label>Data de Utilização:</label>
+                            <label className='fw-bold'>Data de Utilização:</label>
                             <input className='form-control'
                                 type="date" name="DataUtilizacao" id="DataUtilizacao"
                                 onChange={e => this.updateField(e)}
@@ -363,7 +368,7 @@ export default class Solicitar extends React.Component {
                 <div className="row mt-3">
                     <div className="col-12">
                         <div className="form-group">
-                            <label>Observação</label>
+                            <label className='fw-bold'>Observação</label>
                             <textarea className="form-control"
                                 name="Observacao" rows="5"
                                 value={this.state.Solicitar.Observacao}

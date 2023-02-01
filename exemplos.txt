@@ -58,3 +58,16 @@ app.get("/", async (req, res) =>{
         //         $('.certoFinan').append('<i class="fa fa-check" aria-hidden="true"></i>');
         //     }
         // });
+
+
+        import React from 'react';
+
+export default class SolicitarSet extends React.Component{
+    render(){
+        return(
+            <div className="container-fluid">
+                Solicitacao
+            </div>
+        )
+    }
+}

@@ -67,7 +67,6 @@ export default class EmAnalise extends React.Component {
 
     componentWillMount() {
         this.buscarValorTotalReal()
-        // this.mudarStatus()
         this.consultaBancoDepartamento()
         this.Tempo()
     }
@@ -75,7 +74,8 @@ export default class EmAnalise extends React.Component {
     Tempo() {
         setTimeout(() => {
             this.mudarStatus()
-        }, 500);
+            this.consultarOrcamento()
+        }, 100);
     }
 
     mudarStatus() {
@@ -99,6 +99,49 @@ export default class EmAnalise extends React.Component {
                 }
             })
         });
+
+    }
+
+    async consultarOrcamento() {
+        const tabelaNome = await axios(baseUrl2).then(resp => resp.data)
+        let dadoOrcamento = []
+
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if ("Laborátorio" === tabelaNome[i].Departamento) {
+                if (tabelaNome[i].Finalizado === "Não") {
+                    if ((tabelaNome[i].AprovacaoGerenteLocal === "Em Análise") || (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")) {
+                        if ((tabelaNome[i].AprovacaoFinanceiro === "Em Análise") || (tabelaNome[i].AprovacaoFinanceiro === "Aprovado")) {
+                            if ((tabelaNome[i].AprovacaoDiretoria === "Em Análise") || (tabelaNome[i].AprovacaoDiretoria === "Aprovado")) {
+                                dadoOrcamento.push({
+                                    ValorTotal: tabelaNome[i].ValorTotal,
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        const ValorTotal = Object.assign(dadoOrcamento)
+
+        let total = 0
+
+        for (let i = 0; i < ValorTotal.length; i++) {
+            total += parseInt(ValorTotal[i].ValorTotal)
+        }
+
+        let Resultado = this.state.totalDisponivel * total
+
+        let ResultadoGasto = Resultado / this.state.totalReal
+
+        let ResultadoDisponivel = this.state.totalDisponivel - ResultadoGasto
+
+
+        return this.setState({
+            totalGasto: ResultadoGasto.toFixed(2),
+            totalDisponivel: ResultadoDisponivel.toFixed(2)
+        })
 
     }
 
@@ -150,28 +193,9 @@ export default class EmAnalise extends React.Component {
 
         }
 
-        const ValorTotal = Object.assign(dadoSolicitacao)
-
-        let total = 0
-
-        for (let i = 0; i < ValorTotal.length; i++) {
-            total += parseInt(ValorTotal[i].ValorTotal)
-        }
-
-        let Resultado = this.state.totalDisponivel * total
-
-        let ResultadoGasto = Resultado / this.state.totalReal
-
-        let ResultadoDisponivel = this.state.totalDisponivel - ResultadoGasto
-
-        if (this.state.totalDisponivel >= 0) {
-
-        }
 
         return this.setState({
-            list: dadoSolicitacao,
-            totalGasto: ResultadoGasto.toFixed(2),
-            totalDisponivel: ResultadoDisponivel.toFixed(2)
+            list: dadoSolicitacao
         })
     }
 

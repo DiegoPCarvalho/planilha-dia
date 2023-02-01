@@ -10,6 +10,9 @@ export default function cardGeral(props) {
                         <div className='d-flex justify-content-center fw-bold h4'>
                             {props.nomeSolicitante}
                         </div>
+                        <div className="d-flex justify-content-center fw-bold">
+                            {props.nomeDepartamento}
+                        </div>
                     </Card.Title>
                 </Card.Header>
                 <Card.Body>

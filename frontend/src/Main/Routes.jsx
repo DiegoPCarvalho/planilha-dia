@@ -30,6 +30,8 @@ import Perfil from '../Components/Usuario/Perfil';
 import Financeiro from "../Components/Setores/Financeiro/Financeiro";
 import CadastroCusto from '../Components/Setores/Financeiro/CadastroCusto';
 import CentroCusto from "../Components/Setores/Financeiro/CentroCusto";
+import SolicitacoesSetores from "../Components/Setores/Financeiro/SolicitacoesSetores";
+import SolicitarSet from "../Components/Setores/Financeiro/Setores/SolicitacoesSet";
 
 //Diretoria
 import Diretoria from '../Components/Setores/Diretoria/HomeLabDiretoria';
@@ -44,6 +46,7 @@ import HomeGerenciaAdm from '../Components/Setores/Gerencia/HomeADMGerencia';
 import PageFinanceiro from "../Components/Setores/Gerencia/PageFinanceiro";
 import PageFinanceiroPro from '../Components/Setores/Gerencia/PageFinanceiroProcess';
 import SolicitacoesLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Solicitacoes";
+import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Aprovados";
 
 //Laboratorio
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
@@ -52,6 +55,7 @@ import FinaliadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
 
 //Solicitar
 import Solicitar from '../Components/Setores/Solicitar/Solicitar';
+import FinalizadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
 
 
 export default function Rotas() {
@@ -88,8 +92,8 @@ export default function Rotas() {
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
                         <Route path="Solicitacoes" element={<SolicitacoesLab />} />
-                        <Route path="Aprovados" element={<EmBreveSmart />} />
-                        <Route path="Finalizados" element={<EmBreveSmart />} />
+                        <Route path="Aprovados" element={<AprovadosLab />} />
+                        <Route path="Finalizados" element={<FinalizadosLab />} />
                     </Route>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>
@@ -119,7 +123,11 @@ export default function Rotas() {
                         <Route path="EmAnalise" element={<EmBreveSmart />} />
                         <Route path="Finalizados" element={<EmBreveSmart />} />
                     </Route>
-                   <Route path="Solicitacoes" element={<EmBreveSmart />} />
+                    <Route path="CentroCustoSetores" element={<SolicitacoesSetores />}>
+                        <Route path="Solicitacoes" element={<SolicitarSet />} />
+                        <Route path="Aprovados" element={<EmBreveSmart />} />
+                        <Route path="Finalizados" element={<EmBreveSmart />} />
+                    </Route>
                 </Route>
             </Route>
             <Route element={<Home />}>
