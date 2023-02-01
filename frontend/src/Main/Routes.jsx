@@ -43,6 +43,7 @@ import CentroCustoLabGerencia from '../Components/Setores/Gerencia/CentroCustoLa
 import HomeGerenciaAdm from '../Components/Setores/Gerencia/HomeADMGerencia';
 import PageFinanceiro from "../Components/Setores/Gerencia/PageFinanceiro";
 import PageFinanceiroPro from '../Components/Setores/Gerencia/PageFinanceiroProcess';
+import SolicitacoesLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Solicitacoes";
 
 //Laboratorio
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
@@ -86,9 +87,8 @@ export default function Rotas() {
                         <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
-                        <Route path="Solicitacoes" element={<EmBreveSmart />} />
+                        <Route path="Solicitacoes" element={<SolicitacoesLab />} />
                         <Route path="Aprovados" element={<EmBreveSmart />} />
-                        <Route path="Reprovados" element={<EmBreveSmart />} />
                         <Route path="Finalizados" element={<EmBreveSmart />} />
                     </Route>
                 </Route>

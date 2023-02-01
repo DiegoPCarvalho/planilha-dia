@@ -175,6 +175,7 @@ export default class EmAnalise extends React.Component {
         })
     }
 
+
     cardDepartamento() {
         return this.state.list.map(Solicitar => {
             return (

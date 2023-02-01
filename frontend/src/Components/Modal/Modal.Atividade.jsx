@@ -15,7 +15,7 @@ export default function ModalAtendimento(props) {
          {/* <span className='mx-2'>{props.nomeBotao}</span> */}
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
                  <Modal.Title>{props.nome}</Modal.Title>  
         </Modal.Header>

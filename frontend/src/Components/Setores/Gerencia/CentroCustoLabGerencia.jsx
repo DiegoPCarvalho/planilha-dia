@@ -9,10 +9,9 @@ export default class DashboardGerencia extends React.Component {
         return (
                 <div className="container-fluid">
                     <div className="d-flex flex-row justify-content-center">
-                        {/* <div className="col-6"> */}
+                        
                         <Link to="/GerenciaLab/CentroCusto/Solicitacoes" className=" flex-fill rounded-start link bg-primary fw-bold d-flex justify-content-center">Solicitações</Link>
                         <Link to="/GerenciaLab/CentroCusto/Aprovados" className="flex-fill link bg-primary fw-bold d-flex justify-content-center"> Aprovados</Link>
-                        <Link to="/GerenciaLab/CentroCusto/Reprovados" className="flex-fill link bg-primary fw-bold d-flex justify-content-center"> Reprovados</Link>
                         <Link to="/GerenciaLab/CentroCusto/Finalizados" className="flex-fill rounded-end link bg-primary fw-bold d-flex justify-content-center"> Finalizados</Link>
                     </div>
                     <div className="row mt-2 ">

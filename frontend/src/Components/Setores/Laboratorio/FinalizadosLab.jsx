@@ -3,7 +3,6 @@ import ModalAtendimento from "../../Modal/Modal.Atividade";
 import Url from '../../Url/Url';
 import axios from 'axios';
 
-import { confirmAlert } from "react-confirm-alert";
 import $ from 'jquery';
 
 
@@ -95,7 +94,7 @@ export default class FinalizadosLab extends React.Component {
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if (localStorage.departamento === tabelaNome[i].Departamento) {
-                if (tabelaNome[i].Finalizado === "Sim") {
+                if ((tabelaNome[i].Finalizado === "Sim") || (tabelaNome[i].AprovacaoGerenteLocal === "Reprovado") || (tabelaNome[i].AprovacaoFinanceiro === "Reprovado") || (tabelaNome[i].AprovacaoDiretoria === "Reprovado")) {
                     dadoFinalizado.push({
                         id: tabelaNome[i].id,
                         Dia: tabelaNome[i].Dia,
@@ -189,10 +188,11 @@ export default class FinalizadosLab extends React.Component {
                         onClick={() => this.load(atividade)}>
                         <i className="fa fa-pencil"></i>
                     </button> */}
-                        <ModalAtendimento corModal="warning" Ititulo="expand" nome={<i className="fa fa-address-card fa-3x" />}
-                        // relatorio={this.formulario()} 
-                        load={this.renderButtonPencil(Solicitar)} />
-                    {/* <button className="btn btn-danger mx-2"
+                        <ModalAtendimento corModal="warning" Ititulo="expand"
+                            nome={<i className="fa fa-address-card fa-2x" />}
+                            relatorio={this.formularioGeral()}
+                            load={this.renderButtonPencil(Solicitar)} />
+                        {/* <button className="btn btn-danger mx-2"
                         onClick={() => this.confirmar(Atividade)}>
                         <i className="fa fa-trash"></i>
                     </button> */}
@@ -203,12 +203,181 @@ export default class FinalizadosLab extends React.Component {
         })
     }
 
+
+    formularioGeral() {
+        return (
+            <form className="row g-3 mt-2" action="javascript:myFunction(); return false;">
+                <div className="row">
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Tipo de Compra:</label>
+                            <input type="text" className='form-control'
+                                disabled
+                                name="TipoCompra"
+                                value={this.state.Solicitar.TipoCompra} />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Fornecedor ID:</label>
+                            <input type="text" className="form-control"
+                                name="FornecedorID" id="FornecedorID"
+                                value={this.state.Solicitar.FornecedorID}
+                                disabled
+                                required />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Razão Social:</label>
+                            <input type="text" className="form-control"
+                                name="RazaoSocial" id="RazaoSocial"
+                                value={this.state.Solicitar.RazaoSocial}
+                                disabled
+                                required />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Categoria:</label>
+                            <input class="form-control" aria-label="Default select example"
+                                name="Categoria" id="Categoria"
+                                disabled
+                                value={this.state.Solicitar.Categoria}
+                                required
+                            />
+
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Gerente: </label>
+                            <select class="form-select" aria-label="Default select example"
+                                name="Gerencia" id="Gerencia"
+                                disabled
+                                value={this.state.Solicitar.Gerencia}
+                                required
+                            >
+                                <option selected disabled value=""></option>
+                                <option>Luanda Achcar</option>
+                                <option>Thiago Ribeiro</option>
+                                <option>Thiago Debs</option>
+                                <option>Ingrid Barbosa</option>
+                                <option>Douglas Altenfelder</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <label>Valor Unitário:</label>
+                        <div className="input-group">
+                            <span className="input-group-text bg-success fw-bold text-light" id="basic-addon1">R$</span>
+                            <input id="ValorUni"
+                                type="number"
+                                className="form-control"
+                                name="ValorUni"
+                                placeholder="0,00"
+                                value={this.state.Solicitar.ValorUni}
+                                disabled
+                                min="0.00" step="0.01"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <label>Quantidade:</label>
+                        <div className="form-group">
+                            <input id="Quantidade"
+                                type="number"
+                                className="form-control"
+                                name="Quantidade"
+                                placeholder="0"
+                                value={this.state.Solicitar.Quantidade}
+                                disabled
+                                min="0" step="1"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <label>Valor Total:</label>
+                        <div className="input-group">
+                            <span className="input-group-text bg-success fw-bold text-light" id="basic-addon1">R$</span>
+                            <input id="ValorTotal"
+                                type="number"
+                                className="form-control"
+                                name="ValorTotal"
+                                placeholder="0,00"
+                                value={this.state.Solicitar.ValorTotal}
+                                disabled
+                                min="0.00" step="0.01"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Data de Utilização:</label>
+                            <input className='form-control'
+                                type="date" name="DataUtilizacao" id="DataUtilizacao"
+                                disabled
+                                value={this.state.Solicitar.DataUtilizacao}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label>Usuario:</label>
+                            <input type="text"
+                                className='form-control'
+                                name='Usuario'
+                                disabled
+                                value={this.state.Solicitar.Usuario} />
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col-12">
+                        <div className="form-group">
+                            <label>Observação</label>
+                            <textarea className="form-control"
+                                name="Observacao" rows="5"
+                                value={this.state.Solicitar.Observacao}
+                                disabled
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-4">
+                    <div className="col-12 col-md-6 d-flex align-items-center">
+                        <div className="alert-box success">Salvo com Sucesso!!!</div>
+                    </div>
+                    <div className="col-12 col-md-6 d-flex justify-content-end">
+
+                        <button className="btn btn-danger"
+                            onClick={e => this.clear(e)}
+                        >
+                            Limpar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        )
+    }
+
     render() {
         return (
             <div className='container-fluid'>
-                <div className="row">
-                    <div className="col-12 mt-2">
+                <div className="row mt-3">
+                    <div className="col-1 mt-2">
                         <i className="fa fa-table fa-4x"></i>
+                    </div>
+                    <div className="col-11 d-flex justify-content-center">
+                        <h3 className='bg-dark text-light fw-bold rounded p-2 d-flex justify-content-center align-items-center'> Solicitações Finalizadas </h3>
                     </div>
                 </div>
                 <div className="row mt-4">
