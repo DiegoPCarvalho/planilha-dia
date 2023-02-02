@@ -1310,6 +1310,32 @@
       "AprovacaoFinanceiro": "Aprovado",
       "AprovacaoDiretoria": "Aprovado",
       "Finalizado": "Sim"
+    },
+    {
+      "id": 10,
+      "Dia": 2,
+      "Mes": 2,
+      "Ano": 2023,
+      "TipoCompra": "Avulso",
+      "FornecedorID": "5230",
+      "RazaoSocial": "zebra",
+      "Categoria": "Insumos",
+      "Departamento": "Laborátorio",
+      "Gerencia": "Douglas Altenfelder",
+      "ValorUni": "50",
+      "Quantidade": "15",
+      "ValorTotal": "650",
+      "DataUtilizacao": "2023-02-10",
+      "Observacao": "insumo para impressoras",
+      "Usuario": "Diego Carvalho",
+      "FormaPagamento": "Cartão de Crédito",
+      "opcaoPagamento": "À Prazo",
+      "NParcelas": "7",
+      "DataPagto": "2023-02-10",
+      "AprovacaoGerenteLocal": "Aprovado",
+      "AprovacaoFinanceiro": "Aprovado",
+      "AprovacaoDiretoria": "Aprovado",
+      "Finalizado": "Sim"
     }
   ]
 }
