@@ -42,7 +42,7 @@ export default props =>
                         <a href="javascript:void(0);" className='text-light'><i className="fa fa-archive"></i>ADM</a>
                         <ul>
                             <li><Link to="/Financeiro" className='text-light'><i className="fa fa-money"></i>Financeiro</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-shopping-cart"></i>Compras</Link></li>
+                            <li><Link to="/Compras" className='text-light'><i className="fa fa-shopping-cart"></i>Compras</Link></li>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-file-text-o"></i>Faturamento/Fiscal</Link></li>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-handshake-o"></i>RH/DP</Link></li>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-stack-overflow"></i>Estoque</Link></li>

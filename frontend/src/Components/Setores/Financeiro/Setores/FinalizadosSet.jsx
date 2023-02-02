@@ -1,10 +1,12 @@
 import React from 'react';
-import axios from 'axios';
-import Url from '../../../Url/Url';
-import $ from 'jquery';
 import ModalAtendimento from "../../../Modal/Modal.Atividade";
+import Url from '../../../Url/Url';
+import axios from 'axios';
 
-import CardEmAnalise from '../../../Card/CardEmAnalise';
+import $ from 'jquery';
+
+
+const baseUrl = Url("CentroCustoSolicitacao");
 
 const initialState = {
     Solicitar: {
@@ -35,108 +37,64 @@ const initialState = {
     list: []
 }
 
-
-const baseUrl = Url("CentroCustoRecurso");
-const baseUrl2 = Url("CentroCustoSolicitacao");
-
-export default class SolicitarSet extends React.Component {
+export default class FinalizadosSet extends React.Component {
 
     state = { ...initialState }
 
     componentWillMount() {
         this.consultaBancoDepartamento()
         this.Tempo()
+        $(document).ready(function () {
+            setTimeout(() => {
+                $('#tabela').DataTable({
+                    language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'csv', 'excel', 'print'
+                    ]
+                });
+            }, 100)
+        });
     }
 
     Tempo() {
         setTimeout(() => {
             this.mudarStatus()
-        }, 100);
+        }, 500);
     }
 
     mudarStatus() {
         $(document).ready(function () {
             $(".Aprov").each(function () {
                 if (($(this).text() === "Em Análise")) {
-                    $(this).addClass('bg-secondary badge');
+                    $(this).addClass('bg-secondary text-light fw-bold');
 
                 } else if ($(this).text() === "Reprovado") {
-                    $(this).addClass('bg-danger badge');
+                    $(this).addClass('bg-danger text-light fw-bold');
 
                 } else if ($(this).text() === "Aprovado") {
-                    $(this).addClass('bg-success badge');
+                    $(this).addClass('bg-success text-light fw-bold');
                 }
             });
             $('.Compras').each(function () {
                 if ($(this).text() === 'Não') {
-                    $(this).addClass('bg-danger badge')
+                    $(this).addClass('bg-danger text-light fw-bold')
                 } else if ($(this).text() === 'Sim') {
-                    $(this).addClass('bg-success badge')
+                    $(this).addClass('bg-success text-light fw-bold')
                 }
             })
         });
 
     }
 
-    clear() {
-        this.setState({ Solicitar: initialState.Solicitar })
-    }
-
-    mensagemSalvo() {
-        $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
-            $("div.success").fadeIn(300).delay(1500).fadeOut(400);
-        });
-    }
-
-    updateField(event) {
-        const Solicitar = { ...this.state.Solicitar }
-        Solicitar[event.target.name] = event.target.value
-        this.setState({ Solicitar })
-    }
-
-    save() {
-        const Solicitar = this.state.Solicitar
-        const method = Solicitar.id ? 'put' : 'post'
-        const url = Solicitar.id ? `${baseUrl2}/${Solicitar.id}` : baseUrl2
-        axios[method](url, Solicitar)
-            .then(resp => {
-                this.setState({ Solicitar: initialState.Solicitar })
-                window.location.pathname = '/Financeiro/CentroCustoSetores/Solicitacoes'
-            })
-    }
-
-    verificar() {
-        let FormaPagamento = document.getElementById("FormaPagamento").value;
-        let opcaoPagamento = document.getElementById("opcaoPagamento").value;
-        let NParcelas = document.getElementById("NParcelas").value;
-        let DataPagto = document.getElementById("DataPagto").value;
-        let AprovacaoFinanceiro = document.getElementById("AprovacaoFinanceiro").value;
-
-        if (AprovacaoFinanceiro === 'Reprovado') {
-            this.save()
-            this.mensagemSalvo()
-        } else {
-            if ((FormaPagamento === '') || (opcaoPagamento === '') || (NParcelas === '') || (DataPagto === '')) {
-
-            } else {
-                this.save()
-                this.mensagemSalvo()
-            }
-        }
-
-
-    }
-
     async consultaBancoDepartamento() {
-        const tabelaNome = await axios(baseUrl2).then(resp => resp.data)
-        let dadoSolicitacao = []
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+        let dadoFinalizado = []
 
 
         for (let i = 0; i < tabelaNome.length; i++) {
-            if ((tabelaNome[i].Finalizado === "Não") && (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")
-                && (tabelaNome[i].AprovacaoFinanceiro === "Em Análise")
-                && (tabelaNome[i].AprovacaoDiretoria === "Em Análise")) {
-                dadoSolicitacao.push({
+            if ((tabelaNome[i].Finalizado === "Sim") || (tabelaNome[i].AprovacaoGerenteLocal === "Reprovado") || (tabelaNome[i].AprovacaoFinanceiro === "Reprovado") || (tabelaNome[i].AprovacaoDiretoria === "Reprovado")) {
+                dadoFinalizado.push({
                     id: tabelaNome[i].id,
                     Dia: tabelaNome[i].Dia,
                     Mes: tabelaNome[i].Mes,
@@ -169,32 +127,12 @@ export default class SolicitarSet extends React.Component {
 
 
         return this.setState({
-            list: dadoSolicitacao
+            list: dadoFinalizado
         })
     }
 
-    cardDepartamento() {
-        return this.state.list.map(Solicitar => {
-            return (
-                <div className="col-md-auto mb-4" >
-                    <CardEmAnalise Nid={Solicitar.id}
-                        nomeSolicitante={Solicitar.Usuario}
-                        nomeDepartamento={Solicitar.Departamento}
-                        AprovGerenciaLocal={Solicitar.AprovacaoGerenteLocal}
-                        AprovFinanceiro={Solicitar.AprovacaoFinanceiro}
-                        AprovDiretoria={Solicitar.AprovacaoDiretoria}
-                        Compras={Solicitar.Finalizado}
-                        alterar={
-                            <ModalAtendimento corModal="warning" Ititulo="expand"
-                                nome={<i className="fa fa-address-card fa-2x" />}
-                                relatorio={this.formularioGeral()}
-                                load={this.renderButtonPencil(Solicitar)} />
-                        }
-                    />
-                </div>
-
-            )
-        })
+    clear() {
+        this.setState({ Solicitar: initialState.Solicitar })
     }
 
     load(Solicitar) {
@@ -209,12 +147,62 @@ export default class SolicitarSet extends React.Component {
         )
     }
 
-    getUpdatedList(Solicitar, add = true) {
-        const list = this.state.list.filter(a => a.id !== Solicitar.id)
-        if (add) list.unshift(Solicitar)
-        return list
+    renderTable() {
+        return (
+            <table className="table mt-5 table-bordered table-striped" id="tabela">
+                <thead className="table-dark">
+                    <tr>
+                        <th>Data</th>
+                        <th>Nº</th>
+                        <th>Usuario</th>
+                        <th>Departamento</th>
+                        <th>Gerencia Local</th>
+                        <th>Financeiro</th>
+                        <th>Diretoria</th>
+                        <th>Compras</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.renderRows()}
+                </tbody>
+            </table>
+        )
     }
 
+    renderRows() {
+        return this.state.list.map(Solicitar => {
+            return (
+                <tr key={(Solicitar.id)}>
+                    <td>{`${Solicitar.Dia} / ${Solicitar.Mes} / ${Solicitar.Ano}`}</td>
+                    <td>{Solicitar.id}</td>
+                    <td>{Solicitar.Usuario}</td>
+                    <td>{Solicitar.Departamento}</td>
+                    <td className='Aprov'>{Solicitar.AprovacaoGerenteLocal}</td>
+                    <td className='Aprov'>{Solicitar.AprovacaoFinanceiro}</td>
+                    <td className='Aprov'>{Solicitar.AprovacaoDiretoria}</td>
+                    <td className='Compras'>{Solicitar.Finalizado}</td>
+                    {/* <td>{Atividade.Classificacao}</td>
+                    <td>{Atividade.Status}</td> */}
+                    <td className="d-flex justify-content-around">
+                        {/* <button className='btn btn-warning mx-1'
+                        onClick={() => this.load(atividade)}>
+                        <i className="fa fa-pencil"></i>
+                    </button> */}
+                        <ModalAtendimento corModal="warning" Ititulo="expand"
+                            nome={<i className="fa fa-address-card fa-2x" />}
+                            relatorio={this.formularioGeral()}
+                            load={this.renderButtonPencil(Solicitar)} />
+                        {/* <button className="btn btn-danger mx-2"
+                        onClick={() => this.confirmar(Atividade)}>
+                        <i className="fa fa-trash"></i>
+                    </button> */}
+
+                    </td>
+                </tr>
+            )
+        })
+    }
 
     formularioGeral() {
         return (
@@ -409,6 +397,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.FormaPagamento}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Cartão de Crédito</option>
@@ -418,7 +407,7 @@ export default class SolicitarSet extends React.Component {
                                 <option>Pix</option>
                                 <option>DOC</option>
                                 <option>TED</option>
-                                <option>Cartão Pré-Pago</option>
+                                <option>Cartão Pré Pago</option>
                             </select>
                         </div>
                     </div>
@@ -430,6 +419,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.opcaoPagamento}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>À Vista</option>
@@ -447,6 +437,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.NParcelas}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>0</option>
@@ -471,8 +462,24 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.DataPagto}
                                 required
-
+                                disabled
                             />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label className="fw-bold">Comprado: </label>
+                            <select class="form-select" aria-label="Default select example"
+                                name="Finalizado" id="Finalizado"
+                                onChange={e => this.updateField(e)}
+                                value={this.state.Solicitar.Finalizado}
+                                required
+                                disabled
+                            >
+                                <option selected disabled value="">Selecione</option>
+                                <option>Sim</option>
+                                <option>Não</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -502,6 +509,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.AprovacaoFinanceiro}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Aprovado</option>
@@ -536,7 +544,8 @@ export default class SolicitarSet extends React.Component {
                                 name="Observacao" rows="5"
                                 value={this.state.Solicitar.Observacao}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite a sua Observação..." />
+                                placeholder="Digite a sua Observação..."
+                                disabled />
                         </div>
                     </div>
                 </div>
@@ -545,16 +554,11 @@ export default class SolicitarSet extends React.Component {
                         <div className="alert-box success">Salvo com Sucesso!!!</div>
                     </div>
                     <div className="col-12 col-md-6 d-flex justify-content-end">
-                        <button className="btn btn-primary mx-2 fw-bold"
-                            onClick={e => this.verificar(e)}
-                        >
-                            Salvar
-                        </button>
 
                         <button className="btn btn-danger fw-bold"
                             onClick={e => this.clear(e)}
                         >
-                            Cancelar
+                            Limpar
                         </button>
                     </div>
                 </div>
@@ -565,13 +569,18 @@ export default class SolicitarSet extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="row mt-2 d-flex justify-content-center">
-                    <div className="col-5">
-                        <h3 className='bg-dark text-light fw-bold p-2 rounded d-flex justify-content-center'>Solicitações</h3>
+                <div className="row mt-3">
+                    <div className="col-1 mt-2">
+                        <i className="fa fa-table fa-4x"></i>
+                    </div>
+                    <div className="col-11 d-flex justify-content-center">
+                        <h3 className='bg-dark text-light fw-bold rounded p-2 d-flex justify-content-center align-items-center'> Solicitações Finalizadas </h3>
                     </div>
                 </div>
-                <div className='row row-cols-auto mt-4'>
-                    {this.cardDepartamento()}
+                <div className="row mt-4">
+                    <div className="col-12">
+                        {this.renderTable()}
+                    </div>
                 </div>
             </div>
         )

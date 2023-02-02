@@ -32,11 +32,15 @@ import CadastroCusto from '../Components/Setores/Financeiro/CadastroCusto';
 import CentroCusto from "../Components/Setores/Financeiro/CentroCusto";
 import SolicitacoesSetores from "../Components/Setores/Financeiro/SolicitacoesSetores";
 import SolicitarSet from "../Components/Setores/Financeiro/Setores/SolicitacoesSet";
+import AprovacaoSet from "../Components/Setores/Financeiro/Setores/AprovacaoSet";
+import FinalizadosSet from "../Components/Setores/Financeiro/Setores/FinalizadosSet";
 
 //Diretoria
 import Diretoria from '../Components/Setores/Diretoria/HomeLabDiretoria';
 import DashboardHomeDiretoria from "../Components/Setores/Diretoria/DashboradsLabDiretoria";
 import CentroCustoDiretoria from '../Components/Setores/Diretoria/CentroCustoLabDiretoria';
+import SolicitarDir from "../Components/Setores/Diretoria/DirLaboratorio/SolicitacoesDir";
+import AprovadoDir from "../Components/Setores/Diretoria/DirLaboratorio/AprovadoDir";
 
 //Gerencia
 import HomeGerenciaLab from '../Components/Setores/Gerencia/HomeLabGerencia';
@@ -52,6 +56,11 @@ import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Apr
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
 import EmAnaliseLab from "../Components/Setores/Laboratorio/EmAnalise";
 import FinaliadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
+
+//Compras
+import HomeCompras from "../Components/Setores/Compras/HomeCompras";
+import ComprasCentroCustoSetores from "../Components/Setores/Compras/CentroCustoSetores";
+import SolicitarSeto from "../Components/Setores/Compras/Setores/SolicitacoesSeto";
 
 //Solicitar
 import Solicitar from '../Components/Setores/Solicitar/Solicitar';
@@ -75,13 +84,11 @@ export default function Rotas() {
                         <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoDiretoria />}>
-                        <Route path="Solicitacoes" element={<EmBreveSmart />} />
-                        <Route path="Aprovados" element={<EmBreveSmart />} />
-                        <Route path="Reprovados" element={<EmBreveSmart />} />
-                        <Route path="Finalizados" element={<EmBreveSmart />} />
+                        <Route path="Solicitacoes" element={<SolicitarDir />} />
+                        <Route path="Aprovados" element={<AprovadoDir />} />
+                        <Route path="Finalizados" element={<FinaliadosLab />} />
                     </Route>
                 </Route>
-
                 <Route path="Gerencia" element={<DashboardGerencia />} />
             </Route>
             <Route element={<Home />}>
@@ -125,8 +132,18 @@ export default function Rotas() {
                     </Route>
                     <Route path="CentroCustoSetores" element={<SolicitacoesSetores />}>
                         <Route path="Solicitacoes" element={<SolicitarSet />} />
-                        <Route path="Aprovados" element={<EmBreveSmart />} />
-                        <Route path="Finalizados" element={<EmBreveSmart />} />
+                        <Route path="Aprovados" element={<AprovacaoSet />} />
+                        <Route path="Finalizados" element={<FinalizadosSet />} />
+                    </Route>
+                </Route>
+            </Route>
+            <Route element={<Home />}>
+                <Route path="/Compras" element={<HomeCompras />}>
+                    <Route path="CadastroItem" element={<EmBreveSmart />}/>
+                    <Route path="CentroCusto" element={<EmBreveSmart />}/>
+                    <Route path="CentroCustoSetores" element={<ComprasCentroCustoSetores />}>
+                        <Route path="Solicitacoes" element={<SolicitarSeto />} />
+                        <Route path="Finalizados" element={<FinalizadosSet />} />
                     </Route>
                 </Route>
             </Route>

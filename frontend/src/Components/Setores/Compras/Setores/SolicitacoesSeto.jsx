@@ -36,7 +36,6 @@ const initialState = {
 }
 
 
-const baseUrl = Url("CentroCustoRecurso");
 const baseUrl2 = Url("CentroCustoSolicitacao");
 
 export default class SolicitarSet extends React.Component {
@@ -101,7 +100,7 @@ export default class SolicitarSet extends React.Component {
         axios[method](url, Solicitar)
             .then(resp => {
                 this.setState({ Solicitar: initialState.Solicitar })
-                window.location.pathname = '/Financeiro/CentroCustoSetores/Solicitacoes'
+                window.location.pathname = '/Compras/CentroCustoSetores/Solicitacoes'
             })
     }
 
@@ -134,8 +133,8 @@ export default class SolicitarSet extends React.Component {
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((tabelaNome[i].Finalizado === "Não") && (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")
-                && (tabelaNome[i].AprovacaoFinanceiro === "Em Análise")
-                && (tabelaNome[i].AprovacaoDiretoria === "Em Análise")) {
+                && (tabelaNome[i].AprovacaoFinanceiro === "Aprovado")
+                && (tabelaNome[i].AprovacaoDiretoria === "Aprovado")) {
                 dadoSolicitacao.push({
                     id: tabelaNome[i].id,
                     Dia: tabelaNome[i].Dia,
@@ -409,6 +408,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.FormaPagamento}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Cartão de Crédito</option>
@@ -430,6 +430,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.opcaoPagamento}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>À Vista</option>
@@ -447,6 +448,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.NParcelas}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>0</option>
@@ -471,8 +473,23 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.DataPagto}
                                 required
-
+                                disabled
                             />
+                        </div>
+                    </div>
+                    <div className="col-6 col-md-3">
+                        <div className="form-group">
+                            <label className="fw-bold">Comprado: </label>
+                            <select class="form-select" aria-label="Default select example"
+                                name="Finalizado" id="Finalizado"
+                                onChange={e => this.updateField(e)}
+                                value={this.state.Solicitar.Finalizado}
+                                required
+                            >
+                                <option selected disabled value="">Selecione</option>
+                                <option>Sim</option>
+                                <option>Não</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -502,6 +519,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.AprovacaoFinanceiro}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Aprovado</option>
@@ -536,7 +554,8 @@ export default class SolicitarSet extends React.Component {
                                 name="Observacao" rows="5"
                                 value={this.state.Solicitar.Observacao}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite a sua Observação..." />
+                                placeholder="Digite a sua Observação..."
+                                disabled />
                         </div>
                     </div>
                 </div>
@@ -561,6 +580,7 @@ export default class SolicitarSet extends React.Component {
             </form>
         )
     }
+
 
     render() {
         return (

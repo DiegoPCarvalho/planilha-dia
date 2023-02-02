@@ -382,13 +382,13 @@ export default class Solicitar extends React.Component {
                         <div className="alert-box success">Salvo com Sucesso!!!</div>
                     </div>
                     <div className="col-12 col-md-6 d-flex justify-content-end">
-                        <button className="btn btn-primary mx-2"
+                        <button className="btn btn-primary mx-2 fw-bold"
                             onClick={e => this.verificar(e)}
                         >
                             Salvar
                         </button>
 
-                        <button className="btn btn-danger"
+                        <button className="btn btn-danger fw-bold"
                             onClick={e => this.clear(e)}
                         >
                             Cancelar

@@ -67,20 +67,20 @@ export default class FinalizadosLab extends React.Component {
         $(document).ready(function () {
             $(".Aprov").each(function () {
                 if (($(this).text() === "Em Análise")) {
-                    $(this).addClass('table-secondary fw-bold');
+                    $(this).addClass('bg-secondary text-light fw-bold');
 
                 } else if ($(this).text() === "Reprovado") {
-                    $(this).addClass('table-danger fw-bold');
+                    $(this).addClass('bg-danger text-light fw-bold');
 
                 } else if ($(this).text() === "Aprovado") {
-                    $(this).addClass('table-success fw-bold');
+                    $(this).addClass('bg-success text-light fw-bold');
                 }
             });
             $('.Compras').each(function () {
                 if ($(this).text() === 'Não') {
-                    $(this).addClass('table-danger fw-bold')
+                    $(this).addClass('bg-danger text-light fw-bold')
                 } else if ($(this).text() === 'Sim') {
-                    $(this).addClass('table-success fw-bold')
+                    $(this).addClass('bg-success text-light fw-bold')
                 }
             })
         });
@@ -358,7 +358,7 @@ export default class FinalizadosLab extends React.Component {
                     </div>
                     <div className="col-12 col-md-6 d-flex justify-content-end">
 
-                        <button className="btn btn-danger"
+                        <button className="btn btn-danger fw-bold"
                             onClick={e => this.clear(e)}
                         >
                             Limpar

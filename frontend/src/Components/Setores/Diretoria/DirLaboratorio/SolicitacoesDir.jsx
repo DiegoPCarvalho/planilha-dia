@@ -36,10 +36,9 @@ const initialState = {
 }
 
 
-const baseUrl = Url("CentroCustoRecurso");
 const baseUrl2 = Url("CentroCustoSolicitacao");
 
-export default class SolicitarSet extends React.Component {
+export default class SolicitarDir extends React.Component{
 
     state = { ...initialState }
 
@@ -78,10 +77,6 @@ export default class SolicitarSet extends React.Component {
 
     }
 
-    clear() {
-        this.setState({ Solicitar: initialState.Solicitar })
-    }
-
     mensagemSalvo() {
         $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
             $("div.success").fadeIn(300).delay(1500).fadeOut(400);
@@ -101,30 +96,29 @@ export default class SolicitarSet extends React.Component {
         axios[method](url, Solicitar)
             .then(resp => {
                 this.setState({ Solicitar: initialState.Solicitar })
-                window.location.pathname = '/Financeiro/CentroCustoSetores/Solicitacoes'
+                window.location.pathname = '/DiretoriaLab/CentroCusto/Solicitacoes'
             })
     }
 
     verificar() {
-        let FormaPagamento = document.getElementById("FormaPagamento").value;
-        let opcaoPagamento = document.getElementById("opcaoPagamento").value;
-        let NParcelas = document.getElementById("NParcelas").value;
-        let DataPagto = document.getElementById("DataPagto").value;
-        let AprovacaoFinanceiro = document.getElementById("AprovacaoFinanceiro").value;
+        let TipoCompra = document.getElementById("TipoCompra").value;
+        let FornecedorID = document.getElementById("FornecedorID").value;
+        let RazaoSocial = document.getElementById("RazaoSocial").value;
+        let Categoria = document.getElementById("Categoria").value;
+        let Gerencia = document.getElementById("Gerencia").value;
+        let ValorUni = document.getElementById("ValorUni").value;
+        let Quantidade = document.getElementById("Quantidade").value;
+        let ValorTotal = document.getElementById("ValorTotal").value;
+        let DataUtilizacao = document.getElementById("DataUtilizacao").value;
 
-        if (AprovacaoFinanceiro === 'Reprovado') {
-            this.save()
-            this.mensagemSalvo()
+
+        if ((TipoCompra === '') || (FornecedorID === '') || (RazaoSocial === '') || (Categoria === '')
+            || (Gerencia === '') || (ValorTotal = '') || (DataUtilizacao === '') || (ValorUni === '') || (Quantidade === '')) {
+
         } else {
-            if ((FormaPagamento === '') || (opcaoPagamento === '') || (NParcelas === '') || (DataPagto === '')) {
-
-            } else {
                 this.save()
                 this.mensagemSalvo()
-            }
         }
-
-
     }
 
     async consultaBancoDepartamento() {
@@ -133,44 +127,49 @@ export default class SolicitarSet extends React.Component {
 
 
         for (let i = 0; i < tabelaNome.length; i++) {
-            if ((tabelaNome[i].Finalizado === "Não") && (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")
-                && (tabelaNome[i].AprovacaoFinanceiro === "Em Análise")
-                && (tabelaNome[i].AprovacaoDiretoria === "Em Análise")) {
-                dadoSolicitacao.push({
-                    id: tabelaNome[i].id,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
-                    TipoCompra: tabelaNome[i].TipoCompra,
-                    FornecedorID: tabelaNome[i].FornecedorID,
-                    RazaoSocial: tabelaNome[i].RazaoSocial,
-                    Categoria: tabelaNome[i].Categoria,
-                    Departamento: tabelaNome[i].Departamento,
-                    Gerencia: tabelaNome[i].Gerencia,
-                    ValorUni: tabelaNome[i].ValorUni,
-                    Quantidade: tabelaNome[i].Quantidade,
-                    ValorTotal: tabelaNome[i].ValorTotal,
-                    DataUtilizacao: tabelaNome[i].DataUtilizacao,
-                    Observacao: tabelaNome[i].Observacao,
-                    Usuario: tabelaNome[i].Usuario,
-                    FormaPagamento: tabelaNome[i].FormaPagamento,
-                    opcaoPagamento: tabelaNome[i].opcaoPagamento,
-                    NParcelas: tabelaNome[i].NParcelas,
-                    DataPagto: tabelaNome[i].DataPagto,
-                    AprovacaoGerenteLocal: tabelaNome[i].AprovacaoGerenteLocal,
-                    AprovacaoFinanceiro: tabelaNome[i].AprovacaoFinanceiro,
-                    AprovacaoDiretoria: tabelaNome[i].AprovacaoDiretoria,
-                    Finalizado: tabelaNome[i].Finalizado
+            if ("Laborátorio" === tabelaNome[i].Departamento) {
+                if ((tabelaNome[i].Finalizado === "Não") && (tabelaNome[i].AprovacaoGerenteLocal === "Aprovado")
+                    && (tabelaNome[i].AprovacaoFinanceiro === "Aprovado")
+                    && (tabelaNome[i].AprovacaoDiretoria === "Em Análise")) {
+                    dadoSolicitacao.push({
+                        id: tabelaNome[i].id,
+                        Dia: tabelaNome[i].Dia,
+                        Mes: tabelaNome[i].Mes,
+                        Ano: tabelaNome[i].Ano,
+                        TipoCompra: tabelaNome[i].TipoCompra,
+                        FornecedorID: tabelaNome[i].FornecedorID,
+                        RazaoSocial: tabelaNome[i].RazaoSocial,
+                        Categoria: tabelaNome[i].Categoria,
+                        Departamento: tabelaNome[i].Departamento,
+                        Gerencia: tabelaNome[i].Gerencia,
+                        ValorUni: tabelaNome[i].ValorUni,
+                        Quantidade: tabelaNome[i].Quantidade,
+                        ValorTotal: tabelaNome[i].ValorTotal,
+                        DataUtilizacao: tabelaNome[i].DataUtilizacao,
+                        Observacao: tabelaNome[i].Observacao,
+                        Usuario: tabelaNome[i].Usuario,
+                        FormaPagamento: tabelaNome[i].FormaPagamento,
+                        opcaoPagamento: tabelaNome[i].opcaoPagamento,
+                        NParcelas: tabelaNome[i].NParcelas,
+                        DataPagto: tabelaNome[i].DataPagto,
+                        AprovacaoGerenteLocal: tabelaNome[i].AprovacaoGerenteLocal,
+                        AprovacaoFinanceiro: tabelaNome[i].AprovacaoFinanceiro,
+                        AprovacaoDiretoria: tabelaNome[i].AprovacaoDiretoria,
+                        Finalizado: tabelaNome[i].Finalizado
 
-                })
+                    })
+                }
             }
+
         }
-
-
 
         return this.setState({
             list: dadoSolicitacao
         })
+    }
+
+    clear() {
+        this.setState({ Solicitar: initialState.Solicitar })
     }
 
     cardDepartamento() {
@@ -214,7 +213,6 @@ export default class SolicitarSet extends React.Component {
         if (add) list.unshift(Solicitar)
         return list
     }
-
 
     formularioGeral() {
         return (
@@ -409,6 +407,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.FormaPagamento}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Cartão de Crédito</option>
@@ -430,6 +429,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.opcaoPagamento}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>À Vista</option>
@@ -447,6 +447,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.NParcelas}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>0</option>
@@ -471,7 +472,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.DataPagto}
                                 required
-
+                                disabled
                             />
                         </div>
                     </div>
@@ -502,6 +503,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.AprovacaoFinanceiro}
                                 required
+                                disabled
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Aprovado</option>
@@ -518,7 +520,7 @@ export default class SolicitarSet extends React.Component {
                                 onChange={e => this.updateField(e)}
                                 value={this.state.Solicitar.AprovacaoDiretoria}
                                 required
-                                disabled
+                                
                             >
                                 <option selected disabled value="">Selecione</option>
                                 <option>Aprovado</option>
@@ -562,8 +564,8 @@ export default class SolicitarSet extends React.Component {
         )
     }
 
-    render() {
-        return (
+    render(){
+        return(
             <div className="container-fluid">
                 <div className="row mt-2 d-flex justify-content-center">
                     <div className="col-5">
