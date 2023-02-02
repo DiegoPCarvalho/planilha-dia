@@ -2,6 +2,18 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 export default class CentroCusto extends React.Component {
+
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmFinanceiro === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+    
     render() {
         return (
             <div className="container-fluid">

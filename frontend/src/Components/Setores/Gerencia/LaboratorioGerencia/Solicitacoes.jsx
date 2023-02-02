@@ -46,10 +46,19 @@ export default class SolicitacoesLab extends React.Component {
 
     state = { ...initialState }
 
+    validacao(){
+        if (localStorage.AdmGerencia === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+
     componentWillMount() {
         this.consultaBancoDepartamento()
         this.buscarValorTotalReal()
         this.Tempo()
+        this.validacao()
     }
 
     Tempo() {

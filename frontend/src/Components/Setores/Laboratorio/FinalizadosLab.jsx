@@ -41,9 +41,17 @@ export default class FinalizadosLab extends React.Component {
 
     state = { ...initialState }
 
+    validacao(){
+        if (localStorage.AdmLaboratorio === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
     componentWillMount() {
         this.consultaBancoDepartamento()
         this.Tempo()
+        this.validacao()
         $(document).ready(function () {
             setTimeout(() => {
                 $('#tabela').DataTable({

@@ -77,7 +77,14 @@ export default class CadCusto extends React.Component {
         });
 
         this.consultarBanco()
+        this.validacao()
+    }
 
+    validacao(){
+        if (localStorage.AdmGerencia === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
     }
 
     consultarBanco() {

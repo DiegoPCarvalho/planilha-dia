@@ -36,7 +36,7 @@ export default class AtividadeCrud extends React.Component {
 
     validacao(){
         if (localStorage.AdmLaboratorio === "0") {
-             window.location.pathname = "/Dashboard";
+             window.location.pathname = "/Home";
              alert("Não tem permissão para acessar essa Área")
         }
     }

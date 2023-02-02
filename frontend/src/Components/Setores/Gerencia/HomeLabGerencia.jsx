@@ -11,6 +11,17 @@ const HeaderProps = {
 
 
 export default class HomeGerencia extends React.Component {
+    validacao(){
+        if (localStorage.AdmGerencia === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+    componentWillMount() {
+        this.validacao()
+    }
+    
     render() {
         return (
             <Main {...HeaderProps}>

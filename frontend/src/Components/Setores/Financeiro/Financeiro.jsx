@@ -10,6 +10,17 @@ const headerProps = {
 }
 
 export default class Financeiro extends React.Component {
+
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmFinanceiro === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
    
     render(){
         return(

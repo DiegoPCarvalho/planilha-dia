@@ -40,6 +40,17 @@ const baseUrl2 = Url("CentroCustoSolicitacao");
 
 export default class SolicitarDir extends React.Component{
 
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmDiretoria === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
     state = { ...initialState }
 
     componentWillMount() {

@@ -5,6 +5,18 @@ import { Link, Outlet } from 'react-router-dom';
 
 
 export default class DashboardDiretoria extends React.Component {
+
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmDiretoria === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+    
     render() {
         return (
                 <div className="container-fluid">

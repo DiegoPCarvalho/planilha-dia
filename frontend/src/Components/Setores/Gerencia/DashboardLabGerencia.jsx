@@ -5,6 +5,16 @@ import { Link, Outlet } from 'react-router-dom';
 
 
 export default class DashboardGerencia extends React.Component {
+    validacao(){
+        if (localStorage.AdmGerencia === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+    componentWillMount() {
+        this.validacao()
+    }
     render() {
         return (
                 <div className="container-fluid">

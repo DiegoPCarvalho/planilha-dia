@@ -10,6 +10,18 @@ const headerProps = {
 }
 
 export default class HomeCompras extends React.Component {
+
+    componentWillMount(){
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmCompras === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
     render(){
         return(
             <Main { ...headerProps }>

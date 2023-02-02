@@ -10,6 +10,17 @@ const HeaderProps = {
 }
 
 export default class CentroCusto extends React.Component {
+    validacao(){
+        if (localStorage.AdmLaboratorio === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+    componentWillMount() {
+        this.validacao()
+    }
+
     render() {
         return (
             <Main {...HeaderProps}>

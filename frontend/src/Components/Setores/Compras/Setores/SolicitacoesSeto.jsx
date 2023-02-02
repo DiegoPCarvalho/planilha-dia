@@ -45,6 +45,14 @@ export default class SolicitarSet extends React.Component {
     componentWillMount() {
         this.consultaBancoDepartamento()
         this.Tempo()
+        this.validacao()
+    }
+
+    validacao(){
+        if (localStorage.AdmCompras === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
     }
 
     Tempo() {

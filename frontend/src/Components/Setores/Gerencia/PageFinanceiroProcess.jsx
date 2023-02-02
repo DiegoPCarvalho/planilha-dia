@@ -9,6 +9,17 @@ const headerProps = {
 
 export default class Financeiro extends React.Component {
 
+    validacao(){
+        if (localStorage.AdmGerencia === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+    componentWillMount() {
+        this.validacao()
+    }
+    
     render() {
         return (
             <div className='content-fluid'>

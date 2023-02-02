@@ -63,7 +63,7 @@ export default class DashboardDiretoria extends React.Component {
     }
 
     validacao() {
-        if (localStorage.AdmGerencia === "0") {
+        if (localStorage.AdmDiretoria === "0") {
             window.location.pathname = "/Dashboard";
             alert("Não Tem Permissão Para Acessar essa Área")
         }

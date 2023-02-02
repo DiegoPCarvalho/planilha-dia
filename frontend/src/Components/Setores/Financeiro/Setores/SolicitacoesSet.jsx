@@ -41,11 +41,21 @@ const baseUrl2 = Url("CentroCustoSolicitacao");
 
 export default class SolicitarSet extends React.Component {
 
+
     state = { ...initialState }
+
+
+    validacao(){
+        if (localStorage.AdmFinanceiro === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
 
     componentWillMount() {
         this.consultaBancoDepartamento()
         this.Tempo()
+        this.validacao()
     }
 
     Tempo() {

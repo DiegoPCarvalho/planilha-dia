@@ -65,10 +65,19 @@ export default class EmAnalise extends React.Component {
 
     state = { ...initialState }
 
+    validacao(){
+        if (localStorage.AdmLaboratorio === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+
     componentWillMount() {
         this.buscarValorTotalReal()
         this.consultaBancoDepartamento()
         this.Tempo()
+        this.validacao()
     }
 
     Tempo() {
