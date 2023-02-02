@@ -190,7 +190,7 @@ export default class Tabela extends React.Component {
                     <div className="row">
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>OS: </label>
+                                <label className='fw-bold'>OS: </label>
                                 <input type="text" className="form-control"
                                     name="OS" id="OS"
                                     value={this.state.Atividade.OS}
@@ -201,7 +201,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Cliente: </label>
+                                <label className='fw-bold'>Cliente: </label>
                                 <input type="text" className="form-control"
                                     name="Cliente" id="Cliente"
                                     value={this.state.Atividade.Cliente}
@@ -211,7 +211,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Equipamento</label>
+                                <label className='fw-bold'>Equipamento: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Equipamento" id="Equipamento"
                                     onChange={e => this.updateField(e)}
@@ -230,12 +230,13 @@ export default class Tabela extends React.Component {
                                     <option>Berço de Comunicação</option>
                                     <option>Fonte de Alimentação</option>
                                     <option>Cabo Confeccionado</option>
+                                    <option>Bateria</option>
                                 </select>
                             </div>
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Modelo</label>
+                                <label className='fw-bold'>Modelo: </label>
                                 <input type="text" className="form-control"
                                     name="Modelo" id="Modelo"
                                     value={this.state.Atividade.Modelo}
@@ -245,7 +246,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Número de Serie</label>
+                                <label className='fw-bold'>Número de Serie</label>
                                 <input type="text" className="form-control"
                                     name="NS"
                                     value={this.state.Atividade.NS}
@@ -255,7 +256,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Serviço</label>
+                                <label className='fw-bold'>Serviço: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Servico" id="Servico"
                                     onChange={e => this.updateField(e)}
@@ -270,13 +271,16 @@ export default class Tabela extends React.Component {
                                     <option>Confecção de Cabos</option>
                                     <option>Montagem/Manutenção de Venda</option>
                                     <option>Recuperação de Placa</option>
+                                    <option>Revisão de Equipamento Reprovado</option>
+                                    <option>Revisão de Compra</option>
+                                    <option>Revisão/Manutenção de Locação</option>
                                     <option>Limpeza</option>
                                 </select>
                             </div>
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Classificação</label>
+                                <label className='fw-bold'>Classificação: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Classificacao"
                                     onChange={e => this.updateField(e)}
@@ -290,7 +294,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12">
                             <div className="form-group">
-                                <label>Observação</label>
+                                <label className='fw-bold'>Observação: </label>
                                 <textarea className="form-control"
                                     name="Observacao" rows="5"
                                     value={this.state.Atividade.Observacao}
@@ -300,7 +304,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
-                                <label>Status</label>
+                                <label className='fw-bold'>Status: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Status"
                                     onChange={e => this.updateField(e)}
