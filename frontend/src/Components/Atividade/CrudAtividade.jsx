@@ -96,7 +96,7 @@ export default class AtividadeCrud extends React.Component {
                             <ModalAtendimento corModal="success" Ititulo="plus fa-2x"
                                 classe="d-flex justify-content-center align-items-center" relatorio={this.formulario()}
                                 nome={this.renderI()} /> */}
-                            <Link to="/Atividade"><img src={this.mostarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
+                            <Link to="/PerfilUsuario"><img src={this.mostarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
                         </div>
                     </div>
                     {/* <div className="row mt-4">
