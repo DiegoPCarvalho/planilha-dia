@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const port = 5003;
+const port = 5006;
  
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static("private"));
