@@ -11,6 +11,7 @@ import $ from 'jquery';
 const initialState = {
     Atividade: {
         Data: '',
+        Dia: dia(),
         Mes: mes(),
         Ano: ano(),
         OS: '',
@@ -37,6 +38,13 @@ function ano(){
     let data = new Date();
     let ano = data.getFullYear();
     return ano
+}
+
+function dia() {
+    let data = new Date();
+    let dia = data.getDate();
+
+    return dia
 }
 
 const banco = "Geral";
@@ -271,7 +279,7 @@ export default class Tabela extends React.Component {
                                     <option>Confecção de Cabos</option>
                                     <option>Montagem/Manutenção de Venda</option>
                                     <option>Recuperação de Placa</option>
-                                    <option>Revisão de Equipamento Reprovado</option>
+                                    <option>Revisão de Reprovado</option>
                                     <option>Revisão de Compra</option>
                                     <option>Revisão/Manutenção de Locação</option>
                                     <option>Limpeza</option>

@@ -17,8 +17,12 @@ const initialState = {
     listarRV: [0],
     listarCC: [0],
     listarMMV: [0],
-    listartRP:[0],
+    listartRP: [0],
     listarLP: [0],
+    listarRR: [0],
+    listarRC: [0],
+    listarRL: [0],
+
 
     //Equipamento Manutenção
     listarMCCOl: [0],
@@ -32,6 +36,7 @@ const initialState = {
     listarMCBerco: [0],
     listarMCFonte: [0],
     listarMCCabo: [0],
+    listarMCBateria: [0],
 
     //Equipamento Laudo
     listarLACOl: [0],
@@ -45,6 +50,7 @@ const initialState = {
     listarLABerco: [0],
     listarLAFonte: [0],
     listarLACabo: [0],
+    listarLABateria: [0],
 
     //Equipamento Suporte
     listarSPCOl: [0],
@@ -58,6 +64,7 @@ const initialState = {
     listarSPBerco: [0],
     listarSPFonte: [0],
     listarSPCabo: [0],
+    listarSPBateria: [0],
 
     //Equipamento Revisão M
     listarRMCOl: [0],
@@ -71,6 +78,7 @@ const initialState = {
     listarRMBerco: [0],
     listarRMFonte: [0],
     listarRMCabo: [0],
+    listarRMBateria: [0],
 
     //Equipamento Chamado On-site
     listarCOCOl: [0],
@@ -84,6 +92,7 @@ const initialState = {
     listarCOBerco: [0],
     listarCOFonte: [0],
     listarCOCabo: [0],
+    listarCOBateria: [0],
 
     //Equipamento Revisão V
     listarRVCOl: [0],
@@ -97,6 +106,7 @@ const initialState = {
     listarRVBerco: [0],
     listarRVFonte: [0],
     listarRVCabo: [0],
+    listarRVBateria: [0],
 
     //Equipamento Cabo
     listarCCCabo: [0],
@@ -113,6 +123,7 @@ const initialState = {
     listarMMVBerco: [0],
     listarMMVFonte: [0],
     listarMMVCabo: [0],
+    listarMMVBateria: [0],
 
     //Equipamento Recuperação Placa
     listarRPCOl: [0],
@@ -126,6 +137,7 @@ const initialState = {
     listarRPBerco: [0],
     listarRPFonte: [0],
     listarRPCabo: [0],
+    listarRPBateria: [0],
 
     //Equipamento Limpeza
     listarLPCOl: [0],
@@ -139,6 +151,49 @@ const initialState = {
     listarLPBerco: [0],
     listarLPFonte: [0],
     listarLPCabo: [0],
+    listarLPBateria: [0],
+
+    //Equipamento Reprovado
+    listarRRCOl: [0],
+    listarRRImp: [0],
+    listarRRLei: [0],
+    listarRRBusca: [0],
+    listarRRCar3: [0],
+    listarRRCar4: [0],
+    listarRRCar5: [0],
+    listarRRCar6: [0],
+    listarRRBerco: [0],
+    listarRRFonte: [0],
+    listarRRCabo: [0],
+    listarRRBateria: [0],
+
+    //Equipamento Compra
+    listarRCCOl: [0],
+    listarRCImp: [0],
+    listarRCLei: [0],
+    listarRCBusca: [0],
+    listarRCCar3: [0],
+    listarRCCar4: [0],
+    listarRCCar5: [0],
+    listarRCCar6: [0],
+    listarRCBerco: [0],
+    listarRCFonte: [0],
+    listarRCCabo: [0],
+    listarRCBateria: [0],
+
+    //Equipamento Locação
+    listarRLCOl: [0],
+    listarRLImp: [0],
+    listarRLLei: [0],
+    listarRLBusca: [0],
+    listarRLCar3: [0],
+    listarRLCar4: [0],
+    listarRLCar5: [0],
+    listarRLCar6: [0],
+    listarRLBerco: [0],
+    listarRLFonte: [0],
+    listarRLCabo: [0],
+    listarRLBateria: [0],
 
     //Total Equipamentos
     listartTotalCol: [0],
@@ -152,6 +207,7 @@ const initialState = {
     listarTotalBerco: [0],
     listarTotalFonte: [0],
     listarTotalCabos: [0],
+    listarTotalBateria: [0],
 
     //total Equipamentos
     listarTotalEquip: [0]
@@ -185,6 +241,9 @@ export default class Relatorio extends React.Component {
         let dadoMMV = [];
         let dadoRP = [];
         let dadoLP = [];
+        let dadoRR = [];
+        let dadoRC = [];
+        let dadoRL = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)) {
@@ -227,12 +286,24 @@ export default class Relatorio extends React.Component {
                     dadoMMV.push({
                         OS: tabelaNome[i].OS
                     })
-                }else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)) {
                     dadoRP.push({
                         OS: tabelaNome[i].OS
                     })
-                }else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)) {
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)) {
                     dadoLP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                    dadoRR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)) {
+                    dadoRC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                    dadoRL.push({
                         OS: tabelaNome[i].OS
                     })
                 }
@@ -248,9 +319,12 @@ export default class Relatorio extends React.Component {
         const totalMMV = Object.keys(dadoMMV).length;
         const totalRP = Object.keys(dadoRP).length;
         const totalLP = Object.keys(dadoLP).length;
+        const totalRR = Object.keys(dadoRR).length;
+        const totalRC = Object.keys(dadoRC).length;
+        const totalRL = Object.keys(dadoRL).length;
 
-        const totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV + 
-            totalCC + totalMMV + totalRP + totalLP
+        const totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
+            totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
 
         return this.setState({
             listarMC: totalMC,
@@ -263,6 +337,9 @@ export default class Relatorio extends React.Component {
             listarMMV: totalMMV,
             listarRP: totalRP,
             listarLP: totalLP,
+            listarRR: totalRR,
+            listarRC: totalRC,
+            listarRL: totalRL,
 
             listarTotalEquip: totalEquip
         })
@@ -285,6 +362,7 @@ export default class Relatorio extends React.Component {
             let dadoMCBerco = [];
             let dadoMCFonte = [];
             let dadoMCCabo = [];
+            let dadoMCBateria = [];
 
             //Variavel Laudo
             let dadoLACol = [];
@@ -298,6 +376,7 @@ export default class Relatorio extends React.Component {
             let dadoLABerco = [];
             let dadoLAFonte = [];
             let dadoLACabo = [];
+            let dadoLABateria = [];
 
             //Variavel Suporte
             let dadoSPCol = [];
@@ -311,6 +390,7 @@ export default class Relatorio extends React.Component {
             let dadoSPBerco = [];
             let dadoSPFonte = [];
             let dadoSPCabo = [];
+            let dadoSPBateria = [];
 
             //Variavel Revisão M
             let dadoRMCol = [];
@@ -324,6 +404,7 @@ export default class Relatorio extends React.Component {
             let dadoRMBerco = [];
             let dadoRMFonte = [];
             let dadoRMCabo = [];
+            let dadoRMBateria = [];
 
             //Variavel On-Site
             let dadoCOCol = [];
@@ -337,6 +418,7 @@ export default class Relatorio extends React.Component {
             let dadoCOBerco = [];
             let dadoCOFonte = [];
             let dadoCOCabo = [];
+            let dadoCOBateria = [];
 
             //Variavel Revisão V
             let dadoRVCol = [];
@@ -350,6 +432,7 @@ export default class Relatorio extends React.Component {
             let dadoRVBerco = [];
             let dadoRVFonte = [];
             let dadoRVCabo = [];
+            let dadoRVBateria = [];
 
             //variavel dos Cabos
             let dadoCCCabo = [];
@@ -366,6 +449,7 @@ export default class Relatorio extends React.Component {
             let dadoMMVBerco = [];
             let dadoMMVFonte = [];
             let dadoMMVCabo = [];
+            let dadoMMVBateria = [];
 
             //Variavel Recuperação Placa
             let dadoRPCol = [];
@@ -379,19 +463,63 @@ export default class Relatorio extends React.Component {
             let dadoRPBerco = [];
             let dadoRPFonte = [];
             let dadoRPCabo = [];
+            let dadoRPBateria = [];
 
-             //Variavel Limpeza
-             let dadoLPCol = [];
-             let dadoLPLei = [];
-             let dadoLPImp = [];
-             let dadoLPBusca = [];
-             let dadoLPCar3 = [];
-             let dadoLPCar4 = [];
-             let dadoLPCar5 = [];
-             let dadoLPCar6 = [];
-             let dadoLPBerco = [];
-             let dadoLPFonte = [];
-             let dadoLPCabo = [];
+            //Variavel Limpeza
+            let dadoLPCol = [];
+            let dadoLPLei = [];
+            let dadoLPImp = [];
+            let dadoLPBusca = [];
+            let dadoLPCar3 = [];
+            let dadoLPCar4 = [];
+            let dadoLPCar5 = [];
+            let dadoLPCar6 = [];
+            let dadoLPBerco = [];
+            let dadoLPFonte = [];
+            let dadoLPCabo = [];
+            let dadoLPBateria = [];
+
+            //Variavel Reprovado
+            let dadoRRCol = [];
+            let dadoRRLei = [];
+            let dadoRRImp = [];
+            let dadoRRBusca = [];
+            let dadoRRCar3 = [];
+            let dadoRRCar4 = [];
+            let dadoRRCar5 = [];
+            let dadoRRCar6 = [];
+            let dadoRRBerco = [];
+            let dadoRRFonte = [];
+            let dadoRRCabo = [];
+            let dadoRRBateria = [];
+
+            //Variavel Compra
+            let dadoRCCol = [];
+            let dadoRCLei = [];
+            let dadoRCImp = [];
+            let dadoRCBusca = [];
+            let dadoRCCar3 = [];
+            let dadoRCCar4 = [];
+            let dadoRCCar5 = [];
+            let dadoRCCar6 = [];
+            let dadoRCBerco = [];
+            let dadoRCFonte = [];
+            let dadoRCCabo = [];
+            let dadoRCBateria = [];
+
+            //Variavel Locação
+            let dadoRLCol = [];
+            let dadoRLLei = [];
+            let dadoRLImp = [];
+            let dadoRLBusca = [];
+            let dadoRLCar3 = [];
+            let dadoRLCar4 = [];
+            let dadoRLCar5 = [];
+            let dadoRLCar6 = [];
+            let dadoRLBerco = [];
+            let dadoRLFonte = [];
+            let dadoRLCabo = [];
+            let dadoRLBateria = [];
 
             //#endregion
 
@@ -452,6 +580,11 @@ export default class Relatorio extends React.Component {
                     dadoMCCabo.push({
                         OS: tabelaNome[i].OS
                     })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)
+                    && ("Bateria" === tabelaNome[i].Equipamento)) {
+                    dadoMCBateria.push({
+                        OS: tabelaNome[i].OS
+                    })
                 } else
                     //#endregion
 
@@ -509,6 +642,11 @@ export default class Relatorio extends React.Component {
                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
                         && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoLACabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
+                        && ("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoLABateria.push({
                             OS: tabelaNome[i].OS
                         })
                     } else
@@ -571,6 +709,11 @@ export default class Relatorio extends React.Component {
                             dadoSPCabo.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)
+                            && ("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoSPBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else
                             //#endregion
 
@@ -628,6 +771,11 @@ export default class Relatorio extends React.Component {
                             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
                                 && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                                 dadoRMCabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoRMBateria.push({
                                     OS: tabelaNome[i].OS
                                 })
                             } else
@@ -689,6 +837,11 @@ export default class Relatorio extends React.Component {
                                     dadoCOCabo.push({
                                         OS: tabelaNome[i].OS
                                     })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                    dadoCOBateria.push({
+                                        OS: tabelaNome[i].OS
+                                    })
                                 } else
                                     //#endregion
 
@@ -746,6 +899,11 @@ export default class Relatorio extends React.Component {
                                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
                                         && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                                         dadoRVCabo.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                        dadoRVBateria.push({
                                             OS: tabelaNome[i].OS
                                         })
                                     }
@@ -817,130 +975,317 @@ export default class Relatorio extends React.Component {
                                             dadoMMVCabo.push({
                                                 OS: tabelaNome[i].OS
                                             })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVBateria.push({
+                                                OS: tabelaNome[i].OS
+                                            })
                                         } else
 
-                                        //#endregion
+                                            //#endregion
 
-                                        //#region Recuperação Placa
+                                            //#region Recuperação Placa
 
-                                        if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoRPCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoRPLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoRPBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoRPImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoRPCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoRPCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoRPCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoRPCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoRPBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoRPFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
-                                            && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                            dadoRPCabo.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        }else
+                                            if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoRPCol.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoRPLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                                dadoRPBusca.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                                dadoRPImp.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoRPCar4.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoRPCar3.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoRPCar5.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoRPCar6.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                                dadoRPBerco.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                                dadoRPFonte.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                dadoRPCabo.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                                dadoRPBateria.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else
 
-                                        //#endregion
+                                                //#endregion
 
-                                        //#region Limpeza
-                                        if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoLPCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoLPLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoLPBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoLPImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoLPCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoLPCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoLPCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoLPCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoLPBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoLPFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
-                                            && ("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                            dadoLPCabo.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                                        }
+                                                //#region Limpeza
+                                                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPCol.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPLei.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPBusca.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPImp.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPCar4.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPCar3.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPCar5.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPCar6.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPBerco.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPFonte.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPBateria.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else
 
-                                        //#endregion
+                                                    //#endregion
+
+                                                    //#region Revisão de Reprovado
+                                                    if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRCol.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRLei.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRBusca.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRImp.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRCar4.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRCar3.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRCar5.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRCar6.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRBerco.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRFonte.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Bateria" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRBateria.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    }
+                //#endregion
+
+                //#region Revisão Compra
+                if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                    dadoRCCol.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                    dadoRCLei.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                    dadoRCBusca.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                    dadoRCImp.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                    dadoRCCar4.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                    dadoRCCar3.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                    dadoRCCar5.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                    dadoRCCar6.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                    dadoRCBerco.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                    dadoRCFonte.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Bateria" === tabelaNome[i].Equipamento)) {
+                    dadoRCBateria.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else
+                    //#endregion
+
+                    //#region Locação
+                    if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoRLCol.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                        dadoRLLei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Busca Preço" === tabelaNome[i].Equipamento)) {
+                        dadoRLBusca.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                        dadoRLImp.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoRLCar4.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoRLCar3.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoRLCar5.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                        dadoRLCar6.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                        dadoRLBerco.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                        dadoRLFonte.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoRLBateria.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                //#endregion
             }
 
             //#region Totais Object
@@ -956,6 +1301,7 @@ export default class Relatorio extends React.Component {
             let totalMCBerco = Object.keys(dadoMCBerco).length;
             let totalMCFonte = Object.keys(dadoMCFonte).length;
             let totalMCCabo = Object.keys(dadoMCCabo).length;
+            let totalMCBateria = Object.keys(dadoMCBateria).length;
 
             //Total Laudo
             let totalLACol = Object.keys(dadoLACol).length;
@@ -969,6 +1315,7 @@ export default class Relatorio extends React.Component {
             let totalLABerco = Object.keys(dadoLABerco).length;
             let totalLAFonte = Object.keys(dadoLAFonte).length;
             let totalLACabo = Object.keys(dadoLACabo).length;
+            let totalLABateria = Object.keys(dadoLABateria).length;
 
             //Total Suporte
             let totalSPCol = Object.keys(dadoSPCol).length;
@@ -982,6 +1329,7 @@ export default class Relatorio extends React.Component {
             let totalSPBerco = Object.keys(dadoSPBerco).length;
             let totalSPFonte = Object.keys(dadoSPFonte).length;
             let totalSPCabo = Object.keys(dadoSPCabo).length;
+            let totalSPBateria = Object.keys(dadoSPBateria).length;
 
             //Total Revisão M
             let totalRMCol = Object.keys(dadoRMCol).length;
@@ -995,6 +1343,7 @@ export default class Relatorio extends React.Component {
             let totalRMBerco = Object.keys(dadoRMBerco).length;
             let totalRMFonte = Object.keys(dadoRMFonte).length;
             let totalRMCabo = Object.keys(dadoRMCabo).length;
+            let totalRMBateria = Object.keys(dadoRMBateria).length;
 
             //Total On-Site
             let totalCOCol = Object.keys(dadoCOCol).length;
@@ -1008,6 +1357,7 @@ export default class Relatorio extends React.Component {
             let totalCOBerco = Object.keys(dadoCOBerco).length;
             let totalCOFonte = Object.keys(dadoCOFonte).length;
             let totalCOCabo = Object.keys(dadoCOCabo).length;
+            let totalCOBateria = Object.keys(dadoCOBateria).length;
 
             //Total Revisão V
             let totalRVCol = Object.keys(dadoRVCol).length;
@@ -1021,6 +1371,7 @@ export default class Relatorio extends React.Component {
             let totalRVBerco = Object.keys(dadoRVBerco).length;
             let totalRVFonte = Object.keys(dadoRVFonte).length;
             let totalRVCabo = Object.keys(dadoRVCabo).length;
+            let totalRVBateria = Object.keys(dadoRVBateria).length;
 
             //Total Confeção de Cabos
             let totalCCCabos = Object.keys(dadoCCCabo).length;
@@ -1037,6 +1388,7 @@ export default class Relatorio extends React.Component {
             let totalMMVBerco = Object.keys(dadoMMVBerco).length;
             let totalMMVFonte = Object.keys(dadoMMVFonte).length;
             let totalMMVCabo = Object.keys(dadoMMVCabo).length;
+            let totalMMVBateria = Object.keys(dadoMMVBateria).length;
 
             //Total Recuperação Placa
             let totalRPCol = Object.keys(dadoRPCol).length;
@@ -1050,6 +1402,7 @@ export default class Relatorio extends React.Component {
             let totalRPBerco = Object.keys(dadoRPBerco).length;
             let totalRPFonte = Object.keys(dadoRPFonte).length;
             let totalRPCabo = Object.keys(dadoRPCabo).length;
+            let totalRPBateria = Object.keys(dadoRPBateria).length;
 
             //Total Limpeza
             let totalLPCol = Object.keys(dadoLPCol).length;
@@ -1063,6 +1416,49 @@ export default class Relatorio extends React.Component {
             let totalLPBerco = Object.keys(dadoLPBerco).length;
             let totalLPFonte = Object.keys(dadoLPFonte).length;
             let totalLPCabo = Object.keys(dadoLPCabo).length;
+            let totalLPBateria = Object.keys(dadoLPBateria).length;
+
+            //Total Reprovado
+            let totalRRCol = Object.keys(dadoRRCol).length;
+            let totalRRLei = Object.keys(dadoRRLei).length;
+            let totalRRBusca = Object.keys(dadoRRBusca).length;
+            let totalRRImp = Object.keys(dadoRRImp).length;
+            let totalRRCar3 = Object.keys(dadoRRCar3).length;
+            let totalRRCar4 = Object.keys(dadoRRCar4).length;
+            let totalRRCar5 = Object.keys(dadoRRCar5).length;
+            let totalRRCar6 = Object.keys(dadoRRCar6).length;
+            let totalRRBerco = Object.keys(dadoRRBerco).length;
+            let totalRRFonte = Object.keys(dadoRRFonte).length;
+            let totalRRCabo = Object.keys(dadoRRCabo).length;
+            let totalRRBateria = Object.keys(dadoRRBateria).length;
+
+            //Total Compra
+            let totalRCCol = Object.keys(dadoRCCol).length;
+            let totalRCLei = Object.keys(dadoRCLei).length;
+            let totalRCBusca = Object.keys(dadoRCBusca).length;
+            let totalRCImp = Object.keys(dadoRCImp).length;
+            let totalRCCar3 = Object.keys(dadoRCCar3).length;
+            let totalRCCar4 = Object.keys(dadoRCCar4).length;
+            let totalRCCar5 = Object.keys(dadoRCCar5).length;
+            let totalRCCar6 = Object.keys(dadoRCCar6).length;
+            let totalRCBerco = Object.keys(dadoRCBerco).length;
+            let totalRCFonte = Object.keys(dadoRCFonte).length;
+            let totalRCCabo = Object.keys(dadoRCCabo).length;
+            let totalRCBateria = Object.keys(dadoRCBateria).length;
+
+            //Total Compra
+            let totalRLCol = Object.keys(dadoRLCol).length;
+            let totalRLLei = Object.keys(dadoRLLei).length;
+            let totalRLBusca = Object.keys(dadoRLBusca).length;
+            let totalRLImp = Object.keys(dadoRLImp).length;
+            let totalRLCar3 = Object.keys(dadoRLCar3).length;
+            let totalRLCar4 = Object.keys(dadoRLCar4).length;
+            let totalRLCar5 = Object.keys(dadoRLCar5).length;
+            let totalRLCar6 = Object.keys(dadoRLCar6).length;
+            let totalRLBerco = Object.keys(dadoRLBerco).length;
+            let totalRLFonte = Object.keys(dadoRLFonte).length;
+            let totalRLCabo = Object.keys(dadoRLCabo).length;
+            let totalRLBateria = Object.keys(dadoRLBateria).length;
             //#endregion
 
             //#region Return arrays
@@ -1079,6 +1475,7 @@ export default class Relatorio extends React.Component {
                 listarMCBerco: totalMCBerco,
                 listarMCFonte: totalMCFonte,
                 listarMCCabo: totalMCCabo,
+                listarMCBateria: totalMCBateria,
 
                 //Listar Laudo
                 listarLACOl: totalLACol,
@@ -1092,6 +1489,7 @@ export default class Relatorio extends React.Component {
                 listarLABerco: totalLABerco,
                 listarLAFonte: totalLAFonte,
                 listarLACabo: totalLACabo,
+                listarLABateria: totalLABateria,
 
                 //Listar Suporte
                 listarSPCOl: totalSPCol,
@@ -1105,6 +1503,7 @@ export default class Relatorio extends React.Component {
                 listarSPBerco: totalSPBerco,
                 listarSPFonte: totalSPFonte,
                 listarSPCabo: totalSPCabo,
+                listarSPBateria: totalSPBateria,
 
                 //Listar Revisão M
                 listarRMCOl: totalRMCol,
@@ -1118,6 +1517,7 @@ export default class Relatorio extends React.Component {
                 listarRMBerco: totalRMBerco,
                 listarRMFonte: totalRMFonte,
                 listarRMCabo: totalRMCabo,
+                listarRMBateria: totalRMBateria,
 
                 //Listar On-Site
                 listarCOCOl: totalCOCol,
@@ -1131,6 +1531,7 @@ export default class Relatorio extends React.Component {
                 listarCOBerco: totalCOBerco,
                 listarCOFonte: totalCOFonte,
                 listarCOCabo: totalCOCabo,
+                listarCOBateria: totalCOBateria,
 
                 //Listar Revisão V
                 listarRVCOl: totalRVCol,
@@ -1144,6 +1545,7 @@ export default class Relatorio extends React.Component {
                 listarRVBerco: totalRVBerco,
                 listarRVFonte: totalRVFonte,
                 listarRVCabo: totalRVCabo,
+                listarRVBateria: totalRVBateria,
 
                 //listar Cofecção de Cabos
                 listarCCCabo: totalCCCabos,
@@ -1160,6 +1562,7 @@ export default class Relatorio extends React.Component {
                 listarMMVBerco: totalMMVBerco,
                 listarMMVFonte: totalMMVFonte,
                 listarMMVCabo: totalMMVCabo,
+                listarMMVBateria: totalMMVBateria,
 
                 //Listar Recuperação Placa
                 listarRPCOl: totalRPCol,
@@ -1173,6 +1576,7 @@ export default class Relatorio extends React.Component {
                 listarRPBerco: totalRPBerco,
                 listarRPFonte: totalRPFonte,
                 listarRPCabo: totalRPCabo,
+                listarRPBateria: totalRPBateria,
 
                 //Listar Limpeza
                 listarLPCOl: totalLPCol,
@@ -1186,6 +1590,49 @@ export default class Relatorio extends React.Component {
                 listarLPBerco: totalLPBerco,
                 listarLPFonte: totalLPFonte,
                 listarLPCabo: totalLPCabo,
+                listarLPBateria: totalLPBateria,
+
+                //Listar Reprovado
+                listarRRCOl: totalRRCol,
+                listarRRLei: totalRRLei,
+                listarRRBusca: totalRRBusca,
+                listarRRImp: totalRRImp,
+                listarRRCar3: totalRRCar3,
+                listarRRCar4: totalRRCar4,
+                listarRRCar5: totalRRCar5,
+                listarRRCar6: totalRRCar6,
+                listarRRBerco: totalRRBerco,
+                listarRRFonte: totalRRFonte,
+                listarRRCabo: totalRRCabo,
+                listarRRBateria: totalRRBateria,
+
+                //Listar Compra
+                listarRCCOl: totalRCCol,
+                listarRCLei: totalRCLei,
+                listarRCBusca: totalRCBusca,
+                listarRCImp: totalRCImp,
+                listarRCCar3: totalRCCar3,
+                listarRCCar4: totalRCCar4,
+                listarRCCar5: totalRCCar5,
+                listarRCCar6: totalRCCar6,
+                listarRCBerco: totalRCBerco,
+                listarRCFonte: totalRCFonte,
+                listarRCCabo: totalRCCabo,
+                listarRCBateria: totalRCBateria,
+
+                //Listar Locação
+                listarRLCOl: totalRLCol,
+                listarRLLei: totalRLLei,
+                listarRLBusca: totalRLBusca,
+                listarRLImp: totalRLImp,
+                listarRLCar3: totalRLCar3,
+                listarRLCar4: totalRLCar4,
+                listarRLCar5: totalRLCar5,
+                listarRLCar6: totalRLCar6,
+                listarRLBerco: totalRLBerco,
+                listarRLFonte: totalRLFonte,
+                listarRLCabo: totalRLCabo,
+                listarRLBateria: totalRLBateria,
             })
             //#endregion
 
@@ -1208,7 +1655,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarMCCar6 },
                 { name: "Berço", y: this.state.listarMCBerco },
                 { name: "Fonte", y: this.state.listarMCFonte },
-                { name: "Cabo C", y: this.state.listarMCCabo }
+                { name: "Cabo C", y: this.state.listarMCCabo },
+                { name: "Bateria", y: this.state.listarMCBateria }
             ]
 
             return data
@@ -1225,7 +1673,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarLACar6 },
                 { name: "Berço", y: this.state.listarLABerco },
                 { name: "Fonte", y: this.state.listarLAFonte },
-                { name: "Cabo C", y: this.state.listarLACabo }
+                { name: "Cabo C", y: this.state.listarLACabo },
+                { name: "Bateria", y: this.state.listarLABateria }
             ]
 
             return data
@@ -1242,7 +1691,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarSPCar6 },
                 { name: "Berço", y: this.state.listarSPBerco },
                 { name: "Fonte", y: this.state.listarSPFonte },
-                { name: "Cabo C", y: this.state.listarSPCabo }
+                { name: "Cabo C", y: this.state.listarSPCabo },
+                { name: "Bateria", y: this.state.listarSPBateria }
             ]
 
             return data
@@ -1259,7 +1709,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarRMCar6 },
                 { name: "Berço", y: this.state.listarRMBerco },
                 { name: "Fonte", y: this.state.listarRMFonte },
-                { name: "Cabo C", y: this.state.listarRMCabo }
+                { name: "Cabo C", y: this.state.listarRMCabo },
+                { name: "Bateria", y: this.state.listarRMBateria }
             ]
 
             return data
@@ -1276,7 +1727,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarCOCar6 },
                 { name: "Berço", y: this.state.listarCOBerco },
                 { name: "Fonte", y: this.state.listarCOFonte },
-                { name: "Cabo C", y: this.state.listarCOCabo }
+                { name: "Cabo C", y: this.state.listarCOCabo },
+                { name: "Bateria", y: this.state.listarCOBateria }
             ]
 
             return data
@@ -1293,7 +1745,8 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarRVCar6 },
                 { name: "Berço", y: this.state.listarRVBerco },
                 { name: "Fonte", y: this.state.listarRVFonte },
-                { name: "Cabo C", y: this.state.listarRVCabo }
+                { name: "Cabo C", y: this.state.listarRVCabo },
+                { name: "Bateria", y: this.state.listarRVBateria }
             ]
 
             return data
@@ -1316,11 +1769,12 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 6 P", y: this.state.listarMMVCar6 },
                 { name: "Berço", y: this.state.listarMMVBerco },
                 { name: "Fonte", y: this.state.listarMMVFonte },
-                { name: "Cabo C", y: this.state.listarMMVCabo }
+                { name: "Cabo C", y: this.state.listarMMVCabo },
+                { name: "Bateria", y: this.state.listarMMVBateria }
             ]
 
             return data
-        }else if (estagio === "Rec Placa") {
+        } else if (estagio === "Rec Placa") {
             const data = [
                 { name: "Coletor", y: this.state.listarRPCOl },
                 { name: "Leitor", y: this.state.listarRPLei },
@@ -1331,11 +1785,12 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarRPCar5 },
                 { name: "Carregador 6 P", y: this.state.listarRPCar6 },
                 { name: "Berço", y: this.state.listarRPBerco },
-                { name: "Fonte", y: this.state.listarRPFonte }
+                { name: "Fonte", y: this.state.listarRPFonte },
+                { name: "Bateria", y: this.state.listarRPBateria }
             ]
 
             return data
-        }else if (estagio === "Limpeza") {
+        } else if (estagio === "Limpeza") {
             const data = [
                 { name: "Coletor", y: this.state.listarLPCOl },
                 { name: "Leitor", y: this.state.listarLPLei },
@@ -1346,7 +1801,56 @@ export default class Relatorio extends React.Component {
                 { name: "Carregador 5 P", y: this.state.listarLPCar5 },
                 { name: "Carregador 6 P", y: this.state.listarLPCar6 },
                 { name: "Berço", y: this.state.listarLPBerco },
-                { name: "Fonte", y: this.state.listarLPFonte }
+                { name: "Fonte", y: this.state.listarLPFonte },
+                { name: "Bateria", y: this.state.listarLPBateria }
+            ]
+
+            return data
+        } else if (estagio === "Reprovado") {
+            const data = [
+                { name: "Coletor", y: this.state.listarRRCOl },
+                { name: "Leitor", y: this.state.listarRRLei },
+                { name: "Busca Preço", y: this.state.listarRRBusca },
+                { name: "Impressora", y: this.state.listarRRImp },
+                { name: "Carregador 3 P", y: this.state.listarRRCar3 },
+                { name: "Carregador 4 P", y: this.state.listarRRCar4 },
+                { name: "Carregador 5 P", y: this.state.listarRRCar5 },
+                { name: "Carregador 6 P", y: this.state.listarRRCar6 },
+                { name: "Berço", y: this.state.listarRRBerco },
+                { name: "Fonte", y: this.state.listarRRFonte },
+                { name: "Bateria", y: this.state.listarRRBateria }
+            ]
+
+            return data
+        } else if (estagio === "Compra") {
+            const data = [
+                { name: "Coletor", y: this.state.listarRCCOl },
+                { name: "Leitor", y: this.state.listarRCLei },
+                { name: "Busca Preço", y: this.state.listarRCBusca },
+                { name: "Impressora", y: this.state.listarRCImp },
+                { name: "Carregador 3 P", y: this.state.listarRCCar3 },
+                { name: "Carregador 4 P", y: this.state.listarRCCar4 },
+                { name: "Carregador 5 P", y: this.state.listarRCCar5 },
+                { name: "Carregador 6 P", y: this.state.listarRCCar6 },
+                { name: "Berço", y: this.state.listarRCBerco },
+                { name: "Fonte", y: this.state.listarRCFonte },
+                { name: "Bateria", y: this.state.listarRCBateria }
+            ]
+
+            return data
+        } else if (estagio === "Locação") {
+            const data = [
+                { name: "Coletor", y: this.state.listarRLCOl },
+                { name: "Leitor", y: this.state.listarRLLei },
+                { name: "Busca Preço", y: this.state.listarRLBusca },
+                { name: "Impressora", y: this.state.listarRLImp },
+                { name: "Carregador 3 P", y: this.state.listarRLCar3 },
+                { name: "Carregador 4 P", y: this.state.listarRLCar4 },
+                { name: "Carregador 5 P", y: this.state.listarRLCar5 },
+                { name: "Carregador 6 P", y: this.state.listarRLCar6 },
+                { name: "Berço", y: this.state.listarRLBerco },
+                { name: "Fonte", y: this.state.listarRLFonte },
+                { name: "Bateria", y: this.state.listarRLBateria }
             ]
 
             return data
@@ -1366,6 +1870,7 @@ export default class Relatorio extends React.Component {
         let dadoBerco = [];
         let dadoFonte = [];
         let dadoCabo = [];
+        let dadoBateria = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Coletor de Dados" === tabelaNome[i].Equipamento)) {
@@ -1412,6 +1917,10 @@ export default class Relatorio extends React.Component {
                 dadoCabo.push({
                     OS: tabelaNome[i].OS
                 })
+            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Bateria" === tabelaNome[i].Equipamento)) {
+                dadoBateria.push({
+                    OS: tabelaNome[i].OS
+                })
             }
         }
 
@@ -1426,6 +1935,7 @@ export default class Relatorio extends React.Component {
         let totalBerco = Object.keys(dadoBerco).length;
         let totalFonte = Object.keys(dadoFonte).length;
         let totalCabo = Object.keys(dadoCabo).length;
+        let totalBateria = Object.keys(dadoBateria).length;
 
 
         return this.setState({
@@ -1439,1655 +1949,2345 @@ export default class Relatorio extends React.Component {
             listarTotalCar6: totalCar6,
             listarTotalBerco: totalBerco,
             listarTotalFonte: totalFonte,
-            listarTotalCabos: totalCabo
+            listarTotalCabos: totalCabo,
+            listarTotalBateria: totalBateria
         })
     }
 
-    async buscarDadosFiltro(mes, ano) {
-        try{
-        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+    async buscarDadosFiltro(dia, mes, ano) {
+        try {
+            const tabelaNome = await axios(baseUrl).then(resp => resp.data)
 
-        //#region Variaveis de entrada
-        //dados gerais
-        let dadoFMC = [];
-        let dadoFLA = [];
-        let dadoFSR = [];
-        let dadoFRM = [];
-        let dadoFCO = [];
-        let dadoFRV = [];
-        let dadoFCC = [];
-        let dadoFMMV = [];
-        let dadoFRP = [];
-        let dadoFLP = [];
+            //#region Variaveis de entrada
+            //dados gerais
+            let dadoFMC = [];
+            let dadoFLA = [];
+            let dadoFSR = [];
+            let dadoFRM = [];
+            let dadoFCO = [];
+            let dadoFRV = [];
+            let dadoFCC = [];
+            let dadoFMMV = [];
+            let dadoFRP = [];
+            let dadoFLP = [];
+            let dadoFRC = [];
+            let dadoFRR = [];
+            let dadoFRL = [];
 
-        //dados manutenção equipamento
-        let dadoFMCCol = [];
-        let dadoFMCLei = [];
-        let dadoFMCImp = [];
-        let dadoFMCBusca = [];
-        let dadoFMCCar3 = [];
-        let dadoFMCCar4 = [];
-        let dadoFMCCar5 = [];
-        let dadoFMCCar6 = [];
-        let dadoFMCBerco = [];
-        let dadoFMCFonte = [];
-        let dadoFMCCabo = [];
+            //dados manutenção equipamento
+            let dadoFMCCol = [];
+            let dadoFMCLei = [];
+            let dadoFMCImp = [];
+            let dadoFMCBusca = [];
+            let dadoFMCCar3 = [];
+            let dadoFMCCar4 = [];
+            let dadoFMCCar5 = [];
+            let dadoFMCCar6 = [];
+            let dadoFMCBerco = [];
+            let dadoFMCFonte = [];
+            let dadoFMCCabo = [];
+            let dadoFMCBateria = [];
 
 
-        //Variavel Laudo
-        let dadoFLACol = [];
-        let dadoFLALei = [];
-        let dadoFLAImp = [];
-        let dadoFLABusca = [];
-        let dadoFLACar3 = [];
-        let dadoFLACar4 = [];
-        let dadoFLACar5 = [];
-        let dadoFLACar6 = [];
-        let dadoFLABerco = [];
-        let dadoFLAFonte = [];
-        let dadoFLACabo = [];
+            //Variavel Laudo
+            let dadoFLACol = [];
+            let dadoFLALei = [];
+            let dadoFLAImp = [];
+            let dadoFLABusca = [];
+            let dadoFLACar3 = [];
+            let dadoFLACar4 = [];
+            let dadoFLACar5 = [];
+            let dadoFLACar6 = [];
+            let dadoFLABerco = [];
+            let dadoFLAFonte = [];
+            let dadoFLACabo = [];
+            let dadoFLABateria = [];
 
-        //Variavel Suporte
-        let dadoFSPCol = [];
-        let dadoFSPLei = [];
-        let dadoFSPImp = [];
-        let dadoFSPBusca = [];
-        let dadoFSPCar3 = [];
-        let dadoFSPCar4 = [];
-        let dadoFSPCar5 = [];
-        let dadoFSPCar6 = [];
-        let dadoFSPBerco = [];
-        let dadoFSPFonte = [];
-        let dadoFSPCabo = [];
+            //Variavel Suporte
+            let dadoFSPCol = [];
+            let dadoFSPLei = [];
+            let dadoFSPImp = [];
+            let dadoFSPBusca = [];
+            let dadoFSPCar3 = [];
+            let dadoFSPCar4 = [];
+            let dadoFSPCar5 = [];
+            let dadoFSPCar6 = [];
+            let dadoFSPBerco = [];
+            let dadoFSPFonte = [];
+            let dadoFSPCabo = [];
+            let dadoFSPBateria = [];
 
-        //Variavel Revisão M
-        let dadoFRMCol = [];
-        let dadoFRMLei = [];
-        let dadoFRMImp = [];
-        let dadoFRMBusca = [];
-        let dadoFRMCar3 = [];
-        let dadoFRMCar4 = [];
-        let dadoFRMCar5 = [];
-        let dadoFRMCar6 = [];
-        let dadoFRMBerco = [];
-        let dadoFRMFonte = [];
-        let dadoFRMCabo = [];
+            //Variavel Revisão M
+            let dadoFRMCol = [];
+            let dadoFRMLei = [];
+            let dadoFRMImp = [];
+            let dadoFRMBusca = [];
+            let dadoFRMCar3 = [];
+            let dadoFRMCar4 = [];
+            let dadoFRMCar5 = [];
+            let dadoFRMCar6 = [];
+            let dadoFRMBerco = [];
+            let dadoFRMFonte = [];
+            let dadoFRMCabo = [];
+            let dadoFRMBateria = [];
 
-         //Variavel On-Site
-         let dadoFCOCol = [];
-         let dadoFCOLei = [];
-         let dadoFCOImp = [];
-         let dadoFCOBusca = [];
-         let dadoFCOCar3 = [];
-         let dadoFCOCar4 = [];
-         let dadoFCOCar5 = [];
-         let dadoFCOCar6 = [];
-         let dadoFCOBerco = [];
-         let dadoFCOFonte = [];
-         let dadoFCOCabo = [];
+            //Variavel On-Site
+            let dadoFCOCol = [];
+            let dadoFCOLei = [];
+            let dadoFCOImp = [];
+            let dadoFCOBusca = [];
+            let dadoFCOCar3 = [];
+            let dadoFCOCar4 = [];
+            let dadoFCOCar5 = [];
+            let dadoFCOCar6 = [];
+            let dadoFCOBerco = [];
+            let dadoFCOFonte = [];
+            let dadoFCOCabo = [];
+            let dadoFCOBateria = [];
 
-        //Variavel Revisão V
-        let dadoFRVCol = [];
-        let dadoFRVLei = [];
-        let dadoFRVImp = [];
-        let dadoFRVBusca = [];
-        let dadoFRVCar3 = [];
-        let dadoFRVCar4 = [];
-        let dadoFRVCar5 = [];
-        let dadoFRVCar6 = [];
-        let dadoFRVBerco = [];
-        let dadoFRVFonte = [];
-        let dadoFRVCabo = [];
+            //Variavel Revisão V
+            let dadoFRVCol = [];
+            let dadoFRVLei = [];
+            let dadoFRVImp = [];
+            let dadoFRVBusca = [];
+            let dadoFRVCar3 = [];
+            let dadoFRVCar4 = [];
+            let dadoFRVCar5 = [];
+            let dadoFRVCar6 = [];
+            let dadoFRVBerco = [];
+            let dadoFRVFonte = [];
+            let dadoFRVCabo = [];
+            let dadoFRVBateria = [];
 
-        //variavel dos Cabos
-        let dadoFCCCabo = [];
+            //variavel dos Cabos
+            let dadoFCCCabo = [];
 
-        //Variavel Montagem/Manutenção de Venda
-        let dadoFMMVCol = [];
-        let dadoFMMVLei = [];
-        let dadoFMMVImp = [];
-        let dadoFMMVBusca = [];
-        let dadoFMMVCar3 = [];
-        let dadoFMMVCar4 = [];
-        let dadoFMMVCar5 = [];
-        let dadoFMMVCar6 = [];
-        let dadoFMMVBerco = [];
-        let dadoFMMVFonte = [];
-        let dadoFMMVCabo = [];
+            //Variavel Montagem/Manutenção de Venda
+            let dadoFMMVCol = [];
+            let dadoFMMVLei = [];
+            let dadoFMMVImp = [];
+            let dadoFMMVBusca = [];
+            let dadoFMMVCar3 = [];
+            let dadoFMMVCar4 = [];
+            let dadoFMMVCar5 = [];
+            let dadoFMMVCar6 = [];
+            let dadoFMMVBerco = [];
+            let dadoFMMVFonte = [];
+            let dadoFMMVCabo = [];
+            let dadoFMMVBateria = [];
 
-        //Variavel Recuperação Placa
-        let dadoFRPCol = [];
-        let dadoFRPLei = [];
-        let dadoFRPImp = [];
-        let dadoFRPBusca = [];
-        let dadoFRPCar3 = [];
-        let dadoFRPCar4 = [];
-        let dadoFRPCar5 = [];
-        let dadoFRPCar6 = [];
-        let dadoFRPBerco = [];
-        let dadoFRPFonte = [];
+            //Variavel Recuperação Placa
+            let dadoFRPCol = [];
+            let dadoFRPLei = [];
+            let dadoFRPImp = [];
+            let dadoFRPBusca = [];
+            let dadoFRPCar3 = [];
+            let dadoFRPCar4 = [];
+            let dadoFRPCar5 = [];
+            let dadoFRPCar6 = [];
+            let dadoFRPBerco = [];
+            let dadoFRPFonte = [];
+            let dadoFRPBateria = [];
 
-        //Variavel Limpeza
-        let dadoFLPCol = [];
-        let dadoFLPLei = [];
-        let dadoFLPImp = [];
-        let dadoFLPBusca = [];
-        let dadoFLPCar3 = [];
-        let dadoFLPCar4 = [];
-        let dadoFLPCar5 = [];
-        let dadoFLPCar6 = [];
-        let dadoFLPBerco = [];
-        let dadoFLPFonte = [];
-       
-        //#endregion
-                
-        for (let i = 0; i < tabelaNome.length; i++) {
-            //#region mês
-            if ((mes === `${tabelaNome[i].Mes}`) && (ano === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico)) {
-            //#region Manutenção
-                if ("Manutenção Concluída" === tabelaNome[i].Servico) {
-                    dadoFMC.push({
-                        OS: tabelaNome[i].OS
-                    })
+            //Variavel Limpeza
+            let dadoFLPCol = [];
+            let dadoFLPLei = [];
+            let dadoFLPImp = [];
+            let dadoFLPBusca = [];
+            let dadoFLPCar3 = [];
+            let dadoFLPCar4 = [];
+            let dadoFLPCar5 = [];
+            let dadoFLPCar6 = [];
+            let dadoFLPBerco = [];
+            let dadoFLPFonte = [];
+            let dadoFLPBateria = [];
 
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFMCLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFMCBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFMCImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFMCBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFMCFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                }else 
-                //#endregion
-            
-             //#region Laudo
-                if ("Laudo" === tabelaNome[i].Servico) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
+            //Variavel Reprovado
+            let dadoFRRCol = [];
+            let dadoFRRLei = [];
+            let dadoFRRImp = [];
+            let dadoFRRBusca = [];
+            let dadoFRRCar3 = [];
+            let dadoFRRCar4 = [];
+            let dadoFRRCar5 = [];
+            let dadoFRRCar6 = [];
+            let dadoFRRBerco = [];
+            let dadoFRRFonte = [];
+            let dadoFRRCabo = [];
+            let dadoFRRBateria = [];
 
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFLACol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFLALei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFLABusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFLAImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFLABerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFLAFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFLACabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
+            //Variavel Compra
+            let dadoFRCCol = [];
+            let dadoFRCLei = [];
+            let dadoFRCImp = [];
+            let dadoFRCBusca = [];
+            let dadoFRCCar3 = [];
+            let dadoFRCCar4 = [];
+            let dadoFRCCar5 = [];
+            let dadoFRCCar6 = [];
+            let dadoFRCBerco = [];
+            let dadoFRCFonte = [];
+            let dadoFRCCabo = [];
+            let dadoFRCBateria = [];
 
-                } else 
+            //Variavel Locação
+            let dadoFRLCol = [];
+            let dadoFRLLei = [];
+            let dadoFRLImp = [];
+            let dadoFRLBusca = [];
+            let dadoFRLCar3 = [];
+            let dadoFRLCar4 = [];
+            let dadoFRLCar5 = [];
+            let dadoFRLCar6 = [];
+            let dadoFRLBerco = [];
+            let dadoFRLFonte = [];
+            let dadoFRLCabo = [];
+            let dadoFRLBateria = [];
+
             //#endregion
-                
-            //#region Suporte
-                if ("Suporte Remoto" === tabelaNome[i].Servico) {
-                        dadoFSR.push({
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+
+                //#region ano
+                if ((ano === `${tabelaNome[i].Ano}`) && (mes === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico) && (dia === "Todos")) {
+                    //#region Manutenção
+                    if ("Manutenção Concluída" === tabelaNome[i].Servico) {
+                        dadoFMC.push({
                             OS: tabelaNome[i].OS
                         })
 
                         if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFSPLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFSPBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFSPImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFSPBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFSPFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                } else 
-            //#endregion
-
-            //#region Revisão M
-                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFRMLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFRMBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFRMImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFRMBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFRMFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    
-                } else
-                
-            //#endregion
-
-            //#region On-Site
-                if ("Chamado On-Site" === tabelaNome[i].Servico) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
+                            dadoFMCCol.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
+                            dadoFMCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
+                            dadoFMCBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
+                            dadoFMCImp.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCabo.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         }
-                } else
-            //#endregion
-
-            //#region Revisão V
-                if ("Revisão de Venda" === tabelaNome[i].Servico) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCol.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVLei.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVBusca.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVImp.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar4.push({
-                                            OS: tabelaNome[i].OS
-                                        })
+                            dadoFMCCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar3.push({
-                                            OS: tabelaNome[i].OS
-                                        })
+                            dadoFMCCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar5.push({
-                                            OS: tabelaNome[i].OS
-                                        })
+                            dadoFMCCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar6.push({
-                                            OS: tabelaNome[i].OS
-                                        })
+                            dadoFMCCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVBerco.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVFonte.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCabo.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         }
-                } else 
-            //#endregion
-
-            //#region CC cabos
-                if ("Confecção de Cabos" === tabelaNome[i].Servico) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                        dadoFCCCabo.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         }
-                } else 
-            //#endregion    
-        
-            //#region MM de Venda
-                if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
-                        dadoFMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMCBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMCFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCabo.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMCCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
                     } else
-            //#endregion
-                
-            //#region Recuperação Placa
-            if ("Recuperação de Placa" === tabelaNome[i].Servico) {
-                dadoFRP.push({
-                    OS: tabelaNome[i].OS
-                })
+                        //#endregion
 
-                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                }
-            }else
+                        //#region Laudo
+                        if ("Laudo" === tabelaNome[i].Servico) {
+                            dadoFLA.push({
+                                OS: tabelaNome[i].OS
+                            })
 
-            //#endregion
-        
-            //#region Limpeza
-            if ("Limpeza" === tabelaNome[i].Servico) {
-                dadoFLP.push({
-                    OS: tabelaNome[i].OS
-                })
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFLACol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFLALei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoFLABusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoFLAImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoFLABerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoFLAFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoFLACabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoFLABateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
 
-                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                }
-            }
+                        } else
+                            //#endregion
 
-            //#endregion
-        
-            } else
-            //#endregion
-                 
-            //#region ano
-                 if ((ano === `${tabelaNome[i].Ano}`) && (mes === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico)) {
-            //#region Manutenção
-                if ("Manutenção Concluída" === tabelaNome[i].Servico) {
-                    dadoFMC.push({
-                        OS: tabelaNome[i].OS
-                    })
+                            //#region Suporte
+                            if ("Suporte Remoto" === tabelaNome[i].Servico) {
+                                dadoFSR.push({
+                                    OS: tabelaNome[i].OS
+                                })
 
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFMCLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFMCBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFMCImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFMCBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFMCFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                }else 
-                //#endregion
-            
-            //#region Laudo
-                if ("Laudo" === tabelaNome[i].Servico) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
+                                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCabo.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBateria.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            } else
+                                //#endregion
 
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFLACol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFLALei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFLABusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFLAImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFLABerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFLAFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFLACabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
+                                //#region Revisão M
+                                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
+                                    dadoFRM.push({
+                                        OS: tabelaNome[i].OS
+                                    })
 
-                } else 
-            //#endregion
-                
-            //#region Suporte
-                if ("Suporte Remoto" === tabelaNome[i].Servico) {
-                        dadoFSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFSPLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFSPBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFSPImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFSPBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFSPFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                } else 
-            //#endregion
-
-            //#region Revisão M
-                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFRMLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFRMBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFRMImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFRMBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFRMFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    
-                } else
-                
-            //#endregion
-
-            //#region On-Site
-                if ("Chamado On-Site" === tabelaNome[i].Servico) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCabo.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         }
-                } else
-            //#endregion
-
-            //#region Revisão V
-                if ("Revisão de Venda" === tabelaNome[i].Servico) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCol.push({
+                                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCol.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVLei.push({
+                                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMLei.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVBusca.push({
+                                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBusca.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVImp.push({
+                                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMImp.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar4.push({
+                                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar4.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar3.push({
+                                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar3.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar5.push({
+                                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar5.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar6.push({
+                                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar6.push({
                                             OS: tabelaNome[i].OS
                                         })
-                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVBerco.push({
+                                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBerco.push({
                                             OS: tabelaNome[i].OS
                                         })
-                         } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVFonte.push({
+                                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMFonte.push({
                                             OS: tabelaNome[i].OS
                                         })
-                         } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCabo.push({
+                                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCabo.push({
                                             OS: tabelaNome[i].OS
                                         })
-                         }
-                } else 
-            //#endregion
+                                    } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBateria.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    }
 
-            //#region CC cabos
-                if ("Confecção de Cabos" === tabelaNome[i].Servico) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
+                                } else
 
-                        if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                        dadoFCCCabo.push({
+                                    //#endregion
+
+                                    //#region On-Site
+                                    if ("Chamado On-Site" === tabelaNome[i].Servico) {
+                                        dadoFCO.push({
                                             OS: tabelaNome[i].OS
                                         })
-                         }
-                }
-            //#endregion    
-        
-            //#region MM de Venda
-                if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
+
+                                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCabo.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBateria.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        }
+                                    } else
+                                        //#endregion
+
+                                        //#region Revisão V
+                                        if ("Revisão de Venda" === tabelaNome[i].Servico) {
+                                            dadoFRV.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+
+                                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCol.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBusca.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVImp.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar4.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar3.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar5.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar6.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBerco.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVFonte.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCabo.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBateria.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            }
+                                        } else
+                                            //#endregion
+
+                                            //#region CC cabos
+                                            if ("Confecção de Cabos" === tabelaNome[i].Servico) {
+                                                dadoFCC.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+
+                                                if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                    dadoFCCCabo.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                }
+                                            }
+                    //#endregion    
+
+                    //#region MM de Venda
+                    if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
                         dadoFMMV.push({
                             OS: tabelaNome[i].OS
                         })
 
                         if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVCol.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVLei.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVImp.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCabo.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFMMVCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
-                    }else
-            //#endregion
-                
-            //#region Recuperação Placa
-            if ("Recuperação de Placa" === tabelaNome[i].Servico) {
-                dadoFRP.push({
-                    OS: tabelaNome[i].OS
-                })
+                    } else
+                        //#endregion
 
-                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFRPFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                }
-            }
+                        //#region Recuperação Placa
+                        if ("Recuperação de Placa" === tabelaNome[i].Servico) {
+                            dadoFRP.push({
+                                OS: tabelaNome[i].OS
+                            })
 
-            //#endregion
-        
-            //#region Limpeza
-            if ("Limpeza" === tabelaNome[i].Servico) {
-                dadoFLP.push({
-                    OS: tabelaNome[i].OS
-                })
-
-                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFLPFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                }
-            }
-
-            //#endregion
-        
-        } else
-            //#endregion
-
-            //#region mês e ano
-                if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`) && (localStorage.usuario === tabelaNome[i].Tecnico)) {
-                    //#region Manutenção
-                if ("Manutenção Concluída" === tabelaNome[i].Servico) {
-                    dadoFMC.push({
-                        OS: tabelaNome[i].OS
-                    })
-
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFMCLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFMCBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFMCImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFMCBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFMCFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFMCCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } 
-                }else 
-                //#endregion
-            
-            //#region Laudo
-                if ("Laudo" === tabelaNome[i].Servico) {
-                        dadoFLA.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFLACol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFLALei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFLABusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFLAImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFLACar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFLABerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFLAFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFLACabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-
-                } else 
-            //#endregion
-                
-            //#region Suporte
-                if ("Suporte Remoto" === tabelaNome[i].Servico) {
-                        dadoFSR.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFSPLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFSPBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFSPImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFSPBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFSPFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFSPCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                } else 
-            //#endregion
-
-            //#region Revisão M
-                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
-                        dadoFRM.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    
-                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCol.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                        dadoFRMLei.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                        dadoFRMBusca.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                        dadoFRMImp.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar4.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar3.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar5.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCar6.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoFRMBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFRMFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                        dadoFRMCabo.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    }
-                    
-                } else
-                
-            //#endregion
-
-            //#region On-Site
-                if ("Chamado On-Site" === tabelaNome[i].Servico) {
-                        dadoFCO.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                    dadoFCOCabo.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                         }
-                } else
-            //#endregion
-
-            //#region Revisão V
-                if ("Revisão de Venda" === tabelaNome[i].Servico) {
-                        dadoFRV.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCol.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVLei.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVBusca.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVImp.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar4.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar3.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar5.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCar6.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVBerco.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVFonte.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                        dadoFRVCabo.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         }
-                } else 
-            //#endregion
-
-            //#region CC cabos
-                if ("Confecção de Cabos" === tabelaNome[i].Servico) {
-                        dadoFCC.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                        dadoFCCCabo.push({
-                                            OS: tabelaNome[i].OS
-                                        })
-                         }
-                }
-            //#endregion    
-        
-            //#region MM de Venda
-                if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
-                        dadoFMMV.push({
-                            OS: tabelaNome[i].OS
-                        })
-
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                            dadoFMMVCabo.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFRPLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoFRPImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoFRPFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
                         }
-                    }
-            //#endregion
-            
-                       //#region Recuperação Placa
-                       if ("Recuperação de Placa" === tabelaNome[i].Servico) {
-                        dadoFRP.push({
-                            OS: tabelaNome[i].OS
-                        })
-        
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoFRPFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
-                        }
-                    }
-        
+
                     //#endregion
-                
+
                     //#region Limpeza
                     if ("Limpeza" === tabelaNome[i].Servico) {
                         dadoFLP.push({
                             OS: tabelaNome[i].OS
                         })
-        
+
                         if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPCol.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPCol.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPLei.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPLei.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPBusca.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPImp.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPImp.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPCar4.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPCar3.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPCar5.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPCar6.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPBerco.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                            dadoFLPFonte.push({
-                                                OS: tabelaNome[i].OS
-                                            })
+                            dadoFLPFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
                     }
-        
+
+                    //#endregion
+
+                    //#region Reprovado
+                    if ("Revisão de Reprovado" === tabelaNome[i].Servico) {
+                        dadoFRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRRLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRRImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRRFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+
+                    //#region Compra
+                    if ("Revisão de Compra" === tabelaNome[i].Servico) {
+                        dadoFRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRCImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRCFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+
+                    //#region locação
+
+                    if ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico) {
+                        dadoFRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRLLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRLImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRLFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                     //#endregion
                 
-        
-        }
-            //#endregion
+                } else
+                    //#endregion
+
+                    //#region mês e ano
+                    if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`) && (dia === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico)) {
+                       //#region Manutenção
+                    if ("Manutenção Concluída" === tabelaNome[i].Servico) {
+                        dadoFMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFMCImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFMCFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    } else
+                        //#endregion
+
+                        //#region Laudo
+                        if ("Laudo" === tabelaNome[i].Servico) {
+                            dadoFLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFLACol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFLALei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoFLABusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoFLAImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoFLABerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoFLAFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoFLACabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoFLABateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+
+                        } else
+                            //#endregion
+
+                            //#region Suporte
+                            if ("Suporte Remoto" === tabelaNome[i].Servico) {
+                                dadoFSR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCabo.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBateria.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            } else
+                                //#endregion
+
+                                //#region Revisão M
+                                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
+                                    dadoFRM.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+
+                                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCol.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBusca.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMImp.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar4.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar3.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar5.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar6.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBerco.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMFonte.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCabo.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBateria.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    }
+
+                                } else
+
+                                    //#endregion
+
+                                    //#region On-Site
+                                    if ("Chamado On-Site" === tabelaNome[i].Servico) {
+                                        dadoFCO.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+
+                                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCabo.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBateria.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        }
+                                    } else
+                                        //#endregion
+
+                                        //#region Revisão V
+                                        if ("Revisão de Venda" === tabelaNome[i].Servico) {
+                                            dadoFRV.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+
+                                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCol.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBusca.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVImp.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar4.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar3.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar5.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar6.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBerco.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVFonte.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCabo.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBateria.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            }
+                                        } else
+                                            //#endregion
+
+                                            //#region CC cabos
+                                            if ("Confecção de Cabos" === tabelaNome[i].Servico) {
+                                                dadoFCC.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+
+                                                if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                    dadoFCCCabo.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                }
+                                            }
+                    //#endregion    
+
+                    //#region MM de Venda
+                    if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
+                        dadoFMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    } else
+                        //#endregion
+
+                        //#region Recuperação Placa
+                        if ("Recuperação de Placa" === tabelaNome[i].Servico) {
+                            dadoFRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFRPLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoFRPImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoFRPFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                        }
+
+                    //#endregion
+
+                    //#region Limpeza
+                    if ("Limpeza" === tabelaNome[i].Servico) {
+                        dadoFLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFLPLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFLPImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFLPFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+
+                    //#endregion
+
+                    //#region Reprovado
+                    if ("Revisão de Reprovado" === tabelaNome[i].Servico) {
+                        dadoFRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRRLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRRImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRRFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+
+                    //#region Compra
+                    if ("Revisão de Compra" === tabelaNome[i].Servico) {
+                        dadoFRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRCImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRCFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+
+                    //#region locação
+
+                    if ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico) {
+                        dadoFRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRLLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRLImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRLFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+                
+
+                    } else
+                        //#endregion
+
+                        //#region mês e ano e dia
+                        if ((dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`) && (localStorage.usuario === tabelaNome[i].Tecnico)) {
+
+                           //#region Manutenção
+                    if ("Manutenção Concluída" === tabelaNome[i].Servico) {
+                        dadoFMC.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFMCImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFMCFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFMCCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFMCBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    } else
+                        //#endregion
+
+                        //#region Laudo
+                        if ("Laudo" === tabelaNome[i].Servico) {
+                            dadoFLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFLACol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFLALei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoFLABusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoFLAImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFLACar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoFLABerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoFLAFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoFLACabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoFLABateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+
+                        } else
+                            //#endregion
+
+                            //#region Suporte
+                            if ("Suporte Remoto" === tabelaNome[i].Servico) {
+                                dadoFSR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPCabo.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPBateria.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            } else
+                                //#endregion
+
+                                //#region Revisão M
+                                if ("Revisão de Manutenção" === tabelaNome[i].Servico) {
+                                    dadoFRM.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+
+                                    if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCol.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBusca.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMImp.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar4.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar3.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar5.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCar6.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBerco.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMFonte.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMCabo.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMBateria.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    }
+
+                                } else
+
+                                    //#endregion
+
+                                    //#region On-Site
+                                    if ("Chamado On-Site" === tabelaNome[i].Servico) {
+                                        dadoFCO.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+
+                                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCol.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOLei.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBusca.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOImp.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar4.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar3.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar5.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCar6.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBerco.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOFonte.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOCabo.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOBateria.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        }
+                                    } else
+                                        //#endregion
+
+                                        //#region Revisão V
+                                        if ("Revisão de Venda" === tabelaNome[i].Servico) {
+                                            dadoFRV.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+
+                                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCol.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBusca.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVImp.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar4.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar3.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar5.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCar6.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBerco.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVFonte.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVCabo.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVBateria.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            }
+                                        } else
+                                            //#endregion
+
+                                            //#region CC cabos
+                                            if ("Confecção de Cabos" === tabelaNome[i].Servico) {
+                                                dadoFCC.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+
+                                                if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                                    dadoFCCCabo.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                }
+                                            }
+                    //#endregion    
+
+                    //#region MM de Venda
+                    if ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico) {
+                        dadoFMMV.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    } else
+                        //#endregion
+
+                        //#region Recuperação Placa
+                        if ("Recuperação de Placa" === tabelaNome[i].Servico) {
+                            dadoFRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoFRPLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoFRPImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoFRPCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                dadoFRPFonte.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoFRPBateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                        }
+
+                    //#endregion
+
+                    //#region Limpeza
+                    if ("Limpeza" === tabelaNome[i].Servico) {
+                        dadoFLP.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFLPLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFLPImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFLPCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFLPFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFLPBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+
+                    //#endregion
+
+                    //#region Reprovado
+                    if ("Revisão de Reprovado" === tabelaNome[i].Servico) {
+                        dadoFRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRRLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRRImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRRFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRRCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRRBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+
+                    //#region Compra
+                    if ("Revisão de Compra" === tabelaNome[i].Servico) {
+                        dadoFRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRCImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRCFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRCCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRCBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion
+
+                    //#region locação
+
+                    if ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico) {
+                        dadoFRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoFRLLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoFRLImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                            dadoFRLFonte.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoFRLCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoFRLBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                    //#endregion        
+                        }
+                        //#endregion
+
             }
 
             //#region variaveis de saida
@@ -3102,6 +4302,9 @@ export default class Relatorio extends React.Component {
             let totalFMMV = Object.keys(dadoFMMV).length;
             let totalFRP = Object.keys(dadoFRP).length;
             let totalFLP = Object.keys(dadoFLP).length;
+            let totalFRR = Object.keys(dadoFRR).length;
+            let totalFRC = Object.keys(dadoFRC).length;
+            let totalFRL = Object.keys(dadoFRL).length;
 
             //Total Manutenção
             let totalFMCCol = Object.keys(dadoFMCCol).length;
@@ -3115,6 +4318,7 @@ export default class Relatorio extends React.Component {
             let totalFMCBerco = Object.keys(dadoFMCBerco).length;
             let totalFMCFonte = Object.keys(dadoFMCFonte).length;
             let totalFMCCabo = Object.keys(dadoFMCCabo).length;
+            let totalFMCBateria = Object.keys(dadoFMCBateria).length;
 
             //Total Laudo
             let totalFLACol = Object.keys(dadoFLACol).length;
@@ -3128,6 +4332,7 @@ export default class Relatorio extends React.Component {
             let totalFLABerco = Object.keys(dadoFLABerco).length;
             let totalFLAFonte = Object.keys(dadoFLAFonte).length;
             let totalFLACabo = Object.keys(dadoFLACabo).length;
+            let totalFLABateria = Object.keys(dadoFLABateria).length;
 
             //Total Suporte
             let totalFSPCol = Object.keys(dadoFSPCol).length;
@@ -3141,21 +4346,23 @@ export default class Relatorio extends React.Component {
             let totalFSPBerco = Object.keys(dadoFSPBerco).length;
             let totalFSPFonte = Object.keys(dadoFSPFonte).length;
             let totalFSPCabo = Object.keys(dadoFSPCabo).length;
+            let totalFSPBateria = Object.keys(dadoFSPBateria).length;
 
-             //Total Revisão M
-             let totalFRMCol = Object.keys(dadoFRMCol).length;
-             let totalFRMLei = Object.keys(dadoFRMLei).length;
-             let totalFRMBusca = Object.keys(dadoFRMBusca).length;
-             let totalFRMImp = Object.keys(dadoFRMImp).length;
-             let totalFRMCar3 = Object.keys(dadoFRMCar3).length;
-             let totalFRMCar4 = Object.keys(dadoFRMCar4).length;
-             let totalFRMCar5 = Object.keys(dadoFRMCar5).length;
-             let totalFRMCar6 = Object.keys(dadoFRMCar6).length;
-             let totalFRMBerco = Object.keys(dadoFRMBerco).length;
-             let totalFRMFonte = Object.keys(dadoFRMFonte).length;
-             let totalFRMCabo = Object.keys(dadoFRMCabo).length;
+            //Total Revisão M
+            let totalFRMCol = Object.keys(dadoFRMCol).length;
+            let totalFRMLei = Object.keys(dadoFRMLei).length;
+            let totalFRMBusca = Object.keys(dadoFRMBusca).length;
+            let totalFRMImp = Object.keys(dadoFRMImp).length;
+            let totalFRMCar3 = Object.keys(dadoFRMCar3).length;
+            let totalFRMCar4 = Object.keys(dadoFRMCar4).length;
+            let totalFRMCar5 = Object.keys(dadoFRMCar5).length;
+            let totalFRMCar6 = Object.keys(dadoFRMCar6).length;
+            let totalFRMBerco = Object.keys(dadoFRMBerco).length;
+            let totalFRMFonte = Object.keys(dadoFRMFonte).length;
+            let totalFRMCabo = Object.keys(dadoFRMCabo).length;
+            let totalFRMBateria = Object.keys(dadoFRMBateria).length;
 
-             //Total On-Site
+            //Total On-Site
             let totalFCOCol = Object.keys(dadoFCOCol).length;
             let totalFCOLei = Object.keys(dadoFCOLei).length;
             let totalFCOBusca = Object.keys(dadoFCOBusca).length;
@@ -3167,6 +4374,7 @@ export default class Relatorio extends React.Component {
             let totalFCOBerco = Object.keys(dadoFCOBerco).length;
             let totalFCOFonte = Object.keys(dadoFCOFonte).length;
             let totalFCOCabo = Object.keys(dadoFCOCabo).length;
+            let totalFCOBateria = Object.keys(dadoFCOBateria).length;
 
             //Total Revisão V
             let totalFRVCol = Object.keys(dadoFRVCol).length;
@@ -3180,6 +4388,7 @@ export default class Relatorio extends React.Component {
             let totalFRVBerco = Object.keys(dadoFRVBerco).length;
             let totalFRVFonte = Object.keys(dadoFRVFonte).length;
             let totalFRVCabo = Object.keys(dadoFRVCabo).length;
+            let totalFRVBateria = Object.keys(dadoFRVBateria).length;
 
             //Total Confeção de Cabos
             let totalFCCCabos = Object.keys(dadoFCCCabo).length;
@@ -3196,6 +4405,7 @@ export default class Relatorio extends React.Component {
             let totalFMMVBerco = Object.keys(dadoFMMVBerco).length;
             let totalFMMVFonte = Object.keys(dadoFMMVFonte).length;
             let totalFMMVCabo = Object.keys(dadoFMMVCabo).length;
+            let totalFMMVBateria = Object.keys(dadoFMMVBateria).length;
 
             //Total Recuperação Placa
             let totalFRPCol = Object.keys(dadoFRPCol).length;
@@ -3208,6 +4418,7 @@ export default class Relatorio extends React.Component {
             let totalFRPCar6 = Object.keys(dadoFRPCar6).length;
             let totalFRPBerco = Object.keys(dadoFRPBerco).length;
             let totalFRPFonte = Object.keys(dadoFRPFonte).length;
+            let totalFRPBateria = Object.keys(dadoFRPBateria).length;
 
             //Total Recuperação Placa
             let totalFLPCol = Object.keys(dadoFLPCol).length;
@@ -3220,34 +4431,92 @@ export default class Relatorio extends React.Component {
             let totalFLPCar6 = Object.keys(dadoFLPCar6).length;
             let totalFLPBerco = Object.keys(dadoFLPBerco).length;
             let totalFLPFonte = Object.keys(dadoFLPFonte).length;
+            let totalFLPBateria = Object.keys(dadoFLPBateria).length;
+
+            //Total Reprovado
+            let totalFRRCol = Object.keys(dadoFRRCol).length;
+            let totalFRRLei = Object.keys(dadoFRRLei).length;
+            let totalFRRBusca = Object.keys(dadoFRRBusca).length;
+            let totalFRRImp = Object.keys(dadoFRRImp).length;
+            let totalFRRCar3 = Object.keys(dadoFRRCar3).length;
+            let totalFRRCar4 = Object.keys(dadoFRRCar4).length;
+            let totalFRRCar5 = Object.keys(dadoFRRCar5).length;
+            let totalFRRCar6 = Object.keys(dadoFRRCar6).length;
+            let totalFRRBerco = Object.keys(dadoFRRBerco).length;
+            let totalFRRFonte = Object.keys(dadoFRRFonte).length;
+            let totalFRRCabo = Object.keys(dadoFRRCabo).length;
+            let totalFRRBateria = Object.keys(dadoFRRBateria).length;
+
+            //Total Compra
+            let totalFRCCol = Object.keys(dadoFRCCol).length;
+            let totalFRCLei = Object.keys(dadoFRCLei).length;
+            let totalFRCBusca = Object.keys(dadoFRCBusca).length;
+            let totalFRCImp = Object.keys(dadoFRCImp).length;
+            let totalFRCCar3 = Object.keys(dadoFRCCar3).length;
+            let totalFRCCar4 = Object.keys(dadoFRCCar4).length;
+            let totalFRCCar5 = Object.keys(dadoFRCCar5).length;
+            let totalFRCCar6 = Object.keys(dadoFRCCar6).length;
+            let totalFRCBerco = Object.keys(dadoFRCBerco).length;
+            let totalFRCFonte = Object.keys(dadoFRCFonte).length;
+            let totalFRCCabo = Object.keys(dadoFRCCabo).length;
+            let totalFRCBateria = Object.keys(dadoFRCBateria).length;
+
+            //Total Locação
+            let totalFRLCol = Object.keys(dadoFRLCol).length;
+            let totalFRLLei = Object.keys(dadoFRLLei).length;
+            let totalFRLBusca = Object.keys(dadoFRLBusca).length;
+            let totalFRLImp = Object.keys(dadoFRLImp).length;
+            let totalFRLCar3 = Object.keys(dadoFRLCar3).length;
+            let totalFRLCar4 = Object.keys(dadoFRLCar4).length;
+            let totalFRLCar5 = Object.keys(dadoFRLCar5).length;
+            let totalFRLCar6 = Object.keys(dadoFRLCar6).length;
+            let totalFRLBerco = Object.keys(dadoFRLBerco).length;
+            let totalFRLFonte = Object.keys(dadoFRLFonte).length;
+            let totalFRLCabo = Object.keys(dadoFRLCabo).length;
+            let totalFRLBateria = Object.keys(dadoFRLBateria).length;
+
 
             //total por equipamento
-            let totalFilCol = totalFMCCol + totalFLACol + totalFSPCol + totalFRMCol + 
-                totalFCOCol + totalFRVCol + totalFMMVCol + totalFRPCol + totalFLPCol
-            let totalFilLei = totalFMCLei + totalFLALei + totalFSPLei + totalFRMLei + 
-                totalFCOLei + totalFRVLei + totalFMMVLei + totalFRPLei + totalFLPLei
-            let totalFilBusca = totalFMCBusca + totalFLABusca + totalFSPBusca + totalFRMBusca + 
-                totalFCOBusca + totalFRVBusca + totalFMMVBusca + totalFRPBusca + totalFLPBusca
-            let totalFilImp = totalFMCImp + totalFLAImp + totalFSPImp + totalFRMImp + 
-                totalFCOImp + totalFRVImp + totalFMMVImp + totalFRPImp + totalFLPImp
-            let totalFilCar3 = totalFMCCar3 + totalFLACar3 + totalFSPCar3 + totalFRMCar3 + 
-                totalFCOCar3 + totalFRVCar3 + totalFMMVCar3 + totalFRPCar3 + totalFLPCar3
-            let totalFilCar4 = totalFMCCar4 + totalFLACar4 + totalFSPCar4 + totalFRMCar4 + 
-                totalFCOCar4 + totalFRVCar4 + totalFMMVCar4 + totalFRPCar4 + totalFLPCar4
-            let totalFilCar5 = totalFMCCar5 + totalFLACar5 + totalFSPCar5 + totalFRMCar5 + 
-                totalFCOCar5 + totalFRVCar5 + totalFMMVCar5 + totalFRPCar5 + totalFLPCar5
-            let totalFilCar6 = totalFMCCar6 + totalFLACar6 + totalFSPCar6 + totalFRMCar6 + 
-                totalFCOCar6 + totalFRVCar6 + totalFMMVCar6  + totalFRPCar6 + totalFLPCar6
-            let totalFilBerco = totalFMCBerco + totalFLABerco + totalFSPBerco + totalFRMBerco + 
-                totalFCOBerco + totalFRVBerco + totalFMMVBerco + totalFRPBerco + totalFLPBerco
-            let totalFilFonte = totalFMCFonte + totalFLAFonte + totalFSPFonte + totalFRMFonte + 
-                totalFCOFonte + totalFRVFonte + totalFMMVFonte + totalFRPFonte + totalFLPFonte
-            let totalFilCabo = totalFCCCabos
+            let totalFilCol = totalFMCCol + totalFLACol + totalFSPCol + totalFRMCol +
+                totalFCOCol + totalFRVCol + totalFMMVCol + totalFRPCol + totalFLPCol +
+                totalFRRCol + totalFRCCol + totalFRLCol
+            let totalFilLei = totalFMCLei + totalFLALei + totalFSPLei + totalFRMLei +
+                totalFCOLei + totalFRVLei + totalFMMVLei + totalFRPLei + totalFLPLei +
+                totalFRRLei + totalFLALei + totalFRLLei
+            let totalFilBusca = totalFMCBusca + totalFLABusca + totalFSPBusca + totalFRMBusca +
+                totalFCOBusca + totalFRVBusca + totalFMMVBusca + totalFRPBusca + totalFLPBusca +
+                totalFRRBusca + totalFRCBusca + totalFRLBusca
+            let totalFilImp = totalFMCImp + totalFLAImp + totalFSPImp + totalFRMImp +
+                totalFCOImp + totalFRVImp + totalFMMVImp + totalFRPImp + totalFLPImp +
+                totalFRRImp + totalFRCImp + totalFRLImp
+            let totalFilCar3 = totalFMCCar3 + totalFLACar3 + totalFSPCar3 + totalFRMCar3 +
+                totalFCOCar3 + totalFRVCar3 + totalFMMVCar3 + totalFRPCar3 + totalFLPCar3 +
+                totalFRRCar3 + totalFRCCar3 + totalFRLCar3
+            let totalFilCar4 = totalFMCCar4 + totalFLACar4 + totalFSPCar4 + totalFRMCar4 +
+                totalFCOCar4 + totalFRVCar4 + totalFMMVCar4 + totalFRPCar4 + totalFLPCar4 +
+                totalFRRCar4 + totalFRCCar4 + totalFRLCar4
+            let totalFilCar5 = totalFMCCar5 + totalFLACar5 + totalFSPCar5 + totalFRMCar5 +
+                totalFCOCar5 + totalFRVCar5 + totalFMMVCar5 + totalFRPCar5 + totalFLPCar5 +
+                totalFRRCar5 + totalFRCCar5 + totalFRLCar5
+            let totalFilCar6 = totalFMCCar6 + totalFLACar6 + totalFSPCar6 + totalFRMCar6 +
+                totalFCOCar6 + totalFRVCar6 + totalFMMVCar6 + totalFRPCar6 + totalFLPCar6 +
+                totalFRRCar6 + totalFRCCar6 + totalFRLCar6
+            let totalFilBerco = totalFMCBerco + totalFLABerco + totalFSPBerco + totalFRMBerco +
+                totalFCOBerco + totalFRVBerco + totalFMMVBerco + totalFRPBerco + totalFLPBerco +
+                totalFRRBerco + totalFRCBerco + totalFRLBerco
+            let totalFilFonte = totalFMCFonte + totalFLAFonte + totalFSPFonte + totalFRMFonte +
+                totalFCOFonte + totalFRVFonte + totalFMMVFonte + totalFRPFonte + totalFLPFonte +
+                totalFRRFonte + totalFRCFonte + totalFRLFonte
+            let totalFilCabo = totalFCCCabos + totalFRRCabo + totalFRLCabo
+            let totalFilBateria = totalFMCBateria + totalFLABateria + totalFSPBateria + totalFRMBateria +
+                totalFCOBateria + totalFRVBateria + totalFMMVBateria + totalFRPBateria + totalFLPBateria +
+                totalFRRBateria + totalFRCBateria + totalFRLBateria
 
             //total equipamentos
-            let totalEquip = totalFilCol + totalFilLei + totalFilBusca + totalFilCabo + totalFilCar3 + 
-                totalFilCar4 + totalFilCar5 + totalFilCar6 + totalFilImp + totalFilBerco + totalFilFonte
-                 
+            let totalEquip = totalFilCol + totalFilLei + totalFilBusca + totalFilCabo + totalFilCar3 +
+                totalFilCar4 + totalFilCar5 + totalFilCar6 + totalFilImp + totalFilBerco + totalFilFonte +
+                totalFilBateria
+
             //#endregion
 
             //#region return saida
@@ -3263,7 +4532,10 @@ export default class Relatorio extends React.Component {
                 listarMMV: totalFMMV,
                 listarRP: totalFRP,
                 listarLP: totalFLP,
-                
+                listarRR: totalFRR,
+                listarRC: totalFRC,
+                listarRL: totalFRL,
+
                 //Listar Manutenção
                 listarMCCOl: totalFMCCol,
                 listarMCLei: totalFMCLei,
@@ -3276,6 +4548,7 @@ export default class Relatorio extends React.Component {
                 listarMCBerco: totalFMCBerco,
                 listarMCFonte: totalFMCFonte,
                 listarMCCabo: totalFMCCabo,
+                listarMCBateria: totalFMCBateria,
 
                 //Listar Laudo
                 listarLACOl: totalFLACol,
@@ -3289,19 +4562,21 @@ export default class Relatorio extends React.Component {
                 listarLABerco: totalFLABerco,
                 listarLAFonte: totalFLAFonte,
                 listarLACabo: totalFLACabo,
+                listarLABateria: totalFLABateria,
 
-                 //Listar Suporte
-                 listarSPCOl: totalFSPCol,
-                 listarSPLei: totalFSPLei,
-                 listarSPBusca: totalFSPBusca,
-                 listarSPImp: totalFSPImp,
-                 listarSPCar3: totalFSPCar3,
-                 listarSPCar4: totalFSPCar4,
-                 listarSPCar5: totalFSPCar5,
-                 listarSPCar6: totalFSPCar6,
-                 listarSPBerco: totalFSPBerco,
-                 listarSPFonte: totalFSPFonte,
-                 listarSPCabo: totalFSPCabo,
+                //Listar Suporte
+                listarSPCOl: totalFSPCol,
+                listarSPLei: totalFSPLei,
+                listarSPBusca: totalFSPBusca,
+                listarSPImp: totalFSPImp,
+                listarSPCar3: totalFSPCar3,
+                listarSPCar4: totalFSPCar4,
+                listarSPCar5: totalFSPCar5,
+                listarSPCar6: totalFSPCar6,
+                listarSPBerco: totalFSPBerco,
+                listarSPFonte: totalFSPFonte,
+                listarSPCabo: totalFSPCabo,
+                listarSPBateria: totalFSPBateria,
 
                 //Listar Revisão M
                 listarRMCOl: totalFRMCol,
@@ -3315,6 +4590,7 @@ export default class Relatorio extends React.Component {
                 listarRMBerco: totalFRMBerco,
                 listarRMFonte: totalFRMFonte,
                 listarRMCabo: totalFRMCabo,
+                listarRMBateria: totalFRMBateria,
 
                 //Listar On-Site
                 listarCOCOl: totalFCOCol,
@@ -3328,6 +4604,7 @@ export default class Relatorio extends React.Component {
                 listarCOBerco: totalFCOBerco,
                 listarCOFonte: totalFCOFonte,
                 listarCOCabo: totalFCOCabo,
+                listarCOBateria: totalFCOBateria,
 
                 //Listar Revisão V
                 listarRVCOl: totalFRVCol,
@@ -3341,6 +4618,7 @@ export default class Relatorio extends React.Component {
                 listarRVBerco: totalFRVBerco,
                 listarRVFonte: totalFRVFonte,
                 listarRVCabo: totalFRVCabo,
+                listarRVBateria: totalFRVBateria,
 
                 //listar Cofecção de Cabos
                 listarCCCabo: totalFCCCabos,
@@ -3357,6 +4635,7 @@ export default class Relatorio extends React.Component {
                 listarMMVBerco: totalFMMVBerco,
                 listarMMVFonte: totalFMMVFonte,
                 listarMMVCabo: totalFMMVCabo,
+                listarMMVBateria: totalFMMVBateria,
 
                 //Listar Recuperação Placa
                 listarRPCOl: totalFRPCol,
@@ -3369,6 +4648,7 @@ export default class Relatorio extends React.Component {
                 listarRPCar6: totalFRPCar6,
                 listarRPBerco: totalFRPBerco,
                 listarRPFonte: totalFRPFonte,
+                listarRPBateria: totalFRPBateria,
 
                 //Listar Limpeza
                 listarLPCOl: totalFLPCol,
@@ -3381,6 +4661,49 @@ export default class Relatorio extends React.Component {
                 listarLPCar6: totalFLPCar6,
                 listarLPBerco: totalFLPBerco,
                 listarLPFonte: totalFLPFonte,
+                listarLPBateria: totalFLPBateria,
+
+                //Listar Reporovado
+                listarRRCOl: totalFRRCol,
+                listarRRLei: totalFRRLei,
+                listarRRBusca: totalFRRBusca,
+                listarRRImp: totalFRRImp,
+                listarRRCar3: totalFRRCar3,
+                listarRRCar4: totalFRRCar4,
+                listarRRCar5: totalFRRCar5,
+                listarRRCar6: totalFRRCar6,
+                listarRRBerco: totalFRRBerco,
+                listarRRFonte: totalFRRFonte,
+                listarRRCabo: totalFRRCabo,
+                listarRRBateria: totalFRRBateria,
+
+                //Listar compra
+                listarRCCOl: totalFRCCol,
+                listarRCLei: totalFRCLei,
+                listarRCBusca: totalFRCBusca,
+                listarRCImp: totalFRCImp,
+                listarRCCar3: totalFRCCar3,
+                listarRCCar4: totalFRCCar4,
+                listarRCCar5: totalFRCCar5,
+                listarRCCar6: totalFRCCar6,
+                listarRCBerco: totalFRCBerco,
+                listarRCFonte: totalFRCFonte,
+                listarRCCabo: totalFRCCabo,
+                listarRCBateria: totalFRCBateria,
+
+                //Listar Locação
+                listarRLCOl: totalFRLCol,
+                listarRLLei: totalFRLLei,
+                listarRLBusca: totalFRLBusca,
+                listarRLImp: totalFRLImp,
+                listarRLCar3: totalFRLCar3,
+                listarRLCar4: totalFRLCar4,
+                listarRLCar5: totalFRLCar5,
+                listarRLCar6: totalFRLCar6,
+                listarRLBerco: totalFRLBerco,
+                listarRLFonte: totalFRLFonte,
+                listarRLCabo: totalFRLCabo,
+                listarRLBateria: totalFRLBateria,
 
                 //total por equipamento
                 listarTotalCOl: totalFilCol,
@@ -3394,205 +4717,265 @@ export default class Relatorio extends React.Component {
                 listarTotalBerco: totalFilBerco,
                 listarTotalFonte: totalFilFonte,
                 listarTotalCabos: totalFilCabo,
+                listarTotalBateria: totalFilBateria,
 
                 //total equipamentos
-                listarTotalEquip: totalEquip 
+                listarTotalEquip: totalEquip
             })
             //#endregion
-        }catch(error){
+        } catch (error) {
             console.log("Erro : " + error)
         }
 
+    }
+
+
+    filtrarDados() {
+        const ano = document.getElementById("ano").value;
+        const mes = document.getElementById("mes").value;
+        const dia = document.getElementById("dia").value;
+
+        if ((ano === "Todos") && (mes === "Todos") && (dia === "Todos")) {
+            this.buscarDados()
+            this.buscarEquipamento()
+            this.totalPorEquipamento()
+        } else if ((ano !== "Todos") && (mes === "Todos") && (dia === "Todos")) {
+            this.buscarDadosFiltro(dia, mes, ano)
+        } else if ((ano !== "Todos") && (mes !== "Todos") && (dia === "Todos")) {
+            this.buscarDadosFiltro(dia, mes, ano)
+        } else if ((ano !== "Todos") && (mes !== "Todos") && (dia !== "Todos")) {
+            this.buscarDadosFiltro(dia, mes, ano)
         }
+    }
 
+    render() {
+        return (
+            <div>
+                <div className="row mt-4">
+                    <div className="col-3 d-flex flex-row justify-content-center align-items-center">
+                        <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
+                    </div>
+                    <div className="col-2">
+                        <label>Dia: </label>
+                        <select id="dia" class="form-select" aria-label="Default select example">
+                            <option selected>Todos</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+                        </select>
+                    </div>
+                    <div className="col-2">
+                        <label>Mês: </label>
+                        <select id="mes" class="form-select" aria-label="Default select example">
+                            <option selected>Todos</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                    </div>
+                    <div className="col-2">
+                        <label>Ano: </label>
+                        <select id="ano" class="form-select" aria-label="Default select example">
+                            <option selected>Todos</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                            <option>2030</option>
+                        </select>
+                    </div>
+                    <div className="col-3 d-flex align-items-end">
+                        <button className="btn btn-success" onClick={e => this.filtrarDados(e)}>Buscar</button>
+                    </div>
+                </div>
+                <div className="row my-3 d-flex justify-content-center ">
+                    <div className="col-3 d-flex flex-column justify-content-center bg-success p-2 text-light rounded">
+                        <h2 className='fw-bold d-flex justify-content-center'>Total</h2>
+                        <p className='h4 d-flex justify-content-center'>{this.state.listarTotalEquip}</p>
+                    </div>
+                </div>
+                <div className='row mt-4 d-flex justify-content-around'>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">
+                        <Grafico tipo="pie" titulo="Ordens de Serviço"
+                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                            texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                            nomeSerie="Ordem de Serviço"
+                            cor={true}
+                            dado={[
+                                { name: "Manutenção Concluída", y: this.state.listarMC },
+                                { name: "Laudo", y: this.state.listarLA },
+                                { name: "Suporte Remoto", y: this.state.listarSR },
+                                { name: "Revisão de Manutenção", y: this.state.listarRM },
+                                { name: "Chamado On-Site", y: this.state.listarCO },
+                                { name: "Revisão de Venda", y: this.state.listarRV },
+                                { name: "Confecção de Cabos", y: this.state.listarCC },
+                                { name: "M/M de Venda", y: this.state.listarMMV },
+                                { name: "Recuperação Placa", y: this.state.listarRP },
+                                { name: "Limpeza", y: this.state.listarLP },
+                                { name: "Revisão Reprovado", y: this.state.listarRR },
+                                { name: "Revisão Compra", y: this.state.listarRC },
+                                { name: "Revisão Locação", y: this.state.listarRL },
+                            ]}
+                        />
+                    </div>
+                    <div className="col-12 col-md-5 sombra flex-fill">
+                        <Grafico tipo="column" titulo="Ordens de Serviço"
+                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                            texto='{point.y:1f}'
+                            nomeSerie="Ordem de Serviço"
+                            cor={true}
+                            dado={[
+                                { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
+                                { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
+                                { name: "Suporte", y: this.state.listarSR, drilldown: "Suporte" },
+                                { name: "Revisão M", y: this.state.listarRM, drilldown: "Revisão M" },
+                                { name: "On-Site", y: this.state.listarCO, drilldown: "On-site" },
+                                { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
+                                { name: "Confecção de Cabos", y: this.state.listarCC, drilldown: "Conf C" },
+                                { name: "M/M de Venda", y: this.state.listarMMV, drilldown: "M/M de Venda" },
+                                { name: "Recuperação Placa", y: this.state.listarRP, drilldown: "Rec Placa" },
+                                { name: "Limpeza", y: this.state.listarLP, drilldown: "Limpeza" },
+                                { name: "Revisão Reprovado", y: this.state.listarRR, drilldown: "Reprovado" },
+                                { name: "Revisão Compra", y: this.state.listarRC, drilldown: "Compra" },
+                                { name: "Revisão Locação", y: this.state.listarRL, drilldown: "Locação" },
+                            ]}
+                            serie={[
+                                {
+                                    name: "Manutenção",
+                                    id: "Manutenção",
+                                    data: this.mostrarEquipamento("Manutenção")
+                                },
+                                {
+                                    name: "Laudo",
+                                    id: "Laudo",
+                                    data: this.mostrarEquipamento("Laudo")
+                                },
+                                {
+                                    name: "Suporte",
+                                    id: "Suporte",
+                                    data: this.mostrarEquipamento("Suporte")
+                                },
+                                {
+                                    name: "Revisão M",
+                                    id: "Revisão M",
+                                    data: this.mostrarEquipamento("Revisão M")
+                                },
+                                {
+                                    name: "On-site",
+                                    id: "On-site",
+                                    data: this.mostrarEquipamento("On-site")
+                                },
+                                {
+                                    name: "Revisão V",
+                                    id: "Revisão V",
+                                    data: this.mostrarEquipamento("Revisão V")
+                                },
+                                {
+                                    name: "Conf C",
+                                    id: "Conf C",
+                                    data: this.mostrarEquipamento("Conf C")
+                                },
+                                {
+                                    name: "M/M de Venda",
+                                    id: "M/M de Venda",
+                                    data: this.mostrarEquipamento("M/M de Venda")
+                                },
+                                {
+                                    name: "Rec Placa",
+                                    id: "Rec Placa",
+                                    data: this.mostrarEquipamento("Rec Placa")
+                                },
+                                {
+                                    name: "Limpeza",
+                                    id: "Limpeza",
+                                    data: this.mostrarEquipamento("Limpeza")
+                                },
+                                {
+                                    name: "Reprovado",
+                                    id: "Reprovado",
+                                    data: this.mostrarEquipamento("Reprovado")
+                                },
+                                {
+                                    name: "Compra",
+                                    id: "Compra",
+                                    data: this.mostrarEquipamento("Compra")
+                                },
+                                {
+                                    name: "Locação",
+                                    id: "Locação",
+                                    data: this.mostrarEquipamento("Locação")
+                                }
 
-        filtrarDados() {
-            const ano = document.getElementById("ano").value;
-            const mes = document.getElementById("mes").value;
-            // const dia = document.getElementById("dia").value;
-
-            if ((ano === "Todos") && (mes === "Todos")) {
-                this.buscarDados()
-                this.buscarEquipamento()
-                this.totalPorEquipamento()
-            } else if ((ano === "Todos") && (mes !== "Todos")) {
-                this.buscarDadosFiltro(mes, ano)
-            } else if ((ano !== "Todos") && (mes === "Todos")) {
-                this.buscarDadosFiltro(mes, ano)
-            } else if ((ano !== "Todos") && (mes !== "Todos")) {
-                this.buscarDadosFiltro(mes, ano)
-            }
-        }
-
-        render() {
-            return (
-                <div>
+                            ]}
+                        />
+                    </div>
                     <div className="row mt-4">
-                        <div className="col-3 d-flex flex-row justify-content-center align-items-center">
-                            <i className="fa fa-filter fa-2x text-danger" /> <h2 className='fw-bold'>Filtro</h2>
-                        </div>
-                        <div className="col-3">
-                            <label>Mês: </label>
-                            <select id="mes" class="form-select" aria-label="Default select example">
-                                <option selected>Todos</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                            </select>
-                        </div>
-                        <div className="col-3">
-                            <label>Ano: </label>
-                            <select id="ano" class="form-select" aria-label="Default select example">
-                                <option selected>Todos</option>
-                                <option>2022</option>
-                                <option>2023</option>
-                                <option>2024</option>
-                                <option>2025</option>
-                                <option>2026</option>
-                                <option>2027</option>
-                                <option>2028</option>
-                                <option>2029</option>
-                                <option>2030</option>
-                            </select>
-                        </div>
-                        <div className="col-3 d-flex align-items-end">
-                            <button className="btn btn-success" onClick={e => this.filtrarDados(e)}>Buscar</button>
-                        </div>
-                    </div>
-                    <div className="row my-3 d-flex justify-content-center ">
-                        <div className="col-3 d-flex flex-column justify-content-center bg-success p-2 text-light rounded">
-                            <h2 className='fw-bold d-flex justify-content-center'>Total</h2>
-                            <p className='h4 d-flex justify-content-center'>{this.state.listarTotalEquip}</p>
-                        </div>
-                    </div>
-                    <div className='row mt-4 d-flex justify-content-around'>
-                        <div className="col-12 col-md-5 flex-fill mx-3 sombra">
-                            <Grafico tipo="pie" titulo="Ordens de Serviço"
-                                formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                                texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                                nomeSerie="Ordem de Serviço"
-                                cor = {true}
-                                dado={[
-                                    { name: "Manutenção Concluída", y: this.state.listarMC },
-                                    { name: "Laudo", y: this.state.listarLA },
-                                    { name: "Suporte Remoto", y: this.state.listarSR },
-                                    { name: "Revisão de Manutenção", y: this.state.listarRM },
-                                    { name: "Chamado On-Site", y: this.state.listarCO },
-                                    { name: "Revisão de Venda", y: this.state.listarRV },
-                                    { name: "Confecção de Cabos", y: this.state.listarCC },
-                                    { name: "M/M de Venda", y: this.state.listarMMV },
-                                    { name: "Recuperação Placa", y: this.state.listarRP },
-                                    { name: "Limpeza", y: this.state.listarLP },
-                                ]}
-                            />
-                        </div>
-                        <div className="col-12 col-md-5 sombra flex-fill">
-                            <Grafico tipo="column" titulo="Ordens de Serviço"
+                        <div className="col-12 sombra mx-2">
+                            <Grafico tipo="column" titulo="Equipamentos"
                                 formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                 texto='{point.y:1f}'
-                                nomeSerie="Ordem de Serviço"
-                                cor = {true}
+                                nomeSerie="Equipamento"
+                                cor={true}
                                 dado={[
-                                    { name: "Manutenção", y: this.state.listarMC, drilldown: "Manutenção" },
-                                    { name: "Laudo", y: this.state.listarLA, drilldown: "Laudo" },
-                                    { name: "Suporte", y: this.state.listarSR, drilldown: "Suporte" },
-                                    { name: "Revisão M", y: this.state.listarRM, drilldown: "Revisão M" },
-                                    { name: "On-Site", y: this.state.listarCO, drilldown: "On-site" },
-                                    { name: "Revisão V", y: this.state.listarRV, drilldown: "Revisão V" },
-                                    { name: "Confecção de Cabos", y: this.state.listarCC, drilldown: "Conf C" },
-                                    { name: "M/M de Venda", y: this.state.listarMMV, drilldown: "M/M de Venda" },
-                                    { name: "Recuperação Placa", y: this.state.listarRP, drilldown:"Rec Placa"},
-                                    { name: "Limpeza", y: this.state.listarLP, drilldown: "Limpeza" },
-                                ]}
-                                serie={[
-                                    {
-                                        name: "Manutenção",
-                                        id: "Manutenção",
-                                        data: this.mostrarEquipamento("Manutenção")
-                                    },
-                                    {
-                                        name: "Laudo",
-                                        id: "Laudo",
-                                        data: this.mostrarEquipamento("Laudo")
-                                    },
-                                    {
-                                        name: "Suporte",
-                                        id: "Suporte",
-                                        data: this.mostrarEquipamento("Suporte")
-                                    },
-                                    {
-                                        name: "Revisão M",
-                                        id: "Revisão M",
-                                        data: this.mostrarEquipamento("Revisão M")
-                                    },
-                                    {
-                                        name: "On-site",
-                                        id: "On-site",
-                                        data: this.mostrarEquipamento("On-site")
-                                    },
-                                    {
-                                        name: "Revisão V",
-                                        id: "Revisão V",
-                                        data: this.mostrarEquipamento("Revisão V")
-                                    },
-                                    {
-                                        name: "Conf C",
-                                        id: "Conf C",
-                                        data: this.mostrarEquipamento("Conf C")
-                                    },
-                                    {
-                                        name: "M/M de Venda",
-                                        id: "M/M de Venda",
-                                        data: this.mostrarEquipamento("M/M de Venda")
-                                    },
-                                    {
-                                        name: "Rec Placa",
-                                        id: "Rec Placa",
-                                        data: this.mostrarEquipamento("Rec Placa")
-                                    },
-                                    {
-                                        name: "Limpeza",
-                                        id: "Limpeza",
-                                        data: this.mostrarEquipamento("Limpeza")
-                                    }
-
-                                ]}
-                            />
-                        </div>
-                        <div className="row mt-4">
-                            <div className="col-12 sombra mx-2">
-                                <Grafico tipo="column" titulo="Equipamentos"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Equipamento"
-                                    cor = {true}
-                                    dado={[
-                                        { name: "Coletor", y: this.state.listarTotalCOl },
-                                        { name: "Leitor", y: this.state.listarTotalLei },
-                                        { name: "Busca Preço", y: this.state.listarTotalBusca },
-                                        { name: "Impressora", y: this.state.listarTotalImp },
-                                        { name: "Carregador 3 P", y: this.state.listarTotalCar3 },
-                                        { name: "Carregador 4 P", y: this.state.listarTotalCar4 },
-                                        { name: "Carregador 5 P", y: this.state.listarTotalCar5 },
-                                        { name: "Carregador 6 P", y: this.state.listarTotalCar6 },
-                                        { name: "Berço", y: this.state.listarTotalBerco },
-                                        { name: "Fonte", y: this.state.listarTotalFonte },
-                                        { name: "Cabo C", y: this.state.listarTotalCabos }
-                                    ]} />
-                            </div>
+                                    { name: "Coletor", y: this.state.listarTotalCOl },
+                                    { name: "Leitor", y: this.state.listarTotalLei },
+                                    { name: "Busca Preço", y: this.state.listarTotalBusca },
+                                    { name: "Impressora", y: this.state.listarTotalImp },
+                                    { name: "Carregador 3 P", y: this.state.listarTotalCar3 },
+                                    { name: "Carregador 4 P", y: this.state.listarTotalCar4 },
+                                    { name: "Carregador 5 P", y: this.state.listarTotalCar5 },
+                                    { name: "Carregador 6 P", y: this.state.listarTotalCar6 },
+                                    { name: "Berço", y: this.state.listarTotalBerco },
+                                    { name: "Fonte", y: this.state.listarTotalFonte },
+                                    { name: "Cabo C", y: this.state.listarTotalCabos },
+                                    { name: "Bateria", y: this.state.listarTotalBateria }
+                                ]} />
                         </div>
                     </div>
                 </div>
-            )
+            </div>
+        )
 
-        }
     }
+}
