@@ -3,12 +3,13 @@
     {
       "id": 1,
       "Data": "01/02/2023",
+      "Dia": 1,
       "Mes": 2,
       "Ano": 2023,
       "OS": "47310",
       "Cliente": "MARISA",
       "Equipamento": "Coletor de Dados",
-      "Modelo": "CK3A1",
+      "Modelo": "CK3A1a",
       "NS": "21021039363",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
@@ -153,7 +154,8 @@
       "id": 9
     },
     {
-      "Data": "2023-02-01T12:17:27.038Z",
+      "id": 10,
+      "Data": "01/02/2023",
       "Dia": 1,
       "Mes": 2,
       "Ano": 2023,
@@ -165,9 +167,8 @@
       "Servico": "Laudo",
       "Classificacao": "Defeito",
       "Observacao": "",
-      "Status": "",
       "Tecnico": "Diego Carvalho",
-      "id": 10
+      "Status": ""
     },
     {
       "Data": "2023-02-01T11:06:36.856Z",

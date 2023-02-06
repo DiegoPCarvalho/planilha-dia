@@ -11,9 +11,9 @@ import $ from 'jquery';
 const initialState = {
     Atividade: {
         Data: '',
-        Dia: dia(),
-        Mes: mes(),
-        Ano: ano(),
+        Dia: '',
+        Mes: '',
+        Ano: '',
         OS: '',
         Cliente: '',
         Equipamento: '',
@@ -28,24 +28,6 @@ const initialState = {
     list: []
 }
 
-function mes(){
-    let data = new Date();
-    let mes = data.getMonth() + 1;
-    return mes
-}
-
-function ano(){
-    let data = new Date();
-    let ano = data.getFullYear();
-    return ano
-}
-
-function dia() {
-    let data = new Date();
-    let dia = data.getDate();
-
-    return dia
-}
 
 const banco = "Geral";
 
@@ -85,6 +67,7 @@ export default class Tabela extends React.Component {
                 dadoNome.push({
                     id: tabelaNome[i].id,
                     Data: tabelaNome[i].Data,
+                    Dia: tabelaNome[i].Dia,
                     Mes: tabelaNome[i].Mes,
                     Ano: tabelaNome[i].Ano,
                     OS: tabelaNome[i].OS,
