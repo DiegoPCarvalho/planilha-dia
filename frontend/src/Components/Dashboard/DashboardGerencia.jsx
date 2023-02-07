@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Url from '../Url/Url';
 import Grafico from '../Graficos/Grafico';
+import CardGD from '../Card/CardGD';
 
 import ModalTecnicos from '../Modal/ModalDashboardTecnicos';
 
@@ -25,6 +26,7 @@ import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
 const initialState = {
     //total equipamento
     listarTotalEquip: [0],
+    listarTotalGarantia: [0],
 
     //Ordem de Serviço
     listarMC: [0],
@@ -37,6 +39,9 @@ const initialState = {
     listarMMV: [0],
     listarRP: [0],
     listarLP: [0],
+    listarRR: [0],
+    listarRC: [0],
+    listarRL: [0],
 
     //Tecnicos: 
     listarDiegoC: [0],
@@ -80,6 +85,9 @@ const initialState = {
     listarDiegoCMMV: [0],
     listarDiegoCRP: [0],
     listarDiegoCLP: [0],
+    listarDiegoCRR: [0],
+    listarDiegoCRC: [0],
+    listarDiegoCRL: [0],
 
     //Ordem de Serviço Natanael
     listarNataMC: [0],
@@ -92,6 +100,9 @@ const initialState = {
     listarNataMMV: [0],
     listarNataRP: [0],
     listarNataLP: [0],
+    listarNataRR: [0],
+    listarNataRC: [0],
+    listarNataRL: [0],
 
     //Ordem de Serviço Mateus
     listarMateusMC: [0],
@@ -104,6 +115,9 @@ const initialState = {
     listarMateusMMV: [0],
     listarMateusRP: [0],
     listarMateusLP: [0],
+    listarMateusRR: [0],
+    listarMateusRC: [0],
+    listarMateusRL: [0],
 
     //Ordem de Serviço Lucas
     listarLucasMC: [0],
@@ -116,6 +130,9 @@ const initialState = {
     listarLucasMMV: [0],
     listarLucasRP: [0],
     listarLucasLP: [0],
+    listarLucasRR: [0],
+    listarLucasRC: [0],
+    listarLucasRL: [0],
 
     //Ordem de Serviço Diogo
     listarDiogoMC: [0],
@@ -128,6 +145,9 @@ const initialState = {
     listarDiogoMMV: [0],
     listarDiogoRP: [0],
     listarDiogoLP: [0],
+    listarDiogoRR: [0],
+    listarDiogoRC: [0],
+    listarDiogoRL: [0],
 
     //Ordem de Serviço Gabriel
     listarGabrielMC: [0],
@@ -140,6 +160,9 @@ const initialState = {
     listarGabrielMMV: [0],
     listarGabrielRP: [0],
     listarGabrielLP: [0],
+    listarGabrielRR: [0],
+    listarGabrielRC: [0],
+    listarGabrielRL: [0],
 
     //Ordem de Serviço Bruno
     listarBrunoMC: [0],
@@ -152,6 +175,9 @@ const initialState = {
     listarBrunoMMV: [0],
     listarBrunoRP: [0],
     listarBrunoLP: [0],
+    listarBrunoRR: [0],
+    listarBrunoRC: [0],
+    listarBrunoRL: [0],
 
     //Ordem de Serviço Vinicius
     listarViniciusMC: [0],
@@ -164,6 +190,9 @@ const initialState = {
     listarViniciusMMV: [0],
     listarViniciusRP: [0],
     listarViniciusLP: [0],
+    listarViniciusRR: [0],
+    listarViniciusRC: [0],
+    listarViniciusRL: [0],
 
     //Ordem de Serviço DiegoA
     listarDiegoAMC: [0],
@@ -176,6 +205,9 @@ const initialState = {
     listarDiegoAMMV: [0],
     listarDiegoARP: [0],
     listarDiegoALP: [0],
+    listarDiegoARR: [0],
+    listarDiegoARC: [0],
+    listarDiegoARL: [0],
 
     // //Ordem de Serviço Anderson
     // listarAndersonMC: [0],
@@ -200,6 +232,9 @@ const initialState = {
     listarMarcioMMV: [0],
     listarMarcioRP: [0],
     listarMarcioLP: [0],
+    listarMarcioRR: [0],
+    listarMarcioRC: [0],
+    listarMarcioRL: [0],
 
     //Ordem de Serviço Cida
     listarCidaMC: [0],
@@ -212,6 +247,9 @@ const initialState = {
     listarCidaMMV: [0],
     listarCidaRP: [0],
     listarCidaLP: [0],
+    listarCidaRR: [0],
+    listarCidaRC: [0],
+    listarCidaRL: [0],
 
     //Ordem de Serviço Allan
     listarAllanMC: [0],
@@ -224,6 +262,9 @@ const initialState = {
     listarAllanMMV: [0],
     listarAllanRP: [0],
     listarAllanLP: [0],
+    listarAllanRR: [0],
+    listarAllanRC: [0],
+    listarAllanRL: [0],
 
     //Ordem de Serviço Douglas
     listarDouglasMC: [0],
@@ -236,6 +277,9 @@ const initialState = {
     listarDouglasMMV: [0],
     listarDouglasRP: [0],
     listarDouglasLP: [0],
+    listarDouglasRR: [0],
+    listarDouglasRC: [0],
+    listarDouglasRL: [0],
 
     //Ordem de Serviço Kleiton
     listarKleitonMC: [0],
@@ -248,6 +292,9 @@ const initialState = {
     listarKleitonMMV: [0],
     listarKleitonRP: [0],
     listarKleitonLP: [0],
+    listarKleitonRR: [0],
+    listarKleitonRC: [0],
+    listarKleitonRL: [0],
 
 
     //total por tecnico
@@ -280,6 +327,7 @@ const initialState = {
     listarDiegoCBerco: [0],
     listarDiegoCFonte: [0],
     listarDiegoCCabos: [0],
+    listarDiegoCBateria: [0],
 
     //Total Equipamentos Natanael
     listarNataCol: [0],
@@ -293,6 +341,7 @@ const initialState = {
     listarNataBerco: [0],
     listarNataFonte: [0],
     listarNataCabos: [0],
+    listarNataBateria: [0],
 
 
     //Total Equipamentos Mateus
@@ -307,6 +356,7 @@ const initialState = {
     listarMateusBerco: [0],
     listarMateusFonte: [0],
     listarMateusCabos: [0],
+    listarMateusBateria: [0],
 
     //Total Equipamentos Lucas
     listarLucasCol: [0],
@@ -320,6 +370,7 @@ const initialState = {
     listarLucasBerco: [0],
     listarLucasFonte: [0],
     listarLucasCabos: [0],
+    listarLucasBateria: [0],
 
     //Total Equipamentos Diogo
     listarDiogoCol: [0],
@@ -333,6 +384,7 @@ const initialState = {
     listarDiogoBerco: [0],
     listarDiogoFonte: [0],
     listarDiogoCabos: [0],
+    listarDiogoBateria: [0],
 
     //Total Equipamentos Gabriel
     listarGabrielCol: [0],
@@ -346,6 +398,7 @@ const initialState = {
     listarGabrielBerco: [0],
     listarGabrielFonte: [0],
     listarGabrielCabos: [0],
+    listarGabrielBateria: [0],
 
     //Total Equipamentos Bruno
     listarBrunoCol: [0],
@@ -359,6 +412,7 @@ const initialState = {
     listarBrunoBerco: [0],
     listarBrunoFonte: [0],
     listarBrunoCabos: [0],
+    listarBrunoBateria: [0],
 
     //Total Equipamentos Vinicius
     listarViniciusCol: [0],
@@ -372,6 +426,7 @@ const initialState = {
     listarViniciusBerco: [0],
     listarViniciusFonte: [0],
     listarViniciusCabos: [0],
+    listarViniciusBateria: [0],
 
     //Total Equipamentos DiegoA
     listarDiegoACol: [0],
@@ -385,6 +440,7 @@ const initialState = {
     listarDiegoABerco: [0],
     listarDiegoAFonte: [0],
     listarDiegoACabos: [0],
+    listarDiegoABateria: [0],
 
     // //Total Equipamentos Anderson
     // listarAndersonCol: [0],
@@ -411,6 +467,7 @@ const initialState = {
     listarMarcioBerco: [0],
     listarMarcioFonte: [0],
     listarMarcioCabos: [0],
+    listarMarcioBateria: [0],
 
     //Total Equipamentos Cida
     listarCidaCol: [0],
@@ -424,6 +481,7 @@ const initialState = {
     listarCidaBerco: [0],
     listarCidaFonte: [0],
     listarCidaCabos: [0],
+    listarCidaBateria: [0],
 
     //Total Equipamentos Allan
     listarAllanCol: [0],
@@ -437,6 +495,7 @@ const initialState = {
     listarAllanBerco: [0],
     listarAllanFonte: [0],
     listarAllanCabos: [0],
+    listarAllanBateria: [0],
 
     //Total Equipamentos Douglas
     listarDouglasCol: [0],
@@ -450,6 +509,7 @@ const initialState = {
     listarDouglasBerco: [0],
     listarDouglasFonte: [0],
     listarDouglasCabos: [0],
+    listarDouglasBateria: [0],
 
     //Total Equipamentos Kleiton
     listarKleitonCol: [0],
@@ -463,6 +523,7 @@ const initialState = {
     listarKleitonBerco: [0],
     listarKleitonFonte: [0],
     listarKleitonCabos: [0],
+    listarKleitonBateria: [0],
 }
 
 const banco = "Geral";
@@ -484,7 +545,6 @@ export default class DashboardGerencia extends React.Component {
         this.buscaPorTecnico("Bruno Bedani")
         this.buscaPorTecnico("Vinicius Gomes")
         this.buscaPorTecnico("Diego Almeida")
-        // this.buscaPorTecnico("Anderson Ramos")
         this.buscaPorTecnico("Marcio")
         this.buscaPorTecnico("Cida Zani")
         this.buscaPorTecnico("Allan Zulino")
@@ -513,6 +573,9 @@ export default class DashboardGerencia extends React.Component {
         let dadoMMV = [];
         let dadoRP = [];
         let dadoLP = [];
+        let dadoRR = [];
+        let dadoRC = [];
+        let dadoRL = [];
 
         //variavel tecnico
         let dadoDiegoC = [];
@@ -544,6 +607,9 @@ export default class DashboardGerencia extends React.Component {
         let dadoOut = [];
         let dadoNov = [];
         let dadoDez = [];
+
+        //total garantia
+        let dadoGarantia = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -596,6 +662,21 @@ export default class DashboardGerencia extends React.Component {
             }
             if (("Limpeza" === tabelaNome[i].Servico)) {
                 dadoLP.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                dadoRR.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                dadoRC.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                dadoRL.push({
                     OS: tabelaNome[i].OS
                 })
             }
@@ -659,11 +740,6 @@ export default class DashboardGerencia extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
-            // if (v.match(/Anderson/)) {
-            //     dadoAnderson.push({
-            //         OS: tabelaNome[i].OS
-            //     })
-            // }
             if (v.match(/Douglas/)) {
                 dadoDouglas.push({
                     OS: tabelaNome[i].OS
@@ -734,6 +810,11 @@ export default class DashboardGerencia extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
+            if ("Garantia" === tabelaNome[i].Status) {
+                dadoGarantia.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
         }
 
         //variavel servico
@@ -747,10 +828,16 @@ export default class DashboardGerencia extends React.Component {
         let totalMMV = Object.keys(dadoMMV).length;
         let totalRP = Object.keys(dadoRP).length;
         let totalLP = Object.keys(dadoLP).length;
+        let totalRR = Object.keys(dadoRR).length;
+        let totalRC = Object.keys(dadoRC).length;
+        let totalRL = Object.keys(dadoRL).length;
 
         //variavel total
         let totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
-            totalCC + totalMMV + totalRP + totalLP
+            totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
+
+        //variavel Garantia
+        let totalGarantia = Object.keys(dadoGarantia).length;
 
         //variavel tecnico
         let totalDiegoC = Object.keys(dadoDiegoC).length;
@@ -795,10 +882,14 @@ export default class DashboardGerencia extends React.Component {
             listarMMV: totalMMV,
             listarRP: totalRP,
             listarLP: totalLP,
+            listarRR: totalRR,
+            listarRC: totalRC,
+            listarRL: totalRL,
 
 
             //busca total
             listarTotalEquip: totalEquip,
+            listarTotalGarantia: totalGarantia,
 
             //busca tecnico
             listarDiegoC: totalDiegoC,
@@ -847,6 +938,9 @@ export default class DashboardGerencia extends React.Component {
         let dadoFMMV = [];
         let dadoFRP = [];
         let dadoFLP = [];
+        let dadoFRR = [];
+        let dadoFRC = [];
+        let dadoFRL = [];
 
         //variavel tecnico
         let dadoFDiegoC = [];
@@ -879,11 +973,14 @@ export default class DashboardGerencia extends React.Component {
         let dadoFNov = [];
         let dadoFDez = [];
 
+        //totalGarantia
+        let dadoFGarantia = [];
+
         for (let i = 0; i < tabelaNome.length; i++) {
             let v = `${tabelaNome[i].Tecnico}`;
 
             //#region Ano
-            
+
             if ((dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                     dadoFMC.push({
@@ -932,6 +1029,21 @@ export default class DashboardGerencia extends React.Component {
                 }
                 if (("Limpeza" === tabelaNome[i].Servico)) {
                     dadoFLP.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                    dadoFRR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                    dadoFRC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                    dadoFRL.push({
                         OS: tabelaNome[i].OS
                     })
                 }
@@ -1070,9 +1182,14 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if ("Garantia" === tabelaNome[i].Status) {
+                    dadoFGarantia.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion 
-            
+
             //#region Mes Ano
             if ((dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
                 if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
@@ -1125,6 +1242,21 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                    dadoFRR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                    dadoFRC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                    dadoFRL.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
                 if (v.match(/Diego C/)) {
                     dadoFDiegoC.push({
                         OS: tabelaNome[i].OS
@@ -1257,6 +1389,11 @@ export default class DashboardGerencia extends React.Component {
                 }
                 if (12 === tabelaNome[i].Mes) {
                     dadoFDez.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if ("Garantia" === tabelaNome[i].Status) {
+                    dadoFGarantia.push({
                         OS: tabelaNome[i].OS
                     })
                 }
@@ -1315,6 +1452,21 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                    dadoFRR.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                    dadoFRC.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                    dadoFRL.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
                 if (v.match(/Diego C/)) {
                     dadoFDiegoC.push({
                         OS: tabelaNome[i].OS
@@ -1450,6 +1602,11 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if ("Garantia" === tabelaNome[i].Status) {
+                    dadoFGarantia.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion
         }
@@ -1465,10 +1622,16 @@ export default class DashboardGerencia extends React.Component {
         let totalFMMV = Object.keys(dadoFMMV).length;
         let totalFRP = Object.keys(dadoFRP).length;
         let totalFLP = Object.keys(dadoFLP).length;
+        let totalFRR = Object.keys(dadoFRR).length;
+        let totalFRC = Object.keys(dadoFRC).length;
+        let totalFRL = Object.keys(dadoFRL).length;
 
         //variavel total
         let totalFEquip = totalFMC + totalFLA + totalFSR + totalFRM + totalFCO + totalFRV +
-            totalFCC + totalFMMV + totalFRP + totalFLP
+            totalFCC + totalFMMV + totalFRP + totalFLP + totalFRR + totalFRC + totalFRL
+
+        //total Garantia
+        let totalFGarantia = Object.keys(dadoFGarantia).length;
 
         //variavel tecnico
         let totalFDiegoC = Object.keys(dadoFDiegoC).length;
@@ -1513,10 +1676,14 @@ export default class DashboardGerencia extends React.Component {
             listarMMV: totalFMMV,
             listarRP: totalFRP,
             listarLP: totalFLP,
+            listarRR: totalFRR,
+            listarRC: totalFRC,
+            listarRL: totalFRL,
 
 
             //busca totalF
             listarTotalEquip: totalFEquip,
+            listarTotalGarantia: totalFGarantia,
 
             //busca tecnico
             listarDiegoC: totalFDiegoC,
@@ -1568,7 +1735,6 @@ export default class DashboardGerencia extends React.Component {
             this.buscaPorTecnico("Bruno Bedani")
             this.buscaPorTecnico("Vinicius Gomes")
             this.buscaPorTecnico("Diego Almeida")
-            // this.buscaPorTecnico("Anderson Ramos")
             this.buscaPorTecnico("Marcio")
             this.buscaPorTecnico("Cida Zani")
             this.buscaPorTecnico("Allan Zulino")
@@ -1585,14 +1751,12 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
-            // this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
-            console.log("Filtando apenas o  " + ano)
         } else if ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
@@ -1603,14 +1767,12 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
-            // this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
-            console.log("Filtando os tres " + dia + " " + mes + " " + ano)
         } else if ((dia === "Todos") && (ano !== "Todos") && (mes === "Todos")) {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
@@ -1621,14 +1783,12 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Bruno Bedani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Vinicius Gomes", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Diego Almeida", dia, mes, ano)
-            // this.buscarPorTecnicoFiltro("Anderson Ramos", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Marcio", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Cida Zani", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
-            console.log("Filtando apenas o  " + ano)
         }
     }
 
@@ -1649,6 +1809,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -1662,6 +1825,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -1716,6 +1880,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -1757,6 +1936,11 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                 }
             }
 
@@ -1771,10 +1955,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -1788,6 +1975,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -1801,6 +1989,9 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoCMMV: totalTMMV,
                 listarDiegoCRP: totalTRP,
                 listarDiegoCLP: totalTLP,
+                listarDiegoCRR: totalTRR,
+                listarDiegoCRC: totalTRC,
+                listarDiegoCRL: totalTRL,
 
                 //busca total
                 listarTotalDiegoC: totalTEquip,
@@ -1816,7 +2007,8 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoCCar6: totalCar6,
                 listarDiegoCBerco: totalBerco,
                 listarDiegoCFonte: totalFonte,
-                listarDiegoCCabos: totalCabo
+                listarDiegoCCabos: totalCabo,
+                listarDiegoCBateria: totalBateria
             })
         }
 
@@ -1833,6 +2025,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -1846,6 +2041,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -1900,6 +2096,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -1936,12 +2147,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -1959,10 +2171,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -1976,6 +2191,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -1989,6 +2205,9 @@ export default class DashboardGerencia extends React.Component {
                 listarNataMMV: totalTMMV,
                 listarNataRP: totalTRP,
                 listarNataLP: totalTLP,
+                listarNataRR: totalTRR,
+                listarNataRC: totalTRC,
+                listarNataRL: totalTRL,
 
                 //busca total
                 listarTotalNata: totalTEquip,
@@ -2004,11 +2223,13 @@ export default class DashboardGerencia extends React.Component {
                 listarNataCar6: totalCar6,
                 listarNataBerco: totalBerco,
                 listarNataFonte: totalFonte,
-                listarNataCabos: totalCabo
+                listarNataCabos: totalCabo,
+                listarNataBateria: totalBateria
             })
         }
 
         if (tecnico === "Mateus Doval") {
+
 
             //variavel servico
             let dadoTMC = [];
@@ -2021,6 +2242,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -2034,6 +2258,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -2088,6 +2313,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -2124,12 +2364,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -2147,10 +2388,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -2164,6 +2408,8 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -2177,6 +2423,9 @@ export default class DashboardGerencia extends React.Component {
                 listarMateusMMV: totalTMMV,
                 listarMateusRP: totalTRP,
                 listarMateusLP: totalTLP,
+                listarMateusRR: totalTRR,
+                listarMateusRC: totalTRC,
+                listarMateusRL: totalTRL,
 
                 //busca total
                 listarTotalMateus: totalTEquip,
@@ -2192,11 +2441,13 @@ export default class DashboardGerencia extends React.Component {
                 listarMateusCar6: totalCar6,
                 listarMateusBerco: totalBerco,
                 listarMateusFonte: totalFonte,
-                listarMateusCabos: totalCabo
+                listarMateusCabos: totalCabo,
+                listarMateusBateria: totalBateria
             })
         }
 
         if (tecnico === "Lucas Felician") {
+
 
             //variavel servico
             let dadoTMC = [];
@@ -2209,6 +2460,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -2222,6 +2476,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -2276,6 +2531,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -2312,16 +2582,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                        dadoBerco.push({
-                            OS: tabelaNome[i].OS
-                        })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -2339,10 +2606,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -2356,6 +2626,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -2369,6 +2640,9 @@ export default class DashboardGerencia extends React.Component {
                 listarLucasMMV: totalTMMV,
                 listarLucasRP: totalTRP,
                 listarLucasLP: totalTLP,
+                listarLucasRR: totalTRR,
+                listarLucasRC: totalTRC,
+                listarLucasRL: totalTRL,
 
                 //busca total
                 listarTotalLucas: totalTEquip,
@@ -2384,11 +2658,13 @@ export default class DashboardGerencia extends React.Component {
                 listarLucasCar6: totalCar6,
                 listarLucasBerco: totalBerco,
                 listarLucasFonte: totalFonte,
-                listarLucasCabos: totalCabo
+                listarLucasCabos: totalCabo,
+                listarLucasBateria: totalBateria
             })
         }
 
         if (tecnico === "Diogo Selmini") {
+
 
             //variavel servico
             let dadoTMC = [];
@@ -2401,6 +2677,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -2414,6 +2693,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -2468,6 +2748,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -2504,12 +2799,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -2527,10 +2823,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -2544,6 +2843,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -2557,6 +2857,9 @@ export default class DashboardGerencia extends React.Component {
                 listarDiogoMMV: totalTMMV,
                 listarDiogoRP: totalTRP,
                 listarDiogoLP: totalTLP,
+                listarDiogoRR: totalTRR,
+                listarDiogoRC: totalTRC,
+                listarDiogoRL: totalTRL,
 
                 //busca total
                 listarTotalDiogo: totalTEquip,
@@ -2572,7 +2875,8 @@ export default class DashboardGerencia extends React.Component {
                 listarDiogoCar6: totalCar6,
                 listarDiogoBerco: totalBerco,
                 listarDiogoFonte: totalFonte,
-                listarDiogoCabos: totalCabo
+                listarDiogoCabos: totalCabo,
+                listarDiogoBateria: totalBateria
             })
         }
 
@@ -2589,6 +2893,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -2602,6 +2909,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -2656,6 +2964,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -2692,12 +3015,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -2715,10 +3039,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -2732,6 +3059,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -2745,6 +3073,9 @@ export default class DashboardGerencia extends React.Component {
                 listarGabrielMMV: totalTMMV,
                 listarGabrielRP: totalTRP,
                 listarGabrielLP: totalTLP,
+                listarGabrielRR: totalTRR,
+                listarGabrielRC: totalTRC,
+                listarGabrielRL: totalTRL,
 
                 //busca total
                 listarTotalGabriel: totalTEquip,
@@ -2760,7 +3091,8 @@ export default class DashboardGerencia extends React.Component {
                 listarGabrielCar6: totalCar6,
                 listarGabrielBerco: totalBerco,
                 listarGabrielFonte: totalFonte,
-                listarGabrielCabos: totalCabo
+                listarGabrielCabos: totalCabo,
+                listarGabrielBateria: totalBateria
             })
         }
 
@@ -2777,6 +3109,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -2790,6 +3125,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -2844,6 +3180,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -2880,12 +3231,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -2903,10 +3255,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -2920,6 +3275,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -2933,6 +3289,9 @@ export default class DashboardGerencia extends React.Component {
                 listarBrunoMMV: totalTMMV,
                 listarBrunoRP: totalTRP,
                 listarBrunoLP: totalTLP,
+                listarBrunoRR: totalTRR,
+                listarBrunoRC: totalTRC,
+                listarBrunoRL: totalTRL,
 
                 //busca total
                 listarTotalBruno: totalTEquip,
@@ -2948,7 +3307,8 @@ export default class DashboardGerencia extends React.Component {
                 listarBrunoCar6: totalCar6,
                 listarBrunoBerco: totalBerco,
                 listarBrunoFonte: totalFonte,
-                listarBrunoCabos: totalCabo
+                listarBrunoCabos: totalCabo,
+                listarBrunoBateria: totalBateria
             })
         }
 
@@ -2965,6 +3325,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -2978,6 +3341,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -3032,6 +3396,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -3068,12 +3447,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -3091,10 +3471,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -3108,6 +3491,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -3121,6 +3505,9 @@ export default class DashboardGerencia extends React.Component {
                 listarViniciusMMV: totalTMMV,
                 listarViniciusRP: totalTRP,
                 listarViniciusLP: totalTLP,
+                listarViniciusRR: totalTRR,
+                listarViniciusRC: totalTRC,
+                listarViniciusRL: totalTRL,
 
                 //busca total
                 listarTotalVinicius: totalTEquip,
@@ -3136,7 +3523,8 @@ export default class DashboardGerencia extends React.Component {
                 listarViniciusCar6: totalCar6,
                 listarViniciusBerco: totalBerco,
                 listarViniciusFonte: totalFonte,
-                listarViniciusCabos: totalCabo
+                listarViniciusCabos: totalCabo,
+                listarViniciusBateria: totalBateria
             })
         }
 
@@ -3153,6 +3541,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -3166,6 +3557,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -3220,6 +3612,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -3256,12 +3663,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -3279,10 +3687,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -3296,6 +3707,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -3309,6 +3721,9 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoAMMV: totalTMMV,
                 listarDiegoARP: totalTRP,
                 listarDiegoALP: totalTLP,
+                listarDiegoARR: totalTRR,
+                listarDiegoARC: totalTRC,
+                listarDiegoARL: totalTRL,
 
                 //busca total
                 listarTotalDiegoA: totalTEquip,
@@ -3324,197 +3739,10 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoACar6: totalCar6,
                 listarDiegoABerco: totalBerco,
                 listarDiegoAFonte: totalFonte,
-                listarDiegoACabos: totalCabo
+                listarDiegoACabos: totalCabo,
+                listarDiegoABateria: totalBateria
             })
         }
-
-        // if (tecnico === "Anderson Ramos") {
-
-        //     //variavel servico
-        //     let dadoTMC = [];
-        //     let dadoTLA = [];
-        //     let dadoTSR = [];
-        //     let dadoTRM = [];
-        //     let dadoTCO = [];
-        //     let dadoTRV = [];
-        //     let dadoTCC = [];
-        //     let dadoTMMV = [];
-        //     let dadoTRP = [];
-        //     let dadoTLP = [];
-
-        //     //dados por equipamento
-        //     let dadoCol = [];
-        //     let dadoLei = [];
-        //     let dadoImp = [];
-        //     let dadoBusca = [];
-        //     let dadoCar3 = [];
-        //     let dadoCar4 = [];
-        //     let dadoCar5 = [];
-        //     let dadoCar6 = [];
-        //     let dadoBerco = [];
-        //     let dadoFonte = [];
-        //     let dadoCabo = [];
-
-        //     for (let i = 0; i < tabelaNome.length; i++) {
-
-        //         if (tecnico === tabelaNome[i].Tecnico) {
-        //             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-        //                 dadoTMC.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Laudo" === tabelaNome[i].Servico)) {
-        //                 dadoTLA.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-        //                 dadoTSR.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-        //                 dadoTRM.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-        //                 dadoTCO.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-        //                 dadoTRV.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-        //                 dadoTCC.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-        //                 dadoTMMV.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-        //                 dadoTRP.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Limpeza" === tabelaNome[i].Servico)) {
-        //                 dadoTLP.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-        //                 dadoCol.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-        //                 dadoLei.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-        //                 dadoImp.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-        //                 dadoBusca.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-        //                 dadoCar3.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-        //                 dadoCar4.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-        //                 dadoCar5.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-        //                 dadoCar6.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-        //                 dadoBerco.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-        //                 dadoFonte.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-        //                 dadoCabo.push({
-        //                     OS: tabelaNome[i].OS
-        //                 })
-        //             }
-        //         }
-        //     }
-
-        //     //variavel servico
-        //     let totalTMC = Object.keys(dadoTMC).length;
-        //     let totalTLA = Object.keys(dadoTLA).length;
-        //     let totalTSR = Object.keys(dadoTSR).length;
-        //     let totalTRM = Object.keys(dadoTRM).length;
-        //     let totalTCO = Object.keys(dadoTCO).length;
-        //     let totalTRV = Object.keys(dadoTRV).length;
-        //     let totalTCC = Object.keys(dadoTCC).length;
-        //     let totalTMMV = Object.keys(dadoTMMV).length;
-        //     let totalTRP = Object.keys(dadoTRP).length;
-        //     let totalTLP = Object.keys(dadoTLP).length;
-
-        //     //total
-        //     let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-        //         totalTCC + totalTMMV + totalTRP + totalTLP
-
-        //     //Variavel Total por equipamento
-        //     let totalCol = Object.keys(dadoCol).length;
-        //     let totalLei = Object.keys(dadoLei).length;
-        //     let totalImp = Object.keys(dadoImp).length;
-        //     let totalBusca = Object.keys(dadoBusca).length;
-        //     let totalCar3 = Object.keys(dadoCar3).length;
-        //     let totalCar4 = Object.keys(dadoCar4).length;
-        //     let totalCar5 = Object.keys(dadoCar5).length;
-        //     let totalCar6 = Object.keys(dadoCar6).length;
-        //     let totalBerco = Object.keys(dadoBerco).length;
-        //     let totalFonte = Object.keys(dadoFonte).length;
-        //     let totalCabo = Object.keys(dadoCabo).length;
-
-        //     return this.setState({
-        //         //busca servico
-        //         listarAndersonMC: totalTMC,
-        //         listarAndersonLA: totalTLA,
-        //         listarAndersonSR: totalTSR,
-        //         listarAndersonRM: totalTRM,
-        //         listarAndersonCO: totalTCO,
-        //         listarAndersonRV: totalTRV,
-        //         listarAndersonCC: totalTCC,
-        //         listarAndersonMMV: totalTMMV,
-        //         listarAndersonRP: totalTRP,
-        //         listarAndersonLP: totalTLP,
-
-        //         //busca total
-        //         listarTotalAnderson: totalTEquip,
-
-        //         //listart total por equipamento
-        //         listarAndersonCol: totalCol,
-        //         listarAndersonImp: totalImp,
-        //         listarAndersonLei: totalLei,
-        //         listarAndersonBusca: totalBusca,
-        //         listarAndersonCar3: totalCar3,
-        //         listarAndersonCar4: totalCar4,
-        //         listarAndersonCar5: totalCar5,
-        //         listarAndersonCar6: totalCar6,
-        //         listarAndersonBerco: totalBerco,
-        //         listarAndersonFonte: totalFonte,
-        //         listarAndersonCabos: totalCabo
-        //     })
-        // }
 
         if (tecnico === "Marcio") {
 
@@ -3529,6 +3757,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -3542,6 +3773,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -3596,6 +3828,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -3632,12 +3879,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -3655,10 +3903,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -3672,6 +3923,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -3685,6 +3937,9 @@ export default class DashboardGerencia extends React.Component {
                 listarMarcioMMV: totalTMMV,
                 listarMarcioRP: totalTRP,
                 listarMarcioLP: totalTLP,
+                listarMarcioRR: totalTRR,
+                listarMarcioRC: totalTRC,
+                listarMarcioRL: totalTRL,
 
                 //busca total
                 listarTotalMarcio: totalTEquip,
@@ -3700,7 +3955,8 @@ export default class DashboardGerencia extends React.Component {
                 listarMarcioCar6: totalCar6,
                 listarMarcioBerco: totalBerco,
                 listarMarcioFonte: totalFonte,
-                listarMarcioCabos: totalCabo
+                listarMarcioCabos: totalCabo,
+                listarMarcioBateria: totalBateria
             })
         }
 
@@ -3717,6 +3973,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -3730,6 +3989,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -3784,6 +4044,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -3820,12 +4095,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -3843,10 +4119,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -3860,6 +4139,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -3873,6 +4153,9 @@ export default class DashboardGerencia extends React.Component {
                 listarCidaMMV: totalTMMV,
                 listarCidaRP: totalTRP,
                 listarCidaLP: totalTLP,
+                listarCidaRR: totalTRR,
+                listarCidaRC: totalTRC,
+                listarCidaRL: totalTRL,
 
                 //busca total
                 listarTotalCida: totalTEquip,
@@ -3888,7 +4171,8 @@ export default class DashboardGerencia extends React.Component {
                 listarCidaCar6: totalCar6,
                 listarCidaBerco: totalBerco,
                 listarCidaFonte: totalFonte,
-                listarCidaCabos: totalCabo
+                listarCidaCabos: totalCabo,
+                listarCidaBateria: totalBateria
             })
         }
 
@@ -3905,6 +4189,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -3918,6 +4205,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -3972,6 +4260,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -4008,12 +4311,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -4031,10 +4335,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -4048,6 +4355,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -4061,6 +4369,9 @@ export default class DashboardGerencia extends React.Component {
                 listarAllanMMV: totalTMMV,
                 listarAllanRP: totalTRP,
                 listarAllanLP: totalTLP,
+                listarAllanRR: totalTRR,
+                listarAllanRC: totalTRC,
+                listarAllanRL: totalTRL,
 
                 //busca total
                 listarTotalAllan: totalTEquip,
@@ -4076,7 +4387,8 @@ export default class DashboardGerencia extends React.Component {
                 listarAllanCar6: totalCar6,
                 listarAllanBerco: totalBerco,
                 listarAllanFonte: totalFonte,
-                listarAllanCabos: totalCabo
+                listarAllanCabos: totalCabo,
+                listarAllanBateria: totalBateria
             })
         }
 
@@ -4093,6 +4405,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -4106,6 +4421,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -4160,6 +4476,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -4196,12 +4527,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -4219,10 +4551,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -4236,6 +4571,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -4249,6 +4585,9 @@ export default class DashboardGerencia extends React.Component {
                 listarDouglasMMV: totalTMMV,
                 listarDouglasRP: totalTRP,
                 listarDouglasLP: totalTLP,
+                listarDouglasRR: totalTRR,
+                listarDouglasRC: totalTRC,
+                listarDouglasRL: totalTRL,
 
                 //busca total
                 listarTotalDouglas: totalTEquip,
@@ -4264,7 +4603,8 @@ export default class DashboardGerencia extends React.Component {
                 listarDouglasCar6: totalCar6,
                 listarDouglasBerco: totalBerco,
                 listarDouglasFonte: totalFonte,
-                listarDouglasCabos: totalCabo
+                listarDouglasCabos: totalCabo,
+                listarDouglasBateria: totalBateria
             })
         }
 
@@ -4281,6 +4621,9 @@ export default class DashboardGerencia extends React.Component {
             let dadoTMMV = [];
             let dadoTRP = [];
             let dadoTLP = [];
+            let dadoTRR = [];
+            let dadoTRC = [];
+            let dadoTRL = [];
 
             //dados por equipamento
             let dadoCol = [];
@@ -4294,6 +4637,7 @@ export default class DashboardGerencia extends React.Component {
             let dadoBerco = [];
             let dadoFonte = [];
             let dadoCabo = [];
+            let dadoBateria = [];
 
             for (let i = 0; i < tabelaNome.length; i++) {
 
@@ -4348,6 +4692,21 @@ export default class DashboardGerencia extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     }
+                    if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                        dadoTRR.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                        dadoTRC.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                        dadoTRL.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
                     if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoCol.push({
                             OS: tabelaNome[i].OS
@@ -4384,12 +4743,13 @@ export default class DashboardGerencia extends React.Component {
                         dadoBerco.push({
                             OS: tabelaNome[i].OS
                         })
-                    } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                        dadoFonte.push({
-                            OS: tabelaNome[i].OS
-                        })
                     } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
                         dadoCabo.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    }
+                    if (("Bateria" === tabelaNome[i].Equipamento)) {
+                        dadoBateria.push({
                             OS: tabelaNome[i].OS
                         })
                     }
@@ -4407,10 +4767,13 @@ export default class DashboardGerencia extends React.Component {
             let totalTMMV = Object.keys(dadoTMMV).length;
             let totalTRP = Object.keys(dadoTRP).length;
             let totalTLP = Object.keys(dadoTLP).length;
+            let totalTRR = Object.keys(dadoTRR).length;
+            let totalTRC = Object.keys(dadoTRC).length;
+            let totalTRL = Object.keys(dadoTRL).length;
 
             //total
             let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                totalTCC + totalTMMV + totalTRP + totalTLP
+                totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
@@ -4424,6 +4787,7 @@ export default class DashboardGerencia extends React.Component {
             let totalBerco = Object.keys(dadoBerco).length;
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
+            let totalBateria = Object.keys(dadoBateria).length;
 
             return this.setState({
                 //busca servico
@@ -4437,6 +4801,9 @@ export default class DashboardGerencia extends React.Component {
                 listarKleitonMMV: totalTMMV,
                 listarKleitonRP: totalTRP,
                 listarKleitonLP: totalTLP,
+                listarKleitonRR: totalTRR,
+                listarKleitonRC: totalTRC,
+                listarKleitonRL: totalTRL,
 
                 //busca total
                 listarTotalKleiton: totalTEquip,
@@ -4452,7 +4819,8 @@ export default class DashboardGerencia extends React.Component {
                 listarKleitonCar6: totalCar6,
                 listarKleitonBerco: totalBerco,
                 listarKleitonFonte: totalFonte,
-                listarKleitonCabos: totalCabo
+                listarKleitonCabos: totalCabo,
+                listarKleitonBateria: totalBateria
             })
         }
     }
@@ -4476,6 +4844,9 @@ export default class DashboardGerencia extends React.Component {
                 let dadoTMMV = [];
                 let dadoTRP = [];
                 let dadoTLP = [];
+                let dadoTRR = [];
+                let dadoTRC = [];
+                let dadoTRL = [];
 
                 //dados por equipamento
                 let dadoCol = [];
@@ -4489,100 +4860,124 @@ export default class DashboardGerencia extends React.Component {
                 let dadoBerco = [];
                 let dadoFonte = [];
                 let dadoCabo = [];
+                let dadoBateria = [];
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                            dadoTMC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Laudo" === tabelaNome[i].Servico)) {
-                            dadoTLA.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                            dadoTSR.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                            dadoTRM.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                            dadoTCO.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                            dadoTRV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                            dadoTCC.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                            dadoTMMV.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                            dadoTRP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Limpeza" === tabelaNome[i].Servico)) {
-                            dadoTLP.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
-                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoCol.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                            dadoLei.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                            dadoImp.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                            dadoBusca.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar3.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar4.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar5.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                            dadoCar6.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                            dadoBerco.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                            dadoCabo.push({
-                                OS: tabelaNome[i].OS
-                            })
+                    if (ano === `${tabelaNome[i].Ano}`) {
+
+                        if (tecnico === tabelaNome[i].Tecnico) {
+                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                                dadoTMC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Laudo" === tabelaNome[i].Servico)) {
+                                dadoTLA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                                dadoTSR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                                dadoTRM.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                                dadoTCO.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                                dadoTRV.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                                dadoTCC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                                dadoTMMV.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                                dadoTRP.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Limpeza" === tabelaNome[i].Servico)) {
+                                dadoTLP.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                                dadoTRR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                                dadoTRC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                                dadoTRL.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoCabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoBateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
                         }
                     }
                 }
@@ -4598,10 +4993,13 @@ export default class DashboardGerencia extends React.Component {
                 let totalTMMV = Object.keys(dadoTMMV).length;
                 let totalTRP = Object.keys(dadoTRP).length;
                 let totalTLP = Object.keys(dadoTLP).length;
+                let totalTRR = Object.keys(dadoTRR).length;
+                let totalTRC = Object.keys(dadoTRC).length;
+                let totalTRL = Object.keys(dadoTRL).length;
 
                 //total
                 let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-                    totalTCC + totalTMMV + totalTRP + totalTLP
+                    totalTCC + totalTMMV + totalTRP + totalTLP + totalTRR + totalTRC + totalTRL
 
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
@@ -4615,6 +5013,7 @@ export default class DashboardGerencia extends React.Component {
                 let totalBerco = Object.keys(dadoBerco).length;
                 let totalFonte = Object.keys(dadoFonte).length;
                 let totalCabo = Object.keys(dadoCabo).length;
+                let totalBateria = Object.keys(dadoBateria).length;
 
                 return this.setState({
                     //busca servico
@@ -4628,6 +5027,9 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoCMMV: totalTMMV,
                     listarDiegoCRP: totalTRP,
                     listarDiegoCLP: totalTLP,
+                    listarDiegoCRR: totalTRR,
+                    listarDiegoCRC: totalTRC,
+                    listarDiegoCRL: totalTRL,
 
                     //busca total
                     listarTotalDiegoC: totalTEquip,
@@ -4643,7 +5045,8 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoCCar6: totalCar6,
                     listarDiegoCBerco: totalBerco,
                     listarDiegoCFonte: totalFonte,
-                    listarDiegoCCabos: totalCabo
+                    listarDiegoCCabos: totalCabo,
+                    listarDiegoCBateria: totalBateria
                 })
             }
 
@@ -6155,194 +6558,6 @@ export default class DashboardGerencia extends React.Component {
                 })
             }
 
-            // if (tecnico === "Anderson Ramos") {
-
-            //     //variavel servico
-            //     let dadoTMC = [];
-            //     let dadoTLA = [];
-            //     let dadoTSR = [];
-            //     let dadoTRM = [];
-            //     let dadoTCO = [];
-            //     let dadoTRV = [];
-            //     let dadoTCC = [];
-            //     let dadoTMMV = [];
-            //     let dadoTRP = [];
-            //     let dadoTLP = [];
-
-            //     //dados por equipamento
-            //     let dadoCol = [];
-            //     let dadoLei = [];
-            //     let dadoImp = [];
-            //     let dadoBusca = [];
-            //     let dadoCar3 = [];
-            //     let dadoCar4 = [];
-            //     let dadoCar5 = [];
-            //     let dadoCar6 = [];
-            //     let dadoBerco = [];
-            //     let dadoFonte = [];
-            //     let dadoCabo = [];
-
-            //     for (let i = 0; i < tabelaNome.length; i++) {
-
-            //         if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-            //             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-            //                 dadoTMC.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Laudo" === tabelaNome[i].Servico)) {
-            //                 dadoTLA.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-            //                 dadoTSR.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-            //                 dadoTRM.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-            //                 dadoTCO.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-            //                 dadoTRV.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-            //                 dadoTCC.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-            //                 dadoTMMV.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-            //                 dadoTRP.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Limpeza" === tabelaNome[i].Servico)) {
-            //                 dadoTLP.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-            //                 dadoCol.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-            //                 dadoLei.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-            //                 dadoImp.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-            //                 dadoBusca.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-            //                 dadoCar3.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-            //                 dadoCar4.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-            //                 dadoCar5.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-            //                 dadoCar6.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-            //                 dadoBerco.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-            //                 dadoFonte.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-            //                 dadoCabo.push({
-            //                     OS: tabelaNome[i].OS
-            //                 })
-            //             }
-            //         }
-            //     }
-
-            //     //variavel servico
-            //     let totalTMC = Object.keys(dadoTMC).length;
-            //     let totalTLA = Object.keys(dadoTLA).length;
-            //     let totalTSR = Object.keys(dadoTSR).length;
-            //     let totalTRM = Object.keys(dadoTRM).length;
-            //     let totalTCO = Object.keys(dadoTCO).length;
-            //     let totalTRV = Object.keys(dadoTRV).length;
-            //     let totalTCC = Object.keys(dadoTCC).length;
-            //     let totalTMMV = Object.keys(dadoTMMV).length;
-            //     let totalTRP = Object.keys(dadoTRP).length;
-            //     let totalTLP = Object.keys(dadoTLP).length;
-
-            //     //total
-            //     let totalTEquip = totalTMC + totalTLA + totalTSR + totalTRM + totalTCO + totalTRV +
-            //         totalTCC + totalTMMV + totalTRP + totalTLP
-
-            //     //Variavel Total por equipamento
-            //     let totalCol = Object.keys(dadoCol).length;
-            //     let totalLei = Object.keys(dadoLei).length;
-            //     let totalImp = Object.keys(dadoImp).length;
-            //     let totalBusca = Object.keys(dadoBusca).length;
-            //     let totalCar3 = Object.keys(dadoCar3).length;
-            //     let totalCar4 = Object.keys(dadoCar4).length;
-            //     let totalCar5 = Object.keys(dadoCar5).length;
-            //     let totalCar6 = Object.keys(dadoCar6).length;
-            //     let totalBerco = Object.keys(dadoBerco).length;
-            //     let totalFonte = Object.keys(dadoFonte).length;
-            //     let totalCabo = Object.keys(dadoCabo).length;
-
-            //     return this.setState({
-            //         //busca servico
-            //         listarAndersonMC: totalTMC,
-            //         listarAndersonLA: totalTLA,
-            //         listarAndersonSR: totalTSR,
-            //         listarAndersonRM: totalTRM,
-            //         listarAndersonCO: totalTCO,
-            //         listarAndersonRV: totalTRV,
-            //         listarAndersonCC: totalTCC,
-            //         listarAndersonMMV: totalTMMV,
-            //         listarAndersonRP: totalTRP,
-            //         listarAndersonLP: totalTLP,
-
-            //         //busca total
-            //         listarTotalAnderson: totalTEquip,
-
-            //         //listart total por equipamento
-            //         listarAndersonCol: totalCol,
-            //         listarAndersonImp: totalImp,
-            //         listarAndersonLei: totalLei,
-            //         listarAndersonBusca: totalBusca,
-            //         listarAndersonCar3: totalCar3,
-            //         listarAndersonCar4: totalCar4,
-            //         listarAndersonCar5: totalCar5,
-            //         listarAndersonCar6: totalCar6,
-            //         listarAndersonBerco: totalBerco,
-            //         listarAndersonFonte: totalFonte,
-            //         listarAndersonCabos: totalCabo
-            //     })
-            // }
-
             if (tecnico === "Marcio") {
 
                 //variavel servico
@@ -7282,6 +7497,7 @@ export default class DashboardGerencia extends React.Component {
                     listarKleitonCabos: totalCabo
                 })
             }
+
         }
         //#endregion
 
@@ -13019,9 +13235,17 @@ export default class DashboardGerencia extends React.Component {
                     </div>
                 </div>
                 <div className="row my-3 d-flex justify-content-center ">
-                    <div className="col-3 d-flex flex-column justify-content-center bg-success p-2 text-light rounded">
-                        <h2 className='fw-bold d-flex justify-content-center'>Total</h2>
-                        <p className='h4 d-flex justify-content-center'>{this.state.listarTotalEquip}</p>
+                    <div className="col-3 d-flex flex-column justify-content-center text-light">
+                        <CardGD bg="success" nomeTitulo="Total Serviço" icone={<i class="fa fa-3x fa-server" aria-hidden="true"></i>}
+                            dado={this.state.listarTotalEquip} />
+                    </div>
+                    <div className="col-3 d-flex flex-column justify-content-center text-light">
+                        <CardGD bg="danger" nomeTitulo="Total Garantia" icone={<i class="fa fa-3x fa-backward" aria-hidden="true"></i>}
+                            dado={this.state.listarTotalGarantia} />
+                    </div>
+                    <div className="col-3 d-flex flex-column justify-content-center text-light">
+                        <CardGD bg="primary" nomeTitulo="Total Limpeza" icone={<i class="fa fa-3x fa-paint-brush" aria-hidden="true"></i>}
+                            dado={this.state.listarLP} />
                     </div>
                 </div>
                 <div className="row mt-4">
@@ -13042,6 +13266,9 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "M/M de Venda", y: this.state.listarMMV },
                                 { name: "Rec Placa", y: this.state.listarRP },
                                 { name: "Limpeza", y: this.state.listarLP },
+                                { name: "Revisão Reprovado", y: this.state.listarRR },
+                                { name: "Revisão Compra", y: this.state.listarRC },
+                                { name: "Revisão Locação", y: this.state.listarRL },
                             ]}
                         />
                     </div>
@@ -13052,16 +13279,19 @@ export default class DashboardGerencia extends React.Component {
                             nomeSerie="Ordem de Serviço"
                             cor={true}
                             dado={[
-                                { name: "Manutenção", y: this.state.listarMC },
+                                { name: "Manutenção Concluída", y: this.state.listarMC },
                                 { name: "Laudo", y: this.state.listarLA },
-                                { name: "Suporte", y: this.state.listarSR },
-                                { name: "Revisão M", y: this.state.listarRM },
-                                { name: "On-Site", y: this.state.listarCO },
-                                { name: "Revisão V", y: this.state.listarRV },
+                                { name: "Suporte Remoto", y: this.state.listarSR },
+                                { name: "Revisão de Manutenção", y: this.state.listarRM },
+                                { name: "Chamado On-Site", y: this.state.listarCO },
+                                { name: "Revisão de Venda", y: this.state.listarRV },
                                 { name: "Confecção de Cabos", y: this.state.listarCC },
                                 { name: "M/M de Venda", y: this.state.listarMMV },
                                 { name: "Rec Placa", y: this.state.listarRP },
                                 { name: "Limpeza", y: this.state.listarLP },
+                                { name: "Revisão Reprovado", y: this.state.listarRR },
+                                { name: "Revisão Compra", y: this.state.listarRC },
+                                { name: "Revisão Locação", y: this.state.listarRL },
                             ]}
                         />
                     </div>
@@ -13172,6 +13402,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarDiegoCMMV },
                                         { name: "Rec Placa", y: this.state.listarDiegoCRP },
                                         { name: "Limpeza", y: this.state.listarDiegoCLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDiegoCRR },
+                                        { name: "Revisão Compra", y: this.state.listarDiegoCRC },
+                                        { name: "Revisão Locação", y: this.state.listarDiegoCRL },
                                     ]}
                                 />}
 
@@ -13182,16 +13415,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarDiegoCMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarDiegoCMC },
                                         { name: "Laudo", y: this.state.listarDiegoCLA },
-                                        { name: "Suporte", y: this.state.listarDiegoCSR },
-                                        { name: "Revisão M", y: this.state.listarDiegoCRM },
-                                        { name: "On-Site", y: this.state.listarDiegoCCO },
-                                        { name: "Revisão V", y: this.state.listarDiegoCRV },
+                                        { name: "Suporte Remoto", y: this.state.listarDiegoCSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarDiegoCRM },
+                                        { name: "Chamado On-Site", y: this.state.listarDiegoCCO },
+                                        { name: "Revisão de Venda", y: this.state.listarDiegoCRV },
                                         { name: "Confecção de Cabos", y: this.state.listarDiegoCCC },
                                         { name: "M/M de Venda", y: this.state.listarDiegoCMMV },
                                         { name: "Rec Placa", y: this.state.listarDiegoCRP },
                                         { name: "Limpeza", y: this.state.listarDiegoCLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDiegoCRR },
+                                        { name: "Revisão Compra", y: this.state.listarDiegoCRC },
+                                        { name: "Revisão Locação", y: this.state.listarDiegoCRL },
                                     ]}
                                 />
                             }
@@ -13213,7 +13449,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarDiegoCCar6 },
                                         { name: "Berço", y: this.state.listarDiegoCBerco },
                                         { name: "Fonte", y: this.state.listarDiegoCFonte },
-                                        { name: "Cabo C", y: this.state.listarDiegoCCabos }
+                                        { name: "Cabo C", y: this.state.listarDiegoCCabos },
+                                        { name: "Bateria", y: this.state.listarDiegoCBateria }
                                     ]} />
 
                             }
@@ -13240,6 +13477,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarNataMMV },
                                         { name: "Rec Placa", y: this.state.listarNataRP },
                                         { name: "Limpeza", y: this.state.listarNataLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarNataRR },
+                                        { name: "Revisão Compra", y: this.state.listarNataRC },
+                                        { name: "Revisão Locação", y: this.state.listarNataRL },
                                     ]}
                                 />}
 
@@ -13250,16 +13490,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarNataMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarNataMC },
                                         { name: "Laudo", y: this.state.listarNataLA },
-                                        { name: "Suporte", y: this.state.listarNataSR },
-                                        { name: "Revisão M", y: this.state.listarNataRM },
-                                        { name: "On-Site", y: this.state.listarNataCO },
-                                        { name: "Revisão V", y: this.state.listarNataRV },
+                                        { name: "Suporte Remoto", y: this.state.listarNataSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarNataRM },
+                                        { name: "Chamado On-Site", y: this.state.listarNataCO },
+                                        { name: "Revisão de Venda", y: this.state.listarNataRV },
                                         { name: "Confecção de Cabos", y: this.state.listarNataCC },
                                         { name: "M/M de Venda", y: this.state.listarNataMMV },
                                         { name: "Rec Placa", y: this.state.listarNataRP },
                                         { name: "Limpeza", y: this.state.listarNataLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarNataRR },
+                                        { name: "Revisão Compra", y: this.state.listarNataRC },
+                                        { name: "Revisão Locação", y: this.state.listarNataRL },
                                     ]}
                                 />
                             }
@@ -13281,7 +13524,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarNataCar6 },
                                         { name: "Berço", y: this.state.listarNataBerco },
                                         { name: "Fonte", y: this.state.listarNataFonte },
-                                        { name: "Cabo C", y: this.state.listarNataCabos }
+                                        { name: "Cabo C", y: this.state.listarNataCabos },
+                                        { name: "Bateria", y: this.state.listarNataBateria }
                                     ]} />
 
                             }
@@ -13310,6 +13554,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarMateusMMV },
                                         { name: "Rec Placa", y: this.state.listarMateusRP },
                                         { name: "Limpeza", y: this.state.listarMateusLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarMateusRR },
+                                        { name: "Revisão Compra", y: this.state.listarMateusRC },
+                                        { name: "Revisão Locação", y: this.state.listarMateusRL }
                                     ]}
                                 />}
 
@@ -13320,16 +13567,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarMateusMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarMateusMC },
                                         { name: "Laudo", y: this.state.listarMateusLA },
-                                        { name: "Suporte", y: this.state.listarMateusSR },
-                                        { name: "Revisão M", y: this.state.listarMateusRM },
-                                        { name: "On-Site", y: this.state.listarMateusCO },
-                                        { name: "Revisão V", y: this.state.listarMateusRV },
+                                        { name: "Suporte Remoto", y: this.state.listarMateusSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarMateusRM },
+                                        { name: "Chamado On-Site", y: this.state.listarMateusCO },
+                                        { name: "Revisão de Venda", y: this.state.listarMateusRV },
                                         { name: "Confecção de Cabos", y: this.state.listarMateusCC },
                                         { name: "M/M de Venda", y: this.state.listarMateusMMV },
                                         { name: "Rec Placa", y: this.state.listarMateusRP },
                                         { name: "Limpeza", y: this.state.listarMateusLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarMateusRR },
+                                        { name: "Revisão Compra", y: this.state.listarMateusRC },
+                                        { name: "Revisão Locação", y: this.state.listarMateusRL }
                                     ]}
                                 />
                             }
@@ -13351,7 +13601,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarMateusCar6 },
                                         { name: "Berço", y: this.state.listarMateusBerco },
                                         { name: "Fonte", y: this.state.listarMateusFonte },
-                                        { name: "Cabo C", y: this.state.listarMateusCabos }
+                                        { name: "Cabo C", y: this.state.listarMateusCabos },
+                                        { name: "Bateria", y: this.state.listarMateusBateria }
                                     ]} />
 
                             }
@@ -13379,6 +13630,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarLucasMMV },
                                         { name: "Rec Placa", y: this.state.listarLucasRP },
                                         { name: "Limpeza", y: this.state.listarLucasLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarLucasRR },
+                                        { name: "Revisão Compras", y: this.state.listarLucasRC },
+                                        { name: "Revisão Locação", y: this.state.listarLucasRL }
                                     ]}
                                 />}
 
@@ -13389,16 +13643,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarLucasMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarLucasMC },
                                         { name: "Laudo", y: this.state.listarLucasLA },
-                                        { name: "Suporte", y: this.state.listarLucasSR },
-                                        { name: "Revisão M", y: this.state.listarLucasRM },
-                                        { name: "On-Site", y: this.state.listarLucasCO },
-                                        { name: "Revisão V", y: this.state.listarLucasRV },
+                                        { name: "Suporte Remoto", y: this.state.listarLucasSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarLucasRM },
+                                        { name: "Chamado On-Site", y: this.state.listarLucasCO },
+                                        { name: "Revisão de Venda", y: this.state.listarLucasRV },
                                         { name: "Confecção de Cabos", y: this.state.listarLucasCC },
                                         { name: "M/M de Venda", y: this.state.listarLucasMMV },
                                         { name: "Rec Placa", y: this.state.listarLucasRP },
                                         { name: "Limpeza", y: this.state.listarLucasLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarLucasRR },
+                                        { name: "Revisão Compras", y: this.state.listarLucasRC },
+                                        { name: "Revisão Locação", y: this.state.listarLucasRL }
                                     ]}
                                 />
                             }
@@ -13420,7 +13677,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarLucasCar6 },
                                         { name: "Berço", y: this.state.listarLucasBerco },
                                         { name: "Fonte", y: this.state.listarLucasFonte },
-                                        { name: "Cabo C", y: this.state.listarLucasCabos }
+                                        { name: "Cabo C", y: this.state.listarLucasCabos },
+                                        { name: "Bateria", y: this.state.listarLucasBateria }
                                     ]} />
 
                             }
@@ -13450,6 +13708,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarDiogoMMV },
                                         { name: "Rec Placa", y: this.state.listarDiogoRP },
                                         { name: "Limpeza", y: this.state.listarDiogoLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDiogoRR },
+                                        { name: "Revisão Compras", y: this.state.listarDiogoRC },
+                                        { name: "Revisão Locação", y: this.state.listarDiogoRL }
                                     ]}
                                 />}
 
@@ -13460,16 +13721,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarDiogoMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarDiogoMC },
                                         { name: "Laudo", y: this.state.listarDiogoLA },
-                                        { name: "Suporte", y: this.state.listarDiogoSR },
-                                        { name: "Revisão M", y: this.state.listarDiogoRM },
-                                        { name: "On-Site", y: this.state.listarDiogoCO },
-                                        { name: "Revisão V", y: this.state.listarDiogoRV },
+                                        { name: "Suporte Remoto", y: this.state.listarDiogoSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarDiogoRM },
+                                        { name: "Chamado On-Site", y: this.state.listarDiogoCO },
+                                        { name: "Revisão de Venda", y: this.state.listarDiogoRV },
                                         { name: "Confecção de Cabos", y: this.state.listarDiogoCC },
                                         { name: "M/M de Venda", y: this.state.listarDiogoMMV },
                                         { name: "Rec Placa", y: this.state.listarDiogoRP },
                                         { name: "Limpeza", y: this.state.listarDiogoLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDiogoRR },
+                                        { name: "Revisão Compras", y: this.state.listarDiogoRC },
+                                        { name: "Revisão Locação", y: this.state.listarDiogoRL }
                                     ]}
                                 />
                             }
@@ -13491,7 +13755,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarDiogoCar6 },
                                         { name: "Berço", y: this.state.listarDiogoBerco },
                                         { name: "Fonte", y: this.state.listarDiogoFonte },
-                                        { name: "Cabo C", y: this.state.listarDiogoCabos }
+                                        { name: "Cabo C", y: this.state.listarDiogoCabos },
+                                        { name: "Bateria", y: this.state.listarDiogoBateria }
                                     ]} />
 
                             }
@@ -13518,6 +13783,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarGabrielMMV },
                                         { name: "Rec Placa", y: this.state.listarGabrielRP },
                                         { name: "Limpeza", y: this.state.listarGabrielLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarGabrielRR },
+                                        { name: "Revisão Compras", y: this.state.listarGabrielRC },
+                                        { name: "Revisão Locação", y: this.state.listarGabrielRL }
                                     ]}
                                 />}
 
@@ -13528,16 +13796,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarGabrielMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarGabrielMC },
                                         { name: "Laudo", y: this.state.listarGabrielLA },
-                                        { name: "Suporte", y: this.state.listarGabrielSR },
-                                        { name: "Revisão M", y: this.state.listarGabrielRM },
-                                        { name: "On-Site", y: this.state.listarGabrielCO },
-                                        { name: "Revisão V", y: this.state.listarGabrielRV },
+                                        { name: "Suporte Remoto", y: this.state.listarGabrielSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarGabrielRM },
+                                        { name: "Chamado On-Site", y: this.state.listarGabrielCO },
+                                        { name: "Revisão de Venda", y: this.state.listarGabrielRV },
                                         { name: "Confecção de Cabos", y: this.state.listarGabrielCC },
                                         { name: "M/M de Venda", y: this.state.listarGabrielMMV },
                                         { name: "Rec Placa", y: this.state.listarGabrielRP },
                                         { name: "Limpeza", y: this.state.listarGabrielLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarGabrielRR },
+                                        { name: "Revisão Compras", y: this.state.listarGabrielRC },
+                                        { name: "Revisão Locação", y: this.state.listarGabrielRL }
                                     ]}
                                 />
                             }
@@ -13559,7 +13830,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarGabrielCar6 },
                                         { name: "Berço", y: this.state.listarGabrielBerco },
                                         { name: "Fonte", y: this.state.listarGabrielFonte },
-                                        { name: "Cabo C", y: this.state.listarGabrielCabos }
+                                        { name: "Cabo C", y: this.state.listarGabrielCabos },
+                                        { name: "Bateria", y: this.state.listarGabrielBateria }
                                     ]} />
 
                             }
@@ -13588,6 +13860,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarBrunoMMV },
                                         { name: "Rec Placa", y: this.state.listarBrunoRP },
                                         { name: "Limpeza", y: this.state.listarBrunoLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarBrunoRR },
+                                        { name: "Revisão Compras", y: this.state.listarBrunoRC },
+                                        { name: "Revisão Locação", y: this.state.listarBrunoRL }
                                     ]}
                                 />}
 
@@ -13598,16 +13873,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarBrunoMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarBrunoMC },
                                         { name: "Laudo", y: this.state.listarBrunoLA },
-                                        { name: "Suporte", y: this.state.listarBrunoSR },
-                                        { name: "Revisão M", y: this.state.listarBrunoRM },
-                                        { name: "On-Site", y: this.state.listarBrunoCO },
-                                        { name: "Revisão V", y: this.state.listarBrunoRV },
+                                        { name: "Suporte Remoto", y: this.state.listarBrunoSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarBrunoRM },
+                                        { name: "Chamado On-Site", y: this.state.listarBrunoCO },
+                                        { name: "Revisão de Venda", y: this.state.listarBrunoRV },
                                         { name: "Confecção de Cabos", y: this.state.listarBrunoCC },
                                         { name: "M/M de Venda", y: this.state.listarBrunoMMV },
                                         { name: "Rec Placa", y: this.state.listarBrunoRP },
                                         { name: "Limpeza", y: this.state.listarBrunoLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarBrunoRR },
+                                        { name: "Revisão Compras", y: this.state.listarBrunoRC },
+                                        { name: "Revisão Locação", y: this.state.listarBrunoRL }
                                     ]}
                                 />
                             }
@@ -13629,7 +13907,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarBrunoCar6 },
                                         { name: "Berço", y: this.state.listarBrunoBerco },
                                         { name: "Fonte", y: this.state.listarBrunoFonte },
-                                        { name: "Cabo C", y: this.state.listarBrunoCabos }
+                                        { name: "Cabo C", y: this.state.listarBrunoCabos },
+                                        { name: "Bateria", y: this.state.listarBrunoBateria }
                                     ]} />
 
                             }
@@ -13656,6 +13935,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarViniciusMMV },
                                         { name: "Rec Placa", y: this.state.listarViniciusRP },
                                         { name: "Limpeza", y: this.state.listarViniciusLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarViniciusRR },
+                                        { name: "Revisão Compras", y: this.state.listarViniciusRC },
+                                        { name: "Revisão Locação", y: this.state.listarViniciusRL }
                                     ]}
                                 />}
 
@@ -13666,16 +13948,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarViniciusMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarViniciusMC },
                                         { name: "Laudo", y: this.state.listarViniciusLA },
-                                        { name: "Suporte", y: this.state.listarViniciusSR },
-                                        { name: "Revisão M", y: this.state.listarViniciusRM },
-                                        { name: "On-Site", y: this.state.listarViniciusCO },
-                                        { name: "Revisão V", y: this.state.listarViniciusRV },
+                                        { name: "Suporte Remoto", y: this.state.listarViniciusSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarViniciusRM },
+                                        { name: "Chamado On-Site", y: this.state.listarViniciusCO },
+                                        { name: "Revisão de Venda", y: this.state.listarViniciusRV },
                                         { name: "Confecção de Cabos", y: this.state.listarViniciusCC },
                                         { name: "M/M de Venda", y: this.state.listarViniciusMMV },
                                         { name: "Rec Placa", y: this.state.listarViniciusRP },
                                         { name: "Limpeza", y: this.state.listarViniciusLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarViniciusRR },
+                                        { name: "Revisão Compras", y: this.state.listarViniciusRC },
+                                        { name: "Revisão Locação", y: this.state.listarViniciusRL }
                                     ]}
                                 />
                             }
@@ -13697,7 +13982,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarViniciusCar6 },
                                         { name: "Berço", y: this.state.listarViniciusBerco },
                                         { name: "Fonte", y: this.state.listarViniciusFonte },
-                                        { name: "Cabo C", y: this.state.listarViniciusCabos }
+                                        { name: "Cabo C", y: this.state.listarViniciusCabos },
+                                        { name: "Bateria", y: this.state.listarViniciusBateria }
                                     ]} />
 
                             }
@@ -13728,6 +14014,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarDiegoAMMV },
                                         { name: "Rec Placa", y: this.state.listarDiegoARP },
                                         { name: "Limpeza", y: this.state.listarDiegoALP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDiegoARR },
+                                        { name: "Revisão Compras", y: this.state.listarDiegoARC },
+                                        { name: "Revisão Locação", y: this.state.listarDiegoARL }
                                     ]}
                                 />}
 
@@ -13738,16 +14027,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarDiegoAMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarDiegoAMC },
                                         { name: "Laudo", y: this.state.listarDiegoALA },
-                                        { name: "Suporte", y: this.state.listarDiegoASR },
-                                        { name: "Revisão M", y: this.state.listarDiegoARM },
-                                        { name: "On-Site", y: this.state.listarDiegoACO },
-                                        { name: "Revisão V", y: this.state.listarDiegoARV },
+                                        { name: "Suporte Remoto", y: this.state.listarDiegoASR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarDiegoARM },
+                                        { name: "Chamado On-Site", y: this.state.listarDiegoACO },
+                                        { name: "Revisão de Venda", y: this.state.listarDiegoARV },
                                         { name: "Confecção de Cabos", y: this.state.listarDiegoACC },
                                         { name: "M/M de Venda", y: this.state.listarDiegoAMMV },
                                         { name: "Rec Placa", y: this.state.listarDiegoARP },
                                         { name: "Limpeza", y: this.state.listarDiegoALP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDiegoARR },
+                                        { name: "Revisão Compras", y: this.state.listarDiegoARC },
+                                        { name: "Revisão Locação", y: this.state.listarDiegoARL }
                                     ]}
                                 />
                             }
@@ -13769,7 +14061,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarDiegoACar6 },
                                         { name: "Berço", y: this.state.listarDiegoABerco },
                                         { name: "Fonte", y: this.state.listarDiegoAFonte },
-                                        { name: "Cabo C", y: this.state.listarDiegoACabos }
+                                        { name: "Cabo C", y: this.state.listarDiegoACabos },
+                                        { name: "Bateria", y: this.state.listarDiegoABateria }
                                     ]} />
 
                             }
@@ -13844,7 +14137,7 @@ export default class DashboardGerencia extends React.Component {
                         /> */}
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} 
+                            nome={imgMarcio}
                             titulo="Marcio"
                             estiloFoto={{ heigth: 100, width: 50 }}
                             classeFoto="rounded-circle"
@@ -13866,6 +14159,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarMarcioMMV },
                                         { name: "Rec Placa", y: this.state.listarMarcioRP },
                                         { name: "Limpeza", y: this.state.listarMarcioLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarMarcioRR },
+                                        { name: "Revisão Compras", y: this.state.listarMarcioRC },
+                                        { name: "Revisão Locação", y: this.state.listarMarcioRL }
                                     ]}
                                 />}
 
@@ -13876,16 +14172,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarMarcioMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarMarcioMC },
                                         { name: "Laudo", y: this.state.listarMarcioLA },
-                                        { name: "Suporte", y: this.state.listarMarcioSR },
-                                        { name: "Revisão M", y: this.state.listarMarcioRM },
-                                        { name: "On-Site", y: this.state.listarMarcioCO },
-                                        { name: "Revisão V", y: this.state.listarMarcioRV },
+                                        { name: "Suporte Remoto", y: this.state.listarMarcioSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarMarcioRM },
+                                        { name: "Chamado On-Site", y: this.state.listarMarcioCO },
+                                        { name: "Revisão de Venda", y: this.state.listarMarcioRV },
                                         { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
                                         { name: "M/M de Venda", y: this.state.listarMarcioMMV },
                                         { name: "Rec Placa", y: this.state.listarMarcioRP },
                                         { name: "Limpeza", y: this.state.listarMarcioLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarMarcioRR },
+                                        { name: "Revisão Compras", y: this.state.listarMarcioRC },
+                                        { name: "Revisão Locação", y: this.state.listarMarcioRL }
                                     ]}
                                 />
                             }
@@ -13907,86 +14206,17 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarMarcioCar6 },
                                         { name: "Berço", y: this.state.listarMarcioBerco },
                                         { name: "Fonte", y: this.state.listarMarcioFonte },
-                                        { name: "Cabo C", y: this.state.listarMarcioCabos }
+                                        { name: "Cabo C", y: this.state.listarMarcioCabos },
+                                        { name: "Bateria", y: this.state.listarMarcioBateria }
                                     ]} />
 
                             }
                         />
                     </div>
                     <div className="col-3 d-flex justify-content-around">
-                        {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
-                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} 
-                            titulo="Marcio"
-                            estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle"
-                            total={this.state.listarTotalMarcio}
-                            grafico1={
-                                <Grafico tipo="pie" titulo="Ordens de Serviço"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção Concluída", y: this.state.listarMarcioMC },
-                                        { name: "Laudo", y: this.state.listarMarcioLA },
-                                        { name: "Suporte Remoto", y: this.state.listarMarcioSR },
-                                        { name: "Revisão de Manutenção", y: this.state.listarMarcioRM },
-                                        { name: "Chamado On-Site", y: this.state.listarMarcioCO },
-                                        { name: "Revisão de Venda", y: this.state.listarMarcioRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
-                                        { name: "M/M de Venda", y: this.state.listarMarcioMMV },
-                                        { name: "Rec Placa", y: this.state.listarMarcioRP },
-                                        { name: "Limpeza", y: this.state.listarMarcioLP },
-                                    ]}
-                                />}
-
-                            grafico2={
-                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção", y: this.state.listarMarcioMC },
-                                        { name: "Laudo", y: this.state.listarMarcioLA },
-                                        { name: "Suporte", y: this.state.listarMarcioSR },
-                                        { name: "Revisão M", y: this.state.listarMarcioRM },
-                                        { name: "On-Site", y: this.state.listarMarcioCO },
-                                        { name: "Revisão V", y: this.state.listarMarcioRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarMarcioCC },
-                                        { name: "M/M de Venda", y: this.state.listarMarcioMMV },
-                                        { name: "Rec Placa", y: this.state.listarMarcioRP },
-                                        { name: "Limpeza", y: this.state.listarMarcioLP },
-                                    ]}
-                                />
-                            }
-
-                            grafico3={
-                                <Grafico tipo="column" titulo="Equipamentos"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Equipamento"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Coletor", y: this.state.listarMarcioCol },
-                                        { name: "Leitor", y: this.state.listarMarcioLei },
-                                        { name: "Busca Preço", y: this.state.listarMarcioBusca },
-                                        { name: "Impressora", y: this.state.listarMarcioImp },
-                                        { name: "Carregador 3 P", y: this.state.listarMarcioCar3 },
-                                        { name: "Carregador 4 P", y: this.state.listarMarcioCar4 },
-                                        { name: "Carregador 5 P", y: this.state.listarMarcioCar5 },
-                                        { name: "Carregador 6 P", y: this.state.listarMarcioCar6 },
-                                        { name: "Berço", y: this.state.listarMarcioBerco },
-                                        { name: "Fonte", y: this.state.listarMarcioFonte },
-                                        { name: "Cabo C", y: this.state.listarMarcioCabos }
-                                    ]} />
-
-                            }
-                        /> */}
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} 
+                            nome={imgMarcio}
                             titulo="Cida"
                             estiloFoto={{ heigth: 100, width: 50 }}
                             classeFoto="rounded-circle"
@@ -14008,6 +14238,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarCidaMMV },
                                         { name: "Rec Placa", y: this.state.listarCidaRP },
                                         { name: "Limpeza", y: this.state.listarCidaLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarCidaRR },
+                                        { name: "Revisão Compras", y: this.state.listarCidaRC },
+                                        { name: "Revisão Locação", y: this.state.listarCidaRL }
                                     ]}
                                 />}
 
@@ -14015,198 +14248,6 @@ export default class DashboardGerencia extends React.Component {
                                 <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
                                     formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                     texto='{point.y:1f}'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção", y: this.state.listarCidaMC },
-                                        { name: "Laudo", y: this.state.listarCidaLA },
-                                        { name: "Suporte", y: this.state.listarCidaSR },
-                                        { name: "Revisão M", y: this.state.listarCidaRM },
-                                        { name: "On-Site", y: this.state.listarCidaCO },
-                                        { name: "Revisão V", y: this.state.listarCidaRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarCidaCC },
-                                        { name: "M/M de Venda", y: this.state.listarCidaMMV },
-                                        { name: "Rec Placa", y: this.state.listarCidaRP },
-                                        { name: "Limpeza", y: this.state.listarCidaLP },
-                                    ]}
-                                />
-                            }
-
-                            grafico3={
-                                <Grafico tipo="column" titulo="Equipamentos"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Equipamento"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Coletor", y: this.state.listarCidaCol },
-                                        { name: "Leitor", y: this.state.listarCidaLei },
-                                        { name: "Busca Preço", y: this.state.listarCidaBusca },
-                                        { name: "Impressora", y: this.state.listarCidaImp },
-                                        { name: "Carregador 3 P", y: this.state.listarCidaCar3 },
-                                        { name: "Carregador 4 P", y: this.state.listarCidaCar4 },
-                                        { name: "Carregador 5 P", y: this.state.listarCidaCar5 },
-                                        { name: "Carregador 6 P", y: this.state.listarCidaCar6 },
-                                        { name: "Berço", y: this.state.listarCidaBerco },
-                                        { name: "Fonte", y: this.state.listarCidaFonte },
-                                        { name: "Cabo C", y: this.state.listarCidaCabos }
-                                    ]} />
-
-                            }
-                        />
-                        <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
-                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} 
-                            titulo="Allan"
-                            estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle"
-                            total={this.state.listarTotalAllan}
-                            grafico1={
-                                <Grafico tipo="pie" titulo="Ordens de Serviço"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção Concluída", y: this.state.listarAllanMC },
-                                        { name: "Laudo", y: this.state.listarAllanLA },
-                                        { name: "Suporte Remoto", y: this.state.listarAllanSR },
-                                        { name: "Revisão de Manutenção", y: this.state.listarAllanRM },
-                                        { name: "Chamado On-Site", y: this.state.listarAllanCO },
-                                        { name: "Revisão de Venda", y: this.state.listarAllanRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
-                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
-                                        { name: "Rec Placa", y: this.state.listarAllanRP },
-                                        { name: "Limpeza", y: this.state.listarAllanLP },
-                                    ]}
-                                />}
-
-                            grafico2={
-                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção", y: this.state.listarAllanMC },
-                                        { name: "Laudo", y: this.state.listarAllanLA },
-                                        { name: "Suporte", y: this.state.listarAllanSR },
-                                        { name: "Revisão M", y: this.state.listarAllanRM },
-                                        { name: "On-Site", y: this.state.listarAllanCO },
-                                        { name: "Revisão V", y: this.state.listarAllanRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
-                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
-                                        { name: "Rec Placa", y: this.state.listarAllanRP },
-                                        { name: "Limpeza", y: this.state.listarAllanLP },
-                                    ]}
-                                />
-                            }
-
-                            grafico3={
-                                <Grafico tipo="column" titulo="Equipamentos"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Equipamento"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Coletor", y: this.state.listarAllanCol },
-                                        { name: "Leitor", y: this.state.listarAllanLei },
-                                        { name: "Busca Preço", y: this.state.listarAllanBusca },
-                                        { name: "Impressora", y: this.state.listarAllanImp },
-                                        { name: "Carregador 3 P", y: this.state.listarAllanCar3 },
-                                        { name: "Carregador 4 P", y: this.state.listarAllanCar4 },
-                                        { name: "Carregador 5 P", y: this.state.listarAllanCar5 },
-                                        { name: "Carregador 6 P", y: this.state.listarAllanCar6 },
-                                        { name: "Berço", y: this.state.listarAllanBerco },
-                                        { name: "Fonte", y: this.state.listarAllanFonte },
-                                        { name: "Cabo C", y: this.state.listarAllanCabos }
-                                    ]} />
-
-                            }
-                        />
-                    </div>
-                    <div className="col-3 d-flex justify-content-start">
-                        {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
-                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgMarcio} 
-                            titulo="Allan"
-                            estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle"
-                            total={this.state.listarTotalAllan}
-                            grafico1={
-                                <Grafico tipo="pie" titulo="Ordens de Serviço"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção Concluída", y: this.state.listarAllanMC },
-                                        { name: "Laudo", y: this.state.listarAllanLA },
-                                        { name: "Suporte Remoto", y: this.state.listarAllanSR },
-                                        { name: "Revisão de Manutenção", y: this.state.listarAllanRM },
-                                        { name: "Chamado On-Site", y: this.state.listarAllanCO },
-                                        { name: "Revisão de Venda", y: this.state.listarAllanRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
-                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
-                                        { name: "Rec Placa", y: this.state.listarAllanRP },
-                                        { name: "Limpeza", y: this.state.listarAllanLP },
-                                    ]}
-                                />}
-
-                            grafico2={
-                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção", y: this.state.listarAllanMC },
-                                        { name: "Laudo", y: this.state.listarAllanLA },
-                                        { name: "Suporte", y: this.state.listarAllanSR },
-                                        { name: "Revisão M", y: this.state.listarAllanRM },
-                                        { name: "On-Site", y: this.state.listarAllanCO },
-                                        { name: "Revisão V", y: this.state.listarAllanRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
-                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
-                                        { name: "Rec Placa", y: this.state.listarAllanRP },
-                                        { name: "Limpeza", y: this.state.listarAllanLP },
-                                    ]}
-                                />
-                            }
-
-                            grafico3={
-                                <Grafico tipo="column" titulo="Equipamentos"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Equipamento"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Coletor", y: this.state.listarAllanCol },
-                                        { name: "Leitor", y: this.state.listarAllanLei },
-                                        { name: "Busca Preço", y: this.state.listarAllanBusca },
-                                        { name: "Impressora", y: this.state.listarAllanImp },
-                                        { name: "Carregador 3 P", y: this.state.listarAllanCar3 },
-                                        { name: "Carregador 4 P", y: this.state.listarAllanCar4 },
-                                        { name: "Carregador 5 P", y: this.state.listarAllanCar5 },
-                                        { name: "Carregador 6 P", y: this.state.listarAllanCar6 },
-                                        { name: "Berço", y: this.state.listarAllanBerco },
-                                        { name: "Fonte", y: this.state.listarAllanFonte },
-                                        { name: "Cabo C", y: this.state.listarAllanCabos }
-                                    ]} />
-
-                            }
-                        /> */}
-                        {/* <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
-                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            // nome={imgMarcio} 
-                            titulo = "Cida"
-                            estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle"
-                            total={this.state.listarTotalCida}
-                            grafico1={
-                                <Grafico tipo="pie" titulo="Ordens de Serviço"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
@@ -14220,26 +14261,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarCidaMMV },
                                         { name: "Rec Placa", y: this.state.listarCidaRP },
                                         { name: "Limpeza", y: this.state.listarCidaLP },
-                                    ]}
-                                />}
-
-                            grafico2={
-                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção", y: this.state.listarCidaMC },
-                                        { name: "Laudo", y: this.state.listarCidaLA },
-                                        { name: "Suporte", y: this.state.listarCidaSR },
-                                        { name: "Revisão M", y: this.state.listarCidaRM },
-                                        { name: "On-Site", y: this.state.listarCidaCO },
-                                        { name: "Revisão V", y: this.state.listarCidaRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarCidaCC },
-                                        { name: "M/M de Venda", y: this.state.listarCidaMMV },
-                                        { name: "Rec Placa", y: this.state.listarCidaRP },
-                                        { name: "Limpeza", y: this.state.listarCidaLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarCidaRR },
+                                        { name: "Revisão Compras", y: this.state.listarCidaRC },
+                                        { name: "Revisão Locação", y: this.state.listarCidaRL }
                                     ]}
                                 />
                             }
@@ -14261,11 +14285,91 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarCidaCar6 },
                                         { name: "Berço", y: this.state.listarCidaBerco },
                                         { name: "Fonte", y: this.state.listarCidaFonte },
-                                        { name: "Cabo C", y: this.state.listarCidaCabos }
+                                        { name: "Cabo C", y: this.state.listarCidaCabos },
+                                        { name: "Bateria", y: this.state.listarCidaBateria }
                                     ]} />
 
                             }
-                            /> */}
+                        />
+                        <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
+                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
+                            nome={imgMarcio}
+                            titulo="Allan"
+                            estiloFoto={{ heigth: 100, width: 50 }}
+                            classeFoto="rounded-circle"
+                            total={this.state.listarTotalAllan}
+                            grafico1={
+                                <Grafico tipo="pie" titulo="Ordens de Serviço"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarAllanMC },
+                                        { name: "Laudo", y: this.state.listarAllanLA },
+                                        { name: "Suporte Remoto", y: this.state.listarAllanSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarAllanRM },
+                                        { name: "Chamado On-Site", y: this.state.listarAllanCO },
+                                        { name: "Revisão de Venda", y: this.state.listarAllanRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
+                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
+                                        { name: "Rec Placa", y: this.state.listarAllanRP },
+                                        { name: "Limpeza", y: this.state.listarAllanLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarAllanRR },
+                                        { name: "Revisão Compras", y: this.state.listarAllanRC },
+                                        { name: "Revisão Locação", y: this.state.listarAllanRL }
+                                    ]}
+                                />}
+
+                            grafico2={
+                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Ordem de Serviço"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Manutenção Concluída", y: this.state.listarAllanMC },
+                                        { name: "Laudo", y: this.state.listarAllanLA },
+                                        { name: "Suporte Remoto", y: this.state.listarAllanSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarAllanRM },
+                                        { name: "Chamado On-Site", y: this.state.listarAllanCO },
+                                        { name: "Revisão de Venda", y: this.state.listarAllanRV },
+                                        { name: "Confecção de Cabos", y: this.state.listarAllanCC },
+                                        { name: "M/M de Venda", y: this.state.listarAllanMMV },
+                                        { name: "Rec Placa", y: this.state.listarAllanRP },
+                                        { name: "Limpeza", y: this.state.listarAllanLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarAllanRR },
+                                        { name: "Revisão Compras", y: this.state.listarAllanRC },
+                                        { name: "Revisão Locação", y: this.state.listarAllanRL }
+                                    ]}
+                                />
+                            }
+
+                            grafico3={
+                                <Grafico tipo="column" titulo="Equipamentos"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Equipamento"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Coletor", y: this.state.listarAllanCol },
+                                        { name: "Leitor", y: this.state.listarAllanLei },
+                                        { name: "Busca Preço", y: this.state.listarAllanBusca },
+                                        { name: "Impressora", y: this.state.listarAllanImp },
+                                        { name: "Carregador 3 P", y: this.state.listarAllanCar3 },
+                                        { name: "Carregador 4 P", y: this.state.listarAllanCar4 },
+                                        { name: "Carregador 5 P", y: this.state.listarAllanCar5 },
+                                        { name: "Carregador 6 P", y: this.state.listarAllanCar6 },
+                                        { name: "Berço", y: this.state.listarAllanBerco },
+                                        { name: "Fonte", y: this.state.listarAllanFonte },
+                                        { name: "Cabo C", y: this.state.listarAllanCabos },
+                                        { name: "Bateria", y: this.state.listarAllanBateria }
+                                    ]} />
+
+                            }
+                        />
+                    </div>
+                    <div className="col-3 d-flex justify-content-start">
                     </div>
                 </div>
                 <div className="row mt-5 d-flex justify-content-center">
@@ -14299,6 +14403,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarDouglasMMV },
                                         { name: "Rec Placa", y: this.state.listarDouglasRP },
                                         { name: "Limpeza", y: this.state.listarDouglasLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDouglasRR },
+                                        { name: "Revisão Compras", y: this.state.listarDouglasRC },
+                                        { name: "Revisão Locação", y: this.state.listarDouglasRL }
                                     ]}
                                 />}
 
@@ -14309,16 +14416,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarDouglasMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarDouglasMC },
                                         { name: "Laudo", y: this.state.listarDouglasLA },
-                                        { name: "Suporte", y: this.state.listarDouglasSR },
-                                        { name: "Revisão M", y: this.state.listarDouglasRM },
-                                        { name: "On-Site", y: this.state.listarDouglasCO },
-                                        { name: "Revisão V", y: this.state.listarDouglasRV },
+                                        { name: "Suporte Remoto", y: this.state.listarDouglasSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarDouglasRM },
+                                        { name: "Chamado On-Site", y: this.state.listarDouglasCO },
+                                        { name: "Revisão de Venda", y: this.state.listarDouglasRV },
                                         { name: "Confecção de Cabos", y: this.state.listarDouglasCC },
                                         { name: "M/M de Venda", y: this.state.listarDouglasMMV },
                                         { name: "Rec Placa", y: this.state.listarDouglasRP },
                                         { name: "Limpeza", y: this.state.listarDouglasLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarDouglasRR },
+                                        { name: "Revisão Compras", y: this.state.listarDouglasRC },
+                                        { name: "Revisão Locação", y: this.state.listarDouglasRL }
                                     ]}
                                 />
                             }
@@ -14340,7 +14450,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarDouglasCar6 },
                                         { name: "Berço", y: this.state.listarDouglasBerco },
                                         { name: "Fonte", y: this.state.listarDouglasFonte },
-                                        { name: "Cabo C", y: this.state.listarDouglasCabos }
+                                        { name: "Cabo C", y: this.state.listarDouglasCabos },
+                                        { name: "Bateria", y: this.state.listarDouglasBateria }
                                     ]} />
 
                             }
@@ -14369,6 +14480,9 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "M/M de Venda", y: this.state.listarKleitonMMV },
                                         { name: "Rec Placa", y: this.state.listarKleitonRP },
                                         { name: "Limpeza", y: this.state.listarKleitonLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarKleitonRR },
+                                        { name: "Revisão Compras", y: this.state.listarKleitonRC },
+                                        { name: "Revisão Locação", y: this.state.listarKleitonRL }
                                     ]}
                                 />}
 
@@ -14379,16 +14493,19 @@ export default class DashboardGerencia extends React.Component {
                                     nomeSerie="Ordem de Serviço"
                                     cor={true}
                                     dado={[
-                                        { name: "Manutenção", y: this.state.listarKleitonMC },
+                                        { name: "Manutenção Concluída", y: this.state.listarKleitonMC },
                                         { name: "Laudo", y: this.state.listarKleitonLA },
-                                        { name: "Suporte", y: this.state.listarKleitonSR },
-                                        { name: "Revisão M", y: this.state.listarKleitonRM },
-                                        { name: "On-Site", y: this.state.listarKleitonCO },
-                                        { name: "Revisão V", y: this.state.listarKleitonRV },
+                                        { name: "Suporte Remoto", y: this.state.listarKleitonSR },
+                                        { name: "Revisão de Manutenção", y: this.state.listarKleitonRM },
+                                        { name: "Chamado On-Site", y: this.state.listarKleitonCO },
+                                        { name: "Revisão de Venda", y: this.state.listarKleitonRV },
                                         { name: "Confecção de Cabos", y: this.state.listarKleitonCC },
                                         { name: "M/M de Venda", y: this.state.listarKleitonMMV },
                                         { name: "Rec Placa", y: this.state.listarKleitonRP },
                                         { name: "Limpeza", y: this.state.listarKleitonLP },
+                                        { name: "Revisão Reprovado", y: this.state.listarKleitonRR },
+                                        { name: "Revisão Compras", y: this.state.listarKleitonRC },
+                                        { name: "Revisão Locação", y: this.state.listarKleitonRL }
                                     ]}
                                 />
                             }
@@ -14410,7 +14527,8 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Carregador 6 P", y: this.state.listarKleitonCar6 },
                                         { name: "Berço", y: this.state.listarKleitonBerco },
                                         { name: "Fonte", y: this.state.listarKleitonFonte },
-                                        { name: "Cabo C", y: this.state.listarKleitonCabos }
+                                        { name: "Cabo C", y: this.state.listarKleitonCabos },
+                                        { name: "Bateria", y: this.state.listarKleitonBateria }
                                     ]} />
 
                             }

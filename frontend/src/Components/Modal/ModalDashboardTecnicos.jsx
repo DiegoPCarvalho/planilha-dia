@@ -22,7 +22,7 @@ export default function ModalAtendimento(props) {
 
       </Image>
 
-      <Modal show={show} onHide={handleClose} size="lg"
+      <Modal show={show} onHide={handleClose} size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered>
         <Modal.Header closeButton>
