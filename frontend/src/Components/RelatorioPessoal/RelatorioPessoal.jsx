@@ -4482,7 +4482,7 @@ export default class Relatorio extends React.Component {
                 totalFRRCol + totalFRCCol + totalFRLCol
             let totalFilLei = totalFMCLei + totalFLALei + totalFSPLei + totalFRMLei +
                 totalFCOLei + totalFRVLei + totalFMMVLei + totalFRPLei + totalFLPLei +
-                totalFRRLei + totalFLALei + totalFRLLei
+                totalFRRLei + totalFRCLei + totalFRLLei
             let totalFilBusca = totalFMCBusca + totalFLABusca + totalFSPBusca + totalFRMBusca +
                 totalFCOBusca + totalFRVBusca + totalFMMVBusca + totalFRPBusca + totalFLPBusca +
                 totalFRRBusca + totalFRCBusca + totalFRLBusca
