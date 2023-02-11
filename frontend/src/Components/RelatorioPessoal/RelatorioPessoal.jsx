@@ -28,6 +28,7 @@ const initialState = {
     listarMCCOl: [0],
     listarMCImp: [0],
     listarMCLei: [0],
+    listarMCLeiRFID: [0],
     listarMCBusca: [0],
     listarMCCar3: [0],
     listarMCCar4: [0],
@@ -42,6 +43,7 @@ const initialState = {
     listarLACOl: [0],
     listarLAImp: [0],
     listarLALei: [0],
+    listarLALeiRFID: [0],
     listarLABusca: [0],
     listarLACar3: [0],
     listarLACar4: [0],
@@ -56,6 +58,7 @@ const initialState = {
     listarSPCOl: [0],
     listarSPImp: [0],
     listarSPLei: [0],
+    listarSPLeiRFID: [0],
     listarSPBusca: [0],
     listarSPCar3: [0],
     listarSPCar4: [0],
@@ -70,6 +73,7 @@ const initialState = {
     listarRMCOl: [0],
     listarRMImp: [0],
     listarRMLei: [0],
+    listarRMLeiRFID: [0],
     listarRMBusca: [0],
     listarRMCar3: [0],
     listarRMCar4: [0],
@@ -84,6 +88,7 @@ const initialState = {
     listarCOCOl: [0],
     listarCOImp: [0],
     listarCOLei: [0],
+    listarCOLeiRFID: [0],
     listarCOBusca: [0],
     listarCOCar3: [0],
     listarCOCar4: [0],
@@ -98,6 +103,7 @@ const initialState = {
     listarRVCOl: [0],
     listarRVImp: [0],
     listarRVLei: [0],
+    listarRVLeiRFID: [0],
     listarRVBusca: [0],
     listarRVCar3: [0],
     listarRVCar4: [0],
@@ -115,6 +121,7 @@ const initialState = {
     listarMMVCOl: [0],
     listarMMVImp: [0],
     listarMMVLei: [0],
+    listarMMVLeiRFID: [0],
     listarMMVBusca: [0],
     listarMMVCar3: [0],
     listarMMVCar4: [0],
@@ -129,6 +136,7 @@ const initialState = {
     listarRPCOl: [0],
     listarRPImp: [0],
     listarRPLei: [0],
+    listarRPLeiRFID: [0],
     listarRPBusca: [0],
     listarRPCar3: [0],
     listarRPCar4: [0],
@@ -143,6 +151,7 @@ const initialState = {
     listarLPCOl: [0],
     listarLPImp: [0],
     listarLPLei: [0],
+    listarLPLeiRFID: [0],
     listarLPBusca: [0],
     listarLPCar3: [0],
     listarLPCar4: [0],
@@ -157,6 +166,7 @@ const initialState = {
     listarRRCOl: [0],
     listarRRImp: [0],
     listarRRLei: [0],
+    listarRRLeiRFID: [0],
     listarRRBusca: [0],
     listarRRCar3: [0],
     listarRRCar4: [0],
@@ -171,6 +181,7 @@ const initialState = {
     listarRCCOl: [0],
     listarRCImp: [0],
     listarRCLei: [0],
+    listarRCLeiRFID: [0],
     listarRCBusca: [0],
     listarRCCar3: [0],
     listarRCCar4: [0],
@@ -185,6 +196,7 @@ const initialState = {
     listarRLCOl: [0],
     listarRLImp: [0],
     listarRLLei: [0],
+    listarRLLeiRFID: [0],
     listarRLBusca: [0],
     listarRLCar3: [0],
     listarRLCar4: [0],
@@ -199,6 +211,7 @@ const initialState = {
     listartTotalCol: [0],
     listarTotalImp: [0],
     listarTotalLei: [0],
+    listarTotalLeiRFID: [0],
     listarTotalBusca: [0],
     listarTotalCar3: [0],
     listarTotalCar4: [0],
@@ -353,6 +366,7 @@ export default class Relatorio extends React.Component {
             //variavel Manutenção
             let dadoMCCol = [];
             let dadoMCLei = [];
+            let dadoMCLeiRFID = [];
             let dadoMCImp = [];
             let dadoMCBusca = [];
             let dadoMCCar3 = [];
@@ -367,6 +381,7 @@ export default class Relatorio extends React.Component {
             //Variavel Laudo
             let dadoLACol = [];
             let dadoLALei = [];
+            let dadoLALeiRFID = [];
             let dadoLAImp = [];
             let dadoLABusca = [];
             let dadoLACar3 = [];
@@ -381,6 +396,7 @@ export default class Relatorio extends React.Component {
             //Variavel Suporte
             let dadoSPCol = [];
             let dadoSPLei = [];
+            let dadoSPLeiRFID = [];
             let dadoSPImp = [];
             let dadoSPBusca = [];
             let dadoSPCar3 = [];
@@ -395,6 +411,7 @@ export default class Relatorio extends React.Component {
             //Variavel Revisão M
             let dadoRMCol = [];
             let dadoRMLei = [];
+            let dadoRMLeiRFID = [];
             let dadoRMImp = [];
             let dadoRMBusca = [];
             let dadoRMCar3 = [];
@@ -409,6 +426,7 @@ export default class Relatorio extends React.Component {
             //Variavel On-Site
             let dadoCOCol = [];
             let dadoCOLei = [];
+            let dadoCOLeiRFID = [];
             let dadoCOImp = [];
             let dadoCOBusca = [];
             let dadoCOCar3 = [];
@@ -423,6 +441,7 @@ export default class Relatorio extends React.Component {
             //Variavel Revisão V
             let dadoRVCol = [];
             let dadoRVLei = [];
+            let dadoRVLeiRFID = [];
             let dadoRVImp = [];
             let dadoRVBusca = [];
             let dadoRVCar3 = [];
@@ -440,6 +459,7 @@ export default class Relatorio extends React.Component {
             //Variavel Montagem/Manutenção de Venda
             let dadoMMVCol = [];
             let dadoMMVLei = [];
+            let dadoMMVLeiRFID = [];
             let dadoMMVImp = [];
             let dadoMMVBusca = [];
             let dadoMMVCar3 = [];
@@ -454,6 +474,7 @@ export default class Relatorio extends React.Component {
             //Variavel Recuperação Placa
             let dadoRPCol = [];
             let dadoRPLei = [];
+            let dadoRPLeiRFID = [];
             let dadoRPImp = [];
             let dadoRPBusca = [];
             let dadoRPCar3 = [];
@@ -468,6 +489,7 @@ export default class Relatorio extends React.Component {
             //Variavel Limpeza
             let dadoLPCol = [];
             let dadoLPLei = [];
+            let dadoLPLeiRFID = [];
             let dadoLPImp = [];
             let dadoLPBusca = [];
             let dadoLPCar3 = [];
@@ -482,6 +504,7 @@ export default class Relatorio extends React.Component {
             //Variavel Reprovado
             let dadoRRCol = [];
             let dadoRRLei = [];
+            let dadoRRLeiRFID = [];
             let dadoRRImp = [];
             let dadoRRBusca = [];
             let dadoRRCar3 = [];
@@ -496,6 +519,7 @@ export default class Relatorio extends React.Component {
             //Variavel Compra
             let dadoRCCol = [];
             let dadoRCLei = [];
+            let dadoRCLeiRFID = [];
             let dadoRCImp = [];
             let dadoRCBusca = [];
             let dadoRCCar3 = [];
@@ -510,6 +534,7 @@ export default class Relatorio extends React.Component {
             //Variavel Locação
             let dadoRLCol = [];
             let dadoRLLei = [];
+            let dadoRLLeiRFID = [];
             let dadoRLImp = [];
             let dadoRLBusca = [];
             let dadoRLCar3 = [];
@@ -533,6 +558,11 @@ export default class Relatorio extends React.Component {
                 } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)
                     && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                     dadoMCLei.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)
+                    && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                    dadoMCLeiRFID.push({
                         OS: tabelaNome[i].OS
                     })
                 } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Manutenção Concluída" === tabelaNome[i].Servico)
@@ -597,6 +627,11 @@ export default class Relatorio extends React.Component {
                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
                         && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                         dadoLALei.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
+                        && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLALeiRFID.push({
                             OS: tabelaNome[i].OS
                         })
                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Laudo" === tabelaNome[i].Servico)
@@ -665,6 +700,11 @@ export default class Relatorio extends React.Component {
                                 OS: tabelaNome[i].OS
                             })
                         } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)
+                            && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoSPLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Suporte Remoto" === tabelaNome[i].Servico)
                             && ("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoSPBusca.push({
                                 OS: tabelaNome[i].OS
@@ -726,6 +766,11 @@ export default class Relatorio extends React.Component {
                             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
                                 && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                 dadoRMLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
+                                && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoRMLeiRFID.push({
                                     OS: tabelaNome[i].OS
                                 })
                             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Manutenção" === tabelaNome[i].Servico)
@@ -793,6 +838,11 @@ export default class Relatorio extends React.Component {
                                         OS: tabelaNome[i].OS
                                     })
                                 } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
+                                    && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                    dadoCOLeiRFID.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Chamado On-Site" === tabelaNome[i].Servico)
                                     && ("Busca Preço" === tabelaNome[i].Equipamento)) {
                                     dadoCOBusca.push({
                                         OS: tabelaNome[i].OS
@@ -854,6 +904,11 @@ export default class Relatorio extends React.Component {
                                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
                                         && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                         dadoRVLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
+                                        && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                        dadoRVLeiRFID.push({
                                             OS: tabelaNome[i].OS
                                         })
                                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Venda" === tabelaNome[i].Servico)
@@ -931,6 +986,11 @@ export default class Relatorio extends React.Component {
                                                 OS: tabelaNome[i].OS
                                             })
                                         } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
+                                            && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                            dadoMMVLeiRFID.push({
+                                                OS: tabelaNome[i].OS
+                                            })
+                                        } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)
                                             && ("Busca Preço" === tabelaNome[i].Equipamento)) {
                                             dadoMMVBusca.push({
                                                 OS: tabelaNome[i].OS
@@ -994,6 +1054,11 @@ export default class Relatorio extends React.Component {
                                             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
                                                 && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                                 dadoRPLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
+                                                && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                                dadoRPLeiRFID.push({
                                                     OS: tabelaNome[i].OS
                                                 })
                                             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Recuperação de Placa" === tabelaNome[i].Servico)
@@ -1062,6 +1127,11 @@ export default class Relatorio extends React.Component {
                                                         OS: tabelaNome[i].OS
                                                     })
                                                 } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
+                                                    && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                                    dadoLPLeiRFID.push({
+                                                        OS: tabelaNome[i].OS
+                                                    })
+                                                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Limpeza" === tabelaNome[i].Servico)
                                                     && ("Busca Preço" === tabelaNome[i].Equipamento)) {
                                                     dadoLPBusca.push({
                                                         OS: tabelaNome[i].OS
@@ -1119,6 +1189,11 @@ export default class Relatorio extends React.Component {
                                                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
                                                         && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                                         dadoRRLei.push({
+                                                            OS: tabelaNome[i].OS
+                                                        })
+                                                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
+                                                        && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                                        dadoRRLeiRFID.push({
                                                             OS: tabelaNome[i].OS
                                                         })
                                                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Reprovado" === tabelaNome[i].Servico)
@@ -1181,6 +1256,11 @@ export default class Relatorio extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
+                    && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                    dadoRCLeiRFID.push({
+                        OS: tabelaNome[i].OS
+                    })
+                } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão de Compra" === tabelaNome[i].Servico)
                     && ("Busca Preço" === tabelaNome[i].Equipamento)) {
                     dadoRCBusca.push({
                         OS: tabelaNome[i].OS
@@ -1240,6 +1320,11 @@ export default class Relatorio extends React.Component {
                             OS: tabelaNome[i].OS
                         })
                     } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
+                        && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoRLLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
+                    } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)
                         && ("Busca Preço" === tabelaNome[i].Equipamento)) {
                         dadoRLBusca.push({
                             OS: tabelaNome[i].OS
@@ -1292,6 +1377,7 @@ export default class Relatorio extends React.Component {
             //Total Manutenção
             let totalMCCol = Object.keys(dadoMCCol).length;
             let totalMCLei = Object.keys(dadoMCLei).length;
+            let totalMCLeiRFID = Object.keys(dadoMCLeiRFID).length;
             let totalMCBusca = Object.keys(dadoMCBusca).length;
             let totalMCImp = Object.keys(dadoMCImp).length;
             let totalMCCar3 = Object.keys(dadoMCCar3).length;
@@ -1306,6 +1392,7 @@ export default class Relatorio extends React.Component {
             //Total Laudo
             let totalLACol = Object.keys(dadoLACol).length;
             let totalLALei = Object.keys(dadoLALei).length;
+            let totalLALeiRFID = Object.keys(dadoLALeiRFID).length;
             let totalLABusca = Object.keys(dadoLABusca).length;
             let totalLAImp = Object.keys(dadoLAImp).length;
             let totalLACar3 = Object.keys(dadoLACar3).length;
@@ -1320,6 +1407,7 @@ export default class Relatorio extends React.Component {
             //Total Suporte
             let totalSPCol = Object.keys(dadoSPCol).length;
             let totalSPLei = Object.keys(dadoSPLei).length;
+            let totalSPLeiRFID = Object.keys(dadoSPLeiRFID).length;
             let totalSPBusca = Object.keys(dadoSPBusca).length;
             let totalSPImp = Object.keys(dadoSPImp).length;
             let totalSPCar3 = Object.keys(dadoSPCar3).length;
@@ -1334,6 +1422,7 @@ export default class Relatorio extends React.Component {
             //Total Revisão M
             let totalRMCol = Object.keys(dadoRMCol).length;
             let totalRMLei = Object.keys(dadoRMLei).length;
+            let totalRMLeiRFID = Object.keys(dadoRMLeiRFID).length;
             let totalRMBusca = Object.keys(dadoRMBusca).length;
             let totalRMImp = Object.keys(dadoRMImp).length;
             let totalRMCar3 = Object.keys(dadoRMCar3).length;
@@ -1348,6 +1437,7 @@ export default class Relatorio extends React.Component {
             //Total On-Site
             let totalCOCol = Object.keys(dadoCOCol).length;
             let totalCOLei = Object.keys(dadoCOLei).length;
+            let totalCOLeiRFID = Object.keys(dadoCOLeiRFID).length;
             let totalCOBusca = Object.keys(dadoCOBusca).length;
             let totalCOImp = Object.keys(dadoCOImp).length;
             let totalCOCar3 = Object.keys(dadoCOCar3).length;
@@ -1362,6 +1452,7 @@ export default class Relatorio extends React.Component {
             //Total Revisão V
             let totalRVCol = Object.keys(dadoRVCol).length;
             let totalRVLei = Object.keys(dadoRVLei).length;
+            let totalRVLeiRFID = Object.keys(dadoRVLeiRFID).length;
             let totalRVBusca = Object.keys(dadoRVBusca).length;
             let totalRVImp = Object.keys(dadoRVImp).length;
             let totalRVCar3 = Object.keys(dadoRVCar3).length;
@@ -1379,6 +1470,7 @@ export default class Relatorio extends React.Component {
             //Total Montagem/Manutenção de Venda
             let totalMMVCol = Object.keys(dadoMMVCol).length;
             let totalMMVLei = Object.keys(dadoMMVLei).length;
+            let totalMMVLeiRFID = Object.keys(dadoMMVLeiRFID).length;
             let totalMMVBusca = Object.keys(dadoMMVBusca).length;
             let totalMMVImp = Object.keys(dadoMMVImp).length;
             let totalMMVCar3 = Object.keys(dadoMMVCar3).length;
@@ -1393,6 +1485,7 @@ export default class Relatorio extends React.Component {
             //Total Recuperação Placa
             let totalRPCol = Object.keys(dadoRPCol).length;
             let totalRPLei = Object.keys(dadoRPLei).length;
+            let totalRPLeiRFID = Object.keys(dadoRPLeiRFID).length;
             let totalRPBusca = Object.keys(dadoRPBusca).length;
             let totalRPImp = Object.keys(dadoRPImp).length;
             let totalRPCar3 = Object.keys(dadoRPCar3).length;
@@ -1407,6 +1500,7 @@ export default class Relatorio extends React.Component {
             //Total Limpeza
             let totalLPCol = Object.keys(dadoLPCol).length;
             let totalLPLei = Object.keys(dadoLPLei).length;
+            let totalLPLeiRFID = Object.keys(dadoLPLeiRFID).length;
             let totalLPBusca = Object.keys(dadoLPBusca).length;
             let totalLPImp = Object.keys(dadoLPImp).length;
             let totalLPCar3 = Object.keys(dadoLPCar3).length;
@@ -1421,6 +1515,7 @@ export default class Relatorio extends React.Component {
             //Total Reprovado
             let totalRRCol = Object.keys(dadoRRCol).length;
             let totalRRLei = Object.keys(dadoRRLei).length;
+            let totalRRLeiRFID = Object.keys(dadoRRLeiRFID).length;
             let totalRRBusca = Object.keys(dadoRRBusca).length;
             let totalRRImp = Object.keys(dadoRRImp).length;
             let totalRRCar3 = Object.keys(dadoRRCar3).length;
@@ -1435,6 +1530,7 @@ export default class Relatorio extends React.Component {
             //Total Compra
             let totalRCCol = Object.keys(dadoRCCol).length;
             let totalRCLei = Object.keys(dadoRCLei).length;
+            let totalRCLeiRFID = Object.keys(dadoRCLeiRFID).length;
             let totalRCBusca = Object.keys(dadoRCBusca).length;
             let totalRCImp = Object.keys(dadoRCImp).length;
             let totalRCCar3 = Object.keys(dadoRCCar3).length;
@@ -1449,6 +1545,7 @@ export default class Relatorio extends React.Component {
             //Total Compra
             let totalRLCol = Object.keys(dadoRLCol).length;
             let totalRLLei = Object.keys(dadoRLLei).length;
+            let totalRLLeiRFID = Object.keys(dadoRLLeiRFID).length;
             let totalRLBusca = Object.keys(dadoRLBusca).length;
             let totalRLImp = Object.keys(dadoRLImp).length;
             let totalRLCar3 = Object.keys(dadoRLCar3).length;
@@ -1466,6 +1563,7 @@ export default class Relatorio extends React.Component {
                 //Listar Manutenção
                 listarMCCOl: totalMCCol,
                 listarMCLei: totalMCLei,
+                listarMCLeiRFID: totalMCLeiRFID,
                 listarMCBusca: totalMCBusca,
                 listarMCImp: totalMCImp,
                 listarMCCar3: totalMCCar3,
@@ -1480,6 +1578,7 @@ export default class Relatorio extends React.Component {
                 //Listar Laudo
                 listarLACOl: totalLACol,
                 listarLALei: totalLALei,
+                listarLALeiRFID: totalLALeiRFID,
                 listarLABusca: totalLABusca,
                 listarLAImp: totalLAImp,
                 listarLACar3: totalLACar3,
@@ -1494,6 +1593,7 @@ export default class Relatorio extends React.Component {
                 //Listar Suporte
                 listarSPCOl: totalSPCol,
                 listarSPLei: totalSPLei,
+                listarSPLeiRFID: totalSPLeiRFID,
                 listarSPBusca: totalSPBusca,
                 listarSPImp: totalSPImp,
                 listarSPCar3: totalSPCar3,
@@ -1508,6 +1608,7 @@ export default class Relatorio extends React.Component {
                 //Listar Revisão M
                 listarRMCOl: totalRMCol,
                 listarRMLei: totalRMLei,
+                listarRMLeiRFID: totalRMLeiRFID,
                 listarRMBusca: totalRMBusca,
                 listarRMImp: totalRMImp,
                 listarRMCar3: totalRMCar3,
@@ -1522,6 +1623,7 @@ export default class Relatorio extends React.Component {
                 //Listar On-Site
                 listarCOCOl: totalCOCol,
                 listarCOLei: totalCOLei,
+                listarCOLeiRFID: totalCOLeiRFID,
                 listarCOBusca: totalCOBusca,
                 listarCOImp: totalCOImp,
                 listarCOCar3: totalCOCar3,
@@ -1536,6 +1638,7 @@ export default class Relatorio extends React.Component {
                 //Listar Revisão V
                 listarRVCOl: totalRVCol,
                 listarRVLei: totalRVLei,
+                listarRVLeiRFID: totalRVLeiRFID,
                 listarRVBusca: totalRVBusca,
                 listarRVImp: totalRVImp,
                 listarRVCar3: totalRVCar3,
@@ -1553,6 +1656,7 @@ export default class Relatorio extends React.Component {
                 //Listar Montagem/Manutenção de Venda
                 listarMMVCOl: totalMMVCol,
                 listarMMVLei: totalMMVLei,
+                listarMMVLeiRFID: totalMMVLeiRFID,
                 listarMMVBusca: totalMMVBusca,
                 listarMMVImp: totalMMVImp,
                 listarMMVCar3: totalMMVCar3,
@@ -1567,6 +1671,7 @@ export default class Relatorio extends React.Component {
                 //Listar Recuperação Placa
                 listarRPCOl: totalRPCol,
                 listarRPLei: totalRPLei,
+                listarRPLeiRFID: totalRPLeiRFID,
                 listarRPBusca: totalRPBusca,
                 listarRPImp: totalRPImp,
                 listarRPCar3: totalRPCar3,
@@ -1581,6 +1686,7 @@ export default class Relatorio extends React.Component {
                 //Listar Limpeza
                 listarLPCOl: totalLPCol,
                 listarLPLei: totalLPLei,
+                listarLPLeiRFID: totalLPLeiRFID,
                 listarLPBusca: totalLPBusca,
                 listarLPImp: totalLPImp,
                 listarLPCar3: totalLPCar3,
@@ -1595,6 +1701,7 @@ export default class Relatorio extends React.Component {
                 //Listar Reprovado
                 listarRRCOl: totalRRCol,
                 listarRRLei: totalRRLei,
+                listarRRLeiRFID: totalRRLeiRFID,
                 listarRRBusca: totalRRBusca,
                 listarRRImp: totalRRImp,
                 listarRRCar3: totalRRCar3,
@@ -1609,6 +1716,7 @@ export default class Relatorio extends React.Component {
                 //Listar Compra
                 listarRCCOl: totalRCCol,
                 listarRCLei: totalRCLei,
+                listarRCLeiRFID: totalRCLeiRFID,
                 listarRCBusca: totalRCBusca,
                 listarRCImp: totalRCImp,
                 listarRCCar3: totalRCCar3,
@@ -1623,6 +1731,7 @@ export default class Relatorio extends React.Component {
                 //Listar Locação
                 listarRLCOl: totalRLCol,
                 listarRLLei: totalRLLei,
+                listarRLLeiRFID: totalRLLeiRFID,
                 listarRLBusca: totalRLBusca,
                 listarRLImp: totalRLImp,
                 listarRLCar3: totalRLCar3,
@@ -1647,6 +1756,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarMCCOl },
                 { name: "Leitor", y: this.state.listarMCLei },
+                { name: "Leitor RFID", y: this.state.listarMCLeiRFID },
                 { name: "Busca Preço", y: this.state.listarMCBusca },
                 { name: "Impressora", y: this.state.listarMCImp },
                 { name: "Carregador 3 P", y: this.state.listarMCCar3 },
@@ -1665,6 +1775,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarLACOl },
                 { name: "Leitor", y: this.state.listarLALei },
+                { name: "Leitor RFID", y: this.state.listarLALeiRFID },
                 { name: "Busca Preço", y: this.state.listarLABusca },
                 { name: "Impressora", y: this.state.listarLAImp },
                 { name: "Carregador 3 P", y: this.state.listarLACar3 },
@@ -1682,7 +1793,8 @@ export default class Relatorio extends React.Component {
         else if (estagio === "Suporte") {
             const data = [
                 { name: "Coletor", y: this.state.listarSPCOl },
-                { name: "Leitor", y: this.state.listarSPLei },
+                { name: "Leitor ", y: this.state.listarSPLei },
+                { name: "Leitor RFID", y: this.state.listarSPLeiRFID },
                 { name: "Busca Preço", y: this.state.listarSPBusca },
                 { name: "Impressora", y: this.state.listarSPImp },
                 { name: "Carregador 3 P", y: this.state.listarSPCar3 },
@@ -1701,6 +1813,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarRMCOl },
                 { name: "Leitor", y: this.state.listarRMLei },
+                { name: "Leitor RFID", y: this.state.listarRMLeiRFID },
                 { name: "Busca Preço", y: this.state.listarRMBusca },
                 { name: "Impressora", y: this.state.listarRMImp },
                 { name: "Carregador 3 P", y: this.state.listarRMCar3 },
@@ -1719,6 +1832,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarCOCOl },
                 { name: "Leitor", y: this.state.listarCOLei },
+                { name: "Leitor RFID", y: this.state.listarCOLeiRFID },
                 { name: "Busca Preço", y: this.state.listarCOBusca },
                 { name: "Impressora", y: this.state.listarCOImp },
                 { name: "Carregador 3 P", y: this.state.listarCOCar3 },
@@ -1737,6 +1851,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarRVCOl },
                 { name: "Leitor", y: this.state.listarRVLei },
+                { name: "Leitor RFID", y: this.state.listarRVLeiRFID },
                 { name: "Busca Preço", y: this.state.listarRVBusca },
                 { name: "Impressora", y: this.state.listarRVImp },
                 { name: "Carregador 3 P", y: this.state.listarRVCar3 },
@@ -1761,6 +1876,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarMMVCOl },
                 { name: "Leitor", y: this.state.listarMMVLei },
+                { name: "Leitor RFID", y: this.state.listarMMVLeiRFID },
                 { name: "Busca Preço", y: this.state.listarMMVBusca },
                 { name: "Impressora", y: this.state.listarMMVImp },
                 { name: "Carregador 3 P", y: this.state.listarMMVCar3 },
@@ -1778,6 +1894,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarRPCOl },
                 { name: "Leitor", y: this.state.listarRPLei },
+                { name: "Leitor RFID", y: this.state.listarRPLeiRFID },
                 { name: "Busca Preço", y: this.state.listarRPBusca },
                 { name: "Impressora", y: this.state.listarRPImp },
                 { name: "Carregador 3 P", y: this.state.listarRPCar3 },
@@ -1794,6 +1911,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarLPCOl },
                 { name: "Leitor", y: this.state.listarLPLei },
+                { name: "Leitor RFID", y: this.state.listarLPLeiRFID },
                 { name: "Busca Preço", y: this.state.listarLPBusca },
                 { name: "Impressora", y: this.state.listarLPImp },
                 { name: "Carregador 3 P", y: this.state.listarLPCar3 },
@@ -1810,6 +1928,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarRRCOl },
                 { name: "Leitor", y: this.state.listarRRLei },
+                { name: "Leitor RFID", y: this.state.listarRRLeiRFID },
                 { name: "Busca Preço", y: this.state.listarRRBusca },
                 { name: "Impressora", y: this.state.listarRRImp },
                 { name: "Carregador 3 P", y: this.state.listarRRCar3 },
@@ -1826,6 +1945,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarRCCOl },
                 { name: "Leitor", y: this.state.listarRCLei },
+                { name: "Leitor RFID", y: this.state.listarRCLeiRFID },
                 { name: "Busca Preço", y: this.state.listarRCBusca },
                 { name: "Impressora", y: this.state.listarRCImp },
                 { name: "Carregador 3 P", y: this.state.listarRCCar3 },
@@ -1842,6 +1962,7 @@ export default class Relatorio extends React.Component {
             const data = [
                 { name: "Coletor", y: this.state.listarRLCOl },
                 { name: "Leitor", y: this.state.listarRLLei },
+                { name: "Leitor RFID", y: this.state.listarRLLeiRFID },
                 { name: "Busca Preço", y: this.state.listarRLBusca },
                 { name: "Impressora", y: this.state.listarRLImp },
                 { name: "Carregador 3 P", y: this.state.listarRLCar3 },
@@ -1861,6 +1982,7 @@ export default class Relatorio extends React.Component {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
         let dadoCol = [];
         let dadoLei = [];
+        let dadoLeiRFID = [];
         let dadoImp = [];
         let dadoBusca = [];
         let dadoCar3 = [];
@@ -1879,6 +2001,10 @@ export default class Relatorio extends React.Component {
                 })
             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                 dadoLei.push({
+                    OS: tabelaNome[i].OS
+                })
+            } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                dadoLeiRFID.push({
                     OS: tabelaNome[i].OS
                 })
             } else if ((localStorage.usuario === tabelaNome[i].Tecnico) && ("Impressora Térmica" === tabelaNome[i].Equipamento)) {
@@ -1926,6 +2052,7 @@ export default class Relatorio extends React.Component {
 
         let totalCol = Object.keys(dadoCol).length;
         let totalLei = Object.keys(dadoLei).length;
+        let totalLeiRFID = Object.keys(dadoLeiRFID).length;
         let totalImp = Object.keys(dadoImp).length;
         let totalBusca = Object.keys(dadoBusca).length;
         let totalCar3 = Object.keys(dadoCar3).length;
@@ -1941,6 +2068,7 @@ export default class Relatorio extends React.Component {
         return this.setState({
             listarTotalCOl: totalCol,
             listarTotalLei: totalLei,
+            listarTotalLeiRFID: totalLeiRFID,
             listarTotalImp: totalImp,
             listarTotalBusca: totalBusca,
             listarTotalCar3: totalCar3,
@@ -1977,6 +2105,7 @@ export default class Relatorio extends React.Component {
             //dados manutenção equipamento
             let dadoFMCCol = [];
             let dadoFMCLei = [];
+            let dadoFMCLeiRFID = [];
             let dadoFMCImp = [];
             let dadoFMCBusca = [];
             let dadoFMCCar3 = [];
@@ -1992,6 +2121,7 @@ export default class Relatorio extends React.Component {
             //Variavel Laudo
             let dadoFLACol = [];
             let dadoFLALei = [];
+            let dadoFLALeiRFID = [];
             let dadoFLAImp = [];
             let dadoFLABusca = [];
             let dadoFLACar3 = [];
@@ -2006,6 +2136,7 @@ export default class Relatorio extends React.Component {
             //Variavel Suporte
             let dadoFSPCol = [];
             let dadoFSPLei = [];
+            let dadoFSPLeiRFID = [];
             let dadoFSPImp = [];
             let dadoFSPBusca = [];
             let dadoFSPCar3 = [];
@@ -2020,6 +2151,7 @@ export default class Relatorio extends React.Component {
             //Variavel Revisão M
             let dadoFRMCol = [];
             let dadoFRMLei = [];
+            let dadoFRMLeiRFID = [];
             let dadoFRMImp = [];
             let dadoFRMBusca = [];
             let dadoFRMCar3 = [];
@@ -2034,6 +2166,7 @@ export default class Relatorio extends React.Component {
             //Variavel On-Site
             let dadoFCOCol = [];
             let dadoFCOLei = [];
+            let dadoFCOLeiRFID = [];
             let dadoFCOImp = [];
             let dadoFCOBusca = [];
             let dadoFCOCar3 = [];
@@ -2048,6 +2181,7 @@ export default class Relatorio extends React.Component {
             //Variavel Revisão V
             let dadoFRVCol = [];
             let dadoFRVLei = [];
+            let dadoFRVLeiRFID = [];
             let dadoFRVImp = [];
             let dadoFRVBusca = [];
             let dadoFRVCar3 = [];
@@ -2065,6 +2199,7 @@ export default class Relatorio extends React.Component {
             //Variavel Montagem/Manutenção de Venda
             let dadoFMMVCol = [];
             let dadoFMMVLei = [];
+            let dadoFMMVLeiRFID = [];
             let dadoFMMVImp = [];
             let dadoFMMVBusca = [];
             let dadoFMMVCar3 = [];
@@ -2079,6 +2214,7 @@ export default class Relatorio extends React.Component {
             //Variavel Recuperação Placa
             let dadoFRPCol = [];
             let dadoFRPLei = [];
+            let dadoFRPLeiRFID = [];
             let dadoFRPImp = [];
             let dadoFRPBusca = [];
             let dadoFRPCar3 = [];
@@ -2092,6 +2228,7 @@ export default class Relatorio extends React.Component {
             //Variavel Limpeza
             let dadoFLPCol = [];
             let dadoFLPLei = [];
+            let dadoFLPLeiRFID = [];
             let dadoFLPImp = [];
             let dadoFLPBusca = [];
             let dadoFLPCar3 = [];
@@ -2105,6 +2242,7 @@ export default class Relatorio extends React.Component {
             //Variavel Reprovado
             let dadoFRRCol = [];
             let dadoFRRLei = [];
+            let dadoFRRLeiRFID = [];
             let dadoFRRImp = [];
             let dadoFRRBusca = [];
             let dadoFRRCar3 = [];
@@ -2119,6 +2257,7 @@ export default class Relatorio extends React.Component {
             //Variavel Compra
             let dadoFRCCol = [];
             let dadoFRCLei = [];
+            let dadoFRCLeiRFID = [];
             let dadoFRCImp = [];
             let dadoFRCBusca = [];
             let dadoFRCCar3 = [];
@@ -2133,6 +2272,7 @@ export default class Relatorio extends React.Component {
             //Variavel Locação
             let dadoFRLCol = [];
             let dadoFRLLei = [];
+            let dadoFRLLeiRFID = [];
             let dadoFRLImp = [];
             let dadoFRLBusca = [];
             let dadoFRLCar3 = [];
@@ -2164,6 +2304,10 @@ export default class Relatorio extends React.Component {
                             dadoFMCLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFMCLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFMCBusca.push({
                                 OS: tabelaNome[i].OS
@@ -2220,6 +2364,10 @@ export default class Relatorio extends React.Component {
                                 })
                             } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                 dadoFLALei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoFLALeiRFID.push({
                                     OS: tabelaNome[i].OS
                                 })
                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -2281,6 +2429,10 @@ export default class Relatorio extends React.Component {
                                     dadoFSPLei.push({
                                         OS: tabelaNome[i].OS
                                     })
+                                } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPLeiRFID.push({
+                                        OS: tabelaNome[i].OS
+                                    })
                                 } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                     dadoFSPBusca.push({
                                         OS: tabelaNome[i].OS
@@ -2337,6 +2489,10 @@ export default class Relatorio extends React.Component {
                                         })
                                     } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                         dadoFRMLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMLeiRFID.push({
                                             OS: tabelaNome[i].OS
                                         })
                                     } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -2399,6 +2555,10 @@ export default class Relatorio extends React.Component {
                                             dadoFCOLei.push({
                                                 OS: tabelaNome[i].OS
                                             })
+                                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOLeiRFID.push({
+                                                OS: tabelaNome[i].OS
+                                            })
                                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                             dadoFCOBusca.push({
                                                 OS: tabelaNome[i].OS
@@ -2455,6 +2615,10 @@ export default class Relatorio extends React.Component {
                                                 })
                                             } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                                 dadoFRVLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVLeiRFID.push({
                                                     OS: tabelaNome[i].OS
                                                 })
                                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -2529,6 +2693,10 @@ export default class Relatorio extends React.Component {
                             dadoFMMVLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFMMVBusca.push({
                                 OS: tabelaNome[i].OS
@@ -2587,6 +2755,10 @@ export default class Relatorio extends React.Component {
                                 dadoFRPLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoFRPLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                 dadoFRPBusca.push({
                                     OS: tabelaNome[i].OS
@@ -2642,6 +2814,10 @@ export default class Relatorio extends React.Component {
                             dadoFLPLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFLPLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFLPBusca.push({
                                 OS: tabelaNome[i].OS
@@ -2695,6 +2871,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFRRLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRRLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -2753,6 +2933,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFRCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRCLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -2814,6 +2998,10 @@ export default class Relatorio extends React.Component {
                             dadoFRLLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRLLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFRLBusca.push({
                                 OS: tabelaNome[i].OS
@@ -2857,13 +3045,13 @@ export default class Relatorio extends React.Component {
                         }
                     }
                     //#endregion
-                
+
                 } else
                     //#endregion
 
                     //#region mês e ano
                     if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`) && (dia === "Todos") && (localStorage.usuario === tabelaNome[i].Tecnico)) {
-                       //#region Manutenção
+                            //#region Manutenção
                     if ("Manutenção Concluída" === tabelaNome[i].Servico) {
                         dadoFMC.push({
                             OS: tabelaNome[i].OS
@@ -2877,6 +3065,10 @@ export default class Relatorio extends React.Component {
                             dadoFMCLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFMCLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFMCBusca.push({
                                 OS: tabelaNome[i].OS
@@ -2933,6 +3125,10 @@ export default class Relatorio extends React.Component {
                                 })
                             } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                 dadoFLALei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoFLALeiRFID.push({
                                     OS: tabelaNome[i].OS
                                 })
                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -2994,6 +3190,10 @@ export default class Relatorio extends React.Component {
                                     dadoFSPLei.push({
                                         OS: tabelaNome[i].OS
                                     })
+                                } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPLeiRFID.push({
+                                        OS: tabelaNome[i].OS
+                                    })
                                 } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                     dadoFSPBusca.push({
                                         OS: tabelaNome[i].OS
@@ -3050,6 +3250,10 @@ export default class Relatorio extends React.Component {
                                         })
                                     } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                         dadoFRMLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMLeiRFID.push({
                                             OS: tabelaNome[i].OS
                                         })
                                     } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3112,6 +3316,10 @@ export default class Relatorio extends React.Component {
                                             dadoFCOLei.push({
                                                 OS: tabelaNome[i].OS
                                             })
+                                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOLeiRFID.push({
+                                                OS: tabelaNome[i].OS
+                                            })
                                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                             dadoFCOBusca.push({
                                                 OS: tabelaNome[i].OS
@@ -3168,6 +3376,10 @@ export default class Relatorio extends React.Component {
                                                 })
                                             } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                                 dadoFRVLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVLeiRFID.push({
                                                     OS: tabelaNome[i].OS
                                                 })
                                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3242,6 +3454,10 @@ export default class Relatorio extends React.Component {
                             dadoFMMVLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFMMVBusca.push({
                                 OS: tabelaNome[i].OS
@@ -3300,6 +3516,10 @@ export default class Relatorio extends React.Component {
                                 dadoFRPLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoFRPLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                 dadoFRPBusca.push({
                                     OS: tabelaNome[i].OS
@@ -3355,6 +3575,10 @@ export default class Relatorio extends React.Component {
                             dadoFLPLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFLPLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFLPBusca.push({
                                 OS: tabelaNome[i].OS
@@ -3408,6 +3632,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFRRLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRRLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3466,6 +3694,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFRCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRCLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3527,6 +3759,10 @@ export default class Relatorio extends React.Component {
                             dadoFRLLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRLLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFRLBusca.push({
                                 OS: tabelaNome[i].OS
@@ -3570,7 +3806,7 @@ export default class Relatorio extends React.Component {
                         }
                     }
                     //#endregion
-                
+
 
                     } else
                         //#endregion
@@ -3578,7 +3814,7 @@ export default class Relatorio extends React.Component {
                         //#region mês e ano e dia
                         if ((dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`) && (localStorage.usuario === tabelaNome[i].Tecnico)) {
 
-                           //#region Manutenção
+                        //#region Manutenção
                     if ("Manutenção Concluída" === tabelaNome[i].Servico) {
                         dadoFMC.push({
                             OS: tabelaNome[i].OS
@@ -3590,6 +3826,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFMCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFMCLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3648,6 +3888,10 @@ export default class Relatorio extends React.Component {
                                 })
                             } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                 dadoFLALei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoFLALeiRFID.push({
                                     OS: tabelaNome[i].OS
                                 })
                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3709,6 +3953,10 @@ export default class Relatorio extends React.Component {
                                     dadoFSPLei.push({
                                         OS: tabelaNome[i].OS
                                     })
+                                } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                    dadoFSPLeiRFID.push({
+                                        OS: tabelaNome[i].OS
+                                    })
                                 } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                     dadoFSPBusca.push({
                                         OS: tabelaNome[i].OS
@@ -3765,6 +4013,10 @@ export default class Relatorio extends React.Component {
                                         })
                                     } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                         dadoFRMLei.push({
+                                            OS: tabelaNome[i].OS
+                                        })
+                                    } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                        dadoFRMLeiRFID.push({
                                             OS: tabelaNome[i].OS
                                         })
                                     } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3827,6 +4079,10 @@ export default class Relatorio extends React.Component {
                                             dadoFCOLei.push({
                                                 OS: tabelaNome[i].OS
                                             })
+                                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                            dadoFCOLeiRFID.push({
+                                                OS: tabelaNome[i].OS
+                                            })
                                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                             dadoFCOBusca.push({
                                                 OS: tabelaNome[i].OS
@@ -3883,6 +4139,10 @@ export default class Relatorio extends React.Component {
                                                 })
                                             } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                                                 dadoFRVLei.push({
+                                                    OS: tabelaNome[i].OS
+                                                })
+                                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                                dadoFRVLeiRFID.push({
                                                     OS: tabelaNome[i].OS
                                                 })
                                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -3957,6 +4217,10 @@ export default class Relatorio extends React.Component {
                             dadoFMMVLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFMMVLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFMMVBusca.push({
                                 OS: tabelaNome[i].OS
@@ -4015,6 +4279,10 @@ export default class Relatorio extends React.Component {
                                 dadoFRPLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoFRPLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                                 dadoFRPBusca.push({
                                     OS: tabelaNome[i].OS
@@ -4070,6 +4338,10 @@ export default class Relatorio extends React.Component {
                             dadoFLPLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFLPLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFLPBusca.push({
                                 OS: tabelaNome[i].OS
@@ -4123,6 +4395,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFRRLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRRLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -4181,6 +4457,10 @@ export default class Relatorio extends React.Component {
                             })
                         } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
                             dadoFRCLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRCLeiRFID.push({
                                 OS: tabelaNome[i].OS
                             })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
@@ -4242,6 +4522,10 @@ export default class Relatorio extends React.Component {
                             dadoFRLLei.push({
                                 OS: tabelaNome[i].OS
                             })
+                        } else if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoFRLLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
                         } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
                             dadoFRLBusca.push({
                                 OS: tabelaNome[i].OS
@@ -4284,9 +4568,67 @@ export default class Relatorio extends React.Component {
                             })
                         }
                     }
-                    //#endregion        
+                    //#endregion
+
+
+                            if ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico) {
+                                dadoFRL.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLCol.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLLei.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLBusca.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLImp.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLCar4.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLCar3.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLCar5.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLCar6.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLBerco.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLFonte.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLCabo.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                } else if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                    dadoFRLBateria.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            //#endregion        
                         }
-                        //#endregion
+                //#endregion
 
             }
 
@@ -4309,6 +4651,7 @@ export default class Relatorio extends React.Component {
             //Total Manutenção
             let totalFMCCol = Object.keys(dadoFMCCol).length;
             let totalFMCLei = Object.keys(dadoFMCLei).length;
+            let totalFMCLeiRFID = Object.keys(dadoFMCLeiRFID).length;
             let totalFMCBusca = Object.keys(dadoFMCBusca).length;
             let totalFMCImp = Object.keys(dadoFMCImp).length;
             let totalFMCCar3 = Object.keys(dadoFMCCar3).length;
@@ -4323,6 +4666,7 @@ export default class Relatorio extends React.Component {
             //Total Laudo
             let totalFLACol = Object.keys(dadoFLACol).length;
             let totalFLALei = Object.keys(dadoFLALei).length;
+            let totalFLALeiRFID = Object.keys(dadoFLALeiRFID).length;
             let totalFLABusca = Object.keys(dadoFLABusca).length;
             let totalFLAImp = Object.keys(dadoFLAImp).length;
             let totalFLACar3 = Object.keys(dadoFLACar3).length;
@@ -4337,6 +4681,7 @@ export default class Relatorio extends React.Component {
             //Total Suporte
             let totalFSPCol = Object.keys(dadoFSPCol).length;
             let totalFSPLei = Object.keys(dadoFSPLei).length;
+            let totalFSPLeiRFID = Object.keys(dadoFSPLeiRFID).length;
             let totalFSPBusca = Object.keys(dadoFSPBusca).length;
             let totalFSPImp = Object.keys(dadoFSPImp).length;
             let totalFSPCar3 = Object.keys(dadoFSPCar3).length;
@@ -4351,6 +4696,7 @@ export default class Relatorio extends React.Component {
             //Total Revisão M
             let totalFRMCol = Object.keys(dadoFRMCol).length;
             let totalFRMLei = Object.keys(dadoFRMLei).length;
+            let totalFRMLeiRFID = Object.keys(dadoFRMLeiRFID).length;
             let totalFRMBusca = Object.keys(dadoFRMBusca).length;
             let totalFRMImp = Object.keys(dadoFRMImp).length;
             let totalFRMCar3 = Object.keys(dadoFRMCar3).length;
@@ -4365,6 +4711,7 @@ export default class Relatorio extends React.Component {
             //Total On-Site
             let totalFCOCol = Object.keys(dadoFCOCol).length;
             let totalFCOLei = Object.keys(dadoFCOLei).length;
+            let totalFCOLeiRFID = Object.keys(dadoFCOLeiRFID).length;
             let totalFCOBusca = Object.keys(dadoFCOBusca).length;
             let totalFCOImp = Object.keys(dadoFCOImp).length;
             let totalFCOCar3 = Object.keys(dadoFCOCar3).length;
@@ -4379,6 +4726,7 @@ export default class Relatorio extends React.Component {
             //Total Revisão V
             let totalFRVCol = Object.keys(dadoFRVCol).length;
             let totalFRVLei = Object.keys(dadoFRVLei).length;
+            let totalFRVLeiRFID = Object.keys(dadoFRVLeiRFID).length;
             let totalFRVBusca = Object.keys(dadoFRVBusca).length;
             let totalFRVImp = Object.keys(dadoFRVImp).length;
             let totalFRVCar3 = Object.keys(dadoFRVCar3).length;
@@ -4396,6 +4744,7 @@ export default class Relatorio extends React.Component {
             //Total Montagem/Manutenção de Venda
             let totalFMMVCol = Object.keys(dadoFMMVCol).length;
             let totalFMMVLei = Object.keys(dadoFMMVLei).length;
+            let totalFMMVLeiRFID = Object.keys(dadoFMMVLeiRFID).length;
             let totalFMMVBusca = Object.keys(dadoFMMVBusca).length;
             let totalFMMVImp = Object.keys(dadoFMMVImp).length;
             let totalFMMVCar3 = Object.keys(dadoFMMVCar3).length;
@@ -4410,6 +4759,7 @@ export default class Relatorio extends React.Component {
             //Total Recuperação Placa
             let totalFRPCol = Object.keys(dadoFRPCol).length;
             let totalFRPLei = Object.keys(dadoFRPLei).length;
+            let totalFRPLeiRFID = Object.keys(dadoFRPLeiRFID).length;
             let totalFRPBusca = Object.keys(dadoFRPBusca).length;
             let totalFRPImp = Object.keys(dadoFRPImp).length;
             let totalFRPCar3 = Object.keys(dadoFRPCar3).length;
@@ -4423,6 +4773,7 @@ export default class Relatorio extends React.Component {
             //Total Recuperação Placa
             let totalFLPCol = Object.keys(dadoFLPCol).length;
             let totalFLPLei = Object.keys(dadoFLPLei).length;
+            let totalFLPLeiRFID = Object.keys(dadoFLPLeiRFID).length;
             let totalFLPBusca = Object.keys(dadoFLPBusca).length;
             let totalFLPImp = Object.keys(dadoFLPImp).length;
             let totalFLPCar3 = Object.keys(dadoFLPCar3).length;
@@ -4436,6 +4787,7 @@ export default class Relatorio extends React.Component {
             //Total Reprovado
             let totalFRRCol = Object.keys(dadoFRRCol).length;
             let totalFRRLei = Object.keys(dadoFRRLei).length;
+            let totalFRRLeiRFID = Object.keys(dadoFRRLeiRFID).length;
             let totalFRRBusca = Object.keys(dadoFRRBusca).length;
             let totalFRRImp = Object.keys(dadoFRRImp).length;
             let totalFRRCar3 = Object.keys(dadoFRRCar3).length;
@@ -4450,6 +4802,7 @@ export default class Relatorio extends React.Component {
             //Total Compra
             let totalFRCCol = Object.keys(dadoFRCCol).length;
             let totalFRCLei = Object.keys(dadoFRCLei).length;
+            let totalFRCLeiRFID = Object.keys(dadoFRCLeiRFID).length;
             let totalFRCBusca = Object.keys(dadoFRCBusca).length;
             let totalFRCImp = Object.keys(dadoFRCImp).length;
             let totalFRCCar3 = Object.keys(dadoFRCCar3).length;
@@ -4464,6 +4817,7 @@ export default class Relatorio extends React.Component {
             //Total Locação
             let totalFRLCol = Object.keys(dadoFRLCol).length;
             let totalFRLLei = Object.keys(dadoFRLLei).length;
+            let totalFRLLeiRFID = Object.keys(dadoFRLLeiRFID).length;
             let totalFRLBusca = Object.keys(dadoFRLBusca).length;
             let totalFRLImp = Object.keys(dadoFRLImp).length;
             let totalFRLCar3 = Object.keys(dadoFRLCar3).length;
@@ -4483,6 +4837,9 @@ export default class Relatorio extends React.Component {
             let totalFilLei = totalFMCLei + totalFLALei + totalFSPLei + totalFRMLei +
                 totalFCOLei + totalFRVLei + totalFMMVLei + totalFRPLei + totalFLPLei +
                 totalFRRLei + totalFRCLei + totalFRLLei
+            let totalFilLeiRFID = totalFMCLeiRFID + totalFLALeiRFID + totalFSPLeiRFID + totalFRMLeiRFID +
+                totalFCOLeiRFID + totalFRVLeiRFID + totalFMMVLeiRFID + totalFRPLeiRFID + totalFLPLeiRFID +
+                totalFRRLeiRFID + totalFRCLeiRFID + totalFRLLeiRFID
             let totalFilBusca = totalFMCBusca + totalFLABusca + totalFSPBusca + totalFRMBusca +
                 totalFCOBusca + totalFRVBusca + totalFMMVBusca + totalFRPBusca + totalFLPBusca +
                 totalFRRBusca + totalFRCBusca + totalFRLBusca
@@ -4515,7 +4872,7 @@ export default class Relatorio extends React.Component {
             //total equipamentos
             let totalEquip = totalFilCol + totalFilLei + totalFilBusca + totalFilCabo + totalFilCar3 +
                 totalFilCar4 + totalFilCar5 + totalFilCar6 + totalFilImp + totalFilBerco + totalFilFonte +
-                totalFilBateria
+                totalFilBateria + totalFilLeiRFID
 
             //#endregion
 
@@ -4539,6 +4896,7 @@ export default class Relatorio extends React.Component {
                 //Listar Manutenção
                 listarMCCOl: totalFMCCol,
                 listarMCLei: totalFMCLei,
+                listarMCLeiRFID: totalFMCLeiRFID,
                 listarMCBusca: totalFMCBusca,
                 listarMCImp: totalFMCImp,
                 listarMCCar3: totalFMCCar3,
@@ -4553,6 +4911,7 @@ export default class Relatorio extends React.Component {
                 //Listar Laudo
                 listarLACOl: totalFLACol,
                 listarLALei: totalFLALei,
+                listarLALeiRFID: totalFLALeiRFID,
                 listarLABusca: totalFLABusca,
                 listarLAImp: totalFLAImp,
                 listarLACar3: totalFLACar3,
@@ -4567,6 +4926,7 @@ export default class Relatorio extends React.Component {
                 //Listar Suporte
                 listarSPCOl: totalFSPCol,
                 listarSPLei: totalFSPLei,
+                listarSPLeiRFID: totalFSPLeiRFID,
                 listarSPBusca: totalFSPBusca,
                 listarSPImp: totalFSPImp,
                 listarSPCar3: totalFSPCar3,
@@ -4580,7 +4940,7 @@ export default class Relatorio extends React.Component {
 
                 //Listar Revisão M
                 listarRMCOl: totalFRMCol,
-                listarRMLei: totalFRMLei,
+                listarRMLeiRFID: totalFRMLeiRFID,
                 listarRMBusca: totalFRMBusca,
                 listarRMImp: totalFRMImp,
                 listarRMCar3: totalFRMCar3,
@@ -4595,6 +4955,7 @@ export default class Relatorio extends React.Component {
                 //Listar On-Site
                 listarCOCOl: totalFCOCol,
                 listarCOLei: totalFCOLei,
+                listarCOLeiRFID: totalFCOLeiRFID,
                 listarCOBusca: totalFCOBusca,
                 listarCOImp: totalFCOImp,
                 listarCOCar3: totalFCOCar3,
@@ -4609,6 +4970,7 @@ export default class Relatorio extends React.Component {
                 //Listar Revisão V
                 listarRVCOl: totalFRVCol,
                 listarRVLei: totalFRVLei,
+                listarRVLeiRFID: totalFRVLeiRFID,
                 listarRVBusca: totalFRVBusca,
                 listarRVImp: totalFRVImp,
                 listarRVCar3: totalFRVCar3,
@@ -4626,6 +4988,7 @@ export default class Relatorio extends React.Component {
                 //Listar Montagem/Manutenção de Venda
                 listarMMVCOl: totalFMMVCol,
                 listarMMVLei: totalFMMVLei,
+                listarMMVLeiRFID: totalFMMVLeiRFID,
                 listarMMVBusca: totalFMMVBusca,
                 listarMMVImp: totalFMMVImp,
                 listarMMVCar3: totalFMMVCar3,
@@ -4640,6 +5003,7 @@ export default class Relatorio extends React.Component {
                 //Listar Recuperação Placa
                 listarRPCOl: totalFRPCol,
                 listarRPLei: totalFRPLei,
+                listarRPLeiRFID: totalFRPLeiRFID,
                 listarRPBusca: totalFRPBusca,
                 listarRPImp: totalFRPImp,
                 listarRPCar3: totalFRPCar3,
@@ -4653,6 +5017,7 @@ export default class Relatorio extends React.Component {
                 //Listar Limpeza
                 listarLPCOl: totalFLPCol,
                 listarLPLei: totalFLPLei,
+                listarLPLeiRFID: totalFLPLeiRFID,
                 listarLPBusca: totalFLPBusca,
                 listarLPImp: totalFLPImp,
                 listarLPCar3: totalFLPCar3,
@@ -4666,6 +5031,7 @@ export default class Relatorio extends React.Component {
                 //Listar Reporovado
                 listarRRCOl: totalFRRCol,
                 listarRRLei: totalFRRLei,
+                listarRRLeiRFID: totalFRRLeiRFID,
                 listarRRBusca: totalFRRBusca,
                 listarRRImp: totalFRRImp,
                 listarRRCar3: totalFRRCar3,
@@ -4680,6 +5046,7 @@ export default class Relatorio extends React.Component {
                 //Listar compra
                 listarRCCOl: totalFRCCol,
                 listarRCLei: totalFRCLei,
+                listarRCLeiRFID: totalFRCLeiRFID,
                 listarRCBusca: totalFRCBusca,
                 listarRCImp: totalFRCImp,
                 listarRCCar3: totalFRCCar3,
@@ -4694,6 +5061,7 @@ export default class Relatorio extends React.Component {
                 //Listar Locação
                 listarRLCOl: totalFRLCol,
                 listarRLLei: totalFRLLei,
+                listarRLLeiRFID: totalFRLLeiRFID,
                 listarRLBusca: totalFRLBusca,
                 listarRLImp: totalFRLImp,
                 listarRLCar3: totalFRLCar3,
@@ -4708,6 +5076,7 @@ export default class Relatorio extends React.Component {
                 //total por equipamento
                 listarTotalCOl: totalFilCol,
                 listarTotalLei: totalFilLei,
+                listarTotalLeiRFID: totalFilLeiRFID,
                 listarTotalImp: totalFilImp,
                 listarTotalBusca: totalFilBusca,
                 listarTotalCar3: totalFilCar3,
@@ -4960,6 +5329,7 @@ export default class Relatorio extends React.Component {
                                 dado={[
                                     { name: "Coletor", y: this.state.listarTotalCOl },
                                     { name: "Leitor", y: this.state.listarTotalLei },
+                                    { name: "Leitor RFID", y: this.state.listarTotalLeiRFID },
                                     { name: "Busca Preço", y: this.state.listarTotalBusca },
                                     { name: "Impressora", y: this.state.listarTotalImp },
                                     { name: "Carregador 3 P", y: this.state.listarTotalCar3 },

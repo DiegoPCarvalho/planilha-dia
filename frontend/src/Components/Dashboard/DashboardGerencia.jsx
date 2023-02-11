@@ -28,6 +28,18 @@ const initialState = {
     listarTotalEquip: [0],
     listarTotalGarantia: [0],
 
+    //contrato
+    listarAvulso: [0],
+    listarAssai: [0],
+    listarCEA: [0],
+    listarB2W: [0],
+    listarAtacadao: [0],
+    listarBoticario: [0],
+    listarShopee: [0],
+    listarLocacao: [0],
+    listarFriozem: [0],
+    listarComfrio: [0],
+
     //Ordem de Serviço
     listarMC: [0],
     listarLA: [0],
@@ -56,7 +68,6 @@ const initialState = {
     listarDiegoA: [0],
     listarAllan: [0],
     listarCida: [0],
-    // listarAnderson: [0],
     listarDouglas: [0],
     listarKleiton: [0],
 
@@ -209,18 +220,6 @@ const initialState = {
     listarDiegoARC: [0],
     listarDiegoARL: [0],
 
-    // //Ordem de Serviço Anderson
-    // listarAndersonMC: [0],
-    // listarAndersonLA: [0],
-    // listarAndersonSR: [0],
-    // listarAndersonRM: [0],
-    // listarAndersonCO: [0],
-    // listarAndersonRV: [0],
-    // listarAndersonCC: [0],
-    // listarAndersonMMV: [0],
-    // listarAndersonRP: [0],
-    // listarAndersonLP: [0],
-
     //Ordem de Serviço Marcio
     listarMarcioMC: [0],
     listarMarcioLA: [0],
@@ -319,6 +318,7 @@ const initialState = {
     listarDiegoCCol: [0],
     listarDiegoCImp: [0],
     listarDiegoCLei: [0],
+    listarDiegoCLeiRFID: [0],
     listarDiegoCBusca: [0],
     listarDiegoCCar3: [0],
     listarDiegoCCar4: [0],
@@ -333,6 +333,7 @@ const initialState = {
     listarNataCol: [0],
     listarNataImp: [0],
     listarNataLei: [0],
+    listarNataLeiRFID: [0],
     listarNataBusca: [0],
     listarNataCar3: [0],
     listarNataCar4: [0],
@@ -348,6 +349,7 @@ const initialState = {
     listarMateusCol: [0],
     listarMateusImp: [0],
     listarMateusLei: [0],
+    listarMateusLeiRFID: [0],
     listarMateusBusca: [0],
     listarMateusCar3: [0],
     listarMateusCar4: [0],
@@ -362,6 +364,7 @@ const initialState = {
     listarLucasCol: [0],
     listarLucasImp: [0],
     listarLucasLei: [0],
+    listarLucasLeiRFID: [0],
     listarLucasBusca: [0],
     listarLucasCar3: [0],
     listarLucasCar4: [0],
@@ -376,6 +379,7 @@ const initialState = {
     listarDiogoCol: [0],
     listarDiogoImp: [0],
     listarDiogoLei: [0],
+    listarDiogoLeiRFID: [0],
     listarDiogoBusca: [0],
     listarDiogoCar3: [0],
     listarDiogoCar4: [0],
@@ -390,6 +394,7 @@ const initialState = {
     listarGabrielCol: [0],
     listarGabrielImp: [0],
     listarGabrielLei: [0],
+    listarGabrielLeiRFID: [0],
     listarGabrielBusca: [0],
     listarGabrielCar3: [0],
     listarGabrielCar4: [0],
@@ -404,6 +409,7 @@ const initialState = {
     listarBrunoCol: [0],
     listarBrunoImp: [0],
     listarBrunoLei: [0],
+    listarBrunoLeiRFID: [0],
     listarBrunoBusca: [0],
     listarBrunoCar3: [0],
     listarBrunoCar4: [0],
@@ -418,6 +424,7 @@ const initialState = {
     listarViniciusCol: [0],
     listarViniciusImp: [0],
     listarViniciusLei: [0],
+    listarViniciusLeiRFID: [0],
     listarViniciusBusca: [0],
     listarViniciusCar3: [0],
     listarViniciusCar4: [0],
@@ -432,6 +439,7 @@ const initialState = {
     listarDiegoACol: [0],
     listarDiegoAImp: [0],
     listarDiegoALei: [0],
+    listarDiegoALeiRFID: [0],
     listarDiegoABusca: [0],
     listarDiegoACar3: [0],
     listarDiegoACar4: [0],
@@ -442,23 +450,12 @@ const initialState = {
     listarDiegoACabos: [0],
     listarDiegoABateria: [0],
 
-    // //Total Equipamentos Anderson
-    // listarAndersonCol: [0],
-    // listarAndersonImp: [0],
-    // listarAndersonLei: [0],
-    // listarAndersonBusca: [0],
-    // listarAndersonCar3: [0],
-    // listarAndersonCar4: [0],
-    // listarAndersonCar5: [0],
-    // listarAndersonCar6: [0],
-    // listarAndersonBerco: [0],
-    // listarAndersonFonte: [0],
-    // listarAndersonCabos: [0],
 
     //Total Equipamentos Marcio
     listarMarcioCol: [0],
     listarMarcioImp: [0],
     listarMarcioLei: [0],
+    listarMarcioLeiRFID: [0],
     listarMarcioBusca: [0],
     listarMarcioCar3: [0],
     listarMarcioCar4: [0],
@@ -473,6 +470,7 @@ const initialState = {
     listarCidaCol: [0],
     listarCidaImp: [0],
     listarCidaLei: [0],
+    listarCidaLeiRFID: [0],
     listarCidaBusca: [0],
     listarCidaCar3: [0],
     listarCidaCar4: [0],
@@ -487,6 +485,7 @@ const initialState = {
     listarAllanCol: [0],
     listarAllanImp: [0],
     listarAllanLei: [0],
+    listarAllanLeiRFID: [0],
     listarAllanBusca: [0],
     listarAllanCar3: [0],
     listarAllanCar4: [0],
@@ -501,6 +500,7 @@ const initialState = {
     listarDouglasCol: [0],
     listarDouglasImp: [0],
     listarDouglasLei: [0],
+    listarDouglasLeiRFID: [0],
     listarDouglasBusca: [0],
     listarDouglasCar3: [0],
     listarDouglasCar4: [0],
@@ -515,6 +515,7 @@ const initialState = {
     listarKleitonCol: [0],
     listarKleitonImp: [0],
     listarKleitonLei: [0],
+    listarKleitonLeiRFID: [0],
     listarKleitonBusca: [0],
     listarKleitonCar3: [0],
     listarKleitonCar4: [0],
@@ -590,7 +591,6 @@ export default class DashboardGerencia extends React.Component {
         let dadoDiegoA = [];
         let dadoAllan = [];
         let dadoCida = [];
-        // let dadoAnderson = [];
         let dadoDouglas = [];
         let dadoKleiton = [];
 
@@ -608,12 +608,25 @@ export default class DashboardGerencia extends React.Component {
         let dadoNov = [];
         let dadoDez = [];
 
+        //variavel contrato
+        let dadoAssai = [];
+        let dadoAvulso = [];
+        let dadoCEA = [];
+        let dadoB2W = [];
+        let dadoAtacadao = [];
+        let dadoShopee = [];
+        let dadoBoticario = [];
+        let dadoLocacao = [];
+        let dadoFriozem = [];
+        let dadoComfrio = [];
+
         //total garantia
         let dadoGarantia = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
 
             var v = `${tabelaNome[i].Tecnico}`;
+            var c = `${tabelaNome[i].Contrato}`;
 
             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
                 dadoMC.push({
@@ -815,6 +828,61 @@ export default class DashboardGerencia extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
+            if("Avulso" === tabelaNome[i].Contrato){
+                dadoAvulso.push({
+                    Id: tabelaNome[i].id
+                })
+            }
+            if(c.match(/Assaí/)){
+                dadoAssai.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/C&A/)){
+                dadoCEA.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/B2W/)){
+                dadoB2W.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Atacadão/)){
+                dadoAtacadao.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Shopee/)){
+                dadoShopee.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Locação/)){
+                dadoLocacao.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Locação/)){
+                dadoLocacao.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Friozem/)){
+                dadoFriozem.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Boticário/)){
+                dadoBoticario.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
+            if(c.match(/Comfrio/)){
+                dadoComfrio.push({
+                    OS: tabelaNome[i].OS
+                })
+            }
         }
 
         //variavel servico
@@ -852,7 +920,6 @@ export default class DashboardGerencia extends React.Component {
         let totalDiegoA = Object.keys(dadoDiegoA).length;
         let totalAllan = Object.keys(dadoAllan).length;
         let totalCida = Object.keys(dadoCida).length;
-        // let totalAnderson = Object.keys(dadoAnderson).length;
         let totalDouglas = Object.keys(dadoDouglas).length;
         let totalKleiton = Object.keys(dadoKleiton).length;
 
@@ -869,6 +936,18 @@ export default class DashboardGerencia extends React.Component {
         let totalOut = Object.keys(dadoOut).length;
         let totalNov = Object.keys(dadoNov).length;
         let totalDez = Object.keys(dadoDez).length;
+
+        //varial contrato
+        let totalAvulso = Object.keys(dadoAvulso).length;
+        let totalAssai = Object.keys(dadoAssai).length;
+        let totalAtacadao = Object.keys(dadoAtacadao).length;
+        let totalCEA = Object.keys(dadoCEA).length;
+        let totalB2W = Object.keys(dadoB2W).length;
+        let totalShopee = Object.keys(dadoShopee).length;
+        let totalFriozem = Object.keys(dadoFriozem).length;
+        let totalComfrio = Object.keys(dadoComfrio).length;
+        let totalLocacao = Object.keys(dadoLocacao).length;
+        let totalBoticario = Object.keys(dadoBoticario).length;
 
         return this.setState({
             //busca servico
@@ -920,7 +999,19 @@ export default class DashboardGerencia extends React.Component {
             listarSet: totalSet,
             listarOut: totalOut,
             listarNov: totalNov,
-            listarDez: totalDez
+            listarDez: totalDez,
+
+            //buscar contrato
+            listarAvulso: totalAvulso,
+            listarAssai: totalAssai,
+            listarCEA: totalCEA,
+            listarB2W: totalB2W,
+            listarShopee: totalShopee,
+            listarBoticario: totalBoticario,
+            listarAtacadao: totalAtacadao,
+            listarLocacao: totalLocacao,
+            listarFriozem: totalFriozem,
+            listarComfrio: totalComfrio
         })
     }
 
@@ -973,11 +1064,24 @@ export default class DashboardGerencia extends React.Component {
         let dadoFNov = [];
         let dadoFDez = [];
 
+        //variavel contrato
+        let dadoAssai = [];
+        let dadoAvulso = [];
+        let dadoCEA = [];
+        let dadoB2W = [];
+        let dadoAtacadao = [];
+        let dadoShopee = [];
+        let dadoBoticario = [];
+        let dadoLocacao = [];
+        let dadoFriozem = [];
+        let dadoComfrio = [];
+
         //totalGarantia
         let dadoFGarantia = [];
 
         for (let i = 0; i < tabelaNome.length; i++) {
             let v = `${tabelaNome[i].Tecnico}`;
+            var c = `${tabelaNome[i].Contrato}`;
 
             //#region Ano
 
@@ -1184,6 +1288,61 @@ export default class DashboardGerencia extends React.Component {
                 }
                 if ("Garantia" === tabelaNome[i].Status) {
                     dadoFGarantia.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if("Avulso" === tabelaNome[i].Contrato){
+                    dadoAvulso.push({
+                        Id: tabelaNome[i].id
+                    })
+                }
+                if(c.match(/Assaí/)){
+                    dadoAssai.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/C&A/)){
+                    dadoCEA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/B2W/)){
+                    dadoB2W.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Atacadão/)){
+                    dadoAtacadao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Shopee/)){
+                    dadoShopee.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Locação/)){
+                    dadoLocacao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Locação/)){
+                    dadoLocacao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Friozem/)){
+                    dadoFriozem.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Boticário/)){
+                    dadoBoticario.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Comfrio/)){
+                    dadoComfrio.push({
                         OS: tabelaNome[i].OS
                     })
                 }
@@ -1397,6 +1556,61 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if("Avulso" === tabelaNome[i].Contrato){
+                    dadoAvulso.push({
+                        Id: tabelaNome[i].id
+                    })
+                }
+                if(c.match(/Assaí/)){
+                    dadoAssai.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/C&A/)){
+                    dadoCEA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/B2W/)){
+                    dadoB2W.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Atacadão/)){
+                    dadoAtacadao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Shopee/)){
+                    dadoShopee.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Locação/)){
+                    dadoLocacao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Locação/)){
+                    dadoLocacao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Friozem/)){
+                    dadoFriozem.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Boticário/)){
+                    dadoBoticario.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Comfrio/)){
+                    dadoComfrio.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion 
 
@@ -1607,6 +1821,61 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
+                if("Avulso" === tabelaNome[i].Contrato){
+                    dadoAvulso.push({
+                        Id: tabelaNome[i].id
+                    })
+                }
+                if(c.match(/Assaí/)){
+                    dadoAssai.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/C&A/)){
+                    dadoCEA.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/B2W/)){
+                    dadoB2W.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Atacadão/)){
+                    dadoAtacadao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Shopee/)){
+                    dadoShopee.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Locação/)){
+                    dadoLocacao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Locação/)){
+                    dadoLocacao.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Friozem/)){
+                    dadoFriozem.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Boticário/)){
+                    dadoBoticario.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
+                if(c.match(/Comfrio/)){
+                    dadoComfrio.push({
+                        OS: tabelaNome[i].OS
+                    })
+                }
             }
             //#endregion
         }
@@ -1664,6 +1933,18 @@ export default class DashboardGerencia extends React.Component {
         let totalFNov = Object.keys(dadoFNov).length;
         let totalFDez = Object.keys(dadoFDez).length;
 
+         //varial contrato
+         let totalAvulso = Object.keys(dadoAvulso).length;
+         let totalAssai = Object.keys(dadoAssai).length;
+         let totalAtacadao = Object.keys(dadoAtacadao).length;
+         let totalCEA = Object.keys(dadoCEA).length;
+         let totalB2W = Object.keys(dadoB2W).length;
+         let totalShopee = Object.keys(dadoShopee).length;
+         let totalFriozem = Object.keys(dadoFriozem).length;
+         let totalComfrio = Object.keys(dadoComfrio).length;
+         let totalLocacao = Object.keys(dadoLocacao).length;
+         let totalBoticario = Object.keys(dadoBoticario).length;
+
         return this.setState({
             //busca servico
             listarMC: totalFMC,
@@ -1714,7 +1995,19 @@ export default class DashboardGerencia extends React.Component {
             listarSet: totalFSet,
             listarOut: totalFOut,
             listarNov: totalFNov,
-            listarDez: totalFDez
+            listarDez: totalFDez,
+
+            //buscar contrato
+            listarAvulso: totalAvulso,
+            listarAssai: totalAssai,
+            listarCEA: totalCEA,
+            listarB2W: totalB2W,
+            listarShopee: totalShopee,
+            listarBoticario: totalBoticario,
+            listarAtacadao: totalAtacadao,
+            listarLocacao: totalLocacao,
+            listarFriozem: totalFriozem,
+            listarComfrio: totalComfrio
         })
 
     }
@@ -1816,6 +2109,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -1903,6 +2197,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -1966,6 +2264,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -2000,6 +2299,7 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoCCol: totalCol,
                 listarDiegoCImp: totalImp,
                 listarDiegoCLei: totalLei,
+                listarDiegoCLeiRFID: totalLeiRFID,
                 listarDiegoCBusca: totalBusca,
                 listarDiegoCCar3: totalCar3,
                 listarDiegoCCar4: totalCar4,
@@ -2032,6 +2332,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -2119,6 +2420,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -2182,6 +2487,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -2216,6 +2522,7 @@ export default class DashboardGerencia extends React.Component {
                 listarNataCol: totalCol,
                 listarNataImp: totalImp,
                 listarNataLei: totalLei,
+                listarNataLeiRFID: totalLeiRFID,
                 listarNataBusca: totalBusca,
                 listarNataCar3: totalCar3,
                 listarNataCar4: totalCar4,
@@ -2249,6 +2556,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -2336,6 +2644,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -2399,6 +2711,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -2434,6 +2747,7 @@ export default class DashboardGerencia extends React.Component {
                 listarMateusCol: totalCol,
                 listarMateusImp: totalImp,
                 listarMateusLei: totalLei,
+                listarMateusLeiRFID: totalLeiRFID,
                 listarMateusBusca: totalBusca,
                 listarMateusCar3: totalCar3,
                 listarMateusCar4: totalCar4,
@@ -2467,6 +2781,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -2554,6 +2869,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -2617,6 +2936,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -2627,6 +2947,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -2651,6 +2972,7 @@ export default class DashboardGerencia extends React.Component {
                 listarLucasCol: totalCol,
                 listarLucasImp: totalImp,
                 listarLucasLei: totalLei,
+                listarLucasLeiRFID: totalLeiRFID,
                 listarLucasBusca: totalBusca,
                 listarLucasCar3: totalCar3,
                 listarLucasCar4: totalCar4,
@@ -2664,7 +2986,6 @@ export default class DashboardGerencia extends React.Component {
         }
 
         if (tecnico === "Diogo Selmini") {
-
 
             //variavel servico
             let dadoTMC = [];
@@ -2684,6 +3005,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -2771,6 +3093,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -2834,6 +3160,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -2844,6 +3171,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -2868,6 +3196,7 @@ export default class DashboardGerencia extends React.Component {
                 listarDiogoCol: totalCol,
                 listarDiogoImp: totalImp,
                 listarDiogoLei: totalLei,
+                listarDiogoLeiRFID: totalLeiRFID,
                 listarDiogoBusca: totalBusca,
                 listarDiogoCar3: totalCar3,
                 listarDiogoCar4: totalCar4,
@@ -2900,6 +3229,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -2987,6 +3317,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -3050,6 +3384,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -3060,6 +3395,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -3084,6 +3420,7 @@ export default class DashboardGerencia extends React.Component {
                 listarGabrielCol: totalCol,
                 listarGabrielImp: totalImp,
                 listarGabrielLei: totalLei,
+                listarGabrielLeiRFID: totalLeiRFID,
                 listarGabrielBusca: totalBusca,
                 listarGabrielCar3: totalCar3,
                 listarGabrielCar4: totalCar4,
@@ -3116,6 +3453,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -3203,6 +3541,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -3266,6 +3608,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -3276,6 +3619,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -3300,6 +3644,7 @@ export default class DashboardGerencia extends React.Component {
                 listarBrunoCol: totalCol,
                 listarBrunoImp: totalImp,
                 listarBrunoLei: totalLei,
+                listarBrunoLeiRFID: totalLeiRFID,
                 listarBrunoBusca: totalBusca,
                 listarBrunoCar3: totalCar3,
                 listarBrunoCar4: totalCar4,
@@ -3332,6 +3677,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -3419,6 +3765,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -3482,6 +3832,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -3492,6 +3843,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -3516,6 +3868,7 @@ export default class DashboardGerencia extends React.Component {
                 listarViniciusCol: totalCol,
                 listarViniciusImp: totalImp,
                 listarViniciusLei: totalLei,
+                listarViniciusLeiRFID: totalLeiRFID,
                 listarViniciusBusca: totalBusca,
                 listarViniciusCar3: totalCar3,
                 listarViniciusCar4: totalCar4,
@@ -3548,6 +3901,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -3635,6 +3989,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -3698,6 +4056,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -3708,6 +4067,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -3732,6 +4092,7 @@ export default class DashboardGerencia extends React.Component {
                 listarDiegoACol: totalCol,
                 listarDiegoAImp: totalImp,
                 listarDiegoALei: totalLei,
+                listarDiegoALeiRFID: totalLeiRFID,
                 listarDiegoABusca: totalBusca,
                 listarDiegoACar3: totalCar3,
                 listarDiegoACar4: totalCar4,
@@ -3764,6 +4125,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -3851,6 +4213,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -3914,6 +4280,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -3924,6 +4291,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -3948,6 +4316,7 @@ export default class DashboardGerencia extends React.Component {
                 listarMarcioCol: totalCol,
                 listarMarcioImp: totalImp,
                 listarMarcioLei: totalLei,
+                listarMarcioLeiRFID: totalLeiRFID,
                 listarMarcioBusca: totalBusca,
                 listarMarcioCar3: totalCar3,
                 listarMarcioCar4: totalCar4,
@@ -3980,6 +4349,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -4067,6 +4437,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -4130,6 +4504,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -4140,6 +4515,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -4164,6 +4540,7 @@ export default class DashboardGerencia extends React.Component {
                 listarCidaCol: totalCol,
                 listarCidaImp: totalImp,
                 listarCidaLei: totalLei,
+                listarCidaLeiRFID: totalLeiRFID,
                 listarCidaBusca: totalBusca,
                 listarCidaCar3: totalCar3,
                 listarCidaCar4: totalCar4,
@@ -4196,6 +4573,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -4283,6 +4661,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -4346,6 +4728,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -4356,6 +4739,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -4380,6 +4764,7 @@ export default class DashboardGerencia extends React.Component {
                 listarAllanCol: totalCol,
                 listarAllanImp: totalImp,
                 listarAllanLei: totalLei,
+                listarAllanLeiRFID: totalLeiRFID,
                 listarAllanBusca: totalBusca,
                 listarAllanCar3: totalCar3,
                 listarAllanCar4: totalCar4,
@@ -4412,6 +4797,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -4499,6 +4885,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -4562,6 +4952,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -4572,6 +4963,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -4596,6 +4988,7 @@ export default class DashboardGerencia extends React.Component {
                 listarDouglasCol: totalCol,
                 listarDouglasImp: totalImp,
                 listarDouglasLei: totalLei,
+                listarDouglasLeiRFID: totalLeiRFID,
                 listarDouglasBusca: totalBusca,
                 listarDouglasCar3: totalCar3,
                 listarDouglasCar4: totalCar4,
@@ -4628,6 +5021,7 @@ export default class DashboardGerencia extends React.Component {
             //dados por equipamento
             let dadoCol = [];
             let dadoLei = [];
+            let dadoLeiRFID = [];
             let dadoImp = [];
             let dadoBusca = [];
             let dadoCar3 = [];
@@ -4715,6 +5109,10 @@ export default class DashboardGerencia extends React.Component {
                         dadoLei.push({
                             OS: tabelaNome[i].OS
                         })
+                    } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                        dadoLeiRFID.push({
+                            OS: tabelaNome[i].OS
+                        })
                     } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                         dadoImp.push({
                             OS: tabelaNome[i].OS
@@ -4778,6 +5176,7 @@ export default class DashboardGerencia extends React.Component {
             //Variavel Total por equipamento
             let totalCol = Object.keys(dadoCol).length;
             let totalLei = Object.keys(dadoLei).length;
+            let totalLeiRFID = Object.keys(dadoLeiRFID).length;
             let totalImp = Object.keys(dadoImp).length;
             let totalBusca = Object.keys(dadoBusca).length;
             let totalCar3 = Object.keys(dadoCar3).length;
@@ -4788,6 +5187,7 @@ export default class DashboardGerencia extends React.Component {
             let totalFonte = Object.keys(dadoFonte).length;
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
+
 
             return this.setState({
                 //busca servico
@@ -4812,6 +5212,7 @@ export default class DashboardGerencia extends React.Component {
                 listarKleitonCol: totalCol,
                 listarKleitonImp: totalImp,
                 listarKleitonLei: totalLei,
+                listarKleitonLeiRFID: totalLeiRFID,
                 listarKleitonBusca: totalBusca,
                 listarKleitonCar3: totalCar3,
                 listarKleitonCar4: totalCar4,
@@ -4851,6 +5252,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -4938,6 +5340,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -5001,6 +5407,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -5035,6 +5442,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoCCol: totalCol,
                     listarDiegoCImp: totalImp,
                     listarDiegoCLei: totalLei,
+                    listarDiegoCLeiRFID: totalLeiRFID,
                     listarDiegoCBusca: totalBusca,
                     listarDiegoCCar3: totalCar3,
                     listarDiegoCCar4: totalCar4,
@@ -5049,7 +5457,7 @@ export default class DashboardGerencia extends React.Component {
 
             if (tecnico === "Natanael Silva Lima") {
 
-                 //variavel servico
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -5067,6 +5475,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -5154,6 +5563,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -5217,6 +5630,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -5230,42 +5644,43 @@ export default class DashboardGerencia extends React.Component {
 
                 return this.setState({
                     //busca servico
-                    listarNataMC: totalTMC,
-                    listarNataLA: totalTLA,
-                    listarNataSR: totalTSR,
-                    listarNataRM: totalTRM,
-                    listarNataCO: totalTCO,
-                    listarNataRV: totalTRV,
-                    listarNataCC: totalTCC,
-                    listarNataMMV: totalTMMV,
-                    listarNataRP: totalTRP,
-                    listarNataLP: totalTLP,
-                    listarNataRR: totalTRR,
-                    listarNataRC: totalTRC,
-                    listarNataRL: totalTRL,
+                    listarNatanaelMC: totalTMC,
+                    listarNatanaelLA: totalTLA,
+                    listarNatanaelSR: totalTSR,
+                    listarNatanaelRM: totalTRM,
+                    listarNatanaelCO: totalTCO,
+                    listarNatanaelRV: totalTRV,
+                    listarNatanaelCC: totalTCC,
+                    listarNatanaelMMV: totalTMMV,
+                    listarNatanaelRP: totalTRP,
+                    listarNatanaelLP: totalTLP,
+                    listarNatanaelRR: totalTRR,
+                    listarNatanaelRC: totalTRC,
+                    listarNatanaelRL: totalTRL,
 
                     //busca total
-                    listarTotalNata: totalTEquip,
+                    listarTotalNatanael: totalTEquip,
 
                     //listart total por equipamento
-                    listarNataCol: totalCol,
-                    listarNataImp: totalImp,
-                    listarNataLei: totalLei,
-                    listarNataBusca: totalBusca,
-                    listarNataCar3: totalCar3,
-                    listarNataCar4: totalCar4,
-                    listarNataCar5: totalCar5,
-                    listarNataCar6: totalCar6,
-                    listarNataBerco: totalBerco,
-                    listarNataFonte: totalFonte,
-                    listarNataCabos: totalCabo,
-                    listarNataBateria: totalBateria
+                    listarNatanaelCol: totalCol,
+                    listarNatanaelImp: totalImp,
+                    listarNatanaelLei: totalLei,
+                    listarNatanaelLeiRFID: totalLeiRFID,
+                    listarNatanaelBusca: totalBusca,
+                    listarNatanaelCar3: totalCar3,
+                    listarNatanaelCar4: totalCar4,
+                    listarNatanaelCar5: totalCar5,
+                    listarNatanaelCar6: totalCar6,
+                    listarNatanaelBerco: totalBerco,
+                    listarNatanaelFonte: totalFonte,
+                    listarNatanaelCabos: totalCabo,
+                    listarNatanaelBateria: totalBateria
                 })
             }
 
             if (tecnico === "Mateus Doval") {
 
-                 //variavel servico
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -5283,6 +5698,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -5370,6 +5786,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -5433,6 +5853,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -5467,6 +5888,7 @@ export default class DashboardGerencia extends React.Component {
                     listarMateusCol: totalCol,
                     listarMateusImp: totalImp,
                     listarMateusLei: totalLei,
+                    listarMateusLeiRFID: totalLeiRFID,
                     listarMateusBusca: totalBusca,
                     listarMateusCar3: totalCar3,
                     listarMateusCar4: totalCar4,
@@ -5480,7 +5902,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Lucas Felician") {
- //variavel servico
+ 
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -5498,6 +5921,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -5585,6 +6009,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -5648,6 +6076,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -5682,6 +6111,7 @@ export default class DashboardGerencia extends React.Component {
                     listarLucasCol: totalCol,
                     listarLucasImp: totalImp,
                     listarLucasLei: totalLei,
+                    listarLucasLeiRFID: totalLeiRFID,
                     listarLucasBusca: totalBusca,
                     listarLucasCar3: totalCar3,
                     listarLucasCar4: totalCar4,
@@ -5695,7 +6125,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Diogo Selmini") {
-             //variavel servico
+            
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -5713,6 +6144,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -5800,6 +6232,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -5863,6 +6299,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -5897,6 +6334,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiogoCol: totalCol,
                     listarDiogoImp: totalImp,
                     listarDiogoLei: totalLei,
+                    listarDiogoLeiRFID: totalLeiRFID,
                     listarDiogoBusca: totalBusca,
                     listarDiogoCar3: totalCar3,
                     listarDiogoCar4: totalCar4,
@@ -5910,7 +6348,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Gabriel Kaique") {
- //variavel servico
+ 
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -5928,6 +6367,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -6015,6 +6455,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -6078,6 +6522,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -6112,6 +6557,7 @@ export default class DashboardGerencia extends React.Component {
                     listarGabrielCol: totalCol,
                     listarGabrielImp: totalImp,
                     listarGabrielLei: totalLei,
+                    listarGabrielLeiRFID: totalLeiRFID,
                     listarGabrielBusca: totalBusca,
                     listarGabrielCar3: totalCar3,
                     listarGabrielCar4: totalCar4,
@@ -6125,7 +6571,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Bruno Bedani") {
- //variavel servico
+ 
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -6143,6 +6590,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -6230,6 +6678,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -6293,6 +6745,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -6327,6 +6780,7 @@ export default class DashboardGerencia extends React.Component {
                     listarBrunoCol: totalCol,
                     listarBrunoImp: totalImp,
                     listarBrunoLei: totalLei,
+                    listarBrunoLeiRFID: totalLeiRFID,
                     listarBrunoBusca: totalBusca,
                     listarBrunoCar3: totalCar3,
                     listarBrunoCar4: totalCar4,
@@ -6340,7 +6794,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Vinicius Gomes") {
- //variavel servico
+ 
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -6358,6 +6813,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -6445,6 +6901,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -6508,6 +6968,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -6542,6 +7003,7 @@ export default class DashboardGerencia extends React.Component {
                     listarViniciusCol: totalCol,
                     listarViniciusImp: totalImp,
                     listarViniciusLei: totalLei,
+                    listarViniciusLeiRFID: totalLeiRFID,
                     listarViniciusBusca: totalBusca,
                     listarViniciusCar3: totalCar3,
                     listarViniciusCar4: totalCar4,
@@ -6555,6 +7017,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Diego Almeida") {
+               
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -6573,6 +7036,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -6660,6 +7124,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -6723,6 +7191,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -6757,6 +7226,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoACol: totalCol,
                     listarDiegoAImp: totalImp,
                     listarDiegoALei: totalLei,
+                    listarDiegoALeiRFID: totalLeiRFID,
                     listarDiegoABusca: totalBusca,
                     listarDiegoACar3: totalCar3,
                     listarDiegoACar4: totalCar4,
@@ -6770,6 +7240,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Marcio") {
+            
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -6788,6 +7259,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -6875,6 +7347,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -6938,6 +7414,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -6972,6 +7449,7 @@ export default class DashboardGerencia extends React.Component {
                     listarMarcioCol: totalCol,
                     listarMarcioImp: totalImp,
                     listarMarcioLei: totalLei,
+                    listarMarcioLeiRFID: totalLeiRFID,
                     listarMarcioBusca: totalBusca,
                     listarMarcioCar3: totalCar3,
                     listarMarcioCar4: totalCar4,
@@ -6985,7 +7463,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Cida Zani") {
- //variavel servico
+
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -7003,6 +7482,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -7090,6 +7570,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -7153,6 +7637,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -7187,6 +7672,7 @@ export default class DashboardGerencia extends React.Component {
                     listarCidaCol: totalCol,
                     listarCidaImp: totalImp,
                     listarCidaLei: totalLei,
+                    listarCidaLeiRFID: totalLeiRFID,
                     listarCidaBusca: totalBusca,
                     listarCidaCar3: totalCar3,
                     listarCidaCar4: totalCar4,
@@ -7200,7 +7686,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Allan Zulino") {
- //variavel servico
+
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -7218,6 +7705,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -7305,6 +7793,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -7368,6 +7860,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -7402,6 +7895,7 @@ export default class DashboardGerencia extends React.Component {
                     listarAllanCol: totalCol,
                     listarAllanImp: totalImp,
                     listarAllanLei: totalLei,
+                    listarAllanLeiRFID: totalLeiRFID,
                     listarAllanBusca: totalBusca,
                     listarAllanCar3: totalCar3,
                     listarAllanCar4: totalCar4,
@@ -7415,7 +7909,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Douglas Altenfelder") {
- //variavel servico
+ 
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -7433,6 +7928,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -7520,6 +8016,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -7583,6 +8083,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -7617,6 +8118,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDouglasCol: totalCol,
                     listarDouglasImp: totalImp,
                     listarDouglasLei: totalLei,
+                    listarDouglasLeiRFID: totalLeiRFID,
                     listarDouglasBusca: totalBusca,
                     listarDouglasCar3: totalCar3,
                     listarDouglasCar4: totalCar4,
@@ -7630,7 +8132,8 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Kleiton Paulino") {
- //variavel servico
+ 
+                //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
                 let dadoTSR = [];
@@ -7648,6 +8151,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -7735,6 +8239,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -7798,6 +8306,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -7832,6 +8341,7 @@ export default class DashboardGerencia extends React.Component {
                     listarKleitonCol: totalCol,
                     listarKleitonImp: totalImp,
                     listarKleitonLei: totalLei,
+                    listarKleitonLeiRFID: totalLeiRFID,
                     listarKleitonBusca: totalBusca,
                     listarKleitonCar3: totalCar3,
                     listarKleitonCar4: totalCar4,
@@ -7870,6 +8380,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -7957,6 +8468,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -8020,6 +8535,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -8054,6 +8570,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoCCol: totalCol,
                     listarDiegoCImp: totalImp,
                     listarDiegoCLei: totalLei,
+                    listarDiegoCLeiRFID: totalLeiRFID,
                     listarDiegoCBusca: totalBusca,
                     listarDiegoCCar3: totalCar3,
                     listarDiegoCCar4: totalCar4,
@@ -8086,6 +8603,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -8173,6 +8691,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -8236,6 +8758,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -8249,36 +8772,37 @@ export default class DashboardGerencia extends React.Component {
 
                 return this.setState({
                     //busca servico
-                    listarNataMC: totalTMC,
-                    listarNataLA: totalTLA,
-                    listarNataSR: totalTSR,
-                    listarNataRM: totalTRM,
-                    listarNataCO: totalTCO,
-                    listarNataRV: totalTRV,
-                    listarNataCC: totalTCC,
-                    listarNataMMV: totalTMMV,
-                    listarNataRP: totalTRP,
-                    listarNataLP: totalTLP,
-                    listarNataRR: totalTRR,
-                    listarNataRC: totalTRC,
-                    listarNataRL: totalTRL,
+                    listarNatanaelMC: totalTMC,
+                    listarNatanaelLA: totalTLA,
+                    listarNatanaelSR: totalTSR,
+                    listarNatanaelRM: totalTRM,
+                    listarNatanaelCO: totalTCO,
+                    listarNatanaelRV: totalTRV,
+                    listarNatanaelCC: totalTCC,
+                    listarNatanaelMMV: totalTMMV,
+                    listarNatanaelRP: totalTRP,
+                    listarNatanaelLP: totalTLP,
+                    listarNatanaelRR: totalTRR,
+                    listarNatanaelRC: totalTRC,
+                    listarNatanaelRL: totalTRL,
 
                     //busca total
-                    listarTotalNata: totalTEquip,
+                    listarTotalNatanael: totalTEquip,
 
                     //listart total por equipamento
-                    listarNataCol: totalCol,
-                    listarNataImp: totalImp,
-                    listarNataLei: totalLei,
-                    listarNataBusca: totalBusca,
-                    listarNataCar3: totalCar3,
-                    listarNataCar4: totalCar4,
-                    listarNataCar5: totalCar5,
-                    listarNataCar6: totalCar6,
-                    listarNataBerco: totalBerco,
-                    listarNataFonte: totalFonte,
-                    listarNataCabos: totalCabo,
-                    listarNataBateria: totalBateria
+                    listarNatanaelCol: totalCol,
+                    listarNatanaelImp: totalImp,
+                    listarNatanaelLei: totalLei,
+                    listarNatanaelLeiRFID: totalLeiRFID,
+                    listarNatanaelBusca: totalBusca,
+                    listarNatanaelCar3: totalCar3,
+                    listarNatanaelCar4: totalCar4,
+                    listarNatanaelCar5: totalCar5,
+                    listarNatanaelCar6: totalCar6,
+                    listarNatanaelBerco: totalBerco,
+                    listarNatanaelFonte: totalFonte,
+                    listarNatanaelCabos: totalCabo,
+                    listarNatanaelBateria: totalBateria
                 })
             }
 
@@ -8302,6 +8826,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -8389,6 +8914,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -8452,6 +8981,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -8486,6 +9016,7 @@ export default class DashboardGerencia extends React.Component {
                     listarMateusCol: totalCol,
                     listarMateusImp: totalImp,
                     listarMateusLei: totalLei,
+                    listarMateusLeiRFID: totalLeiRFID,
                     listarMateusBusca: totalBusca,
                     listarMateusCar3: totalCar3,
                     listarMateusCar4: totalCar4,
@@ -8518,6 +9049,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -8605,6 +9137,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -8668,6 +9204,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -8702,6 +9239,7 @@ export default class DashboardGerencia extends React.Component {
                     listarLucasCol: totalCol,
                     listarLucasImp: totalImp,
                     listarLucasLei: totalLei,
+                    listarLucasLeiRFID: totalLeiRFID,
                     listarLucasBusca: totalBusca,
                     listarLucasCar3: totalCar3,
                     listarLucasCar4: totalCar4,
@@ -8734,6 +9272,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -8821,6 +9360,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -8884,6 +9427,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -8918,6 +9462,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiogoCol: totalCol,
                     listarDiogoImp: totalImp,
                     listarDiogoLei: totalLei,
+                    listarDiogoLeiRFID: totalLeiRFID,
                     listarDiogoBusca: totalBusca,
                     listarDiogoCar3: totalCar3,
                     listarDiogoCar4: totalCar4,
@@ -8950,6 +9495,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -9037,6 +9583,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -9100,6 +9650,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -9134,6 +9685,7 @@ export default class DashboardGerencia extends React.Component {
                     listarGabrielCol: totalCol,
                     listarGabrielImp: totalImp,
                     listarGabrielLei: totalLei,
+                    listarGabrielLeiRFID: totalLeiRFID,
                     listarGabrielBusca: totalBusca,
                     listarGabrielCar3: totalCar3,
                     listarGabrielCar4: totalCar4,
@@ -9166,6 +9718,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -9253,6 +9806,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -9316,6 +9873,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -9350,6 +9908,7 @@ export default class DashboardGerencia extends React.Component {
                     listarBrunoCol: totalCol,
                     listarBrunoImp: totalImp,
                     listarBrunoLei: totalLei,
+                    listarBrunoLeiRFID: totalLeiRFID,
                     listarBrunoBusca: totalBusca,
                     listarBrunoCar3: totalCar3,
                     listarBrunoCar4: totalCar4,
@@ -9382,6 +9941,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -9469,6 +10029,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -9532,6 +10096,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -9566,6 +10131,7 @@ export default class DashboardGerencia extends React.Component {
                     listarViniciusCol: totalCol,
                     listarViniciusImp: totalImp,
                     listarViniciusLei: totalLei,
+                    listarViniciusLeiRFID: totalLeiRFID,
                     listarViniciusBusca: totalBusca,
                     listarViniciusCar3: totalCar3,
                     listarViniciusCar4: totalCar4,
@@ -9580,7 +10146,6 @@ export default class DashboardGerencia extends React.Component {
 
             if (tecnico === "Diego Almeida") {
 
-                
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -9599,6 +10164,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -9686,6 +10252,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -9749,6 +10319,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -9783,6 +10354,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoACol: totalCol,
                     listarDiegoAImp: totalImp,
                     listarDiegoALei: totalLei,
+                    listarDiegoALeiRFID: totalLeiRFID,
                     listarDiegoABusca: totalBusca,
                     listarDiegoACar3: totalCar3,
                     listarDiegoACar4: totalCar4,
@@ -9815,6 +10387,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -9902,6 +10475,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -9965,6 +10542,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -9999,6 +10577,7 @@ export default class DashboardGerencia extends React.Component {
                     listarMarcioCol: totalCol,
                     listarMarcioImp: totalImp,
                     listarMarcioLei: totalLei,
+                    listarMarcioLeiRFID: totalLeiRFID,
                     listarMarcioBusca: totalBusca,
                     listarMarcioCar3: totalCar3,
                     listarMarcioCar4: totalCar4,
@@ -10031,6 +10610,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -10118,6 +10698,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -10181,6 +10765,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -10215,6 +10800,7 @@ export default class DashboardGerencia extends React.Component {
                     listarCidaCol: totalCol,
                     listarCidaImp: totalImp,
                     listarCidaLei: totalLei,
+                    listarCidaLeiRFID: totalLeiRFID,
                     listarCidaBusca: totalBusca,
                     listarCidaCar3: totalCar3,
                     listarCidaCar4: totalCar4,
@@ -10247,6 +10833,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -10334,6 +10921,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -10397,6 +10988,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -10431,6 +11023,7 @@ export default class DashboardGerencia extends React.Component {
                     listarAllanCol: totalCol,
                     listarAllanImp: totalImp,
                     listarAllanLei: totalLei,
+                    listarAllanLeiRFID: totalLeiRFID,
                     listarAllanBusca: totalBusca,
                     listarAllanCar3: totalCar3,
                     listarAllanCar4: totalCar4,
@@ -10463,6 +11056,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -10550,6 +11144,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -10613,6 +11211,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -10647,6 +11246,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDouglasCol: totalCol,
                     listarDouglasImp: totalImp,
                     listarDouglasLei: totalLei,
+                    listarDouglasLeiRFID: totalLeiRFID,
                     listarDouglasBusca: totalBusca,
                     listarDouglasCar3: totalCar3,
                     listarDouglasCar4: totalCar4,
@@ -10679,6 +11279,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -10766,6 +11367,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -10829,6 +11434,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -10863,6 +11469,7 @@ export default class DashboardGerencia extends React.Component {
                     listarKleitonCol: totalCol,
                     listarKleitonImp: totalImp,
                     listarKleitonLei: totalLei,
+                    listarKleitonLeiRFID: totalLeiRFID,
                     listarKleitonBusca: totalBusca,
                     listarKleitonCar3: totalCar3,
                     listarKleitonCar4: totalCar4,
@@ -10900,6 +11507,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -10987,6 +11595,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -11050,6 +11662,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -11084,6 +11697,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoCCol: totalCol,
                     listarDiegoCImp: totalImp,
                     listarDiegoCLei: totalLei,
+                    listarDiegoCLeiRFID: totalLeiRFID,
                     listarDiegoCBusca: totalBusca,
                     listarDiegoCCar3: totalCar3,
                     listarDiegoCCar4: totalCar4,
@@ -11116,6 +11730,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -11203,6 +11818,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -11266,6 +11885,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -11279,36 +11899,37 @@ export default class DashboardGerencia extends React.Component {
 
                 return this.setState({
                     //busca servico
-                    listarNataMC: totalTMC,
-                    listarNataLA: totalTLA,
-                    listarNataSR: totalTSR,
-                    listarNataRM: totalTRM,
-                    listarNataCO: totalTCO,
-                    listarNataRV: totalTRV,
-                    listarNataCC: totalTCC,
-                    listarNataMMV: totalTMMV,
-                    listarNataRP: totalTRP,
-                    listarNataLP: totalTLP,
-                    listarNataRR: totalTRR,
-                    listarNataRC: totalTRC,
-                    listarNataRL: totalTRL,
+                    listarNatanaelMC: totalTMC,
+                    listarNatanaelLA: totalTLA,
+                    listarNatanaelSR: totalTSR,
+                    listarNatanaelRM: totalTRM,
+                    listarNatanaelCO: totalTCO,
+                    listarNatanaelRV: totalTRV,
+                    listarNatanaelCC: totalTCC,
+                    listarNatanaelMMV: totalTMMV,
+                    listarNatanaelRP: totalTRP,
+                    listarNatanaelLP: totalTLP,
+                    listarNatanaelRR: totalTRR,
+                    listarNatanaelRC: totalTRC,
+                    listarNatanaelRL: totalTRL,
 
                     //busca total
-                    listarTotalNata: totalTEquip,
+                    listarTotalNatanael: totalTEquip,
 
                     //listart total por equipamento
-                    listarNataCol: totalCol,
-                    listarNataImp: totalImp,
-                    listarNataLei: totalLei,
-                    listarNataBusca: totalBusca,
-                    listarNataCar3: totalCar3,
-                    listarNataCar4: totalCar4,
-                    listarNataCar5: totalCar5,
-                    listarNataCar6: totalCar6,
-                    listarNataBerco: totalBerco,
-                    listarNataFonte: totalFonte,
-                    listarNataCabos: totalCabo,
-                    listarNataBateria: totalBateria
+                    listarNatanaelCol: totalCol,
+                    listarNatanaelImp: totalImp,
+                    listarNatanaelLei: totalLei,
+                    listarNatanaelLeiRFID: totalLeiRFID,
+                    listarNatanaelBusca: totalBusca,
+                    listarNatanaelCar3: totalCar3,
+                    listarNatanaelCar4: totalCar4,
+                    listarNatanaelCar5: totalCar5,
+                    listarNatanaelCar6: totalCar6,
+                    listarNatanaelBerco: totalBerco,
+                    listarNatanaelFonte: totalFonte,
+                    listarNatanaelCabos: totalCabo,
+                    listarNatanaelBateria: totalBateria
                 })
             }
 
@@ -11332,6 +11953,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -11419,6 +12041,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -11482,6 +12108,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -11516,6 +12143,7 @@ export default class DashboardGerencia extends React.Component {
                     listarMateusCol: totalCol,
                     listarMateusImp: totalImp,
                     listarMateusLei: totalLei,
+                    listarMateusLeiRFID: totalLeiRFID,
                     listarMateusBusca: totalBusca,
                     listarMateusCar3: totalCar3,
                     listarMateusCar4: totalCar4,
@@ -11548,6 +12176,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -11635,6 +12264,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -11698,6 +12331,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -11732,6 +12366,7 @@ export default class DashboardGerencia extends React.Component {
                     listarLucasCol: totalCol,
                     listarLucasImp: totalImp,
                     listarLucasLei: totalLei,
+                    listarLucasLeiRFID: totalLeiRFID,
                     listarLucasBusca: totalBusca,
                     listarLucasCar3: totalCar3,
                     listarLucasCar4: totalCar4,
@@ -11746,7 +12381,6 @@ export default class DashboardGerencia extends React.Component {
 
             if (tecnico === "Diogo Selmini") {
 
-               
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -11765,6 +12399,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -11852,6 +12487,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -11915,6 +12554,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -11949,6 +12589,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiogoCol: totalCol,
                     listarDiogoImp: totalImp,
                     listarDiogoLei: totalLei,
+                    listarDiogoLeiRFID: totalLeiRFID,
                     listarDiogoBusca: totalBusca,
                     listarDiogoCar3: totalCar3,
                     listarDiogoCar4: totalCar4,
@@ -11981,6 +12622,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -12068,6 +12710,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -12131,6 +12777,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -12165,6 +12812,7 @@ export default class DashboardGerencia extends React.Component {
                     listarGabrielCol: totalCol,
                     listarGabrielImp: totalImp,
                     listarGabrielLei: totalLei,
+                    listarGabrielLeiRFID: totalLeiRFID,
                     listarGabrielBusca: totalBusca,
                     listarGabrielCar3: totalCar3,
                     listarGabrielCar4: totalCar4,
@@ -12197,6 +12845,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -12284,6 +12933,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -12347,6 +13000,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -12381,6 +13035,7 @@ export default class DashboardGerencia extends React.Component {
                     listarBrunoCol: totalCol,
                     listarBrunoImp: totalImp,
                     listarBrunoLei: totalLei,
+                    listarBrunoLeiRFID: totalLeiRFID,
                     listarBrunoBusca: totalBusca,
                     listarBrunoCar3: totalCar3,
                     listarBrunoCar4: totalCar4,
@@ -12413,6 +13068,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -12500,6 +13156,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -12563,6 +13223,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -12597,6 +13258,7 @@ export default class DashboardGerencia extends React.Component {
                     listarViniciusCol: totalCol,
                     listarViniciusImp: totalImp,
                     listarViniciusLei: totalLei,
+                    listarViniciusLeiRFID: totalLeiRFID,
                     listarViniciusBusca: totalBusca,
                     listarViniciusCar3: totalCar3,
                     listarViniciusCar4: totalCar4,
@@ -12629,6 +13291,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -12716,6 +13379,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -12779,6 +13446,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -12813,6 +13481,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDiegoACol: totalCol,
                     listarDiegoAImp: totalImp,
                     listarDiegoALei: totalLei,
+                    listarDiegoALeiRFID: totalLeiRFID,
                     listarDiegoABusca: totalBusca,
                     listarDiegoACar3: totalCar3,
                     listarDiegoACar4: totalCar4,
@@ -12845,6 +13514,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -12932,6 +13602,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -12995,6 +13669,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -13029,6 +13704,7 @@ export default class DashboardGerencia extends React.Component {
                     listarMarcioCol: totalCol,
                     listarMarcioImp: totalImp,
                     listarMarcioLei: totalLei,
+                    listarMarcioLeiRFID: totalLeiRFID,
                     listarMarcioBusca: totalBusca,
                     listarMarcioCar3: totalCar3,
                     listarMarcioCar4: totalCar4,
@@ -13043,7 +13719,6 @@ export default class DashboardGerencia extends React.Component {
 
             if (tecnico === "Cida Zani") {
 
-                
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -13062,6 +13737,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -13149,6 +13825,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -13212,6 +13892,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -13246,6 +13927,7 @@ export default class DashboardGerencia extends React.Component {
                     listarCidaCol: totalCol,
                     listarCidaImp: totalImp,
                     listarCidaLei: totalLei,
+                    listarCidaLeiRFID: totalLeiRFID,
                     listarCidaBusca: totalBusca,
                     listarCidaCar3: totalCar3,
                     listarCidaCar4: totalCar4,
@@ -13278,6 +13960,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -13365,6 +14048,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -13428,6 +14115,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -13462,6 +14150,7 @@ export default class DashboardGerencia extends React.Component {
                     listarAllanCol: totalCol,
                     listarAllanImp: totalImp,
                     listarAllanLei: totalLei,
+                    listarAllanLeiRFID: totalLeiRFID,
                     listarAllanBusca: totalBusca,
                     listarAllanCar3: totalCar3,
                     listarAllanCar4: totalCar4,
@@ -13494,6 +14183,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -13581,6 +14271,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -13644,6 +14338,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -13678,6 +14373,7 @@ export default class DashboardGerencia extends React.Component {
                     listarDouglasCol: totalCol,
                     listarDouglasImp: totalImp,
                     listarDouglasLei: totalLei,
+                    listarDouglasLeiRFID: totalLeiRFID,
                     listarDouglasBusca: totalBusca,
                     listarDouglasCar3: totalCar3,
                     listarDouglasCar4: totalCar4,
@@ -13711,6 +14407,7 @@ export default class DashboardGerencia extends React.Component {
                 //dados por equipamento
                 let dadoCol = [];
                 let dadoLei = [];
+                let dadoLeiRFID = [];
                 let dadoImp = [];
                 let dadoBusca = [];
                 let dadoCar3 = [];
@@ -13798,6 +14495,10 @@ export default class DashboardGerencia extends React.Component {
                                 dadoLei.push({
                                     OS: tabelaNome[i].OS
                                 })
+                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
                                 dadoImp.push({
                                     OS: tabelaNome[i].OS
@@ -13861,6 +14562,7 @@ export default class DashboardGerencia extends React.Component {
                 //Variavel Total por equipamento
                 let totalCol = Object.keys(dadoCol).length;
                 let totalLei = Object.keys(dadoLei).length;
+                let totalLeiRFID = Object.keys(dadoLeiRFID).length;
                 let totalImp = Object.keys(dadoImp).length;
                 let totalBusca = Object.keys(dadoBusca).length;
                 let totalCar3 = Object.keys(dadoCar3).length;
@@ -13895,6 +14597,7 @@ export default class DashboardGerencia extends React.Component {
                     listarKleitonCol: totalCol,
                     listarKleitonImp: totalImp,
                     listarKleitonLei: totalLei,
+                    listarKleitonLeiRFID: totalLeiRFID,
                     listarKleitonBusca: totalBusca,
                     listarKleitonCar3: totalCar3,
                     listarKleitonCar4: totalCar4,
@@ -13994,6 +14697,10 @@ export default class DashboardGerencia extends React.Component {
                 </div>
                 <div className="row my-3 d-flex justify-content-center ">
                     <div className="col-3 d-flex flex-column justify-content-center text-light">
+                        <CardGD bg="dark" nomeTitulo="Total OS's" icone={<i class="fa fa-3x fa-codepen" aria-hidden="true"></i>}
+                            dado={this.state.listarLA + this.state.listarSR + this.state.listarCO} />
+                    </div>
+                    <div className="col-3 d-flex flex-column justify-content-center text-light">
                         <CardGD bg="success" nomeTitulo="Total Serviço" icone={<i class="fa fa-3x fa-server" aria-hidden="true"></i>}
                             dado={this.state.listarTotalEquip} />
                     </div>
@@ -14074,7 +14781,6 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "Diego A", y: this.state.listarDiegoA },
                                 { name: "Allan", y: this.state.listarAllan },
                                 { name: "Cida", y: this.state.listarCida },
-                                // { name: "Anderson", y: this.state.listarAnderson },
                                 { name: "Douglas", y: this.state.listarDouglas },
                                 { name: "Kleiton", y: this.state.listarKleiton },
                             ]}
@@ -14099,9 +14805,50 @@ export default class DashboardGerencia extends React.Component {
                                 { name: "Diego A", y: this.state.listarDiegoA },
                                 { name: "Allan", y: this.state.listarAllan },
                                 { name: "Cida", y: this.state.listarCida },
-                                // { name: "Anderson", y: this.state.listarAnderson },
                                 { name: "Douglas", y: this.state.listarDouglas },
                                 { name: "Kleiton", y: this.state.listarKleiton },
+                            ]}
+                        />
+                    </div>
+                </div>
+                <div className="row mt-4">
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">
+                        <Grafico tipo="pie" titulo="Contratos"
+                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
+                            texto='<b>{point.name}</b>: {point.percentage:.1f} %'
+                            nomeSerie="Contratos"
+                            cor={true}
+                            dado={[
+                                { name: "Avulso", y: this.state.listarAvulso },
+                                { name: "Contrato Assaí", y: this.state.listarAssai },
+                                { name: "Contrato C&A", y: this.state.listarCEA },
+                                { name: "Contrato B2w", y: this.state.listarB2W },
+                                { name: "Contrato Atacadão", y: this.state.listarAtacadao },
+                                { name: "Contrato Boticário", y: this.state.listarBoticario },
+                                { name: "Contrato Shopee", y: this.state.listarShopee },
+                                { name: "Contrato Locação", y: this.state.listarLocacao },
+                                { name: "Contrato Friozem", y: this.state.listarFriozem },
+                                { name: "Contrato Comfrio", y: this.state.listarComfrio }
+                            ]}
+                        />
+                    </div>
+                    <div className="col-12 col-md-5 sombra flex-fill">
+                        <Grafico tipo="column" titulo="Contratos"
+                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                            texto='{point.y:1f}'
+                            nomeSerie="Contratos"
+                            cor={true}
+                            dado={[
+                                { name: "Avulso", y: this.state.listarAvulso },
+                                { name: "Contrato Assaí", y: this.state.listarAssai },
+                                { name: "Contrato C&A", y: this.state.listarCEA },
+                                { name: "Contrato B2w", y: this.state.listarB2W },
+                                { name: "Contrato Atacadão", y: this.state.listarAtacadao },
+                                { name: "Contrato Boticário", y: this.state.listarBoticario },
+                                { name: "Contrato Shopee", y: this.state.listarShopee },
+                                { name: "Contrato Locação", y: this.state.listarLocacao },
+                                { name: "Contrato Friozem", y: this.state.listarFriozem },
+                                { name: "Contrato Comfrio", y: this.state.listarComfrio }
                             ]}
                         />
                     </div>
@@ -14131,7 +14878,7 @@ export default class DashboardGerencia extends React.Component {
                 </div>
                 <div className="row mt-5 d-flex justify-content-center">
                     <div className="col-6 bg-primary text-light d-flex justify-content-center rounded">
-                        <div className="display-3 fw-bold">
+                        <div className="display-5 fw-bold">
                             Técnicos e Limpeza
                         </div>
                     </div>
@@ -14199,6 +14946,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarDiegoCCol },
                                         { name: "Leitor", y: this.state.listarDiegoCLei },
+                                        { name: "Leitor RFID", y: this.state.listarDiegoCLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarDiegoCBusca },
                                         { name: "Impressora", y: this.state.listarDiegoCImp },
                                         { name: "Carregador 3 P", y: this.state.listarDiegoCCar3 },
@@ -14274,6 +15022,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarNataCol },
                                         { name: "Leitor", y: this.state.listarNataLei },
+                                        { name: "Leitor RFID", y: this.state.listarNataLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarNataBusca },
                                         { name: "Impressora", y: this.state.listarNataImp },
                                         { name: "Carregador 3 P", y: this.state.listarNataCar3 },
@@ -14351,6 +15100,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarMateusCol },
                                         { name: "Leitor", y: this.state.listarMateusLei },
+                                        { name: "Leitor RFID", y: this.state.listarMateusLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarMateusBusca },
                                         { name: "Impressora", y: this.state.listarMateusImp },
                                         { name: "Carregador 3 P", y: this.state.listarMateusCar3 },
@@ -14427,6 +15177,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarLucasCol },
                                         { name: "Leitor", y: this.state.listarLucasLei },
+                                        { name: "Leitor RFID", y: this.state.listarLucasLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarLucasBusca },
                                         { name: "Impressora", y: this.state.listarLucasImp },
                                         { name: "Carregador 3 P", y: this.state.listarLucasCar3 },
@@ -14505,6 +15256,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarDiogoCol },
                                         { name: "Leitor", y: this.state.listarDiogoLei },
+                                        { name: "Leitor RFID", y: this.state.listarDiogoLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarDiogoBusca },
                                         { name: "Impressora", y: this.state.listarDiogoImp },
                                         { name: "Carregador 3 P", y: this.state.listarDiogoCar3 },
@@ -14580,6 +15332,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarGabrielCol },
                                         { name: "Leitor", y: this.state.listarGabrielLei },
+                                        { name: "Leitor RFID", y: this.state.listarGabrielLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarGabrielBusca },
                                         { name: "Impressora", y: this.state.listarGabrielImp },
                                         { name: "Carregador 3 P", y: this.state.listarGabrielCar3 },
@@ -14657,6 +15410,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarBrunoCol },
                                         { name: "Leitor", y: this.state.listarBrunoLei },
+                                        { name: "Leitor RFID", y: this.state.listarBrunoLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarBrunoBusca },
                                         { name: "Impressora", y: this.state.listarBrunoImp },
                                         { name: "Carregador 3 P", y: this.state.listarBrunoCar3 },
@@ -14732,6 +15486,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarViniciusCol },
                                         { name: "Leitor", y: this.state.listarViniciusLei },
+                                        { name: "Leitor RFID", y: this.state.listarViniciusLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarViniciusBusca },
                                         { name: "Impressora", y: this.state.listarViniciusImp },
                                         { name: "Carregador 3 P", y: this.state.listarViniciusCar3 },
@@ -14811,6 +15566,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarDiegoACol },
                                         { name: "Leitor", y: this.state.listarDiegoALei },
+                                        { name: "Leitor RFID", y: this.state.listarDiegoALeiRFID },
                                         { name: "Busca Preço", y: this.state.listarDiegoABusca },
                                         { name: "Impressora", y: this.state.listarDiegoAImp },
                                         { name: "Carregador 3 P", y: this.state.listarDiegoACar3 },
@@ -14825,74 +15581,6 @@ export default class DashboardGerencia extends React.Component {
 
                             }
                         />
-                        {/* <ModalTecnicos imagem={imgAnderson} classe="rounded rounded-circle"
-                            estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
-                            nome={imgAnderson} estiloFoto={{ heigth: 100, width: 50 }}
-                            classeFoto="rounded-circle"
-                            total={this.state.listarTotalAnderson}
-                            grafico1={
-                                <Grafico tipo="pie" titulo="Ordens de Serviço"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.percentage:.1f} % </b> do total<br/>'
-                                    texto='<b>{point.name}</b>: {point.percentage:.1f} %'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção Concluída", y: this.state.listarAndersonMC },
-                                        { name: "Laudo", y: this.state.listarAndersonLA },
-                                        { name: "Suporte Remoto", y: this.state.listarAndersonSR },
-                                        { name: "Revisão de Manutenção", y: this.state.listarAndersonRM },
-                                        { name: "Chamado On-Site", y: this.state.listarAndersonCO },
-                                        { name: "Revisão de Venda", y: this.state.listarAndersonRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarAndersonCC },
-                                        { name: "M/M de Venda", y: this.state.listarAndersonMMV },
-                                        { name: "Rec Placa", y: this.state.listarAndersonRP },
-                                        { name: "Limpeza", y: this.state.listarAndersonLP },
-                                    ]}
-                                />}
-
-                            grafico2={
-                                <Grafico tipo="column" titulo="Ordens de Serviço em Geral"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Ordem de Serviço"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Manutenção", y: this.state.listarAndersonMC },
-                                        { name: "Laudo", y: this.state.listarAndersonLA },
-                                        { name: "Suporte", y: this.state.listarAndersonSR },
-                                        { name: "Revisão M", y: this.state.listarAndersonRM },
-                                        { name: "On-Site", y: this.state.listarAndersonCO },
-                                        { name: "Revisão V", y: this.state.listarAndersonRV },
-                                        { name: "Confecção de Cabos", y: this.state.listarAndersonCC },
-                                        { name: "M/M de Venda", y: this.state.listarAndersonMMV },
-                                        { name: "Rec Placa", y: this.state.listarAndersonRP },
-                                        { name: "Limpeza", y: this.state.listarAndersonLP },
-                                    ]}
-                                />
-                            }
-
-                            grafico3={
-                                <Grafico tipo="column" titulo="Equipamentos"
-                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
-                                    texto='{point.y:1f}'
-                                    nomeSerie="Equipamento"
-                                    cor={true}
-                                    dado={[
-                                        { name: "Coletor", y: this.state.listarAndersonCol },
-                                        { name: "Leitor", y: this.state.listarAndersonLei },
-                                        { name: "Busca Preço", y: this.state.listarAndersonBusca },
-                                        { name: "Impressora", y: this.state.listarAndersonImp },
-                                        { name: "Carregador 3 P", y: this.state.listarAndersonCar3 },
-                                        { name: "Carregador 4 P", y: this.state.listarAndersonCar4 },
-                                        { name: "Carregador 5 P", y: this.state.listarAndersonCar5 },
-                                        { name: "Carregador 6 P", y: this.state.listarAndersonCar6 },
-                                        { name: "Berço", y: this.state.listarAndersonBerco },
-                                        { name: "Fonte", y: this.state.listarAndersonFonte },
-                                        { name: "Cabo C", y: this.state.listarAndersonCabos }
-                                    ]} />
-
-                            }
-                        /> */}
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
                             nome={imgMarcio}
@@ -14956,6 +15644,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarMarcioCol },
                                         { name: "Leitor", y: this.state.listarMarcioLei },
+                                        { name: "Leitor RFID", y: this.state.listarMarcioLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarMarcioBusca },
                                         { name: "Impressora", y: this.state.listarMarcioImp },
                                         { name: "Carregador 3 P", y: this.state.listarMarcioCar3 },
@@ -15035,6 +15724,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarCidaCol },
                                         { name: "Leitor", y: this.state.listarCidaLei },
+                                        { name: "Leitor RFID", y: this.state.listarCidaLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarCidaBusca },
                                         { name: "Impressora", y: this.state.listarCidaImp },
                                         { name: "Carregador 3 P", y: this.state.listarCidaCar3 },
@@ -15112,6 +15802,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarAllanCol },
                                         { name: "Leitor", y: this.state.listarAllanLei },
+                                        { name: "Leitor RFID", y: this.state.listarAllanLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarAllanBusca },
                                         { name: "Impressora", y: this.state.listarAllanImp },
                                         { name: "Carregador 3 P", y: this.state.listarAllanCar3 },
@@ -15200,6 +15891,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarDouglasCol },
                                         { name: "Leitor", y: this.state.listarDouglasLei },
+                                        { name: "LeitorRFID", y: this.state.listarDouglasLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarDouglasBusca },
                                         { name: "Impressora", y: this.state.listarDouglasImp },
                                         { name: "Carregador 3 P", y: this.state.listarDouglasCar3 },
@@ -15277,6 +15969,7 @@ export default class DashboardGerencia extends React.Component {
                                     dado={[
                                         { name: "Coletor", y: this.state.listarKleitonCol },
                                         { name: "Leitor", y: this.state.listarKleitonLei },
+                                        { name: "Leitor RFID", y: this.state.listarKleitonLeiRFID },
                                         { name: "Busca Preço", y: this.state.listarKleitonBusca },
                                         { name: "Impressora", y: this.state.listarKleitonImp },
                                         { name: "Carregador 3 P", y: this.state.listarKleitonCar3 },

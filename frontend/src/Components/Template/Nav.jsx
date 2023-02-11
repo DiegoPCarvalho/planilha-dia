@@ -34,6 +34,7 @@ export default props =>
                         <a href="javascript:void(0);" className='text-light'><i className="fa fa-barcode"></i>Laboratório</a>
                         <ul>
                             <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+                            <li><Link to="/Contratos" className='text-light'><i className="fa fa-file-pdf-o"></i>Contratos</Link></li>
                             <li><Link to="/CentroCustoLab" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-cogs"></i>Cadastro de Peça</Link></li>
                         </ul>

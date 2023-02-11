@@ -12,6 +12,7 @@
       "NS": "21021039363",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato B2W",
       "Observacao": "Recuperação do conector do sync/charge - rec. Módulo Laser",
       "Tecnico": "Diego Carvalho",
       "Status": ""
@@ -151,23 +152,6 @@
       "Status": "Pronto",
       "Tecnico": "Diogo Selmini",
       "id": 9
-    },
-    {
-      "Data": "2023-02-01T12:17:27.038Z",
-      "Dia": 1,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47335",
-      "Cliente": "MARISA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC32N0G",
-      "NS": "1425523020223",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 10
     },
     {
       "Data": "2023-02-01T11:06:36.856Z",
@@ -526,7 +510,8 @@
       "id": 31
     },
     {
-      "Data": "2023-02-01T12:17:27.038Z",
+      "id": 32,
+      "Data": "01/02/2023",
       "Dia": 1,
       "Mes": 2,
       "Ano": 2023,
@@ -537,10 +522,10 @@
       "NS": "12235521120733",
       "Servico": "Suporte Remoto",
       "Classificacao": "",
+      "Contrato": "Contrato Atacadão",
       "Observacao": "FEITO O SUPORTE REMOTO COM A CLIENTE REGINA DA ELAZA FOI UM SUCESSO, COLETOR CONFIGURADO NA REDE E COM AS CONFIGURAÇÕES DO TELNET.",
-      "Status": "Pronto",
       "Tecnico": "Diego Carvalho",
-      "id": 32
+      "Status": "Pronto"
     },
     {
       "Data": "2023-02-01T13:19:27.763Z",
@@ -659,22 +644,6 @@
       "Status": "",
       "Tecnico": "Vinicius Gomes",
       "id": 40
-    },
-    {
-      "id": 41,
-      "Data": "01/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47336",
-      "Cliente": "MARISA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC32N0G",
-      "NS": "16334523021533",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "coletor sem problemas\n",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
     },
     {
       "Data": "2023-02-01T11:06:49.658Z",
@@ -1047,22 +1016,6 @@
       "Status": "",
       "Tecnico": "Gabriel Kaique",
       "id": 63
-    },
-    {
-      "id": 64,
-      "Data": "01/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47353",
-      "Cliente": "FRIOZEM",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC9090G",
-      "NS": "s1117700500616",
-      "Servico": "Laudo",
-      "Classificacao": "Uso Indevido",
-      "Observacao": "TELA TOQUE - teclado",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
     },
     {
       "Data": "2023-02-01T11:56:14.671Z",
@@ -1501,6 +1454,7 @@
       "NS": "8190000500905",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato Boticário",
       "Observacao": "rec sistema - placa gatilho",
       "Tecnico": "Diego Carvalho",
       "Status": ""
@@ -1675,23 +1629,6 @@
       "id": 100
     },
     {
-      "Data": "2023-02-01T14:14:46.000Z",
-      "Dia": 1,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47354",
-      "Cliente": "FRIOZEM",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC9090G",
-      "NS": "s1117700500596",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "GATILHO QUEBRADO - TELA TOQUE - ",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 101
-    },
-    {
       "Data": "2023-02-01T14:52:12.456Z",
       "Dia": 1,
       "Mes": 2,
@@ -1737,6 +1674,7 @@
       "NS": "1210500501719",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato Friozem",
       "Observacao": "PLACA GATILHO",
       "Tecnico": "Diego Carvalho",
       "Status": ""
@@ -1808,22 +1746,6 @@
       "Status": "Pronto",
       "Tecnico": "Allan Zulino",
       "id": 108
-    },
-    {
-      "id": 109,
-      "Data": "01/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47360",
-      "Cliente": "MARCON",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC9090G",
-      "NS": "8094000500809",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "TELA TOQUE  - rec sistema",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
     },
     {
       "Data": "2023-02-01T14:52:12.456Z",
@@ -2074,6 +1996,7 @@
       "NS": "",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato Friozem",
       "Observacao": "flex key - modulo laser e flex",
       "Tecnico": "Diego Carvalho",
       "Status": ""
@@ -2385,22 +2308,6 @@
       "id": 143
     },
     {
-      "id": 144,
-      "Data": "01/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47359",
-      "Cliente": "MARCON",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC9090G",
-      "NS": "",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "gatilho plastico",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
-    },
-    {
       "Data": "2023-02-01T19:24:13.049Z",
       "Dia": 1,
       "Mes": 2,
@@ -2579,6 +2486,7 @@
       "NS": "12226521120179",
       "Servico": "Laudo",
       "Classificacao": "",
+      "Contrato": "Contrato Shopee",
       "Observacao": "Placa gatilho ",
       "Tecnico": "Diego Carvalho",
       "Status": ""
@@ -2905,22 +2813,6 @@
       "Status": "",
       "Tecnico": "Natanael Silva Lima",
       "id": 174
-    },
-    {
-      "id": 175,
-      "Data": "02/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47362",
-      "Cliente": "JADLOG",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC3190G",
-      "NS": "11294521120166",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": " tela toque",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
     },
     {
       "Data": "2023-02-02T11:40:10.850Z",
@@ -3262,22 +3154,6 @@
       "id": 196
     },
     {
-      "id": 197,
-      "Data": "02/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47363",
-      "Cliente": "IRMAOS BOA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "SKORPIO X4",
-      "NS": "",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
-    },
-    {
       "Data": "2023-02-02T11:05:48.563Z",
       "Dia": 2,
       "Mes": 2,
@@ -3462,23 +3338,6 @@
       "Status": "Pronto",
       "Tecnico": "Mateus Doval",
       "id": 208
-    },
-    {
-      "Data": "2023-02-02T11:51:36.686Z",
-      "Dia": 2,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47364",
-      "Cliente": "IRMAOS BOA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "SKORPIO X4",
-      "NS": "",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 209
     },
     {
       "Data": "2023-02-02T13:27:28.411Z",
@@ -3667,23 +3526,6 @@
       "Status": "Pronto"
     },
     {
-      "Data": "2023-02-02T11:51:36.686Z",
-      "Dia": 2,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47367",
-      "Cliente": "R.V.IMOLA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "EDA51",
-      "NS": "21143B0B28",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 221
-    },
-    {
       "Data": "2023-02-02T11:08:16.605Z",
       "Dia": 2,
       "Mes": 2,
@@ -3786,23 +3628,6 @@
       "id": 227
     },
     {
-      "Data": "2023-02-02T14:09:39.732Z",
-      "Dia": 2,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47366",
-      "Cliente": "R.V.IMOLA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "EDA51",
-      "NS": "18344b045a",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 228
-    },
-    {
       "Data": "2023-02-02T11:40:10.850Z",
       "Dia": 2,
       "Mes": 2,
@@ -3853,24 +3678,8 @@
       "Status": ""
     },
     {
-      "Data": "2023-02-02T15:06:00.200Z",
-      "Dia": 2,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47365",
-      "Cliente": "R.V.IMOLA",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "MC330M",
-      "NS": "s18185523022555",
-      "Servico": "Laudo",
-      "Classificacao": "Defeito",
-      "Observacao": "PLACA PRINCIPAL",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 233
-    },
-    {
-      "Data": "2023-02-02T15:06:00.200Z",
+      "id": 234,
+      "Data": "02/02/2023",
       "Dia": 2,
       "Mes": 2,
       "Ano": 2023,
@@ -3881,10 +3690,10 @@
       "NS": "16019522501127",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato Locação",
       "Observacao": "",
-      "Status": "",
       "Tecnico": "Diego Carvalho",
-      "id": 234
+      "Status": ""
     },
     {
       "Data": "2023-02-02T11:54:48.693Z",
@@ -4074,22 +3883,6 @@
       "id": 245
     },
     {
-      "id": 246,
-      "Data": "02/02/2023",
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47347",
-      "Cliente": "Joanin",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "SKORPIO X3",
-      "NS": "",
-      "Servico": "Manutenção Concluída",
-      "Classificacao": "Defeito",
-      "Observacao": "",
-      "Tecnico": "Diego Carvalho",
-      "Status": ""
-    },
-    {
       "Data": "2023-02-02T17:11:51.821Z",
       "Dia": 2,
       "Mes": 2,
@@ -4276,23 +4069,6 @@
       "id": 258
     },
     {
-      "Data": "2023-02-02T16:06:15.581Z",
-      "Dia": 2,
-      "Mes": 2,
-      "Ano": 2023,
-      "OS": "47199",
-      "Cliente": "ATACADÃO",
-      "Equipamento": "Coletor de Dados",
-      "Modelo": "CK3A1",
-      "NS": "07181400034",
-      "Servico": "Manutenção Concluída",
-      "Classificacao": "",
-      "Observacao": "",
-      "Status": "",
-      "Tecnico": "Diego Carvalho",
-      "id": 259
-    },
-    {
       "Data": "2023-02-02T11:54:48.693Z",
       "Dia": 2,
       "Mes": 2,
@@ -4361,7 +4137,8 @@
       "id": 263
     },
     {
-      "Data": "2023-02-02T16:06:15.581Z",
+      "id": 264,
+      "Data": "02/02/2023",
       "Dia": 2,
       "Mes": 2,
       "Ano": 2023,
@@ -4372,10 +4149,10 @@
       "NS": "08881400010",
       "Servico": "Manutenção Concluída",
       "Classificacao": "",
+      "Contrato": "Contrato Comfrio",
       "Observacao": "",
-      "Status": "",
       "Tecnico": "Diego Carvalho",
-      "id": 264
+      "Status": ""
     },
     {
       "Data": "2023-02-02T13:27:28.411Z",
@@ -4803,7 +4580,8 @@
       "id": 289
     },
     {
-      "Data": "2023-02-02T16:06:15.581Z",
+      "id": 290,
+      "Data": "02/02/2023",
       "Dia": 2,
       "Mes": 2,
       "Ano": 2023,
@@ -4814,10 +4592,10 @@
       "NS": "",
       "Servico": "Manutenção Concluída",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato Comfrio",
       "Observacao": "",
-      "Status": "",
       "Tecnico": "Diego Carvalho",
-      "id": 290
+      "Status": ""
     },
     {
       "Data": "2023-02-02T13:27:28.411Z",
@@ -14120,7 +13898,8 @@
       "id": 841
     },
     {
-      "Data": "2023-02-07T12:02:44.107Z",
+      "id": 842,
+      "Data": "07/02/2023",
       "Dia": 7,
       "Mes": 2,
       "Ano": 2023,
@@ -14131,10 +13910,10 @@
       "NS": "",
       "Servico": "Laudo",
       "Classificacao": "Defeito",
+      "Contrato": "Contrato C&A",
       "Observacao": "",
-      "Status": "",
       "Tecnico": "Diego Carvalho",
-      "id": 842
+      "Status": ""
     },
     {
       "Data": "2023-02-07T11:18:10.896Z",
@@ -14186,6 +13965,42 @@
       "Status": "Pronto",
       "Tecnico": "Diego Almeida",
       "id": 845
+    },
+    {
+      "id": 846,
+      "Data": "11/02/2023",
+      "Dia": 11,
+      "Mes": 2,
+      "Ano": 2023,
+      "OS": "asdasd",
+      "Cliente": "asdasd",
+      "Equipamento": "Busca Preço",
+      "Modelo": "asdasdas",
+      "NS": "",
+      "Servico": "Laudo",
+      "Classificacao": "",
+      "Contrato": "Contrato Assaí",
+      "Observacao": "",
+      "Tecnico": "Diego Carvalho",
+      "Status": ""
+    },
+    {
+      "Data": "2023-02-11T13:19:31.153Z",
+      "Dia": 11,
+      "Mes": 2,
+      "Ano": 2023,
+      "OS": "2222",
+      "Cliente": "2222",
+      "Equipamento": "Leitor de RFID",
+      "Modelo": "2222",
+      "NS": "2222",
+      "Servico": "Laudo",
+      "Classificacao": "",
+      "Contrato": "Avulso",
+      "Observacao": "22222",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 847
     }
   ],
   "LoginUsuario": [

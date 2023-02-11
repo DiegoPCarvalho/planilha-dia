@@ -56,6 +56,7 @@ import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Apr
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
 import EmAnaliseLab from "../Components/Setores/Laboratorio/EmAnalise";
 import FinaliadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
+import Contratos from "../Components/Setores/Laboratorio/Contratos";
 
 //Compras
 import HomeCompras from "../Components/Setores/Compras/HomeCompras";
@@ -158,6 +159,7 @@ export default function Rotas() {
                     <Route path="EmAnalise" element={<EmAnaliseLab />} />
                     <Route path="Finalizados" element={<FinaliadosLab />} />
                 </Route>
+                <Route path="/Contratos" element={<Contratos/>}/>
             </Route>
             <Route path="/PerfilUsuario" element={<Home />}>
                 <Route index element={<Perfil />} />

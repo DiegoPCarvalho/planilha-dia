@@ -20,6 +20,7 @@ const initialState = {
         NS: '',
         Servico: '',
         Classificacao: '',
+        Contrato:'',
         Observacao: '',
         Status: '',
         Tecnico: localStorage.usuario
@@ -87,8 +88,9 @@ export default class Formulário extends React.Component {
         let Equipamento = document.getElementById("Equipamento").value;
         let Modelo = document.getElementById("Modelo").value;
         let Servico = document.getElementById("Servico").value;
+        let Contrato = document.getElementById("Contrato").value;
 
-        if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '')) {
+        if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
             this.save()
@@ -134,6 +136,7 @@ export default class Formulário extends React.Component {
                                     <option selected disabled value="">Selecione o Equipamento</option>
                                     <option>Coletor de Dados</option>
                                     <option>Leitor de Dados</option>
+                                    <option>Leitor de RFID</option>
                                     <option>Busca Preço</option>
                                     <option>Impressora Térmica</option>
                                     <option>Carregador de 3 Posições</option>
@@ -198,10 +201,32 @@ export default class Formulário extends React.Component {
                                     name="Classificacao"
                                     onChange={e => this.updateField(e)}
                                     value={this.state.Atividade.Classificacao}>
-                                    <option selected>Selecione a Classificação</option>
+                                    <option selected disabled value="">Selecione a Classificação</option>
                                     <option>Desgaste de Uso</option>
                                     <option>Defeito</option>
                                     <option>Uso Indevido</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <div className="form-group">
+                                <label className='fw-bold'>Contrato: </label>
+                                <select class="form-select" aria-label="Default select example"
+                                name="Contrato" id ="Contrato"
+                                    onChange={e => this.updateField(e)}
+                                    value={this.state.Atividade.Contrato}
+                                    required>
+                                    <option selected disabled value="">Selecione...</option>
+                                    <option>Avulso</option>
+                                    <option>Contrato Assaí</option>
+                                    <option>Contrato C&A</option>
+                                    <option>Contrato B2W</option>
+                                    <option>Contrato Atacadão</option>
+                                    <option>Contrato Boticário</option>
+                                    <option>Contrato Shopee</option>
+                                    <option>Contrato Locação</option>
+                                    <option>Contrato Friozem</option>
+                                    <option>Contrato Comfrio</option>
                                 </select>
                             </div>
                         </div>
