@@ -14001,6 +14001,24 @@
       "Status": "",
       "Tecnico": "Diego Carvalho",
       "id": 847
+    },
+    {
+      "Data": "2023-02-18T17:28:54.996Z",
+      "Dia": 18,
+      "Mes": 2,
+      "Ano": 2023,
+      "OS": "asdasd",
+      "Cliente": "asdasd",
+      "Equipamento": "Leitor de Dados",
+      "Modelo": "asdasd",
+      "NS": "",
+      "Servico": "Laudo",
+      "Classificacao": "",
+      "Contrato": "Avulso",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 848
     }
   ],
   "LoginUsuario": [
@@ -14434,6 +14452,43 @@
       "AprovacaoFinanceiro": "Em Análise",
       "AprovacaoDiretoria": "Em Análise",
       "Finalizado": "Não"
+    }
+  ],
+  "Meta": [
+    {
+      "Mes": 2,
+      "Ano": 2023,
+      "Tecnico": "Diego Carvalho",
+      "Meta": "301",
+      "id": 1
+    },
+    {
+      "Mes": 2,
+      "Ano": 2023,
+      "Tecnico": "Natanael Silva Lima",
+      "Meta": "350",
+      "id": 2
+    },
+    {
+      "Mes": 1,
+      "Ano": 2023,
+      "Tecnico": "Diego Carvalho",
+      "Meta": "250",
+      "id": 3
+    },
+    {
+      "Mes": 3,
+      "Ano": 2023,
+      "Tecnico": "Diego Carvalho",
+      "Meta": "35",
+      "id": 4
+    },
+    {
+      "Mes": 2,
+      "Ano": 2023,
+      "Tecnico": "Diogo Selmini",
+      "Meta": "250",
+      "id": 5
     }
   ]
 }

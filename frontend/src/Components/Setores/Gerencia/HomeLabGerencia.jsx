@@ -3,6 +3,7 @@ import Main from '../../Template/Main';
 import Logo from '../../../Assets/Imgs/logoZhaz.png';
 
 import { Link, Outlet } from 'react-router-dom';
+import './EstiloGerencia.css'
 
 const HeaderProps = {
     icon: "bar-chart",
@@ -34,6 +35,7 @@ export default class HomeGerencia extends React.Component {
                     <div className="d-flex flex-row">
                 
                         <Link to="/GerenciaLab/Dashboard" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbords</Link>
+                        <Link to="/GerenciaLab/Meta" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Meta</Link>
                         <Link to="/GerenciaLab/CentroCusto" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link>
                     </div>
                     <div className="row mt-2 ">

@@ -51,6 +51,7 @@ import PageFinanceiro from "../Components/Setores/Gerencia/PageFinanceiro";
 import PageFinanceiroPro from '../Components/Setores/Gerencia/PageFinanceiroProcess';
 import SolicitacoesLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Solicitacoes";
 import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Aprovados";
+import MetaLab from "../Components/Setores/Gerencia/MetaLab";
 
 //Laboratorio
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
@@ -103,6 +104,7 @@ export default function Rotas() {
                         <Route path="Aprovados" element={<AprovadosLab />} />
                         <Route path="Finalizados" element={<FinalizadosLab />} />
                     </Route>
+                    <Route path="Meta" element={<MetaLab />}/>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>
                     <Route path="Financeiro" element={<PageFinanceiro />}>

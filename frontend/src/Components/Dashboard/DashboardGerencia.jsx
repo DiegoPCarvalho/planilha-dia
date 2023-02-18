@@ -16,7 +16,6 @@ import imgGabriel from '../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
 import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
 import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
 import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
-// import imgAnderson from '../../Assets/imagensTecnicos/ANDERSON RAMOS (1).png';
 import imgMarcio from "../../Assets/Imgs/user.png";
 
 //GERENTES
@@ -311,7 +310,20 @@ const initialState = {
     listarTotalLucas: [0],
     listarTotalAllan: [0],
     listarTotalCida: [0],
-    // listarTotalAnderson: [0],
+
+    //meta por tecnico e limpeza
+    listarMetaDiegoC: [0],
+    listarMetaNata: [0],
+    listarMetaMateus: [0],
+    listarMetaLucas: [0],
+    listarMetaDiogo: [0],
+    listarMetaGabriel: [0],
+    listarMetaBruno: [0],
+    listarMetaVinicius: [0],
+    listarMetaDiegoA: [0],
+    listarMetaMarcio: [0],
+    listarMetaAllan: [0],
+    listarMetaCida: [0],
 
     //total por equipamento:
     //Total Equipamentos Diego Carvaho
@@ -530,6 +542,7 @@ const initialState = {
 const banco = "Geral";
 
 const baseUrl = Url(banco);
+const baseUrl2 = Url("Meta");
 
 export default class DashboardGerencia extends React.Component {
     state = { ...initialState }
@@ -551,6 +564,18 @@ export default class DashboardGerencia extends React.Component {
         this.buscaPorTecnico("Allan Zulino")
         this.buscaPorTecnico("Douglas Altenfelder")
         this.buscaPorTecnico("Kleiton Paulino")
+        this.buscarMeta("Diego Carvalho", "Todos", "Todos")
+        this.buscarMeta("Natanael Silva Lima", "Todos", "Todos")
+        this.buscarMeta("Mateus Doval", "Todos", "Todos")
+        this.buscarMeta("Lucas Felician", "Todos", "Todos")
+        this.buscarMeta("Diogo Selmini", "Todos", "Todos")
+        this.buscarMeta("Gabriel Kaique", "Todos", "Todos")
+        this.buscarMeta("Bruno Bedani", "Todos", "Todos")
+        this.buscarMeta("Vinicius Gomes", "Todos", "Todos")
+        this.buscarMeta("Diego Almeida", "Todos", "Todos")
+        this.buscarMeta("Marcio", "Todos", "Todos")
+        this.buscarMeta("Cida Zani", "Todos", "Todos")
+        this.buscarMeta("Allan Zulino", "Todos", "Todos")
     }
 
     validacao() {
@@ -828,57 +853,57 @@ export default class DashboardGerencia extends React.Component {
                     OS: tabelaNome[i].OS
                 })
             }
-            if("Avulso" === tabelaNome[i].Contrato){
+            if ("Avulso" === tabelaNome[i].Contrato) {
                 dadoAvulso.push({
                     Id: tabelaNome[i].id
                 })
             }
-            if(c.match(/Assaí/)){
+            if (c.match(/Assaí/)) {
                 dadoAssai.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/C&A/)){
+            if (c.match(/C&A/)) {
                 dadoCEA.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/B2W/)){
+            if (c.match(/B2W/)) {
                 dadoB2W.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Atacadão/)){
+            if (c.match(/Atacadão/)) {
                 dadoAtacadao.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Shopee/)){
+            if (c.match(/Shopee/)) {
                 dadoShopee.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Locação/)){
+            if (c.match(/Locação/)) {
                 dadoLocacao.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Locação/)){
+            if (c.match(/Locação/)) {
                 dadoLocacao.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Friozem/)){
+            if (c.match(/Friozem/)) {
                 dadoFriozem.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Boticário/)){
+            if (c.match(/Boticário/)) {
                 dadoBoticario.push({
                     OS: tabelaNome[i].OS
                 })
             }
-            if(c.match(/Comfrio/)){
+            if (c.match(/Comfrio/)) {
                 dadoComfrio.push({
                     OS: tabelaNome[i].OS
                 })
@@ -1291,57 +1316,57 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
-                if("Avulso" === tabelaNome[i].Contrato){
+                if ("Avulso" === tabelaNome[i].Contrato) {
                     dadoAvulso.push({
                         Id: tabelaNome[i].id
                     })
                 }
-                if(c.match(/Assaí/)){
+                if (c.match(/Assaí/)) {
                     dadoAssai.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/C&A/)){
+                if (c.match(/C&A/)) {
                     dadoCEA.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/B2W/)){
+                if (c.match(/B2W/)) {
                     dadoB2W.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Atacadão/)){
+                if (c.match(/Atacadão/)) {
                     dadoAtacadao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Shopee/)){
+                if (c.match(/Shopee/)) {
                     dadoShopee.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Locação/)){
+                if (c.match(/Locação/)) {
                     dadoLocacao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Locação/)){
+                if (c.match(/Locação/)) {
                     dadoLocacao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Friozem/)){
+                if (c.match(/Friozem/)) {
                     dadoFriozem.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Boticário/)){
+                if (c.match(/Boticário/)) {
                     dadoBoticario.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Comfrio/)){
+                if (c.match(/Comfrio/)) {
                     dadoComfrio.push({
                         OS: tabelaNome[i].OS
                     })
@@ -1556,57 +1581,57 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
-                if("Avulso" === tabelaNome[i].Contrato){
+                if ("Avulso" === tabelaNome[i].Contrato) {
                     dadoAvulso.push({
                         Id: tabelaNome[i].id
                     })
                 }
-                if(c.match(/Assaí/)){
+                if (c.match(/Assaí/)) {
                     dadoAssai.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/C&A/)){
+                if (c.match(/C&A/)) {
                     dadoCEA.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/B2W/)){
+                if (c.match(/B2W/)) {
                     dadoB2W.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Atacadão/)){
+                if (c.match(/Atacadão/)) {
                     dadoAtacadao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Shopee/)){
+                if (c.match(/Shopee/)) {
                     dadoShopee.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Locação/)){
+                if (c.match(/Locação/)) {
                     dadoLocacao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Locação/)){
+                if (c.match(/Locação/)) {
                     dadoLocacao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Friozem/)){
+                if (c.match(/Friozem/)) {
                     dadoFriozem.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Boticário/)){
+                if (c.match(/Boticário/)) {
                     dadoBoticario.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Comfrio/)){
+                if (c.match(/Comfrio/)) {
                     dadoComfrio.push({
                         OS: tabelaNome[i].OS
                     })
@@ -1821,57 +1846,57 @@ export default class DashboardGerencia extends React.Component {
                         OS: tabelaNome[i].OS
                     })
                 }
-                if("Avulso" === tabelaNome[i].Contrato){
+                if ("Avulso" === tabelaNome[i].Contrato) {
                     dadoAvulso.push({
                         Id: tabelaNome[i].id
                     })
                 }
-                if(c.match(/Assaí/)){
+                if (c.match(/Assaí/)) {
                     dadoAssai.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/C&A/)){
+                if (c.match(/C&A/)) {
                     dadoCEA.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/B2W/)){
+                if (c.match(/B2W/)) {
                     dadoB2W.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Atacadão/)){
+                if (c.match(/Atacadão/)) {
                     dadoAtacadao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Shopee/)){
+                if (c.match(/Shopee/)) {
                     dadoShopee.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Locação/)){
+                if (c.match(/Locação/)) {
                     dadoLocacao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Locação/)){
+                if (c.match(/Locação/)) {
                     dadoLocacao.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Friozem/)){
+                if (c.match(/Friozem/)) {
                     dadoFriozem.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Boticário/)){
+                if (c.match(/Boticário/)) {
                     dadoBoticario.push({
                         OS: tabelaNome[i].OS
                     })
                 }
-                if(c.match(/Comfrio/)){
+                if (c.match(/Comfrio/)) {
                     dadoComfrio.push({
                         OS: tabelaNome[i].OS
                     })
@@ -1933,17 +1958,17 @@ export default class DashboardGerencia extends React.Component {
         let totalFNov = Object.keys(dadoFNov).length;
         let totalFDez = Object.keys(dadoFDez).length;
 
-         //varial contrato
-         let totalAvulso = Object.keys(dadoAvulso).length;
-         let totalAssai = Object.keys(dadoAssai).length;
-         let totalAtacadao = Object.keys(dadoAtacadao).length;
-         let totalCEA = Object.keys(dadoCEA).length;
-         let totalB2W = Object.keys(dadoB2W).length;
-         let totalShopee = Object.keys(dadoShopee).length;
-         let totalFriozem = Object.keys(dadoFriozem).length;
-         let totalComfrio = Object.keys(dadoComfrio).length;
-         let totalLocacao = Object.keys(dadoLocacao).length;
-         let totalBoticario = Object.keys(dadoBoticario).length;
+        //varial contrato
+        let totalAvulso = Object.keys(dadoAvulso).length;
+        let totalAssai = Object.keys(dadoAssai).length;
+        let totalAtacadao = Object.keys(dadoAtacadao).length;
+        let totalCEA = Object.keys(dadoCEA).length;
+        let totalB2W = Object.keys(dadoB2W).length;
+        let totalShopee = Object.keys(dadoShopee).length;
+        let totalFriozem = Object.keys(dadoFriozem).length;
+        let totalComfrio = Object.keys(dadoComfrio).length;
+        let totalLocacao = Object.keys(dadoLocacao).length;
+        let totalBoticario = Object.keys(dadoBoticario).length;
 
         return this.setState({
             //busca servico
@@ -2033,6 +2058,18 @@ export default class DashboardGerencia extends React.Component {
             this.buscaPorTecnico("Allan Zulino")
             this.buscaPorTecnico("Douglas Altenfelder")
             this.buscaPorTecnico("Kleiton Paulino")
+            this.buscarMeta("Diego Carvalho", "Todos", "Todos")
+            this.buscarMeta("Natanael Silva Lima", "Todos", "Todos")
+            this.buscarMeta("Mateus Doval", "Todos", "Todos")
+            this.buscarMeta("Lucas Felician", "Todos", "Todos")
+            this.buscarMeta("Diogo Selmini", "Todos", "Todos")
+            this.buscarMeta("Gabriel Kaique", "Todos", "Todos")
+            this.buscarMeta("Bruno Bedani", "Todos", "Todos")
+            this.buscarMeta("Vinicius Gomes", "Todos", "Todos")
+            this.buscarMeta("Diego Almeida", "Todos", "Todos")
+            this.buscarMeta("Marcio", "Todos", "Todos")
+            this.buscarMeta("Cida Zani", "Todos", "Todos")
+            this.buscarMeta("Allan Zulino", "Todos", "Todos")
             console.log("Sem Filtro")
         } else if ((dia === "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
@@ -2049,6 +2086,18 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
+            this.buscarMeta("Diego Carvalho", mes, ano)
+            this.buscarMeta("Natanael Silva Lima", mes, ano)
+            this.buscarMeta("Mateus Doval", mes, ano)
+            this.buscarMeta("Lucas Felician", mes, ano)
+            this.buscarMeta("Diogo Selmini", mes, ano)
+            this.buscarMeta("Gabriel Kaique", mes, ano)
+            this.buscarMeta("Bruno Bedani", mes, ano)
+            this.buscarMeta("Vinicius Gomes", mes, ano)
+            this.buscarMeta("Diego Almeida", mes, ano)
+            this.buscarMeta("Marcio", mes, ano)
+            this.buscarMeta("Cida Zani", mes, ano)
+            this.buscarMeta("Allan Zulino", mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
         } else if ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
@@ -2081,6 +2130,18 @@ export default class DashboardGerencia extends React.Component {
             this.buscarPorTecnicoFiltro("Allan Zulino", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Douglas Altenfelder", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Kleiton Paulino", dia, mes, ano)
+            this.buscarMeta("Diego Carvalho", mes, ano)
+            this.buscarMeta("Natanael Silva Lima", mes, ano)
+            this.buscarMeta("Mateus Doval", mes, ano)
+            this.buscarMeta("Lucas Felician", mes, ano)
+            this.buscarMeta("Diogo Selmini", mes, ano)
+            this.buscarMeta("Gabriel Kaique", mes, ano)
+            this.buscarMeta("Bruno Bedani", mes, ano)
+            this.buscarMeta("Vinicius Gomes", mes, ano)
+            this.buscarMeta("Diego Almeida", mes, ano)
+            this.buscarMeta("Marcio", mes, ano)
+            this.buscarMeta("Cida Zani", mes, ano)
+            this.buscarMeta("Allan Zulino", mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
         }
     }
@@ -5266,123 +5327,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -5489,123 +5550,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -5644,37 +5705,37 @@ export default class DashboardGerencia extends React.Component {
 
                 return this.setState({
                     //busca servico
-                    listarNatanaelMC: totalTMC,
-                    listarNatanaelLA: totalTLA,
-                    listarNatanaelSR: totalTSR,
-                    listarNatanaelRM: totalTRM,
-                    listarNatanaelCO: totalTCO,
-                    listarNatanaelRV: totalTRV,
-                    listarNatanaelCC: totalTCC,
-                    listarNatanaelMMV: totalTMMV,
-                    listarNatanaelRP: totalTRP,
-                    listarNatanaelLP: totalTLP,
-                    listarNatanaelRR: totalTRR,
-                    listarNatanaelRC: totalTRC,
-                    listarNatanaelRL: totalTRL,
+                    listarNataMC: totalTMC,
+                    listarNataLA: totalTLA,
+                    listarNataSR: totalTSR,
+                    listarNataRM: totalTRM,
+                    listarNataCO: totalTCO,
+                    listarNataRV: totalTRV,
+                    listarNataCC: totalTCC,
+                    listarNataMMV: totalTMMV,
+                    listarNataRP: totalTRP,
+                    listarNataLP: totalTLP,
+                    listarNataRR: totalTRR,
+                    listarNataRC: totalTRC,
+                    listarNataRL: totalTRL,
 
                     //busca total
-                    listarTotalNatanael: totalTEquip,
+                    listarTotalNata: totalTEquip,
 
                     //listart total por equipamento
-                    listarNatanaelCol: totalCol,
-                    listarNatanaelImp: totalImp,
-                    listarNatanaelLei: totalLei,
-                    listarNatanaelLeiRFID: totalLeiRFID,
-                    listarNatanaelBusca: totalBusca,
-                    listarNatanaelCar3: totalCar3,
-                    listarNatanaelCar4: totalCar4,
-                    listarNatanaelCar5: totalCar5,
-                    listarNatanaelCar6: totalCar6,
-                    listarNatanaelBerco: totalBerco,
-                    listarNatanaelFonte: totalFonte,
-                    listarNatanaelCabos: totalCabo,
-                    listarNatanaelBateria: totalBateria
+                    listarNataCol: totalCol,
+                    listarNataImp: totalImp,
+                    listarNataLei: totalLei,
+                    listarNataLeiRFID: totalLeiRFID,
+                    listarNataBusca: totalBusca,
+                    listarNataCar3: totalCar3,
+                    listarNataCar4: totalCar4,
+                    listarNataCar5: totalCar5,
+                    listarNataCar6: totalCar6,
+                    listarNataBerco: totalBerco,
+                    listarNataFonte: totalFonte,
+                    listarNataCabos: totalCabo,
+                    listarNataBateria: totalBateria
                 })
             }
 
@@ -5712,123 +5773,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -5902,7 +5963,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Lucas Felician") {
- 
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -5935,123 +5996,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -6125,7 +6186,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Diogo Selmini") {
-            
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -6158,123 +6219,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -6348,7 +6409,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Gabriel Kaique") {
- 
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -6381,123 +6442,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -6571,7 +6632,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Bruno Bedani") {
- 
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -6604,123 +6665,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -6794,7 +6855,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Vinicius Gomes") {
- 
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -6827,123 +6888,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -7017,7 +7078,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Diego Almeida") {
-               
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -7050,123 +7111,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -7240,7 +7301,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Marcio") {
-            
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -7273,123 +7334,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -7496,123 +7557,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -7719,123 +7780,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -7909,7 +7970,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Douglas Altenfelder") {
- 
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -7942,123 +8003,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -8132,7 +8193,7 @@ export default class DashboardGerencia extends React.Component {
             }
 
             if (tecnico === "Kleiton Paulino") {
- 
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -8165,123 +8226,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -8394,123 +8455,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -8617,123 +8678,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -8772,37 +8833,37 @@ export default class DashboardGerencia extends React.Component {
 
                 return this.setState({
                     //busca servico
-                    listarNatanaelMC: totalTMC,
-                    listarNatanaelLA: totalTLA,
-                    listarNatanaelSR: totalTSR,
-                    listarNatanaelRM: totalTRM,
-                    listarNatanaelCO: totalTCO,
-                    listarNatanaelRV: totalTRV,
-                    listarNatanaelCC: totalTCC,
-                    listarNatanaelMMV: totalTMMV,
-                    listarNatanaelRP: totalTRP,
-                    listarNatanaelLP: totalTLP,
-                    listarNatanaelRR: totalTRR,
-                    listarNatanaelRC: totalTRC,
-                    listarNatanaelRL: totalTRL,
+                    listarNataMC: totalTMC,
+                    listarNataLA: totalTLA,
+                    listarNataSR: totalTSR,
+                    listarNataRM: totalTRM,
+                    listarNataCO: totalTCO,
+                    listarNataRV: totalTRV,
+                    listarNataCC: totalTCC,
+                    listarNataMMV: totalTMMV,
+                    listarNataRP: totalTRP,
+                    listarNataLP: totalTLP,
+                    listarNataRR: totalTRR,
+                    listarNataRC: totalTRC,
+                    listarNataRL: totalTRL,
 
                     //busca total
-                    listarTotalNatanael: totalTEquip,
+                    listarTotalNata: totalTEquip,
 
                     //listart total por equipamento
-                    listarNatanaelCol: totalCol,
-                    listarNatanaelImp: totalImp,
-                    listarNatanaelLei: totalLei,
-                    listarNatanaelLeiRFID: totalLeiRFID,
-                    listarNatanaelBusca: totalBusca,
-                    listarNatanaelCar3: totalCar3,
-                    listarNatanaelCar4: totalCar4,
-                    listarNatanaelCar5: totalCar5,
-                    listarNatanaelCar6: totalCar6,
-                    listarNatanaelBerco: totalBerco,
-                    listarNatanaelFonte: totalFonte,
-                    listarNatanaelCabos: totalCabo,
-                    listarNatanaelBateria: totalBateria
+                    listarNataCol: totalCol,
+                    listarNataImp: totalImp,
+                    listarNataLei: totalLei,
+                    listarNataLeiRFID: totalLeiRFID,
+                    listarNataBusca: totalBusca,
+                    listarNataCar3: totalCar3,
+                    listarNataCar4: totalCar4,
+                    listarNataCar5: totalCar5,
+                    listarNataCar6: totalCar6,
+                    listarNataBerco: totalBerco,
+                    listarNataFonte: totalFonte,
+                    listarNataCabos: totalCabo,
+                    listarNataBateria: totalBateria
                 })
             }
 
@@ -8840,123 +8901,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -9063,123 +9124,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -9286,123 +9347,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -9509,123 +9570,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -9732,123 +9793,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -9955,123 +10016,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -10178,123 +10239,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -10401,123 +10462,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -10624,123 +10685,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -10847,123 +10908,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -11070,123 +11131,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -11293,123 +11354,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -11521,123 +11582,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -11744,123 +11805,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -11899,37 +11960,37 @@ export default class DashboardGerencia extends React.Component {
 
                 return this.setState({
                     //busca servico
-                    listarNatanaelMC: totalTMC,
-                    listarNatanaelLA: totalTLA,
-                    listarNatanaelSR: totalTSR,
-                    listarNatanaelRM: totalTRM,
-                    listarNatanaelCO: totalTCO,
-                    listarNatanaelRV: totalTRV,
-                    listarNatanaelCC: totalTCC,
-                    listarNatanaelMMV: totalTMMV,
-                    listarNatanaelRP: totalTRP,
-                    listarNatanaelLP: totalTLP,
-                    listarNatanaelRR: totalTRR,
-                    listarNatanaelRC: totalTRC,
-                    listarNatanaelRL: totalTRL,
+                    listarNataMC: totalTMC,
+                    listarNataLA: totalTLA,
+                    listarNataSR: totalTSR,
+                    listarNataRM: totalTRM,
+                    listarNataCO: totalTCO,
+                    listarNataRV: totalTRV,
+                    listarNataCC: totalTCC,
+                    listarNataMMV: totalTMMV,
+                    listarNataRP: totalTRP,
+                    listarNataLP: totalTLP,
+                    listarNataRR: totalTRR,
+                    listarNataRC: totalTRC,
+                    listarNataRL: totalTRL,
 
                     //busca total
-                    listarTotalNatanael: totalTEquip,
+                    listarTotalNata: totalTEquip,
 
                     //listart total por equipamento
-                    listarNatanaelCol: totalCol,
-                    listarNatanaelImp: totalImp,
-                    listarNatanaelLei: totalLei,
-                    listarNatanaelLeiRFID: totalLeiRFID,
-                    listarNatanaelBusca: totalBusca,
-                    listarNatanaelCar3: totalCar3,
-                    listarNatanaelCar4: totalCar4,
-                    listarNatanaelCar5: totalCar5,
-                    listarNatanaelCar6: totalCar6,
-                    listarNatanaelBerco: totalBerco,
-                    listarNatanaelFonte: totalFonte,
-                    listarNatanaelCabos: totalCabo,
-                    listarNatanaelBateria: totalBateria
+                    listarNataCol: totalCol,
+                    listarNataImp: totalImp,
+                    listarNataLei: totalLei,
+                    listarNataLeiRFID: totalLeiRFID,
+                    listarNataBusca: totalBusca,
+                    listarNataCar3: totalCar3,
+                    listarNataCar4: totalCar4,
+                    listarNataCar5: totalCar5,
+                    listarNataCar6: totalCar6,
+                    listarNataBerco: totalBerco,
+                    listarNataFonte: totalFonte,
+                    listarNataCabos: totalCabo,
+                    listarNataBateria: totalBateria
                 })
             }
 
@@ -11967,123 +12028,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -12190,123 +12251,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -12413,123 +12474,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -12636,123 +12697,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -12859,123 +12920,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -13082,123 +13143,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -13305,123 +13366,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -13528,123 +13589,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -13751,123 +13812,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -13974,123 +14035,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -14197,123 +14258,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -14388,7 +14449,7 @@ export default class DashboardGerencia extends React.Component {
 
             if (tecnico === "Kleiton Paulino") {
 
-                
+
                 //variavel servico
                 let dadoTMC = [];
                 let dadoTLA = [];
@@ -14421,123 +14482,123 @@ export default class DashboardGerencia extends React.Component {
 
                 for (let i = 0; i < tabelaNome.length; i++) {
 
-                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                dadoTMC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Laudo" === tabelaNome[i].Servico)) {
-                                dadoTLA.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                dadoTSR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                dadoTRM.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                dadoTCO.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                dadoTRV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                dadoTCC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                dadoTMMV.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                dadoTRP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Limpeza" === tabelaNome[i].Servico)) {
-                                dadoTLP.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                dadoTRR.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                dadoTRC.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                dadoTRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoCol.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                dadoLei.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                dadoLeiRFID.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                dadoImp.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                dadoBusca.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar3.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar4.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar5.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                dadoCar6.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                dadoBerco.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                dadoCabo.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                dadoBateria.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
+                    if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                        if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                            dadoTMC.push({
+                                OS: tabelaNome[i].OS
+                            })
                         }
+                        if (("Laudo" === tabelaNome[i].Servico)) {
+                            dadoTLA.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                            dadoTSR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                            dadoTRM.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                            dadoTCO.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                            dadoTRV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                            dadoTCC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                            dadoTMMV.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                            dadoTRP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Limpeza" === tabelaNome[i].Servico)) {
+                            dadoTLP.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                            dadoTRR.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                            dadoTRC.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                            dadoTRL.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoCol.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                            dadoLei.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                            dadoLeiRFID.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                            dadoImp.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                            dadoBusca.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                            dadoCar6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                            dadoBerco.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                            dadoCabo.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (("Bateria" === tabelaNome[i].Equipamento)) {
+                            dadoBateria.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
                 }
 
                 //variavel servico
@@ -14611,6 +14672,2931 @@ export default class DashboardGerencia extends React.Component {
             }
         }
         //#endregion
+
+    }
+
+    async buscarMeta(tecnico, mes, ano) {
+        const tabelaMeta = await axios(baseUrl2).then(resp => resp.data)
+
+        //#region sem filtro
+        if ((mes === "Todos") && (ano === "Todos")) {
+
+            if (tecnico === "Diego Carvalho") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiegoC: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Natanael Silva Lima") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaNata: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Mateus Doval") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaMateus: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Lucas Felician") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaLucas: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Diogo Selmini") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiogo: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Gabriel Kaique") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaGabriel: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Bruno Bedani") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaBruno: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Vinicius Gomes") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaVinicius: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Diego Almeida") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiegoA: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Marcio") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaMarcio: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Cida Zani") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaCida: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Allan Zulino") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if (tecnico === tabelaMeta[i].Tecnico) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaAllan: totalMeta
+                })
+
+
+            }
+
+        }
+        //#endregion
+
+        //#region Filtro Ano
+        if ((mes === "Todos") && (ano !== "Todos")) {
+
+            if (tecnico === "Diego Carvalho") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiegoC: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Natanael Silva Lima") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaNata: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Mateus Doval") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaMateus: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Lucas Felician") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaLucas: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Diogo Selmini") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiogo: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Gabriel Kaique") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaGabriel: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Bruno Bedani") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaBruno: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Vinicius Gomes") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaVinicius: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Diego Almeida") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiegoA: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Marcio") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaMarcio: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Cida Zani") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaCida: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Allan Zulino") {
+
+                //variavel
+                let metaJan = [];
+                let metaFev = [];
+                let metaMar = [];
+                let metaAbr = [];
+                let metaMai = [];
+                let metaJun = [];
+                let metaJul = [];
+                let metaAgo = [];
+                let metaSet = [];
+                let metaOut = [];
+                let metaNov = [];
+                let metaDez = [];
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                        if (1 === tabelaMeta[i].Mes) {
+                            metaJan.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (2 === tabelaMeta[i].Mes) {
+                            metaFev.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (3 === tabelaMeta[i].Mes) {
+                            metaMar.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (4 === tabelaMeta[i].Mes) {
+                            metaAbr.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (5 === tabelaMeta[i].Mes) {
+                            metaMai.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (6 === tabelaMeta[i].Mes) {
+                            metaJun.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (7 === tabelaMeta[i].Mes) {
+                            metaJul.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (8 === tabelaMeta[i].Mes) {
+                            metaAgo.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (9 === tabelaMeta[i].Mes) {
+                            metaSet.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (10 === tabelaMeta[i].Mes) {
+                            metaOut.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (11 === tabelaMeta[i].Mes) {
+                            metaNov.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                        if (12 === tabelaMeta[i].Mes) {
+                            metaDez.push({
+                                M: tabelaMeta[i].Meta
+                            })
+                        }
+                    }
+                }
+
+                let mJan = Object.assign(metaJan);
+                let mFev = Object.assign(metaFev);
+                let mMar = Object.assign(metaMar);
+                let mAbr = Object.assign(metaAbr);
+                let mMai = Object.assign(metaMai);
+                let mJun = Object.assign(metaJun);
+                let mJul = Object.assign(metaJul);
+                let mAgo = Object.assign(metaAgo);
+                let mSet = Object.assign(metaSet);
+                let mOut = Object.assign(metaOut);
+                let mNov = Object.assign(metaNov);
+                let mDez = Object.assign(metaDez);
+
+                let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                    parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                    parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                    parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                    parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaAllan: totalMeta
+                })
+
+            }
+        }
+        //#endregion
+
+        //#region filtro mes e ano
+        if ((mes !== "Todos") && (ano !== "Todos")) {
+
+            if (tecnico === "Diego Carvalho") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiegoC: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Natanael Silva Lima") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaNata: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Mateus Doval") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaMateus: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Lucas Felician") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaLucas: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Diogo Selmini") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiogo: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Gabriel Kaique") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaGabriel: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Bruno Bedani") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaBruno: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Vinicius Gomes") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaVinicius: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Diego Almeida") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaDiegoA: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Marcio") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaMarcio: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Cida Zani") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaCida: totalMeta
+                })
+
+
+            }
+
+            if (tecnico === "Allan Zulino") {
+
+                //variavel
+                let metaMes = [];
+
+
+                for (let i = 0; i < tabelaMeta.length; i++) {
+                    if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                        metaMes.push({
+                            M: tabelaMeta[i].Meta
+                        })
+                    }
+                }
+
+                let mMes = Object.assign(metaMes);
+
+                let totalMeta = parseInt(mMes.length > 0 ? mMes[0].M : 0)
+
+
+                return this.setState({
+                    listarMetaAllan: totalMeta
+                })
+
+
+            }
+        }
+        //#endregion
+
 
     }
 
@@ -14855,7 +17841,7 @@ export default class DashboardGerencia extends React.Component {
                 </div>
                 <div className="row mt-4 d-flex justify-content-center">
                     <div className="col-11 sombra">
-                        <Grafico tipo="spline" titulo="Quantidade por Mês"
+                        <Grafico tipo="spline" titulo="Quantidade por Ano"
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
                             nomeSerie="Ordem de Serviço"
@@ -14960,6 +17946,18 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaDiegoC },
+                                        { name: "Atividade", y: this.state.listarTotalDiegoC },
+                                    ]} />
+                            }
                         />
                         <ModalTecnicos imagem={imgNata} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -15035,6 +18033,18 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Bateria", y: this.state.listarNataBateria }
                                     ]} />
 
+                            }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaNata },
+                                        { name: "Atividade", y: this.state.listarTotalNata },
+                                    ]} />
                             }
                         />
                     </div>
@@ -15115,6 +18125,18 @@ export default class DashboardGerencia extends React.Component {
 
                             }
 
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaMateus },
+                                        { name: "Atividade", y: this.state.listarTotalMateus },
+                                    ]} />
+                            }
+
                         />
                         <ModalTecnicos imagem={imgLucas} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -15190,6 +18212,18 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Bateria", y: this.state.listarLucasBateria }
                                     ]} />
 
+                            }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaLucas },
+                                        { name: "Atividade", y: this.state.listarTotalLucas },
+                                    ]} />
                             }
 
                         />
@@ -15270,6 +18304,18 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaDiogo },
+                                        { name: "Atividade", y: this.state.listarTotalDiogo },
+                                    ]} />
+                            }
                         />
                         <ModalTecnicos imagem={imgGabriel} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -15345,6 +18391,18 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Bateria", y: this.state.listarGabrielBateria }
                                     ]} />
 
+                            }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaGabriel },
+                                        { name: "Atividade", y: this.state.listarTotalGabriel },
+                                    ]} />
                             }
                         />
                     </div>
@@ -15424,6 +18482,18 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaBruno },
+                                        { name: "Atividade", y: this.state.listarTotalBruno },
+                                    ]} />
+                            }
                         />
                         <ModalTecnicos imagem={imgVinicius} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -15499,6 +18569,18 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Bateria", y: this.state.listarViniciusBateria }
                                     ]} />
 
+                            }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaVinicius },
+                                        { name: "Atividade", y: this.state.listarTotalVinicius },
+                                    ]} />
                             }
                         />
                     </div>
@@ -15580,6 +18662,18 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaDiegoA },
+                                        { name: "Atividade", y: this.state.listarTotalDiegoA },
+                                    ]} />
+                            }
                         />
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -15657,6 +18751,18 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Bateria", y: this.state.listarMarcioBateria }
                                     ]} />
 
+                            }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaMarcio },
+                                        { name: "Atividade", y: this.state.listarTotalMarciolistarMetaMarcio },
+                                    ]} />
                             }
                         />
                     </div>
@@ -15738,6 +18844,18 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaCida },
+                                        { name: "Atividade", y: this.state.listarTotalCida },
+                                    ]} />
+                            }
                         />
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -15816,6 +18934,18 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
 
                             }
+
+                            grafico4={
+                                <Grafico tipo="column" titulo="Meta"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Meta"
+                                    cor={true}
+                                    dado={[
+                                        { name: "Meta", y: this.state.listarMetaAllan },
+                                        { name: "Atividade", y: this.state.listarTotalAllan },
+                                    ]} />
+                            }
                         />
                     </div>
                     <div className="col-3 d-flex justify-content-start">
@@ -15882,7 +19012,7 @@ export default class DashboardGerencia extends React.Component {
                                 />
                             }
 
-                            grafico3={
+                            grafico5={
                                 <Grafico tipo="column" titulo="Equipamentos"
                                     formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                     texto='{point.y:1f}'
@@ -15960,7 +19090,7 @@ export default class DashboardGerencia extends React.Component {
                                 />
                             }
 
-                            grafico3={
+                            grafico5={
                                 <Grafico tipo="column" titulo="Equipamentos"
                                     formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                     texto='{point.y:1f}'
