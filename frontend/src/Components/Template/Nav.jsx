@@ -16,8 +16,8 @@ export default props =>
                         <a href="javascript:void(0);" className='text-light'><i className="fa fa-credit-card"></i>Diretoria</a>
                         <ul>
                             <li><Link to="/DiretoriaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li>
+                            {/* <li><Link to="/EmBreve" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
+                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li> */}
                         </ul>
                     </li>
                     <li>
@@ -25,8 +25,8 @@ export default props =>
                         <ul>
                             {/* <li><Link to="/Dashboard" className='text-light'><i className="fa fa-home"></i>Home</Link></li> */}
                             <li><Link to="/GerenciaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
-                            <li><Link to="/GerenciaAdm" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li>
+                            {/* <li><Link to="/GerenciaAdm" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
+                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li> */}
                             {/* <li><Link to="/Dashboard/Tecnico" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li> */}
                         </ul>
                     </li>
@@ -35,11 +35,11 @@ export default props =>
                         <ul>
                             <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
                             <li><Link to="/Contratos" className='text-light'><i className="fa fa-file-pdf-o"></i>Contratos</Link></li>
-                            <li><Link to="/CentroCustoLab" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-cogs"></i>Cadastro de Peça</Link></li>
+                            {/* <li><Link to="/CentroCustoLab" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
+                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-cogs"></i>Cadastro de Peça</Link></li> */}
                         </ul>
                     </li>
-                    <li>
+                    {/* <li>
                         <a href="javascript:void(0);" className='text-light'><i className="fa fa-archive"></i>ADM</a>
                         <ul>
                             <li><Link to="/Financeiro" className='text-light'><i className="fa fa-money"></i>Financeiro</Link></li>
@@ -59,9 +59,9 @@ export default props =>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-usd"></i>Vendedores</Link></li>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-cogs"></i>Assistentes</Link></li>
                         </ul>
-                    </li>
-                    <li>
-                        {/* <ul>
+                    </li> */}
+                    {/*<li>
+                         <ul>
             <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Previous Month</a></li>
@@ -71,8 +71,8 @@ export default props =>
             <li><a href="javascript:void(0);" className='text-light'>Team Calendar</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Private Calendar</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
-        </ul> */}
-                    </li>
+        </ul> 
+                    </li>*/}
                     <li>
                         <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
                         <ul>

@@ -19,8 +19,8 @@ import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
 import imgMarcio from "../../Assets/Imgs/user.png";
 
 //GERENTES
-import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
-import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
+// import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
+// import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
 
 const initialState = {
     //total equipamento
@@ -537,6 +537,403 @@ const initialState = {
     listarKleitonFonte: [0],
     listarKleitonCabos: [0],
     listarKleitonBateria: [0],
+
+    //total por dias tecnicos:
+    //dias DiegoC
+    lisDiegoCDia1: [0],
+    lisDiegoCDia2: [0],
+    lisDiegoCDia3: [0],
+    lisDiegoCDia4: [0],
+    lisDiegoCDia5: [0],
+    lisDiegoCDia6: [0],
+    lisDiegoCDia7: [0],
+    lisDiegoCDia8: [0],
+    lisDiegoCDia9: [0],
+    lisDiegoCDia10: [0],
+    lisDiegoCDia11: [0],
+    lisDiegoCDia12: [0],
+    lisDiegoCDia13: [0],
+    lisDiegoCDia14: [0],
+    lisDiegoCDia15: [0],
+    lisDiegoCDia16: [0],
+    lisDiegoCDia17: [0],
+    lisDiegoCDia18: [0],
+    lisDiegoCDia19: [0],
+    lisDiegoCDia20: [0],
+    lisDiegoCDia21: [0],
+    lisDiegoCDia22: [0],
+    lisDiegoCDia23: [0],
+    lisDiegoCDia24: [0],
+    lisDiegoCDia25: [0],
+    lisDiegoCDia26: [0],
+    lisDiegoCDia27: [0],
+    lisDiegoCDia28: [0],
+    lisDiegoCDia29: [0],
+    lisDiegoCDia30: [0],
+    lisDiegoCDia31: [0],
+
+    //dias nata
+    lisNataDia1: [0],
+    lisNataDia2: [0],
+    lisNataDia3: [0],
+    lisNataDia4: [0],
+    lisNataDia5: [0],
+    lisNataDia6: [0],
+    lisNataDia7: [0],
+    lisNataDia8: [0],
+    lisNataDia9: [0],
+    lisNataDia10: [0],
+    lisNataDia11: [0],
+    lisNataDia12: [0],
+    lisNataDia13: [0],
+    lisNataDia14: [0],
+    lisNataDia15: [0],
+    lisNataDia16: [0],
+    lisNataDia17: [0],
+    lisNataDia18: [0],
+    lisNataDia19: [0],
+    lisNataDia20: [0],
+    lisNataDia21: [0],
+    lisNataDia22: [0],
+    lisNataDia23: [0],
+    lisNataDia24: [0],
+    lisNataDia25: [0],
+    lisNataDia26: [0],
+    lisNataDia27: [0],
+    lisNataDia28: [0],
+    lisNataDia29: [0],
+    lisNataDia30: [0],
+    lisNataDia31: [0],
+
+    //dias Mateus
+    lisMateusDia1: [0],
+    lisMateusDia2: [0],
+    lisMateusDia3: [0],
+    lisMateusDia4: [0],
+    lisMateusDia5: [0],
+    lisMateusDia6: [0],
+    lisMateusDia7: [0],
+    lisMateusDia8: [0],
+    lisMateusDia9: [0],
+    lisMateusDia10: [0],
+    lisMateusDia11: [0],
+    lisMateusDia12: [0],
+    lisMateusDia13: [0],
+    lisMateusDia14: [0],
+    lisMateusDia15: [0],
+    lisMateusDia16: [0],
+    lisMateusDia17: [0],
+    lisMateusDia18: [0],
+    lisMateusDia19: [0],
+    lisMateusDia20: [0],
+    lisMateusDia21: [0],
+    lisMateusDia22: [0],
+    lisMateusDia23: [0],
+    lisMateusDia24: [0],
+    lisMateusDia25: [0],
+    lisMateusDia26: [0],
+    lisMateusDia27: [0],
+    lisMateusDia28: [0],
+    lisMateusDia29: [0],
+    lisMateusDia30: [0],
+    lisMateusDia31: [0],
+
+    //dias lucas
+    lisLucasDia1: [0],
+    lisLucasDia2: [0],
+    lisLucasDia3: [0],
+    lisLucasDia4: [0],
+    lisLucasDia5: [0],
+    lisLucasDia6: [0],
+    lisLucasDia7: [0],
+    lisLucasDia8: [0],
+    lisLucasDia9: [0],
+    lisLucasDia10: [0],
+    lisLucasDia11: [0],
+    lisLucasDia12: [0],
+    lisLucasDia13: [0],
+    lisLucasDia14: [0],
+    lisLucasDia15: [0],
+    lisLucasDia16: [0],
+    lisLucasDia17: [0],
+    lisLucasDia18: [0],
+    lisLucasDia19: [0],
+    lisLucasDia20: [0],
+    lisLucasDia21: [0],
+    lisLucasDia22: [0],
+    lisLucasDia23: [0],
+    lisLucasDia24: [0],
+    lisLucasDia25: [0],
+    lisLucasDia26: [0],
+    lisLucasDia27: [0],
+    lisLucasDia28: [0],
+    lisLucasDia29: [0],
+    lisLucasDia30: [0],
+    lisLucasDia31: [0],
+
+    //dias Diogo
+    lisDiogoDia1: [0],
+    lisDiogoDia2: [0],
+    lisDiogoDia3: [0],
+    lisDiogoDia4: [0],
+    lisDiogoDia5: [0],
+    lisDiogoDia6: [0],
+    lisDiogoDia7: [0],
+    lisDiogoDia8: [0],
+    lisDiogoDia9: [0],
+    lisDiogoDia10: [0],
+    lisDiogoDia11: [0],
+    lisDiogoDia12: [0],
+    lisDiogoDia13: [0],
+    lisDiogoDia14: [0],
+    lisDiogoDia15: [0],
+    lisDiogoDia16: [0],
+    lisDiogoDia17: [0],
+    lisDiogoDia18: [0],
+    lisDiogoDia19: [0],
+    lisDiogoDia20: [0],
+    lisDiogoDia21: [0],
+    lisDiogoDia22: [0],
+    lisDiogoDia23: [0],
+    lisDiogoDia24: [0],
+    lisDiogoDia25: [0],
+    lisDiogoDia26: [0],
+    lisDiogoDia27: [0],
+    lisDiogoDia28: [0],
+    lisDiogoDia29: [0],
+    lisDiogoDia30: [0],
+    lisDiogoDia31: [0],
+
+    //dias Gabriel
+    lisGabrielDia1: [0],
+    lisGabrielDia2: [0],
+    lisGabrielDia3: [0],
+    lisGabrielDia4: [0],
+    lisGabrielDia5: [0],
+    lisGabrielDia6: [0],
+    lisGabrielDia7: [0],
+    lisGabrielDia8: [0],
+    lisGabrielDia9: [0],
+    lisGabrielDia10: [0],
+    lisGabrielDia11: [0],
+    lisGabrielDia12: [0],
+    lisGabrielDia13: [0],
+    lisGabrielDia14: [0],
+    lisGabrielDia15: [0],
+    lisGabrielDia16: [0],
+    lisGabrielDia17: [0],
+    lisGabrielDia18: [0],
+    lisGabrielDia19: [0],
+    lisGabrielDia20: [0],
+    lisGabrielDia21: [0],
+    lisGabrielDia22: [0],
+    lisGabrielDia23: [0],
+    lisGabrielDia24: [0],
+    lisGabrielDia25: [0],
+    lisGabrielDia26: [0],
+    lisGabrielDia27: [0],
+    lisGabrielDia28: [0],
+    lisGabrielDia29: [0],
+    lisGabrielDia30: [0],
+    lisGabrielDia31: [0],
+
+    //dias bruno
+    lisBrunoDia1: [0],
+    lisBrunoDia2: [0],
+    lisBrunoDia3: [0],
+    lisBrunoDia4: [0],
+    lisBrunoDia5: [0],
+    lisBrunoDia6: [0],
+    lisBrunoDia7: [0],
+    lisBrunoDia8: [0],
+    lisBrunoDia9: [0],
+    lisBrunoDia10: [0],
+    lisBrunoDia11: [0],
+    lisBrunoDia12: [0],
+    lisBrunoDia13: [0],
+    lisBrunoDia14: [0],
+    lisBrunoDia15: [0],
+    lisBrunoDia16: [0],
+    lisBrunoDia17: [0],
+    lisBrunoDia18: [0],
+    lisBrunoDia19: [0],
+    lisBrunoDia20: [0],
+    lisBrunoDia21: [0],
+    lisBrunoDia22: [0],
+    lisBrunoDia23: [0],
+    lisBrunoDia24: [0],
+    lisBrunoDia25: [0],
+    lisBrunoDia26: [0],
+    lisBrunoDia27: [0],
+    lisBrunoDia28: [0],
+    lisBrunoDia29: [0],
+    lisBrunoDia30: [0],
+    lisBrunoDia31: [0],
+
+    //dias Vinicius
+    lisViniciusDia1: [0],
+    lisViniciusDia2: [0],
+    lisViniciusDia3: [0],
+    lisViniciusDia4: [0],
+    lisViniciusDia5: [0],
+    lisViniciusDia6: [0],
+    lisViniciusDia7: [0],
+    lisViniciusDia8: [0],
+    lisViniciusDia9: [0],
+    lisViniciusDia10: [0],
+    lisViniciusDia11: [0],
+    lisViniciusDia12: [0],
+    lisViniciusDia13: [0],
+    lisViniciusDia14: [0],
+    lisViniciusDia15: [0],
+    lisViniciusDia16: [0],
+    lisViniciusDia17: [0],
+    lisViniciusDia18: [0],
+    lisViniciusDia19: [0],
+    lisViniciusDia20: [0],
+    lisViniciusDia21: [0],
+    lisViniciusDia22: [0],
+    lisViniciusDia23: [0],
+    lisViniciusDia24: [0],
+    lisViniciusDia25: [0],
+    lisViniciusDia26: [0],
+    lisViniciusDia27: [0],
+    lisViniciusDia28: [0],
+    lisViniciusDia29: [0],
+    lisViniciusDia30: [0],
+    lisViniciusDia31: [0],
+
+    //dias Diego Almeida
+    lisDiegoADia1: [0],
+    lisDiegoADia2: [0],
+    lisDiegoADia3: [0],
+    lisDiegoADia4: [0],
+    lisDiegoADia5: [0],
+    lisDiegoADia6: [0],
+    lisDiegoADia7: [0],
+    lisDiegoADia8: [0],
+    lisDiegoADia9: [0],
+    lisDiegoADia10: [0],
+    lisDiegoADia11: [0],
+    lisDiegoADia12: [0],
+    lisDiegoADia13: [0],
+    lisDiegoADia14: [0],
+    lisDiegoADia15: [0],
+    lisDiegoADia16: [0],
+    lisDiegoADia17: [0],
+    lisDiegoADia18: [0],
+    lisDiegoADia19: [0],
+    lisDiegoADia20: [0],
+    lisDiegoADia21: [0],
+    lisDiegoADia22: [0],
+    lisDiegoADia23: [0],
+    lisDiegoADia24: [0],
+    lisDiegoADia25: [0],
+    lisDiegoADia26: [0],
+    lisDiegoADia27: [0],
+    lisDiegoADia28: [0],
+    lisDiegoADia29: [0],
+    lisDiegoADia30: [0],
+    lisDiegoADia31: [0],
+
+    //dias Marcio
+    lisMarcioDia1: [0],
+    lisMarcioDia2: [0],
+    lisMarcioDia3: [0],
+    lisMarcioDia4: [0],
+    lisMarcioDia5: [0],
+    lisMarcioDia6: [0],
+    lisMarcioDia7: [0],
+    lisMarcioDia8: [0],
+    lisMarcioDia9: [0],
+    lisMarcioDia10: [0],
+    lisMarcioDia11: [0],
+    lisMarcioDia12: [0],
+    lisMarcioDia13: [0],
+    lisMarcioDia14: [0],
+    lisMarcioDia15: [0],
+    lisMarcioDia16: [0],
+    lisMarcioDia17: [0],
+    lisMarcioDia18: [0],
+    lisMarcioDia19: [0],
+    lisMarcioDia20: [0],
+    lisMarcioDia21: [0],
+    lisMarcioDia22: [0],
+    lisMarcioDia23: [0],
+    lisMarcioDia24: [0],
+    lisMarcioDia25: [0],
+    lisMarcioDia26: [0],
+    lisMarcioDia27: [0],
+    lisMarcioDia28: [0],
+    lisMarcioDia29: [0],
+    lisMarcioDia30: [0],
+    lisMarcioDia31: [0],
+
+    //dias cida
+    lisCidaDia1: [0],
+    lisCidaDia2: [0],
+    lisCidaDia3: [0],
+    lisCidaDia4: [0],
+    lisCidaDia5: [0],
+    lisCidaDia6: [0],
+    lisCidaDia7: [0],
+    lisCidaDia8: [0],
+    lisCidaDia9: [0],
+    lisCidaDia10: [0],
+    lisCidaDia11: [0],
+    lisCidaDia12: [0],
+    lisCidaDia13: [0],
+    lisCidaDia14: [0],
+    lisCidaDia15: [0],
+    lisCidaDia16: [0],
+    lisCidaDia17: [0],
+    lisCidaDia18: [0],
+    lisCidaDia19: [0],
+    lisCidaDia20: [0],
+    lisCidaDia21: [0],
+    lisCidaDia22: [0],
+    lisCidaDia23: [0],
+    lisCidaDia24: [0],
+    lisCidaDia25: [0],
+    lisCidaDia26: [0],
+    lisCidaDia27: [0],
+    lisCidaDia28: [0],
+    lisCidaDia29: [0],
+    lisCidaDia30: [0],
+    lisCidaDia31: [0],
+
+    //dias Allan
+    lisAllanDia1: [0],
+    lisAllanDia2: [0],
+    lisAllanDia3: [0],
+    lisAllanDia4: [0],
+    lisAllanDia5: [0],
+    lisAllanDia6: [0],
+    lisAllanDia7: [0],
+    lisAllanDia8: [0],
+    lisAllanDia9: [0],
+    lisAllanDia10: [0],
+    lisAllanDia11: [0],
+    lisAllanDia12: [0],
+    lisAllanDia13: [0],
+    lisAllanDia14: [0],
+    lisAllanDia15: [0],
+    lisAllanDia16: [0],
+    lisAllanDia17: [0],
+    lisAllanDia18: [0],
+    lisAllanDia19: [0],
+    lisAllanDia20: [0],
+    lisAllanDia21: [0],
+    lisAllanDia22: [0],
+    lisAllanDia23: [0],
+    lisAllanDia24: [0],
+    lisAllanDia25: [0],
+    lisAllanDia26: [0],
+    lisAllanDia27: [0],
+    lisAllanDia28: [0],
+    lisAllanDia29: [0],
+    lisAllanDia30: [0],
+    lisAllanDia31: [0],
 }
 
 const banco = "Geral";
@@ -580,7 +977,7 @@ export default class DashboardGerencia extends React.Component {
 
     validacao() {
         if (localStorage.AdmGerencia === "0") {
-            window.location.pathname = "/Dashboard";
+            window.location.pathname = "/Home";
             alert("Não Tem Permissão Para Acessar essa Área")
         }
     }
@@ -2099,6 +2496,18 @@ export default class DashboardGerencia extends React.Component {
             this.buscarMeta("Cida Zani", mes, ano)
             this.buscarMeta("Allan Zulino", mes, ano)
             this.buscarDadosFiltro(dia, mes, ano)
+            this.produtividadeDia("Diego Carvalho", mes, ano)
+            this.produtividadeDia("Natanael Silva Lima", mes, ano)
+            this.produtividadeDia("Mateus Doval", mes, ano)
+            this.produtividadeDia("Lucas Felician", mes, ano)
+            this.produtividadeDia("Diogo Selmini", mes, ano)
+            this.produtividadeDia("Gabriel Kaique", mes, ano)
+            this.produtividadeDia("Bruno Bedani", mes, ano)
+            this.produtividadeDia("Vinicius Gomes", mes, ano)
+            this.produtividadeDia("Diego Almeida", mes, ano)
+            this.produtividadeDia("Marcio", mes, ano)
+            this.produtividadeDia("Cida Zani", mes, ano)
+            this.produtividadeDia("Allan Zulino", mes, ano)
         } else if ((dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
             this.buscarPorTecnicoFiltro("Diego Carvalho", dia, mes, ano)
             this.buscarPorTecnicoFiltro("Natanael Silva Lima", dia, mes, ano)
@@ -17600,6 +18009,3250 @@ export default class DashboardGerencia extends React.Component {
 
     }
 
+    async produtividadeDia(tecnico, mes, ano){
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+
+        if(tecnico === "Diego Carvalho"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisDiegoCDia1: totalDia1,
+                lisDiegoCDia2: totalDia2,
+                lisDiegoCDia3: totalDia3,
+                lisDiegoCDia4: totalDia4,
+                lisDiegoCDia5: totalDia5,
+                lisDiegoCDia6: totalDia6,
+                lisDiegoCDia7: totalDia7,
+                lisDiegoCDia8: totalDia8,
+                lisDiegoCDia9: totalDia9,
+                lisDiegoCDia10: totalDia10,
+                lisDiegoCDia11: totalDia11,
+                lisDiegoCDia12: totalDia12,
+                lisDiegoCDia13: totalDia13,
+                lisDiegoCDia14: totalDia14,
+                lisDiegoCDia15: totalDia15,
+                lisDiegoCDia16: totalDia16,
+                lisDiegoCDia17: totalDia17,
+                lisDiegoCDia18: totalDia18,
+                lisDiegoCDia19: totalDia19,
+                lisDiegoCDia20: totalDia20,
+                lisDiegoCDia21: totalDia21,
+                lisDiegoCDia22: totalDia22,
+                lisDiegoCDia23: totalDia23,
+                lisDiegoCDia24: totalDia24,
+                lisDiegoCDia25: totalDia25,
+                lisDiegoCDia26: totalDia26,
+                lisDiegoCDia27: totalDia27,
+                lisDiegoCDia28: totalDia28,
+                lisDiegoCDia29: totalDia29,
+                lisDiegoCDia30: totalDia30,
+                lisDiegoCDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Natanael Silva Lima"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisNataDia1: totalDia1,
+                lisNataDia2: totalDia2,
+                lisNataDia3: totalDia3,
+                lisNataDia4: totalDia4,
+                lisNataDia5: totalDia5,
+                lisNataDia6: totalDia6,
+                lisNataDia7: totalDia7,
+                lisNataDia8: totalDia8,
+                lisNataDia9: totalDia9,
+                lisNataDia10: totalDia10,
+                lisNataDia11: totalDia11,
+                lisNataDia12: totalDia12,
+                lisNataDia13: totalDia13,
+                lisNataDia14: totalDia14,
+                lisNataDia15: totalDia15,
+                lisNataDia16: totalDia16,
+                lisNataDia17: totalDia17,
+                lisNataDia18: totalDia18,
+                lisNataDia19: totalDia19,
+                lisNataDia20: totalDia20,
+                lisNataDia21: totalDia21,
+                lisNataDia22: totalDia22,
+                lisNataDia23: totalDia23,
+                lisNataDia24: totalDia24,
+                lisNataDia25: totalDia25,
+                lisNataDia26: totalDia26,
+                lisNataDia27: totalDia27,
+                lisNataDia28: totalDia28,
+                lisNataDia29: totalDia29,
+                lisNataDia30: totalDia30,
+                lisNataDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico ==="Mateus Doval"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisMateusDia1: totalDia1,
+                lisMateusDia2: totalDia2,
+                lisMateusDia3: totalDia3,
+                lisMateusDia4: totalDia4,
+                lisMateusDia5: totalDia5,
+                lisMateusDia6: totalDia6,
+                lisMateusDia7: totalDia7,
+                lisMateusDia8: totalDia8,
+                lisMateusDia9: totalDia9,
+                lisMateusDia10: totalDia10,
+                lisMateusDia11: totalDia11,
+                lisMateusDia12: totalDia12,
+                lisMateusDia13: totalDia13,
+                lisMateusDia14: totalDia14,
+                lisMateusDia15: totalDia15,
+                lisMateusDia16: totalDia16,
+                lisMateusDia17: totalDia17,
+                lisMateusDia18: totalDia18,
+                lisMateusDia19: totalDia19,
+                lisMateusDia20: totalDia20,
+                lisMateusDia21: totalDia21,
+                lisMateusDia22: totalDia22,
+                lisMateusDia23: totalDia23,
+                lisMateusDia24: totalDia24,
+                lisMateusDia25: totalDia25,
+                lisMateusDia26: totalDia26,
+                lisMateusDia27: totalDia27,
+                lisMateusDia28: totalDia28,
+                lisMateusDia29: totalDia29,
+                lisMateusDia30: totalDia30,
+                lisMateusDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Lucas Felician"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisLucasDia1: totalDia1,
+                lisLucasDia2: totalDia2,
+                lisLucasDia3: totalDia3,
+                lisLucasDia4: totalDia4,
+                lisLucasDia5: totalDia5,
+                lisLucasDia6: totalDia6,
+                lisLucasDia7: totalDia7,
+                lisLucasDia8: totalDia8,
+                lisLucasDia9: totalDia9,
+                lisLucasDia10: totalDia10,
+                lisLucasDia11: totalDia11,
+                lisLucasDia12: totalDia12,
+                lisLucasDia13: totalDia13,
+                lisLucasDia14: totalDia14,
+                lisLucasDia15: totalDia15,
+                lisLucasDia16: totalDia16,
+                lisLucasDia17: totalDia17,
+                lisLucasDia18: totalDia18,
+                lisLucasDia19: totalDia19,
+                lisLucasDia20: totalDia20,
+                lisLucasDia21: totalDia21,
+                lisLucasDia22: totalDia22,
+                lisLucasDia23: totalDia23,
+                lisLucasDia24: totalDia24,
+                lisLucasDia25: totalDia25,
+                lisLucasDia26: totalDia26,
+                lisLucasDia27: totalDia27,
+                lisLucasDia28: totalDia28,
+                lisLucasDia29: totalDia29,
+                lisLucasDia30: totalDia30,
+                lisLucasDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Diogo Selmini"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisDiogoDia1: totalDia1,
+                lisDiogoDia2: totalDia2,
+                lisDiogoDia3: totalDia3,
+                lisDiogoDia4: totalDia4,
+                lisDiogoDia5: totalDia5,
+                lisDiogoDia6: totalDia6,
+                lisDiogoDia7: totalDia7,
+                lisDiogoDia8: totalDia8,
+                lisDiogoDia9: totalDia9,
+                lisDiogoDia10: totalDia10,
+                lisDiogoDia11: totalDia11,
+                lisDiogoDia12: totalDia12,
+                lisDiogoDia13: totalDia13,
+                lisDiogoDia14: totalDia14,
+                lisDiogoDia15: totalDia15,
+                lisDiogoDia16: totalDia16,
+                lisDiogoDia17: totalDia17,
+                lisDiogoDia18: totalDia18,
+                lisDiogoDia19: totalDia19,
+                lisDiogoDia20: totalDia20,
+                lisDiogoDia21: totalDia21,
+                lisDiogoDia22: totalDia22,
+                lisDiogoDia23: totalDia23,
+                lisDiogoDia24: totalDia24,
+                lisDiogoDia25: totalDia25,
+                lisDiogoDia26: totalDia26,
+                lisDiogoDia27: totalDia27,
+                lisDiogoDia28: totalDia28,
+                lisDiogoDia29: totalDia29,
+                lisDiogoDia30: totalDia30,
+                lisDiogoDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Gabriel Kaique"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisGabrielDia1: totalDia1,
+                lisGabrielDia2: totalDia2,
+                lisGabrielDia3: totalDia3,
+                lisGabrielDia4: totalDia4,
+                lisGabrielDia5: totalDia5,
+                lisGabrielDia6: totalDia6,
+                lisGabrielDia7: totalDia7,
+                lisGabrielDia8: totalDia8,
+                lisGabrielDia9: totalDia9,
+                lisGabrielDia10: totalDia10,
+                lisGabrielDia11: totalDia11,
+                lisGabrielDia12: totalDia12,
+                lisGabrielDia13: totalDia13,
+                lisGabrielDia14: totalDia14,
+                lisGabrielDia15: totalDia15,
+                lisGabrielDia16: totalDia16,
+                lisGabrielDia17: totalDia17,
+                lisGabrielDia18: totalDia18,
+                lisGabrielDia19: totalDia19,
+                lisGabrielDia20: totalDia20,
+                lisGabrielDia21: totalDia21,
+                lisGabrielDia22: totalDia22,
+                lisGabrielDia23: totalDia23,
+                lisGabrielDia24: totalDia24,
+                lisGabrielDia25: totalDia25,
+                lisGabrielDia26: totalDia26,
+                lisGabrielDia27: totalDia27,
+                lisGabrielDia28: totalDia28,
+                lisGabrielDia29: totalDia29,
+                lisGabrielDia30: totalDia30,
+                lisGabrielDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Bruno Bedani"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisBrunoDia1: totalDia1,
+                lisBrunoDia2: totalDia2,
+                lisBrunoDia3: totalDia3,
+                lisBrunoDia4: totalDia4,
+                lisBrunoDia5: totalDia5,
+                lisBrunoDia6: totalDia6,
+                lisBrunoDia7: totalDia7,
+                lisBrunoDia8: totalDia8,
+                lisBrunoDia9: totalDia9,
+                lisBrunoDia10: totalDia10,
+                lisBrunoDia11: totalDia11,
+                lisBrunoDia12: totalDia12,
+                lisBrunoDia13: totalDia13,
+                lisBrunoDia14: totalDia14,
+                lisBrunoDia15: totalDia15,
+                lisBrunoDia16: totalDia16,
+                lisBrunoDia17: totalDia17,
+                lisBrunoDia18: totalDia18,
+                lisBrunoDia19: totalDia19,
+                lisBrunoDia20: totalDia20,
+                lisBrunoDia21: totalDia21,
+                lisBrunoDia22: totalDia22,
+                lisBrunoDia23: totalDia23,
+                lisBrunoDia24: totalDia24,
+                lisBrunoDia25: totalDia25,
+                lisBrunoDia26: totalDia26,
+                lisBrunoDia27: totalDia27,
+                lisBrunoDia28: totalDia28,
+                lisBrunoDia29: totalDia29,
+                lisBrunoDia30: totalDia30,
+                lisBrunoDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+        
+        if(tecnico === "Vinicius Gomes"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisViniciusDia1: totalDia1,
+                lisViniciusDia2: totalDia2,
+                lisViniciusDia3: totalDia3,
+                lisViniciusDia4: totalDia4,
+                lisViniciusDia5: totalDia5,
+                lisViniciusDia6: totalDia6,
+                lisViniciusDia7: totalDia7,
+                lisViniciusDia8: totalDia8,
+                lisViniciusDia9: totalDia9,
+                lisViniciusDia10: totalDia10,
+                lisViniciusDia11: totalDia11,
+                lisViniciusDia12: totalDia12,
+                lisViniciusDia13: totalDia13,
+                lisViniciusDia14: totalDia14,
+                lisViniciusDia15: totalDia15,
+                lisViniciusDia16: totalDia16,
+                lisViniciusDia17: totalDia17,
+                lisViniciusDia18: totalDia18,
+                lisViniciusDia19: totalDia19,
+                lisViniciusDia20: totalDia20,
+                lisViniciusDia21: totalDia21,
+                lisViniciusDia22: totalDia22,
+                lisViniciusDia23: totalDia23,
+                lisViniciusDia24: totalDia24,
+                lisViniciusDia25: totalDia25,
+                lisViniciusDia26: totalDia26,
+                lisViniciusDia27: totalDia27,
+                lisViniciusDia28: totalDia28,
+                lisViniciusDia29: totalDia29,
+                lisViniciusDia30: totalDia30,
+                lisViniciusDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Diego Almeida"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisDiegoADia1: totalDia1,
+                lisDiegoADia2: totalDia2,
+                lisDiegoADia3: totalDia3,
+                lisDiegoADia4: totalDia4,
+                lisDiegoADia5: totalDia5,
+                lisDiegoADia6: totalDia6,
+                lisDiegoADia7: totalDia7,
+                lisDiegoADia8: totalDia8,
+                lisDiegoADia9: totalDia9,
+                lisDiegoADia10: totalDia10,
+                lisDiegoADia11: totalDia11,
+                lisDiegoADia12: totalDia12,
+                lisDiegoADia13: totalDia13,
+                lisDiegoADia14: totalDia14,
+                lisDiegoADia15: totalDia15,
+                lisDiegoADia16: totalDia16,
+                lisDiegoADia17: totalDia17,
+                lisDiegoADia18: totalDia18,
+                lisDiegoADia19: totalDia19,
+                lisDiegoADia20: totalDia20,
+                lisDiegoADia21: totalDia21,
+                lisDiegoADia22: totalDia22,
+                lisDiegoADia23: totalDia23,
+                lisDiegoADia24: totalDia24,
+                lisDiegoADia25: totalDia25,
+                lisDiegoADia26: totalDia26,
+                lisDiegoADia27: totalDia27,
+                lisDiegoADia28: totalDia28,
+                lisDiegoADia29: totalDia29,
+                lisDiegoADia30: totalDia30,
+                lisDiegoADia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Marcio"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisMarcioDia1: totalDia1,
+                lisMarcioDia2: totalDia2,
+                lisMarcioDia3: totalDia3,
+                lisMarcioDia4: totalDia4,
+                lisMarcioDia5: totalDia5,
+                lisMarcioDia6: totalDia6,
+                lisMarcioDia7: totalDia7,
+                lisMarcioDia8: totalDia8,
+                lisMarcioDia9: totalDia9,
+                lisMarcioDia10: totalDia10,
+                lisMarcioDia11: totalDia11,
+                lisMarcioDia12: totalDia12,
+                lisMarcioDia13: totalDia13,
+                lisMarcioDia14: totalDia14,
+                lisMarcioDia15: totalDia15,
+                lisMarcioDia16: totalDia16,
+                lisMarcioDia17: totalDia17,
+                lisMarcioDia18: totalDia18,
+                lisMarcioDia19: totalDia19,
+                lisMarcioDia20: totalDia20,
+                lisMarcioDia21: totalDia21,
+                lisMarcioDia22: totalDia22,
+                lisMarcioDia23: totalDia23,
+                lisMarcioDia24: totalDia24,
+                lisMarcioDia25: totalDia25,
+                lisMarcioDia26: totalDia26,
+                lisMarcioDia27: totalDia27,
+                lisMarcioDia28: totalDia28,
+                lisMarcioDia29: totalDia29,
+                lisMarcioDia30: totalDia30,
+                lisMarcioDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Cida Zani"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisCidaDia1: totalDia1,
+                lisCidaDia2: totalDia2,
+                lisCidaDia3: totalDia3,
+                lisCidaDia4: totalDia4,
+                lisCidaDia5: totalDia5,
+                lisCidaDia6: totalDia6,
+                lisCidaDia7: totalDia7,
+                lisCidaDia8: totalDia8,
+                lisCidaDia9: totalDia9,
+                lisCidaDia10: totalDia10,
+                lisCidaDia11: totalDia11,
+                lisCidaDia12: totalDia12,
+                lisCidaDia13: totalDia13,
+                lisCidaDia14: totalDia14,
+                lisCidaDia15: totalDia15,
+                lisCidaDia16: totalDia16,
+                lisCidaDia17: totalDia17,
+                lisCidaDia18: totalDia18,
+                lisCidaDia19: totalDia19,
+                lisCidaDia20: totalDia20,
+                lisCidaDia21: totalDia21,
+                lisCidaDia22: totalDia22,
+                lisCidaDia23: totalDia23,
+                lisCidaDia24: totalDia24,
+                lisCidaDia25: totalDia25,
+                lisCidaDia26: totalDia26,
+                lisCidaDia27: totalDia27,
+                lisCidaDia28: totalDia28,
+                lisCidaDia29: totalDia29,
+                lisCidaDia30: totalDia30,
+                lisCidaDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+
+        if(tecnico === "Allan Zulino"){
+
+            //#region variavel entrada
+            let dia1 = [];
+            let dia2 = [];
+            let dia3 = [];
+            let dia4 = [];
+            let dia5 = [];
+            let dia6 = [];
+            let dia7 = [];
+            let dia8 = [];
+            let dia9 = [];
+            let dia10 = [];
+            let dia11 = [];
+            let dia12 = [];
+            let dia13 = [];
+            let dia14 = [];
+            let dia15 = [];
+            let dia16 = [];
+            let dia17 = [];
+            let dia18 = [];
+            let dia19 = [];
+            let dia20 = [];
+            let dia21 = [];
+            let dia22 = [];
+            let dia23 = [];
+            let dia24 = [];
+            let dia25 = [];
+            let dia26 = [];
+            let dia27 = [];
+            let dia28 = [];
+            let dia29 = [];
+            let dia30 = [];
+            let dia31 = [];
+            //#endregion
+
+            //#region buscar
+                for(let i = 0; i < tabelaNome.length; i++){
+                    if((tecnico === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)){
+                        if(1 === tabelaNome[i].Dia){
+                            dia1.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(2 === tabelaNome[i].Dia){
+                            dia2.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(3 === tabelaNome[i].Dia){
+                            dia3.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(4 === tabelaNome[i].Dia){
+                            dia4.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(5 === tabelaNome[i].Dia){
+                            dia5.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(6 === tabelaNome[i].Dia){
+                            dia6.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(7 === tabelaNome[i].Dia){
+                            dia7.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(8 === tabelaNome[i].Dia){
+                            dia8.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(9 === tabelaNome[i].Dia){
+                            dia9.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(10 === tabelaNome[i].Dia){
+                            dia10.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(11 === tabelaNome[i].Dia){
+                            dia11.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(12 === tabelaNome[i].Dia){
+                            dia12.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(13 === tabelaNome[i].Dia){
+                            dia13.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(14 === tabelaNome[i].Dia){
+                            dia14.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(15 === tabelaNome[i].Dia){
+                            dia15.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(16 === tabelaNome[i].Dia){
+                            dia16.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(17 === tabelaNome[i].Dia){
+                            dia17.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(18 === tabelaNome[i].Dia){
+                            dia18.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(19 === tabelaNome[i].Dia){
+                            dia19.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(20 === tabelaNome[i].Dia){
+                            dia20.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(21 === tabelaNome[i].Dia){
+                            dia21.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(22 === tabelaNome[i].Dia){
+                            dia22.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(23 === tabelaNome[i].Dia){
+                            dia23.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(24 === tabelaNome[i].Dia){
+                            dia24.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(25 === tabelaNome[i].Dia){
+                            dia25.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(26 === tabelaNome[i].Dia){
+                            dia26.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(27 === tabelaNome[i].Dia){
+                            dia27.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(28 === tabelaNome[i].Dia){
+                            dia28.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(29 === tabelaNome[i].Dia){
+                            dia29.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(30 === tabelaNome[i].Dia){
+                            dia30.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if(31 === tabelaNome[i].Dia){
+                            dia31.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                    }
+                }
+            //#endregion
+
+            //#region variavel de saida
+            let totalDia1 = Object.keys(dia1).length;
+            let totalDia2 = Object.keys(dia2).length;
+            let totalDia3 = Object.keys(dia3).length;
+            let totalDia4 = Object.keys(dia4).length;
+            let totalDia5 = Object.keys(dia5).length;
+            let totalDia6 = Object.keys(dia6).length;
+            let totalDia7 = Object.keys(dia7).length;
+            let totalDia8 = Object.keys(dia8).length;
+            let totalDia9 = Object.keys(dia9).length;
+            let totalDia10 = Object.keys(dia10).length;
+            let totalDia11 = Object.keys(dia11).length;
+            let totalDia12 = Object.keys(dia12).length;
+            let totalDia13 = Object.keys(dia13).length;
+            let totalDia14 = Object.keys(dia14).length;
+            let totalDia15 = Object.keys(dia15).length;
+            let totalDia16 = Object.keys(dia16).length;
+            let totalDia17 = Object.keys(dia17).length;
+            let totalDia18 = Object.keys(dia18).length;
+            let totalDia19 = Object.keys(dia19).length;
+            let totalDia20 = Object.keys(dia20).length;
+            let totalDia21 = Object.keys(dia21).length;
+            let totalDia22 = Object.keys(dia22).length;
+            let totalDia23 = Object.keys(dia23).length;
+            let totalDia24 = Object.keys(dia24).length;
+            let totalDia25 = Object.keys(dia25).length;
+            let totalDia26 = Object.keys(dia26).length;
+            let totalDia27 = Object.keys(dia27).length;
+            let totalDia28 = Object.keys(dia28).length;
+            let totalDia29 = Object.keys(dia29).length;
+            let totalDia30 = Object.keys(dia30).length;
+            let totalDia31 = Object.keys(dia31).length;
+            //#endregion
+
+            //#region Saida para o grafico
+            return this.setState({
+                lisAllanDia1: totalDia1,
+                lisAllanDia2: totalDia2,
+                lisAllanDia3: totalDia3,
+                lisAllanDia4: totalDia4,
+                lisAllanDia5: totalDia5,
+                lisAllanDia6: totalDia6,
+                lisAllanDia7: totalDia7,
+                lisAllanDia8: totalDia8,
+                lisAllanDia9: totalDia9,
+                lisAllanDia10: totalDia10,
+                lisAllanDia11: totalDia11,
+                lisAllanDia12: totalDia12,
+                lisAllanDia13: totalDia13,
+                lisAllanDia14: totalDia14,
+                lisAllanDia15: totalDia15,
+                lisAllanDia16: totalDia16,
+                lisAllanDia17: totalDia17,
+                lisAllanDia18: totalDia18,
+                lisAllanDia19: totalDia19,
+                lisAllanDia20: totalDia20,
+                lisAllanDia21: totalDia21,
+                lisAllanDia22: totalDia22,
+                lisAllanDia23: totalDia23,
+                lisAllanDia24: totalDia24,
+                lisAllanDia25: totalDia25,
+                lisAllanDia26: totalDia26,
+                lisAllanDia27: totalDia27,
+                lisAllanDia28: totalDia28,
+                lisAllanDia29: totalDia29,
+                lisAllanDia30: totalDia30,
+                lisAllanDia31: totalDia31,
+            })
+            //#endregion
+
+        }
+    }
+
     render() {
         return (
             <div className='content-fluid'>
@@ -17958,6 +21611,48 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalDiegoC },
                                     ]} />
                             }
+
+                        
+                            grafico5={
+                                 <Grafico tipo="column" titulo="Produtividade por Dia"
+                                    formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                    texto='{point.y:1f}'
+                                    nomeSerie="Dia"
+                                    dado={[
+                                        { name: "1", y: this.state.lisDiegoCDia1 },
+                                        { name: "2", y: this.state.lisDiegoCDia2 },
+                                        { name: "3", y: this.state.lisDiegoCDia3 },
+                                        { name: "4", y: this.state.lisDiegoCDia4 },
+                                        { name: "5", y: this.state.lisDiegoCDia5 },
+                                        { name: "6", y: this.state.lisDiegoCDia6 },
+                                        { name: "7", y: this.state.lisDiegoCDia7 },
+                                        { name: "8", y: this.state.lisDiegoCDia8 },
+                                        { name: "9", y: this.state.lisDiegoCDia9 },
+                                        { name: "10", y: this.state.lisDiegoCDia10 },
+                                        { name: "11", y: this.state.lisDiegoCDia11 },
+                                        { name: "12", y: this.state.lisDiegoCDia12 },
+                                        { name: "13", y: this.state.lisDiegoCDia13 },
+                                        { name: "14", y: this.state.lisDiegoCDia14 },
+                                        { name: "15", y: this.state.lisDiegoCDia15 },
+                                        { name: "16", y: this.state.lisDiegoCDia16 },
+                                        { name: "17", y: this.state.lisDiegoCDia17 },
+                                        { name: "18", y: this.state.lisDiegoCDia18 },
+                                        { name: "19", y: this.state.lisDiegoCDia19 },
+                                        { name: "20", y: this.state.lisDiegoCDia20 },
+                                        { name: "21", y: this.state.lisDiegoCDia21 },
+                                        { name: "22", y: this.state.lisDiegoCDia22 },
+                                        { name: "23", y: this.state.lisDiegoCDia23 },
+                                        { name: "24", y: this.state.lisDiegoCDia24 },
+                                        { name: "25", y: this.state.lisDiegoCDia25 },
+                                        { name: "26", y: this.state.lisDiegoCDia26 },
+                                        { name: "27", y: this.state.lisDiegoCDia27 },
+                                        { name: "28", y: this.state.lisDiegoCDia28 },
+                                        { name: "29", y: this.state.lisDiegoCDia29 },
+                                        { name: "30", y: this.state.lisDiegoCDia30 },
+                                        { name: "31", y: this.state.lisDiegoCDia31 },
+                                    ]}
+                                />
+                            }
                         />
                         <ModalTecnicos imagem={imgNata} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -18046,6 +21741,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalNata },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisNataDia1 },
+                                       { name: "2", y: this.state.lisNataDia2 },
+                                       { name: "3", y: this.state.lisNataDia3 },
+                                       { name: "4", y: this.state.lisNataDia4 },
+                                       { name: "5", y: this.state.lisNataDia5 },
+                                       { name: "6", y: this.state.lisNataDia6 },
+                                       { name: "7", y: this.state.lisNataDia7 },
+                                       { name: "8", y: this.state.lisNataDia8 },
+                                       { name: "9", y: this.state.lisNataDia9 },
+                                       { name: "10", y: this.state.lisNataDia10 },
+                                       { name: "11", y: this.state.lisNataDia11 },
+                                       { name: "12", y: this.state.lisNataDia12 },
+                                       { name: "13", y: this.state.lisNataDia13 },
+                                       { name: "14", y: this.state.lisNataDia14 },
+                                       { name: "15", y: this.state.lisNataDia15 },
+                                       { name: "16", y: this.state.lisNataDia16 },
+                                       { name: "17", y: this.state.lisNataDia17 },
+                                       { name: "18", y: this.state.lisNataDia18 },
+                                       { name: "19", y: this.state.lisNataDia19 },
+                                       { name: "20", y: this.state.lisNataDia20 },
+                                       { name: "21", y: this.state.lisNataDia21 },
+                                       { name: "22", y: this.state.lisNataDia22 },
+                                       { name: "23", y: this.state.lisNataDia23 },
+                                       { name: "24", y: this.state.lisNataDia24 },
+                                       { name: "25", y: this.state.lisNataDia25 },
+                                       { name: "26", y: this.state.lisNataDia26 },
+                                       { name: "27", y: this.state.lisNataDia27 },
+                                       { name: "28", y: this.state.lisNataDia28 },
+                                       { name: "29", y: this.state.lisNataDia29 },
+                                       { name: "30", y: this.state.lisNataDia30 },
+                                       { name: "31", y: this.state.lisNataDia31 },
+                                   ]}
+                               />
+                           }
                         />
                     </div>
                     <div className="col-md-3 d-flex d-flex justify-content-around">
@@ -18137,6 +21873,46 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
                             }
 
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisMateusDia1 },
+                                       { name: "2", y: this.state.lisMateusDia2 },
+                                       { name: "3", y: this.state.lisMateusDia3 },
+                                       { name: "4", y: this.state.lisMateusDia4 },
+                                       { name: "5", y: this.state.lisMateusDia5 },
+                                       { name: "6", y: this.state.lisMateusDia6 },
+                                       { name: "7", y: this.state.lisMateusDia7 },
+                                       { name: "8", y: this.state.lisMateusDia8 },
+                                       { name: "9", y: this.state.lisMateusDia9 },
+                                       { name: "10", y: this.state.lisMateusDia10 },
+                                       { name: "11", y: this.state.lisMateusDia11 },
+                                       { name: "12", y: this.state.lisMateusDia12 },
+                                       { name: "13", y: this.state.lisMateusDia13 },
+                                       { name: "14", y: this.state.lisMateusDia14 },
+                                       { name: "15", y: this.state.lisMateusDia15 },
+                                       { name: "16", y: this.state.lisMateusDia16 },
+                                       { name: "17", y: this.state.lisMateusDia17 },
+                                       { name: "18", y: this.state.lisMateusDia18 },
+                                       { name: "19", y: this.state.lisMateusDia19 },
+                                       { name: "20", y: this.state.lisMateusDia20 },
+                                       { name: "21", y: this.state.lisMateusDia21 },
+                                       { name: "22", y: this.state.lisMateusDia22 },
+                                       { name: "23", y: this.state.lisMateusDia23 },
+                                       { name: "24", y: this.state.lisMateusDia24 },
+                                       { name: "25", y: this.state.lisMateusDia25 },
+                                       { name: "26", y: this.state.lisMateusDia26 },
+                                       { name: "27", y: this.state.lisMateusDia27 },
+                                       { name: "28", y: this.state.lisMateusDia28 },
+                                       { name: "29", y: this.state.lisMateusDia29 },
+                                       { name: "30", y: this.state.lisMateusDia30 },
+                                       { name: "31", y: this.state.lisMateusDia31 },
+                                   ]}
+                               />
+                           }
                         />
                         <ModalTecnicos imagem={imgLucas} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -18226,6 +22002,46 @@ export default class DashboardGerencia extends React.Component {
                                     ]} />
                             }
 
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisLucasDia1 },
+                                       { name: "2", y: this.state.lisLucasDia2 },
+                                       { name: "3", y: this.state.lisLucasDia3 },
+                                       { name: "4", y: this.state.lisLucasDia4 },
+                                       { name: "5", y: this.state.lisLucasDia5 },
+                                       { name: "6", y: this.state.lisLucasDia6 },
+                                       { name: "7", y: this.state.lisLucasDia7 },
+                                       { name: "8", y: this.state.lisLucasDia8 },
+                                       { name: "9", y: this.state.lisLucasDia9 },
+                                       { name: "10", y: this.state.lisLucasDia10 },
+                                       { name: "11", y: this.state.lisLucasDia11 },
+                                       { name: "12", y: this.state.lisLucasDia12 },
+                                       { name: "13", y: this.state.lisLucasDia13 },
+                                       { name: "14", y: this.state.lisLucasDia14 },
+                                       { name: "15", y: this.state.lisLucasDia15 },
+                                       { name: "16", y: this.state.lisLucasDia16 },
+                                       { name: "17", y: this.state.lisLucasDia17 },
+                                       { name: "18", y: this.state.lisLucasDia18 },
+                                       { name: "19", y: this.state.lisLucasDia19 },
+                                       { name: "20", y: this.state.lisLucasDia20 },
+                                       { name: "21", y: this.state.lisLucasDia21 },
+                                       { name: "22", y: this.state.lisLucasDia22 },
+                                       { name: "23", y: this.state.lisLucasDia23 },
+                                       { name: "24", y: this.state.lisLucasDia24 },
+                                       { name: "25", y: this.state.lisLucasDia25 },
+                                       { name: "26", y: this.state.lisLucasDia26 },
+                                       { name: "27", y: this.state.lisLucasDia27 },
+                                       { name: "28", y: this.state.lisLucasDia28 },
+                                       { name: "29", y: this.state.lisLucasDia29 },
+                                       { name: "30", y: this.state.lisLucasDia30 },
+                                       { name: "31", y: this.state.lisLucasDia31 },
+                                   ]}
+                               />
+                           }
                         />
                     </div>
                     <div className="col-md-3 d-flex d-flex justify-content-around">
@@ -18316,6 +22132,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalDiogo },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisDiogoDia1 },
+                                       { name: "2", y: this.state.lisDiogoDia2 },
+                                       { name: "3", y: this.state.lisDiogoDia3 },
+                                       { name: "4", y: this.state.lisDiogoDia4 },
+                                       { name: "5", y: this.state.lisDiogoDia5 },
+                                       { name: "6", y: this.state.lisDiogoDia6 },
+                                       { name: "7", y: this.state.lisDiogoDia7 },
+                                       { name: "8", y: this.state.lisDiogoDia8 },
+                                       { name: "9", y: this.state.lisDiogoDia9 },
+                                       { name: "10", y: this.state.lisDiogoDia10 },
+                                       { name: "11", y: this.state.lisDiogoDia11 },
+                                       { name: "12", y: this.state.lisDiogoDia12 },
+                                       { name: "13", y: this.state.lisDiogoDia13 },
+                                       { name: "14", y: this.state.lisDiogoDia14 },
+                                       { name: "15", y: this.state.lisDiogoDia15 },
+                                       { name: "16", y: this.state.lisDiogoDia16 },
+                                       { name: "17", y: this.state.lisDiogoDia17 },
+                                       { name: "18", y: this.state.lisDiogoDia18 },
+                                       { name: "19", y: this.state.lisDiogoDia19 },
+                                       { name: "20", y: this.state.lisDiogoDia20 },
+                                       { name: "21", y: this.state.lisDiogoDia21 },
+                                       { name: "22", y: this.state.lisDiogoDia22 },
+                                       { name: "23", y: this.state.lisDiogoDia23 },
+                                       { name: "24", y: this.state.lisDiogoDia24 },
+                                       { name: "25", y: this.state.lisDiogoDia25 },
+                                       { name: "26", y: this.state.lisDiogoDia26 },
+                                       { name: "27", y: this.state.lisDiogoDia27 },
+                                       { name: "28", y: this.state.lisDiogoDia28 },
+                                       { name: "29", y: this.state.lisDiogoDia29 },
+                                       { name: "30", y: this.state.lisDiogoDia30 },
+                                       { name: "31", y: this.state.lisDiogoDia31 },
+                                   ]}
+                               />
+                           }
                         />
                         <ModalTecnicos imagem={imgGabriel} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -18404,6 +22261,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalGabriel },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisGabrielDia1 },
+                                       { name: "2", y: this.state.lisGabrielDia2 },
+                                       { name: "3", y: this.state.lisGabrielDia3 },
+                                       { name: "4", y: this.state.lisGabrielDia4 },
+                                       { name: "5", y: this.state.lisGabrielDia5 },
+                                       { name: "6", y: this.state.lisGabrielDia6 },
+                                       { name: "7", y: this.state.lisGabrielDia7 },
+                                       { name: "8", y: this.state.lisGabrielDia8 },
+                                       { name: "9", y: this.state.lisGabrielDia9 },
+                                       { name: "10", y: this.state.lisGabrielDia10 },
+                                       { name: "11", y: this.state.lisGabrielDia11 },
+                                       { name: "12", y: this.state.lisGabrielDia12 },
+                                       { name: "13", y: this.state.lisGabrielDia13 },
+                                       { name: "14", y: this.state.lisGabrielDia14 },
+                                       { name: "15", y: this.state.lisGabrielDia15 },
+                                       { name: "16", y: this.state.lisGabrielDia16 },
+                                       { name: "17", y: this.state.lisGabrielDia17 },
+                                       { name: "18", y: this.state.lisGabrielDia18 },
+                                       { name: "19", y: this.state.lisGabrielDia19 },
+                                       { name: "20", y: this.state.lisGabrielDia20 },
+                                       { name: "21", y: this.state.lisGabrielDia21 },
+                                       { name: "22", y: this.state.lisGabrielDia22 },
+                                       { name: "23", y: this.state.lisGabrielDia23 },
+                                       { name: "24", y: this.state.lisGabrielDia24 },
+                                       { name: "25", y: this.state.lisGabrielDia25 },
+                                       { name: "26", y: this.state.lisGabrielDia26 },
+                                       { name: "27", y: this.state.lisGabrielDia27 },
+                                       { name: "28", y: this.state.lisGabrielDia28 },
+                                       { name: "29", y: this.state.lisGabrielDia29 },
+                                       { name: "30", y: this.state.lisGabrielDia30 },
+                                       { name: "31", y: this.state.lisGabrielDia31 },
+                                   ]}
+                               />
+                           }
                         />
                     </div>
                     <div className="col-md-3 d-flex d-flex justify-content-around">
@@ -18494,6 +22392,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalBruno },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisBrunoDia1 },
+                                       { name: "2", y: this.state.lisBrunoDia2 },
+                                       { name: "3", y: this.state.lisBrunoDia3 },
+                                       { name: "4", y: this.state.lisBrunoDia4 },
+                                       { name: "5", y: this.state.lisBrunoDia5 },
+                                       { name: "6", y: this.state.lisBrunoDia6 },
+                                       { name: "7", y: this.state.lisBrunoDia7 },
+                                       { name: "8", y: this.state.lisBrunoDia8 },
+                                       { name: "9", y: this.state.lisBrunoDia9 },
+                                       { name: "10", y: this.state.lisBrunoDia10 },
+                                       { name: "11", y: this.state.lisBrunoDia11 },
+                                       { name: "12", y: this.state.lisBrunoDia12 },
+                                       { name: "13", y: this.state.lisBrunoDia13 },
+                                       { name: "14", y: this.state.lisBrunoDia14 },
+                                       { name: "15", y: this.state.lisBrunoDia15 },
+                                       { name: "16", y: this.state.lisBrunoDia16 },
+                                       { name: "17", y: this.state.lisBrunoDia17 },
+                                       { name: "18", y: this.state.lisBrunoDia18 },
+                                       { name: "19", y: this.state.lisBrunoDia19 },
+                                       { name: "20", y: this.state.lisBrunoDia20 },
+                                       { name: "21", y: this.state.lisBrunoDia21 },
+                                       { name: "22", y: this.state.lisBrunoDia22 },
+                                       { name: "23", y: this.state.lisBrunoDia23 },
+                                       { name: "24", y: this.state.lisBrunoDia24 },
+                                       { name: "25", y: this.state.lisBrunoDia25 },
+                                       { name: "26", y: this.state.lisBrunoDia26 },
+                                       { name: "27", y: this.state.lisBrunoDia27 },
+                                       { name: "28", y: this.state.lisBrunoDia28 },
+                                       { name: "29", y: this.state.lisBrunoDia29 },
+                                       { name: "30", y: this.state.lisBrunoDia30 },
+                                       { name: "31", y: this.state.lisBrunoDia31 },
+                                   ]}
+                               />
+                           }
                         />
                         <ModalTecnicos imagem={imgVinicius} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -18582,6 +22521,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalVinicius },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisViniciusDia1 },
+                                       { name: "2", y: this.state.lisViniciusDia2 },
+                                       { name: "3", y: this.state.lisViniciusDia3 },
+                                       { name: "4", y: this.state.lisViniciusDia4 },
+                                       { name: "5", y: this.state.lisViniciusDia5 },
+                                       { name: "6", y: this.state.lisViniciusDia6 },
+                                       { name: "7", y: this.state.lisViniciusDia7 },
+                                       { name: "8", y: this.state.lisViniciusDia8 },
+                                       { name: "9", y: this.state.lisViniciusDia9 },
+                                       { name: "10", y: this.state.lisViniciusDia10 },
+                                       { name: "11", y: this.state.lisViniciusDia11 },
+                                       { name: "12", y: this.state.lisViniciusDia12 },
+                                       { name: "13", y: this.state.lisViniciusDia13 },
+                                       { name: "14", y: this.state.lisViniciusDia14 },
+                                       { name: "15", y: this.state.lisViniciusDia15 },
+                                       { name: "16", y: this.state.lisViniciusDia16 },
+                                       { name: "17", y: this.state.lisViniciusDia17 },
+                                       { name: "18", y: this.state.lisViniciusDia18 },
+                                       { name: "19", y: this.state.lisViniciusDia19 },
+                                       { name: "20", y: this.state.lisViniciusDia20 },
+                                       { name: "21", y: this.state.lisViniciusDia21 },
+                                       { name: "22", y: this.state.lisViniciusDia22 },
+                                       { name: "23", y: this.state.lisViniciusDia23 },
+                                       { name: "24", y: this.state.lisViniciusDia24 },
+                                       { name: "25", y: this.state.lisViniciusDia25 },
+                                       { name: "26", y: this.state.lisViniciusDia26 },
+                                       { name: "27", y: this.state.lisViniciusDia27 },
+                                       { name: "28", y: this.state.lisViniciusDia28 },
+                                       { name: "29", y: this.state.lisViniciusDia29 },
+                                       { name: "30", y: this.state.lisViniciusDia30 },
+                                       { name: "31", y: this.state.lisViniciusDia31 },
+                                   ]}
+                               />
+                           }
                         />
                     </div>
                 </div>
@@ -18674,6 +22654,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalDiegoA },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisDiegoADia1 },
+                                       { name: "2", y: this.state.lisDiegoADia2 },
+                                       { name: "3", y: this.state.lisDiegoADia3 },
+                                       { name: "4", y: this.state.lisDiegoADia4 },
+                                       { name: "5", y: this.state.lisDiegoADia5 },
+                                       { name: "6", y: this.state.lisDiegoADia6 },
+                                       { name: "7", y: this.state.lisDiegoADia7 },
+                                       { name: "8", y: this.state.lisDiegoADia8 },
+                                       { name: "9", y: this.state.lisDiegoADia9 },
+                                       { name: "10", y: this.state.lisDiegoADia10 },
+                                       { name: "11", y: this.state.lisDiegoADia11 },
+                                       { name: "12", y: this.state.lisDiegoADia12 },
+                                       { name: "13", y: this.state.lisDiegoADia13 },
+                                       { name: "14", y: this.state.lisDiegoADia14 },
+                                       { name: "15", y: this.state.lisDiegoADia15 },
+                                       { name: "16", y: this.state.lisDiegoADia16 },
+                                       { name: "17", y: this.state.lisDiegoADia17 },
+                                       { name: "18", y: this.state.lisDiegoADia18 },
+                                       { name: "19", y: this.state.lisDiegoADia19 },
+                                       { name: "20", y: this.state.lisDiegoADia20 },
+                                       { name: "21", y: this.state.lisDiegoADia21 },
+                                       { name: "22", y: this.state.lisDiegoADia22 },
+                                       { name: "23", y: this.state.lisDiegoADia23 },
+                                       { name: "24", y: this.state.lisDiegoADia24 },
+                                       { name: "25", y: this.state.lisDiegoADia25 },
+                                       { name: "26", y: this.state.lisDiegoADia26 },
+                                       { name: "27", y: this.state.lisDiegoADia27 },
+                                       { name: "28", y: this.state.lisDiegoADia28 },
+                                       { name: "29", y: this.state.lisDiegoADia29 },
+                                       { name: "30", y: this.state.lisDiegoADia30 },
+                                       { name: "31", y: this.state.lisDiegoADia31 },
+                                   ]}
+                               />
+                           }
                         />
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -18764,6 +22785,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalMarciolistarMetaMarcio },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisMarcioDia1 },
+                                       { name: "2", y: this.state.lisMarcioDia2 },
+                                       { name: "3", y: this.state.lisMarcioDia3 },
+                                       { name: "4", y: this.state.lisMarcioDia4 },
+                                       { name: "5", y: this.state.lisMarcioDia5 },
+                                       { name: "6", y: this.state.lisMarcioDia6 },
+                                       { name: "7", y: this.state.lisMarcioDia7 },
+                                       { name: "8", y: this.state.lisMarcioDia8 },
+                                       { name: "9", y: this.state.lisMarcioDia9 },
+                                       { name: "10", y: this.state.lisMarcioDia10 },
+                                       { name: "11", y: this.state.lisMarcioDia11 },
+                                       { name: "12", y: this.state.lisMarcioDia12 },
+                                       { name: "13", y: this.state.lisMarcioDia13 },
+                                       { name: "14", y: this.state.lisMarcioDia14 },
+                                       { name: "15", y: this.state.lisMarcioDia15 },
+                                       { name: "16", y: this.state.lisMarcioDia16 },
+                                       { name: "17", y: this.state.lisMarcioDia17 },
+                                       { name: "18", y: this.state.lisMarcioDia18 },
+                                       { name: "19", y: this.state.lisMarcioDia19 },
+                                       { name: "20", y: this.state.lisMarcioDia20 },
+                                       { name: "21", y: this.state.lisMarcioDia21 },
+                                       { name: "22", y: this.state.lisMarcioDia22 },
+                                       { name: "23", y: this.state.lisMarcioDia23 },
+                                       { name: "24", y: this.state.lisMarcioDia24 },
+                                       { name: "25", y: this.state.lisMarcioDia25 },
+                                       { name: "26", y: this.state.lisMarcioDia26 },
+                                       { name: "27", y: this.state.lisMarcioDia27 },
+                                       { name: "28", y: this.state.lisMarcioDia28 },
+                                       { name: "29", y: this.state.lisMarcioDia29 },
+                                       { name: "30", y: this.state.lisMarcioDia30 },
+                                       { name: "31", y: this.state.lisMarcioDia31 },
+                                   ]}
+                               />
+                           }
                         />
                     </div>
                     <div className="col-3 d-flex justify-content-around">
@@ -18856,6 +22918,47 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalCida },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisCidaDia1 },
+                                       { name: "2", y: this.state.lisCidaDia2 },
+                                       { name: "3", y: this.state.lisCidaDia3 },
+                                       { name: "4", y: this.state.lisCidaDia4 },
+                                       { name: "5", y: this.state.lisCidaDia5 },
+                                       { name: "6", y: this.state.lisCidaDia6 },
+                                       { name: "7", y: this.state.lisCidaDia7 },
+                                       { name: "8", y: this.state.lisCidaDia8 },
+                                       { name: "9", y: this.state.lisCidaDia9 },
+                                       { name: "10", y: this.state.lisCidaDia10 },
+                                       { name: "11", y: this.state.lisCidaDia11 },
+                                       { name: "12", y: this.state.lisCidaDia12 },
+                                       { name: "13", y: this.state.lisCidaDia13 },
+                                       { name: "14", y: this.state.lisCidaDia14 },
+                                       { name: "15", y: this.state.lisCidaDia15 },
+                                       { name: "16", y: this.state.lisCidaDia16 },
+                                       { name: "17", y: this.state.lisCidaDia17 },
+                                       { name: "18", y: this.state.lisCidaDia18 },
+                                       { name: "19", y: this.state.lisCidaDia19 },
+                                       { name: "20", y: this.state.lisCidaDia20 },
+                                       { name: "21", y: this.state.lisCidaDia21 },
+                                       { name: "22", y: this.state.lisCidaDia22 },
+                                       { name: "23", y: this.state.lisCidaDia23 },
+                                       { name: "24", y: this.state.lisCidaDia24 },
+                                       { name: "25", y: this.state.lisCidaDia25 },
+                                       { name: "26", y: this.state.lisCidaDia26 },
+                                       { name: "27", y: this.state.lisCidaDia27 },
+                                       { name: "28", y: this.state.lisCidaDia28 },
+                                       { name: "29", y: this.state.lisCidaDia29 },
+                                       { name: "30", y: this.state.lisCidaDia30 },
+                                       { name: "31", y: this.state.lisCidaDia31 },
+                                   ]}
+                               />
+                           }
                         />
                         <ModalTecnicos imagem={imgMarcio} classe="rounded rounded-circle"
                             estilo={{ cursor: 'pointer', heigth: 220, width: 120 }}
@@ -18946,12 +23049,53 @@ export default class DashboardGerencia extends React.Component {
                                         { name: "Atividade", y: this.state.listarTotalAllan },
                                     ]} />
                             }
+
+                            grafico5={
+                                <Grafico tipo="column" titulo="Produtividade por Dia"
+                                   formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                                   texto='{point.y:1f}'
+                                   nomeSerie="Dia"
+                                   dado={[
+                                       { name: "1", y: this.state.lisAllanDia1 },
+                                       { name: "2", y: this.state.lisAllanDia2 },
+                                       { name: "3", y: this.state.lisAllanDia3 },
+                                       { name: "4", y: this.state.lisAllanDia4 },
+                                       { name: "5", y: this.state.lisAllanDia5 },
+                                       { name: "6", y: this.state.lisAllanDia6 },
+                                       { name: "7", y: this.state.lisAllanDia7 },
+                                       { name: "8", y: this.state.lisAllanDia8 },
+                                       { name: "9", y: this.state.lisAllanDia9 },
+                                       { name: "10", y: this.state.lisAllanDia10 },
+                                       { name: "11", y: this.state.lisAllanDia11 },
+                                       { name: "12", y: this.state.lisAllanDia12 },
+                                       { name: "13", y: this.state.lisAllanDia13 },
+                                       { name: "14", y: this.state.lisAllanDia14 },
+                                       { name: "15", y: this.state.lisAllanDia15 },
+                                       { name: "16", y: this.state.lisAllanDia16 },
+                                       { name: "17", y: this.state.lisAllanDia17 },
+                                       { name: "18", y: this.state.lisAllanDia18 },
+                                       { name: "19", y: this.state.lisAllanDia19 },
+                                       { name: "20", y: this.state.lisAllanDia20 },
+                                       { name: "21", y: this.state.lisAllanDia21 },
+                                       { name: "22", y: this.state.lisAllanDia22 },
+                                       { name: "23", y: this.state.lisAllanDia23 },
+                                       { name: "24", y: this.state.lisAllanDia24 },
+                                       { name: "25", y: this.state.lisAllanDia25 },
+                                       { name: "26", y: this.state.lisAllanDia26 },
+                                       { name: "27", y: this.state.lisAllanDia27 },
+                                       { name: "28", y: this.state.lisAllanDia28 },
+                                       { name: "29", y: this.state.lisAllanDia29 },
+                                       { name: "30", y: this.state.lisAllanDia30 },
+                                       { name: "31", y: this.state.lisAllanDia31 },
+                                   ]}
+                               />
+                           }
                         />
                     </div>
                     <div className="col-3 d-flex justify-content-start">
                     </div>
                 </div>
-                <div className="row mt-5 d-flex justify-content-center">
+                {/* <div className="row mt-5 d-flex justify-content-center">
                     <div className="col-3 bg-primary text-light d-flex justify-content-center rounded">
                         <div className="display-3 fw-bold">
                             Gerentes
@@ -19115,7 +23259,7 @@ export default class DashboardGerencia extends React.Component {
                             }
                         />
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

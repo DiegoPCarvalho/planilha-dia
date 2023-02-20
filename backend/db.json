@@ -14019,6 +14019,24 @@
       "Status": "",
       "Tecnico": "Diego Carvalho",
       "id": 848
+    },
+    {
+      "Data": "2023-02-20T14:46:42.472Z",
+      "Dia": 20,
+      "Mes": 2,
+      "Ano": 2023,
+      "OS": "fff",
+      "Cliente": "fff",
+      "Equipamento": "Leitor de RFID",
+      "Modelo": "fff",
+      "NS": "",
+      "Servico": "Montagem/Manutenção de Venda",
+      "Classificacao": "Defeito",
+      "Contrato": "Contrato Friozem",
+      "Observacao": "ffff",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 849
     }
   ],
   "LoginUsuario": [
@@ -14468,27 +14486,6 @@
       "Tecnico": "Natanael Silva Lima",
       "Meta": "350",
       "id": 2
-    },
-    {
-      "Mes": 1,
-      "Ano": 2023,
-      "Tecnico": "Diego Carvalho",
-      "Meta": "250",
-      "id": 3
-    },
-    {
-      "Mes": 3,
-      "Ano": 2023,
-      "Tecnico": "Diego Carvalho",
-      "Meta": "35",
-      "id": 4
-    },
-    {
-      "Mes": 2,
-      "Ano": 2023,
-      "Tecnico": "Diogo Selmini",
-      "Meta": "250",
-      "id": 5
     }
   ]
 }
