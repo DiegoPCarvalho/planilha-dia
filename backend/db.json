@@ -14487,5 +14487,19 @@
       "Meta": "350",
       "id": 2
     }
+  ],
+  "Ramal": [
+    {
+      "Departamento": "Laborátorio",
+      "Usuario": "Diego Carvalho",
+      "Ramal": "2040",
+      "id": 1
+    },
+    {
+      "Departamento": "Gerência",
+      "Usuario": "Luanda",
+      "Ramal": "2056",
+      "id": 2
+    }
   ]
 }

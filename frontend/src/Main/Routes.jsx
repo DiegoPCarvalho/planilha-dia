@@ -7,6 +7,8 @@ import LoginMain from "../Login/LoginMain";
 import NovoLogin from '../Login/NovoLogin';
 import Home from '../Components/Home/Home';
 
+//pagehome
+import PageHome from '../Components/Home/PageHome';
 
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import Formulario from "../Components/Atividade/Formulario";
@@ -24,6 +26,9 @@ import EmBreveSmart from "../Components/EmBreve/EmBreveSmart";
 
 //Perfil
 import Perfil from '../Components/Usuario/Perfil';
+
+//Ramais
+import Ramal from '../Components/Ramais/Ramais';
 
 //setores
 //financeiro
@@ -79,6 +84,12 @@ export default function Rotas() {
             <Route path="/Home" element={<Home />}>
                 <Route index element={<EmBreve />} />
             </Route>
+            <Route path="/pageHome" element={<Home />}>
+                <Route index element={<PageHome />}/>
+            </Route>
+            <Route path="/Ramais" element={<Home />}>
+                <Route index element={<Ramal />} />
+            </Route> 
             <Route element={<Home />}>
                 <Route path="/DiretoriaLab" element={<Diretoria />}>
                     <Route path="Dashboard" element={<DashboardHomeDiretoria />}>
