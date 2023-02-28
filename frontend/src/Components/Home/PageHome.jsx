@@ -4,6 +4,11 @@ import Logo from '../../Assets/Imgs/logoZhaz.png';
 
 import { Link } from 'react-router-dom';
 
+import Url from '../Url/Url';
+import axios from 'axios';
+
+import ModalRamal from '../Modal/ModalRamal';
+
 const headerProps = {
     icon: 'home',
     title: 'Home'
@@ -12,12 +17,169 @@ const headerProps = {
 const initialState = {
     RamalComercial: [],
     RamalLabo: [],
-    RamalADM: []
+    RamalADM: [],
+    RamalDiretoria: [],
+    RamalGerencia: []
 }
+
+
+
+const baseUrl = Url("Ramal");
 
 export default class PageHome extends React.Component {
 
     state = { ...initialState }
+
+    componentWillMount() {
+        this.tabelaRamal()
+    }
+
+    async tabelaRamal() {
+        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
+        let ramalComercial = [];
+        let ramalLabo = [];
+        let ramalADM = [];
+        let ramalDiretoria = [];
+        let ramalGerencia = [];
+
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if ("Laboratório" === tabelaNome[i].Departamento) {
+                ramalLabo.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if ("Comercial" === tabelaNome[i].Departamento) {
+                ramalComercial.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if ("Diretoria" === tabelaNome[i].Departamento) {
+                ramalDiretoria.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if ("Gerência" === tabelaNome[i].Departamento) {
+                ramalGerencia.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if (("Financeiro" === tabelaNome[i].Departamento) || ("Fiscal" === tabelaNome[i].Departamento) || ("Compras" === tabelaNome[i].Departamento) ||
+                ("RH" === tabelaNome[i].Departamento) || ("Estoque" === tabelaNome[i].Departamento) || ("Expedição" === tabelaNome[i].Departamento) ||
+                ("Logística" === tabelaNome[i].Departamento) || ("Recepção" === tabelaNome[i].Departamento)) {
+                ramalADM.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal,
+                    Departamento: tabelaNome[i].Departamento
+                })
+            }
+        }
+
+        return this.setState({
+            RamalLabo: ramalLabo,
+            RamalComercial: ramalComercial,
+            RamalDiretoria: ramalDiretoria,
+            RamalGerencia: ramalGerencia,
+            RamalADM: ramalADM
+        })
+    }
+
+    renderTable(Departamento) {
+        return (
+            <table className="table mt-2 table-bordered table-striped" id="tabela">
+                <thead className="table-dark">
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Ramal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.renderDepartamento(Departamento)}
+                </tbody>
+            </table>
+        )
+    }
+
+    renderDepartamento(Departamento) {
+        if (Departamento === "Laboratório") {
+            return this.renderRowsLabo()
+        }
+        if (Departamento === "ADM") {
+            return this.renderRowsADM()
+        }
+        if (Departamento === "Comercial") {
+            return this.renderRowsComercial()
+        }
+        if (Departamento === "Diretoria") {
+            return this.renderRowsDiretoria()
+        }
+        if (Departamento === "Gerência") {
+            return this.renderRowsGerencia()
+        }
+    }
+
+    renderRowsLabo() {
+        return this.state.RamalLabo.map(Ramal => {
+            return (
+                <tr key={(Ramal.id)}>
+                    <td>{Ramal.Usuario}</td>
+                    <td>{Ramal.Ramal}</td>
+                </tr>
+            )
+        })
+    }
+
+    renderRowsComercial() {
+        return this.state.RamalComercial.map(Ramal => {
+            return (
+                <tr key={(Ramal.id)}>
+                    <td>{Ramal.Usuario}</td>
+                    <td>{Ramal.Ramal}</td>
+                </tr>
+            )
+        })
+    }
+
+    renderRowsDiretoria() {
+        return this.state.RamalDiretoria.map(Ramal => {
+            return (
+                <tr key={(Ramal.id)}>
+                    <td>{Ramal.Usuario}</td>
+                    <td>{Ramal.Ramal}</td>
+                </tr>
+            )
+        })
+    }
+
+    renderRowsGerencia() {
+        return this.state.RamalGerencia.map(Ramal => {
+            return (
+                <tr key={(Ramal.id)}>
+                    <td>{Ramal.Usuario}</td>
+                    <td>{Ramal.Ramal}</td>
+                </tr>
+            )
+        })
+    }
+
+    renderRowsADM() {
+        return this.state.RamalADM.map(Ramal => {
+            return (
+                <tr key={(Ramal.id)}>
+                    <td>{Ramal.Usuario} - {Ramal.Departamento}</td>
+                    <td>{Ramal.Ramal}</td>
+                </tr>
+            )
+        })
+    }
 
 
     render() {
@@ -39,14 +201,17 @@ export default class PageHome extends React.Component {
                         </ul>
                     </div>
                     <div className="row mt-5 d-flex justify-content-center">
-                        <div className="col-4 d-flex justify-content-center">
-                            <a className='btn btn-primary' href="https://app2.cosmoserp.com/zhaz/" target="_blank"> <span className='fw-bold display-6'> Cosmos </span> </a>
+                        <div className="col-3 d-flex justify-content-center">
+                            <a className='btn btn-primary' href="https://app2.cosmoserp.com/zhaz/" target="_blank"> <span className='fw-bold h2'> Cosmos </span> </a>
                         </div>
-                        <div className="col-4 d-flex justify-content-center">
-                            <a className='btn btn-primary' href="http://192.168.15.199:3000" target="_blank"> <span className='fw-bold display-6'> Painel OS </span> </a>
+                        <div className="col-3 d-flex justify-content-center">
+                            <a className='btn btn-primary' href="http://192.168.15.199:3000" target="_blank"> <span className='fw-bold h2'> Painel OS </span> </a>
                         </div>
-                        <div className="col-4 d-flex justify-content-center">
-                            <a className='btn btn-primary' href="http://192.168.15.199:8080" target="_blank"> <span className='fw-bold display-6'> Intranet </span> </a>
+                        <div className="col-3 d-flex justify-content-center">
+                            <a className='btn btn-primary' href="http://192.168.15.199:8080" target="_blank"> <span className='fw-bold h2'> Intranet </span> </a>
+                        </div>
+                        <div className="col-3 d-flex justify-content-center">
+                            <a className='btn btn-primary' href="http://192.168.15.199:3001" target="_blank"> <span className='fw-bold h2'> Sala Reunião </span> </a>
                         </div>
                     </div>
                     <div className="row mt-5">
@@ -60,16 +225,16 @@ export default class PageHome extends React.Component {
                     </div>
                     <div className="row mt-5">
                         <div className="col-3 d-flex justify-content-center">
-                            <Link to="/DiretoriaLab" className='btn btn-success'><span className='fw-bold display-6'> Diretoria </span></Link>
+                            <Link to="/DiretoriaLab" className='btn btn-success'><span className='fw-bold h2'> Diretoria </span></Link>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
-                            <Link to="/GerenciaLab" className='btn btn-success'><span className='fw-bold display-6'> Gerência </span></Link>
+                            <Link to="/GerenciaLab" className='btn btn-success'><span className='fw-bold h2'> Gerência </span></Link>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
-                            <Link to="/Atividade" className='btn btn-success'><span className='fw-bold display-6'> Laboratória </span></Link>
+                            <Link to="/Atividade" className='btn btn-success'><span className='fw-bold h2'> Laboratória </span></Link>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
-                            <Link to="/PerfilUsuario" className='btn btn-success'><span className='fw-bold display-6'> Usuário </span></Link>
+                            <Link to="/PerfilUsuario" className='btn btn-success'><span className='fw-bold h2'> Usuário </span></Link>
                         </div>
                     </div>
                     <div className="row mt-5">
@@ -88,20 +253,29 @@ export default class PageHome extends React.Component {
                     </div>
                     <div className="row mt-5">
                         <div className="col-4 d-flex justify-content-center">
-                            <span className='bg-secondary rounded text-light p-2 fw-bold display-6'> Comercial </span>
+                            <ModalRamal nomeBotao="Comercial" corModal="secondary"
+                                Relatorio={this.renderTable("Comercial")} />
                         </div>
                         <div className="col-4 d-flex justify-content-center">
-                            <span className='bg-secondary rounded text-light p-2 fw-bold display-6'> ADM </span>
+                            <ModalRamal nomeBotao="ADM" corModal="secondary"
+                                Relatorio={this.renderTable("ADM")} />
                         </div>
                         <div className="col-4 d-flex justify-content-center">
-                            <span className='bg-secondary rounded text-light p-2 fw-bold display-6'> Laboratório </span>
+                            <ModalRamal nomeBotao="Laboratório" corModal="secondary"
+                                Relatorio={this.renderTable("Laboratório")} />
                         </div>
                     </div>
-                    <div className="row mt-5">
+                    <div className="row mt-5 d-flex justify-content-around">
                         <div className="col-4 d-flex justify-content-center">
-                            
+                            <ModalRamal nomeBotao="Diretoria" corModal="secondary"
+                                Relatorio={this.renderTable("Diretoria")} />
+                        </div>
+                        <div className="col-4 d-flex justify-content-center">
+                            <ModalRamal nomeBotao="Gerência" corModal="secondary"
+                                Relatorio={this.renderTable("Gerência")} />
                         </div>
                     </div>
+
                 </div>
             </Main>
         )

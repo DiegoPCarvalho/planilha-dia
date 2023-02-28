@@ -82,10 +82,7 @@ export default function Rotas() {
                 <Route path="/NovoUsuario" element={<NovoLogin />} />
             </Route>
             <Route path="/Home" element={<Home />}>
-                <Route index element={<EmBreve />} />
-            </Route>
-            <Route path="/pageHome" element={<Home />}>
-                <Route index element={<PageHome />}/>
+                <Route index element={<PageHome />} />
             </Route>
             <Route path="/Ramais" element={<Home />}>
                 <Route index element={<Ramal />} />

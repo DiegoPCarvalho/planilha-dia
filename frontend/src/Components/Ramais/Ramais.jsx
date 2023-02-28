@@ -10,6 +10,9 @@ import $ from 'jquery';
 
 import './Ramal.css';
 
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
+
 
 const headerProps = {
     icon: 'volume-control-phone',
@@ -53,6 +56,33 @@ export default class Ramais extends React.Component {
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
+    }
+
+    confirmar(Ramal) {
+        confirmAlert({
+            title: "Deletar",
+            message: "Deseja Realmente Deletar?",
+            buttons: [
+                {
+                    label: "Sim",
+                    className: "btn btn-danger",
+                    onClick: () => this.remove(Ramal)
+                },
+                {
+                    label: "Não",
+                    className: "btn btn-secondary"
+                }
+            ]
+        })
+
+    }
+
+    remove(Ramal) {
+        axios.delete(`${baseUrl}/${Ramal.id}`)
+            .then(resp => {
+                const list = this.getUpdatedList(Ramal, false)
+                this.setState({ list })
+            })
     }
 
     mensagemSalvo() {
@@ -129,7 +159,7 @@ export default class Ramais extends React.Component {
                                 <option>Expedição</option>
                                 <option>Logística</option>
                                 <option>Recepção</option>
-                                <option>Laborátorio</option>
+                                <option>Laboratório</option>
                                 <option>Comercial</option>
                             </select>
                         </div>
@@ -185,13 +215,44 @@ export default class Ramais extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.renderRows()}
+                    {this.renderAdmUser(localStorage.AdmGeral)}
                 </tbody>
             </table>
         )
     }
 
-    renderRows() {
+    renderAdmUser(Admin){
+        if (Admin === "1") {
+            return this.renderRowsADM()
+        } else if (Admin === "0") {
+            return this.renderRowsUser()
+        }
+    }
+
+    renderRowsADM() {
+        return this.state.list.map(Ramal => {
+            return (
+                <tr key={(Ramal.id)}>
+                    <td>{Ramal.id}</td>
+                    <td>{Ramal.Departamento}</td>
+                    <td>{Ramal.Usuario}</td>
+                    <td>{Ramal.Ramal}</td>
+                    <td className="d-flex justify-content-around">
+                        <button className='btn btn-warning mx-1'
+                            onClick={() => this.load(Ramal)}>
+                            <i className="fa fa-pencil"></i>
+                        </button>
+                        <button className="btn btn-danger mx-2"
+                            onClick={() => this.confirmar(Ramal)}>
+                            <i className="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            )
+        })
+    }
+
+    renderRowsUser() {
         return this.state.list.map(Ramal => {
             return (
                 <tr key={(Ramal.id)}>
