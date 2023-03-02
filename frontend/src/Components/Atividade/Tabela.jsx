@@ -52,7 +52,7 @@ export default class Tabela extends React.Component {
                         'csv', 'excel', 'print'
                     ]
                 });
-            }, 100)
+            }, 1000)
         });
     }
 

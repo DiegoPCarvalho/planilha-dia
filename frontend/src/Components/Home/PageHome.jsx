@@ -231,7 +231,7 @@ export default class PageHome extends React.Component {
                             <Link to="/GerenciaLab" className='btn btn-success'><span className='fw-bold h2'> Gerência </span></Link>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
-                            <Link to="/Atividade" className='btn btn-success'><span className='fw-bold h2'> Laboratória </span></Link>
+                            <Link to="/Atividade" className='btn btn-success'><span className='fw-bold h2'> Laboratório </span></Link>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
                             <Link to="/PerfilUsuario" className='btn btn-success'><span className='fw-bold h2'> Usuário </span></Link>
