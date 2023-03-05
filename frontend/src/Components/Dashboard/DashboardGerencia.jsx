@@ -21402,10 +21402,10 @@ export default class DashboardGerencia extends React.Component {
                 </div>
                 <div className="row mt-4">
                     <div className="col-12 col-md-5 sombra mx-3 flex-fill">
-                        <Grafico tipo="bar" titulo="Ordem de Serviço por Técnicos"
+                        <Grafico tipo="bar" titulo="Produtividade por Técnicos"
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
-                            nomeSerie="Ordens de Serviço"
+                            nomeSerie="Serviço"
                             cor={true}
                             dado={[
                                 { name: "Diego C", y: this.state.listarDiegoC },

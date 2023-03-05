@@ -254,7 +254,8 @@ export default class PageHome extends React.Component {
                     <div className="row mt-5">
                         <div className="col-4 d-flex justify-content-center">
                             <ModalRamal nomeBotao="Comercial" corModal="secondary"
-                                Relatorio={this.renderTable("Comercial")} />
+                                Relatorio={this.renderTable("Comercial")}
+                             />
                         </div>
                         <div className="col-4 d-flex justify-content-center">
                             <ModalRamal nomeBotao="ADM" corModal="secondary"

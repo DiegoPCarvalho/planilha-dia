@@ -17,6 +17,9 @@ export default function graficoGeral(props) {
         title: {
             text: props.titulo
         },
+        subtitle: {
+            text: props.subTitulo
+        },
         accessibility: {
             announceNewData: {
                 enabled: true
@@ -30,6 +33,17 @@ export default function graficoGeral(props) {
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
+                innerSize: props.size,
+                dataLabels: {
+                    enabled: true,
+                    format: props.texto,
+                    style: {
+                        color: (HighCharts.theme && HighCharts.theme.contrastTextColor) || 'black'
+                    }
+                },
+                showInLegend: true
+            },
+            column: {
                 dataLabels: {
                     enabled: true,
                     format: props.texto,
@@ -38,27 +52,27 @@ export default function graficoGeral(props) {
                     }
                 }
             },
-           column: {
-            dataLabels: {
-                enabled: true,
-                format: '{point.y:1f}'
-              }
-            },
             bar: {
                 dataLabels: {
                     enabled: true,
-                    format: '{point.y:1f}'
-                  }
+                    format: props.texto,
+                    style: {
+                        color: (HighCharts.theme && HighCharts.theme.contrastTextColor) || 'black'
+                    }
+                }
             },
             spline: {
-                    dataLabels: {
-                        enabled: true,
-                        format: '{point.y:1f}'
-                      }
+                dataLabels: {
+                    enabled: true,
+                    format: props.texto,
+                    style: {
+                        color: (HighCharts.theme && HighCharts.theme.contrastTextColor) || 'black'
+                    }
+                }
             }
         },
         legend: {
-            enabled: false
+            enabled: props.Legenda,
         },
         xAxis: {
             type: 'category',
@@ -80,9 +94,9 @@ export default function graficoGeral(props) {
                 name: props.nomeSerie,
                 colorByPoint: props.cor,
                 data: props.dado,
-               
+
             }
-            
+
         ],
         drilldown: {
             breadcrumbs: {

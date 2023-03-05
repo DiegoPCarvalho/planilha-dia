@@ -43,7 +43,7 @@ export default class MetaLab extends React.Component {
                         'csv', 'excel', 'print'
                     ]
                 });
-            }, 100)
+            }, 1000)
         });
 
         this.consultarBanco()

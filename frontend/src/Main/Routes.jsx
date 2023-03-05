@@ -90,9 +90,9 @@ export default function Rotas() {
             </Route> 
             <Route element={<Home />}>
                 <Route path="/DiretoriaLab" element={<Diretoria />}>
-                    <Route path="Dashboard" element={<DashboardHomeDiretoria />}>
-                        <Route path="DashboardAtividade" element={<DashboardDiretoria />} />
-                        <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
+                    <Route path="Dashboard" element={<DashboardGeral />}>
+                        {/* <Route path="DashboardAtividade" element={<DashboardDiretoria />} />
+                        <Route path="DashboardCentroCusto" element={<EmBreveSmart />} /> */}
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoDiretoria />}>
                         <Route path="Solicitacoes" element={<SolicitarDir />} />
@@ -104,9 +104,9 @@ export default function Rotas() {
             </Route>
             <Route element={<Home />}>
                 <Route path="/GerenciaLab" element={<HomeGerenciaLab />}>
-                    <Route path="Dashboard" element={<DashboardHomeGerencia />}>
-                        <Route path="DashboardAtividade" element={<DashboardGerencia />} />
-                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} />
+                    <Route path="Dashboard" element={<DashboardGeral />}>
+                        {/* <Route path="DashboardAtividade" element={<DashboardGerencia />} />
+                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} /> */}
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
                         <Route path="Solicitacoes" element={<SolicitacoesLab />} />

@@ -11,7 +11,9 @@
       "Modelo": "CK3A1",
       "NS": "21021039363",
       "Servico": "Laudo",
+      "Placa": "Recuperada",
       "Classificacao": "Defeito",
+      "Contrato": "Avulso",
       "Observacao": "Recuperação do conector do sync/charge - rec. Módulo Laser",
       "Tecnico": "Diego Carvalho",
       "Status": ""
@@ -153,7 +155,8 @@
       "id": 9
     },
     {
-      "Data": "2023-02-01T12:17:27.038Z",
+      "id": 10,
+      "Data": "01/02/2023",
       "Dia": 1,
       "Mes": 2,
       "Ano": 2023,
@@ -163,11 +166,12 @@
       "Modelo": "MC32N0G",
       "NS": "1425523020223",
       "Servico": "Laudo",
+      "Placa": "Recuperada",
       "Classificacao": "Defeito",
+      "Contrato": "Avulso",
       "Observacao": "",
-      "Status": "",
       "Tecnico": "Diego Carvalho",
-      "id": 10
+      "Status": ""
     },
     {
       "Data": "2023-02-01T11:06:36.856Z",
@@ -41700,6 +41704,63 @@
       "Status": "",
       "Tecnico": "Bruno Bedani",
       "id": 2419
+    },
+    {
+      "Data": "2023-03-04T13:44:42.957Z",
+      "Dia": 4,
+      "Mes": 3,
+      "Ano": 2023,
+      "OS": "12356456",
+      "Cliente": "askdbs",
+      "Equipamento": "Leitor de Dados",
+      "Modelo": "sdsdfsd",
+      "NS": "sdfdsf",
+      "Servico": "Recuperação de Placa",
+      "Placa": "Não Recuperada",
+      "Classificacao": "Desgaste de Uso",
+      "Contrato": "Avulso",
+      "Observacao": "sdfdsfsdfsdfdsfsd",
+      "Status": "Pronto",
+      "Tecnico": "Diego Carvalho",
+      "id": 2420
+    },
+    {
+      "Data": "2023-03-04T19:14:51.293Z",
+      "Dia": 4,
+      "Mes": 3,
+      "Ano": 2023,
+      "OS": "asdasd",
+      "Cliente": "asdasd",
+      "Equipamento": "Cabo Confeccionado",
+      "Modelo": "asdasd",
+      "NS": "asdasdas",
+      "Servico": "Confecção de Cabos",
+      "Placa": "",
+      "Classificacao": "",
+      "Contrato": "Avulso",
+      "Observacao": "",
+      "Status": "",
+      "Tecnico": "Diego Carvalho",
+      "id": 2421
+    },
+    {
+      "id": 2422,
+      "Data": "04/03/2023",
+      "Dia": 4,
+      "Mes": 3,
+      "Ano": 2023,
+      "OS": "asdasd",
+      "Cliente": "asdsad",
+      "Equipamento": "Leitor de RFID",
+      "Modelo": "asdasd",
+      "NS": "asdasda",
+      "Servico": "Revisão de Compra",
+      "Placa": "",
+      "Classificacao": "Defeito",
+      "Contrato": "Avulso",
+      "Observacao": "",
+      "Tecnico": "Diego Carvalho",
+      "Status": "Pronto"
     }
   ],
   "LoginUsuario": [
@@ -42135,7 +42196,29 @@
       "Finalizado": "Não"
     }
   ],
-  "Meta": [],
+  "Meta": [
+    {
+      "Mes": 4,
+      "Ano": 2023,
+      "Tecnico": "Diego Carvalho",
+      "Meta": "350",
+      "id": 1
+    },
+    {
+      "Mes": 3,
+      "Ano": 2023,
+      "Tecnico": "Natanael Silva Lima",
+      "Meta": "250",
+      "id": 2
+    },
+    {
+      "Mes": 3,
+      "Ano": 2023,
+      "Tecnico": "Diego Carvalho",
+      "Meta": "250",
+      "id": 3
+    }
+  ],
   "Ramal": [
     {
       "Departamento": "Laboratório",

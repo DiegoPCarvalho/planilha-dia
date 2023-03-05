@@ -46,7 +46,7 @@ export default class Ramais extends React.Component {
                         'csv', 'excel', 'print'
                     ]
                 });
-            }, 100)
+            }, 1000)
         });
 
         this.consultarBanco()

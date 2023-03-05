@@ -11,7 +11,7 @@ export default function ModalAtendimento(props) {
     return (
         <>
             <Button variant={props.corModal} onClick={handleShow} className={props.classe}>
-                <span className='h3 fw-bold'>{props.nomeBotao}</span>
+                <span className={props.classe}>{props.nomeBotao}</span>
             </Button>
 
             <Modal show={show} onHide={handleClose} size={props.tamanho}>

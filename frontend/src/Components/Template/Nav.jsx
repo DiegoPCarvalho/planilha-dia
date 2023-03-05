@@ -17,7 +17,7 @@ export default props =>
                         <ul>
                             <li><Link to="/DiretoriaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
                             {/* <li><Link to="/EmBreve" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li> */}
+                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li>*/}
                         </ul>
                     </li>
                     <li>

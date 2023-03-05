@@ -32,8 +32,8 @@ export default class HomeDiretoria extends React.Component {
                         </div>
                     </div>
                     <div className="d-flex flex-row">
-                        <Link to="/DiretoriaLab/Dashboard" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbords</Link>
-                        <Link to="/DiretoriaLab/CentroCusto" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link>
+                        <Link to="/DiretoriaLab/Dashboard" className="rounded flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbord Atividade</Link>
+                        {/* <Link to="/DiretoriaLab/CentroCusto" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link> */}
                     </div>
                     <div className="row mt-2 ">
                         <Outlet />

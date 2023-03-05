@@ -20,6 +20,7 @@ const initialState = {
         Modelo: '',
         NS: '',
         Servico: '',
+        Placa: '',
         Classificacao: '',
         Contrato: '',
         Observacao: '',
@@ -77,6 +78,7 @@ export default class Tabela extends React.Component {
                     Modelo: tabelaNome[i].Modelo,
                     NS: tabelaNome[i].NS,
                     Servico: tabelaNome[i].Servico,
+                    Placa: tabelaNome[i].Placa,
                     Classificacao: tabelaNome[i].Classificacao,
                     Contrato: tabelaNome[i].Contrato,
                     Observacao: tabelaNome[i].Observacao,
@@ -274,6 +276,19 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
+                                <label className='fw-bold'>Recuperação de Placa: </label>
+                                <select class="form-select" aria-label="Default select example"
+                                    name="Placa"
+                                    onChange={e => this.updateField(e)}
+                                    value={this.state.Atividade.Placa}>
+                                    <option selected>...</option>
+                                    <option>Recuperada</option>
+                                    <option>Não Recuperada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <div className="form-group">
                                 <label className='fw-bold'>Classificação: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Classificacao"
@@ -308,16 +323,6 @@ export default class Tabela extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12">
-                            <div className="form-group">
-                                <label className='fw-bold'>Observação: </label>
-                                <textarea className="form-control"
-                                    name="Observacao" rows="5"
-                                    value={this.state.Atividade.Observacao}
-                                    onChange={e => this.updateField(e)}
-                                    placeholder="Digite a Sua Observação..." />
-                            </div>
-                        </div>
                         <div className="col-12 col-md-6">
                             <div className="form-group">
                                 <label className='fw-bold'>Status: </label>
@@ -334,6 +339,16 @@ export default class Tabela extends React.Component {
                                     <option>Reprovado</option>
                                     <option>Revisado</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div className="col-12">
+                            <div className="form-group">
+                                <label className='fw-bold'>Observação: </label>
+                                <textarea className="form-control"
+                                    name="Observacao" rows="5"
+                                    value={this.state.Atividade.Observacao}
+                                    onChange={e => this.updateField(e)}
+                                    placeholder="Digite a Sua Observação..." />
                             </div>
                         </div>
                     </div>
@@ -366,6 +381,7 @@ export default class Tabela extends React.Component {
             <table className="table mt-5 table-bordered table-striped" id="tabela">
                 <thead className="table-dark">
                     <tr>
+                        <th>Index</th>
                         <th>Data</th>
                         <th>OS</th>
                         <th>Cliente</th>
@@ -389,6 +405,7 @@ export default class Tabela extends React.Component {
         return this.state.list.map(Atividade => {
             return (
                 <tr key={(Atividade.id)}>
+                    <td>{Atividade.id}</td>
                     <td>{Atividade.Data}</td>
                     <td>{Atividade.OS}</td>
                     <td>{Atividade.Cliente}</td>

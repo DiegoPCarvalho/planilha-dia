@@ -19,6 +19,7 @@ const initialState = {
         Modelo: '',
         NS: '',
         Servico: '',
+        Placa:'',
         Classificacao: '',
         Contrato:'',
         Observacao: '',
@@ -103,7 +104,7 @@ export default class Formulário extends React.Component {
             <form className="row g-3" action="javascript:myFunction(); return false;">
                 <div className="form">
                     <div className="row">
-                        <div className="col-12 col-md-6">
+                        <div className="col-6 col-md-2">
                             <div className="form-group">
                                 <label className='fw-bold'>OS: </label>
                                 <input type="text" className="form-control"
@@ -114,7 +115,7 @@ export default class Formulário extends React.Component {
                                     required />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-6 col-md-6">
                             <div className="form-group">
                                 <label className='fw-bold'>Cliente: </label>
                                 <input type="text" className="form-control"
@@ -124,7 +125,7 @@ export default class Formulário extends React.Component {
                                     placeholder="Digite o Cliente..." required />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4">
                             <div className="form-group">
                                 <label className='fw-bold'>Equipamento: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -150,7 +151,7 @@ export default class Formulário extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Modelo: </label>
                                 <input type="text" className="form-control"
@@ -160,7 +161,7 @@ export default class Formulário extends React.Component {
                                     placeholder="Digite o modelo..." required />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Número de Serie</label>
                                 <input type="text" className="form-control"
@@ -170,7 +171,7 @@ export default class Formulário extends React.Component {
                                     placeholder="Digite o Numero de Serie..." />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Serviço: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -194,7 +195,20 @@ export default class Formulário extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
+                            <div className="form-group">
+                                <label className='fw-bold'>Recuperação de Placa: </label>
+                                <select class="form-select" aria-label="Default select example"
+                                    name="Placa"
+                                    onChange={e => this.updateField(e)}
+                                    value={this.state.Atividade.Placa}>
+                                    <option selected>...</option>
+                                    <option>Recuperada</option>
+                                    <option>Não Recuperada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-4 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Classificação: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -208,7 +222,7 @@ export default class Formulário extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Contrato: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -221,26 +235,16 @@ export default class Formulário extends React.Component {
                                     <option>Contrato Assaí</option>
                                     <option>Contrato C&A</option>
                                     <option>Contrato B2W</option>
-                                    <option>Contrato Atacadão</option>
+                                    {/* <option>Contrato Atacadão</option> */}
                                     <option>Contrato Boticário</option>
-                                    <option>Contrato Shopee</option>
+                                    {/* <option>Contrato Shopee</option> */}
                                     <option>Contrato Locação</option>
                                     <option>Contrato Friozem</option>
                                     <option>Contrato Comfrio</option>
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12">
-                            <div className="form-group">
-                                <label className='fw-bold'>Observação: </label>
-                                <textarea className="form-control"
-                                    name="Observacao" rows="5"
-                                    value={this.state.Atividade.Observacao}
-                                    onChange={e => this.updateField(e)}
-                                    placeholder="Digite a Sua Observação..." />
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Status: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -256,6 +260,16 @@ export default class Formulário extends React.Component {
                                     <option>Reprovado</option>
                                     <option>Revisado</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div className="col-12 mt-2">
+                            <div className="form-group">
+                                <label className='fw-bold'>Observação: </label>
+                                <textarea className="form-control"
+                                    name="Observacao" rows="5"
+                                    value={this.state.Atividade.Observacao}
+                                    onChange={e => this.updateField(e)}
+                                    placeholder="Digite a Sua Observação..." />
                             </div>
                         </div>
                     </div>
