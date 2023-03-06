@@ -280,7 +280,7 @@ export default class Ramais extends React.Component {
                             <img src={Logo} alt="" />
                         </div>
                         <div className="col-6 d-flex justify-content-end align-items-start">
-                            <Link to="/pageHome" className='btn btn-danger'><span className='fw-bold h3'> Voltar </span></Link>
+                            <Link to="/Home" className='btn btn-danger'><span className='fw-bold h3'> Voltar </span></Link>
                         </div>
                     </div>
                     <div className="row mt-5">
