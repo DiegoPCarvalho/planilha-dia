@@ -1839,7 +1839,7 @@ export default class DashboardGeral extends React.Component {
                     let totalRC = Object.keys(dadoRC).length;
                     let totalRL = Object.keys(dadoRL).length;
 
-                    let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                     let totalRealOS = [];
                     for (let i = 0; i < totalOS.length; i++) {
                         totalRealOS.unshift(totalOS[i].OS)
@@ -3624,7 +3624,7 @@ export default class DashboardGeral extends React.Component {
                     let totalRC = Object.keys(dadoRC).length;
                     let totalRL = Object.keys(dadoRL).length;
 
-                    let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                     let totalRealOS = [];
                     for (let i = 0; i < totalOS.length; i++) {
                         totalRealOS.unshift(totalOS[i].OS)
@@ -5408,7 +5408,7 @@ export default class DashboardGeral extends React.Component {
                     let totalRC = Object.keys(dadoRC).length;
                     let totalRL = Object.keys(dadoRL).length;
 
-                    let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                     let totalRealOS = [];
                     for (let i = 0; i < totalOS.length; i++) {
                         totalRealOS.unshift(totalOS[i].OS)
@@ -7192,7 +7192,7 @@ export default class DashboardGeral extends React.Component {
                     let totalRC = Object.keys(dadoRC).length;
                     let totalRL = Object.keys(dadoRL).length;
 
-                    let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                     let totalRealOS = [];
                     for (let i = 0; i < totalOS.length; i++) {
                         totalRealOS.unshift(totalOS[i].OS)
@@ -10941,7 +10941,7 @@ export default class DashboardGeral extends React.Component {
                       let totalRC = Object.keys(dadoRC).length;
                       let totalRL = Object.keys(dadoRL).length;
   
-                      let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                      let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                       let totalRealOS = [];
                       for (let i = 0; i < totalOS.length; i++) {
                           totalRealOS.unshift(totalOS[i].OS)
@@ -12823,7 +12823,7 @@ export default class DashboardGeral extends React.Component {
                     let totalRC = Object.keys(dadoRC).length;
                     let totalRL = Object.keys(dadoRL).length;
 
-                    let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                     let totalRealOS = [];
                     for (let i = 0; i < totalOS.length; i++) {
                         totalRealOS.unshift(totalOS[i].OS)
@@ -14705,7 +14705,7 @@ export default class DashboardGeral extends React.Component {
                      let totalRC = Object.keys(dadoRC).length;
                      let totalRL = Object.keys(dadoRL).length;
  
-                     let totalOS = dadoLA.concat(dadoSR, dadoCO, dadoMMV, dadoRV, dadoRC)
+                     let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
                      let totalRealOS = [];
                      for (let i = 0; i < totalOS.length; i++) {
                          totalRealOS.unshift(totalOS[i].OS)

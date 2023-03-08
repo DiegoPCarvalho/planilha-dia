@@ -4570,62 +4570,6 @@ export default class Relatorio extends React.Component {
                     }
                     //#endregion
 
-
-                            if ("Revisão/Manutenção de Locação" === tabelaNome[i].Servico) {
-                                dadoFRL.push({
-                                    OS: tabelaNome[i].OS
-                                })
-
-                                if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLCol.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLLei.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLBusca.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLImp.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLCar4.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLCar3.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLCar5.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLCar6.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLBerco.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Fonte de Alimentação" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLFonte.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLCabo.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                } else if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                    dadoFRLBateria.push({
-                                        OS: tabelaNome[i].OS
-                                    })
-                                }
-                            }
                             //#endregion        
                         }
                 //#endregion

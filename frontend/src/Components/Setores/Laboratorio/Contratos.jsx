@@ -46,7 +46,9 @@ const initialState = {
 
     //total Equipamentos
     listarTotalEquip: [0],
-    listarTotalGarantia: [0]
+    listarTotalGarantia: [0],
+
+    listarTotalOS: [0]
 }
 
 export default class Contratos extends React.Component {
@@ -661,6 +663,13 @@ export default class Contratos extends React.Component {
             let totalCabo = Object.keys(dadoCabo).length;
             let totalBateria = Object.keys(dadoBateria).length;
 
+            let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
+                     let totalRealOS = [];
+                     for (let i = 0; i < totalOS.length; i++) {
+                         totalRealOS.unshift(totalOS[i].OS)
+                     }
+ 
+            let totalSemRepOS = [... new Set(totalRealOS)]
 
             const totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
                 totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
@@ -697,7 +706,9 @@ export default class Contratos extends React.Component {
                 listarTotalBateria: totalBateria,
 
                 //total
-                listarTotalEquip: totalEquip
+                listarTotalEquip: totalEquip,
+
+                listarTotalOS: totalSemRepOS.length
             })
 
         } catch (erro) {
@@ -829,7 +840,7 @@ export default class Contratos extends React.Component {
                     <div className="row my-3 d-flex justify-content-center ">
                         <div className="col-3 d-flex flex-column justify-content-center text-light">
                             <CardGD bg="dark" nomeTitulo="Total OS's" icone={<i class="fa fa-3x fa-codepen" aria-hidden="true"></i>}
-                                dado={this.state.listarLA + this.state.listarSR + this.state.listarCO} />
+                                dado={this.state.listarTotalOS} />
                         </div>
                         <div className="col-3 d-flex flex-column justify-content-center text-light">
                             <CardGD bg="success" nomeTitulo="Total Serviço" icone={<i class="fa fa-3x fa-server" aria-hidden="true"></i>}
