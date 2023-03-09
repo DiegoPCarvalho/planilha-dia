@@ -58,6 +58,7 @@ import SolicitacoesLab from "../Components/Setores/Gerencia/LaboratorioGerencia/
 import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Aprovados";
 import MetaLab from "../Components/Setores/Gerencia/MetaLab";
 import DashboardGeral from "../Components/Dashboard/DashboardGeralGerencia";
+import TabelaGeral from "../Components/Setores/Gerencia/LaboratorioGerencia/TabelaGeral";
 
 //Laboratorio
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
@@ -91,8 +92,8 @@ export default function Rotas() {
             <Route element={<Home />}>
                 <Route path="/DiretoriaLab" element={<Diretoria />}>
                     <Route path="Dashboard" element={<DashboardGeral />}>
-                        {/* <Route path="DashboardAtividade" element={<DashboardDiretoria />} />
-                        <Route path="DashboardCentroCusto" element={<EmBreveSmart />} /> */}
+                        <Route path="DashboardAtividade" element={<DashboardDiretoria />} />
+                        <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoDiretoria />}>
                         <Route path="Solicitacoes" element={<SolicitarDir />} />
@@ -105,8 +106,8 @@ export default function Rotas() {
             <Route element={<Home />}>
                 <Route path="/GerenciaLab" element={<HomeGerenciaLab />}>
                     <Route path="Dashboard" element={<DashboardGeral />}>
-                        {/* <Route path="DashboardAtividade" element={<DashboardGerencia />} />
-                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} /> */}
+                        <Route path="DashboardAtividade" element={<DashboardGerencia />} />
+                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
                         <Route path="Solicitacoes" element={<SolicitacoesLab />} />
@@ -114,6 +115,7 @@ export default function Rotas() {
                         <Route path="Finalizados" element={<FinalizadosLab />} />
                     </Route>
                     <Route path="Meta" element={<MetaLab />}/>
+                    <Route path="TabelaGeral" element={<TabelaGeral />}/>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>
                     <Route path="Financeiro" element={<PageFinanceiro />}>
