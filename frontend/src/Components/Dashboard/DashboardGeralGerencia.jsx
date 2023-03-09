@@ -15218,7 +15218,7 @@ export default class DashboardGeral extends React.Component {
                     <div className="col-2 text-light d-flex flex-column justify-content-center">
                         <div className="row">
                             <div className="col-12 d-flex justify-content-center">
-                                <ModalProd corModal="secondary" nomeBotao="Prod. Diaria" tamanho="lg"
+                                <ModalProd corModal="secondary" nomeBotao="Prod. Diaria" tamanho="xl"
                                     classe='h4 fw-bold'
                                     Relatorio={
                                         <Grafico tipo="column" titulo="Produtividade por Dia"
