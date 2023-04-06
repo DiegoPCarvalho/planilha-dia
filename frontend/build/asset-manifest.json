@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.06b1cde3.css",
+    "main.js": "/static/js/main.6bc273c4.js",
+    "static/media/telaFundoLogin.gif": "/static/media/telaFundoLogin.10c13698f9cffc876832.gif",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/GABRIEL KAIQUE.png": "/static/media/GABRIEL KAIQUE.b07d6eb056d85bb43bbd.png",
+    "static/media/LUCAS FELICIAN.png": "/static/media/LUCAS FELICIAN.6b6c6e44b83b53b12b82.png",
+    "static/media/BRUNO BEDANI (1).png": "/static/media/BRUNO BEDANI (1).01b88df5d6ee002effda.png",
+    "static/media/VINICIUS GOMES .png": "/static/media/VINICIUS GOMES .83e1bd018b5bbec119a1.png",
+    "static/media/DIEGO ALMEIDA.png": "/static/media/DIEGO ALMEIDA.67000ccf20c88d7d429e.png",
+    "static/media/MATEUS DOVAL.png": "/static/media/MATEUS DOVAL.8712c83618284eac451f.png",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/KLEITON PAULINO.png": "/static/media/KLEITON PAULINO.f1c8c5abd6810e0ae60d.png",
+    "static/media/DIOGO SELMINI.png": "/static/media/DIOGO SELMINI.88be7fd96aa5c215b322.png",
+    "static/media/ANDERSON RAMOS (1).png": "/static/media/ANDERSON RAMOS (1).645abc6db9e949803b62.png",
+    "static/media/DOUGLAS ALTENFELDER.png": "/static/media/DOUGLAS ALTENFELDER.de44114f5a8461f890cb.png",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/NATANAEL MILTON.png": "/static/media/NATANAEL MILTON.9519e4a90fb7f3a1abd7.png",
+    "static/media/DIEGO CARVALHO.png": "/static/media/DIEGO CARVALHO.b79ec2a39f9fcdbb2818.png",
+    "static/media/logo.png": "/static/media/logo.f38c25782706b4691aa2.png",
+    "static/media/logoZhaz.png": "/static/media/logoZhaz.f38c25782706b4691aa2.png",
+    "index.html": "/index.html",
+    "main.06b1cde3.css.map": "/static/css/main.06b1cde3.css.map",
+    "main.6bc273c4.js.map": "/static/js/main.6bc273c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06b1cde3.css",
+    "static/js/main.6bc273c4.js"
+  ]
+}
