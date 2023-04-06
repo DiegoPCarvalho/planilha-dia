@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Main from '../Template/Main';
 import Logo from '../../Assets/Imgs/logoZhaz.png';
 
@@ -208,7 +208,7 @@ export default class PageHome extends React.Component {
                             <a className='btn btn-primary' href="http://192.168.15.199:3000" target="_blank"> <span className='fw-bold h2'> Painel OS </span> </a>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
-                            <a className='btn btn-primary' href="http://192.168.15.199:8080" target="_blank"> <span className='fw-bold h2'> Intranet </span> </a>
+                            <a className='btn btn-primary' href="http://192.168.15.199:8080/intranet/login-2-2/" target="_blank"> <span className='fw-bold h2'> Intranet </span> </a>
                         </div>
                         <div className="col-3 d-flex justify-content-center">
                             <a className='btn btn-primary' href="http://192.168.15.199:3001" target="_blank"> <span className='fw-bold h2'> Sala Reunião </span> </a>
