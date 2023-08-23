@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 5001 --host 192.168.15.199",
-    "dev": "nodemon app.js"
+    "start": "json-server --watch db.json --port 5001 --host 192.168.15.157",
+    "dev": "nodemon app.js",
+    "test": "node app.js"
   },
   "author": "Diego Carvalho",
   "license": "ISC",
