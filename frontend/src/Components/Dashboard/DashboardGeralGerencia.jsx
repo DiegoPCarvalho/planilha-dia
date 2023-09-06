@@ -286,11 +286,8 @@ const initialState = {
     listarComfrio: [0],
     listarTotalContrato: [0],
 
-<<<<<<< HEAD
-    optionTec: [0]
-=======
     optionsTec: [0]
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
+
 }
 
 const baseUrl = Url("Geral");
@@ -427,38 +424,21 @@ export default class DashboardGeral extends React.Component {
             //Geral Tecnico
             if ((tecnico !== "Todos") && (ano === "Todos") && (mes === "Todos") && (dia === "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
-<<<<<<< HEAD
-               
-=======
-                //this.validarFoto("Todos")
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
+
             }
             //Ano Tecnico
             if ((tecnico !== "Todos") && (ano !== "Todos") && (mes === "Todos") && (dia === "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
-<<<<<<< HEAD
-               
-=======
-                //this.validarFoto("Todos")
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
+
             }
             //Mes Ano Tecnico
             if ((tecnico !== "Todos") && (ano !== "Todos") && (mes !== "Todos") && (dia === "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
-<<<<<<< HEAD
-                
-=======
-                //this.validarFoto("Todos")
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
             }
             //Dia Mes Ano Tecnico
             if ((tecnico !== "Todos") && (ano !== "Todos") && (mes !== "Todos") && (dia !== "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
-<<<<<<< HEAD
                 
-=======
-                //this.validarFoto("Todos")
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
             }
         }
         //#endregion
@@ -9673,21 +9653,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-<<<<<<< HEAD
                     let dadoGabriel = [];
                     let dadoDiegoA = [];
                     let dadoMarlon = [];
                     let dadoCaua = [];
                     let dadoAnderson = [];
                     let dadoAlisson = [];
-=======
-                    let dadoMarcio = [];
-                    let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
-                    let dadoDiegoA = [];
-                    let dadoAllan = [];
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -10555,20 +10526,11 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-<<<<<<< HEAD
-=======
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-<<<<<<< HEAD
                             if (v.match(/Marlon/)) {
                                 dadoMarlon.push({
                                     OS: tabelaNome[i].OS
@@ -10576,15 +10538,6 @@ export default class DashboardGeral extends React.Component {
                             }
                             if (v.match(/Cauã/)) {
                                 dadoCaua.push({
-=======
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -10593,7 +10546,6 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-<<<<<<< HEAD
                             if (v.match(/Alisson/)) {
                                 dadoAlisson.push({
                                     OS: tabelaNome[i].OS
@@ -10601,10 +10553,6 @@ export default class DashboardGeral extends React.Component {
                             }
                             if (v.match(/Anderson/)) {
                                 dadoAnderson.push({
-=======
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -11044,21 +10992,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-<<<<<<< HEAD
                     let totalGabriel = Object.keys(dadoGabriel).length;
                     let totalMarlon = Object.keys(dadoMarlon).length;
                     let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
                     let totalAlisson = Object.keys(dadoAlisson).length;
                     let totalAnderson = Object.keys(dadoAnderson).length;
-=======
-                    let totalMarcio = Object.keys(dadoMarcio).length;
-                    let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
-                    let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -11331,21 +11270,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-<<<<<<< HEAD
                         listarGabriel: totalGabriel,
                         listarMarlon: totalMarlon,
                         listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
                         listarAlisson: totalAlisson,
                         listarAnderson: totalAnderson,
-=======
-                        listarMarcio: totalMarcio,
-                        listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
-                        listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -13491,21 +13421,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-<<<<<<< HEAD
                     let dadoGabriel = [];
                     let dadoDiegoA = [];
                     let dadoMarlon = [];
                     let dadoCaua = [];
                     let dadoAnderson = [];
                     let dadoAlisson = [];
-=======
-                    let dadoMarcio = [];
-                    let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
-                    let dadoDiegoA = [];
-                    let dadoAllan = [];
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -14373,36 +14294,18 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-<<<<<<< HEAD
-=======
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-<<<<<<< HEAD
                             if (v.match(/Marlon/)) {
                                 dadoMarlon.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
                             if (v.match(/Cauã/)) {
-                                dadoCaua.push({
-=======
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
+                                dadoCaua.push({ 
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -14411,7 +14314,6 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-<<<<<<< HEAD
                             if (v.match(/Alisson/)) {
                                 dadoAlisson.push({
                                     OS: tabelaNome[i].OS
@@ -14419,10 +14321,7 @@ export default class DashboardGeral extends React.Component {
                             }
                             if (v.match(/Anderson/)) {
                                 dadoAnderson.push({
-=======
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
+
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -14862,21 +14761,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-<<<<<<< HEAD
                     let totalGabriel = Object.keys(dadoGabriel).length;
                     let totalMarlon = Object.keys(dadoMarlon).length;
                     let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
                     let totalAlisson = Object.keys(dadoAlisson).length;
                     let totalAnderson = Object.keys(dadoAnderson).length;
-=======
-                    let totalMarcio = Object.keys(dadoMarcio).length;
-                    let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
-                    let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -15149,21 +15039,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-<<<<<<< HEAD
                         listarGabriel: totalGabriel,
                         listarMarlon: totalMarlon,
                         listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
                         listarAlisson: totalAlisson,
                         listarAnderson: totalAnderson,
-=======
-                        listarMarcio: totalMarcio,
-                        listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
-                        listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -15271,8 +15152,6 @@ export default class DashboardGeral extends React.Component {
 
     async BuscarTec() {
         const tec = await axios(baseUrl3).then(resp => resp.data)
-<<<<<<< HEAD
-=======
 
         let dadosTec = []
 
@@ -15296,30 +15175,6 @@ export default class DashboardGeral extends React.Component {
         )
       })
     }
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
-
-        let dadosTec = []
-
-        for (let i = 0; i < tec.length; i++) {
-            if ("Laborátorio" === tec[i].departamento) {
-                dadosTec.push({
-                    nome: tec[i].nomeCompleto
-                })
-            }
-        }
-
-        return this.setState ({
-            optionTec: dadosTec
-        })
-    }
-
-    tecnicos() {
-      return this.state.optionTec.map(Nome => {
-        return (
-            <option>{Nome.nome}</option>
-        )
-      })
-    }
 
   
     render() {
@@ -15332,13 +15187,8 @@ export default class DashboardGeral extends React.Component {
                     <div className="col-2">
                         <label className='fw-bold'>Técnico: </label>
                         <select id="tecnico" class="form-select" aria-label="Default select example">
-<<<<<<< HEAD
                             <option selected>Todos</option>
                             {this.tecnicos()}
-=======
-                        <option selected>Todos</option>
-                            {this.tecnicos()} 
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                         </select>
                     </div>
                     <div className="col-2">

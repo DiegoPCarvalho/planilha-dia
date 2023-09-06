@@ -36,7 +36,6 @@ export default class MetaLab extends React.Component {
     state = { ...initialState }
 
     componentWillMount() {
-<<<<<<< HEAD
         this.BuscarTec()
         this.consultarBanco()
         this.validacao()
@@ -51,14 +50,6 @@ export default class MetaLab extends React.Component {
     }
 
     pesquisar(){
-=======
-        
-        this.consultarBanco()
-        this.validacao()
-        this.BuscarTec()
-        
-        
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
         $(document).ready(function () {
             setTimeout(() => {
                 $('#tabela').DataTable({
@@ -70,16 +61,6 @@ export default class MetaLab extends React.Component {
                 });
             }, 2000)
         });
-<<<<<<< HEAD
-=======
-    }
-
-    validacao(){
-        if (localStorage.AdmGerencia === "0") {
-             window.location.pathname = "/Home";
-             alert("Não tem permissão para acessar essa Área")
-        }
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
     }
 
     consultarBanco() {
@@ -140,15 +121,9 @@ export default class MetaLab extends React.Component {
                                     onChange={e => this.updateField(e)}
                                     value={this.state.MetaLabo.Tecnico}
                                     required
-<<<<<<< HEAD
                                 >   {this.tecnicos()}
                                     <option selected disabled value="">Selecione o Tecnico</option>
                                     
-=======
-                                >
-                                     <option selected disabled>Todos</option>
-                                    {this.tecnicos()}
->>>>>>> 1306c6bcb71420848c8ccf1264ae152c2e898411
                                 </select>
                             </div>
                         </div>
