@@ -6,6 +6,7 @@ import { confirmAlert } from "react-confirm-alert";
 import $ from 'jquery';
 
 const baseUrl = Url("Meta");
+const baseUrl3 = Url("LoginUsuario");
 
 const initialState = {
     MetaLabo: {
@@ -14,7 +15,8 @@ const initialState = {
         Tecnico: '',
         Meta: ''
     },
-    list: []
+    list: [],
+    optionTec: [0]
 }
 
 function mes() {
@@ -34,6 +36,20 @@ export default class MetaLab extends React.Component {
     state = { ...initialState }
 
     componentWillMount() {
+        this.BuscarTec()
+        this.consultarBanco()
+        this.validacao()
+        this.pesquisar()
+    }
+
+    validacao(){
+        if (localStorage.AdmGerencia === "0") {
+             window.location.pathname = "/Home";
+             alert("Não tem permissão para acessar essa Área")
+        }
+    }
+
+    pesquisar(){
         $(document).ready(function () {
             setTimeout(() => {
                 $('#tabela').DataTable({
@@ -45,16 +61,6 @@ export default class MetaLab extends React.Component {
                 });
             }, 1000)
         });
-
-        this.consultarBanco()
-        this.validacao()
-    }
-
-    validacao(){
-        if (localStorage.AdmGerencia === "0") {
-             window.location.pathname = "/Home";
-             alert("Não tem permissão para acessar essa Área")
-        }
     }
 
     consultarBanco() {
@@ -115,20 +121,9 @@ export default class MetaLab extends React.Component {
                                     onChange={e => this.updateField(e)}
                                     value={this.state.MetaLabo.Tecnico}
                                     required
-                                >
+                                >   {this.tecnicos()}
                                     <option selected disabled value="">Selecione o Tecnico</option>
-                                    <option>Diego Carvalho</option>
-                                    <option>Natanael Silva Lima</option>
-                                    <option>Mateus Doval</option>
-                                    <option>Lucas Felician</option>
-                                    <option>Diogo Selmini</option>
-                                    <option>Gabriel Kaique</option>
-                                    <option>Bruno Bedani</option>
-                                    <option>Vinicius Gomes</option>
-                                    <option>Diego Almeida</option>
-                                    <option>Márcio</option>
-                                    <option>Cida Zani</option>
-                                    <option>Allan Zulino</option>
+                                    
                                 </select>
                             </div>
                         </div>
@@ -248,6 +243,32 @@ export default class MetaLab extends React.Component {
             ]
         })
 
+    }
+
+    async BuscarTec() {
+        const tec = await axios(baseUrl3).then(resp => resp.data)
+
+        let dadosTec = []
+
+        for (let i = 0; i < tec.length; i++) {
+            if ("Laborátorio" === tec[i].departamento) {
+                dadosTec.push({
+                    nome: tec[i].nomeCompleto
+                })
+            }
+        }
+
+        return this.setState ({
+            optionTec: dadosTec
+        })
+    }
+
+    tecnicos() {
+      return this.state.optionTec.map(Nome => {
+        return (
+            <option>{Nome.nome}</option>
+        )
+      })
     }
 
     render() {

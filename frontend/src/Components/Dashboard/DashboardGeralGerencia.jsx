@@ -20,6 +20,8 @@ import imgLogoIcon from '../../Assets/Imgs/logoIcon.png'
 import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
 import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
 
+
+
 const initialState = {
     imagem: [],
 
@@ -193,9 +195,11 @@ const initialState = {
     listarVinicius: [0],
     listarGabriel: [0],
     listarLucas: [0],
-    listarDiogo: [0],
     listarDiegoA: [0],
-    listarAllan: [0],
+    listarMarlon: [0],
+    listarCaua: [0],
+    listarAnderson: [0],
+    listarAlisson: [0],
     listarCida: [0],
     listarDouglas: [0],
     listarKleiton: [0],
@@ -281,10 +285,13 @@ const initialState = {
     listarFriozem: [0],
     listarComfrio: [0],
     listarTotalContrato: [0],
+
+    optionTec: [0]
 }
 
 const baseUrl = Url("Geral");
 const baseUrl2 = Url("Meta");
+const baseUrl3 = Url("LoginUsuario");
 
 export default class DashboardGeral extends React.Component {
 
@@ -293,6 +300,7 @@ export default class DashboardGeral extends React.Component {
     componentWillMount() {
         this.validarFoto("Todos")
         this.buscarDados("Todos", "Todos", "Todos", "Todos")
+        this.BuscarTec()
     }
 
     validarFoto(tecnico) {
@@ -370,6 +378,10 @@ export default class DashboardGeral extends React.Component {
             return this.setState({
                 imagem: imgLogoIcon
             })
+        }else {
+            return this.setState({
+                imagem: imgLogoIcon
+            })
         }
     }
 
@@ -382,9 +394,9 @@ export default class DashboardGeral extends React.Component {
 
         //#region Geral
         if (tecnico === "Todos") {
+            this.validarFoto("Todos")
             //Geral
             if ((ano === "Todos") && (mes === "Todos") && (dia === "Todos")) {
-                this.validarFoto("Todos")
                 this.buscarDados("Todos", "Todos", "Todos", "Todos")
             }
             //Ano
@@ -406,18 +418,22 @@ export default class DashboardGeral extends React.Component {
             //Geral Tecnico
             if ((tecnico !== "Todos") && (ano === "Todos") && (mes === "Todos") && (dia === "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
+               
             }
             //Ano Tecnico
             if ((tecnico !== "Todos") && (ano !== "Todos") && (mes === "Todos") && (dia === "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
+               
             }
             //Mes Ano Tecnico
             if ((tecnico !== "Todos") && (ano !== "Todos") && (mes !== "Todos") && (dia === "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
+                
             }
             //Dia Mes Ano Tecnico
             if ((tecnico !== "Todos") && (ano !== "Todos") && (mes !== "Todos") && (dia !== "Todos")) {
                 this.buscarDados(tecnico, dia, mes, ano)
+                
             }
         }
         //#endregion
@@ -432,7 +448,7 @@ export default class DashboardGeral extends React.Component {
             //#region geral
             if (tecnico === "Todos") {
 
-                //geral
+                //#region geral
                 if ((tecnico === "Todos") && (dia === "Todos") && (ano === "Todos") && (mes === "Todos")) {
                     //variavel servico
                     let dadoMC = [];
@@ -598,12 +614,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-                    let dadoMarcio = [];
                     let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
                     let dadoDiegoA = [];
-                    let dadoAllan = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -1456,23 +1472,18 @@ export default class DashboardGeral extends React.Component {
                                 OS: tabelaNome[i].OS
                             })
                         }
-                        if (v.match(/Marcio/)) {
-                            dadoMarcio.push({
-                                OS: tabelaNome[i].OS
-                            })
-                        }
                         if (v.match(/Gabriel/)) {
                             dadoGabriel.push({
                                 OS: tabelaNome[i].OS
                             })
                         }
-                        if (v.match(/Lucas/)) {
-                            dadoLucas.push({
+                        if (v.match(/Marlon/)) {
+                            dadoMarlon.push({
                                 OS: tabelaNome[i].OS
                             })
                         }
-                        if (v.match(/Diogo/)) {
-                            dadoDiogo.push({
+                        if (v.match(/Cauã/)) {
+                            dadoCaua.push({
                                 OS: tabelaNome[i].OS
                             })
                         }
@@ -1481,8 +1492,13 @@ export default class DashboardGeral extends React.Component {
                                 OS: tabelaNome[i].OS
                             })
                         }
-                        if (v.match(/Allan/)) {
-                            dadoAllan.push({
+                        if (v.match(/Alisson/)) {
+                            dadoAlisson.push({
+                                OS: tabelaNome[i].OS
+                            })
+                        }
+                        if (v.match(/Anderson/)) {
+                            dadoAnderson.push({
                                 OS: tabelaNome[i].OS
                             })
                         }
@@ -1857,12 +1873,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-                    let totalMarcio = Object.keys(dadoMarcio).length;
                     let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -2117,12 +2133,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-                        listarMarcio: totalMarcio,
                         listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -2214,7 +2230,9 @@ export default class DashboardGeral extends React.Component {
                     })
 
                 }
-                //Ano
+                //#endregion
+                
+                //#region Ano
                 if ((tecnico === "Todos") && (dia === "Todos") && (ano !== "Todos") && (mes === "Todos")) {
                     //variavel servico
                     let dadoMC = [];
@@ -2380,12 +2398,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-                    let dadoMarcio = [];
                     let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
                     let dadoDiegoA = [];
-                    let dadoAllan = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -3239,23 +3257,18 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -3264,8 +3277,13 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -3642,12 +3660,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-                    let totalMarcio = Object.keys(dadoMarcio).length;
                     let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -3902,12 +3920,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-                        listarMarcio: totalMarcio,
                         listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -3998,7 +4016,9 @@ export default class DashboardGeral extends React.Component {
                         listarTotalContrato: totalContrato,
                     })
                 }
-                //Mes Ano
+                //#endregion    
+
+                //#region Mes Ano
                 if ((tecnico === "Todos") && (dia === "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
                     //variavel servico
                     let dadoMC = [];
@@ -4164,12 +4184,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-                    let dadoMarcio = [];
                     let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
                     let dadoDiegoA = [];
-                    let dadoAllan = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -5023,23 +5043,18 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -5048,8 +5063,13 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -5426,12 +5446,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-                    let totalMarcio = Object.keys(dadoMarcio).length;
                     let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -5686,12 +5706,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-                        listarMarcio: totalMarcio,
                         listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -5782,7 +5802,9 @@ export default class DashboardGeral extends React.Component {
                         listarTotalContrato: totalContrato,
                     })
                 }
-                //Dia Mes Ano
+                //#endregion
+
+                //#region Dia Mes Ano
                 if ((tecnico === "Todos") && (dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
                     //variavel servico
                     let dadoMC = [];
@@ -5948,12 +5970,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-                    let dadoMarcio = [];
                     let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
                     let dadoDiegoA = [];
-                    let dadoAllan = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -6807,23 +6829,18 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -6832,8 +6849,13 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -7210,12 +7232,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-                    let totalMarcio = Object.keys(dadoMarcio).length;
                     let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -7470,12 +7492,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-                        listarMarcio: totalMarcio,
                         listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -7569,10 +7591,14 @@ export default class DashboardGeral extends React.Component {
             }
             //#endregion
 
+
+            //#endregion
+
+
             //#region Geral Tecnico
             if (tecnico !== "Todos") {
 
-                //geral
+                //#region geral
                 if ((tecnico !== "Todos") && (dia === "Todos") && (ano === "Todos") && (mes === "Todos")) {
                     //variavel servico
                     let dadoMC = [];
@@ -7738,12 +7764,12 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-                    let dadoMarcio = [];
                     let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
                     let dadoDiegoA = [];
-                    let dadoAllan = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
@@ -8611,23 +8637,18 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -8636,8 +8657,13 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -9077,12 +9103,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-                    let totalMarcio = Object.keys(dadoMarcio).length;
                     let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -9355,12 +9381,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-                        listarMarcio: totalMarcio,
                         listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -9454,1889 +9480,1893 @@ export default class DashboardGeral extends React.Component {
                         listarTotalTecnico: totalEquip
                     })
                 }
-                //Ano
+                //#endregion
+
+                //#region Ano
                 if ((tecnico !== "Todos") && (dia === "Todos") && (ano !== "Todos") && (mes === "Todos")) {
-                      //variavel servico
-                      let dadoMC = [];
-                      let dadoLA = [];
-                      let dadoSR = [];
-                      let dadoRM = [];
-                      let dadoCO = [];
-                      let dadoRV = [];
-                      let dadoCC = [];
-                      let dadoMMV = [];
-                      let dadoRP = [];
-                      let dadoLP = [];
-                      let dadoRR = [];
-                      let dadoRC = [];
-                      let dadoRL = [];
-  
-                      //variavel manutenção
-                      let dadoMCAvulso = [];
-                      let dadoMCAssai = [];
-                      let dadoMCCEA = [];
-                      let dadoMCB2W = [];
-                      let dadoMCAtacadao = [];
-                      let dadoMCBoticario = [];
-                      let dadoMCLocacao = [];
-                      let dadoMCFriozem = [];
-                      let dadoMCComfrio = [];
-  
-                      //variavel laudo
-                      let dadoLAAvulso = [];
-                      let dadoLAAssai = [];
-                      let dadoLACEA = [];
-                      let dadoLAB2W = [];
-                      let dadoLAAtacadao = [];
-                      let dadoLABoticario = [];
-                      let dadoLALocacao = [];
-                      let dadoLAFriozem = [];
-                      let dadoLAComfrio = [];
-  
-                      //variavel suporte
-                      let dadoSRAvulso = [];
-                      let dadoSRAssai = [];
-                      let dadoSRCEA = [];
-                      let dadoSRB2W = [];
-                      let dadoSRAtacadao = [];
-                      let dadoSRBoticario = [];
-                      let dadoSRLocacao = [];
-                      let dadoSRFriozem = [];
-                      let dadoSRComfrio = [];
-  
-                      //variavel RM
-                      let dadoRMAvulso = [];
-                      let dadoRMAssai = [];
-                      let dadoRMCEA = [];
-                      let dadoRMB2W = [];
-                      let dadoRMAtacadao = [];
-                      let dadoRMBoticario = [];
-                      let dadoRMLocacao = [];
-                      let dadoRMFriozem = [];
-                      let dadoRMComfrio = [];
-  
-                      //variavel CO
-                      let dadoCOAvulso = [];
-                      let dadoCOAssai = [];
-                      let dadoCOCEA = [];
-                      let dadoCOB2W = [];
-                      let dadoCOAtacadao = [];
-                      let dadoCOBoticario = [];
-                      let dadoCOLocacao = [];
-                      let dadoCOFriozem = [];
-                      let dadoCOComfrio = [];
-  
-                      //variavel RV
-                      let dadoRVAvulso = [];
-                      let dadoRVAssai = [];
-                      let dadoRVCEA = [];
-                      let dadoRVB2W = [];
-                      let dadoRVAtacadao = [];
-                      let dadoRVBoticario = [];
-                      let dadoRVLocacao = [];
-                      let dadoRVFriozem = [];
-                      let dadoRVComfrio = [];
-  
-                      //variavel MMV
-                      let dadoMMVAvulso = [];
-                      let dadoMMVAssai = [];
-                      let dadoMMVCEA = [];
-                      let dadoMMVB2W = [];
-                      let dadoMMVAtacadao = [];
-                      let dadoMMVBoticario = [];
-                      let dadoMMVLocacao = [];
-                      let dadoMMVFriozem = [];
-                      let dadoMMVComfrio = [];
-  
-                      //variavel CC
-                      let dadoCCAvulso = [];
-                      let dadoCCAssai = [];
-                      let dadoCCCEA = [];
-                      let dadoCCB2W = [];
-                      let dadoCCAtacadao = [];
-                      let dadoCCBoticario = [];
-                      let dadoCCLocacao = [];
-                      let dadoCCFriozem = [];
-                      let dadoCCComfrio = [];
-  
-                      //variavel RP
-                      let dadoRPAvulso = [];
-                      let dadoRPAssai = [];
-                      let dadoRPCEA = [];
-                      let dadoRPB2W = [];
-                      let dadoRPAtacadao = [];
-                      let dadoRPBoticario = [];
-                      let dadoRPLocacao = [];
-                      let dadoRPFriozem = [];
-                      let dadoRPComfrio = [];
-  
-                      //variavel LP
-                      let dadoLPAvulso = [];
-                      let dadoLPAssai = [];
-                      let dadoLPCEA = [];
-                      let dadoLPB2W = [];
-                      let dadoLPAtacadao = [];
-                      let dadoLPBoticario = [];
-                      let dadoLPLocacao = [];
-                      let dadoLPFriozem = [];
-                      let dadoLPComfrio = [];
-  
-                      //variavel RR
-                      let dadoRRAvulso = [];
-                      let dadoRRAssai = [];
-                      let dadoRRCEA = [];
-                      let dadoRRB2W = [];
-                      let dadoRRAtacadao = [];
-                      let dadoRRBoticario = [];
-                      let dadoRRLocacao = [];
-                      let dadoRRFriozem = [];
-                      let dadoRRComfrio = [];
-  
-                      //variavel RC
-                      let dadoRCAvulso = [];
-                      let dadoRCAssai = [];
-                      let dadoRCCEA = [];
-                      let dadoRCB2W = [];
-                      let dadoRCAtacadao = [];
-                      let dadoRCBoticario = [];
-                      let dadoRCLocacao = [];
-                      let dadoRCFriozem = [];
-                      let dadoRCComfrio = [];
-  
-                      //variavel RL
-                      let dadoRLAvulso = [];
-                      let dadoRLAssai = [];
-                      let dadoRLCEA = [];
-                      let dadoRLB2W = [];
-                      let dadoRLAtacadao = [];
-                      let dadoRLBoticario = [];
-                      let dadoRLLocacao = [];
-                      let dadoRLFriozem = [];
-                      let dadoRLComfrio = [];
-  
-                      //variavel tecnico
-                      let dadoDiegoC = [];
-                      let dadoNatanael = [];
-                      let dadoBruno = [];
-                      let dadoVinicius = [];
-                      let dadoMateus = [];
-                      let dadoMarcio = [];
-                      let dadoGabriel = [];
-                      let dadoLucas = [];
-                      let dadoDiogo = [];
-                      let dadoDiegoA = [];
-                      let dadoAllan = [];
-                      let dadoCida = [];
-                      let dadoDouglas = [];
-                      let dadoKleiton = [];
-  
-                      //variavel mês
-                      let dadoJan = [];
-                      let dadoFev = [];
-                      let dadoMar = [];
-                      let dadoAbr = [];
-                      let dadoMai = [];
-                      let dadoJun = [];
-                      let dadoJul = [];
-                      let dadoAgo = [];
-                      let dadoSet = [];
-                      let dadoOut = [];
-                      let dadoNov = [];
-                      let dadoDez = [];
-  
-                      //variavel diario
-                      let dia1 = [];
-                      let dia2 = [];
-                      let dia3 = [];
-                      let dia4 = [];
-                      let dia5 = [];
-                      let dia6 = [];
-                      let dia7 = [];
-                      let dia8 = [];
-                      let dia9 = [];
-                      let dia10 = [];
-                      let dia11 = [];
-                      let dia12 = [];
-                      let dia13 = [];
-                      let dia14 = [];
-                      let dia15 = [];
-                      let dia16 = [];
-                      let dia17 = [];
-                      let dia18 = [];
-                      let dia19 = [];
-                      let dia20 = [];
-                      let dia21 = [];
-                      let dia22 = [];
-                      let dia23 = [];
-                      let dia24 = [];
-                      let dia25 = [];
-                      let dia26 = [];
-                      let dia27 = [];
-                      let dia28 = [];
-                      let dia29 = [];
-                      let dia30 = [];
-                      let dia31 = [];
-  
-                      //dados por equipamento
-                      let dadoCol = [];
-                      let dadoLei = [];
-                      let dadoLeiRFID = [];
-                      let dadoImp = [];
-                      let dadoBusca = [];
-                      let dadoCar3 = [];
-                      let dadoCar4 = [];
-                      let dadoCar5 = [];
-                      let dadoCar6 = [];
-                      let dadoBerco = [];
-                      let dadoFonte = [];
-                      let dadoCabo = [];
-                      let dadoBateria = [];
-  
-                      //placas
-                      let dadoPlacaRec = [];
-                      let dadoPlacaNRec = [];
-  
-                      //contratos
-                      //variavel contrato
-                      let dadoAssai = [];
-                      let dadoAvulso = [];
-                      let dadoCEA = [];
-                      let dadoB2W = [];
-                      let dadoAtacadao = [];
-                      let dadoShopee = [];
-                      let dadoBoticario = [];
-                      let dadoLocacao = [];
-                      let dadoFriozem = [];
-                      let dadoComfrio = [];
-  
-                      //variavel
-                      let metaJan = [];
-                      let metaFev = [];
-                      let metaMar = [];
-                      let metaAbr = [];
-                      let metaMai = [];
-                      let metaJun = [];
-                      let metaJul = [];
-                      let metaAgo = [];
-                      let metaSet = [];
-                      let metaOut = [];
-                      let metaNov = [];
-                      let metaDez = [];
-  
-                      for (let i = 0; i < tabelaNome.length; i++) {
-  
-                          if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (ano === `${tabelaNome[i].Ano}`) && (mes === "Todos")) {
-                              var v = `${tabelaNome[i].Tecnico}`;
-                              var c = `${tabelaNome[i].Contrato}`;
-  
-                              if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                  dadoMC.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoMCAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoMCAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoMCCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoMCB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoMCAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoMCLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoMCLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoMCFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoMCBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoMCComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-  
-                              }
-                              if (("Laudo" === tabelaNome[i].Servico)) {
-                                  dadoLA.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoLAAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoLAAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoLACEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoLAB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoLAAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoLALocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoLALocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoLAFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoLABoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoLAComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                  dadoSR.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoSRAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoSRAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoSRCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoSRB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoSRAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoSRLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoSRLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoSRFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoSRBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoSRComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                  dadoRM.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoRMAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoRMAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoRMCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoRMB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoRMAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRMLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRMLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoRMFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoRMBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoRMComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                  dadoCO.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoCOAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoCOAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoCOCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoCOB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoCOAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoCOLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoCOLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoCOFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoCOBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoCOComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                  dadoRV.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoRVAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoRVAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoRVCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoRVB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoRVAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRVLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRVLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoRVFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoRVBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoRVComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                  dadoCC.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoCCAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoCCAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoCCCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoCCB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoCCAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoCCLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoCCLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoCCFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoCCBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoCCComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                  dadoMMV.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoMMVAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoMMVAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoMMVCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoMMVB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoMMVAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoMMVLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoMMVLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoMMVFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoMMVBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoMMVComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                  dadoRP.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Recuperada" === tabelaNome[i].Placa) {
-                                      dadoPlacaRec.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if ("Não Recuperada" === tabelaNome[i].Placa) {
-                                      dadoPlacaNRec.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoRPAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoRPAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoRPCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoRPB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoRPAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRPLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRPLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoRPFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoRPBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoRPComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Limpeza" === tabelaNome[i].Servico)) {
-                                  dadoLP.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoLPAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoLPAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoLPCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoLPB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoLPAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoLPLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoLPLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoLPFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoLPBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoLPComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                  dadoRR.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoRRAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoRRAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoRRCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoRRB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoRRAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRRLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRRLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoRRFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoRRBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoRRComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                  dadoRC.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoRCAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoRCAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoRCCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoRCB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoRCAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRCLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRCLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoRCFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoRCBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoRCComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                  dadoRL.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-  
-                                  if ("Avulso" === tabelaNome[i].Contrato) {
-                                      dadoRLAvulso.push({
-                                          Id: tabelaNome[i].id
-                                      })
-                                  }
-                                  if (c.match(/Assaí/)) {
-                                      dadoRLAssai.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/C&A/)) {
-                                      dadoRLCEA.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/B2W/)) {
-                                      dadoRLB2W.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Atacadão/)) {
-                                      dadoRLAtacadao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRLLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Locação/)) {
-                                      dadoRLLocacao.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Friozem/)) {
-                                      dadoRLFriozem.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Boticário/)) {
-                                      dadoRLBoticario.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                                  if (c.match(/Comfrio/)) {
-                                      dadoRLComfrio.push({
-                                          OS: tabelaNome[i].OS
-                                      })
-                                  }
-                              }
-                              if (v.match(/Diego C/)) {
-                                  dadoDiegoC.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Natanael/)) {
-                                  dadoNatanael.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Bruno/)) {
-                                  dadoBruno.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Vinicius/)) {
-                                  dadoVinicius.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Mateus/)) {
-                                  dadoMateus.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Marcio/)) {
-                                  dadoMarcio.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Gabriel/)) {
-                                  dadoGabriel.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Lucas/)) {
-                                  dadoLucas.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Diogo/)) {
-                                  dadoDiogo.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Diego A/)) {
-                                  dadoDiegoA.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Allan/)) {
-                                  dadoAllan.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Cida/)) {
-                                  dadoCida.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Douglas/)) {
-                                  dadoDouglas.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (v.match(/Kleiton/)) {
-                                  dadoKleiton.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (1 === tabelaNome[i].Mes) {
-                                  dadoJan.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (2 === tabelaNome[i].Mes) {
-                                  dadoFev.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (3 === tabelaNome[i].Mes) {
-                                  dadoMar.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (4 === tabelaNome[i].Mes) {
-                                  dadoAbr.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (5 === tabelaNome[i].Mes) {
-                                  dadoMai.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (6 === tabelaNome[i].Mes) {
-                                  dadoJun.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (7 === tabelaNome[i].Mes) {
-                                  dadoJul.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (8 === tabelaNome[i].Mes) {
-                                  dadoAgo.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (9 === tabelaNome[i].Mes) {
-                                  dadoSet.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (10 === tabelaNome[i].Mes) {
-                                  dadoOut.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (11 === tabelaNome[i].Mes) {
-                                  dadoNov.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (12 === tabelaNome[i].Mes) {
-                                  dadoDez.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (1 === tabelaNome[i].Dia) {
-                                  dia1.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (2 === tabelaNome[i].Dia) {
-                                  dia2.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (3 === tabelaNome[i].Dia) {
-                                  dia3.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (4 === tabelaNome[i].Dia) {
-                                  dia4.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (5 === tabelaNome[i].Dia) {
-                                  dia5.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (6 === tabelaNome[i].Dia) {
-                                  dia6.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (7 === tabelaNome[i].Dia) {
-                                  dia7.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (8 === tabelaNome[i].Dia) {
-                                  dia8.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (9 === tabelaNome[i].Dia) {
-                                  dia9.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (10 === tabelaNome[i].Dia) {
-                                  dia10.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (11 === tabelaNome[i].Dia) {
-                                  dia11.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (12 === tabelaNome[i].Dia) {
-                                  dia12.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (13 === tabelaNome[i].Dia) {
-                                  dia13.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (14 === tabelaNome[i].Dia) {
-                                  dia14.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (15 === tabelaNome[i].Dia) {
-                                  dia15.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (16 === tabelaNome[i].Dia) {
-                                  dia16.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (17 === tabelaNome[i].Dia) {
-                                  dia17.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (18 === tabelaNome[i].Dia) {
-                                  dia18.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (19 === tabelaNome[i].Dia) {
-                                  dia19.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (20 === tabelaNome[i].Dia) {
-                                  dia20.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (21 === tabelaNome[i].Dia) {
-                                  dia21.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (22 === tabelaNome[i].Dia) {
-                                  dia22.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (23 === tabelaNome[i].Dia) {
-                                  dia23.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (24 === tabelaNome[i].Dia) {
-                                  dia24.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (25 === tabelaNome[i].Dia) {
-                                  dia25.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (26 === tabelaNome[i].Dia) {
-                                  dia26.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (27 === tabelaNome[i].Dia) {
-                                  dia27.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (28 === tabelaNome[i].Dia) {
-                                  dia28.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (29 === tabelaNome[i].Dia) {
-                                  dia29.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (30 === tabelaNome[i].Dia) {
-                                  dia30.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (31 === tabelaNome[i].Dia) {
-                                  dia31.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                  dadoCol.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                  dadoLei.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                  dadoLeiRFID.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                  dadoImp.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                  dadoBusca.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                  dadoCar3.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                  dadoCar4.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                  dadoCar5.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                  dadoCar6.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                  dadoBerco.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                  dadoCabo.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                  dadoBateria.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if ("Avulso" === tabelaNome[i].Contrato) {
-                                  dadoAvulso.push({
-                                      Id: tabelaNome[i].id
-                                  })
-                              }
-                              if (c.match(/Assaí/)) {
-                                  dadoAssai.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/C&A/)) {
-                                  dadoCEA.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/B2W/)) {
-                                  dadoB2W.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Atacadão/)) {
-                                  dadoAtacadao.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Shopee/)) {
-                                  dadoShopee.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Locação/)) {
-                                  dadoLocacao.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Locação/)) {
-                                  dadoLocacao.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Friozem/)) {
-                                  dadoFriozem.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Boticário/)) {
-                                  dadoBoticario.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                              if (c.match(/Comfrio/)) {
-                                  dadoComfrio.push({
-                                      OS: tabelaNome[i].OS
-                                  })
-                              }
-                          }
-                      }
-  
-                      for (let i = 0; i < tabelaMeta.length; i++) {
-                          if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
-                              if (1 === tabelaMeta[i].Mes) {
-                                  metaJan.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (2 === tabelaMeta[i].Mes) {
-                                  metaFev.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (3 === tabelaMeta[i].Mes) {
-                                  metaMar.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (4 === tabelaMeta[i].Mes) {
-                                  metaAbr.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (5 === tabelaMeta[i].Mes) {
-                                  metaMai.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (6 === tabelaMeta[i].Mes) {
-                                  metaJun.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (7 === tabelaMeta[i].Mes) {
-                                  metaJul.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (8 === tabelaMeta[i].Mes) {
-                                  metaAgo.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (9 === tabelaMeta[i].Mes) {
-                                  metaSet.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (10 === tabelaMeta[i].Mes) {
-                                  metaOut.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (11 === tabelaMeta[i].Mes) {
-                                  metaNov.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                              if (12 === tabelaMeta[i].Mes) {
-                                  metaDez.push({
-                                      M: tabelaMeta[i].Meta
-                                  })
-                              }
-                          }
-                      }
-  
-                      //variavel servico
-                      let totalMC = Object.keys(dadoMC).length;
-                      let totalLA = Object.keys(dadoLA).length;
-                      let totalSR = Object.keys(dadoSR).length;
-                      let totalRM = Object.keys(dadoRM).length;
-                      let totalCO = Object.keys(dadoCO).length;
-                      let totalRV = Object.keys(dadoRV).length;
-                      let totalCC = Object.keys(dadoCC).length;
-                      let totalMMV = Object.keys(dadoMMV).length;
-                      let totalRP = Object.keys(dadoRP).length;
-                      let totalLP = Object.keys(dadoLP).length;
-                      let totalRR = Object.keys(dadoRR).length;
-                      let totalRC = Object.keys(dadoRC).length;
-                      let totalRL = Object.keys(dadoRL).length;
-  
-                      let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
-                      let totalRealOS = [];
-                      for (let i = 0; i < totalOS.length; i++) {
-                          totalRealOS.unshift(totalOS[i].OS)
-                      }
-  
-                      let totalSemRepOS = [... new Set(totalRealOS)]
-  
-                      //variavel total
-                      let totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
-                          totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
-  
-                      //variavel tecnico
-                      let totalDiegoC = Object.keys(dadoDiegoC).length;
-                      let totalNatanael = Object.keys(dadoNatanael).length;
-                      let totalBruno = Object.keys(dadoBruno).length;
-                      let totalVinicius = Object.keys(dadoVinicius).length;
-                      let totalMateus = Object.keys(dadoMateus).length;
-                      let totalMarcio = Object.keys(dadoMarcio).length;
-                      let totalGabriel = Object.keys(dadoGabriel).length;
-                      let totalLucas = Object.keys(dadoLucas).length;
-                      let totalDiogo = Object.keys(dadoDiogo).length;
-                      let totalDiegoA = Object.keys(dadoDiegoA).length;
-                      let totalAllan = Object.keys(dadoAllan).length;
-                      let totalCida = Object.keys(dadoCida).length;
-                      let totalDouglas = Object.keys(dadoDouglas).length;
-                      let totalKleiton = Object.keys(dadoKleiton).length;
-  
-                      //variavel Meses
-                      let totalJan = Object.keys(dadoJan).length;
-                      let totalFev = Object.keys(dadoFev).length;
-                      let totalMar = Object.keys(dadoMar).length;
-                      let totalAbr = Object.keys(dadoAbr).length;
-                      let totalMai = Object.keys(dadoMai).length;
-                      let totalJun = Object.keys(dadoJun).length;
-                      let totalJul = Object.keys(dadoJul).length;
-                      let totalAgo = Object.keys(dadoAgo).length;
-                      let totalSet = Object.keys(dadoSet).length;
-                      let totalOut = Object.keys(dadoOut).length;
-                      let totalNov = Object.keys(dadoNov).length;
-                      let totalDez = Object.keys(dadoDez).length;
-  
-                      //variavel diario
-                      let totalDia1 = Object.keys(dia1).length;
-                      let totalDia2 = Object.keys(dia2).length;
-                      let totalDia3 = Object.keys(dia3).length;
-                      let totalDia4 = Object.keys(dia4).length;
-                      let totalDia5 = Object.keys(dia5).length;
-                      let totalDia6 = Object.keys(dia6).length;
-                      let totalDia7 = Object.keys(dia7).length;
-                      let totalDia8 = Object.keys(dia8).length;
-                      let totalDia9 = Object.keys(dia9).length;
-                      let totalDia10 = Object.keys(dia10).length;
-                      let totalDia11 = Object.keys(dia11).length;
-                      let totalDia12 = Object.keys(dia12).length;
-                      let totalDia13 = Object.keys(dia13).length;
-                      let totalDia14 = Object.keys(dia14).length;
-                      let totalDia15 = Object.keys(dia15).length;
-                      let totalDia16 = Object.keys(dia16).length;
-                      let totalDia17 = Object.keys(dia17).length;
-                      let totalDia18 = Object.keys(dia18).length;
-                      let totalDia19 = Object.keys(dia19).length;
-                      let totalDia20 = Object.keys(dia20).length;
-                      let totalDia21 = Object.keys(dia21).length;
-                      let totalDia22 = Object.keys(dia22).length;
-                      let totalDia23 = Object.keys(dia23).length;
-                      let totalDia24 = Object.keys(dia24).length;
-                      let totalDia25 = Object.keys(dia25).length;
-                      let totalDia26 = Object.keys(dia26).length;
-                      let totalDia27 = Object.keys(dia27).length;
-                      let totalDia28 = Object.keys(dia28).length;
-                      let totalDia29 = Object.keys(dia29).length;
-                      let totalDia30 = Object.keys(dia30).length;
-                      let totalDia31 = Object.keys(dia31).length;
-  
-                      let totalCol = Object.keys(dadoCol).length;
-                      let totalLei = Object.keys(dadoLei).length;
-                      let totalLeiRFID = Object.keys(dadoLeiRFID).length;
-                      let totalImp = Object.keys(dadoImp).length;
-                      let totalBusca = Object.keys(dadoBusca).length;
-                      let totalCar3 = Object.keys(dadoCar3).length;
-                      let totalCar4 = Object.keys(dadoCar4).length;
-                      let totalCar5 = Object.keys(dadoCar5).length;
-                      let totalCar6 = Object.keys(dadoCar6).length;
-                      let totalBerco = Object.keys(dadoBerco).length;
-                      let totalFonte = Object.keys(dadoFonte).length;
-                      let totalCabo = Object.keys(dadoCabo).length;
-                      let totalBateria = Object.keys(dadoBateria).length;
-  
-                      //placa
-                      let totalPlacaRec = Object.keys(dadoPlacaRec).length;
-                      let totalPlacaNRec = Object.keys(dadoPlacaNRec).length;
-  
-                      //varial contrato
-                      let totalAvulso = Object.keys(dadoAvulso).length;
-                      let totalAssai = Object.keys(dadoAssai).length;
-                      let totalAtacadao = Object.keys(dadoAtacadao).length;
-                      let totalCEA = Object.keys(dadoCEA).length;
-                      let totalB2W = Object.keys(dadoB2W).length;
-                      let totalFriozem = Object.keys(dadoFriozem).length;
-                      let totalComfrio = Object.keys(dadoComfrio).length;
-                      let totalLocacao = Object.keys(dadoLocacao).length;
-                      let totalBoticario = Object.keys(dadoBoticario).length;
-  
-                      let totalContrato = totalAssai + totalAtacadao + totalCEA + totalB2W + totalFriozem + totalComfrio + totalLocacao
-                          + totalBoticario
-  
-                      let mJan = Object.assign(metaJan);
-                      let mFev = Object.assign(metaFev);
-                      let mMar = Object.assign(metaMar);
-                      let mAbr = Object.assign(metaAbr);
-                      let mMai = Object.assign(metaMai);
-                      let mJun = Object.assign(metaJun);
-                      let mJul = Object.assign(metaJul);
-                      let mAgo = Object.assign(metaAgo);
-                      let mSet = Object.assign(metaSet);
-                      let mOut = Object.assign(metaOut);
-                      let mNov = Object.assign(metaNov);
-                      let mDez = Object.assign(metaDez);
-  
-                      let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
-                          parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
-                          parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
-                          parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
-                          parseInt(mDez.length > 0 ? mDez[0].M : 0)
-  
-  
-                      return this.setState({
-                          //busca servico
-                          listarMC: totalMC,
-                          listarLA: totalLA,
-                          listarSR: totalSR,
-                          listarRM: totalRM,
-                          listarCO: totalCO,
-                          listarRV: totalRV,
-                          listarCC: totalCC,
-                          listarMMV: totalMMV,
-                          listarRP: totalRP,
-                          listarLP: totalLP,
-                          listarRR: totalRR,
-                          listarRC: totalRC,
-                          listarRL: totalRL,
-  
-                          //busca de manutenção
-                          listarMCAvulso: dadoMCAvulso.length,
-                          listarMCAssai: dadoMCAssai.length,
-                          listarMCCEA: dadoMCCEA.length,
-                          listarMCB2W: dadoMCB2W.length,
-                          listarMCFriozem: dadoMCFriozem.length,
-                          listarMCBoticario: dadoMCBoticario.length,
-                          listarMCAtacadao: dadoMCAtacadao.length,
-                          listarMCComfrio: dadoMCComfrio.length,
-                          listarMCLocacao: dadoMCLocacao.length,
-  
-                          //busca de Laudo
-                          listarLAAvulso: dadoLAAvulso.length,
-                          listarLAAssai: dadoLAAssai.length,
-                          listarLACEA: dadoLACEA.length,
-                          listarLAB2W: dadoLAB2W.length,
-                          listarLAFriozem: dadoLAFriozem.length,
-                          listarLABoticario: dadoLABoticario.length,
-                          listarLAAtacadao: dadoLAAtacadao.length,
-                          listarLAComfrio: dadoLAComfrio.length,
-                          listarLALocacao: dadoLALocacao.length,
-  
-                          //busca de Suporte
-                          listarSRAvulso: dadoSRAvulso.length,
-                          listarSRAssai: dadoSRAssai.length,
-                          listarSRCEA: dadoSRCEA.length,
-                          listarSRB2W: dadoSRB2W.length,
-                          listarSRFriozem: dadoSRFriozem.length,
-                          listarSRBoticario: dadoSRBoticario.length,
-                          listarSRAtacadao: dadoSRAtacadao.length,
-                          listarSRComfrio: dadoSRComfrio.length,
-                          listarSRLocacao: dadoSRLocacao.length,
-  
-                          //busca de RM
-                          listarRMAvulso: dadoRMAvulso.length,
-                          listarRMAssai: dadoRMAssai.length,
-                          listarRMCEA: dadoRMCEA.length,
-                          listarRMB2W: dadoRMB2W.length,
-                          listarRMFriozem: dadoRMFriozem.length,
-                          listarRMBoticario: dadoRMBoticario.length,
-                          listarRMAtacadao: dadoRMAtacadao.length,
-                          listarRMComfrio: dadoRMComfrio.length,
-                          listarRMLocacao: dadoRMLocacao.length,
-  
-                          //busca de CO
-                          listarCOAvulso: dadoCOAvulso.length,
-                          listarCOAssai: dadoCOAssai.length,
-                          listarCOCEA: dadoCOCEA.length,
-                          listarCOB2W: dadoCOB2W.length,
-                          listarCOFriozem: dadoCOFriozem.length,
-                          listarCOBoticario: dadoCOBoticario.length,
-                          listarCOAtacadao: dadoCOAtacadao.length,
-                          listarCOComfrio: dadoCOComfrio.length,
-                          listarCOLocacao: dadoCOLocacao.length,
-  
-                          //busca de Rv
-                          listarRVAvulso: dadoRVAvulso.length,
-                          listarRVAssai: dadoRVAssai.length,
-                          listarRVCEA: dadoRVCEA.length,
-                          listarRVB2W: dadoRVB2W.length,
-                          listarRVFriozem: dadoRVFriozem.length,
-                          listarRVBoticario: dadoRVBoticario.length,
-                          listarRVAtacadao: dadoRVAtacadao.length,
-                          listarRVComfrio: dadoRVComfrio.length,
-                          listarRVLocacao: dadoRVLocacao.length,
-  
-                          //busca de MMV
-                          listarMMVAvulso: dadoMMVAvulso.length,
-                          listarMMVAssai: dadoMMVAssai.length,
-                          listarMMVCEA: dadoMMVCEA.length,
-                          listarMMVB2W: dadoMMVB2W.length,
-                          listarMMVFriozem: dadoMMVFriozem.length,
-                          listarMMVBoticario: dadoMMVBoticario.length,
-                          listarMMVAtacadao: dadoMMVAtacadao.length,
-                          listarMMVComfrio: dadoMMVComfrio.length,
-                          listarMMVLocacao: dadoMMVLocacao.length,
-  
-                          //busca de CC
-                          listarCCAvulso: dadoCCAvulso.length,
-                          listarCCAssai: dadoCCAssai.length,
-                          listarCCCEA: dadoCCCEA.length,
-                          listarCCB2W: dadoCCB2W.length,
-                          listarCCFriozem: dadoCCFriozem.length,
-                          listarCCBoticario: dadoCCBoticario.length,
-                          listarCCAtacadao: dadoCCAtacadao.length,
-                          listarCCComfrio: dadoCCComfrio.length,
-                          listarCCLocacao: dadoCCLocacao.length,
-  
-                          //busca de RP
-                          listarRPAvulso: dadoRPAvulso.length,
-                          listarRPAssai: dadoRPAssai.length,
-                          listarRPCEA: dadoRPCEA.length,
-                          listarRPB2W: dadoRPB2W.length,
-                          listarRPFriozem: dadoRPFriozem.length,
-                          listarRPBoticario: dadoRPBoticario.length,
-                          listarRPAtacadao: dadoRPAtacadao.length,
-                          listarRPComfrio: dadoRPComfrio.length,
-                          listarRPLocacao: dadoRPLocacao.length,
-  
-                          //busca de LP
-                          listarLPAvulso: dadoLPAvulso.length,
-                          listarLPAssai: dadoLPAssai.length,
-                          listarLPCEA: dadoLPCEA.length,
-                          listarLPB2W: dadoLPB2W.length,
-                          listarLPFriozem: dadoLPFriozem.length,
-                          listarLPBoticario: dadoLPBoticario.length,
-                          listarLPAtacadao: dadoLPAtacadao.length,
-                          listarLPComfrio: dadoLPComfrio.length,
-                          listarLPLocacao: dadoLPLocacao.length,
-  
-                          //busca de RR
-                          listarRRAvulso: dadoRRAvulso.length,
-                          listarRRAssai: dadoRRAssai.length,
-                          listarRRCEA: dadoRRCEA.length,
-                          listarRRB2W: dadoRRB2W.length,
-                          listarRRFriozem: dadoRRFriozem.length,
-                          listarRRBoticario: dadoRRBoticario.length,
-                          listarRRAtacadao: dadoRRAtacadao.length,
-                          listarRRComfrio: dadoRRComfrio.length,
-                          listarRRLocacao: dadoRRLocacao.length,
-  
-                          //busca de RC
-                          listarRCAvulso: dadoRCAvulso.length,
-                          listarRCAssai: dadoRCAssai.length,
-                          listarRCCEA: dadoRCCEA.length,
-                          listarRCB2W: dadoRCB2W.length,
-                          listarRCFriozem: dadoRCFriozem.length,
-                          listarRCBoticario: dadoRCBoticario.length,
-                          listarRCAtacadao: dadoRCAtacadao.length,
-                          listarRCComfrio: dadoRCComfrio.length,
-                          listarRCLocacao: dadoRCLocacao.length,
-  
-                          //busca de RL
-                          listarRLAvulso: dadoRLAvulso.length,
-                          listarRLAssai: dadoRLAssai.length,
-                          listarRLCEA: dadoRLCEA.length,
-                          listarRLB2W: dadoRLB2W.length,
-                          listarRLFriozem: dadoRLFriozem.length,
-                          listarRLBoticario: dadoRLBoticario.length,
-                          listarRLAtacadao: dadoRLAtacadao.length,
-                          listarRLComfrio: dadoRLComfrio.length,
-                          listarRLLocacao: dadoRLLocacao.length,
-  
-                          //busca total
-                          listarTotalEquip: totalEquip,
-                          listarTotalOS: totalSemRepOS.length,
-  
-                          //busca tecnico
-                          listarDiegoC: totalDiegoC,
-                          listarNatanael: totalNatanael,
-                          listarBruno: totalBruno,
-                          listarVinicius: totalVinicius,
-                          listarMateus: totalMateus,
-                          listarMarcio: totalMarcio,
-                          listarGabriel: totalGabriel,
-                          listarLucas: totalLucas,
-                          listarDiogo: totalDiogo,
-                          listarDiegoA: totalDiegoA,
-                          listarAllan: totalAllan,
-                          listarCida: totalCida,
-                          listarDouglas: totalDouglas,
-                          listarKleiton: totalKleiton,
-  
-                          //busca Meses
-                          listarJan: totalJan,
-                          listarFev: totalFev,
-                          listarMar: totalMar,
-                          listarAbr: totalAbr,
-                          listarMai: totalMai,
-                          listarJun: totalJun,
-                          listarJul: totalJul,
-                          listarAgo: totalAgo,
-                          listarSet: totalSet,
-                          listarOut: totalOut,
-                          listarNov: totalNov,
-                          listarDez: totalDez,
-  
-                          //prod Diaria
-                          listarDia1: totalDia1,
-                          listarDia2: totalDia2,
-                          listarDia3: totalDia3,
-                          listarDia4: totalDia4,
-                          listarDia5: totalDia5,
-                          listarDia6: totalDia6,
-                          listarDia7: totalDia7,
-                          listarDia8: totalDia8,
-                          listarDia9: totalDia9,
-                          listarDia10: totalDia10,
-                          listarDia11: totalDia11,
-                          listarDia12: totalDia12,
-                          listarDia13: totalDia13,
-                          listarDia14: totalDia14,
-                          listarDia15: totalDia15,
-                          listarDia16: totalDia16,
-                          listarDia17: totalDia17,
-                          listarDia18: totalDia18,
-                          listarDia19: totalDia19,
-                          listarDia20: totalDia20,
-                          listarDia21: totalDia21,
-                          listarDia22: totalDia22,
-                          listarDia23: totalDia23,
-                          listarDia24: totalDia24,
-                          listarDia25: totalDia25,
-                          listarDia26: totalDia26,
-                          listarDia27: totalDia27,
-                          listarDia28: totalDia28,
-                          listarDia29: totalDia29,
-                          listarDia30: totalDia30,
-                          listarDia31: totalDia31,
-  
-  
-                          //listart total por equipamento
-                          listarTotalCol: totalCol,
-                          listarTotalImp: totalImp,
-                          listarTotalLei: totalLei,
-                          listarTotalLeiRFID: totalLeiRFID,
-                          listarTotalBusca: totalBusca,
-                          listarTotalCar3: totalCar3,
-                          listarTotalCar4: totalCar4,
-                          listarTotalCar5: totalCar5,
-                          listarTotalCar6: totalCar6,
-                          listarTotalBerco: totalBerco,
-                          listarTotalFonte: totalFonte,
-                          listarTotalCabos: totalCabo,
-                          listarTotalBateria: totalBateria,
-  
-                          //placa
-                          listarPlacaRec: totalPlacaRec,
-                          listarPlacaNRec: totalPlacaNRec,
-  
-                          //buscar contrato
-                          listarAvulso: totalAvulso,
-                          listarAssai: totalAssai,
-                          listarCEA: totalCEA,
-                          listarB2W: totalB2W,
-                          // listarShopee: totalShopee,
-                          listarBoticario: totalBoticario,
-                          listarAtacadao: totalAtacadao,
-                          listarLocacao: totalLocacao,
-                          listarFriozem: totalFriozem,
-                          listarComfrio: totalComfrio,
-  
-                          //total contrato
-                          listarTotalContrato: totalContrato,
-  
-                          //meta
-                          listarMetaTecnico: totalMeta,
-  
-                          //total tecnico
-                          listarTotalTecnico: totalEquip
-                      })
+                    //variavel servico
+                    let dadoMC = [];
+                    let dadoLA = [];
+                    let dadoSR = [];
+                    let dadoRM = [];
+                    let dadoCO = [];
+                    let dadoRV = [];
+                    let dadoCC = [];
+                    let dadoMMV = [];
+                    let dadoRP = [];
+                    let dadoLP = [];
+                    let dadoRR = [];
+                    let dadoRC = [];
+                    let dadoRL = [];
+
+                    //variavel manutenção
+                    let dadoMCAvulso = [];
+                    let dadoMCAssai = [];
+                    let dadoMCCEA = [];
+                    let dadoMCB2W = [];
+                    let dadoMCAtacadao = [];
+                    let dadoMCBoticario = [];
+                    let dadoMCLocacao = [];
+                    let dadoMCFriozem = [];
+                    let dadoMCComfrio = [];
+
+                    //variavel laudo
+                    let dadoLAAvulso = [];
+                    let dadoLAAssai = [];
+                    let dadoLACEA = [];
+                    let dadoLAB2W = [];
+                    let dadoLAAtacadao = [];
+                    let dadoLABoticario = [];
+                    let dadoLALocacao = [];
+                    let dadoLAFriozem = [];
+                    let dadoLAComfrio = [];
+
+                    //variavel suporte
+                    let dadoSRAvulso = [];
+                    let dadoSRAssai = [];
+                    let dadoSRCEA = [];
+                    let dadoSRB2W = [];
+                    let dadoSRAtacadao = [];
+                    let dadoSRBoticario = [];
+                    let dadoSRLocacao = [];
+                    let dadoSRFriozem = [];
+                    let dadoSRComfrio = [];
+
+                    //variavel RM
+                    let dadoRMAvulso = [];
+                    let dadoRMAssai = [];
+                    let dadoRMCEA = [];
+                    let dadoRMB2W = [];
+                    let dadoRMAtacadao = [];
+                    let dadoRMBoticario = [];
+                    let dadoRMLocacao = [];
+                    let dadoRMFriozem = [];
+                    let dadoRMComfrio = [];
+
+                    //variavel CO
+                    let dadoCOAvulso = [];
+                    let dadoCOAssai = [];
+                    let dadoCOCEA = [];
+                    let dadoCOB2W = [];
+                    let dadoCOAtacadao = [];
+                    let dadoCOBoticario = [];
+                    let dadoCOLocacao = [];
+                    let dadoCOFriozem = [];
+                    let dadoCOComfrio = [];
+
+                    //variavel RV
+                    let dadoRVAvulso = [];
+                    let dadoRVAssai = [];
+                    let dadoRVCEA = [];
+                    let dadoRVB2W = [];
+                    let dadoRVAtacadao = [];
+                    let dadoRVBoticario = [];
+                    let dadoRVLocacao = [];
+                    let dadoRVFriozem = [];
+                    let dadoRVComfrio = [];
+
+                    //variavel MMV
+                    let dadoMMVAvulso = [];
+                    let dadoMMVAssai = [];
+                    let dadoMMVCEA = [];
+                    let dadoMMVB2W = [];
+                    let dadoMMVAtacadao = [];
+                    let dadoMMVBoticario = [];
+                    let dadoMMVLocacao = [];
+                    let dadoMMVFriozem = [];
+                    let dadoMMVComfrio = [];
+
+                    //variavel CC
+                    let dadoCCAvulso = [];
+                    let dadoCCAssai = [];
+                    let dadoCCCEA = [];
+                    let dadoCCB2W = [];
+                    let dadoCCAtacadao = [];
+                    let dadoCCBoticario = [];
+                    let dadoCCLocacao = [];
+                    let dadoCCFriozem = [];
+                    let dadoCCComfrio = [];
+
+                    //variavel RP
+                    let dadoRPAvulso = [];
+                    let dadoRPAssai = [];
+                    let dadoRPCEA = [];
+                    let dadoRPB2W = [];
+                    let dadoRPAtacadao = [];
+                    let dadoRPBoticario = [];
+                    let dadoRPLocacao = [];
+                    let dadoRPFriozem = [];
+                    let dadoRPComfrio = [];
+
+                    //variavel LP
+                    let dadoLPAvulso = [];
+                    let dadoLPAssai = [];
+                    let dadoLPCEA = [];
+                    let dadoLPB2W = [];
+                    let dadoLPAtacadao = [];
+                    let dadoLPBoticario = [];
+                    let dadoLPLocacao = [];
+                    let dadoLPFriozem = [];
+                    let dadoLPComfrio = [];
+
+                    //variavel RR
+                    let dadoRRAvulso = [];
+                    let dadoRRAssai = [];
+                    let dadoRRCEA = [];
+                    let dadoRRB2W = [];
+                    let dadoRRAtacadao = [];
+                    let dadoRRBoticario = [];
+                    let dadoRRLocacao = [];
+                    let dadoRRFriozem = [];
+                    let dadoRRComfrio = [];
+
+                    //variavel RC
+                    let dadoRCAvulso = [];
+                    let dadoRCAssai = [];
+                    let dadoRCCEA = [];
+                    let dadoRCB2W = [];
+                    let dadoRCAtacadao = [];
+                    let dadoRCBoticario = [];
+                    let dadoRCLocacao = [];
+                    let dadoRCFriozem = [];
+                    let dadoRCComfrio = [];
+
+                    //variavel RL
+                    let dadoRLAvulso = [];
+                    let dadoRLAssai = [];
+                    let dadoRLCEA = [];
+                    let dadoRLB2W = [];
+                    let dadoRLAtacadao = [];
+                    let dadoRLBoticario = [];
+                    let dadoRLLocacao = [];
+                    let dadoRLFriozem = [];
+                    let dadoRLComfrio = [];
+
+                    //variavel tecnico
+                    let dadoDiegoC = [];
+                    let dadoNatanael = [];
+                    let dadoBruno = [];
+                    let dadoVinicius = [];
+                    let dadoMateus = [];
+                    let dadoGabriel = [];
+                    let dadoDiegoA = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
+                    let dadoCida = [];
+                    let dadoDouglas = [];
+                    let dadoKleiton = [];
+
+                    //variavel mês
+                    let dadoJan = [];
+                    let dadoFev = [];
+                    let dadoMar = [];
+                    let dadoAbr = [];
+                    let dadoMai = [];
+                    let dadoJun = [];
+                    let dadoJul = [];
+                    let dadoAgo = [];
+                    let dadoSet = [];
+                    let dadoOut = [];
+                    let dadoNov = [];
+                    let dadoDez = [];
+
+                    //variavel diario
+                    let dia1 = [];
+                    let dia2 = [];
+                    let dia3 = [];
+                    let dia4 = [];
+                    let dia5 = [];
+                    let dia6 = [];
+                    let dia7 = [];
+                    let dia8 = [];
+                    let dia9 = [];
+                    let dia10 = [];
+                    let dia11 = [];
+                    let dia12 = [];
+                    let dia13 = [];
+                    let dia14 = [];
+                    let dia15 = [];
+                    let dia16 = [];
+                    let dia17 = [];
+                    let dia18 = [];
+                    let dia19 = [];
+                    let dia20 = [];
+                    let dia21 = [];
+                    let dia22 = [];
+                    let dia23 = [];
+                    let dia24 = [];
+                    let dia25 = [];
+                    let dia26 = [];
+                    let dia27 = [];
+                    let dia28 = [];
+                    let dia29 = [];
+                    let dia30 = [];
+                    let dia31 = [];
+
+                    //dados por equipamento
+                    let dadoCol = [];
+                    let dadoLei = [];
+                    let dadoLeiRFID = [];
+                    let dadoImp = [];
+                    let dadoBusca = [];
+                    let dadoCar3 = [];
+                    let dadoCar4 = [];
+                    let dadoCar5 = [];
+                    let dadoCar6 = [];
+                    let dadoBerco = [];
+                    let dadoFonte = [];
+                    let dadoCabo = [];
+                    let dadoBateria = [];
+
+                    //placas
+                    let dadoPlacaRec = [];
+                    let dadoPlacaNRec = [];
+
+                    //contratos
+                    //variavel contrato
+                    let dadoAssai = [];
+                    let dadoAvulso = [];
+                    let dadoCEA = [];
+                    let dadoB2W = [];
+                    let dadoAtacadao = [];
+                    let dadoShopee = [];
+                    let dadoBoticario = [];
+                    let dadoLocacao = [];
+                    let dadoFriozem = [];
+                    let dadoComfrio = [];
+
+                    //variavel
+                    let metaJan = [];
+                    let metaFev = [];
+                    let metaMar = [];
+                    let metaAbr = [];
+                    let metaMai = [];
+                    let metaJun = [];
+                    let metaJul = [];
+                    let metaAgo = [];
+                    let metaSet = [];
+                    let metaOut = [];
+                    let metaNov = [];
+                    let metaDez = [];
+
+                    for (let i = 0; i < tabelaNome.length; i++) {
+
+                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === "Todos") && (ano === `${tabelaNome[i].Ano}`) && (mes === "Todos")) {
+                            var v = `${tabelaNome[i].Tecnico}`;
+                            var c = `${tabelaNome[i].Contrato}`;
+
+                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                                dadoMC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoMCAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoMCAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoMCCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoMCB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoMCAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoMCFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoMCBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoMCComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+
+                            }
+                            if (("Laudo" === tabelaNome[i].Servico)) {
+                                dadoLA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoLAAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoLAAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoLACEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoLAB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoLAAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLALocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLALocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoLAFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoLABoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoLAComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                                dadoSR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoSRAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoSRAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoSRCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoSRB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoSRAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoSRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoSRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoSRFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoSRBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoSRComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                                dadoRM.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRMAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRMAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRMCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRMB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRMAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRMLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRMLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRMFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRMBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRMComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                                dadoCO.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoCOAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoCOAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoCOCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoCOB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoCOAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCOLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCOLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoCOFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoCOBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoCOComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                                dadoRV.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRVAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRVAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRVCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRVB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRVAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRVFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRVBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRVComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                                dadoCC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoCCAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoCCAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoCCCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoCCB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoCCAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoCCFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoCCBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoCCComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                                dadoMMV.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoMMVAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoMMVAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoMMVCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoMMVB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoMMVAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMMVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMMVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoMMVFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoMMVBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoMMVComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                                dadoRP.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Recuperada" === tabelaNome[i].Placa) {
+                                    dadoPlacaRec.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if ("Não Recuperada" === tabelaNome[i].Placa) {
+                                    dadoPlacaNRec.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRPAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRPAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRPCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRPB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRPAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRPFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRPBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRPComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Limpeza" === tabelaNome[i].Servico)) {
+                                dadoLP.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoLPAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoLPAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoLPCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoLPB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoLPAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoLPFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoLPBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoLPComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                                dadoRR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRRAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRRAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRRCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRRB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRRAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRRFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRRBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRRComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                                dadoRC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRCAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRCAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRCCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRCB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRCAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRCFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRCBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRCComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                                dadoRL.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRLAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRLAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRLCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRLB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRLAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRLLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRLLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRLFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRLBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRLComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (v.match(/Diego C/)) {
+                                dadoDiegoC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Natanael/)) {
+                                dadoNatanael.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Bruno/)) {
+                                dadoBruno.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Vinicius/)) {
+                                dadoVinicius.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Mateus/)) {
+                                dadoMateus.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Gabriel/)) {
+                                dadoGabriel.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Diego A/)) {
+                                dadoDiegoA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Cida/)) {
+                                dadoCida.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Douglas/)) {
+                                dadoDouglas.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Kleiton/)) {
+                                dadoKleiton.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (1 === tabelaNome[i].Mes) {
+                                dadoJan.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (2 === tabelaNome[i].Mes) {
+                                dadoFev.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (3 === tabelaNome[i].Mes) {
+                                dadoMar.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (4 === tabelaNome[i].Mes) {
+                                dadoAbr.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (5 === tabelaNome[i].Mes) {
+                                dadoMai.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (6 === tabelaNome[i].Mes) {
+                                dadoJun.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (7 === tabelaNome[i].Mes) {
+                                dadoJul.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (8 === tabelaNome[i].Mes) {
+                                dadoAgo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (9 === tabelaNome[i].Mes) {
+                                dadoSet.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (10 === tabelaNome[i].Mes) {
+                                dadoOut.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (11 === tabelaNome[i].Mes) {
+                                dadoNov.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (12 === tabelaNome[i].Mes) {
+                                dadoDez.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (1 === tabelaNome[i].Dia) {
+                                dia1.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (2 === tabelaNome[i].Dia) {
+                                dia2.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (3 === tabelaNome[i].Dia) {
+                                dia3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (4 === tabelaNome[i].Dia) {
+                                dia4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (5 === tabelaNome[i].Dia) {
+                                dia5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (6 === tabelaNome[i].Dia) {
+                                dia6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (7 === tabelaNome[i].Dia) {
+                                dia7.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (8 === tabelaNome[i].Dia) {
+                                dia8.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (9 === tabelaNome[i].Dia) {
+                                dia9.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (10 === tabelaNome[i].Dia) {
+                                dia10.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (11 === tabelaNome[i].Dia) {
+                                dia11.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (12 === tabelaNome[i].Dia) {
+                                dia12.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (13 === tabelaNome[i].Dia) {
+                                dia13.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (14 === tabelaNome[i].Dia) {
+                                dia14.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (15 === tabelaNome[i].Dia) {
+                                dia15.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (16 === tabelaNome[i].Dia) {
+                                dia16.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (17 === tabelaNome[i].Dia) {
+                                dia17.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (18 === tabelaNome[i].Dia) {
+                                dia18.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (19 === tabelaNome[i].Dia) {
+                                dia19.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (20 === tabelaNome[i].Dia) {
+                                dia20.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (21 === tabelaNome[i].Dia) {
+                                dia21.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (22 === tabelaNome[i].Dia) {
+                                dia22.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (23 === tabelaNome[i].Dia) {
+                                dia23.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (24 === tabelaNome[i].Dia) {
+                                dia24.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (25 === tabelaNome[i].Dia) {
+                                dia25.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (26 === tabelaNome[i].Dia) {
+                                dia26.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (27 === tabelaNome[i].Dia) {
+                                dia27.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (28 === tabelaNome[i].Dia) {
+                                dia28.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (29 === tabelaNome[i].Dia) {
+                                dia29.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (30 === tabelaNome[i].Dia) {
+                                dia30.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (31 === tabelaNome[i].Dia) {
+                                dia31.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoCabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoBateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if ("Avulso" === tabelaNome[i].Contrato) {
+                                dadoAvulso.push({
+                                    Id: tabelaNome[i].id
+                                })
+                            }
+                            if (c.match(/Assaí/)) {
+                                dadoAssai.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/C&A/)) {
+                                dadoCEA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/B2W/)) {
+                                dadoB2W.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Atacadão/)) {
+                                dadoAtacadao.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Shopee/)) {
+                                dadoShopee.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Locação/)) {
+                                dadoLocacao.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Locação/)) {
+                                dadoLocacao.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Friozem/)) {
+                                dadoFriozem.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Boticário/)) {
+                                dadoBoticario.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Comfrio/)) {
+                                dadoComfrio.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                        }
+                    }
+
+                    for (let i = 0; i < tabelaMeta.length; i++) {
+                        if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`)) {
+                            if (1 === tabelaMeta[i].Mes) {
+                                metaJan.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (2 === tabelaMeta[i].Mes) {
+                                metaFev.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (3 === tabelaMeta[i].Mes) {
+                                metaMar.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (4 === tabelaMeta[i].Mes) {
+                                metaAbr.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (5 === tabelaMeta[i].Mes) {
+                                metaMai.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (6 === tabelaMeta[i].Mes) {
+                                metaJun.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (7 === tabelaMeta[i].Mes) {
+                                metaJul.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (8 === tabelaMeta[i].Mes) {
+                                metaAgo.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (9 === tabelaMeta[i].Mes) {
+                                metaSet.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (10 === tabelaMeta[i].Mes) {
+                                metaOut.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (11 === tabelaMeta[i].Mes) {
+                                metaNov.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (12 === tabelaMeta[i].Mes) {
+                                metaDez.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                        }
+                    }
+
+                    //variavel servico
+                    let totalMC = Object.keys(dadoMC).length;
+                    let totalLA = Object.keys(dadoLA).length;
+                    let totalSR = Object.keys(dadoSR).length;
+                    let totalRM = Object.keys(dadoRM).length;
+                    let totalCO = Object.keys(dadoCO).length;
+                    let totalRV = Object.keys(dadoRV).length;
+                    let totalCC = Object.keys(dadoCC).length;
+                    let totalMMV = Object.keys(dadoMMV).length;
+                    let totalRP = Object.keys(dadoRP).length;
+                    let totalLP = Object.keys(dadoLP).length;
+                    let totalRR = Object.keys(dadoRR).length;
+                    let totalRC = Object.keys(dadoRC).length;
+                    let totalRL = Object.keys(dadoRL).length;
+
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
+                    let totalRealOS = [];
+                    for (let i = 0; i < totalOS.length; i++) {
+                        totalRealOS.unshift(totalOS[i].OS)
+                    }
+
+                    let totalSemRepOS = [... new Set(totalRealOS)]
+
+                    //variavel total
+                    let totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
+                        totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
+
+                    //variavel tecnico
+                    let totalDiegoC = Object.keys(dadoDiegoC).length;
+                    let totalNatanael = Object.keys(dadoNatanael).length;
+                    let totalBruno = Object.keys(dadoBruno).length;
+                    let totalVinicius = Object.keys(dadoVinicius).length;
+                    let totalMateus = Object.keys(dadoMateus).length;
+                    let totalGabriel = Object.keys(dadoGabriel).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
+                    let totalDiegoA = Object.keys(dadoDiegoA).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
+                    let totalCida = Object.keys(dadoCida).length;
+                    let totalDouglas = Object.keys(dadoDouglas).length;
+                    let totalKleiton = Object.keys(dadoKleiton).length;
+
+                    //variavel Meses
+                    let totalJan = Object.keys(dadoJan).length;
+                    let totalFev = Object.keys(dadoFev).length;
+                    let totalMar = Object.keys(dadoMar).length;
+                    let totalAbr = Object.keys(dadoAbr).length;
+                    let totalMai = Object.keys(dadoMai).length;
+                    let totalJun = Object.keys(dadoJun).length;
+                    let totalJul = Object.keys(dadoJul).length;
+                    let totalAgo = Object.keys(dadoAgo).length;
+                    let totalSet = Object.keys(dadoSet).length;
+                    let totalOut = Object.keys(dadoOut).length;
+                    let totalNov = Object.keys(dadoNov).length;
+                    let totalDez = Object.keys(dadoDez).length;
+
+                    //variavel diario
+                    let totalDia1 = Object.keys(dia1).length;
+                    let totalDia2 = Object.keys(dia2).length;
+                    let totalDia3 = Object.keys(dia3).length;
+                    let totalDia4 = Object.keys(dia4).length;
+                    let totalDia5 = Object.keys(dia5).length;
+                    let totalDia6 = Object.keys(dia6).length;
+                    let totalDia7 = Object.keys(dia7).length;
+                    let totalDia8 = Object.keys(dia8).length;
+                    let totalDia9 = Object.keys(dia9).length;
+                    let totalDia10 = Object.keys(dia10).length;
+                    let totalDia11 = Object.keys(dia11).length;
+                    let totalDia12 = Object.keys(dia12).length;
+                    let totalDia13 = Object.keys(dia13).length;
+                    let totalDia14 = Object.keys(dia14).length;
+                    let totalDia15 = Object.keys(dia15).length;
+                    let totalDia16 = Object.keys(dia16).length;
+                    let totalDia17 = Object.keys(dia17).length;
+                    let totalDia18 = Object.keys(dia18).length;
+                    let totalDia19 = Object.keys(dia19).length;
+                    let totalDia20 = Object.keys(dia20).length;
+                    let totalDia21 = Object.keys(dia21).length;
+                    let totalDia22 = Object.keys(dia22).length;
+                    let totalDia23 = Object.keys(dia23).length;
+                    let totalDia24 = Object.keys(dia24).length;
+                    let totalDia25 = Object.keys(dia25).length;
+                    let totalDia26 = Object.keys(dia26).length;
+                    let totalDia27 = Object.keys(dia27).length;
+                    let totalDia28 = Object.keys(dia28).length;
+                    let totalDia29 = Object.keys(dia29).length;
+                    let totalDia30 = Object.keys(dia30).length;
+                    let totalDia31 = Object.keys(dia31).length;
+
+                    let totalCol = Object.keys(dadoCol).length;
+                    let totalLei = Object.keys(dadoLei).length;
+                    let totalLeiRFID = Object.keys(dadoLeiRFID).length;
+                    let totalImp = Object.keys(dadoImp).length;
+                    let totalBusca = Object.keys(dadoBusca).length;
+                    let totalCar3 = Object.keys(dadoCar3).length;
+                    let totalCar4 = Object.keys(dadoCar4).length;
+                    let totalCar5 = Object.keys(dadoCar5).length;
+                    let totalCar6 = Object.keys(dadoCar6).length;
+                    let totalBerco = Object.keys(dadoBerco).length;
+                    let totalFonte = Object.keys(dadoFonte).length;
+                    let totalCabo = Object.keys(dadoCabo).length;
+                    let totalBateria = Object.keys(dadoBateria).length;
+
+                    //placa
+                    let totalPlacaRec = Object.keys(dadoPlacaRec).length;
+                    let totalPlacaNRec = Object.keys(dadoPlacaNRec).length;
+
+                    //varial contrato
+                    let totalAvulso = Object.keys(dadoAvulso).length;
+                    let totalAssai = Object.keys(dadoAssai).length;
+                    let totalAtacadao = Object.keys(dadoAtacadao).length;
+                    let totalCEA = Object.keys(dadoCEA).length;
+                    let totalB2W = Object.keys(dadoB2W).length;
+                    let totalFriozem = Object.keys(dadoFriozem).length;
+                    let totalComfrio = Object.keys(dadoComfrio).length;
+                    let totalLocacao = Object.keys(dadoLocacao).length;
+                    let totalBoticario = Object.keys(dadoBoticario).length;
+
+                    let totalContrato = totalAssai + totalAtacadao + totalCEA + totalB2W + totalFriozem + totalComfrio + totalLocacao
+                        + totalBoticario
+
+                    let mJan = Object.assign(metaJan);
+                    let mFev = Object.assign(metaFev);
+                    let mMar = Object.assign(metaMar);
+                    let mAbr = Object.assign(metaAbr);
+                    let mMai = Object.assign(metaMai);
+                    let mJun = Object.assign(metaJun);
+                    let mJul = Object.assign(metaJul);
+                    let mAgo = Object.assign(metaAgo);
+                    let mSet = Object.assign(metaSet);
+                    let mOut = Object.assign(metaOut);
+                    let mNov = Object.assign(metaNov);
+                    let mDez = Object.assign(metaDez);
+
+                    let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                        parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                        parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                        parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                        parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                    return this.setState({
+                        //busca servico
+                        listarMC: totalMC,
+                        listarLA: totalLA,
+                        listarSR: totalSR,
+                        listarRM: totalRM,
+                        listarCO: totalCO,
+                        listarRV: totalRV,
+                        listarCC: totalCC,
+                        listarMMV: totalMMV,
+                        listarRP: totalRP,
+                        listarLP: totalLP,
+                        listarRR: totalRR,
+                        listarRC: totalRC,
+                        listarRL: totalRL,
+
+                        //busca de manutenção
+                        listarMCAvulso: dadoMCAvulso.length,
+                        listarMCAssai: dadoMCAssai.length,
+                        listarMCCEA: dadoMCCEA.length,
+                        listarMCB2W: dadoMCB2W.length,
+                        listarMCFriozem: dadoMCFriozem.length,
+                        listarMCBoticario: dadoMCBoticario.length,
+                        listarMCAtacadao: dadoMCAtacadao.length,
+                        listarMCComfrio: dadoMCComfrio.length,
+                        listarMCLocacao: dadoMCLocacao.length,
+
+                        //busca de Laudo
+                        listarLAAvulso: dadoLAAvulso.length,
+                        listarLAAssai: dadoLAAssai.length,
+                        listarLACEA: dadoLACEA.length,
+                        listarLAB2W: dadoLAB2W.length,
+                        listarLAFriozem: dadoLAFriozem.length,
+                        listarLABoticario: dadoLABoticario.length,
+                        listarLAAtacadao: dadoLAAtacadao.length,
+                        listarLAComfrio: dadoLAComfrio.length,
+                        listarLALocacao: dadoLALocacao.length,
+
+                        //busca de Suporte
+                        listarSRAvulso: dadoSRAvulso.length,
+                        listarSRAssai: dadoSRAssai.length,
+                        listarSRCEA: dadoSRCEA.length,
+                        listarSRB2W: dadoSRB2W.length,
+                        listarSRFriozem: dadoSRFriozem.length,
+                        listarSRBoticario: dadoSRBoticario.length,
+                        listarSRAtacadao: dadoSRAtacadao.length,
+                        listarSRComfrio: dadoSRComfrio.length,
+                        listarSRLocacao: dadoSRLocacao.length,
+
+                        //busca de RM
+                        listarRMAvulso: dadoRMAvulso.length,
+                        listarRMAssai: dadoRMAssai.length,
+                        listarRMCEA: dadoRMCEA.length,
+                        listarRMB2W: dadoRMB2W.length,
+                        listarRMFriozem: dadoRMFriozem.length,
+                        listarRMBoticario: dadoRMBoticario.length,
+                        listarRMAtacadao: dadoRMAtacadao.length,
+                        listarRMComfrio: dadoRMComfrio.length,
+                        listarRMLocacao: dadoRMLocacao.length,
+
+                        //busca de CO
+                        listarCOAvulso: dadoCOAvulso.length,
+                        listarCOAssai: dadoCOAssai.length,
+                        listarCOCEA: dadoCOCEA.length,
+                        listarCOB2W: dadoCOB2W.length,
+                        listarCOFriozem: dadoCOFriozem.length,
+                        listarCOBoticario: dadoCOBoticario.length,
+                        listarCOAtacadao: dadoCOAtacadao.length,
+                        listarCOComfrio: dadoCOComfrio.length,
+                        listarCOLocacao: dadoCOLocacao.length,
+
+                        //busca de Rv
+                        listarRVAvulso: dadoRVAvulso.length,
+                        listarRVAssai: dadoRVAssai.length,
+                        listarRVCEA: dadoRVCEA.length,
+                        listarRVB2W: dadoRVB2W.length,
+                        listarRVFriozem: dadoRVFriozem.length,
+                        listarRVBoticario: dadoRVBoticario.length,
+                        listarRVAtacadao: dadoRVAtacadao.length,
+                        listarRVComfrio: dadoRVComfrio.length,
+                        listarRVLocacao: dadoRVLocacao.length,
+
+                        //busca de MMV
+                        listarMMVAvulso: dadoMMVAvulso.length,
+                        listarMMVAssai: dadoMMVAssai.length,
+                        listarMMVCEA: dadoMMVCEA.length,
+                        listarMMVB2W: dadoMMVB2W.length,
+                        listarMMVFriozem: dadoMMVFriozem.length,
+                        listarMMVBoticario: dadoMMVBoticario.length,
+                        listarMMVAtacadao: dadoMMVAtacadao.length,
+                        listarMMVComfrio: dadoMMVComfrio.length,
+                        listarMMVLocacao: dadoMMVLocacao.length,
+
+                        //busca de CC
+                        listarCCAvulso: dadoCCAvulso.length,
+                        listarCCAssai: dadoCCAssai.length,
+                        listarCCCEA: dadoCCCEA.length,
+                        listarCCB2W: dadoCCB2W.length,
+                        listarCCFriozem: dadoCCFriozem.length,
+                        listarCCBoticario: dadoCCBoticario.length,
+                        listarCCAtacadao: dadoCCAtacadao.length,
+                        listarCCComfrio: dadoCCComfrio.length,
+                        listarCCLocacao: dadoCCLocacao.length,
+
+                        //busca de RP
+                        listarRPAvulso: dadoRPAvulso.length,
+                        listarRPAssai: dadoRPAssai.length,
+                        listarRPCEA: dadoRPCEA.length,
+                        listarRPB2W: dadoRPB2W.length,
+                        listarRPFriozem: dadoRPFriozem.length,
+                        listarRPBoticario: dadoRPBoticario.length,
+                        listarRPAtacadao: dadoRPAtacadao.length,
+                        listarRPComfrio: dadoRPComfrio.length,
+                        listarRPLocacao: dadoRPLocacao.length,
+
+                        //busca de LP
+                        listarLPAvulso: dadoLPAvulso.length,
+                        listarLPAssai: dadoLPAssai.length,
+                        listarLPCEA: dadoLPCEA.length,
+                        listarLPB2W: dadoLPB2W.length,
+                        listarLPFriozem: dadoLPFriozem.length,
+                        listarLPBoticario: dadoLPBoticario.length,
+                        listarLPAtacadao: dadoLPAtacadao.length,
+                        listarLPComfrio: dadoLPComfrio.length,
+                        listarLPLocacao: dadoLPLocacao.length,
+
+                        //busca de RR
+                        listarRRAvulso: dadoRRAvulso.length,
+                        listarRRAssai: dadoRRAssai.length,
+                        listarRRCEA: dadoRRCEA.length,
+                        listarRRB2W: dadoRRB2W.length,
+                        listarRRFriozem: dadoRRFriozem.length,
+                        listarRRBoticario: dadoRRBoticario.length,
+                        listarRRAtacadao: dadoRRAtacadao.length,
+                        listarRRComfrio: dadoRRComfrio.length,
+                        listarRRLocacao: dadoRRLocacao.length,
+
+                        //busca de RC
+                        listarRCAvulso: dadoRCAvulso.length,
+                        listarRCAssai: dadoRCAssai.length,
+                        listarRCCEA: dadoRCCEA.length,
+                        listarRCB2W: dadoRCB2W.length,
+                        listarRCFriozem: dadoRCFriozem.length,
+                        listarRCBoticario: dadoRCBoticario.length,
+                        listarRCAtacadao: dadoRCAtacadao.length,
+                        listarRCComfrio: dadoRCComfrio.length,
+                        listarRCLocacao: dadoRCLocacao.length,
+
+                        //busca de RL
+                        listarRLAvulso: dadoRLAvulso.length,
+                        listarRLAssai: dadoRLAssai.length,
+                        listarRLCEA: dadoRLCEA.length,
+                        listarRLB2W: dadoRLB2W.length,
+                        listarRLFriozem: dadoRLFriozem.length,
+                        listarRLBoticario: dadoRLBoticario.length,
+                        listarRLAtacadao: dadoRLAtacadao.length,
+                        listarRLComfrio: dadoRLComfrio.length,
+                        listarRLLocacao: dadoRLLocacao.length,
+
+                        //busca total
+                        listarTotalEquip: totalEquip,
+                        listarTotalOS: totalSemRepOS.length,
+
+                        //busca tecnico
+                        listarDiegoC: totalDiegoC,
+                        listarNatanael: totalNatanael,
+                        listarBruno: totalBruno,
+                        listarVinicius: totalVinicius,
+                        listarMateus: totalMateus,
+                        listarGabriel: totalGabriel,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
+                        listarDiegoA: totalDiegoA,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
+                        listarCida: totalCida,
+                        listarDouglas: totalDouglas,
+                        listarKleiton: totalKleiton,
+
+                        //busca Meses
+                        listarJan: totalJan,
+                        listarFev: totalFev,
+                        listarMar: totalMar,
+                        listarAbr: totalAbr,
+                        listarMai: totalMai,
+                        listarJun: totalJun,
+                        listarJul: totalJul,
+                        listarAgo: totalAgo,
+                        listarSet: totalSet,
+                        listarOut: totalOut,
+                        listarNov: totalNov,
+                        listarDez: totalDez,
+
+                        //prod Diaria
+                        listarDia1: totalDia1,
+                        listarDia2: totalDia2,
+                        listarDia3: totalDia3,
+                        listarDia4: totalDia4,
+                        listarDia5: totalDia5,
+                        listarDia6: totalDia6,
+                        listarDia7: totalDia7,
+                        listarDia8: totalDia8,
+                        listarDia9: totalDia9,
+                        listarDia10: totalDia10,
+                        listarDia11: totalDia11,
+                        listarDia12: totalDia12,
+                        listarDia13: totalDia13,
+                        listarDia14: totalDia14,
+                        listarDia15: totalDia15,
+                        listarDia16: totalDia16,
+                        listarDia17: totalDia17,
+                        listarDia18: totalDia18,
+                        listarDia19: totalDia19,
+                        listarDia20: totalDia20,
+                        listarDia21: totalDia21,
+                        listarDia22: totalDia22,
+                        listarDia23: totalDia23,
+                        listarDia24: totalDia24,
+                        listarDia25: totalDia25,
+                        listarDia26: totalDia26,
+                        listarDia27: totalDia27,
+                        listarDia28: totalDia28,
+                        listarDia29: totalDia29,
+                        listarDia30: totalDia30,
+                        listarDia31: totalDia31,
+
+
+                        //listart total por equipamento
+                        listarTotalCol: totalCol,
+                        listarTotalImp: totalImp,
+                        listarTotalLei: totalLei,
+                        listarTotalLeiRFID: totalLeiRFID,
+                        listarTotalBusca: totalBusca,
+                        listarTotalCar3: totalCar3,
+                        listarTotalCar4: totalCar4,
+                        listarTotalCar5: totalCar5,
+                        listarTotalCar6: totalCar6,
+                        listarTotalBerco: totalBerco,
+                        listarTotalFonte: totalFonte,
+                        listarTotalCabos: totalCabo,
+                        listarTotalBateria: totalBateria,
+
+                        //placa
+                        listarPlacaRec: totalPlacaRec,
+                        listarPlacaNRec: totalPlacaNRec,
+
+                        //buscar contrato
+                        listarAvulso: totalAvulso,
+                        listarAssai: totalAssai,
+                        listarCEA: totalCEA,
+                        listarB2W: totalB2W,
+                        // listarShopee: totalShopee,
+                        listarBoticario: totalBoticario,
+                        listarAtacadao: totalAtacadao,
+                        listarLocacao: totalLocacao,
+                        listarFriozem: totalFriozem,
+                        listarComfrio: totalComfrio,
+
+                        //total contrato
+                        listarTotalContrato: totalContrato,
+
+                        //meta
+                        listarMetaTecnico: totalMeta,
+
+                        //total tecnico
+                        listarTotalTecnico: totalEquip
+                    })
                 }
-                //Mes Ano
+                //#endregion
+
+                //#region Mes Ano
                 if ((tecnico !== "Todos") && (dia === "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
                     //variavel servico
                     let dadoMC = [];
@@ -11502,16 +11532,15 @@ export default class DashboardGeral extends React.Component {
                     let dadoBruno = [];
                     let dadoVinicius = [];
                     let dadoMateus = [];
-                    let dadoMarcio = [];
                     let dadoGabriel = [];
-                    let dadoLucas = [];
-                    let dadoDiogo = [];
                     let dadoDiegoA = [];
-                    let dadoAllan = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
                     let dadoCida = [];
                     let dadoDouglas = [];
                     let dadoKleiton = [];
-
                     //variavel mês
                     let dadoJan = [];
                     let dadoFev = [];
@@ -12375,23 +12404,18 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Marcio/)) {
-                                dadoMarcio.push({
-                                    OS: tabelaNome[i].OS
-                                })
-                            }
                             if (v.match(/Gabriel/)) {
                                 dadoGabriel.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Lucas/)) {
-                                dadoLucas.push({
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Diogo/)) {
-                                dadoDiogo.push({
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -12400,8 +12424,13 @@ export default class DashboardGeral extends React.Component {
                                     OS: tabelaNome[i].OS
                                 })
                             }
-                            if (v.match(/Allan/)) {
-                                dadoAllan.push({
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
                                     OS: tabelaNome[i].OS
                                 })
                             }
@@ -12841,12 +12870,12 @@ export default class DashboardGeral extends React.Component {
                     let totalBruno = Object.keys(dadoBruno).length;
                     let totalVinicius = Object.keys(dadoVinicius).length;
                     let totalMateus = Object.keys(dadoMateus).length;
-                    let totalMarcio = Object.keys(dadoMarcio).length;
                     let totalGabriel = Object.keys(dadoGabriel).length;
-                    let totalLucas = Object.keys(dadoLucas).length;
-                    let totalDiogo = Object.keys(dadoDiogo).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                    let totalAllan = Object.keys(dadoAllan).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
                     let totalCida = Object.keys(dadoCida).length;
                     let totalDouglas = Object.keys(dadoDouglas).length;
                     let totalKleiton = Object.keys(dadoKleiton).length;
@@ -13119,12 +13148,12 @@ export default class DashboardGeral extends React.Component {
                         listarBruno: totalBruno,
                         listarVinicius: totalVinicius,
                         listarMateus: totalMateus,
-                        listarMarcio: totalMarcio,
                         listarGabriel: totalGabriel,
-                        listarLucas: totalLucas,
-                        listarDiogo: totalDiogo,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
                         listarDiegoA: totalDiegoA,
-                        listarAllan: totalAllan,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
                         listarCida: totalCida,
                         listarDouglas: totalDouglas,
                         listarKleiton: totalKleiton,
@@ -13218,1890 +13247,1896 @@ export default class DashboardGeral extends React.Component {
                         listarTotalTecnico: totalEquip
                     })
                 }
-                //Dia Mes Ano
+                //#endregion
+
+
+                //#region Dia Mes Ano
                 if ((tecnico !== "Todos") && (dia !== "Todos") && (ano !== "Todos") && (mes !== "Todos")) {
-                     //variavel servico
-                     let dadoMC = [];
-                     let dadoLA = [];
-                     let dadoSR = [];
-                     let dadoRM = [];
-                     let dadoCO = [];
-                     let dadoRV = [];
-                     let dadoCC = [];
-                     let dadoMMV = [];
-                     let dadoRP = [];
-                     let dadoLP = [];
-                     let dadoRR = [];
-                     let dadoRC = [];
-                     let dadoRL = [];
- 
-                     //variavel manutenção
-                     let dadoMCAvulso = [];
-                     let dadoMCAssai = [];
-                     let dadoMCCEA = [];
-                     let dadoMCB2W = [];
-                     let dadoMCAtacadao = [];
-                     let dadoMCBoticario = [];
-                     let dadoMCLocacao = [];
-                     let dadoMCFriozem = [];
-                     let dadoMCComfrio = [];
- 
-                     //variavel laudo
-                     let dadoLAAvulso = [];
-                     let dadoLAAssai = [];
-                     let dadoLACEA = [];
-                     let dadoLAB2W = [];
-                     let dadoLAAtacadao = [];
-                     let dadoLABoticario = [];
-                     let dadoLALocacao = [];
-                     let dadoLAFriozem = [];
-                     let dadoLAComfrio = [];
- 
-                     //variavel suporte
-                     let dadoSRAvulso = [];
-                     let dadoSRAssai = [];
-                     let dadoSRCEA = [];
-                     let dadoSRB2W = [];
-                     let dadoSRAtacadao = [];
-                     let dadoSRBoticario = [];
-                     let dadoSRLocacao = [];
-                     let dadoSRFriozem = [];
-                     let dadoSRComfrio = [];
- 
-                     //variavel RM
-                     let dadoRMAvulso = [];
-                     let dadoRMAssai = [];
-                     let dadoRMCEA = [];
-                     let dadoRMB2W = [];
-                     let dadoRMAtacadao = [];
-                     let dadoRMBoticario = [];
-                     let dadoRMLocacao = [];
-                     let dadoRMFriozem = [];
-                     let dadoRMComfrio = [];
- 
-                     //variavel CO
-                     let dadoCOAvulso = [];
-                     let dadoCOAssai = [];
-                     let dadoCOCEA = [];
-                     let dadoCOB2W = [];
-                     let dadoCOAtacadao = [];
-                     let dadoCOBoticario = [];
-                     let dadoCOLocacao = [];
-                     let dadoCOFriozem = [];
-                     let dadoCOComfrio = [];
- 
-                     //variavel RV
-                     let dadoRVAvulso = [];
-                     let dadoRVAssai = [];
-                     let dadoRVCEA = [];
-                     let dadoRVB2W = [];
-                     let dadoRVAtacadao = [];
-                     let dadoRVBoticario = [];
-                     let dadoRVLocacao = [];
-                     let dadoRVFriozem = [];
-                     let dadoRVComfrio = [];
- 
-                     //variavel MMV
-                     let dadoMMVAvulso = [];
-                     let dadoMMVAssai = [];
-                     let dadoMMVCEA = [];
-                     let dadoMMVB2W = [];
-                     let dadoMMVAtacadao = [];
-                     let dadoMMVBoticario = [];
-                     let dadoMMVLocacao = [];
-                     let dadoMMVFriozem = [];
-                     let dadoMMVComfrio = [];
- 
-                     //variavel CC
-                     let dadoCCAvulso = [];
-                     let dadoCCAssai = [];
-                     let dadoCCCEA = [];
-                     let dadoCCB2W = [];
-                     let dadoCCAtacadao = [];
-                     let dadoCCBoticario = [];
-                     let dadoCCLocacao = [];
-                     let dadoCCFriozem = [];
-                     let dadoCCComfrio = [];
- 
-                     //variavel RP
-                     let dadoRPAvulso = [];
-                     let dadoRPAssai = [];
-                     let dadoRPCEA = [];
-                     let dadoRPB2W = [];
-                     let dadoRPAtacadao = [];
-                     let dadoRPBoticario = [];
-                     let dadoRPLocacao = [];
-                     let dadoRPFriozem = [];
-                     let dadoRPComfrio = [];
- 
-                     //variavel LP
-                     let dadoLPAvulso = [];
-                     let dadoLPAssai = [];
-                     let dadoLPCEA = [];
-                     let dadoLPB2W = [];
-                     let dadoLPAtacadao = [];
-                     let dadoLPBoticario = [];
-                     let dadoLPLocacao = [];
-                     let dadoLPFriozem = [];
-                     let dadoLPComfrio = [];
- 
-                     //variavel RR
-                     let dadoRRAvulso = [];
-                     let dadoRRAssai = [];
-                     let dadoRRCEA = [];
-                     let dadoRRB2W = [];
-                     let dadoRRAtacadao = [];
-                     let dadoRRBoticario = [];
-                     let dadoRRLocacao = [];
-                     let dadoRRFriozem = [];
-                     let dadoRRComfrio = [];
- 
-                     //variavel RC
-                     let dadoRCAvulso = [];
-                     let dadoRCAssai = [];
-                     let dadoRCCEA = [];
-                     let dadoRCB2W = [];
-                     let dadoRCAtacadao = [];
-                     let dadoRCBoticario = [];
-                     let dadoRCLocacao = [];
-                     let dadoRCFriozem = [];
-                     let dadoRCComfrio = [];
- 
-                     //variavel RL
-                     let dadoRLAvulso = [];
-                     let dadoRLAssai = [];
-                     let dadoRLCEA = [];
-                     let dadoRLB2W = [];
-                     let dadoRLAtacadao = [];
-                     let dadoRLBoticario = [];
-                     let dadoRLLocacao = [];
-                     let dadoRLFriozem = [];
-                     let dadoRLComfrio = [];
- 
-                     //variavel tecnico
-                     let dadoDiegoC = [];
-                     let dadoNatanael = [];
-                     let dadoBruno = [];
-                     let dadoVinicius = [];
-                     let dadoMateus = [];
-                     let dadoMarcio = [];
-                     let dadoGabriel = [];
-                     let dadoLucas = [];
-                     let dadoDiogo = [];
-                     let dadoDiegoA = [];
-                     let dadoAllan = [];
-                     let dadoCida = [];
-                     let dadoDouglas = [];
-                     let dadoKleiton = [];
- 
-                     //variavel mês
-                     let dadoJan = [];
-                     let dadoFev = [];
-                     let dadoMar = [];
-                     let dadoAbr = [];
-                     let dadoMai = [];
-                     let dadoJun = [];
-                     let dadoJul = [];
-                     let dadoAgo = [];
-                     let dadoSet = [];
-                     let dadoOut = [];
-                     let dadoNov = [];
-                     let dadoDez = [];
- 
-                     //variavel diario
-                     let dia1 = [];
-                     let dia2 = [];
-                     let dia3 = [];
-                     let dia4 = [];
-                     let dia5 = [];
-                     let dia6 = [];
-                     let dia7 = [];
-                     let dia8 = [];
-                     let dia9 = [];
-                     let dia10 = [];
-                     let dia11 = [];
-                     let dia12 = [];
-                     let dia13 = [];
-                     let dia14 = [];
-                     let dia15 = [];
-                     let dia16 = [];
-                     let dia17 = [];
-                     let dia18 = [];
-                     let dia19 = [];
-                     let dia20 = [];
-                     let dia21 = [];
-                     let dia22 = [];
-                     let dia23 = [];
-                     let dia24 = [];
-                     let dia25 = [];
-                     let dia26 = [];
-                     let dia27 = [];
-                     let dia28 = [];
-                     let dia29 = [];
-                     let dia30 = [];
-                     let dia31 = [];
- 
-                     //dados por equipamento
-                     let dadoCol = [];
-                     let dadoLei = [];
-                     let dadoLeiRFID = [];
-                     let dadoImp = [];
-                     let dadoBusca = [];
-                     let dadoCar3 = [];
-                     let dadoCar4 = [];
-                     let dadoCar5 = [];
-                     let dadoCar6 = [];
-                     let dadoBerco = [];
-                     let dadoFonte = [];
-                     let dadoCabo = [];
-                     let dadoBateria = [];
- 
-                     //placas
-                     let dadoPlacaRec = [];
-                     let dadoPlacaNRec = [];
- 
-                     //contratos
-                     //variavel contrato
-                     let dadoAssai = [];
-                     let dadoAvulso = [];
-                     let dadoCEA = [];
-                     let dadoB2W = [];
-                     let dadoAtacadao = [];
-                     let dadoShopee = [];
-                     let dadoBoticario = [];
-                     let dadoLocacao = [];
-                     let dadoFriozem = [];
-                     let dadoComfrio = [];
- 
-                     //variavel
-                     let metaJan = [];
-                     let metaFev = [];
-                     let metaMar = [];
-                     let metaAbr = [];
-                     let metaMai = [];
-                     let metaJun = [];
-                     let metaJul = [];
-                     let metaAgo = [];
-                     let metaSet = [];
-                     let metaOut = [];
-                     let metaNov = [];
-                     let metaDez = [];
- 
-                     for (let i = 0; i < tabelaNome.length; i++) {
- 
-                         if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (ano === `${tabelaNome[i].Ano}`) && (mes === `${tabelaNome[i].Mes}`)) {
-                             var v = `${tabelaNome[i].Tecnico}`;
-                             var c = `${tabelaNome[i].Contrato}`;
- 
-                             if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
-                                 dadoMC.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoMCAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoMCAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoMCCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoMCB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoMCAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoMCLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoMCLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoMCFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoMCBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoMCComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
- 
-                             }
-                             if (("Laudo" === tabelaNome[i].Servico)) {
-                                 dadoLA.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoLAAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoLAAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoLACEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoLAB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoLAAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoLALocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoLALocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoLAFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoLABoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoLAComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Suporte Remoto" === tabelaNome[i].Servico)) {
-                                 dadoSR.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoSRAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoSRAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoSRCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoSRB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoSRAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoSRLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoSRLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoSRFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoSRBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoSRComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
-                                 dadoRM.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoRMAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoRMAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoRMCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoRMB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoRMAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRMLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRMLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoRMFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoRMBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoRMComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Chamado On-Site" === tabelaNome[i].Servico)) {
-                                 dadoCO.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoCOAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoCOAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoCOCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoCOB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoCOAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoCOLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoCOLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoCOFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoCOBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoCOComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Revisão de Venda" === tabelaNome[i].Servico)) {
-                                 dadoRV.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoRVAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoRVAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoRVCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoRVB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoRVAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRVLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRVLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoRVFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoRVBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoRVComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
-                                 dadoCC.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoCCAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoCCAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoCCCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoCCB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoCCAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoCCLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoCCLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoCCFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoCCBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoCCComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
-                                 dadoMMV.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoMMVAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoMMVAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoMMVCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoMMVB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoMMVAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoMMVLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoMMVLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoMMVFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoMMVBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoMMVComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
-                                 dadoRP.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Recuperada" === tabelaNome[i].Placa) {
-                                     dadoPlacaRec.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if ("Não Recuperada" === tabelaNome[i].Placa) {
-                                     dadoPlacaNRec.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoRPAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoRPAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoRPCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoRPB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoRPAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRPLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRPLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoRPFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoRPBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoRPComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Limpeza" === tabelaNome[i].Servico)) {
-                                 dadoLP.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoLPAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoLPAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoLPCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoLPB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoLPAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoLPLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoLPLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoLPFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoLPBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoLPComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
-                                 dadoRR.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoRRAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoRRAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoRRCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoRRB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoRRAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRRLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRRLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoRRFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoRRBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoRRComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Revisão de Compra" === tabelaNome[i].Servico)) {
-                                 dadoRC.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoRCAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoRCAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoRCCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoRCB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoRCAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRCLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRCLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoRCFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoRCBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoRCComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
-                                 dadoRL.push({
-                                     OS: tabelaNome[i].OS
-                                 })
- 
-                                 if ("Avulso" === tabelaNome[i].Contrato) {
-                                     dadoRLAvulso.push({
-                                         Id: tabelaNome[i].id
-                                     })
-                                 }
-                                 if (c.match(/Assaí/)) {
-                                     dadoRLAssai.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/C&A/)) {
-                                     dadoRLCEA.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/B2W/)) {
-                                     dadoRLB2W.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Atacadão/)) {
-                                     dadoRLAtacadao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRLLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Locação/)) {
-                                     dadoRLLocacao.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Friozem/)) {
-                                     dadoRLFriozem.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Boticário/)) {
-                                     dadoRLBoticario.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                                 if (c.match(/Comfrio/)) {
-                                     dadoRLComfrio.push({
-                                         OS: tabelaNome[i].OS
-                                     })
-                                 }
-                             }
-                             if (v.match(/Diego C/)) {
-                                 dadoDiegoC.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Natanael/)) {
-                                 dadoNatanael.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Bruno/)) {
-                                 dadoBruno.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Vinicius/)) {
-                                 dadoVinicius.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Mateus/)) {
-                                 dadoMateus.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Marcio/)) {
-                                 dadoMarcio.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Gabriel/)) {
-                                 dadoGabriel.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Lucas/)) {
-                                 dadoLucas.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Diogo/)) {
-                                 dadoDiogo.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Diego A/)) {
-                                 dadoDiegoA.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Allan/)) {
-                                 dadoAllan.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Cida/)) {
-                                 dadoCida.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Douglas/)) {
-                                 dadoDouglas.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (v.match(/Kleiton/)) {
-                                 dadoKleiton.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (1 === tabelaNome[i].Mes) {
-                                 dadoJan.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (2 === tabelaNome[i].Mes) {
-                                 dadoFev.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (3 === tabelaNome[i].Mes) {
-                                 dadoMar.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (4 === tabelaNome[i].Mes) {
-                                 dadoAbr.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (5 === tabelaNome[i].Mes) {
-                                 dadoMai.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (6 === tabelaNome[i].Mes) {
-                                 dadoJun.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (7 === tabelaNome[i].Mes) {
-                                 dadoJul.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (8 === tabelaNome[i].Mes) {
-                                 dadoAgo.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (9 === tabelaNome[i].Mes) {
-                                 dadoSet.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (10 === tabelaNome[i].Mes) {
-                                 dadoOut.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (11 === tabelaNome[i].Mes) {
-                                 dadoNov.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (12 === tabelaNome[i].Mes) {
-                                 dadoDez.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (1 === tabelaNome[i].Dia) {
-                                 dia1.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (2 === tabelaNome[i].Dia) {
-                                 dia2.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (3 === tabelaNome[i].Dia) {
-                                 dia3.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (4 === tabelaNome[i].Dia) {
-                                 dia4.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (5 === tabelaNome[i].Dia) {
-                                 dia5.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (6 === tabelaNome[i].Dia) {
-                                 dia6.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (7 === tabelaNome[i].Dia) {
-                                 dia7.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (8 === tabelaNome[i].Dia) {
-                                 dia8.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (9 === tabelaNome[i].Dia) {
-                                 dia9.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (10 === tabelaNome[i].Dia) {
-                                 dia10.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (11 === tabelaNome[i].Dia) {
-                                 dia11.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (12 === tabelaNome[i].Dia) {
-                                 dia12.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (13 === tabelaNome[i].Dia) {
-                                 dia13.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (14 === tabelaNome[i].Dia) {
-                                 dia14.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (15 === tabelaNome[i].Dia) {
-                                 dia15.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (16 === tabelaNome[i].Dia) {
-                                 dia16.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (17 === tabelaNome[i].Dia) {
-                                 dia17.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (18 === tabelaNome[i].Dia) {
-                                 dia18.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (19 === tabelaNome[i].Dia) {
-                                 dia19.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (20 === tabelaNome[i].Dia) {
-                                 dia20.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (21 === tabelaNome[i].Dia) {
-                                 dia21.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (22 === tabelaNome[i].Dia) {
-                                 dia22.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (23 === tabelaNome[i].Dia) {
-                                 dia23.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (24 === tabelaNome[i].Dia) {
-                                 dia24.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (25 === tabelaNome[i].Dia) {
-                                 dia25.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (26 === tabelaNome[i].Dia) {
-                                 dia26.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (27 === tabelaNome[i].Dia) {
-                                 dia27.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (28 === tabelaNome[i].Dia) {
-                                 dia28.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (29 === tabelaNome[i].Dia) {
-                                 dia29.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (30 === tabelaNome[i].Dia) {
-                                 dia30.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (31 === tabelaNome[i].Dia) {
-                                 dia31.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
-                                 dadoCol.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
-                                 dadoLei.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
-                                 dadoLeiRFID.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
-                                 dadoImp.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
-                                 dadoBusca.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
-                                 dadoCar3.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
-                                 dadoCar4.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
-                                 dadoCar5.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
-                                 dadoCar6.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
-                                 dadoBerco.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
-                                 dadoCabo.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (("Bateria" === tabelaNome[i].Equipamento)) {
-                                 dadoBateria.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if ("Avulso" === tabelaNome[i].Contrato) {
-                                 dadoAvulso.push({
-                                     Id: tabelaNome[i].id
-                                 })
-                             }
-                             if (c.match(/Assaí/)) {
-                                 dadoAssai.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/C&A/)) {
-                                 dadoCEA.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/B2W/)) {
-                                 dadoB2W.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Atacadão/)) {
-                                 dadoAtacadao.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Shopee/)) {
-                                 dadoShopee.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Locação/)) {
-                                 dadoLocacao.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Locação/)) {
-                                 dadoLocacao.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Friozem/)) {
-                                 dadoFriozem.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Boticário/)) {
-                                 dadoBoticario.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                             if (c.match(/Comfrio/)) {
-                                 dadoComfrio.push({
-                                     OS: tabelaNome[i].OS
-                                 })
-                             }
-                         }
-                     }
- 
-                     for (let i = 0; i < tabelaMeta.length; i++) {
-                         if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
-                             if (1 === tabelaMeta[i].Mes) {
-                                 metaJan.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (2 === tabelaMeta[i].Mes) {
-                                 metaFev.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (3 === tabelaMeta[i].Mes) {
-                                 metaMar.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (4 === tabelaMeta[i].Mes) {
-                                 metaAbr.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (5 === tabelaMeta[i].Mes) {
-                                 metaMai.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (6 === tabelaMeta[i].Mes) {
-                                 metaJun.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (7 === tabelaMeta[i].Mes) {
-                                 metaJul.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (8 === tabelaMeta[i].Mes) {
-                                 metaAgo.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (9 === tabelaMeta[i].Mes) {
-                                 metaSet.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (10 === tabelaMeta[i].Mes) {
-                                 metaOut.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (11 === tabelaMeta[i].Mes) {
-                                 metaNov.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                             if (12 === tabelaMeta[i].Mes) {
-                                 metaDez.push({
-                                     M: tabelaMeta[i].Meta
-                                 })
-                             }
-                         }
-                     }
- 
-                     //variavel servico
-                     let totalMC = Object.keys(dadoMC).length;
-                     let totalLA = Object.keys(dadoLA).length;
-                     let totalSR = Object.keys(dadoSR).length;
-                     let totalRM = Object.keys(dadoRM).length;
-                     let totalCO = Object.keys(dadoCO).length;
-                     let totalRV = Object.keys(dadoRV).length;
-                     let totalCC = Object.keys(dadoCC).length;
-                     let totalMMV = Object.keys(dadoMMV).length;
-                     let totalRP = Object.keys(dadoRP).length;
-                     let totalLP = Object.keys(dadoLP).length;
-                     let totalRR = Object.keys(dadoRR).length;
-                     let totalRC = Object.keys(dadoRC).length;
-                     let totalRL = Object.keys(dadoRL).length;
- 
-                     let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
-                     let totalRealOS = [];
-                     for (let i = 0; i < totalOS.length; i++) {
-                         totalRealOS.unshift(totalOS[i].OS)
-                     }
- 
-                     let totalSemRepOS = [... new Set(totalRealOS)]
- 
-                     //variavel total
-                     let totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
-                         totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
- 
-                     //variavel tecnico
-                     let totalDiegoC = Object.keys(dadoDiegoC).length;
-                     let totalNatanael = Object.keys(dadoNatanael).length;
-                     let totalBruno = Object.keys(dadoBruno).length;
-                     let totalVinicius = Object.keys(dadoVinicius).length;
-                     let totalMateus = Object.keys(dadoMateus).length;
-                     let totalMarcio = Object.keys(dadoMarcio).length;
-                     let totalGabriel = Object.keys(dadoGabriel).length;
-                     let totalLucas = Object.keys(dadoLucas).length;
-                     let totalDiogo = Object.keys(dadoDiogo).length;
-                     let totalDiegoA = Object.keys(dadoDiegoA).length;
-                     let totalAllan = Object.keys(dadoAllan).length;
-                     let totalCida = Object.keys(dadoCida).length;
-                     let totalDouglas = Object.keys(dadoDouglas).length;
-                     let totalKleiton = Object.keys(dadoKleiton).length;
- 
-                     //variavel Meses
-                     let totalJan = Object.keys(dadoJan).length;
-                     let totalFev = Object.keys(dadoFev).length;
-                     let totalMar = Object.keys(dadoMar).length;
-                     let totalAbr = Object.keys(dadoAbr).length;
-                     let totalMai = Object.keys(dadoMai).length;
-                     let totalJun = Object.keys(dadoJun).length;
-                     let totalJul = Object.keys(dadoJul).length;
-                     let totalAgo = Object.keys(dadoAgo).length;
-                     let totalSet = Object.keys(dadoSet).length;
-                     let totalOut = Object.keys(dadoOut).length;
-                     let totalNov = Object.keys(dadoNov).length;
-                     let totalDez = Object.keys(dadoDez).length;
- 
-                     //variavel diario
-                     let totalDia1 = Object.keys(dia1).length;
-                     let totalDia2 = Object.keys(dia2).length;
-                     let totalDia3 = Object.keys(dia3).length;
-                     let totalDia4 = Object.keys(dia4).length;
-                     let totalDia5 = Object.keys(dia5).length;
-                     let totalDia6 = Object.keys(dia6).length;
-                     let totalDia7 = Object.keys(dia7).length;
-                     let totalDia8 = Object.keys(dia8).length;
-                     let totalDia9 = Object.keys(dia9).length;
-                     let totalDia10 = Object.keys(dia10).length;
-                     let totalDia11 = Object.keys(dia11).length;
-                     let totalDia12 = Object.keys(dia12).length;
-                     let totalDia13 = Object.keys(dia13).length;
-                     let totalDia14 = Object.keys(dia14).length;
-                     let totalDia15 = Object.keys(dia15).length;
-                     let totalDia16 = Object.keys(dia16).length;
-                     let totalDia17 = Object.keys(dia17).length;
-                     let totalDia18 = Object.keys(dia18).length;
-                     let totalDia19 = Object.keys(dia19).length;
-                     let totalDia20 = Object.keys(dia20).length;
-                     let totalDia21 = Object.keys(dia21).length;
-                     let totalDia22 = Object.keys(dia22).length;
-                     let totalDia23 = Object.keys(dia23).length;
-                     let totalDia24 = Object.keys(dia24).length;
-                     let totalDia25 = Object.keys(dia25).length;
-                     let totalDia26 = Object.keys(dia26).length;
-                     let totalDia27 = Object.keys(dia27).length;
-                     let totalDia28 = Object.keys(dia28).length;
-                     let totalDia29 = Object.keys(dia29).length;
-                     let totalDia30 = Object.keys(dia30).length;
-                     let totalDia31 = Object.keys(dia31).length;
- 
-                     let totalCol = Object.keys(dadoCol).length;
-                     let totalLei = Object.keys(dadoLei).length;
-                     let totalLeiRFID = Object.keys(dadoLeiRFID).length;
-                     let totalImp = Object.keys(dadoImp).length;
-                     let totalBusca = Object.keys(dadoBusca).length;
-                     let totalCar3 = Object.keys(dadoCar3).length;
-                     let totalCar4 = Object.keys(dadoCar4).length;
-                     let totalCar5 = Object.keys(dadoCar5).length;
-                     let totalCar6 = Object.keys(dadoCar6).length;
-                     let totalBerco = Object.keys(dadoBerco).length;
-                     let totalFonte = Object.keys(dadoFonte).length;
-                     let totalCabo = Object.keys(dadoCabo).length;
-                     let totalBateria = Object.keys(dadoBateria).length;
- 
-                     //placa
-                     let totalPlacaRec = Object.keys(dadoPlacaRec).length;
-                     let totalPlacaNRec = Object.keys(dadoPlacaNRec).length;
- 
-                     //varial contrato
-                     let totalAvulso = Object.keys(dadoAvulso).length;
-                     let totalAssai = Object.keys(dadoAssai).length;
-                     let totalAtacadao = Object.keys(dadoAtacadao).length;
-                     let totalCEA = Object.keys(dadoCEA).length;
-                     let totalB2W = Object.keys(dadoB2W).length;
-                     let totalFriozem = Object.keys(dadoFriozem).length;
-                     let totalComfrio = Object.keys(dadoComfrio).length;
-                     let totalLocacao = Object.keys(dadoLocacao).length;
-                     let totalBoticario = Object.keys(dadoBoticario).length;
- 
-                     let totalContrato = totalAssai + totalAtacadao + totalCEA + totalB2W + totalFriozem + totalComfrio + totalLocacao
-                         + totalBoticario
- 
-                     let mJan = Object.assign(metaJan);
-                     let mFev = Object.assign(metaFev);
-                     let mMar = Object.assign(metaMar);
-                     let mAbr = Object.assign(metaAbr);
-                     let mMai = Object.assign(metaMai);
-                     let mJun = Object.assign(metaJun);
-                     let mJul = Object.assign(metaJul);
-                     let mAgo = Object.assign(metaAgo);
-                     let mSet = Object.assign(metaSet);
-                     let mOut = Object.assign(metaOut);
-                     let mNov = Object.assign(metaNov);
-                     let mDez = Object.assign(metaDez);
- 
-                     let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
-                         parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
-                         parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
-                         parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
-                         parseInt(mDez.length > 0 ? mDez[0].M : 0)
- 
- 
-                     return this.setState({
-                         //busca servico
-                         listarMC: totalMC,
-                         listarLA: totalLA,
-                         listarSR: totalSR,
-                         listarRM: totalRM,
-                         listarCO: totalCO,
-                         listarRV: totalRV,
-                         listarCC: totalCC,
-                         listarMMV: totalMMV,
-                         listarRP: totalRP,
-                         listarLP: totalLP,
-                         listarRR: totalRR,
-                         listarRC: totalRC,
-                         listarRL: totalRL,
- 
-                         //busca de manutenção
-                         listarMCAvulso: dadoMCAvulso.length,
-                         listarMCAssai: dadoMCAssai.length,
-                         listarMCCEA: dadoMCCEA.length,
-                         listarMCB2W: dadoMCB2W.length,
-                         listarMCFriozem: dadoMCFriozem.length,
-                         listarMCBoticario: dadoMCBoticario.length,
-                         listarMCAtacadao: dadoMCAtacadao.length,
-                         listarMCComfrio: dadoMCComfrio.length,
-                         listarMCLocacao: dadoMCLocacao.length,
- 
-                         //busca de Laudo
-                         listarLAAvulso: dadoLAAvulso.length,
-                         listarLAAssai: dadoLAAssai.length,
-                         listarLACEA: dadoLACEA.length,
-                         listarLAB2W: dadoLAB2W.length,
-                         listarLAFriozem: dadoLAFriozem.length,
-                         listarLABoticario: dadoLABoticario.length,
-                         listarLAAtacadao: dadoLAAtacadao.length,
-                         listarLAComfrio: dadoLAComfrio.length,
-                         listarLALocacao: dadoLALocacao.length,
- 
-                         //busca de Suporte
-                         listarSRAvulso: dadoSRAvulso.length,
-                         listarSRAssai: dadoSRAssai.length,
-                         listarSRCEA: dadoSRCEA.length,
-                         listarSRB2W: dadoSRB2W.length,
-                         listarSRFriozem: dadoSRFriozem.length,
-                         listarSRBoticario: dadoSRBoticario.length,
-                         listarSRAtacadao: dadoSRAtacadao.length,
-                         listarSRComfrio: dadoSRComfrio.length,
-                         listarSRLocacao: dadoSRLocacao.length,
- 
-                         //busca de RM
-                         listarRMAvulso: dadoRMAvulso.length,
-                         listarRMAssai: dadoRMAssai.length,
-                         listarRMCEA: dadoRMCEA.length,
-                         listarRMB2W: dadoRMB2W.length,
-                         listarRMFriozem: dadoRMFriozem.length,
-                         listarRMBoticario: dadoRMBoticario.length,
-                         listarRMAtacadao: dadoRMAtacadao.length,
-                         listarRMComfrio: dadoRMComfrio.length,
-                         listarRMLocacao: dadoRMLocacao.length,
- 
-                         //busca de CO
-                         listarCOAvulso: dadoCOAvulso.length,
-                         listarCOAssai: dadoCOAssai.length,
-                         listarCOCEA: dadoCOCEA.length,
-                         listarCOB2W: dadoCOB2W.length,
-                         listarCOFriozem: dadoCOFriozem.length,
-                         listarCOBoticario: dadoCOBoticario.length,
-                         listarCOAtacadao: dadoCOAtacadao.length,
-                         listarCOComfrio: dadoCOComfrio.length,
-                         listarCOLocacao: dadoCOLocacao.length,
- 
-                         //busca de Rv
-                         listarRVAvulso: dadoRVAvulso.length,
-                         listarRVAssai: dadoRVAssai.length,
-                         listarRVCEA: dadoRVCEA.length,
-                         listarRVB2W: dadoRVB2W.length,
-                         listarRVFriozem: dadoRVFriozem.length,
-                         listarRVBoticario: dadoRVBoticario.length,
-                         listarRVAtacadao: dadoRVAtacadao.length,
-                         listarRVComfrio: dadoRVComfrio.length,
-                         listarRVLocacao: dadoRVLocacao.length,
- 
-                         //busca de MMV
-                         listarMMVAvulso: dadoMMVAvulso.length,
-                         listarMMVAssai: dadoMMVAssai.length,
-                         listarMMVCEA: dadoMMVCEA.length,
-                         listarMMVB2W: dadoMMVB2W.length,
-                         listarMMVFriozem: dadoMMVFriozem.length,
-                         listarMMVBoticario: dadoMMVBoticario.length,
-                         listarMMVAtacadao: dadoMMVAtacadao.length,
-                         listarMMVComfrio: dadoMMVComfrio.length,
-                         listarMMVLocacao: dadoMMVLocacao.length,
- 
-                         //busca de CC
-                         listarCCAvulso: dadoCCAvulso.length,
-                         listarCCAssai: dadoCCAssai.length,
-                         listarCCCEA: dadoCCCEA.length,
-                         listarCCB2W: dadoCCB2W.length,
-                         listarCCFriozem: dadoCCFriozem.length,
-                         listarCCBoticario: dadoCCBoticario.length,
-                         listarCCAtacadao: dadoCCAtacadao.length,
-                         listarCCComfrio: dadoCCComfrio.length,
-                         listarCCLocacao: dadoCCLocacao.length,
- 
-                         //busca de RP
-                         listarRPAvulso: dadoRPAvulso.length,
-                         listarRPAssai: dadoRPAssai.length,
-                         listarRPCEA: dadoRPCEA.length,
-                         listarRPB2W: dadoRPB2W.length,
-                         listarRPFriozem: dadoRPFriozem.length,
-                         listarRPBoticario: dadoRPBoticario.length,
-                         listarRPAtacadao: dadoRPAtacadao.length,
-                         listarRPComfrio: dadoRPComfrio.length,
-                         listarRPLocacao: dadoRPLocacao.length,
- 
-                         //busca de LP
-                         listarLPAvulso: dadoLPAvulso.length,
-                         listarLPAssai: dadoLPAssai.length,
-                         listarLPCEA: dadoLPCEA.length,
-                         listarLPB2W: dadoLPB2W.length,
-                         listarLPFriozem: dadoLPFriozem.length,
-                         listarLPBoticario: dadoLPBoticario.length,
-                         listarLPAtacadao: dadoLPAtacadao.length,
-                         listarLPComfrio: dadoLPComfrio.length,
-                         listarLPLocacao: dadoLPLocacao.length,
- 
-                         //busca de RR
-                         listarRRAvulso: dadoRRAvulso.length,
-                         listarRRAssai: dadoRRAssai.length,
-                         listarRRCEA: dadoRRCEA.length,
-                         listarRRB2W: dadoRRB2W.length,
-                         listarRRFriozem: dadoRRFriozem.length,
-                         listarRRBoticario: dadoRRBoticario.length,
-                         listarRRAtacadao: dadoRRAtacadao.length,
-                         listarRRComfrio: dadoRRComfrio.length,
-                         listarRRLocacao: dadoRRLocacao.length,
- 
-                         //busca de RC
-                         listarRCAvulso: dadoRCAvulso.length,
-                         listarRCAssai: dadoRCAssai.length,
-                         listarRCCEA: dadoRCCEA.length,
-                         listarRCB2W: dadoRCB2W.length,
-                         listarRCFriozem: dadoRCFriozem.length,
-                         listarRCBoticario: dadoRCBoticario.length,
-                         listarRCAtacadao: dadoRCAtacadao.length,
-                         listarRCComfrio: dadoRCComfrio.length,
-                         listarRCLocacao: dadoRCLocacao.length,
- 
-                         //busca de RL
-                         listarRLAvulso: dadoRLAvulso.length,
-                         listarRLAssai: dadoRLAssai.length,
-                         listarRLCEA: dadoRLCEA.length,
-                         listarRLB2W: dadoRLB2W.length,
-                         listarRLFriozem: dadoRLFriozem.length,
-                         listarRLBoticario: dadoRLBoticario.length,
-                         listarRLAtacadao: dadoRLAtacadao.length,
-                         listarRLComfrio: dadoRLComfrio.length,
-                         listarRLLocacao: dadoRLLocacao.length,
- 
-                         //busca total
-                         listarTotalEquip: totalEquip,
-                         listarTotalOS: totalSemRepOS.length,
- 
-                         //busca tecnico
-                         listarDiegoC: totalDiegoC,
-                         listarNatanael: totalNatanael,
-                         listarBruno: totalBruno,
-                         listarVinicius: totalVinicius,
-                         listarMateus: totalMateus,
-                         listarMarcio: totalMarcio,
-                         listarGabriel: totalGabriel,
-                         listarLucas: totalLucas,
-                         listarDiogo: totalDiogo,
-                         listarDiegoA: totalDiegoA,
-                         listarAllan: totalAllan,
-                         listarCida: totalCida,
-                         listarDouglas: totalDouglas,
-                         listarKleiton: totalKleiton,
- 
-                         //busca Meses
-                         listarJan: totalJan,
-                         listarFev: totalFev,
-                         listarMar: totalMar,
-                         listarAbr: totalAbr,
-                         listarMai: totalMai,
-                         listarJun: totalJun,
-                         listarJul: totalJul,
-                         listarAgo: totalAgo,
-                         listarSet: totalSet,
-                         listarOut: totalOut,
-                         listarNov: totalNov,
-                         listarDez: totalDez,
- 
-                         //prod Diaria
-                         listarDia1: totalDia1,
-                         listarDia2: totalDia2,
-                         listarDia3: totalDia3,
-                         listarDia4: totalDia4,
-                         listarDia5: totalDia5,
-                         listarDia6: totalDia6,
-                         listarDia7: totalDia7,
-                         listarDia8: totalDia8,
-                         listarDia9: totalDia9,
-                         listarDia10: totalDia10,
-                         listarDia11: totalDia11,
-                         listarDia12: totalDia12,
-                         listarDia13: totalDia13,
-                         listarDia14: totalDia14,
-                         listarDia15: totalDia15,
-                         listarDia16: totalDia16,
-                         listarDia17: totalDia17,
-                         listarDia18: totalDia18,
-                         listarDia19: totalDia19,
-                         listarDia20: totalDia20,
-                         listarDia21: totalDia21,
-                         listarDia22: totalDia22,
-                         listarDia23: totalDia23,
-                         listarDia24: totalDia24,
-                         listarDia25: totalDia25,
-                         listarDia26: totalDia26,
-                         listarDia27: totalDia27,
-                         listarDia28: totalDia28,
-                         listarDia29: totalDia29,
-                         listarDia30: totalDia30,
-                         listarDia31: totalDia31,
- 
- 
-                         //listart total por equipamento
-                         listarTotalCol: totalCol,
-                         listarTotalImp: totalImp,
-                         listarTotalLei: totalLei,
-                         listarTotalLeiRFID: totalLeiRFID,
-                         listarTotalBusca: totalBusca,
-                         listarTotalCar3: totalCar3,
-                         listarTotalCar4: totalCar4,
-                         listarTotalCar5: totalCar5,
-                         listarTotalCar6: totalCar6,
-                         listarTotalBerco: totalBerco,
-                         listarTotalFonte: totalFonte,
-                         listarTotalCabos: totalCabo,
-                         listarTotalBateria: totalBateria,
- 
-                         //placa
-                         listarPlacaRec: totalPlacaRec,
-                         listarPlacaNRec: totalPlacaNRec,
- 
-                         //buscar contrato
-                         listarAvulso: totalAvulso,
-                         listarAssai: totalAssai,
-                         listarCEA: totalCEA,
-                         listarB2W: totalB2W,
-                         // listarShopee: totalShopee,
-                         listarBoticario: totalBoticario,
-                         listarAtacadao: totalAtacadao,
-                         listarLocacao: totalLocacao,
-                         listarFriozem: totalFriozem,
-                         listarComfrio: totalComfrio,
- 
-                         //total contrato
-                         listarTotalContrato: totalContrato,
- 
-                         //meta
-                         listarMetaTecnico: totalMeta,
- 
-                         //total tecnico
-                         listarTotalTecnico: totalEquip
-                     })
+                    //variavel servico
+                    let dadoMC = [];
+                    let dadoLA = [];
+                    let dadoSR = [];
+                    let dadoRM = [];
+                    let dadoCO = [];
+                    let dadoRV = [];
+                    let dadoCC = [];
+                    let dadoMMV = [];
+                    let dadoRP = [];
+                    let dadoLP = [];
+                    let dadoRR = [];
+                    let dadoRC = [];
+                    let dadoRL = [];
+
+                    //variavel manutenção
+                    let dadoMCAvulso = [];
+                    let dadoMCAssai = [];
+                    let dadoMCCEA = [];
+                    let dadoMCB2W = [];
+                    let dadoMCAtacadao = [];
+                    let dadoMCBoticario = [];
+                    let dadoMCLocacao = [];
+                    let dadoMCFriozem = [];
+                    let dadoMCComfrio = [];
+
+                    //variavel laudo
+                    let dadoLAAvulso = [];
+                    let dadoLAAssai = [];
+                    let dadoLACEA = [];
+                    let dadoLAB2W = [];
+                    let dadoLAAtacadao = [];
+                    let dadoLABoticario = [];
+                    let dadoLALocacao = [];
+                    let dadoLAFriozem = [];
+                    let dadoLAComfrio = [];
+
+                    //variavel suporte
+                    let dadoSRAvulso = [];
+                    let dadoSRAssai = [];
+                    let dadoSRCEA = [];
+                    let dadoSRB2W = [];
+                    let dadoSRAtacadao = [];
+                    let dadoSRBoticario = [];
+                    let dadoSRLocacao = [];
+                    let dadoSRFriozem = [];
+                    let dadoSRComfrio = [];
+
+                    //variavel RM
+                    let dadoRMAvulso = [];
+                    let dadoRMAssai = [];
+                    let dadoRMCEA = [];
+                    let dadoRMB2W = [];
+                    let dadoRMAtacadao = [];
+                    let dadoRMBoticario = [];
+                    let dadoRMLocacao = [];
+                    let dadoRMFriozem = [];
+                    let dadoRMComfrio = [];
+
+                    //variavel CO
+                    let dadoCOAvulso = [];
+                    let dadoCOAssai = [];
+                    let dadoCOCEA = [];
+                    let dadoCOB2W = [];
+                    let dadoCOAtacadao = [];
+                    let dadoCOBoticario = [];
+                    let dadoCOLocacao = [];
+                    let dadoCOFriozem = [];
+                    let dadoCOComfrio = [];
+
+                    //variavel RV
+                    let dadoRVAvulso = [];
+                    let dadoRVAssai = [];
+                    let dadoRVCEA = [];
+                    let dadoRVB2W = [];
+                    let dadoRVAtacadao = [];
+                    let dadoRVBoticario = [];
+                    let dadoRVLocacao = [];
+                    let dadoRVFriozem = [];
+                    let dadoRVComfrio = [];
+
+                    //variavel MMV
+                    let dadoMMVAvulso = [];
+                    let dadoMMVAssai = [];
+                    let dadoMMVCEA = [];
+                    let dadoMMVB2W = [];
+                    let dadoMMVAtacadao = [];
+                    let dadoMMVBoticario = [];
+                    let dadoMMVLocacao = [];
+                    let dadoMMVFriozem = [];
+                    let dadoMMVComfrio = [];
+
+                    //variavel CC
+                    let dadoCCAvulso = [];
+                    let dadoCCAssai = [];
+                    let dadoCCCEA = [];
+                    let dadoCCB2W = [];
+                    let dadoCCAtacadao = [];
+                    let dadoCCBoticario = [];
+                    let dadoCCLocacao = [];
+                    let dadoCCFriozem = [];
+                    let dadoCCComfrio = [];
+
+                    //variavel RP
+                    let dadoRPAvulso = [];
+                    let dadoRPAssai = [];
+                    let dadoRPCEA = [];
+                    let dadoRPB2W = [];
+                    let dadoRPAtacadao = [];
+                    let dadoRPBoticario = [];
+                    let dadoRPLocacao = [];
+                    let dadoRPFriozem = [];
+                    let dadoRPComfrio = [];
+
+                    //variavel LP
+                    let dadoLPAvulso = [];
+                    let dadoLPAssai = [];
+                    let dadoLPCEA = [];
+                    let dadoLPB2W = [];
+                    let dadoLPAtacadao = [];
+                    let dadoLPBoticario = [];
+                    let dadoLPLocacao = [];
+                    let dadoLPFriozem = [];
+                    let dadoLPComfrio = [];
+
+                    //variavel RR
+                    let dadoRRAvulso = [];
+                    let dadoRRAssai = [];
+                    let dadoRRCEA = [];
+                    let dadoRRB2W = [];
+                    let dadoRRAtacadao = [];
+                    let dadoRRBoticario = [];
+                    let dadoRRLocacao = [];
+                    let dadoRRFriozem = [];
+                    let dadoRRComfrio = [];
+
+                    //variavel RC
+                    let dadoRCAvulso = [];
+                    let dadoRCAssai = [];
+                    let dadoRCCEA = [];
+                    let dadoRCB2W = [];
+                    let dadoRCAtacadao = [];
+                    let dadoRCBoticario = [];
+                    let dadoRCLocacao = [];
+                    let dadoRCFriozem = [];
+                    let dadoRCComfrio = [];
+
+                    //variavel RL
+                    let dadoRLAvulso = [];
+                    let dadoRLAssai = [];
+                    let dadoRLCEA = [];
+                    let dadoRLB2W = [];
+                    let dadoRLAtacadao = [];
+                    let dadoRLBoticario = [];
+                    let dadoRLLocacao = [];
+                    let dadoRLFriozem = [];
+                    let dadoRLComfrio = [];
+
+                    //variavel tecnico
+                    let dadoDiegoC = [];
+                    let dadoNatanael = [];
+                    let dadoBruno = [];
+                    let dadoVinicius = [];
+                    let dadoMateus = [];
+                    let dadoGabriel = [];
+                    let dadoDiegoA = [];
+                    let dadoMarlon = [];
+                    let dadoCaua = [];
+                    let dadoAnderson = [];
+                    let dadoAlisson = [];
+                    let dadoCida = [];
+                    let dadoDouglas = [];
+                    let dadoKleiton = [];
+
+                    //variavel mês
+                    let dadoJan = [];
+                    let dadoFev = [];
+                    let dadoMar = [];
+                    let dadoAbr = [];
+                    let dadoMai = [];
+                    let dadoJun = [];
+                    let dadoJul = [];
+                    let dadoAgo = [];
+                    let dadoSet = [];
+                    let dadoOut = [];
+                    let dadoNov = [];
+                    let dadoDez = [];
+
+                    //variavel diario
+                    let dia1 = [];
+                    let dia2 = [];
+                    let dia3 = [];
+                    let dia4 = [];
+                    let dia5 = [];
+                    let dia6 = [];
+                    let dia7 = [];
+                    let dia8 = [];
+                    let dia9 = [];
+                    let dia10 = [];
+                    let dia11 = [];
+                    let dia12 = [];
+                    let dia13 = [];
+                    let dia14 = [];
+                    let dia15 = [];
+                    let dia16 = [];
+                    let dia17 = [];
+                    let dia18 = [];
+                    let dia19 = [];
+                    let dia20 = [];
+                    let dia21 = [];
+                    let dia22 = [];
+                    let dia23 = [];
+                    let dia24 = [];
+                    let dia25 = [];
+                    let dia26 = [];
+                    let dia27 = [];
+                    let dia28 = [];
+                    let dia29 = [];
+                    let dia30 = [];
+                    let dia31 = [];
+
+                    //dados por equipamento
+                    let dadoCol = [];
+                    let dadoLei = [];
+                    let dadoLeiRFID = [];
+                    let dadoImp = [];
+                    let dadoBusca = [];
+                    let dadoCar3 = [];
+                    let dadoCar4 = [];
+                    let dadoCar5 = [];
+                    let dadoCar6 = [];
+                    let dadoBerco = [];
+                    let dadoFonte = [];
+                    let dadoCabo = [];
+                    let dadoBateria = [];
+
+                    //placas
+                    let dadoPlacaRec = [];
+                    let dadoPlacaNRec = [];
+
+                    //contratos
+                    //variavel contrato
+                    let dadoAssai = [];
+                    let dadoAvulso = [];
+                    let dadoCEA = [];
+                    let dadoB2W = [];
+                    let dadoAtacadao = [];
+                    let dadoShopee = [];
+                    let dadoBoticario = [];
+                    let dadoLocacao = [];
+                    let dadoFriozem = [];
+                    let dadoComfrio = [];
+
+                    //variavel
+                    let metaJan = [];
+                    let metaFev = [];
+                    let metaMar = [];
+                    let metaAbr = [];
+                    let metaMai = [];
+                    let metaJun = [];
+                    let metaJul = [];
+                    let metaAgo = [];
+                    let metaSet = [];
+                    let metaOut = [];
+                    let metaNov = [];
+                    let metaDez = [];
+
+                    for (let i = 0; i < tabelaNome.length; i++) {
+
+                        if ((tecnico === tabelaNome[i].Tecnico) && (dia === `${tabelaNome[i].Dia}`) && (ano === `${tabelaNome[i].Ano}`) && (mes === `${tabelaNome[i].Mes}`)) {
+                            var v = `${tabelaNome[i].Tecnico}`;
+                            var c = `${tabelaNome[i].Contrato}`;
+
+                            if (("Manutenção Concluída" === tabelaNome[i].Servico)) {
+                                dadoMC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoMCAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoMCAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoMCCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoMCB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoMCAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoMCFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoMCBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoMCComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+
+                            }
+                            if (("Laudo" === tabelaNome[i].Servico)) {
+                                dadoLA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoLAAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoLAAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoLACEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoLAB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoLAAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLALocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLALocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoLAFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoLABoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoLAComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Suporte Remoto" === tabelaNome[i].Servico)) {
+                                dadoSR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoSRAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoSRAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoSRCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoSRB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoSRAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoSRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoSRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoSRFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoSRBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoSRComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Manutenção" === tabelaNome[i].Servico)) {
+                                dadoRM.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRMAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRMAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRMCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRMB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRMAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRMLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRMLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRMFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRMBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRMComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Chamado On-Site" === tabelaNome[i].Servico)) {
+                                dadoCO.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoCOAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoCOAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoCOCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoCOB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoCOAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCOLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCOLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoCOFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoCOBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoCOComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Venda" === tabelaNome[i].Servico)) {
+                                dadoRV.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRVAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRVAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRVCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRVB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRVAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRVFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRVBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRVComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Confecção de Cabos" === tabelaNome[i].Servico)) {
+                                dadoCC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoCCAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoCCAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoCCCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoCCB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoCCAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoCCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoCCFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoCCBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoCCComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Montagem/Manutenção de Venda" === tabelaNome[i].Servico)) {
+                                dadoMMV.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoMMVAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoMMVAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoMMVCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoMMVB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoMMVAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMMVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoMMVLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoMMVFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoMMVBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoMMVComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Recuperação de Placa" === tabelaNome[i].Servico)) {
+                                dadoRP.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Recuperada" === tabelaNome[i].Placa) {
+                                    dadoPlacaRec.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if ("Não Recuperada" === tabelaNome[i].Placa) {
+                                    dadoPlacaNRec.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRPAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRPAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRPCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRPB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRPAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRPFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRPBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRPComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Limpeza" === tabelaNome[i].Servico)) {
+                                dadoLP.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoLPAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoLPAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoLPCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoLPB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoLPAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoLPLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoLPFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoLPBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoLPComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Reprovado" === tabelaNome[i].Servico)) {
+                                dadoRR.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRRAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRRAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRRCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRRB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRRAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRRLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRRFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRRBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRRComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão de Compra" === tabelaNome[i].Servico)) {
+                                dadoRC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRCAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRCAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRCCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRCB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRCAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRCLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRCFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRCBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRCComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (("Revisão/Manutenção de Locação" === tabelaNome[i].Servico)) {
+                                dadoRL.push({
+                                    OS: tabelaNome[i].OS
+                                })
+
+                                if ("Avulso" === tabelaNome[i].Contrato) {
+                                    dadoRLAvulso.push({
+                                        Id: tabelaNome[i].id
+                                    })
+                                }
+                                if (c.match(/Assaí/)) {
+                                    dadoRLAssai.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/C&A/)) {
+                                    dadoRLCEA.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/B2W/)) {
+                                    dadoRLB2W.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Atacadão/)) {
+                                    dadoRLAtacadao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRLLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Locação/)) {
+                                    dadoRLLocacao.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Friozem/)) {
+                                    dadoRLFriozem.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Boticário/)) {
+                                    dadoRLBoticario.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                                if (c.match(/Comfrio/)) {
+                                    dadoRLComfrio.push({
+                                        OS: tabelaNome[i].OS
+                                    })
+                                }
+                            }
+                            if (v.match(/Diego C/)) {
+                                dadoDiegoC.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Natanael/)) {
+                                dadoNatanael.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Bruno/)) {
+                                dadoBruno.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Vinicius/)) {
+                                dadoVinicius.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Mateus/)) {
+                                dadoMateus.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Gabriel/)) {
+                                dadoGabriel.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Marlon/)) {
+                                dadoMarlon.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Cauã/)) {
+                                dadoCaua.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Diego A/)) {
+                                dadoDiegoA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Alisson/)) {
+                                dadoAlisson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Anderson/)) {
+                                dadoAnderson.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Cida/)) {
+                                dadoCida.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Douglas/)) {
+                                dadoDouglas.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (v.match(/Kleiton/)) {
+                                dadoKleiton.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (1 === tabelaNome[i].Mes) {
+                                dadoJan.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (2 === tabelaNome[i].Mes) {
+                                dadoFev.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (3 === tabelaNome[i].Mes) {
+                                dadoMar.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (4 === tabelaNome[i].Mes) {
+                                dadoAbr.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (5 === tabelaNome[i].Mes) {
+                                dadoMai.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (6 === tabelaNome[i].Mes) {
+                                dadoJun.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (7 === tabelaNome[i].Mes) {
+                                dadoJul.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (8 === tabelaNome[i].Mes) {
+                                dadoAgo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (9 === tabelaNome[i].Mes) {
+                                dadoSet.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (10 === tabelaNome[i].Mes) {
+                                dadoOut.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (11 === tabelaNome[i].Mes) {
+                                dadoNov.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (12 === tabelaNome[i].Mes) {
+                                dadoDez.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (1 === tabelaNome[i].Dia) {
+                                dia1.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (2 === tabelaNome[i].Dia) {
+                                dia2.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (3 === tabelaNome[i].Dia) {
+                                dia3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (4 === tabelaNome[i].Dia) {
+                                dia4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (5 === tabelaNome[i].Dia) {
+                                dia5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (6 === tabelaNome[i].Dia) {
+                                dia6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (7 === tabelaNome[i].Dia) {
+                                dia7.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (8 === tabelaNome[i].Dia) {
+                                dia8.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (9 === tabelaNome[i].Dia) {
+                                dia9.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (10 === tabelaNome[i].Dia) {
+                                dia10.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (11 === tabelaNome[i].Dia) {
+                                dia11.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (12 === tabelaNome[i].Dia) {
+                                dia12.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (13 === tabelaNome[i].Dia) {
+                                dia13.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (14 === tabelaNome[i].Dia) {
+                                dia14.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (15 === tabelaNome[i].Dia) {
+                                dia15.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (16 === tabelaNome[i].Dia) {
+                                dia16.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (17 === tabelaNome[i].Dia) {
+                                dia17.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (18 === tabelaNome[i].Dia) {
+                                dia18.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (19 === tabelaNome[i].Dia) {
+                                dia19.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (20 === tabelaNome[i].Dia) {
+                                dia20.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (21 === tabelaNome[i].Dia) {
+                                dia21.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (22 === tabelaNome[i].Dia) {
+                                dia22.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (23 === tabelaNome[i].Dia) {
+                                dia23.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (24 === tabelaNome[i].Dia) {
+                                dia24.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (25 === tabelaNome[i].Dia) {
+                                dia25.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (26 === tabelaNome[i].Dia) {
+                                dia26.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (27 === tabelaNome[i].Dia) {
+                                dia27.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (28 === tabelaNome[i].Dia) {
+                                dia28.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (29 === tabelaNome[i].Dia) {
+                                dia29.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (30 === tabelaNome[i].Dia) {
+                                dia30.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (31 === tabelaNome[i].Dia) {
+                                dia31.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Coletor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoCol.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Leitor de Dados" === tabelaNome[i].Equipamento)) {
+                                dadoLei.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Leitor de RFID" === tabelaNome[i].Equipamento)) {
+                                dadoLeiRFID.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Impressora Térmica" === tabelaNome[i].Equipamento)) {
+                                dadoImp.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Busca Preço" === tabelaNome[i].Equipamento)) {
+                                dadoBusca.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 3 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar3.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 4 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar4.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 5 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar5.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Carregador de 6 Posições" === tabelaNome[i].Equipamento)) {
+                                dadoCar6.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Berço de Comunicação" === tabelaNome[i].Equipamento)) {
+                                dadoBerco.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            } if (("Cabo Confeccionado" === tabelaNome[i].Equipamento)) {
+                                dadoCabo.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (("Bateria" === tabelaNome[i].Equipamento)) {
+                                dadoBateria.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if ("Avulso" === tabelaNome[i].Contrato) {
+                                dadoAvulso.push({
+                                    Id: tabelaNome[i].id
+                                })
+                            }
+                            if (c.match(/Assaí/)) {
+                                dadoAssai.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/C&A/)) {
+                                dadoCEA.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/B2W/)) {
+                                dadoB2W.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Atacadão/)) {
+                                dadoAtacadao.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Shopee/)) {
+                                dadoShopee.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Locação/)) {
+                                dadoLocacao.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Locação/)) {
+                                dadoLocacao.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Friozem/)) {
+                                dadoFriozem.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Boticário/)) {
+                                dadoBoticario.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                            if (c.match(/Comfrio/)) {
+                                dadoComfrio.push({
+                                    OS: tabelaNome[i].OS
+                                })
+                            }
+                        }
+                    }
+
+                    for (let i = 0; i < tabelaMeta.length; i++) {
+                        if ((tecnico === tabelaMeta[i].Tecnico) && (ano === `${tabelaMeta[i].Ano}`) && (mes === `${tabelaMeta[i].Mes}`)) {
+                            if (1 === tabelaMeta[i].Mes) {
+                                metaJan.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (2 === tabelaMeta[i].Mes) {
+                                metaFev.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (3 === tabelaMeta[i].Mes) {
+                                metaMar.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (4 === tabelaMeta[i].Mes) {
+                                metaAbr.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (5 === tabelaMeta[i].Mes) {
+                                metaMai.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (6 === tabelaMeta[i].Mes) {
+                                metaJun.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (7 === tabelaMeta[i].Mes) {
+                                metaJul.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (8 === tabelaMeta[i].Mes) {
+                                metaAgo.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (9 === tabelaMeta[i].Mes) {
+                                metaSet.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (10 === tabelaMeta[i].Mes) {
+                                metaOut.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (11 === tabelaMeta[i].Mes) {
+                                metaNov.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                            if (12 === tabelaMeta[i].Mes) {
+                                metaDez.push({
+                                    M: tabelaMeta[i].Meta
+                                })
+                            }
+                        }
+                    }
+
+                    //variavel servico
+                    let totalMC = Object.keys(dadoMC).length;
+                    let totalLA = Object.keys(dadoLA).length;
+                    let totalSR = Object.keys(dadoSR).length;
+                    let totalRM = Object.keys(dadoRM).length;
+                    let totalCO = Object.keys(dadoCO).length;
+                    let totalRV = Object.keys(dadoRV).length;
+                    let totalCC = Object.keys(dadoCC).length;
+                    let totalMMV = Object.keys(dadoMMV).length;
+                    let totalRP = Object.keys(dadoRP).length;
+                    let totalLP = Object.keys(dadoLP).length;
+                    let totalRR = Object.keys(dadoRR).length;
+                    let totalRC = Object.keys(dadoRC).length;
+                    let totalRL = Object.keys(dadoRL).length;
+
+                    let totalOS = dadoLA.concat(dadoMC, dadoSR, dadoRM, dadoCO, dadoRV, dadoCC, dadoMMV, dadoRP, dadoLP, dadoRR, dadoRC, dadoRL)
+                    let totalRealOS = [];
+                    for (let i = 0; i < totalOS.length; i++) {
+                        totalRealOS.unshift(totalOS[i].OS)
+                    }
+
+                    let totalSemRepOS = [... new Set(totalRealOS)]
+
+                    //variavel total
+                    let totalEquip = totalMC + totalLA + totalSR + totalRM + totalCO + totalRV +
+                        totalCC + totalMMV + totalRP + totalLP + totalRR + totalRC + totalRL
+
+                    //variavel tecnico
+                    let totalDiegoC = Object.keys(dadoDiegoC).length;
+                    let totalNatanael = Object.keys(dadoNatanael).length;
+                    let totalBruno = Object.keys(dadoBruno).length;
+                    let totalVinicius = Object.keys(dadoVinicius).length;
+                    let totalMateus = Object.keys(dadoMateus).length;
+                    let totalGabriel = Object.keys(dadoGabriel).length;
+                    let totalMarlon = Object.keys(dadoMarlon).length;
+                    let totalCaua = Object.keys(dadoCaua).length;
+                    let totalDiegoA = Object.keys(dadoDiegoA).length;
+                    let totalAlisson = Object.keys(dadoAlisson).length;
+                    let totalAnderson = Object.keys(dadoAnderson).length;
+                    let totalCida = Object.keys(dadoCida).length;
+                    let totalDouglas = Object.keys(dadoDouglas).length;
+                    let totalKleiton = Object.keys(dadoKleiton).length;
+
+                    //variavel Meses
+                    let totalJan = Object.keys(dadoJan).length;
+                    let totalFev = Object.keys(dadoFev).length;
+                    let totalMar = Object.keys(dadoMar).length;
+                    let totalAbr = Object.keys(dadoAbr).length;
+                    let totalMai = Object.keys(dadoMai).length;
+                    let totalJun = Object.keys(dadoJun).length;
+                    let totalJul = Object.keys(dadoJul).length;
+                    let totalAgo = Object.keys(dadoAgo).length;
+                    let totalSet = Object.keys(dadoSet).length;
+                    let totalOut = Object.keys(dadoOut).length;
+                    let totalNov = Object.keys(dadoNov).length;
+                    let totalDez = Object.keys(dadoDez).length;
+
+                    //variavel diario
+                    let totalDia1 = Object.keys(dia1).length;
+                    let totalDia2 = Object.keys(dia2).length;
+                    let totalDia3 = Object.keys(dia3).length;
+                    let totalDia4 = Object.keys(dia4).length;
+                    let totalDia5 = Object.keys(dia5).length;
+                    let totalDia6 = Object.keys(dia6).length;
+                    let totalDia7 = Object.keys(dia7).length;
+                    let totalDia8 = Object.keys(dia8).length;
+                    let totalDia9 = Object.keys(dia9).length;
+                    let totalDia10 = Object.keys(dia10).length;
+                    let totalDia11 = Object.keys(dia11).length;
+                    let totalDia12 = Object.keys(dia12).length;
+                    let totalDia13 = Object.keys(dia13).length;
+                    let totalDia14 = Object.keys(dia14).length;
+                    let totalDia15 = Object.keys(dia15).length;
+                    let totalDia16 = Object.keys(dia16).length;
+                    let totalDia17 = Object.keys(dia17).length;
+                    let totalDia18 = Object.keys(dia18).length;
+                    let totalDia19 = Object.keys(dia19).length;
+                    let totalDia20 = Object.keys(dia20).length;
+                    let totalDia21 = Object.keys(dia21).length;
+                    let totalDia22 = Object.keys(dia22).length;
+                    let totalDia23 = Object.keys(dia23).length;
+                    let totalDia24 = Object.keys(dia24).length;
+                    let totalDia25 = Object.keys(dia25).length;
+                    let totalDia26 = Object.keys(dia26).length;
+                    let totalDia27 = Object.keys(dia27).length;
+                    let totalDia28 = Object.keys(dia28).length;
+                    let totalDia29 = Object.keys(dia29).length;
+                    let totalDia30 = Object.keys(dia30).length;
+                    let totalDia31 = Object.keys(dia31).length;
+
+                    let totalCol = Object.keys(dadoCol).length;
+                    let totalLei = Object.keys(dadoLei).length;
+                    let totalLeiRFID = Object.keys(dadoLeiRFID).length;
+                    let totalImp = Object.keys(dadoImp).length;
+                    let totalBusca = Object.keys(dadoBusca).length;
+                    let totalCar3 = Object.keys(dadoCar3).length;
+                    let totalCar4 = Object.keys(dadoCar4).length;
+                    let totalCar5 = Object.keys(dadoCar5).length;
+                    let totalCar6 = Object.keys(dadoCar6).length;
+                    let totalBerco = Object.keys(dadoBerco).length;
+                    let totalFonte = Object.keys(dadoFonte).length;
+                    let totalCabo = Object.keys(dadoCabo).length;
+                    let totalBateria = Object.keys(dadoBateria).length;
+
+                    //placa
+                    let totalPlacaRec = Object.keys(dadoPlacaRec).length;
+                    let totalPlacaNRec = Object.keys(dadoPlacaNRec).length;
+
+                    //varial contrato
+                    let totalAvulso = Object.keys(dadoAvulso).length;
+                    let totalAssai = Object.keys(dadoAssai).length;
+                    let totalAtacadao = Object.keys(dadoAtacadao).length;
+                    let totalCEA = Object.keys(dadoCEA).length;
+                    let totalB2W = Object.keys(dadoB2W).length;
+                    let totalFriozem = Object.keys(dadoFriozem).length;
+                    let totalComfrio = Object.keys(dadoComfrio).length;
+                    let totalLocacao = Object.keys(dadoLocacao).length;
+                    let totalBoticario = Object.keys(dadoBoticario).length;
+
+                    let totalContrato = totalAssai + totalAtacadao + totalCEA + totalB2W + totalFriozem + totalComfrio + totalLocacao
+                        + totalBoticario
+
+                    let mJan = Object.assign(metaJan);
+                    let mFev = Object.assign(metaFev);
+                    let mMar = Object.assign(metaMar);
+                    let mAbr = Object.assign(metaAbr);
+                    let mMai = Object.assign(metaMai);
+                    let mJun = Object.assign(metaJun);
+                    let mJul = Object.assign(metaJul);
+                    let mAgo = Object.assign(metaAgo);
+                    let mSet = Object.assign(metaSet);
+                    let mOut = Object.assign(metaOut);
+                    let mNov = Object.assign(metaNov);
+                    let mDez = Object.assign(metaDez);
+
+                    let totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
+                        parseInt(mMar.length > 0 ? mMar[0].M : 0) + parseInt(mAbr.length > 0 ? mAbr[0].M : 0) + parseInt(mMai.length > 0 ? mMai[0].M : 0) +
+                        parseInt(mJun.length > 0 ? mJun[0].M : 0) + parseInt(mJul.length > 0 ? mJul[0].M : 0) + parseInt(mAgo.length > 0 ? mAgo[0].M : 0) +
+                        parseInt(mSet.length > 0 ? mSet[0].M : 0) + parseInt(mOut.length > 0 ? mOut[0].M : 0) + parseInt(mNov.length > 0 ? mNov[0].M : 0) +
+                        parseInt(mDez.length > 0 ? mDez[0].M : 0)
+
+
+                    return this.setState({
+                        //busca servico
+                        listarMC: totalMC,
+                        listarLA: totalLA,
+                        listarSR: totalSR,
+                        listarRM: totalRM,
+                        listarCO: totalCO,
+                        listarRV: totalRV,
+                        listarCC: totalCC,
+                        listarMMV: totalMMV,
+                        listarRP: totalRP,
+                        listarLP: totalLP,
+                        listarRR: totalRR,
+                        listarRC: totalRC,
+                        listarRL: totalRL,
+
+                        //busca de manutenção
+                        listarMCAvulso: dadoMCAvulso.length,
+                        listarMCAssai: dadoMCAssai.length,
+                        listarMCCEA: dadoMCCEA.length,
+                        listarMCB2W: dadoMCB2W.length,
+                        listarMCFriozem: dadoMCFriozem.length,
+                        listarMCBoticario: dadoMCBoticario.length,
+                        listarMCAtacadao: dadoMCAtacadao.length,
+                        listarMCComfrio: dadoMCComfrio.length,
+                        listarMCLocacao: dadoMCLocacao.length,
+
+                        //busca de Laudo
+                        listarLAAvulso: dadoLAAvulso.length,
+                        listarLAAssai: dadoLAAssai.length,
+                        listarLACEA: dadoLACEA.length,
+                        listarLAB2W: dadoLAB2W.length,
+                        listarLAFriozem: dadoLAFriozem.length,
+                        listarLABoticario: dadoLABoticario.length,
+                        listarLAAtacadao: dadoLAAtacadao.length,
+                        listarLAComfrio: dadoLAComfrio.length,
+                        listarLALocacao: dadoLALocacao.length,
+
+                        //busca de Suporte
+                        listarSRAvulso: dadoSRAvulso.length,
+                        listarSRAssai: dadoSRAssai.length,
+                        listarSRCEA: dadoSRCEA.length,
+                        listarSRB2W: dadoSRB2W.length,
+                        listarSRFriozem: dadoSRFriozem.length,
+                        listarSRBoticario: dadoSRBoticario.length,
+                        listarSRAtacadao: dadoSRAtacadao.length,
+                        listarSRComfrio: dadoSRComfrio.length,
+                        listarSRLocacao: dadoSRLocacao.length,
+
+                        //busca de RM
+                        listarRMAvulso: dadoRMAvulso.length,
+                        listarRMAssai: dadoRMAssai.length,
+                        listarRMCEA: dadoRMCEA.length,
+                        listarRMB2W: dadoRMB2W.length,
+                        listarRMFriozem: dadoRMFriozem.length,
+                        listarRMBoticario: dadoRMBoticario.length,
+                        listarRMAtacadao: dadoRMAtacadao.length,
+                        listarRMComfrio: dadoRMComfrio.length,
+                        listarRMLocacao: dadoRMLocacao.length,
+
+                        //busca de CO
+                        listarCOAvulso: dadoCOAvulso.length,
+                        listarCOAssai: dadoCOAssai.length,
+                        listarCOCEA: dadoCOCEA.length,
+                        listarCOB2W: dadoCOB2W.length,
+                        listarCOFriozem: dadoCOFriozem.length,
+                        listarCOBoticario: dadoCOBoticario.length,
+                        listarCOAtacadao: dadoCOAtacadao.length,
+                        listarCOComfrio: dadoCOComfrio.length,
+                        listarCOLocacao: dadoCOLocacao.length,
+
+                        //busca de Rv
+                        listarRVAvulso: dadoRVAvulso.length,
+                        listarRVAssai: dadoRVAssai.length,
+                        listarRVCEA: dadoRVCEA.length,
+                        listarRVB2W: dadoRVB2W.length,
+                        listarRVFriozem: dadoRVFriozem.length,
+                        listarRVBoticario: dadoRVBoticario.length,
+                        listarRVAtacadao: dadoRVAtacadao.length,
+                        listarRVComfrio: dadoRVComfrio.length,
+                        listarRVLocacao: dadoRVLocacao.length,
+
+                        //busca de MMV
+                        listarMMVAvulso: dadoMMVAvulso.length,
+                        listarMMVAssai: dadoMMVAssai.length,
+                        listarMMVCEA: dadoMMVCEA.length,
+                        listarMMVB2W: dadoMMVB2W.length,
+                        listarMMVFriozem: dadoMMVFriozem.length,
+                        listarMMVBoticario: dadoMMVBoticario.length,
+                        listarMMVAtacadao: dadoMMVAtacadao.length,
+                        listarMMVComfrio: dadoMMVComfrio.length,
+                        listarMMVLocacao: dadoMMVLocacao.length,
+
+                        //busca de CC
+                        listarCCAvulso: dadoCCAvulso.length,
+                        listarCCAssai: dadoCCAssai.length,
+                        listarCCCEA: dadoCCCEA.length,
+                        listarCCB2W: dadoCCB2W.length,
+                        listarCCFriozem: dadoCCFriozem.length,
+                        listarCCBoticario: dadoCCBoticario.length,
+                        listarCCAtacadao: dadoCCAtacadao.length,
+                        listarCCComfrio: dadoCCComfrio.length,
+                        listarCCLocacao: dadoCCLocacao.length,
+
+                        //busca de RP
+                        listarRPAvulso: dadoRPAvulso.length,
+                        listarRPAssai: dadoRPAssai.length,
+                        listarRPCEA: dadoRPCEA.length,
+                        listarRPB2W: dadoRPB2W.length,
+                        listarRPFriozem: dadoRPFriozem.length,
+                        listarRPBoticario: dadoRPBoticario.length,
+                        listarRPAtacadao: dadoRPAtacadao.length,
+                        listarRPComfrio: dadoRPComfrio.length,
+                        listarRPLocacao: dadoRPLocacao.length,
+
+                        //busca de LP
+                        listarLPAvulso: dadoLPAvulso.length,
+                        listarLPAssai: dadoLPAssai.length,
+                        listarLPCEA: dadoLPCEA.length,
+                        listarLPB2W: dadoLPB2W.length,
+                        listarLPFriozem: dadoLPFriozem.length,
+                        listarLPBoticario: dadoLPBoticario.length,
+                        listarLPAtacadao: dadoLPAtacadao.length,
+                        listarLPComfrio: dadoLPComfrio.length,
+                        listarLPLocacao: dadoLPLocacao.length,
+
+                        //busca de RR
+                        listarRRAvulso: dadoRRAvulso.length,
+                        listarRRAssai: dadoRRAssai.length,
+                        listarRRCEA: dadoRRCEA.length,
+                        listarRRB2W: dadoRRB2W.length,
+                        listarRRFriozem: dadoRRFriozem.length,
+                        listarRRBoticario: dadoRRBoticario.length,
+                        listarRRAtacadao: dadoRRAtacadao.length,
+                        listarRRComfrio: dadoRRComfrio.length,
+                        listarRRLocacao: dadoRRLocacao.length,
+
+                        //busca de RC
+                        listarRCAvulso: dadoRCAvulso.length,
+                        listarRCAssai: dadoRCAssai.length,
+                        listarRCCEA: dadoRCCEA.length,
+                        listarRCB2W: dadoRCB2W.length,
+                        listarRCFriozem: dadoRCFriozem.length,
+                        listarRCBoticario: dadoRCBoticario.length,
+                        listarRCAtacadao: dadoRCAtacadao.length,
+                        listarRCComfrio: dadoRCComfrio.length,
+                        listarRCLocacao: dadoRCLocacao.length,
+
+                        //busca de RL
+                        listarRLAvulso: dadoRLAvulso.length,
+                        listarRLAssai: dadoRLAssai.length,
+                        listarRLCEA: dadoRLCEA.length,
+                        listarRLB2W: dadoRLB2W.length,
+                        listarRLFriozem: dadoRLFriozem.length,
+                        listarRLBoticario: dadoRLBoticario.length,
+                        listarRLAtacadao: dadoRLAtacadao.length,
+                        listarRLComfrio: dadoRLComfrio.length,
+                        listarRLLocacao: dadoRLLocacao.length,
+
+                        //busca total
+                        listarTotalEquip: totalEquip,
+                        listarTotalOS: totalSemRepOS.length,
+
+                        //busca tecnico
+                        listarDiegoC: totalDiegoC,
+                        listarNatanael: totalNatanael,
+                        listarBruno: totalBruno,
+                        listarVinicius: totalVinicius,
+                        listarMateus: totalMateus,
+                        listarGabriel: totalGabriel,
+                        listarMarlon: totalMarlon,
+                        listarCaua: totalCaua,
+                        listarDiegoA: totalDiegoA,
+                        listarAlisson: totalAlisson,
+                        listarAnderson: totalAnderson,
+                        listarCida: totalCida,
+                        listarDouglas: totalDouglas,
+                        listarKleiton: totalKleiton,
+
+                        //busca Meses
+                        listarJan: totalJan,
+                        listarFev: totalFev,
+                        listarMar: totalMar,
+                        listarAbr: totalAbr,
+                        listarMai: totalMai,
+                        listarJun: totalJun,
+                        listarJul: totalJul,
+                        listarAgo: totalAgo,
+                        listarSet: totalSet,
+                        listarOut: totalOut,
+                        listarNov: totalNov,
+                        listarDez: totalDez,
+
+                        //prod Diaria
+                        listarDia1: totalDia1,
+                        listarDia2: totalDia2,
+                        listarDia3: totalDia3,
+                        listarDia4: totalDia4,
+                        listarDia5: totalDia5,
+                        listarDia6: totalDia6,
+                        listarDia7: totalDia7,
+                        listarDia8: totalDia8,
+                        listarDia9: totalDia9,
+                        listarDia10: totalDia10,
+                        listarDia11: totalDia11,
+                        listarDia12: totalDia12,
+                        listarDia13: totalDia13,
+                        listarDia14: totalDia14,
+                        listarDia15: totalDia15,
+                        listarDia16: totalDia16,
+                        listarDia17: totalDia17,
+                        listarDia18: totalDia18,
+                        listarDia19: totalDia19,
+                        listarDia20: totalDia20,
+                        listarDia21: totalDia21,
+                        listarDia22: totalDia22,
+                        listarDia23: totalDia23,
+                        listarDia24: totalDia24,
+                        listarDia25: totalDia25,
+                        listarDia26: totalDia26,
+                        listarDia27: totalDia27,
+                        listarDia28: totalDia28,
+                        listarDia29: totalDia29,
+                        listarDia30: totalDia30,
+                        listarDia31: totalDia31,
+
+
+                        //listart total por equipamento
+                        listarTotalCol: totalCol,
+                        listarTotalImp: totalImp,
+                        listarTotalLei: totalLei,
+                        listarTotalLeiRFID: totalLeiRFID,
+                        listarTotalBusca: totalBusca,
+                        listarTotalCar3: totalCar3,
+                        listarTotalCar4: totalCar4,
+                        listarTotalCar5: totalCar5,
+                        listarTotalCar6: totalCar6,
+                        listarTotalBerco: totalBerco,
+                        listarTotalFonte: totalFonte,
+                        listarTotalCabos: totalCabo,
+                        listarTotalBateria: totalBateria,
+
+                        //placa
+                        listarPlacaRec: totalPlacaRec,
+                        listarPlacaNRec: totalPlacaNRec,
+
+                        //buscar contrato
+                        listarAvulso: totalAvulso,
+                        listarAssai: totalAssai,
+                        listarCEA: totalCEA,
+                        listarB2W: totalB2W,
+                        // listarShopee: totalShopee,
+                        listarBoticario: totalBoticario,
+                        listarAtacadao: totalAtacadao,
+                        listarLocacao: totalLocacao,
+                        listarFriozem: totalFriozem,
+                        listarComfrio: totalComfrio,
+
+                        //total contrato
+                        listarTotalContrato: totalContrato,
+
+                        //meta
+                        listarMetaTecnico: totalMeta,
+
+                        //total tecnico
+                        listarTotalTecnico: totalEquip
+                    })
                 }
             }
             //#endregion
+
+            //#endregion
+       
         }
         catch (error) {
             alert("Erro:" + error)
@@ -15109,7 +15144,33 @@ export default class DashboardGeral extends React.Component {
 
     }
 
+    async BuscarTec() {
+        const tec = await axios(baseUrl3).then(resp => resp.data)
 
+        let dadosTec = []
+
+        for (let i = 0; i < tec.length; i++) {
+            if ("Laborátorio" === tec[i].departamento) {
+                dadosTec.push({
+                    nome: tec[i].nomeCompleto
+                })
+            }
+        }
+
+        return this.setState ({
+            optionTec: dadosTec
+        })
+    }
+
+    tecnicos() {
+      return this.state.optionTec.map(Nome => {
+        return (
+            <option>{Nome.nome}</option>
+        )
+      })
+    }
+
+  
     render() {
         return (
             <div className="container-fluid">
@@ -15121,20 +15182,7 @@ export default class DashboardGeral extends React.Component {
                         <label className='fw-bold'>Técnico: </label>
                         <select id="tecnico" class="form-select" aria-label="Default select example">
                             <option selected>Todos</option>
-                            <option>Diego Carvalho</option>
-                            <option>Natanael Silva Lima</option>
-                            <option>Mateus Doval</option>
-                            <option>Lucas Felician</option>
-                            <option>Diogo Selmini</option>
-                            <option>Gabriel Kaique</option>
-                            <option>Bruno Bedani</option>
-                            <option>Vinicius Gomes</option>
-                            <option>Diego Almeida</option>
-                            <option>Cida Zani</option>
-                            <option>Allan Zulino</option>
-                            <option>Marcio</option>
-                            <option>Douglas Altenfelder</option>
-                            <option>Kleiton Paulino</option>
+                            {this.tecnicos()}
                         </select>
                     </div>
                     <div className="col-2">
@@ -15530,12 +15578,12 @@ export default class DashboardGeral extends React.Component {
                                 { name: "Bruno", y: this.state.listarBruno },
                                 { name: "Vinicius", y: this.state.listarVinicius },
                                 { name: "Mateus", y: this.state.listarMateus },
-                                { name: "Marcio", y: this.state.listarMarcio },
                                 { name: "Gabriel", y: this.state.listarGabriel },
-                                { name: "Lucas", y: this.state.listarLucas },
-                                { name: "Diogo", y: this.state.listarDiogo },
+                                { name: "Marlon", y: this.state.listarMarlon },
+                                { name: "Cauã", y: this.state.listarCaua },
                                 { name: "Diego A", y: this.state.listarDiegoA },
-                                { name: "Allan", y: this.state.listarAllan },
+                                { name: "Alisson", y: this.state.listarAlisson},
+                                { name: "Anderson", y: this.state.listarAnderson },
                                 { name: "Cida", y: this.state.listarCida },
                                 { name: "Douglas", y: this.state.listarDouglas },
                                 { name: "Kleiton", y: this.state.listarKleiton },
