@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const port = 5006;
+const ola = 1;
  
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static("private"));
