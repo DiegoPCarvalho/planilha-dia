@@ -28,6 +28,9 @@ export default class TabelaRegistroAntigo extends React.Component {
 
     state = { ...initialState }
 
+    componentWillMount(){
+        
+    }
    
 
     async buscarDados(ano) {
@@ -51,43 +54,43 @@ export default class TabelaRegistroAntigo extends React.Component {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && (1 === tabelaNome[i].Mes) && (ano === `${tabelaNome[i].Ano}`)) {
                 dadoJaneiro.push({
                     id: tabelaNome[i].id,
-                    Data: tabelaNome[i].Data,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
+                    // Data: tabelaNome[i].Data,
+                    // Dia: tabelaNome[i].Dia,
+                    // Mes: tabelaNome[i].Mes,
+                    // Ano: tabelaNome[i].Ano,
                     OS: tabelaNome[i].OS,
-                    Cliente: tabelaNome[i].Cliente,
-                    Equipamento: tabelaNome[i].Equipamento,
-                    Modelo: tabelaNome[i].Modelo,
-                    NS: tabelaNome[i].NS,
-                    Servico: tabelaNome[i].Servico,
-                    Placa: tabelaNome[i].Placa,
-                    Classificacao: tabelaNome[i].Classificacao,
-                    Contrato: tabelaNome[i].Contrato,
-                    Observacao: tabelaNome[i].Observacao,
-                    Tecnico: tabelaNome[i].Tecnico,
-                    Status: tabelaNome[i].Status
+                    // Cliente: tabelaNome[i].Cliente,
+                    // Equipamento: tabelaNome[i].Equipamento,
+                    // Modelo: tabelaNome[i].Modelo,
+                    // NS: tabelaNome[i].NS,
+                    // Servico: tabelaNome[i].Servico,
+                    // Placa: tabelaNome[i].Placa,
+                    // Classificacao: tabelaNome[i].Classificacao,
+                    // Contrato: tabelaNome[i].Contrato,
+                    // Observacao: tabelaNome[i].Observacao,
+                    // Tecnico: tabelaNome[i].Tecnico,
+                    // Status: tabelaNome[i].Status
                 })
             }
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && (2 === tabelaNome[i].Mes) && (ano === `${tabelaNome[i].Ano}`)) {
                 dadoFevereiro.push({
                     id: tabelaNome[i].id,
-                    Data: tabelaNome[i].Data,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
+                    // Data: tabelaNome[i].Data,
+                    // Dia: tabelaNome[i].Dia,
+                    // Mes: tabelaNome[i].Mes,
+                    // Ano: tabelaNome[i].Ano,
                     OS: tabelaNome[i].OS,
-                    Cliente: tabelaNome[i].Cliente,
-                    Equipamento: tabelaNome[i].Equipamento,
-                    Modelo: tabelaNome[i].Modelo,
-                    NS: tabelaNome[i].NS,
-                    Servico: tabelaNome[i].Servico,
-                    Placa: tabelaNome[i].Placa,
-                    Classificacao: tabelaNome[i].Classificacao,
-                    Contrato: tabelaNome[i].Contrato,
-                    Observacao: tabelaNome[i].Observacao,
-                    Tecnico: tabelaNome[i].Tecnico,
-                    Status: tabelaNome[i].Status
+                    // Cliente: tabelaNome[i].Cliente,
+                    // Equipamento: tabelaNome[i].Equipamento,
+                    // Modelo: tabelaNome[i].Modelo,
+                    // NS: tabelaNome[i].NS,
+                    // Servico: tabelaNome[i].Servico,
+                    // Placa: tabelaNome[i].Placa,
+                    // Classificacao: tabelaNome[i].Classificacao,
+                    // Contrato: tabelaNome[i].Contrato,
+                    // Observacao: tabelaNome[i].Observacao,
+                    // Tecnico: tabelaNome[i].Tecnico,
+                    // Status: tabelaNome[i].Status
                 })
             }
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && (3 === tabelaNome[i].Mes) && (ano === `${tabelaNome[i].Ano}`)) {
@@ -302,19 +305,20 @@ export default class TabelaRegistroAntigo extends React.Component {
             }
         }
 
+        // console.log(dadoJaneiro)
         return this.setState({
             listJaneiro: dadoJaneiro,
             listFevereiro: dadoFevereiro,
-            listMarco: dadoMarco,
-            listAbril: dadoAbril,
-            listMaio: dadoMaio,
-            listJunho: dadoJunho,
-            listJulho: dadoJulho,
-            listAgosto: dadoAgosto,
-            listSetembro: dadoSetembro,
-            listOutubro: dadoOutubro,
-            listNovembro: dadoNovembro,
-            listDezembro: dadoDezembro,
+        //     // listMarco: dadoMarco,
+        //     // listAbril: dadoAbril,
+        //     // listMaio: dadoMaio,
+        //     // listJunho: dadoJunho,
+        //     // listJulho: dadoJulho,
+        //     // listAgosto: dadoAgosto,
+        //     // listSetembro: dadoSetembro,
+        //     // listOutubro: dadoOutubro,
+        //     // listNovembro: dadoNovembro,
+        //     // listDezembro: dadoDezembro,
         })
 
     }
@@ -366,18 +370,19 @@ export default class TabelaRegistroAntigo extends React.Component {
                     </div>
                 </div>
                 <div className="row mt-5">
-                   <TabTables ano={this.state.ano} listJan={this.state.listJaneiro}
+                   <TabTables listJan={this.state.listJaneiro}
                     listFev={this.state.listFevereiro} 
-                    listMar={this.state.listMarco}
-                    listAbr={this.state.listAbril}
-                    listMai={this.state.listMaio}
-                    listJun={this.state.listJunho}
-                    listJul={this.state.listJulho}
-                    listAgo={this.state.listAgosto}
-                    listSet={this.state.listSetembro}
-                    listOut={this.state.listOutubro}
-                    listNov={this.state.listNovembro}
-                    listDez={this.state.listDezembro}/>
+                    // listMar={this.state.listMarco}
+                    // listAbr={this.state.listAbril}
+                    // listMai={this.state.listMaio}
+                    // listJun={this.state.listJunho}
+                    // listJul={this.state.listJulho}
+                    // listAgo={this.state.listAgosto}
+                    // listSet={this.state.listSetembro}
+                    // listOut={this.state.listOutubro}
+                    // listNov={this.state.listNovembro}
+                    // listDez={this.state.listDezembro}
+                    />
                 </div>
             </div>
         )
