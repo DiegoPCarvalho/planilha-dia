@@ -13,6 +13,7 @@ import PageHome from '../Components/Home/PageHome';
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import Formulario from "../Components/Atividade/Formulario";
 import Tabela from "../Components/Atividade/Tabela";
+import TabelaRegistroAntigo from "../Components/Atividade/TabRegistroAntigo";
 import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 
 //dashboard
@@ -165,6 +166,7 @@ export default function Rotas() {
                 <Route path="/Atividade" element={<CrudAtividade />}>
                     <Route path="Formulario" element={<Formulario />} />
                     <Route path="Tabela" element={<Tabela />} />
+                    <Route path="TabelaAntiga" element={<TabelaRegistroAntigo />} />
                     <Route path="Relatorio" element={<RelatorioPessoal />} />
                 </Route>
                 <Route path="/CentroCustoLab" element={<CentroCustoLab />}>

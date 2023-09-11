@@ -7,7 +7,7 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 import $ from 'jquery';
-import { setAnimation } from 'highcharts';
+import { Link } from 'react-router-dom';
 
 const initialState = {
     Atividade: {
@@ -47,11 +47,11 @@ export default class Tabela extends React.Component {
     componentWillMount() {
         this.retornoTabela()
         this.retornoData()
-        this.pesquisar()  
-           
+        this.pesquisar()
+
     }
 
-    pesquisar(){
+    pesquisar() {
         $(document).ready(function () {
             setTimeout(() => {
                 $('#tabela').DataTable({
@@ -61,20 +61,20 @@ export default class Tabela extends React.Component {
         });
     }
 
-    
+
 
     retornoData() {
         const data = new Date();
         const mes = data.getMonth() + 1;
         const ano = data.getFullYear();
 
-        return this.setState ({
+        return this.setState({
             ano: ano,
             mes: mes
         })
     }
 
-     async retornoTabela() {
+    async retornoTabela() {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
         let dadoNome = []
 
@@ -82,7 +82,7 @@ export default class Tabela extends React.Component {
 
 
         for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico)&&(this.state.ano === tabelaNome[i].Ano)&&(this.state.mes === tabelaNome[i].Mes)) {
+            if ((localStorage.usuario === tabelaNome[i].Tecnico) && (this.state.ano === tabelaNome[i].Ano) && (this.state.mes === tabelaNome[i].Mes)) {
                 dadoNome.push({
                     id: tabelaNome[i].id,
                     Data: tabelaNome[i].Data,
@@ -106,57 +106,57 @@ export default class Tabela extends React.Component {
         }
 
         return this.setState({ list: dadoNome })
-        
 
-        
+
+
     }
 
-    
-    async buscarDados(mes, ano){
+
+    async buscarDados(mes, ano) {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-        let dadoNomeFill = []   
+        let dadoNomeFill = []
 
         await this.formataData(tabelaNome)
 
-            for (let i = 0; i < tabelaNome.length; i++) {
-                if ((localStorage.usuario === tabelaNome[i].Tecnico)&&(ano === `${tabelaNome[i].Ano}`)&&(mes === `${tabelaNome[i].Mes}`)) {
-                    dadoNomeFill.push({
-                        id: tabelaNome[i].id,
-                        Data: tabelaNome[i].Data,
-                        Dia: tabelaNome[i].Dia,
-                        Mes: tabelaNome[i].Mes,
-                        Ano: tabelaNome[i].Ano,
-                        OS: tabelaNome[i].OS,
-                        Cliente: tabelaNome[i].Cliente,
-                        Equipamento: tabelaNome[i].Equipamento,
-                        Modelo: tabelaNome[i].Modelo,
-                        NS: tabelaNome[i].NS,
-                        Servico: tabelaNome[i].Servico,
-                        Placa: tabelaNome[i].Placa,
-                        Classificacao: tabelaNome[i].Classificacao,
-                        Contrato: tabelaNome[i].Contrato,
-                        Observacao: tabelaNome[i].Observacao,
-                        Tecnico: tabelaNome[i].Tecnico,
-                        Status: tabelaNome[i].Status
-                    })
-                }
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if ((localStorage.usuario === tabelaNome[i].Tecnico) && (ano === `${tabelaNome[i].Ano}`) && (mes === `${tabelaNome[i].Mes}`)) {
+                dadoNomeFill.push({
+                    id: tabelaNome[i].id,
+                    Data: tabelaNome[i].Data,
+                    Dia: tabelaNome[i].Dia,
+                    Mes: tabelaNome[i].Mes,
+                    Ano: tabelaNome[i].Ano,
+                    OS: tabelaNome[i].OS,
+                    Cliente: tabelaNome[i].Cliente,
+                    Equipamento: tabelaNome[i].Equipamento,
+                    Modelo: tabelaNome[i].Modelo,
+                    NS: tabelaNome[i].NS,
+                    Servico: tabelaNome[i].Servico,
+                    Placa: tabelaNome[i].Placa,
+                    Classificacao: tabelaNome[i].Classificacao,
+                    Contrato: tabelaNome[i].Contrato,
+                    Observacao: tabelaNome[i].Observacao,
+                    Tecnico: tabelaNome[i].Tecnico,
+                    Status: tabelaNome[i].Status
+                })
             }
+        }
 
-            return this.setState({ list: dadoNomeFill})
- 
-            // console.log(dadoNome, ano, mes)
-        
+        return this.setState({ list: dadoNomeFill })
+
+        // console.log(dadoNome, ano, mes)
+
     }
 
-   
-    chamarDados(){
+
+    chamarDados() {
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         this.buscarDados(mes, ano)
 
-       
+
     }
-   
+
 
     dataCerta(dia) {
         const dt = new Date(dia).toLocaleDateString();
@@ -520,10 +520,21 @@ export default class Tabela extends React.Component {
     render() {
         return (
             <div>
-                <div className='mb-3'>
-                    <i className="fa fa-table fa-4x"></i>
+                <div className='row d-flex justify-content-between'>
+                    <div className='mb-3 col-3'>
+                        <i className="fa fa-table fa-4x"></i>
+                    </div>
+                    <div className='col-3 d-flex justify-content-end align-items-center'>
+                        <button className='btn btn-success p-2 d-flex align-items-center'>
+                            <i className='fa-2x fa fa-database'></i>
+                            <Link to="/Atividade/TabelaAntiga" style={{ textDecoration: "none", color: "white"}}>
+                                <h4><b>Registro Antigo</b></h4>
+                            </Link>
+                        </button>
+
+                    </div>
                 </div>
-                <div className="row mt-4 mb-4 d-flex justify-content-center">
+                {/* <div className="row mt-4 mb-4 d-flex justify-content-center">
                     <div className="col-2 d-flex flex-row justify-content-end align-items-center">
                         <i className="fa fa-search fa-2x text-danger" /> 
                     </div>
@@ -559,11 +570,11 @@ export default class Tabela extends React.Component {
                             <option>2029</option>
                             <option>2030</option>
                         </select>
-                    </div>
+                    </div> 
                     <div className="col-2 d-flex align-items-end">
                         <button className="btn btn-success fw-bold" onClick={() => this.chamarDados()}>Buscar</button>
                     </div>
-                </div>
+        </div>*/}
                 <div className="mt-4">
                     {this.renderTable()}
                 </div>
