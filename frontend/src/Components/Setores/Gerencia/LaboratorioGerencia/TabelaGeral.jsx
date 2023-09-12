@@ -20,17 +20,18 @@ export default class TabelaGeral extends React.Component {
     state = { ...initialState }
 
     pesquisa() {
-        $(document).ready(function () {
-            setTimeout(() => {
-                $('#tabelaGeral').dataTable({
-                    language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'csv', 'excel', 'print'
-                    ]
-                });
-            }, 1000)
-        });
+            $(document).ready(function () {
+                setTimeout(() => {
+                    $('#tabelaGeral').dataTable({
+                        language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'csv', 'excel', 'print'
+                        ]
+                    });
+                }, 1000)
+            });
+        
     }
 
 
@@ -122,7 +123,7 @@ export default class TabelaGeral extends React.Component {
 
         if (this.state.statusKin === 0) {
             if ((ano !== "Todos") && (mes !== "Todos")) {
-                this.pesquisa()
+                this.pesquisa(this.state.disabled)
                 return this.setState({
                     statusKin: 1,
                     nomeBotao: "Recarregar",
