@@ -24,22 +24,43 @@ export default class TabelaRegistroAntigo extends React.Component {
 
         await this.formataData(tabelaNome)
 
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                dados.push({
-                    id: tabelaNome[i].id,
-                    Data: tabelaNome[i].Data,
-                    OS: tabelaNome[i].OS,
-                    Cliente: tabelaNome[i].Cliente,
-                    Equipamento: tabelaNome[i].Equipamento,
-                    Modelo: tabelaNome[i].Modelo,
-                    NS: tabelaNome[i].NS,
-                    Servico: tabelaNome[i].Servico,
-                })
+        if((mes === "Todos")&&(ano !== "Todos")){
+            for (let i = 0; i < tabelaNome.length; i++) {
+                if ((localStorage.usuario === tabelaNome[i].Tecnico) && (ano === `${tabelaNome[i].Ano}`)) {
+                    dados.push({
+                        id: tabelaNome[i].id,
+                        Data: tabelaNome[i].Data,
+                        OS: tabelaNome[i].OS,
+                        Cliente: tabelaNome[i].Cliente,
+                        Equipamento: tabelaNome[i].Equipamento,
+                        Modelo: tabelaNome[i].Modelo,
+                        NS: tabelaNome[i].NS,
+                        Servico: tabelaNome[i].Servico,
+                    })
+                }
             }
+    
+            return this.setState({ listar: dados })
         }
 
-        return this.setState({ listar: dados })
+        if((mes !== "Todos")&&(ano !== "Todos")){
+            for (let i = 0; i < tabelaNome.length; i++) {
+                if ((localStorage.usuario === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                    dados.push({
+                        id: tabelaNome[i].id,
+                        Data: tabelaNome[i].Data,
+                        OS: tabelaNome[i].OS,
+                        Cliente: tabelaNome[i].Cliente,
+                        Equipamento: tabelaNome[i].Equipamento,
+                        Modelo: tabelaNome[i].Modelo,
+                        NS: tabelaNome[i].NS,
+                        Servico: tabelaNome[i].Servico,
+                    })
+                }
+            }
+    
+            return this.setState({ listar: dados })
+        }
 
     }
 
@@ -47,7 +68,17 @@ export default class TabelaRegistroAntigo extends React.Component {
     chamarAno() {
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
-        this.buscarDados(mes, ano)
+        
+
+        if((mes === "Todos")&&(ano !== "Todos")){
+            this.buscarDados(mes, ano)
+        }
+        if((mes !== "Todos")&&(ano !== "Todos")){
+            this.buscarDados(mes, ano)
+        }else{
+            return this.setState({listar: []})
+        }
+
     }
 
     async formataData(dataItem) {
@@ -72,7 +103,7 @@ export default class TabelaRegistroAntigo extends React.Component {
                         <div className="col-3">
                             <label className='fw-bold d-flex justify-content-center h3'>Mês: </label>
                             <select id="mes" class="form-select" aria-label="Default select example">
-                                <option selected disabled>Todos</option>
+                                <option selected>Todos</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -90,7 +121,7 @@ export default class TabelaRegistroAntigo extends React.Component {
                         <div className="col-3">
                             <label className='fw-bold d-flex justify-content-center h3'>Ano: </label>
                             <select id="ano" class="form-select" aria-label="Default select example">
-                                <option selected disabled>Todos</option>
+                                <option selected>Todos</option>
                                 <option>2022</option>
                                 <option>2023</option>
                                 <option>2024</option>

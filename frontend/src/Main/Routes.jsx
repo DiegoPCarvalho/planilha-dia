@@ -43,14 +43,12 @@ import FinalizadosSet from "../Components/Setores/Financeiro/Setores/Finalizados
 
 //Diretoria
 import Diretoria from '../Components/Setores/Diretoria/HomeLabDiretoria';
-import DashboardHomeDiretoria from "../Components/Setores/Diretoria/DashboradsLabDiretoria";
 import CentroCustoDiretoria from '../Components/Setores/Diretoria/CentroCustoLabDiretoria';
 import SolicitarDir from "../Components/Setores/Diretoria/DirLaboratorio/SolicitacoesDir";
 import AprovadoDir from "../Components/Setores/Diretoria/DirLaboratorio/AprovadoDir";
 
 //Gerencia
 import HomeGerenciaLab from '../Components/Setores/Gerencia/HomeLabGerencia';
-import DashboardHomeGerencia from "../Components/Setores/Gerencia/DashboardLabGerencia";
 import CentroCustoLabGerencia from '../Components/Setores/Gerencia/CentroCustoLabGerencia';
 import HomeGerenciaAdm from '../Components/Setores/Gerencia/HomeADMGerencia';
 import PageFinanceiro from "../Components/Setores/Gerencia/PageFinanceiro";
@@ -60,6 +58,7 @@ import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Apr
 import MetaLab from "../Components/Setores/Gerencia/MetaLab";
 import DashboardGeral from "../Components/Dashboard/DashboardGeralGerencia";
 import TabelaGeral from "../Components/Setores/Gerencia/LaboratorioGerencia/TabelaGeral";
+import IndexDash  from "../Components/Dashboard/DashboardModel/Index";
 
 //Laboratorio
 import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
@@ -117,6 +116,7 @@ export default function Rotas() {
                     </Route>
                     <Route path="Meta" element={<MetaLab />}/>
                     <Route path="TabelaGeral" element={<TabelaGeral />}/>
+                    <Route path="IndexDash" element={<IndexDash />}/>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>
                     <Route path="Financeiro" element={<PageFinanceiro />}>

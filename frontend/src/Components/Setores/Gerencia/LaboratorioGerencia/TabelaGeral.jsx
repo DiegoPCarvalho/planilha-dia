@@ -3,7 +3,7 @@ import axios from 'axios';
 import Url from '../../../Url/Url';
 
 
-import $, { isEmptyObject } from 'jquery';
+import $ from 'jquery';
 
 const initialState = {
     list: [],
@@ -20,18 +20,18 @@ export default class TabelaGeral extends React.Component {
     state = { ...initialState }
 
     pesquisa() {
-            $(document).ready(function () {
-                setTimeout(() => {
-                    $('#tabelaGeral').dataTable({
-                        language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
-                        dom: 'Bfrtip',
-                        buttons: [
-                            'csv', 'excel', 'print'
-                        ]
-                    });
-                }, 1000)
-            });
-        
+        $(document).ready(function () {
+            setTimeout(() => {
+                $('#tabelaGeral').dataTable({
+                    language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'csv', 'excel', 'print'
+                    ]
+                });
+            }, 1000)
+        });
+
     }
 
 
@@ -41,31 +41,62 @@ export default class TabelaGeral extends React.Component {
 
         await this.formataData(tabelaNome)
 
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
-                dadoNome.push({
-                    id: tabelaNome[i].id,
-                    Data: tabelaNome[i].Data,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
-                    OS: tabelaNome[i].OS,
-                    Cliente: tabelaNome[i].Cliente,
-                    Equipamento: tabelaNome[i].Equipamento,
-                    Modelo: tabelaNome[i].Modelo,
-                    NS: tabelaNome[i].NS,
-                    Servico: tabelaNome[i].Servico,
-                    Placa: tabelaNome[i].Placa,
-                    Classificacao: tabelaNome[i].Classificacao,
-                    Contrato: tabelaNome[i].Contrato,
-                    Observacao: tabelaNome[i].Observacao,
-                    Tecnico: tabelaNome[i].Tecnico,
-                    Status: tabelaNome[i].Status
-                })
+        if ((mes === "Todos") && (ano !== "Todos")) {
+            for (let i = 0; i < tabelaNome.length; i++) {
+                if ((ano === `${tabelaNome[i].Ano}`)) {
+                    dadoNome.push({
+                        id: tabelaNome[i].id,
+                        Data: tabelaNome[i].Data,
+                        Dia: tabelaNome[i].Dia,
+                        Mes: tabelaNome[i].Mes,
+                        Ano: tabelaNome[i].Ano,
+                        OS: tabelaNome[i].OS,
+                        Cliente: tabelaNome[i].Cliente,
+                        Equipamento: tabelaNome[i].Equipamento,
+                        Modelo: tabelaNome[i].Modelo,
+                        NS: tabelaNome[i].NS,
+                        Servico: tabelaNome[i].Servico,
+                        Placa: tabelaNome[i].Placa,
+                        Classificacao: tabelaNome[i].Classificacao,
+                        Contrato: tabelaNome[i].Contrato,
+                        Observacao: tabelaNome[i].Observacao,
+                        Tecnico: tabelaNome[i].Tecnico,
+                        Status: tabelaNome[i].Status
+                    })
+                }
             }
+
+            return this.setState({ list: dadoNome })
         }
 
-        return this.setState({ list: dadoNome })
+        if ((mes !== "Todos") && (ano !== "Todos")) {
+
+            for (let i = 0; i < tabelaNome.length; i++) {
+                if ((mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
+                    dadoNome.push({
+                        id: tabelaNome[i].id,
+                        Data: tabelaNome[i].Data,
+                        Dia: tabelaNome[i].Dia,
+                        Mes: tabelaNome[i].Mes,
+                        Ano: tabelaNome[i].Ano,
+                        OS: tabelaNome[i].OS,
+                        Cliente: tabelaNome[i].Cliente,
+                        Equipamento: tabelaNome[i].Equipamento,
+                        Modelo: tabelaNome[i].Modelo,
+                        NS: tabelaNome[i].NS,
+                        Servico: tabelaNome[i].Servico,
+                        Placa: tabelaNome[i].Placa,
+                        Classificacao: tabelaNome[i].Classificacao,
+                        Contrato: tabelaNome[i].Contrato,
+                        Observacao: tabelaNome[i].Observacao,
+                        Tecnico: tabelaNome[i].Tecnico,
+                        Status: tabelaNome[i].Status
+                    })
+                }
+            }
+
+            return this.setState({ list: dadoNome })
+        }
     }
 
     async formataData(dataItem) {
@@ -119,11 +150,21 @@ export default class TabelaGeral extends React.Component {
     chamarAno() {
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
-        this.retornoTabela(mes, ano)
+        
 
         if (this.state.statusKin === 0) {
             if ((ano !== "Todos") && (mes !== "Todos")) {
-                this.pesquisa(this.state.disabled)
+                this.retornoTabela(mes, ano)
+                this.pesquisa()
+                return this.setState({
+                    statusKin: 1,
+                    nomeBotao: "Recarregar",
+                    disabled: true
+                })
+            }
+            if ((ano !== "Todos") && (mes === "Todos")) {
+                this.retornoTabela(mes, ano)
+                this.pesquisa()
                 return this.setState({
                     statusKin: 1,
                     nomeBotao: "Recarregar",
