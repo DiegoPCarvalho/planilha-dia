@@ -13,7 +13,7 @@ function CardGD(props) {
             <Card.Text>
               <div className='row'>
                 <div className="col-2">
-                  {props.icone}
+                  <i className={`fa fa-2x fa-${props.icone}`}></i>
                 </div>
                 <div className="h3 col-10 d-flex d-flex justify-content-center">
                   {props.dado}
