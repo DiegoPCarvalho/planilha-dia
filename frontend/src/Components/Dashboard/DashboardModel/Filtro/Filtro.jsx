@@ -1,13 +1,15 @@
 import React from 'react'
-import axios from 'axios';
-import Url from '../../../Url/Url';
+
+import ServOsLimp from '../ServicoOSLimpeza/ServOSLimp';
+import PuxarDados from '../Estrutura/PuxarDados';
 
 
 const initialState = {
-    optionsTec: []
+    optionsTec: [],
 }
 
-const baseUrl3 = Url("LoginUsuario");
+const servico = new ServOsLimp();
+const puxarDados = new PuxarDados();
 
 export default class IndexDash extends React.Component {
 
@@ -17,23 +19,23 @@ export default class IndexDash extends React.Component {
         this.BuscarTec()
     }
 
-    async BuscarTec() {
-        const tec = await axios(baseUrl3).then(resp => resp.data)
+    listUser(tabela, dados) {
+        for (let i = 0; i < tabela.length; i++) {
+            if (tabela[i].departamento === "Laborátorio") { dados.push({ nome: tabela[i].nomeCompleto }) }
+        }
+    }
 
+    async BuscarTec() {
+        const tabela = await puxarDados.buscarDadosBanco("LoginUsuario")
         let dadosTec = []
 
-        for (let i = 0; i < tec.length; i++) {
-            if ("Laborátorio" === tec[i].departamento) {
-                dadosTec.push({
-                    nome: tec[i].nomeCompleto
-                })
-            }
-        }
+        this.listUser(tabela, dadosTec)
 
         return this.setState({
             optionsTec: dadosTec
         })
     }
+
 
     tecnicos() {
         return this.state.optionsTec.map(Nome => {
@@ -43,13 +45,15 @@ export default class IndexDash extends React.Component {
         })
     }
 
-    enviarStatus(){
+    enviarStatus() {
         const tecnico = document.getElementById("tecnico").value;
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         const dia = document.getElementById("dia").value;
+        this.BuscarTec()
 
         this.props.status(tecnico, dia, mes, ano)
+        servico.teste(tecnico, dia, mes, ano)
     }
 
     render() {

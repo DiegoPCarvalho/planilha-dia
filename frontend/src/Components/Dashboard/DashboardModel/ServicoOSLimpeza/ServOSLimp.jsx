@@ -1,6 +1,37 @@
 import React from 'react';
 
 export default class ServOsLimp extends React.Component {
+    teste(tecnico, dia, mes, ano){
+        if(tecnico === "Todos"){
+            if((dia === "Todos") && (mes === "Todos") && (ano === "Todos")){
+                alert("Todos em geral")
+            }
+            if((dia === "Todos") && (mes === "Todos") && (ano !== "Todos")){
+                alert("Todos Filtrando Ano")
+            }
+            if((dia === "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                alert("Todos Filtrando Mes e Ano")
+            }
+            if((dia !== "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                alert("Todos Filtrando Dia Mes e Ano")
+            }
+        }
+        if(tecnico !== "Todos"){
+            if((dia === "Todos") && (mes === "Todos") && (ano === "Todos")){
+                alert("Tecnico Todos em geral")
+            }
+            if((dia === "Todos") && (mes === "Todos") && (ano !== "Todos")){
+                alert("Tecnico Filtrando Ano")
+            }
+            if((dia === "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                alert("Tecnico Filtrando Mes e Ano")
+            }
+            if((dia !== "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                alert("Tecnico Filtrando Dia Mes e Ano")
+            }
+        }
+        
+    }
 
     render() {
         return (
