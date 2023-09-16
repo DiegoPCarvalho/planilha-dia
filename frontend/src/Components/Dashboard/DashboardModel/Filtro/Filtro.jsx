@@ -1,16 +1,25 @@
 import React from 'react'
 
 import PuxarDados from '../Estrutura/PuxarDados';
-import FotoTecnico from '../Foto/FotoTecnico';
+import BuscarTec from './BuscarTec';
+
+//TECNICOS
+import imgDiegoC from '../../../../Assets/imagensTecnicos/DIEGO CARVALHO.png';
+import imgNata from '../../../../Assets/imagensTecnicos/NATANAEL MILTON.png';
+import imgMateus from '../../../../Assets/imagensTecnicos/MATEUS DOVAL.png';
+import imgGabriel from '../../../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
+import imgBruno from '../../../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
+import imgVinicius from '../../../../Assets/imagensTecnicos/VINICIUS GOMES .png';
+import imgDiegoA from '../../../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
+import imgMarcio from "../../../../Assets/Imgs/user.png";
+import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png'
 
 
 const initialState = {
     optionsTec: [],
 }
 
-
 const puxarDados = new PuxarDados();
-const fotoTecnico = new FotoTecnico();
 
 export default class Filtro extends React.Component {
 
@@ -18,19 +27,15 @@ export default class Filtro extends React.Component {
 
     componentWillMount() {
         this.BuscarTec()
+        this.statusPadrao()
     }
 
-    listUser(tabela, dados) {
-        for (let i = 0; i < tabela.length; i++) {
-            if (tabela[i].departamento === "Laborátorio") { dados.push({ nome: tabela[i].nomeCompleto }) }
-        }
-    }
 
     async BuscarTec() {
         const tabela = await puxarDados.buscarDadosBanco("LoginUsuario")
         let dadosTec = []
 
-        this.listUser(tabela, dadosTec)
+        BuscarTec(tabela, dadosTec)
 
         return this.setState({
             optionsTec: dadosTec
@@ -46,14 +51,55 @@ export default class Filtro extends React.Component {
         })
     }
 
+    statusPadrao(){
+            this.props.status("Todos", "Todos", "Todos", "Todos", imgLogoIcon)
+    }
+
     enviarStatus() {
         const tecnico = document.getElementById("tecnico").value;
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         const dia = document.getElementById("dia").value;
 
-        fotoTecnico.buscarFoto()
-        this.props.status(tecnico, dia, mes, ano)
+        
+
+        if(tecnico === "Todos"){
+            this.props.status(tecnico, dia, mes, ano, imgLogoIcon)
+        }
+        if(tecnico === "Diego Carvalho"){
+            this.props.status(tecnico, dia, mes, ano, imgDiegoC)
+        }
+        if (tecnico === "Natanael Silva Lima") {
+            this.props.status(tecnico, dia, mes, ano, imgNata)
+        }
+        if (tecnico === "Mateus Doval") {
+            this.props.status(tecnico, dia, mes, ano, imgMateus)
+        }
+        if (tecnico === "Gabriel Kaique") {
+            this.props.status(tecnico, dia, mes, ano, imgGabriel)
+        }
+        if (tecnico === "Bruno Bedani") {
+            this.props.status(tecnico, dia, mes, ano, imgBruno)
+        }
+        if (tecnico === "Vinicius Gomes") {
+            this.props.status(tecnico, dia, mes, ano, imgVinicius)
+        }
+        if (tecnico === "Diego Almeida") {
+            this.props.status(tecnico, dia, mes, ano, imgDiegoA)
+        }
+        if (tecnico === "Cida Zani") {
+            this.props.status(tecnico, dia, mes, ano, imgMarcio)
+        }
+        if (tecnico === "Cauã Barbosa") {
+            this.props.status(tecnico, dia, mes, ano, imgMarcio)
+        }
+        if(tecnico === "Anderson Filho"){
+            this.props.status(tecnico, dia, mes, ano, imgMarcio)
+        }
+        if(tecnico === "Marlon Fidelix"){
+            this.props.status(tecnico, dia, mes, ano, imgMarcio)
+        }
+
     }
 
     render() {

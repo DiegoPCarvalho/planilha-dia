@@ -3,25 +3,29 @@ import Filtro from './Filtro/Filtro'
 import ServOsLimp from './ServicoOSLimpeza/ServOSLimp'
 import FotoTecnico from '../DashboardModel/Foto/FotoTecnico'
 
+
 const initialState = {
     Stecnico: "Todos",
     Sdia: "Todos",
     Smes: "Todos",
     Sano: "Todos",
+    Simagem: ""
 }
 
 export default class IndexDash extends React.Component {
 
     state = { ...initialState }
 
-    receberStatusFiltro = (tecnico, dia, mes, ano) => {
+    receberStatusFiltro = (tecnico, dia, mes, ano, imagem) => {
         return this.setState({
             Stecnico: tecnico,
             Sano: ano,
             Smes: mes,
-            Sdia: dia
+            Sdia: dia,
+            Simagem: imagem
         })
     }
+
 
     render() {
         return (
@@ -30,7 +34,7 @@ export default class IndexDash extends React.Component {
                     <Filtro status={this.receberStatusFiltro} />
                 </div>
                 <div className="row border mt-3">
-                    <div className="col-1 border mx-1"><FotoTecnico Tecnico={this.state.Stecnico}/></div>
+                    <div className="col-1 border mx-1"><FotoTecnico Tecnico={this.state.Simagem} /></div>
                     <div className="col-2 border mx-1">
                         <div className="row border my-1"> prod diaria </div>
                         <div className="row border my-1"> Meta</div>
