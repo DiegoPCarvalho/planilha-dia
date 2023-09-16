@@ -1,17 +1,18 @@
 import React from 'react'
 
-import ServOsLimp from '../ServicoOSLimpeza/ServOSLimp';
 import PuxarDados from '../Estrutura/PuxarDados';
+import FotoTecnico from '../Foto/FotoTecnico';
 
 
 const initialState = {
     optionsTec: [],
 }
 
-const servico = new ServOsLimp();
-const puxarDados = new PuxarDados();
 
-export default class IndexDash extends React.Component {
+const puxarDados = new PuxarDados();
+const fotoTecnico = new FotoTecnico();
+
+export default class Filtro extends React.Component {
 
     state = { ...initialState }
 
@@ -50,10 +51,9 @@ export default class IndexDash extends React.Component {
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         const dia = document.getElementById("dia").value;
-        this.BuscarTec()
 
+        fotoTecnico.buscarFoto()
         this.props.status(tecnico, dia, mes, ano)
-        servico.teste(tecnico, dia, mes, ano)
     }
 
     render() {
