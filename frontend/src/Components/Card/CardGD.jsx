@@ -5,8 +5,8 @@ function CardGD(props) {
     <>
         <Card
           bg={props.bg}
-          style={{ width: '18rem' }}
-          className="mb-2"
+          style={{ width: '16rem' }}
+          className={props.tipoTexto}
         >
           <Card.Body>
             <Card.Title><div className='h2 fw-bold d-flex justify-content-center'>{props.nomeTitulo}</div></Card.Title>
