@@ -11,7 +11,7 @@ function CardGD(props) {
           <Card.Body>
             <Card.Title><div className='h2 fw-bold d-flex justify-content-center'>{props.nomeTitulo}</div></Card.Title>
             <Card.Text>
-              <div className='row'>
+              <div className='row mt-4'>
                 <div className="col-2">
                   <i className={`fa fa-2x fa-${props.icone}`}></i>
                 </div>

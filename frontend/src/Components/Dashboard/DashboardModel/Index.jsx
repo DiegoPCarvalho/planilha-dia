@@ -2,29 +2,23 @@ import React from 'react'
 import Filtro from './Filtro/Filtro'
 import ServOsLimp from './ServicoOSLimpeza/ServOSLimp'
 import FotoTecnico from '../DashboardModel/Foto/FotoTecnico'
+import ProdDia from './ProdDiaria/ProdDiaria'
 
 
 const initialState = {
-    Stecnico: "Todos",
-    Sdia: "Todos",
-    Smes: "Todos",
-    Sano: "Todos",
     Simagem: "",
     StotalOS: [],
     StotalServico: [],
-    Slimpeza: []
+    Slimpeza: [],
+    SprodDiaria: []
 }
 
 export default class IndexDash extends React.Component {
 
     state = { ...initialState }
 
-    receberStatusFiltro = (tecnico, dia, mes, ano, imagem) => {
+    receberStatusFiltro = (imagem) => {
         return this.setState({
-            Stecnico: tecnico,
-            Sano: ano,
-            Smes: mes,
-            Sdia: dia,
             Simagem: imagem
         })
     }
@@ -37,24 +31,26 @@ export default class IndexDash extends React.Component {
         })
     }
 
+    receberProdDiaria = (prodDiaria) => {
+        return this.setState({
+            SprodDiaria: prodDiaria
+        })
+    }
+
 
     render() {
         return (
             <div className="container-fluid">
                 <div className="row mt-3">
-                    <Filtro status={this.receberStatusFiltro} cards={this.receberTotalOSL}/>
+                    <Filtro status={this.receberStatusFiltro} cards={this.receberTotalOSL} prod={this.receberProdDiaria}/>
                 </div>
                 <div className="row border mt-3 d-flex justify-content-between">
-                    <div className="col-2 border"><FotoTecnico Tecnico={this.state.Simagem} /></div>
-                    <div className="col-2 border">
-                        <div className="row border my-1"> prod diaria </div>
+                    <div className="col-1 "><FotoTecnico Tecnico={this.state.Simagem} /></div>
+                    <div className="col-2  d-flex align-items-center flex-column justify-content-center">
+                        <div className="row my-1"> <ProdDia dadosDia={this.state.SprodDiaria} /> </div>
                         <div className="row border my-1"> Meta</div>
                     </div>
                     <ServOsLimp
-                        Tecnico={this.state.Stecnico}
-                        Dia={this.state.Sdia}
-                        Mes={this.state.Smes}
-                        Ano={this.state.Sano}
                         TotalOS={this.state.StotalOS}
                         TotalServico={this.state.StotalServico}
                         Limpeza={this.state.Slimpeza} />

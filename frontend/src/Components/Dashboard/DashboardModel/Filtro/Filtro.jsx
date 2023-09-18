@@ -4,6 +4,7 @@ import PuxarDados from '../Estrutura/PuxarDados';
 import BuscarTec from './BuscarTec';
 import { BuscarFoto } from '../Foto/FotoTecnico';
 import { BuscarDados } from '../ServicoOSLimpeza/ServOSLimp';
+import { BuscarDadosProdDia } from '../ProdDiaria/ProdDiaria';
 
 import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png'
 
@@ -12,7 +13,6 @@ const initialState = {
     optionsTec: [],
 }
 
-const puxarDados = new PuxarDados();
 
 export default class Filtro extends React.Component {
 
@@ -25,7 +25,7 @@ export default class Filtro extends React.Component {
 
 
     async BuscarTec() {
-        const tabela = await puxarDados.buscarDadosBanco("LoginUsuario")
+        const tabela = await PuxarDados("LoginUsuario")
         let dadosTec = []
 
         BuscarTec(tabela, dadosTec)
@@ -45,31 +45,64 @@ export default class Filtro extends React.Component {
     }
 
     async statusPadrao(){
-        this.props.status("Todos", "Todos","Todos", "Todos", imgLogoIcon)
-        this.props.cards(0,await BuscarDados(),0)
+        this.props.status(imgLogoIcon)
+        this.props.cards(
+            await BuscarDados("Todos", "Todos","Todos", "Todos", "Total OS"),
+            await BuscarDados("Todos", "Todos","Todos", "Todos", "Total Servico"),
+            await BuscarDados("Todos", "Todos","Todos", "Todos", "Limpeza"))
+        this.props.prod( await BuscarDadosProdDia("Todos", "Todos","Todos", "Todos"))
     }
-    
-    
 
-    async enviarStatus() {
+    async filtrarDados(){
         const tecnico = document.getElementById("tecnico").value;
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         const dia = document.getElementById("dia").value;
 
-     
-        const os = 30
-        const ser = await BuscarDados()
-        const limp = 10
-
+        if(tecnico === "Todos"){
+            if((dia === "Todos") && (mes === "Todos") && (ano === "Todos")){
+                this.statusPadrao()
+            }else if((dia === "Todos") && (mes === "Todos") && (ano !== "Todos")){
+                this.executar(tecnico, dia, mes, ano)
         
-
-        this.props.cards(os, ser, limp)
-
-        this.props.status(tecnico, dia, mes, ano, BuscarFoto(tecnico))
-
-
+            }else if((dia === "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                this.executar(tecnico, dia, mes, ano)
+        
+            }else if((dia !== "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                this.executar(tecnico, dia, mes, ano)
+            }
+        }else if (tecnico !== "Todos"){
+            this.props.status(BuscarFoto(tecnico))
+            if((dia === "Todos") && (mes === "Todos") && (ano === "Todos")){
+                this.executar(tecnico, dia, mes, ano)
+               
+                 
+            }else if((dia === "Todos") && (mes === "Todos") && (ano !== "Todos")){
+                this.executar(tecnico, dia, mes, ano)
+               
+            }else if((dia === "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                this.executar(tecnico, dia, mes, ano)
+                
+               
+            }else if((dia !== "Todos") && (mes !== "Todos") && (ano !== "Todos")){
+                this.executar(tecnico, dia, mes, ano)
+            }
+        }
     }
+
+    async executar(tecnico, dia, mes, ano){
+                //cards
+                const os = await BuscarDados(tecnico, dia, mes, ano, "Total OS")
+                const ser = await BuscarDados(tecnico, dia, mes, ano, "Total Servico")
+                const limp = await BuscarDados(tecnico, dia, mes, ano, "Limpeza")
+              
+                this.props.cards(os, ser, limp)
+
+                //prodDiaria
+                const prod = await BuscarDadosProdDia(tecnico, dia, mes, ano)
+                this.props.prod(prod)       
+    }
+    
 
     render() {
         return (
@@ -155,7 +188,7 @@ export default class Filtro extends React.Component {
                     </select>
                 </div>
                 <div className="col-2 d-flex align-items-end">
-                    <button className="btn btn-success fw-bold" onClick={e => this.enviarStatus(e)}>Buscar</button>
+                    <button className="btn btn-success fw-bold" onClick={e => this.filtrarDados(e)}>Buscar</button>
                 </div>
             </>
         )
