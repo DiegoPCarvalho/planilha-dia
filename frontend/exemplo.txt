@@ -1,0 +1,45 @@
+// const app = require("express")();
+// const axios = require("axios");
+// const port = 5000;
+// const baseUrl = 'http://192.168.15.157:5001'
+
+// app.get("/", async (req, res) => {
+//     const login = await axios(`${baseUrl}/LoginUsuario`).then(resp => resp.data);
+//     const tabela = await axios(`${baseUrl}/Geral`).then(resp => resp.data);
+//     let dado = []
+//     let contador = 1
+//     // let dadoFinal = []
+
+//     // for (let i = 0; i < login.length; i++) {
+//     //     dado.push({ name: login[i].nomeCompleto })
+//     // }
+
+   
+//         for (let j = 0; j < tabela.length; j++) {
+//             dado.push(tabela[j].Tecnico)
+//         }
+    
+    
+//         let quantidadeNomes = dado.reduce(function (todosNomes, dado) {
+//             if (dado in todosNomes) {
+//               todosNomes[dado]++;
+//             } else {
+//               todosNomes[dado] = 1;
+//             }
+//             return todosNomes;
+//           }, {});
+
+//           let arr = Object.entries(quantidadeNomes).map(([name, y]) => ({name, y}));
+          
+//   console.log(arr)
+// })
+
+
+
+// app.listen(port, () => {
+//     try {
+//         console.log("Servidor Online")
+//     } catch (err) {
+//         console.log("Errro: " + err)
+//     }
+// })

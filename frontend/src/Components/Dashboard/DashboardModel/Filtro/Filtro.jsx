@@ -5,6 +5,7 @@ import BuscarTec from './BuscarTec';
 import { BuscarFoto } from '../Foto/FotoTecnico';
 import { BuscarDados } from '../ServicoOSLimpeza/ServOSLimp';
 import { BuscarDadosProdDia } from '../ProdDiaria/ProdDiaria';
+import { BuscarDadosMeta } from '../Meta/Meta';
 
 import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png'
 
@@ -50,47 +51,17 @@ export default class Filtro extends React.Component {
             await BuscarDados("Todos", "Todos","Todos", "Todos", "Total OS"),
             await BuscarDados("Todos", "Todos","Todos", "Todos", "Total Servico"),
             await BuscarDados("Todos", "Todos","Todos", "Todos", "Limpeza"))
-        this.props.prod( await BuscarDadosProdDia("Todos", "Todos","Todos", "Todos"))
+        this.props.prod(await BuscarDadosProdDia("Todos", "Todos","Todos", "Todos"))
     }
 
-    async filtrarDados(){
+
+    async executar(){
         const tecnico = document.getElementById("tecnico").value;
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         const dia = document.getElementById("dia").value;
+        this.props.status(BuscarFoto(tecnico))
 
-        if(tecnico === "Todos"){
-            if((dia === "Todos") && (mes === "Todos") && (ano === "Todos")){
-                this.statusPadrao()
-            }else if((dia === "Todos") && (mes === "Todos") && (ano !== "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-        
-            }else if((dia === "Todos") && (mes !== "Todos") && (ano !== "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-        
-            }else if((dia !== "Todos") && (mes !== "Todos") && (ano !== "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-            }
-        }else if (tecnico !== "Todos"){
-            this.props.status(BuscarFoto(tecnico))
-            if((dia === "Todos") && (mes === "Todos") && (ano === "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-               
-                 
-            }else if((dia === "Todos") && (mes === "Todos") && (ano !== "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-               
-            }else if((dia === "Todos") && (mes !== "Todos") && (ano !== "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-                
-               
-            }else if((dia !== "Todos") && (mes !== "Todos") && (ano !== "Todos")){
-                this.executar(tecnico, dia, mes, ano)
-            }
-        }
-    }
-
-    async executar(tecnico, dia, mes, ano){
                 //cards
                 const os = await BuscarDados(tecnico, dia, mes, ano, "Total OS")
                 const ser = await BuscarDados(tecnico, dia, mes, ano, "Total Servico")
@@ -100,7 +71,11 @@ export default class Filtro extends React.Component {
 
                 //prodDiaria
                 const prod = await BuscarDadosProdDia(tecnico, dia, mes, ano)
-                this.props.prod(prod)       
+                this.props.prod(prod) 
+                
+                //Meta
+                const meta = await BuscarDadosMeta(tecnico, dia, mes, ano)
+                this.props.meta(meta)
     }
     
 
@@ -188,7 +163,7 @@ export default class Filtro extends React.Component {
                     </select>
                 </div>
                 <div className="col-2 d-flex align-items-end">
-                    <button className="btn btn-success fw-bold" onClick={e => this.filtrarDados(e)}>Buscar</button>
+                    <button className="btn btn-success fw-bold" onClick={e => this.executar(e)}>Buscar</button>
                 </div>
             </>
         )

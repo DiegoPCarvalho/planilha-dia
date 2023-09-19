@@ -3,6 +3,7 @@ import Filtro from './Filtro/Filtro'
 import ServOsLimp from './ServicoOSLimpeza/ServOSLimp'
 import FotoTecnico from '../DashboardModel/Foto/FotoTecnico'
 import ProdDia from './ProdDiaria/ProdDiaria'
+import Meta from './Meta/Meta'
 
 
 const initialState = {
@@ -10,7 +11,8 @@ const initialState = {
     StotalOS: [],
     StotalServico: [],
     Slimpeza: [],
-    SprodDiaria: []
+    SprodDiaria: [],
+    Smeta: []
 }
 
 export default class IndexDash extends React.Component {
@@ -37,18 +39,25 @@ export default class IndexDash extends React.Component {
         })
     }
 
+    receberMeta = (meta) => {
+        return this.setState({
+            Smeta: meta
+        })
+    }
+
 
     render() {
         return (
             <div className="container-fluid">
                 <div className="row mt-3">
-                    <Filtro status={this.receberStatusFiltro} cards={this.receberTotalOSL} prod={this.receberProdDiaria}/>
+                    <Filtro status={this.receberStatusFiltro} cards={this.receberTotalOSL} prod={this.receberProdDiaria}
+                        meta={this.receberMeta}/>
                 </div>
-                <div className="row border mt-3 d-flex justify-content-between">
+                <div className="row mt-3 d-flex justify-content-between">
                     <div className="col-1 "><FotoTecnico Tecnico={this.state.Simagem} /></div>
                     <div className="col-2  d-flex align-items-center flex-column justify-content-center">
                         <div className="row my-1"> <ProdDia dadosDia={this.state.SprodDiaria} /> </div>
-                        <div className="row border my-1"> Meta</div>
+                        <div className="row my-1"> <Meta total={this.state.StotalServico} meta={this.state.Smeta}/></div>
                     </div>
                     <ServOsLimp
                         TotalOS={this.state.StotalOS}

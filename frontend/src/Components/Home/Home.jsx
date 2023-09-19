@@ -25,6 +25,9 @@ export default function Home(){
     )
 
     function Logado(){
+        if(localStorage.length === 0){
+            window.location.pathname = '/'
+        }else
         if(localStorage.logado === "0"){
             window.location.pathname = '/'
         }
