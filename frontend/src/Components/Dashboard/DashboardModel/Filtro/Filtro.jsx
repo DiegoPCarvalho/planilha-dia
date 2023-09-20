@@ -6,6 +6,8 @@ import { BuscarFoto } from '../Foto/FotoTecnico';
 import { BuscarDados } from '../ServicoOSLimpeza/ServOSLimp';
 import { BuscarDadosProdDia } from '../ProdDiaria/ProdDiaria';
 import { BuscarDadosMeta } from '../Meta/Meta';
+import { BuscarTecnicos } from '../GraficoTecnicos/GraficoTecnicos';
+import { BuscarPlaca } from '../GraficoPlacas/RecuperacaoPlaca';
 
 import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png'
 
@@ -45,39 +47,53 @@ export default class Filtro extends React.Component {
         })
     }
 
-    async statusPadrao(){
+    async statusPadrao() {
         this.props.status(imgLogoIcon)
         this.props.cards(
-            await BuscarDados("Todos", "Todos","Todos", "Todos", "Total OS"),
-            await BuscarDados("Todos", "Todos","Todos", "Todos", "Total Servico"),
-            await BuscarDados("Todos", "Todos","Todos", "Todos", "Limpeza"))
-        this.props.prod(await BuscarDadosProdDia("Todos", "Todos","Todos", "Todos"))
+            await BuscarDados("Todos", "Todos", "Todos", "Todos", "Total OS"),
+            await BuscarDados("Todos", "Todos", "Todos", "Todos", "Total Servico"),
+            await BuscarDados("Todos", "Todos", "Todos", "Todos", "Limpeza"))
+        this.props.prod(await BuscarDadosProdDia("Todos", "Todos", "Todos", "Todos"))
+        this.props.tecnico(await BuscarTecnicos("Todos", "Todos", "Todos", "Todos"))
+        const placa = await BuscarPlaca("Todos", "Todos", "Todos", "Todos")
+        this.props.recPlaca(placa)
+       
     }
 
-
-    async executar(){
+    async executar() {
         const tecnico = document.getElementById("tecnico").value;
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
         const dia = document.getElementById("dia").value;
         this.props.status(BuscarFoto(tecnico))
 
-                //cards
-                const os = await BuscarDados(tecnico, dia, mes, ano, "Total OS")
-                const ser = await BuscarDados(tecnico, dia, mes, ano, "Total Servico")
-                const limp = await BuscarDados(tecnico, dia, mes, ano, "Limpeza")
-              
-                this.props.cards(os, ser, limp)
+        //cards
+        const os = await BuscarDados(tecnico, dia, mes, ano, "Total OS")
+        const ser = await BuscarDados(tecnico, dia, mes, ano, "Total Servico")
+        const limp = await BuscarDados(tecnico, dia, mes, ano, "Limpeza")
 
-                //prodDiaria
-                const prod = await BuscarDadosProdDia(tecnico, dia, mes, ano)
-                this.props.prod(prod) 
-                
-                //Meta
-                const meta = await BuscarDadosMeta(tecnico, dia, mes, ano)
-                this.props.meta(meta)
+        this.props.cards(os, ser, limp)
+
+        //prodDiaria
+        const prod = await BuscarDadosProdDia(tecnico, dia, mes, ano)
+        this.props.prod(prod)
+
+        //Meta
+        const meta = await BuscarDadosMeta(tecnico, dia, mes, ano)
+        this.props.meta(meta)
+
+        //tecnicos
+        const tec = await BuscarTecnicos(tecnico, dia, mes, ano)
+        this.props.tecnico(tec)
+
+        //placas
+        const plc = await BuscarPlaca(tecnico, dia, mes, ano)
+        this.props.recPlaca(plc)
+
     }
+
     
+
 
     render() {
         return (

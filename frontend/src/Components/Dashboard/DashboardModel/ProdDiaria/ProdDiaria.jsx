@@ -219,5 +219,3 @@ function DadosPorDia(tabela, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, 
         d31.push(tabela.OS)
     }
 }
-
-// if((tecnico === "Todos")&&(dia === "Todos")&& (mes === "Todos") && (ano === "Todos"))

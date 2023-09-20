@@ -15336,16 +15336,16 @@ export default class DashboardGeral extends React.Component {
                         </div>
                     </div>
                     <div className="col-3 text-light">
-                        <CardGD bg="dark" nomeTitulo="Total OS's" icone={<i class="fa fa-3x fa-codepen" aria-hidden="true"></i>}
+                        <CardGD bg="dark" nomeTitulo="Total OS's" icone="codepen"
                             dado={this.state.listarTotalOS} />
                     </div>
                     <div className="col-3  text-light">
-                        <CardGD bg="success" nomeTitulo="Total Serviço" icone={<i class="fa fa-3x fa-server" aria-hidden="true"></i>}
+                        <CardGD bg="success" nomeTitulo="Total Serviço" icone="server"
                             dado={this.state.listarTotalEquip} />
                     </div>
 
                     <div className="col-3 text-light">
-                        <CardGD bg="primary" nomeTitulo="Total Limpeza" icone={<i class="fa fa-3x fa-paint-brush" aria-hidden="true"></i>}
+                        <CardGD bg="primary" nomeTitulo="Limpeza" icone="paint-brush"
                             dado={this.state.listarLP} />
                     </div>
                 </div>
@@ -15573,7 +15573,7 @@ export default class DashboardGeral extends React.Component {
                         />
                     </div>
                     <div className="col-12 col-md-5 sombra mx-3 flex-fill">
-                        <Grafico tipo="bar" titulo="Produtividade por Técnicos"
+                        <Grafico tipo="bar" titulo="Produtividade por Técnico"
                             formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                             texto='{point.y:1f}'
                             nomeSerie="Serviço"

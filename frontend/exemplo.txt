@@ -43,3 +43,87 @@
 //         console.log("Errro: " + err)
 //     }
 // })
+
+
+import React from 'react';
+import ModalProd from '../../../Modal/ModalTecnico';
+import PuxarDados from '../Estrutura/PuxarDados';
+import Grafico from '../../../Graficos/Grafico';
+
+export default class ProdDiaria extends React.Component {
+    render() {
+        return (
+            <>
+                <ModalProd corModal="secondary" nomeBotao="Prod. Diaria" tamanho="xl"
+                    classe='h4 fw-bold'
+                    Relatorio={
+                        <Grafico tipo="column" titulo="Produtividade por Dia"
+                            formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
+                            texto='{point.y:1f}'
+                            nomeSerie="Dia"
+                            dado={this.props.dadosDia}
+                        />
+                    }
+                />
+            </>
+        )
+    }
+}
+
+export async function BuscarDadosProdDia(tecnico, dia, mes, ano) {
+    const tabela = await PuxarDados("Geral")
+    let dadoDia = []
+ 
+
+    for (let i = 0; i < tabela.length; i++) {
+        //Todos
+        if((tecnico === "Todos")&&(dia === "Todos")&& (mes === "Todos") && (ano === "Todos")){
+            DadosPorDia(tabela[i], dadoDia)
+        }else
+        if((tecnico === "Todos")&&(dia === "Todos")&& (mes === "Todos") && (ano === `${tabela[i].Ano}`)){
+           DadosPorDia(tabela[i], dadoDia)
+        }else
+        if((tecnico === "Todos")&&(dia === "Todos")&& (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){
+           DadosPorDia(tabela[i], dadoDia)
+        }else
+        if((tecnico === "Todos")&&(dia === `${tabela[i].Dia}`)&& (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){
+           DadosPorDia(tabela[i], dadoDia)
+        }else
+        //Tecnico
+        if((tecnico === `${tabela[i].Tecnico}`)&&(dia === "Todos")&& (mes === "Todos") && (ano === "Todos")){
+           DadosPorDia(tabela[i], dadoDia)
+        }else
+        if((tecnico === `${tabela[i].Tecnico}`)&&(dia === "Todos")&& (mes === "Todos") && (ano === `${tabela[i].Ano}`)){
+           DadosPorDia(tabela[i], dadoDia)
+        }else
+        if((tecnico === `${tabela[i].Tecnico}`)&&(dia === "Todos")&& (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){
+           DadosPorDia(tabela[i], dadoDia)
+        }else
+        if((tecnico === `${tabela[i].Tecnico}`)&&(dia === `${tabela[i].Dia}`)&& (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){
+           DadosPorDia(tabela[i], dadoDia)
+        }
+
+    }
+
+    let quantidadeDia = dadoDia.reduce(function (todosNomes, dadoDia) {
+                    if (dadoDia in todosNomes) {
+                      todosNomes[dadoDia]++;
+                    } else {
+                      todosNomes[dadoDia] = 1;
+                    }
+                    return todosNomes;
+                  }, {});
+
+    let dadosDiaFinal = Object.entries(quantidadeDia).map(([name, y]) => ({name, y}));
+
+    return dadosDiaFinal
+    
+}
+
+
+function DadosPorDia(tabela, dados) {
+    if((undefined !== tabela.Dia) && ("" !== tabela.Dia)){
+        dados.push(`${tabela.Dia}`)    
+    }
+}
+
