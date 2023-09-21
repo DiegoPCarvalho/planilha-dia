@@ -16,10 +16,6 @@ import Tabela from "../Components/Atividade/Tabela";
 import TabelaRegistroAntigo from "../Components/Atividade/TabRegistroAntigo";
 import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 
-//dashboard
-import DashboardGerencia from "../Components/Dashboard/DashboardGerencia";
-import DashboardDiretoria from "../Components/Dashboard/DashboardDiretoria";
-
 
 //Em Breve
 import EmBreve from "../Components/EmBreve/EmBreve";
@@ -92,7 +88,6 @@ export default function Rotas() {
             <Route element={<Home />}>
                 <Route path="/DiretoriaLab" element={<Diretoria />}>
                     <Route path="Dashboard" element={<DashboardGeral />}>
-                        <Route path="DashboardAtividade" element={<DashboardDiretoria />} />
                         <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoDiretoria />}>
@@ -101,13 +96,13 @@ export default function Rotas() {
                         <Route path="Finalizados" element={<FinaliadosLab />} />
                     </Route>
                 </Route>
-                <Route path="Gerencia" element={<DashboardGerencia />} />
+               
             </Route>
             <Route element={<Home />}>
                 <Route path="/GerenciaLab" element={<HomeGerenciaLab />}>
                     <Route path="Dashboard" element={<DashboardGeral />}>
-                        <Route path="DashboardAtividade" element={<DashboardGerencia />} />
-                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} />
+                        {/* <Route path="DashboardAtividade" element={<DashboardGerencia />} />
+                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} /> */}
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
                         <Route path="Solicitacoes" element={<SolicitacoesLab />} />

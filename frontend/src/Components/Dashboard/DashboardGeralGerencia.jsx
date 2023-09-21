@@ -9,8 +9,6 @@ import ModalProd from '../Modal/ModalTecnico';
 import imgDiegoC from '../../Assets/imagensTecnicos/DIEGO CARVALHO.png';
 import imgNata from '../../Assets/imagensTecnicos/NATANAEL MILTON.png';
 import imgMateus from '../../Assets/imagensTecnicos/MATEUS DOVAL.png';
-import imgLucas from '../../Assets/imagensTecnicos/LUCAS FELICIAN.png';
-import imgDiogo from '../../Assets/imagensTecnicos/DIOGO SELMINI.png';
 import imgGabriel from '../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
 import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
 import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
@@ -318,16 +316,6 @@ export default class DashboardGeral extends React.Component {
         if (tecnico === "Mateus Doval") {
             return this.setState({
                 imagem: imgMateus
-            })
-        }
-        if (tecnico === "Lucas Felician") {
-            return this.setState({
-                imagem: imgLucas
-            })
-        }
-        if (tecnico === "Diogo Selmini") {
-            return this.setState({
-                imagem: imgDiogo
             })
         }
         if (tecnico === "Gabriel Kaique") {

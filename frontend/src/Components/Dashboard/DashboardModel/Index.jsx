@@ -9,6 +9,7 @@ import RecPlaca from './GraficoPlacas/RecuperacaoPlaca'
 import Equipamento from './GraficoEquipamento/Equipamento'
 import ProjecaoAnual from './GraficoProjecao/GraficoPrejecao'
 import AvulsoContrato from './GraficoAvulsoContrato/AvulsoContrato'
+import Servico from './GraficoServico/Servico'
 
 
 const initialState = {
@@ -24,7 +25,9 @@ const initialState = {
     Sequipamento: [],
     SprojAnual: [],
     SavulsoContrato: [],
-    ScontratoSerie: []
+    ScontratoSerie: [],
+    SservicoDado: [],
+    SservicoSerie: []
 }
 
 export default class IndexDash extends React.Component {
@@ -83,6 +86,13 @@ export default class IndexDash extends React.Component {
             ScontratoSerie: serie
         })
     }
+
+    receberServico = (dado , serie) => {
+        return this.setState({
+            SservicoDado: dado,
+            SservicoSerie: serie
+        })
+    }
    
 
     render() {
@@ -91,7 +101,8 @@ export default class IndexDash extends React.Component {
                 <div className="row mt-3">
                     <Filtro status={this.receberStatusFiltro} cards={this.receberTotalOSL} prod={this.receberProdDiaria}
                         meta={this.receberMeta} tecnico={this.receberTecnicos} recPlaca={this.receberPlaca}  
-                        equip={this.receberEquip} projAnual={this.receberProjAnual} avulsoContrato={this.receberAvulsoContrato}/>
+                        equip={this.receberEquip} projAnual={this.receberProjAnual} avulsoContrato={this.receberAvulsoContrato}
+                        servico={this.receberServico}/>
                 </div>
                 <div className="row mt-3 d-flex justify-content-between">
                     <div className="col-1"><FotoTecnico Tecnico={this.state.Simagem} /></div>
@@ -104,15 +115,15 @@ export default class IndexDash extends React.Component {
                         TotalServico={this.state.StotalServico}
                         Limpeza={this.state.Slimpeza} />
                 </div>
-                <div className="row border mt-3">
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">Grafico Servico</div>
+                <div className="row mt-3">
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><Servico servico={this.state.SservicoDado}/></div>
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><GraficoTecnicos tecnico={this.state.Stecnico} /></div>
                 </div>
-                <div className="row border mt-3">
+                <div className="row  mt-3">
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><Equipamento equip={this.state.Sequipamento}/></div>
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><RecPlaca placa={this.state.SrecPlaca} total={this.state.SrecTotalPlc} /></div>
                 </div>
-                <div className="row border mt-3">
+                <div className="row  mt-3">
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><AvulsoContrato avulsoContrato={this.state.SavulsoContrato} serie={this.state.ScontratoSerie}/></div>
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><ProjecaoAnual projAnual={this.state.SprojAnual}/></div>
                 </div>

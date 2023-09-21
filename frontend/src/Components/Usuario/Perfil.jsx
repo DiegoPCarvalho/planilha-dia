@@ -9,15 +9,11 @@ import { confirmAlert } from "react-confirm-alert";
 //TECNICOS
 import imgDiegoC from '../../Assets/imagensTecnicos/DIEGO CARVALHO.png';
 import imgNata from '../../Assets/imagensTecnicos/NATANAEL MILTON.png';
-
 import imgMateus from '../../Assets/imagensTecnicos/MATEUS DOVAL.png';
-import imgLucas from '../../Assets/imagensTecnicos/LUCAS FELICIAN.png';
-import imgDiogo from '../../Assets/imagensTecnicos/DIOGO SELMINI.png';
 import imgGabriel from '../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
 import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
 import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
 import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
-import imgAnderson from '../../Assets/imagensTecnicos/ANDERSON RAMOS (1).png';
 import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
 import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
 
@@ -400,17 +396,8 @@ export default class PageAdmin extends React.Component {
     }
 
     mostarFotoUser(tecnico) {
-        if ("Anderson Ramos" === tecnico) {
-            return imgAnderson
-        }
         if ("Mateus Doval" === tecnico) {
             return imgMateus
-        }
-        if ("Lucas Felician" === tecnico) {
-            return imgLucas
-        }
-        if ("Diogo Selmini" === tecnico) {
-            return imgDiogo
         }
         if ("Gabriel Kaique" === tecnico) {
             return imgGabriel

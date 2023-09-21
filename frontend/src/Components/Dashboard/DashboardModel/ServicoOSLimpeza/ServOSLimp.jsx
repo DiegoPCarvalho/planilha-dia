@@ -16,104 +16,40 @@ export default class ServOsLimp extends React.Component {
     }
 }
 
-export async function BuscarDados(tecnico, dia, mes, ano, modo){
+export async function BuscarDados(tecnico, dia, mes, ano){
     const tabela = await PuxarDados("Geral")
     
-        let geral = []
+        let dadoTotal = []
+        let dadoLimp = []
     
         for(let i = 0; i < tabela.length; i++){
-           await EliminarIF(tecnico, dia, mes, ano, modo, tabela[i], geral)
+            if ((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === "Todos") && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === tabela[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === tabela[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === tabela[i].Tecnico) && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) { dados(tabela[i], dadoTotal, dadoLimp) }
+            if ((tecnico === tabela[i].Tecnico) && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) { dados(tabela[i], dadoTotal, dadoLimp) }
         }
 
-        if((modo === "Total Servico") || (modo === "Limpeza")){
-            return geral.length
+        const osSemRep = [...new Set(dadoTotal)]
+
+        const cardServ = {
+            totalOS: osSemRep.length,
+            totalServ: dadoTotal.length,
+            limpeza: dadoLimp.length
         }
-        else if(modo === "Total OS"){
-            const osSemRep = [...new Set(geral)]
-            return osSemRep.length
-        }
+
+        return cardServ
+
+        
 }
 
-// function EliminarIF(tabela, geral){
-//     if(modo === "Total Servico"){
-//         //Todos
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela[i].OS)}
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === "Todos") && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
 
-//         //tecnico
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela[i].OS)}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//     }
-//     if(modo === "Limpeza"){
-//         //Todos
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//         if((tecnico === "Todos") && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-
-//         //tecnico
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){if("Limpeza" === tabela[i].Servico){geral.push(tabela[i].OS)}}
-//     }
-//     if(modo === "Total OS"){
-//         //Todos
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela[i].OS)}
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === "Todos") && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-
-//         //tecnico
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela[i].OS)}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//         if((tecnico === `${tabela[i].Tecnico}`) && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){geral.push(tabela[i].OS)}
-//     }
-// }
-
-function EliminarIF(tecnico, dia, mes, ano, modo, tabela, geral){
-    if(modo === "Total Servico"){
-        //Todos
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela.OS)}
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === "Todos") && (dia === `${tabela.Dia}`) && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-
-        //tecnico
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela.OS)}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === `${tabela.Dia}`) && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-    }
-    if(modo === "Limpeza"){
-        //Todos
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela.Ano}`)){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-        if((tecnico === "Todos") && (dia === `${tabela.Dia}`) && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-
-        //tecnico
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela.Ano}`)){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === `${tabela.Dia}`) && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){if("Limpeza" === tabela.Servico){geral.push(tabela.OS)}}
-    }
-    if(modo === "Total OS"){
-        //Todos
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela.OS)}
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === "Todos") && (dia === `${tabela.Dia}`) && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-
-        //tecnico
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")){geral.push(tabela.OS)}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === "Todos") && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
-        if((tecnico === `${tabela.Tecnico}`) && (dia === `${tabela.Dia}`) && (mes === `${tabela.Mes}`) && (ano === `${tabela.Ano}`)){geral.push(tabela.OS)}
+function dados(tabela, dadoTotal, dadoLimp){
+    dadoTotal.push(tabela.OS)
+    if("Limpeza" === tabela.Servico){
+        dadoLimp.push(tabela.OS)
     }
 }

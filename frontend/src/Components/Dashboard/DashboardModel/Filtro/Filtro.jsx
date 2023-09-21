@@ -11,6 +11,7 @@ import { BuscarPlaca } from '../GraficoPlacas/RecuperacaoPlaca';
 import { BuscarEquipamento } from '../GraficoEquipamento/Equipamento';
 import { BuscarProjAnual } from "../GraficoProjecao/GraficoPrejecao";
 import { BuscarAvulsoContrato } from '../GraficoAvulsoContrato/AvulsoContrato';
+import { BuscarServico } from '../GraficoServico/Servico';
 
 import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png'
 
@@ -51,19 +52,22 @@ export default class Filtro extends React.Component {
     }
 
     async statusPadrao() {
+        //cards
         this.props.status(imgLogoIcon)
-        this.props.cards(
-            await BuscarDados("Todos", "Todos", "Todos", "Todos", "Total OS"),
-            await BuscarDados("Todos", "Todos", "Todos", "Todos", "Total Servico"),
-            await BuscarDados("Todos", "Todos", "Todos", "Todos", "Limpeza"))
+        const cardServ = await BuscarDados("Todos", "Todos", "Todos", "Todos")
+        this.props.cards(cardServ.totalOS, cardServ.totalServ, cardServ.limpeza)
         this.props.prod(await BuscarDadosProdDia("Todos", "Todos", "Todos", "Todos"))
+
+        //graficos
+        const serv = await BuscarServico("Todos", "Todos", "Todos", "Todos")
+        this.props.servico(serv)
         this.props.tecnico(await BuscarTecnicos("Todos", "Todos", "Todos", "Todos"))
+        this.props.equip(await BuscarEquipamento("Todos", "Todos", "Todos", "Todos"))
         const placa = await BuscarPlaca("Todos", "Todos", "Todos", "Todos")
-        this.props.recPlaca(placa.dado, placa.total)   
-        this.props.equip(await BuscarEquipamento("Todos", "Todos", "Todos", "Todos")) 
-        this.props.projAnual(await BuscarProjAnual("Todos", "Todos", "Todos", "Todos"))
+        this.props.recPlaca(placa.dado, placa.total)
         const data = await BuscarAvulsoContrato("Todos", "Todos", "Todos", "Todos")
-        this.props.avulsoContrato(data.dadoPrimario, data.dadoSerie) 
+        this.props.avulsoContrato(data.dadoPrimario, data.dadoSerie)
+        this.props.projAnual(await BuscarProjAnual("Todos", "Todos", "Todos", "Todos"))
     }
 
     async executar() {
@@ -74,11 +78,8 @@ export default class Filtro extends React.Component {
         this.props.status(BuscarFoto(tecnico))
 
         //cards
-        const os = await BuscarDados(tecnico, dia, mes, ano, "Total OS")
-        const ser = await BuscarDados(tecnico, dia, mes, ano, "Total Servico")
-        const limp = await BuscarDados(tecnico, dia, mes, ano, "Limpeza")
-
-        this.props.cards(os, ser, limp)
+        const cardServ = await BuscarDados(tecnico, dia, mes, ano)
+        this.props.cards(cardServ.totalOS, cardServ.totalServ, cardServ.limpeza)
 
         //prodDiaria
         const prod = await BuscarDadosProdDia(tecnico, dia, mes, ano)
@@ -88,33 +89,37 @@ export default class Filtro extends React.Component {
         const meta = await BuscarDadosMeta(tecnico, dia, mes, ano)
         this.props.meta(meta)
 
+        //servico
+        const serv = await BuscarServico(tecnico, dia, mes, ano)
+        this.props.servico(serv)
+
         //tecnicos
         const tec = await BuscarTecnicos(tecnico, dia, mes, ano)
         this.props.tecnico(tec)
 
-        //placas
-        const plc = await BuscarPlaca(tecnico, dia, mes, ano)
-        if(plc.dado.length === 0){
-            let dd = [{name: "Rec", y: 0}]
-            this.props.recPlaca(dd, plc.total)
-        }else{
-            this.props.recPlaca(plc.dado, plc.total)
-        }
-        
         //Equipamento
         const equipa = await BuscarEquipamento(tecnico, dia, mes, ano)
         this.props.equip(equipa)
 
-        //projecaoAnual
-        const proja = await BuscarProjAnual(tecnico, dia, mes, ano)
-        this.props.projAnual(proja)
+        //placas
+        const plc = await BuscarPlaca(tecnico, dia, mes, ano)
+        if (plc.dado.length === 0) {
+            let dd = [{ name: "Rec", y: 0 }]
+            this.props.recPlaca(dd, plc.total)
+        } else {
+            this.props.recPlaca(plc.dado, plc.total)
+        }
 
         //AvulsoContrato 
         const avulCont = await BuscarAvulsoContrato(tecnico, dia, mes, ano)
         this.props.avulsoContrato(avulCont.dadoPrimario, avulCont.dadoSerie)
+
+        //projecaoAnual
+        const proja = await BuscarProjAnual(tecnico, dia, mes, ano)
+        this.props.projAnual(proja)
     }
 
-    
+
 
 
     render() {
