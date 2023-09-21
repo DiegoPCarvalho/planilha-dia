@@ -43,13 +43,18 @@ export async function BuscarTecnicos(tecnico, dia, mes, ano) {
 
     let dadosTecnicosFinal = Object.entries(quantidadeTecnicos).map(([name, y]) => ({ name, y }));
 
+    let dado = [{name: "Tecnico", y: 0}]
 
-    return dadosTecnicosFinal
+    if(dadosTecnicosFinal.length !== 0){
+        return dadosTecnicosFinal
+    }else{
+        return dado
+    }
 
 }
 
 function dados(tabela, dadosTec) {
-    if (("Diogo Selmini" !== tabela.Tecnico) && ("Lucas Felician" !== tabela.Tecnico) && ("Allan Zulino" !== tabela.Tecnico) && ("Marcio" !== tabela.Tecnico)) {
+    if (("Diogo Selmini" !== tabela.Tecnico) && ("Lucas Felician" !== tabela.Tecnico) && ("Allan Zulino" !== tabela.Tecnico) && ("Marcio" !== tabela.Tecnico) && (undefined !== tabela.Tecnico)) {
         dadosTec.push(tabela.Tecnico)
     }
 }

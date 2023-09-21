@@ -6,6 +6,9 @@ import ProdDia from './ProdDiaria/ProdDiaria'
 import Meta from './Meta/Meta'
 import GraficoTecnicos from './GraficoTecnicos/GraficoTecnicos'
 import RecPlaca from './GraficoPlacas/RecuperacaoPlaca'
+import Equipamento from './GraficoEquipamento/Equipamento'
+import ProjecaoAnual from './GraficoProjecao/GraficoPrejecao'
+import AvulsoContrato from './GraficoAvulsoContrato/AvulsoContrato'
 
 
 const initialState = {
@@ -17,6 +20,11 @@ const initialState = {
     Smeta: [],
     Stecnico: [],
     SrecPlaca: [],
+    SrecTotalPlc: [],
+    Sequipamento: [],
+    SprojAnual: [],
+    SavulsoContrato: [],
+    ScontratoSerie: []
 }
 
 export default class IndexDash extends React.Component {
@@ -53,9 +61,26 @@ export default class IndexDash extends React.Component {
             Stecnico: tecnico
         })
     }
-    receberPlaca = (placa) => {
+    receberPlaca = (placa, total) => {
         return this.setState({
-            SrecPlaca: placa
+            SrecPlaca: placa,
+            SrecTotalPlc: total
+        })
+    }
+    receberEquip = (equip) => {
+        return this.setState({
+            Sequipamento: equip,
+        })
+    }
+    receberProjAnual = (projAnual) => {
+        return this.setState({
+            SprojAnual: projAnual,
+        })
+    }
+    receberAvulsoContrato = (avulsoContrato , serie) => {
+        return this.setState({
+            SavulsoContrato: avulsoContrato,
+            ScontratoSerie: serie
         })
     }
    
@@ -65,11 +90,12 @@ export default class IndexDash extends React.Component {
             <div className="container-fluid">
                 <div className="row mt-3">
                     <Filtro status={this.receberStatusFiltro} cards={this.receberTotalOSL} prod={this.receberProdDiaria}
-                        meta={this.receberMeta} tecnico={this.receberTecnicos} recPlaca={this.receberPlaca} total={this.receberPlacaTotal} />
+                        meta={this.receberMeta} tecnico={this.receberTecnicos} recPlaca={this.receberPlaca}  
+                        equip={this.receberEquip} projAnual={this.receberProjAnual} avulsoContrato={this.receberAvulsoContrato}/>
                 </div>
                 <div className="row mt-3 d-flex justify-content-between">
-                    <div className="col-1 "><FotoTecnico Tecnico={this.state.Simagem} /></div>
-                    <div className="col-2  d-flex align-items-center flex-column justify-content-center">
+                    <div className="col-1"><FotoTecnico Tecnico={this.state.Simagem} /></div>
+                    <div className="col-1  d-flex align-items-center flex-column justify-content-center">
                         <div className="row my-1"> <ProdDia dadosDia={this.state.SprodDiaria} /> </div>
                         <div className="row my-1"> <Meta total={this.state.StotalServico} meta={this.state.Smeta} /></div>
                     </div>
@@ -83,12 +109,12 @@ export default class IndexDash extends React.Component {
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><GraficoTecnicos tecnico={this.state.Stecnico} /></div>
                 </div>
                 <div className="row border mt-3">
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">Grafico Equipamento</div>
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><RecPlaca placa={this.state.SrecPlaca} total={this.state.SrecTotal} /></div>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><Equipamento equip={this.state.Sequipamento}/></div>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><RecPlaca placa={this.state.SrecPlaca} total={this.state.SrecTotalPlc} /></div>
                 </div>
                 <div className="row border mt-3">
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">Grafico contrato X avulso</div>
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra">Grafico Projecao anual</div>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><AvulsoContrato avulsoContrato={this.state.SavulsoContrato} serie={this.state.ScontratoSerie}/></div>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><ProjecaoAnual projAnual={this.state.SprojAnual}/></div>
                 </div>
             </div>
         )

@@ -47,14 +47,15 @@ export async function BuscarPlaca(tecnico, dia, mes, ano){
 
     let dadosPlacaFinal = Object.entries(quantidadePlacas).map(([name, y]) => ({ name, y }));
 
-    let dado = [{name: "rec", y:0}]
 
-    if(dadosPlacaFinal.length !== 0){
+       
+   
+        const obj = {
+            dado: dadosPlacaFinal,
+            total: dadosPlaca.length !== 0 || undefined ? dadosPlaca.length : 0
+        }
 
-        return dadosPlacaFinal
-    }else{
-        return dado
-    }
+        return obj
     
 }
 
