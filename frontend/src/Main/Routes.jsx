@@ -52,7 +52,6 @@ import PageFinanceiroPro from '../Components/Setores/Gerencia/PageFinanceiroProc
 import SolicitacoesLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Solicitacoes";
 import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Aprovados";
 import MetaLab from "../Components/Setores/Gerencia/MetaLab";
-import DashboardGeral from "../Components/Dashboard/DashboardGeralGerencia";
 import TabelaGeral from "../Components/Setores/Gerencia/LaboratorioGerencia/TabelaGeral";
 import IndexDash  from "../Components/Dashboard/DashboardModel/Index";
 
@@ -87,7 +86,7 @@ export default function Rotas() {
             </Route> 
             <Route element={<Home />}>
                 <Route path="/DiretoriaLab" element={<Diretoria />}>
-                    <Route path="Dashboard" element={<DashboardGeral />}>
+                    <Route path="Dashboard" element={<IndexDash />}>
                         <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoDiretoria />}>
@@ -100,9 +99,7 @@ export default function Rotas() {
             </Route>
             <Route element={<Home />}>
                 <Route path="/GerenciaLab" element={<HomeGerenciaLab />}>
-                    <Route path="Dashboard" element={<DashboardGeral />}>
-                        {/* <Route path="DashboardAtividade" element={<DashboardGerencia />} />
-                        <Route path="DashboardCentroCusto" element={<DashboardGeral />} /> */}
+                    <Route path="Dashboard" element={<IndexDash />}>
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
                         <Route path="Solicitacoes" element={<SolicitacoesLab />} />
@@ -111,7 +108,6 @@ export default function Rotas() {
                     </Route>
                     <Route path="Meta" element={<MetaLab />}/>
                     <Route path="TabelaGeral" element={<TabelaGeral />}/>
-                    <Route path="IndexDash" element={<IndexDash />}/>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>
                     <Route path="Financeiro" element={<PageFinanceiro />}>
