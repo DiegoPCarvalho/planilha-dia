@@ -3,20 +3,8 @@ import Main from '../Template/Main';
 import Logo from '../../Assets/Imgs/logoZhaz.png';
 import './CrudAtividade.css';
 import { Link, Outlet } from 'react-router-dom';
-import FotoTecnico from '../../Assets/Imgs/fotoTecnico.jpg';
 
-
-//TECNICOS
-import imgDiegoC from '../../Assets/imagensTecnicos/DIEGO CARVALHO.png';
-import imgNata from '../../Assets/imagensTecnicos/NATANAEL MILTON.png';
-import imgMateus from '../../Assets/imagensTecnicos/MATEUS DOVAL.png';
-import imgGabriel from '../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
-import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
-import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
-import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
-import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
-import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
-
+import { BuscarFoto } from '../Dashboard/DashboardModel/Foto/FotoTecnico';
 
 
 const headerProps = {
@@ -38,39 +26,6 @@ export default class AtividadeCrud extends React.Component {
         }
     }
 
-    mostarFoto(tecnico){
-        if("Diego Carvalho" === tecnico){
-            return imgDiegoC
-        }
-        if("Natanael Silva Lima" === tecnico){
-            return imgNata
-        }
-        if("Mateus Doval" === tecnico){
-            return imgMateus
-        }
-        if("Gabriel Kaique" === tecnico){
-            return imgGabriel
-        }
-        if("Bruno Bedani" === tecnico){
-            return imgBruno
-        }
-        if("Vinicius Gomes" === tecnico){
-            return imgVinicius
-        }
-        if("Diego Almeida" === tecnico){
-            return imgDiegoA
-        }
-        if("Douglas Altenfelder" === tecnico){
-            return imgDouglas
-        }
-        if("Kleiton Paulino" === tecnico){
-            return imgKleiton
-        }
-        else{
-            return FotoTecnico
-        }
-    }
-
     render() {
         return (
             <Main {...headerProps}>
@@ -84,7 +39,7 @@ export default class AtividadeCrud extends React.Component {
                             <ModalAtendimento corModal="success" Ititulo="plus fa-2x"
                                 classe="d-flex justify-content-center align-items-center" relatorio={this.formulario()}
                                 nome={this.renderI()} /> */}
-                            <Link to="/PerfilUsuario"><img src={this.mostarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
+                            <Link to="/PerfilUsuario"><img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
                         </div>
                     </div>
                     {/* <div className="row mt-4">

@@ -9,7 +9,11 @@ import imgBruno from '../../../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
 import imgVinicius from '../../../../Assets/imagensTecnicos/VINICIUS GOMES .png';
 import imgDiegoA from '../../../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
 import imgMarcio from "../../../../Assets/Imgs/user.png";
-import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png'
+import imgLogoIcon from '../../../../Assets/Imgs/logoIcon.png';
+import imgCaua from "../../../../Assets/imagensTecnicos/caua_bispo.jpg";
+import imgMarlon from "../../../../Assets/imagensTecnicos/marlon.jpg";
+import imgAlisson from "../../../../Assets/imagensTecnicos/alisson.jpg";
+import imgAnderson from "../../../../Assets/imagensTecnicos/anderson.jpg";
 
 
 export default class FotoTecnico extends React.Component {
@@ -29,5 +33,9 @@ export function BuscarFoto(tecnico){
     else if (tecnico === "Bruno Bedani") return  imgBruno
     else if (tecnico === "Vinicius Gomes") return imgVinicius
     else if (tecnico === "Diego Almeida") return imgDiegoA
+    else if (tecnico === "Cauã Barbosa") return imgCaua
+    else if (tecnico === "Alisson Assis") return imgAlisson
+    else if (tecnico === "Marlon Fidelis") return imgMarlon
+    else if (tecnico === "Anderson Filho") return imgAnderson
     else return imgMarcio
 }

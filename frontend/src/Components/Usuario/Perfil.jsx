@@ -3,22 +3,10 @@ import Logo from '../../Assets/Imgs/logoZhaz.png';
 import axios from 'axios';
 import Main from "../Template/Main";
 
+import { BuscarFoto } from '../Dashboard/DashboardModel/Foto/FotoTecnico'
+
 import { confirmAlert } from "react-confirm-alert";
 
-
-//TECNICOS
-import imgDiegoC from '../../Assets/imagensTecnicos/DIEGO CARVALHO.png';
-import imgNata from '../../Assets/imagensTecnicos/NATANAEL MILTON.png';
-import imgMateus from '../../Assets/imagensTecnicos/MATEUS DOVAL.png';
-import imgGabriel from '../../Assets/imagensTecnicos/GABRIEL KAIQUE.png';
-import imgBruno from '../../Assets/imagensTecnicos/BRUNO BEDANI (1).png';
-import imgVinicius from '../../Assets/imagensTecnicos/VINICIUS GOMES .png';
-import imgDiegoA from '../../Assets/imagensTecnicos/DIEGO ALMEIDA.png';
-import imgDouglas from '../../Assets/imagensTecnicos/DOUGLAS ALTENFELDER.png';
-import imgKleiton from '../../Assets/imagensTecnicos/KLEITON PAULINO.png';
-
-//foto padrão
-import imgPadrao from "../../Assets/Imgs/user.png"
 
 import Url from '../Url/Url';
 
@@ -27,7 +15,6 @@ import CardUser from '../Card/CardUser';
 
 import Modal from '../Modal/Modal.Atividade';
 
-// import $ from 'jquery';
 
 const banco = "LoginUsuario";
 const baseUrl = Url(banco);
@@ -67,7 +54,6 @@ export default class PageAdmin extends React.Component {
     state = { ...initialState }
 
     componentWillMount() {
-        // this.validacao()
         this.consultarBanco()
         this.consultaBancoUsuario()
     }
@@ -382,46 +368,12 @@ export default class PageAdmin extends React.Component {
         }
     }
 
-    mostarFotoAdmin(tecnico) {
-        if ("Diego Carvalho" === tecnico) {
-            return imgDiegoC
-        }
-        if ("Natanael Silva Lima" === tecnico) {
-            return imgNata
-        }
-    }
 
     clear() {
         this.setState({ usuario: initialState.usuario })
     }
 
-    mostarFotoUser(tecnico) {
-        if ("Mateus Doval" === tecnico) {
-            return imgMateus
-        }
-        if ("Gabriel Kaique" === tecnico) {
-            return imgGabriel
-        }
-        if ("Bruno Bedani" === tecnico) {
-            return imgBruno
-        }
-        if ("Vinicius Gomes" === tecnico) {
-            return imgVinicius
-        }
-        if ("Diego Almeida" === tecnico) {
-            return imgDiegoA
-        }
-        if ("Douglas Altenfelder" === tecnico) {
-            return imgDouglas
-        }
-        if ("Kleiton Paulino" === tecnico) {
-            return imgKleiton
-        }
-        else {
-            return imgPadrao
-        }
-    }
-
+   
     cardAdmin() {
         return this.state.list.map(usuario => {
             return (
@@ -780,7 +732,7 @@ export default class PageAdmin extends React.Component {
                         <div className="mx-3"><Modal Ititulo="plus" nomeBotao="Novo Usuario"
                             corModal="primary" nome="Cadastro Usuário"
                             relatorio={this.formularioAdmin()} /></div>
-                        <img src={this.mostarFotoAdmin(localStorage.usuario)} alt="" className="imagem rounded-circle" />
+                        <img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" />
                     </div>
                 </div>
                 <div className="d-flex d-flex justify-content-center mb-5">
@@ -806,7 +758,7 @@ export default class PageAdmin extends React.Component {
                         <img src={Logo} alt="" />
                     </div>
                     <div className="col-6 d-flex align-items-center justify-content-end">
-                        <img src={this.mostarFotoUser(localStorage.usuario)} alt="" className="imagem rounded-circle" />
+                        <img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" />
                     </div>
                 </div>
                 <div className="d-flex d-flex justify-content-center mb-3">

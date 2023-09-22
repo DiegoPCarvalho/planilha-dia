@@ -60,7 +60,7 @@ export default class Filtro extends React.Component {
 
         //graficos
         const serv = await BuscarServico("Todos", "Todos", "Todos", "Todos")
-        this.props.servico(serv)
+        this.props.servico(serv.servicos, serv.series)
         this.props.tecnico(await BuscarTecnicos("Todos", "Todos", "Todos", "Todos"))
         this.props.equip(await BuscarEquipamento("Todos", "Todos", "Todos", "Todos"))
         const placa = await BuscarPlaca("Todos", "Todos", "Todos", "Todos")
@@ -91,7 +91,12 @@ export default class Filtro extends React.Component {
 
         //servico
         const serv = await BuscarServico(tecnico, dia, mes, ano)
-        this.props.servico(serv)
+        if(serv.servicos.length === 0){
+            let dd = [{ name: "Servico", y: 0 }]
+            this.props.servico(dd)
+        }else{
+            this.props.servico(serv.servicos, serv.series)
+        }
 
         //tecnicos
         const tec = await BuscarTecnicos(tecnico, dia, mes, ano)

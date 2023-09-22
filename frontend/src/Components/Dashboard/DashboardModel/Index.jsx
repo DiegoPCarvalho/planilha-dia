@@ -116,7 +116,7 @@ export default class IndexDash extends React.Component {
                         Limpeza={this.state.Slimpeza} />
                 </div>
                 <div className="row mt-3">
-                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><Servico servico={this.state.SservicoDado}/></div>
+                    <div className="col-12 col-md-5 flex-fill mx-3 sombra"><Servico servico={this.state.SservicoDado} serie={this.state.SservicoSerie}/></div>
                     <div className="col-12 col-md-5 flex-fill mx-3 sombra"><GraficoTecnicos tecnico={this.state.Stecnico} /></div>
                 </div>
                 <div className="row  mt-3">
