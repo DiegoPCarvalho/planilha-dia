@@ -9,6 +9,10 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
+const baseUrlEquip = Url("Equipamento");
+const baseUrlCont = Url("Contrato");
+const baseUrlServ = Url("Servico");
+
 const initialState = {
     Atividade: {
         Data: '',
@@ -29,8 +33,9 @@ const initialState = {
         Tecnico: localStorage.usuario
     },
     list: [],
-    mes: [],
-    ano: []
+    listEquip: [],
+    listServ: [],
+    listCont: []
 }
 
 
@@ -48,7 +53,21 @@ export default class Tabela extends React.Component {
         this.retornoTabela()
         this.retornoData()
         this.pesquisar()
+        this.buscar()
+    }
 
+    buscar() {
+        axios(baseUrlEquip).then(resp => {
+            this.setState({ listEquip: resp.data })
+        })
+
+        axios(baseUrlServ).then(resp => {
+            this.setState({ listServ: resp.data })
+        })
+
+        axios(baseUrlCont).then(resp => {
+            this.setState({ listCont: resp.data })
+        })
     }
 
     pesquisar() {
@@ -249,7 +268,7 @@ export default class Tabela extends React.Component {
             <form className="row g-3" action="javascript:myFunction(); return false;">
                 <div className="form">
                     <div className="row">
-                        <div className="col-12 col-md-6">
+                        <div className="col-6 col-md-2">
                             <div className="form-group">
                                 <label className='fw-bold'>OS: </label>
                                 <input type="text" className="form-control"
@@ -260,7 +279,7 @@ export default class Tabela extends React.Component {
                                     required />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-6 col-md-6">
                             <div className="form-group">
                                 <label className='fw-bold'>Cliente: </label>
                                 <input type="text" className="form-control"
@@ -270,7 +289,7 @@ export default class Tabela extends React.Component {
                                     placeholder="Digite o Cliente..." required />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4">
                             <div className="form-group">
                                 <label className='fw-bold'>Equipamento: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -280,23 +299,11 @@ export default class Tabela extends React.Component {
                                     required
                                 >
                                     <option selected disabled value="">Selecione o Equipamento</option>
-                                    <option>Coletor de Dados</option>
-                                    <option>Leitor de Dados</option>
-                                    <option>Leitor de RFID</option>
-                                    <option>Busca Preço</option>
-                                    <option>Impressora Térmica</option>
-                                    <option>Carregador de 3 Posições</option>
-                                    <option>Carregador de 4 Posições</option>
-                                    <option>Carregador de 5 Posições</option>
-                                    <option>Carregador de 6 Posições</option>
-                                    <option>Berço de Comunicação</option>
-                                    <option>Fonte de Alimentação</option>
-                                    <option>Cabo Confeccionado</option>
-                                    <option>Bateria</option>
+                                    {this.renderEquip()}
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Modelo: </label>
                                 <input type="text" className="form-control"
@@ -306,7 +313,7 @@ export default class Tabela extends React.Component {
                                     placeholder="Digite o modelo..." required />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Número de Serie</label>
                                 <input type="text" className="form-control"
@@ -316,7 +323,7 @@ export default class Tabela extends React.Component {
                                     placeholder="Digite o Numero de Serie..." />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Serviço: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -324,25 +331,13 @@ export default class Tabela extends React.Component {
                                     onChange={e => this.updateField(e)}
                                     value={this.state.Atividade.Servico} required>
                                     <option selected disabled value="">Selecione o Serviço</option>
-                                    <option>Chamado On-Site</option>
-                                    <option>Suporte Remoto</option>
-                                    <option>Laudo</option>
-                                    <option>Manutenção Concluída</option>
-                                    <option>Revisão de Manutenção</option>
-                                    <option>Revisão de Venda</option>
-                                    <option>Confecção de Cabos</option>
-                                    <option>Montagem/Manutenção de Venda</option>
-                                    <option>Recuperação de Placa</option>
-                                    <option>Revisão de Reprovado</option>
-                                    <option>Revisão de Compra</option>
-                                    <option>Revisão/Manutenção de Locação</option>
-                                    <option>Limpeza</option>
+                                    {this.renderServ()}
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
-                                <label className='fw-bold'>Recuperação de Placa: </label>
+                                <label className='fw-bold'>Rec. Placa: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Placa"
                                     onChange={e => this.updateField(e)}
@@ -353,7 +348,7 @@ export default class Tabela extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Classificação: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -367,29 +362,21 @@ export default class Tabela extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Contrato: </label>
                                 <select class="form-select" aria-label="Default select example"
-                                    name="Contrato" id="Contrato"
+                                name="Contrato" id ="Contrato"
                                     onChange={e => this.updateField(e)}
                                     value={this.state.Atividade.Contrato}
                                     required>
                                     <option selected disabled value="">Selecione...</option>
                                     <option>Avulso</option>
-                                    <option>Contrato Assaí</option>
-                                    <option>Contrato C&A</option>
-                                    <option>Contrato B2W</option>
-                                    <option>Contrato Atacadão</option>
-                                    <option>Contrato Boticário</option>
-                                    <option>Contrato Shopee</option>
-                                    <option>Contrato Locação</option>
-                                    <option>Contrato Friozem</option>
-                                    <option>Contrato Comfrio</option>
+                                    {this.renderCont()}
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-4 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Status: </label>
                                 <select class="form-select" aria-label="Default select example"
@@ -407,7 +394,7 @@ export default class Tabela extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-12">
+                        <div className="col-12 mt-2">
                             <div className="form-group">
                                 <label className='fw-bold'>Observação: </label>
                                 <textarea className="form-control"
@@ -439,6 +426,31 @@ export default class Tabela extends React.Component {
                 </div>
             </form>
         )
+    }
+
+    renderEquip(){
+        return this.state.listEquip.map(Equip => {
+            return(
+                <option>{Equip.nome}</option>
+            )
+        })
+
+    }
+
+    renderServ(){
+        return this.state.listServ.map(Serv => {
+            return (
+                <option>{Serv.nome}</option>
+            )
+        })
+    }
+
+    renderCont(){
+        return this.state.listCont.map(Cont => {
+            return (
+                <option>{Cont.nome}</option>
+            )
+        })
     }
 
 

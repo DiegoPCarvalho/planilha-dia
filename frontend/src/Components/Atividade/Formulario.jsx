@@ -6,6 +6,9 @@ import $ from 'jquery';
 
 const banco = "Geral";
 const baseUrl = Url(banco);
+const baseUrlEquip = Url("Equipamento");
+const baseUrlCont = Url("Contrato");
+const baseUrlServ = Url("Servico");
 
 const initialState = {
     Atividade: {
@@ -26,7 +29,10 @@ const initialState = {
         Status: '',
         Tecnico: localStorage.usuario
     },
-    list: []
+    list: [],
+    listEquip: [],
+    listServ: [],
+    listCont: []
 }
 
 function data() {
@@ -57,6 +63,10 @@ export default class Formulário extends React.Component {
 
     state = { ...initialState }
 
+    UNSAFE_componentWillMount(){
+        this.buscar()
+    }
+
     save() {
         const Atividade = this.state.Atividade
         const method = Atividade.id ? 'put' : 'post'
@@ -65,6 +75,20 @@ export default class Formulário extends React.Component {
             .then(resp => {
                 this.setState({ Atividade: initialState.Atividade })
             })
+    }
+
+    buscar() {
+        axios(baseUrlEquip).then(resp => {
+            this.setState({ listEquip: resp.data })
+        })
+
+        axios(baseUrlServ).then(resp => {
+            this.setState({ listServ: resp.data })
+        })
+
+        axios(baseUrlCont).then(resp => {
+            this.setState({ listCont: resp.data })
+        })
     }
 
     clear() {
@@ -135,19 +159,7 @@ export default class Formulário extends React.Component {
                                     required
                                 >
                                     <option selected disabled value="">Selecione o Equipamento</option>
-                                    <option>Coletor de Dados</option>
-                                    <option>Leitor de Dados</option>
-                                    <option>Leitor de RFID</option>
-                                    <option>Busca Preço</option>
-                                    <option>Impressora Térmica</option>
-                                    <option>Carregador de 3 Posições</option>
-                                    <option>Carregador de 4 Posições</option>
-                                    <option>Carregador de 5 Posições</option>
-                                    <option>Carregador de 6 Posições</option>
-                                    <option>Berço de Comunicação</option>
-                                    <option>Fonte de Alimentação</option>
-                                    <option>Cabo Confeccionado</option>
-                                    <option>Bateria</option>
+                                    {this.renderEquip()}
                                 </select>
                             </div>
                         </div>
@@ -179,19 +191,7 @@ export default class Formulário extends React.Component {
                                     onChange={e => this.updateField(e)}
                                     value={this.state.Atividade.Servico} required>
                                     <option selected disabled value="">Selecione o Serviço</option>
-                                    <option>Chamado On-Site</option>
-                                    <option>Suporte Remoto</option>
-                                    <option>Laudo</option>
-                                    <option>Manutenção Concluída</option>
-                                    <option>Revisão de Manutenção</option>
-                                    <option>Revisão de Venda</option>
-                                    <option>Confecção de Cabos</option>
-                                    <option>Montagem/Manutenção de Venda</option>
-                                    <option>Recuperação de Placa</option>
-                                    <option>Revisão de Reprovado</option>
-                                    <option>Revisão de Compra</option>
-                                    <option>Revisão/Manutenção de Locação</option>
-                                    <option>Limpeza</option>
+                                    {this.renderServ()}
                                 </select>
                             </div>
                         </div>
@@ -232,15 +232,7 @@ export default class Formulário extends React.Component {
                                     required>
                                     <option selected disabled value="">Selecione...</option>
                                     <option>Avulso</option>
-                                    <option>Contrato Assaí</option>
-                                    <option>Contrato C&A</option>
-                                    <option>Contrato B2W</option>
-                                    {/* <option>Contrato Atacadão</option> */}
-                                    <option>Contrato Boticário</option>
-                                    {/* <option>Contrato Shopee</option> */}
-                                    <option>Contrato Locação</option>
-                                    <option>Contrato Friozem</option>
-                                    <option>Contrato Comfrio</option>
+                                    {this.renderCont()}
                                 </select>
                             </div>
                         </div>
@@ -294,6 +286,31 @@ export default class Formulário extends React.Component {
                 </div>
             </form>
         )
+    }
+
+    renderEquip(){
+        return this.state.listEquip.map(Equip => {
+            return(
+                <option>{Equip.nome}</option>
+            )
+        })
+
+    }
+
+    renderServ(){
+        return this.state.listServ.map(Serv => {
+            return (
+                <option>{Serv.nome}</option>
+            )
+        })
+    }
+
+    renderCont(){
+        return this.state.listCont.map(Cont => {
+            return (
+                <option>{Cont.nome}</option>
+            )
+        })
     }
 
     render() {

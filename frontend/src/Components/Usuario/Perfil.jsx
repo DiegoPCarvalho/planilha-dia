@@ -6,11 +6,11 @@ import Main from "../Template/Main";
 import { BuscarFoto } from '../Dashboard/DashboardModel/Foto/FotoTecnico'
 
 import { confirmAlert } from "react-confirm-alert";
+import TabAdmin from '../Tabs/TabTables';
 
 
 import Url from '../Url/Url';
 
-import CardGeral from "../Card/Card";
 import CardUser from '../Card/CardUser';
 
 import Modal from '../Modal/Modal.Atividade';
@@ -373,23 +373,6 @@ export default class PageAdmin extends React.Component {
         this.setState({ usuario: initialState.usuario })
     }
 
-   
-    cardAdmin() {
-        return this.state.list.map(usuario => {
-            return (
-                <div className="col-md-auto mb-4" >
-                    <CardGeral nomeUsuario={usuario.nomeCompleto}
-                        email={usuario.email}
-                        departamento={usuario.departamento}
-                        alterar={<Modal corModal="warning" Ititulo="expand" nome="Alterar Usuario"
-                            relatorio={this.formularioAdmin()} load={this.renderButtonPencil(usuario)} />}
-                        deletar={<button className="btn btn-danger p-3 mx-2" onClick={() => this.confirmar(usuario)}><i className="fa fa-trash"></i></button>}
-                    />
-                </div>
-            )
-        })
-    }
-
 
     confirmar(Usuario) {
         confirmAlert({
@@ -479,126 +462,6 @@ export default class PageAdmin extends React.Component {
         } else if (localStorage.AdmGeral === "0") {
             return this.renderUser()
         }
-    }
-
-    formularioAdmin() {
-        return (
-            <form className="row g-3" action="javascript:myFunction(); return false;">
-                <div className="row mt-2">
-                 <div className="row mb-3">
-                     <div className="col-12">
-                         <div className="row mx-5">
-                             <div className="col-12">
-                                 <label for="User" id="user-text" className="fw-bold h5">Usuário:</label>
-                             </div>
-                         </div>
-                         <div className="row mx-5">
-                             <div className="col-12">
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-user"></i></span>
-                                    <input type="text" id="user-cad"
-                                        className="form-control" placeholder="Nome e Sobrenome"
-                                        name="nomeCompleto" value={this.state.usuario.nomeCompleto}
-                                        onChange={e => this.updateField(e)}
-                                        required
-                                         />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <div className="row mx-5">
-                            <div className="col-12">
-                                <label for="User" id="email-text" className="fw-bold h5" >E-mail:</label>
-                            </div>
-                        </div>
-                        <div className="row mx-5">
-                            <div className="col-12">
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-envelope"></i></span>
-                                    <input type="text" id="email-cad"
-                                        className="form-control" placeholder="E-mail"
-                                        onChange={e => this.updateField(e)}
-                                        name="email" value={this.state.usuario.email}
-                                        required />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <div className="row mx-5">
-                            <div className="col-12">
-                                <label for="User" id="senha-text" className="fw-bold h5">Senha:</label>
-                            </div>
-                        </div>
-                        <div className="row mx-5 mb-2">
-                            <div className="col-12">
-                                <div className="input-group mb-2">
-                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-key"></i></span>
-                                    <input type="text" id="senha-cad"
-                                        className="form-control" placeholder="Senha"
-                                        onChange={e => this.updateField(e)}
-                                        name="senha" value={this.state.usuario.senha}
-                                        required />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <div className="row mx-5">
-                            <div className="col-12">
-                                <label for="User" id="depar-text" className="fw-bold h5">Departamento:</label>
-                            </div>
-                        </div>
-                        <div className="row mx-5 mb-3">
-                            <div className="col-12">
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text bg-warning" id="basic-addon1"><i className="fa fa-cube"></i></span>
-                                    <select className="form-select" id="depar-cad"
-                                        name='departamento'
-                                        onChange={e => this.updateField(e)}
-                                        value={this.state.usuario.departamento}
-                                        required
-                                    >
-                                        <option selected disabled value="">...</option>
-                                        <option>Diretoria</option>
-                                        <option>Gerência</option>
-                                        <option>Financeiro</option>
-                                        <option>Fiscal</option>
-                                        <option>Compras</option>
-                                        <option>RH</option>
-                                        <option>Estoque</option>
-                                        <option>Expedição</option>
-                                        <option>Logística</option>
-                                        <option>Recepção</option>
-                                        <option>Laborátorio</option>
-                                        <option>Comercial</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <p id="texto-erro-cad" className='text-danger fw-bold h6 mx-3'></p>
-                    </div>
-                </div>
-                <div className="row mt-5">
-                    <div className="col-9 d-flex justify-content-end">
-                        <button className="btn btn-primary fw-bold mx-2" 
-                        onClick={(e) => this.verificar(e)}
-                        >
-                            Salvar
-                        </button>
-                        
-                        {/* <button className="btn btn-primary fw-bold mx-2" onClick={e => this.save(e)}>
-                            Salvar
-                        </button> */}
-                        <button className="btn btn-danger fw-bold mx-1" onClick={e => this.clear(e)}>
-                            Cancelar
-                        </button> 
-                    </div>
-                </div>
-            </div>
-        </form>
-        )
     }
 
     formularioUser() {
@@ -729,23 +592,12 @@ export default class PageAdmin extends React.Component {
                         <img src={Logo} alt="" />
                     </div>
                     <div className="col-6 d-flex align-items-center justify-content-end">
-                        <div className="mx-3"><Modal Ititulo="plus" nomeBotao="Novo Usuario"
-                            corModal="primary" nome="Cadastro Usuário"
-                            relatorio={this.formularioAdmin()} /></div>
                         <img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" />
                     </div>
-                </div>
-                <div className="d-flex d-flex justify-content-center mb-5">
-                    <div className="col-12  d-flex justify-content-center  text-light">
-                        <p className="display-2 rounded fw-bold bg-success p-2">Usuários</p>
+                    <div className="mt-5">
+                        <TabAdmin />
                     </div>
                 </div>
-
-                <div className="row row-cols-auto">
-                    {this.cardAdmin()}
-                    {/* {this.renderTable()} */}
-                </div>
-
             </div>
         )
     }
