@@ -20,6 +20,7 @@ export default class Filtro extends React.Component {
     componentWillMount() {
         this.BuscarTec()
         this.statusPadrao()
+        console.log(this.state.optionsTec)
     }
 
 
