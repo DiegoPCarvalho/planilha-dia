@@ -66,16 +66,34 @@ export default class Contratos extends React.Component {
                 this.pTotalServico(tabela[i], totalServico)
                 this.pLimpeza(tabela[i], limpeza)
                 this.pGarantia(tabela[i], garantia)
+                this.pServico(tabela[i], servico)
+                this.pEquipamento(tabela[i], equipamento)
             } else if ((contrato === tabela[i].Contrato) && (ano === `${tabela[i].Ano}`) && (mes === "Todos") && (dia === "Todos")) {
-
+                this.pTotalServico(tabela[i], totalServico)
+                this.pLimpeza(tabela[i], limpeza)
+                this.pGarantia(tabela[i], garantia)
+                this.pServico(tabela[i], servico)
+                this.pEquipamento(tabela[i], equipamento)
             } else if ((contrato === tabela[i].Contrato) && (ano === `${tabela[i].Ano}`) && (mes === `${tabela[i].Mes}`) && (dia === "Todos")) {
-
+                this.pTotalServico(tabela[i], totalServico)
+                this.pLimpeza(tabela[i], limpeza)
+                this.pGarantia(tabela[i], garantia)
+                this.pServico(tabela[i], servico)
+                this.pEquipamento(tabela[i], equipamento)
             } else if ((contrato === tabela[i].Contrato) && (ano === `${tabela[i].Ano}`) && (mes === `${tabela[i].Mes}`) && (dia === `${tabela[i].Dia}`)) {
-
+                this.pTotalServico(tabela[i], totalServico)
+                this.pLimpeza(tabela[i], limpeza)
+                this.pGarantia(tabela[i], garantia)
+                this.pServico(tabela[i], servico)
+                this.pEquipamento(tabela[i], equipamento)
             }
         }
 
         const totalOS = [...new Set(totalServico)]
+
+        const servicoGrafico = this.ArrayObjeto(servico)
+
+        const equipamentoGrafico = this.ArrayObjeto(equipamento)
 
 
         return this.setState({
@@ -83,8 +101,8 @@ export default class Contratos extends React.Component {
             totalServico: totalServico.length,
             garantia: garantia.length,
             limpeza: limpeza.length,
-            servico: servico,
-            equipamento: equipamento
+            servico: servicoGrafico,
+            equipamento: equipamentoGrafico
         })
     }
 
@@ -102,6 +120,29 @@ export default class Contratos extends React.Component {
         if ("Garantia" === tabela.Status) {
             dado.push(tabela.OS)
         }
+    }
+
+    pServico(tabela, dado){
+        dado.push(tabela.Servico)
+    }
+
+    pEquipamento(tabela, dado){
+        dado.push(tabela.Equipamento)
+    }
+
+    ArrayObjeto(dado) {
+        let quantidade = dado.reduce(function (todosNomes, dado) {
+            if (dado in todosNomes) {
+                todosNomes[dado]++;
+            } else {
+                todosNomes[dado] = 1;
+            }
+            return todosNomes;
+        }, {});
+    
+        let dadoFinal = Object.entries(quantidade).map(([name, y]) => ({ name, y }))
+    
+        return dadoFinal
     }
 
     filtrarDados() {
@@ -231,7 +272,7 @@ export default class Contratos extends React.Component {
                                 dado={this.state.garantia} />
                         </div>
                         <div className="col-3 text-light">
-                            <CardGD bg="primary" nomeTitulo="Limpeza" icone={<i class="fa fa-3x fa-paint-brush" aria-hidden="true"></i>}
+                            <CardGD bg="primary" nomeTitulo="Limpeza" icone="paint-brush"
                                 dado={this.state.limpeza} />
                         </div>
                     </div>
