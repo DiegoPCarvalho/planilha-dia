@@ -51,8 +51,7 @@ export async function BuscarDadosMeta(tecnico, dia, mes, ano){
         }else
         if((tecnico === `${tabela[i].Tecnico}`)&&(dia === "Todos")&& (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)){
             await BuscarDadosPorMesMeta(tabela[i], mJan, mFev, mMar, mAbr, mMai, mJun, mJul, mAgo, mSet, mOut, mNov, mDez)
-        }
-           
+        }    
     }
 
     const totalMeta = parseInt(mJan.length > 0 ? mJan[0].M : 0) + parseInt(mFev.length > 0 ? mFev[0].M : 0) +
