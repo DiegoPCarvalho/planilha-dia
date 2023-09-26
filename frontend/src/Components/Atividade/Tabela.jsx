@@ -35,7 +35,9 @@ const initialState = {
     list: [],
     listEquip: [],
     listServ: [],
-    listCont: []
+    listCont: [],
+    ano: 0,
+    mes: 0
 }
 
 
@@ -51,9 +53,9 @@ export default class Tabela extends React.Component {
 
     componentWillMount() {
         this.retornoTabela()
-        this.retornoData()
         this.pesquisar()
         this.buscar()
+        this.retornoMesAno()
     }
 
     buscar() {
@@ -70,6 +72,18 @@ export default class Tabela extends React.Component {
         })
     }
 
+    retornoMesAno(){
+        const data = new Date()
+
+        const mes = data.getMonth() + 1
+        const ano = data.getFullYear()
+
+        return this.setState({
+            ano: ano,
+            mes: mes
+        })
+    }
+
     pesquisar() {
         $(document).ready(function () {
             setTimeout(() => {
@@ -81,23 +95,16 @@ export default class Tabela extends React.Component {
     }
 
 
-
-    retornoData() {
-        const data = new Date();
-        const mes = data.getMonth() + 1;
-        const ano = data.getFullYear();
-
-        return this.setState({
-            ano: ano,
-            mes: mes
-        })
+    mensagemSalvo() {
+        $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
+            $("div.success").fadeIn(300).delay(1500).fadeOut(400);
+        });
     }
+
 
     async retornoTabela() {
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
         let dadoNome = []
-
-        await this.formataData(tabelaNome)
 
 
         for (let i = 0; i < tabelaNome.length; i++) {
@@ -126,69 +133,6 @@ export default class Tabela extends React.Component {
 
         return this.setState({ list: dadoNome })
 
-
-
-    }
-
-
-    async buscarDados(mes, ano) {
-        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-        let dadoNomeFill = []
-
-        await this.formataData(tabelaNome)
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && (ano === `${tabelaNome[i].Ano}`) && (mes === `${tabelaNome[i].Mes}`)) {
-                dadoNomeFill.push({
-                    id: tabelaNome[i].id,
-                    Data: tabelaNome[i].Data,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
-                    OS: tabelaNome[i].OS,
-                    Cliente: tabelaNome[i].Cliente,
-                    Equipamento: tabelaNome[i].Equipamento,
-                    Modelo: tabelaNome[i].Modelo,
-                    NS: tabelaNome[i].NS,
-                    Servico: tabelaNome[i].Servico,
-                    Placa: tabelaNome[i].Placa,
-                    Classificacao: tabelaNome[i].Classificacao,
-                    Contrato: tabelaNome[i].Contrato,
-                    Observacao: tabelaNome[i].Observacao,
-                    Tecnico: tabelaNome[i].Tecnico,
-                    Status: tabelaNome[i].Status
-                })
-            }
-        }
-
-        return this.setState({ list: dadoNomeFill })
-
-        // console.log(dadoNome, ano, mes)
-
-    }
-
-
-    chamarDados() {
-        const ano = document.getElementById("ano").value;
-        const mes = document.getElementById("mes").value;
-        this.buscarDados(mes, ano)
-
-
-    }
-
-
-    dataCerta(dia) {
-        const dt = new Date(dia).toLocaleDateString();
-        return dt
-    }
-
-
-    async formataData(dataItem) {
-        for (var i = 0; i < dataItem.length; i++) {
-            var dataA = dataItem[i];
-            var dataF = await dataA.Data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1');
-            dataA.Data = await dataF;
-        }
     }
 
 
@@ -254,10 +198,17 @@ export default class Tabela extends React.Component {
         let Modelo = document.getElementById("Modelo").value;
         let Servico = document.getElementById("Servico").value;
         let Contrato = document.getElementById("Contrato").value;
+        let data = document.getElementById("data").value;
 
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
+            const dt = new Date(data)
+
+            this.state.Atividade.Dia = dt.getDate() + 1
+            this.state.Atividade.Mes = dt.getMonth() + 1
+            this.state.Atividade.Ano = dt.getFullYear()
+
             this.save()
             this.mensagemSalvo()
         }
@@ -270,6 +221,17 @@ export default class Tabela extends React.Component {
                     <div className="row">
                         <div className="col-6 col-md-2">
                             <div className="form-group">
+                                <label className='fw-bold'>Data: </label>
+                                <input type="datetime-local" className="form-control"
+                                    name="Data" id="data"
+                                    value={this.state.Atividade.Data}
+                                    onChange={e => this.updateField(e)}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="col-6 col-md-2">
+                            <div className="form-group">
                                 <label className='fw-bold'>OS: </label>
                                 <input type="text" className="form-control"
                                     name="OS" id="OS"
@@ -279,7 +241,7 @@ export default class Tabela extends React.Component {
                                     required />
                             </div>
                         </div>
-                        <div className="col-6 col-md-6">
+                        <div className="col-6 col-md-4">
                             <div className="form-group">
                                 <label className='fw-bold'>Cliente: </label>
                                 <input type="text" className="form-control"
@@ -337,7 +299,7 @@ export default class Tabela extends React.Component {
                         </div>
                         <div className="col-12 col-md-3 mt-2">
                             <div className="form-group">
-                                <label className='fw-bold'>Rec. Placa: </label>
+                                <label className='fw-bold'>Recuperação de Placa: </label>
                                 <select class="form-select" aria-label="Default select example"
                                     name="Placa"
                                     onChange={e => this.updateField(e)}
@@ -366,7 +328,7 @@ export default class Tabela extends React.Component {
                             <div className="form-group">
                                 <label className='fw-bold'>Contrato: </label>
                                 <select class="form-select" aria-label="Default select example"
-                                name="Contrato" id ="Contrato"
+                                    name="Contrato" id="Contrato"
                                     onChange={e => this.updateField(e)}
                                     value={this.state.Atividade.Contrato}
                                     required>
@@ -467,8 +429,6 @@ export default class Tabela extends React.Component {
                         <th>Modelo</th>
                         <th>NS</th>
                         <th>Serviço</th>
-                        {/* <th>Classificação</th>
-                        <th>Status</th> */}
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -479,25 +439,25 @@ export default class Tabela extends React.Component {
         )
     }
 
+    dataNova(data){
+        const dd = data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1')
+
+        return dd
+    }
+
     renderRows() {
         return this.state.list.map(Atividade => {
             return (
                 <tr key={(Atividade.id)}>
                     <td>{Atividade.id}</td>
-                    <td>{Atividade.Data}</td>
+                    <td>{this.dataNova(Atividade.Data)}</td>
                     <td>{Atividade.OS}</td>
                     <td>{Atividade.Cliente}</td>
                     <td>{Atividade.Equipamento}</td>
                     <td>{Atividade.Modelo}</td>
                     <td>{Atividade.NS}</td>
                     <td>{Atividade.Servico}</td>
-                    {/* <td>{Atividade.Classificacao}</td>
-                    <td>{Atividade.Status}</td> */}
                     <td className="d-flex justify-content-around">
-                        {/* <button className='btn btn-warning mx-1'
-                        onClick={() => this.load(atividade)}>
-                        <i className="fa fa-pencil"></i>
-                    </button> */}
                         <ModalAtendimento corModal="warning" Ititulo="expand" nome={this.renderI()}
                             relatorio={this.formulario()} load={this.renderButtonPencil(Atividade)} />
                         <button className="btn btn-danger mx-2"
@@ -543,50 +503,8 @@ export default class Tabela extends React.Component {
                                 <h4><b>Registro Antigo</b></h4>
                             </Link>
                         </button>
-
                     </div>
                 </div>
-                {/* <div className="row mt-4 mb-4 d-flex justify-content-center">
-                    <div className="col-2 d-flex flex-row justify-content-end align-items-center">
-                        <i className="fa fa-search fa-2x text-danger" /> 
-                    </div>
-                    <div className="col-2">
-                        <label className='fw-bold'>Mês: </label>
-                        <select id="mes" class="form-select" aria-label="Default select example">
-                            <option selected disabled>Todos</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                        </select>
-                    </div>
-                    <div className="col-2">
-                        <label className='fw-bold'>Ano: </label>
-                        <select id="ano" class="form-select" aria-label="Default select example">
-                            <option selected disabled>Todos</option>
-                            <option>2022</option>
-                            <option>2023</option>
-                            <option>2024</option>
-                            <option>2025</option>
-                            <option>2026</option>
-                            <option>2027</option>
-                            <option>2028</option>
-                            <option>2029</option>
-                            <option>2030</option>
-                        </select>
-                    </div> 
-                    <div className="col-2 d-flex align-items-end">
-                        <button className="btn btn-success fw-bold" onClick={() => this.chamarDados()}>Buscar</button>
-                    </div>
-        </div>*/}
                 <div className="mt-4">
                     {this.renderTable()}
                 </div>

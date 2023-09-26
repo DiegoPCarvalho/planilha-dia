@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Url from '../Url/Url';
 
+import CardForm from '../Card/CardForm';
+
 import $ from 'jquery';
 
 const banco = "Geral";
@@ -12,19 +14,19 @@ const baseUrlServ = Url("Servico");
 
 const initialState = {
     Atividade: {
-        Data: data(),
-        Dia: dia(),
-        Mes: mes(),
-        Ano: ano(),
+        Data: '',
+        Dia: '',
+        Mes: '',
+        Ano: '',
         OS: '',
         Cliente: '',
         Equipamento: '',
         Modelo: '',
         NS: '',
         Servico: '',
-        Placa:'',
+        Placa: '',
         Classificacao: '',
-        Contrato:'',
+        Contrato: '',
         Observacao: '',
         Status: '',
         Tecnico: localStorage.usuario
@@ -32,38 +34,16 @@ const initialState = {
     list: [],
     listEquip: [],
     listServ: [],
-    listCont: []
+    listCont: [],
+    ultimaOS: 0
 }
 
-function data() {
-    let da = new Date();
-    return da
-}
-
-function mes() {
-    let data = new Date();
-    let mes = data.getMonth() + 1;
-    return mes
-}
-
-function ano() {
-    let data = new Date();
-    let ano = data.getFullYear();
-    return ano
-}
-
-function dia() {
-    let data = new Date();
-    let dia = data.getDate();
-
-    return dia
-}
 
 export default class Formulário extends React.Component {
 
     state = { ...initialState }
 
-    UNSAFE_componentWillMount(){
+    UNSAFE_componentWillMount() {
         this.buscar()
     }
 
@@ -114,20 +94,42 @@ export default class Formulário extends React.Component {
         let Modelo = document.getElementById("Modelo").value;
         let Servico = document.getElementById("Servico").value;
         let Contrato = document.getElementById("Contrato").value;
+        let data = document.getElementById("data").value;
 
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
+            const dt = new Date(data)
+
+            this.state.Atividade.Dia = dt.getDate() + 1
+            this.state.Atividade.Mes = dt.getMonth() + 1
+            this.state.Atividade.Ano = dt.getFullYear()
+
+
             this.save()
             this.mensagemSalvo()
+            localStorage.UltimaOS = OS
         }
     }
+
+
 
     formulario() {
         return (
             <form className="row g-3" action="javascript:myFunction(); return false;">
                 <div className="form">
                     <div className="row">
+                        <div className="col-6 col-md-2">
+                            <div className="form-group">
+                                <label className='fw-bold'>Data: </label>
+                                <input type="datetime-local" className="form-control"
+                                    name="Data" id="data"
+                                    value={this.state.Atividade.Data}
+                                    onChange={e => this.updateField(e)}
+                                    required
+                                />
+                            </div>
+                        </div>
                         <div className="col-6 col-md-2">
                             <div className="form-group">
                                 <label className='fw-bold'>OS: </label>
@@ -139,7 +141,7 @@ export default class Formulário extends React.Component {
                                     required />
                             </div>
                         </div>
-                        <div className="col-6 col-md-6">
+                        <div className="col-6 col-md-4">
                             <div className="form-group">
                                 <label className='fw-bold'>Cliente: </label>
                                 <input type="text" className="form-control"
@@ -226,7 +228,7 @@ export default class Formulário extends React.Component {
                             <div className="form-group">
                                 <label className='fw-bold'>Contrato: </label>
                                 <select class="form-select" aria-label="Default select example"
-                                name="Contrato" id ="Contrato"
+                                    name="Contrato" id="Contrato"
                                     onChange={e => this.updateField(e)}
                                     value={this.state.Atividade.Contrato}
                                     required>
@@ -288,16 +290,16 @@ export default class Formulário extends React.Component {
         )
     }
 
-    renderEquip(){
+    renderEquip() {
         return this.state.listEquip.map(Equip => {
-            return(
+            return (
                 <option>{Equip.nome}</option>
             )
         })
 
     }
 
-    renderServ(){
+    renderServ() {
         return this.state.listServ.map(Serv => {
             return (
                 <option>{Serv.nome}</option>
@@ -305,7 +307,7 @@ export default class Formulário extends React.Component {
         })
     }
 
-    renderCont(){
+    renderCont() {
         return this.state.listCont.map(Cont => {
             return (
                 <option>{Cont.nome}</option>
@@ -315,15 +317,21 @@ export default class Formulário extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className='mb-3'>
-                    <i className="fa fa-address-card fa-4x"></i>
+            <>
+                <div className='row d-flex justify-content-between'>
+                    <div className='col-1 mb-3'>
+                        <i className="fa fa-address-card fa-4x"></i>
+                    </div>
+                    <div className="col-2 d-flex justify-content-end">
+                    <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light"/>
+                    </div>
                 </div>
-                <div>
-                    {this.formulario()}
+                <div className="row">
+                    <div className='col-12'>
+                        {this.formulario()}
+                    </div>
                 </div>
-
-            </div>
+            </>
         )
     }
 }
