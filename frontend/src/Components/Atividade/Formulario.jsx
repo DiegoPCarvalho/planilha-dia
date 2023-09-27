@@ -35,7 +35,8 @@ const initialState = {
     listEquip: [],
     listServ: [],
     listCont: [],
-    ultimaOS: 0
+    ultimaOS: 0,
+    Data: []
 }
 
 
@@ -46,6 +47,7 @@ export default class Formulário extends React.Component {
     UNSAFE_componentWillMount() {
         this.buscar()
     }
+
 
     save() {
         const Atividade = this.state.Atividade
@@ -99,16 +101,31 @@ export default class Formulário extends React.Component {
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
-            const dt = new Date(data)
+            if (data.length === 0) {
 
-            this.state.Atividade.Dia = dt.getDate() + 1
-            this.state.Atividade.Mes = dt.getMonth() + 1
-            this.state.Atividade.Ano = dt.getFullYear()
+                const dt = new Date()
+                
 
+                this.state.Atividade.Data = dt
+                this.state.Atividade.Dia = dt.getDate()
+                this.state.Atividade.Mes = dt.getMonth() + 1
+                this.state.Atividade.Ano = dt.getFullYear()
 
-            this.save()
-            this.mensagemSalvo()
-            localStorage.UltimaOS = OS
+                this.save()
+                this.mensagemSalvo()
+                localStorage.UltimaOS = OS
+
+            } else {
+                const dt = new Date(data)
+
+                this.state.Atividade.Dia = dt.getDate()
+                this.state.Atividade.Mes = dt.getMonth() + 1
+                this.state.Atividade.Ano = dt.getFullYear()
+
+                this.save()
+                this.mensagemSalvo()
+                localStorage.UltimaOS = OS
+            }
         }
     }
 
@@ -126,7 +143,7 @@ export default class Formulário extends React.Component {
                                     name="Data" id="data"
                                     value={this.state.Atividade.Data}
                                     onChange={e => this.updateField(e)}
-                                    required
+                                    
                                 />
                             </div>
                         </div>
@@ -323,7 +340,7 @@ export default class Formulário extends React.Component {
                         <i className="fa fa-address-card fa-4x"></i>
                     </div>
                     <div className="col-2 d-flex justify-content-end">
-                    <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light"/>
+                        <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
                     </div>
                 </div>
                 <div className="row">
