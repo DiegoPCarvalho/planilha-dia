@@ -71,3 +71,17 @@ export default class SolicitarSet extends React.Component{
         )
     }
 }
+
+var inicio = new Date();
+var fim = new Date();
+var diferenca = new Date( fim - inicio );
+ 
+console.log(diferenca)
+
+var resultado = diferenca.getUTCFullYear() - 1970 + "a "; 
+resultado += diferenca.getUTCMonth() + "m "; 
+resultado += diferenca.getUTCDate() - 1 + "d ";  
+resultado += diferenca.getUTCHours() + "h ";
+resultado += diferenca.getUTCMinutes() + "m ";
+resultado += diferenca.getUTCSeconds() + "s ";
+console.log(resultado);
