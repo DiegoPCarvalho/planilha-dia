@@ -203,14 +203,31 @@ export default class Tabela extends React.Component {
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
-            const dt = new Date(data)
+            if (data.length === 0) {
 
-            this.state.Atividade.Dia = dt.getDate() + 1
-            this.state.Atividade.Mes = dt.getMonth() + 1
-            this.state.Atividade.Ano = dt.getFullYear()
+                const dt = new Date()
+                
 
-            this.save()
-            this.mensagemSalvo()
+                this.state.Atividade.Data = dt
+                this.state.Atividade.Dia = dt.getDate()
+                this.state.Atividade.Mes = dt.getMonth() + 1
+                this.state.Atividade.Ano = dt.getFullYear()
+
+                this.save()
+                this.mensagemSalvo()
+                localStorage.UltimaOS = OS
+
+            } else {
+                const dt = new Date(data)
+
+                this.state.Atividade.Dia = dt.getDate()
+                this.state.Atividade.Mes = dt.getMonth() + 1
+                this.state.Atividade.Ano = dt.getFullYear()
+
+                this.save()
+                this.mensagemSalvo()
+                localStorage.UltimaOS = OS
+            }
         }
     }
 
@@ -226,7 +243,6 @@ export default class Tabela extends React.Component {
                                     name="Data" id="data"
                                     value={this.state.Atividade.Data}
                                     onChange={e => this.updateField(e)}
-                                    required
                                 />
                             </div>
                         </div>
