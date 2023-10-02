@@ -7,39 +7,30 @@ import $ from "jquery";
 import { Link } from 'react-router-dom';
 
 
-export default props =>
-    <aside className="menu-area">
-        <nav className='menu'>
-            <div id="accordian">
-                <ul className="show-dropdown">
-                    <li>
-                        <a href="javascript:void(0);" className='text-light'><i className="fa fa-credit-card"></i>Diretoria</a>
-                        <ul>
-                            <li><Link to="/DiretoriaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
-                            {/* <li><Link to="/EmBreve" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li>*/}
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" className='text-light'><i className="fa fa-bar-chart"></i>Gerência</a>
-                        <ul>
-                            {/* <li><Link to="/Dashboard" className='text-light'><i className="fa fa-home"></i>Home</Link></li> */}
-                            <li><Link to="/GerenciaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
-                            {/* <li><Link to="/GerenciaAdm" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
-                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li> */}
-                            {/* <li><Link to="/Dashboard/Tecnico" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li> */}
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" className='text-light'><i className="fa fa-barcode"></i>Laboratório</a>
-                        <ul>
-                            <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
-                            <li><Link to="/Contratos" className='text-light'><i className="fa fa-file-pdf-o"></i>Contratos</Link></li>
-                            {/* <li><Link to="/CentroCustoLab" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
+export default function Nav() {
+    return (
+        <>
+            <aside className="menu-area">
+                <nav className='menu'>
+                    <div id="accordian">
+                        <ul className="show-dropdown">
+                            <li>
+                                {diretoriaAdmin()}
+                            </li>
+                            <li>
+                                {gerenciaAdmin()}
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" className='text-light'><i className="fa fa-barcode"></i>Laboratório</a>
+                                <ul>
+                                    <li><Link to="/Atividade" className='text-light'><i className="fa fa-newspaper-o"></i>Atividade</Link></li>
+                                    <li><Link to="/Contratos" className='text-light'><i className="fa fa-file-pdf-o"></i>Contratos</Link></li>
+                                    {teste()}
+                                    {/* <li><Link to="/CentroCustoLab" className='text-light'><i className="fa fa-usd"></i>Centro Custo</Link></li>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-cogs"></i>Cadastro de Peça</Link></li> */}
-                        </ul>
-                    </li>
-                    {/* <li>
+                                </ul>
+                            </li>
+                            {/* <li>
                         <a href="javascript:void(0);" className='text-light'><i className="fa fa-archive"></i>ADM</a>
                         <ul>
                             <li><Link to="/Financeiro" className='text-light'><i className="fa fa-money"></i>Financeiro</Link></li>
@@ -60,7 +51,7 @@ export default props =>
                             <li><Link to="/EmBreve" className='text-light'><i className="fa fa-cogs"></i>Assistentes</Link></li>
                         </ul>
                     </li> */}
-                    {/*<li>
+                            {/*<li>
                          <ul>
             <li><a href="javascript:void(0);" className='text-light'>Current Month</a></li>
             <li><a href="javascript:void(0);" className='text-light'>Current Week</a></li>
@@ -73,14 +64,14 @@ export default props =>
             <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
         </ul> 
                     </li>*/}
-                    <li>
-                        <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
-                        <ul>
-                            <li><Link to="/PerfilUsuario" className='text-light' id="meu-link"><i className="fa fa-user-plus"></i>Perfil</Link></li>
-                            <li><a onClick={sair} className='text-light' id="meu-link"><i className="fa fa-sign-out"></i>Sair</a></li>
-                        </ul>
-                    </li>
-                    {/* <li>
+                            <li>
+                                <a href="javascript:void(0);" className='text-light'><i class="fa fa-address-book"></i>Usuario</a>
+                                <ul>
+                                    <li><Link to="/PerfilUsuario" className='text-light' id="meu-link"><i className="fa fa-user-plus"></i>Perfil</Link></li>
+                                    <li><a onClick={sair} className='text-light' id="meu-link"><i className="fa fa-sign-out"></i>Sair</a></li>
+                                </ul>
+                            </li>
+                            {/* <li>
         <a href="javascript:void(0);" className='text-light'><i className="fa fa-user"></i>Charts</a>
         <ul>
             <li><a href="javascript:void(0);" className='text-light'>Global favs</a></li>
@@ -89,18 +80,62 @@ export default props =>
             <li><a href="javascript:void(0);" className='text-light'>Settings</a></li>
         </ul>
     </li> */}
-                </ul>
-            </div>
+                        </ul>
+                    </div>
 
 
-        </nav>
-    </aside>
+                </nav>
+            </aside>
+
+        </>
+    )
+}
 
 
 function sair() {
     if (localStorage.logado === "1") {
         window.location.pathname = "/";
         localStorage.logado = 0;
+    }
+}
+
+function diretoriaAdmin() {
+    if (localStorage.AdmDiretoria === "1") {
+        return (
+            <>
+                <a href="javascript:void(0);" className='text-light'><i className="fa fa-credit-card"></i>Diretoria</a>
+                <ul>
+                    <li><Link to="/Diretoria" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
+                </ul>
+            </>
+        )
+    }
+}
+
+function teste() {
+    if (localStorage.AdmGeral === "1") {
+        return (
+            <>
+                <li><Link to="/teste" className='text-light'><i className="fa fa-file-o"></i>Teste</Link></li>
+            </>
+        )
+    }
+}
+
+function gerenciaAdmin() {
+    if (localStorage.AdmGerencia === "1") {
+        return (
+            <>
+                <a href="javascript:void(0);" className='text-light'><i className="fa fa-bar-chart"></i>Gerência</a>
+                <ul>
+                    {/* <li><Link to="/Dashboard" className='text-light'><i className="fa fa-home"></i>Home</Link></li> */}
+                    <li><Link to="/GerenciaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
+                    {/* <li><Link to="/GerenciaAdm" className='text-light'><i className="fa fa-archive"></i>ADM</Link></li>
+                            <li><Link to="/EmBreve" className='text-light'><i className="fa fa-clone"></i>Comercial</Link></li> */}
+                    {/* <li><Link to="/Dashboard/Tecnico" className='text-light'><i className="fa fa-university"></i>Técnicos</Link></li> */}
+                </ul>
+            </>
+        )
     }
 }
 

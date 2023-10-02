@@ -60,6 +60,9 @@ import CentroCustoLab from '../Components/Setores/Laboratorio/CentroCusto';
 import EmAnaliseLab from "../Components/Setores/Laboratorio/EmAnalise";
 import FinaliadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
 import Contratos from "../Components/Setores/Laboratorio/Contratos";
+import IndexLab from '../Components/Atividade/indexLab';
+import FormTeste from '../Components/Atividade/FormularioPage/Formulario';
+import TabTeste from   '../Components/Atividade/TabelaPage/Tabela';
 
 //Compras
 import HomeCompras from "../Components/Setores/Compras/HomeCompras";
@@ -164,6 +167,10 @@ export default function Rotas() {
                     <Route path="Solicitar" element={<Solicitar />} />
                     <Route path="EmAnalise" element={<EmAnaliseLab />} />
                     <Route path="Finalizados" element={<FinaliadosLab />} />
+                </Route>
+                <Route path="/teste" element={<IndexLab />}>
+                    <Route path="Formulario" element={<FormTeste />} />
+                    <Route path="Tabela" element={<TabTeste />} />
                 </Route>
                 <Route path="/Contratos" element={<Contratos/>}/>
             </Route>
