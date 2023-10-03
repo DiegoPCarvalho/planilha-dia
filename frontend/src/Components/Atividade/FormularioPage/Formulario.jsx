@@ -51,15 +51,19 @@ export default class Formulário extends React.Component {
 
     state = { ...initialState }
 
-    UNSAFE_componentWillMount() {
+    componentDidMount() {
         this.buscar()
         this.buscarlist()
         localStorage.Alterado = 0;
     }
-    
+
     componentDidUpdate(){
-        this.buscarlist()
+        if(localStorage.upDate === "1"){
+            this.buscarlist()
+            localStorage.upDate = 0
+        }
     }
+    
 
     buscarlist() {
         axios(baseUrl).then(resp => {
@@ -175,19 +179,21 @@ export default class Formulário extends React.Component {
                     localStorage.UltimaOS = OS
                 } else if (localStorage.Alterado === "1") {
 
-                        localStorage.Alterado = 0;
+                    localStorage.Alterado = 0;
 
-                        this.save()
-                        this.mensagemSalvo()
-                        localStorage.UltimaOS = OS
-                }else if(localStorage.Alterado === "2"){
+                    this.save()
+                    this.mensagemSalvo()
+                    localStorage.UltimaOS = OS
+                    
+                } else if (localStorage.Alterado === "2") {
                     this.state.Atividade.TempoFinal = dt
                     this.state.Atividade.Finalizada = "Sim"
                     localStorage.Alterado = 0;
 
                     this.save()
                     this.mensagemSalvo()
-
+                    localStorage.UltimaOS = OS
+                    localStorage.upDate = 1
                 }
 
 
@@ -206,18 +212,20 @@ export default class Formulário extends React.Component {
                     this.mensagemSalvo()
                     localStorage.UltimaOS = OS
                 } else if (localStorage.Alterado === "1") {
-                        localStorage.Alterado = 0;
+                    localStorage.Alterado = 0;
 
-                        this.save()
-                        this.mensagemSalvo()
-                        localStorage.UltimaOS = OS
-                }else if(localStorage.Alterado === "2"){
+                    this.save()
+                    this.mensagemSalvo()
+                    localStorage.UltimaOS = OS
+                } else if (localStorage.Alterado === "2") {
                     this.state.Atividade.TempoFinal = dt
                     this.state.Atividade.Finalizada = "Sim"
                     localStorage.Alterado = 0;
 
                     this.save()
                     this.mensagemSalvo()
+                    localStorage.UltimaOS = OS
+                    localStorage.upDate = 1
                 }
             }
         }
@@ -493,7 +501,7 @@ export default class Formulário extends React.Component {
     }
 
 
-    loadCheck(Atividade){
+    loadCheck(Atividade) {
         localStorage.Alterado = 2
         this.setState({ Atividade })
     }
