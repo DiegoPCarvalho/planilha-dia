@@ -9,6 +9,7 @@ import Home from '../Components/Home/Home';
 
 //pagehome
 import PageHome from '../Components/Home/PageHome';
+import NewPageHome from '../Components/Home/NewPageHome';
 
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import Formulario from "../Components/Atividade/Formulario";
@@ -83,6 +84,9 @@ export default function Rotas() {
             </Route>
             <Route path="/Home" element={<Home />}>
                 <Route index element={<PageHome />} />
+            </Route>
+            <Route path="/NewHome" element={<Home />}>
+                <Route index element={<NewPageHome />} />
             </Route>
             <Route path="/Ramais" element={<Home />}>
                 <Route index element={<Ramal />} />
