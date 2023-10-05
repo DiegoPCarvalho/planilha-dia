@@ -105,7 +105,7 @@ function diretoriaAdmin() {
             <>
                 <a href="javascript:void(0);" className='text-light'><i className="fa fa-credit-card"></i>Diretoria</a>
                 <ul>
-                    <li><Link to="/Diretoria" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
+                    <li><Link to="/DiretoriaLab" className='text-light'><i className="fa fa-barcode"></i>Laboratório</Link></li>
                 </ul>
             </>
         )
