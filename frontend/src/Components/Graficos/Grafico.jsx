@@ -12,7 +12,8 @@ export default function graficoGeral(props) {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
-            type: props.tipo
+            type: props.tipo,
+            height: props.vertical
         },
         title: {
             text: props.titulo

@@ -11,12 +11,12 @@ export default function ModalAtendimento(props) {
     return (
         <>
             <Button variant={props.corModal} onClick={handleShow} className={props.classe}>
-                <span className='h3 fw-bold'>{props.nomeBotao}</span>
+                <span className='h5 fw-bold'>{props.nomeBotao}</span>
             </Button>
 
             <Modal show={show} onHide={handleClose} size={props.tamanho}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{props.nomeBotao}</Modal.Title>
+                    <Modal.Title><span className='h2 fw-bold'>{props.nomeBotao}</span></Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className='row d-flex justify-content-center'>

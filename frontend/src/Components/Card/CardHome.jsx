@@ -12,10 +12,10 @@ function CardHome(props) {
                     <div className='row'>
                         <div className="col-10">
                             <div className="row">
-                                <div className='h2 fw-bold d-flex justify-content-start '>{props.titulo}</div>
+                                <div className='h3 fw-bold d-flex justify-content-start fw-bold'>{props.titulo}</div>
                             </div>
                             <div className="row">
-                                <div className='h4 d-flex justify-content-start '>{props.valor}</div>
+                                <div className='h4 d-flex justify-content-start'>{props.valor}</div>
                             </div>
                         </div>
                         <div className="col-2 d-flex justify-content-center">

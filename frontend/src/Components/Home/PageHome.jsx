@@ -248,7 +248,7 @@ export default class PageHome extends React.Component {
                     </div>
                     <div className="row my-4 d-flex justify-content-end">
                         <div className="col-3 d-flex justify-content-end">
-                            <Link to="/Ramais" className='btn btn-warning'> <span className=' h3 rounded p-2 fw-bold'> Cadastre </span></Link>
+                            <Link to="/Ramais" className='btn btn-warning'> <span className=' h3 rounded p-2 fw-bold'> <i className='fa fa-plus'></i> </span></Link>
                         </div>
                     </div>
                     <div className="row mt-5">
