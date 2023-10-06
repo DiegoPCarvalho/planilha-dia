@@ -3,10 +3,10 @@ import Header from '../Template/Header';
 import './NewPageHome.css';
 import CardHome from '../Card/CardHome';
 import BuscarDados from '../Dashboard/DashboardModel/GraficoGeral/BuscarDados';
-import Url from '../Url/Url';
-import axios from 'axios';
+import PuxarDados from '../Dashboard/DashboardModel/Estrutura/PuxarDados';
 import Grafico from '../Graficos/Grafico';
 import CardSS from '../Card/CardSS';
+import CardRamal from '../Card/CardRamal';
 
 import { Link } from 'react-router-dom';
 
@@ -19,10 +19,14 @@ const initialState = {
     totalUsuario: 0,
     prodTec: [],
     projAnual: [],
-    prodDias: []
+    prodDias: [],
+    RamalComercial: [],
+    RamalLabo: [],
+    RamalADM: [],
+    RamalDiretoria: [],
+    RamalGerencia: []
 }
 
-const baseUrl = Url("LoginUsuario");
 
 export default class NewPageHome extends React.Component {
 
@@ -30,6 +34,7 @@ export default class NewPageHome extends React.Component {
 
     componentDidMount() {
         this.buscar()
+        this.tabelaRamal()
     }
 
     async buscar() {
@@ -41,7 +46,7 @@ export default class NewPageHome extends React.Component {
         const tab2 = await BuscarDados("Todos", "Todos", "Todos", `${ano}`);
         const tabDia = await BuscarDados("Todos", "Todos", `${mes}`, `${ano}`);
 
-        const usuario = await axios(baseUrl).then(resp => resp.data)
+        const usuario = await PuxarDados("LoginUsuario");
 
         return this.setState({
             totalOS: tabela.totalOS,
@@ -50,6 +55,64 @@ export default class NewPageHome extends React.Component {
             prodTec: tabela.totalTecnico,
             projAnual: tab2.projecao,
             prodDias: tabDia.totalPorDia
+        })
+    }
+
+    async tabelaRamal() {
+        const tabelaNome = await PuxarDados("Ramal")
+        let ramalComercial = [];
+        let ramalLabo = [];
+        let ramalADM = [];
+        let ramalDiretoria = [];
+        let ramalGerencia = [];
+
+        for (let i = 0; i < tabelaNome.length; i++) {
+            if ("Laboratório" === tabelaNome[i].Departamento) {
+                ramalLabo.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if ("Comercial" === tabelaNome[i].Departamento) {
+                ramalComercial.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if ("Diretoria" === tabelaNome[i].Departamento) {
+                ramalDiretoria.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if ("Gerência" === tabelaNome[i].Departamento) {
+                ramalGerencia.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal
+                })
+            }
+            if (("Financeiro" === tabelaNome[i].Departamento) || ("Fiscal" === tabelaNome[i].Departamento) || ("Compras" === tabelaNome[i].Departamento) ||
+                ("RH" === tabelaNome[i].Departamento) || ("Estoque" === tabelaNome[i].Departamento) || ("Expedição" === tabelaNome[i].Departamento) ||
+                ("Logística" === tabelaNome[i].Departamento) || ("Recepção" === tabelaNome[i].Departamento)) {
+                ramalADM.push({
+                    id: tabelaNome[i].id,
+                    Usuario: tabelaNome[i].Usuario,
+                    Ramal: tabelaNome[i].Ramal,
+                    Departamento: tabelaNome[i].Departamento
+                })
+            }
+        }
+
+        return this.setState({
+            RamalLabo: ramalLabo,
+            RamalComercial: ramalComercial,
+            RamalDiretoria: ramalDiretoria,
+            RamalGerencia: ramalGerencia,
+            RamalADM: ramalADM
         })
     }
 
@@ -103,35 +166,55 @@ export default class NewPageHome extends React.Component {
                 <div className="row d-flex justify-content-center mt-3 ">
                     <div className="col-3 d-flex justify-content-center">
                         <ModalRamal nomeBotao="Comercial" corModal="secondary" 
-                        Relatorio={""}/>
+                        Relatorio={this.ramalList(this.state.RamalComercial)}/>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
                         <ModalRamal nomeBotao="ADM" corModal="secondary" 
-                        Relatorio={""}/>
+                        Relatorio={this.ramalAdm()}/>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
                         <ModalRamal nomeBotao="Laboratório" corModal="secondary" 
-                        Relatorio={""}/>
+                        Relatorio={this.ramalList(this.state.RamalLabo)}/>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
                         <ModalRamal nomeBotao="Gerencia" corModal="secondary" 
-                        Relatorio={""}/>
+                        Relatorio={this.ramalList(this.state.RamalGerencia)}/>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
                         <ModalRamal nomeBotao="Diretoria" corModal="secondary" 
-                        Relatorio={""}/>
+                        Relatorio={this.ramalList(this.state.RamalDiretoria)}/>
                     </div>
                 </div>
             </div>
         )
+    }
+
+    ramalList(depar){
+        return depar.map(item => {
+            return(
+                <>
+                    <CardRamal titulo={item.Usuario} valor={item.Ramal} corBt="success" icone="phone" bg="light" tipoTexto="mb-2"/>
+                </>
+            )
+        })
+    }
+
+    ramalAdm(){
+        return this.state.RamalADM.map(item => {
+            return(
+                <>
+                    <CardRamal titulo={`${item.Usuario} - ${item.Departamento}`} valor={item.Ramal} corBt="success" icone="phone" bg="light" tipoTexto="mb-2"/>
+                </>
+            )
+        })
     }
 
     render() {
@@ -171,7 +254,7 @@ export default class NewPageHome extends React.Component {
                         </div>
                         <div className="col-6 col-md-3">
                             <div className='boxShadow'>
-                                <Grafico tipo="bar" titulo="Prod. Técnicos"
+                                <Grafico tipo="bar" titulo="Prod. Geral Técnicos"
                                     formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                     texto='{point.y:1f}'
                                     nomeSerie="Serviço"

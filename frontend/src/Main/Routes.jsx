@@ -8,7 +8,6 @@ import NovoLogin from '../Login/NovoLogin';
 import Home from '../Components/Home/Home';
 
 //pagehome
-import PageHome from '../Components/Home/PageHome';
 import NewPageHome from '../Components/Home/NewPageHome';
 
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
@@ -83,9 +82,6 @@ export default function Rotas() {
                 <Route path="/NovoUsuario" element={<NovoLogin />} />
             </Route>
             <Route path="/Home" element={<Home />}>
-                <Route index element={<PageHome />} />
-            </Route>
-            <Route path="/NewHome" element={<Home />}>
                 <Route index element={<NewPageHome />} />
             </Route>
             <Route path="/Ramais" element={<Home />}>

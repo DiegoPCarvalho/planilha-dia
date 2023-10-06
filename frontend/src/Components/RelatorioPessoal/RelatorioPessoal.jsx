@@ -243,7 +243,7 @@ export default class Relatorio extends React.Component {
                         <button className="btn btn-success" onClick={e => this.filtrarDados(e)}>Buscar</button>
                     </div>
                 </div>
-                <div className="row my-3 d-flex justify-content-center ">
+                <div className="row my-3 d-flex justify-content-around ">
                     <div className="col-3 text-light">
                         <CardGD bg="dark" nomeTitulo="Total OS's" icone="codepen"
                             dado={this.state.totalOS} />
