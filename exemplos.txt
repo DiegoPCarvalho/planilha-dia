@@ -85,3 +85,7 @@ resultado += diferenca.getUTCHours() + "h ";
 resultado += diferenca.getUTCMinutes() + "m ";
 resultado += diferenca.getUTCSeconds() + "s ";
 console.log(resultado);
+
+https://codepen.io/codebucks27/details/RwpxLKX
+
+https://codepen.io/FosterFerret/full/wvBqKaP
