@@ -16,7 +16,7 @@ import Footer from '../Template/Footer';
 export default function Home(){
     return(
         <div className="App">
-        <Logo />
+        <Logo /> 
         <Nav />
         <Outlet />
         <Footer />

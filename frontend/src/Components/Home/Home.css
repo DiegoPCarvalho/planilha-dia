@@ -2,6 +2,7 @@
     --bg-dark: #464e52;
     --header-height: 60px;
     --aside-with: 250px;
+    /* --aside-with: 100%; */
     --footer-height: 40px;
 
     --shadow: 
@@ -20,7 +21,7 @@
 .App {
     margin: 0px;
     display: grid;
-    grid-template-columns: var(--aside-with) 1fr ;
+    grid-template-columns: var(--aside-with) 1fr;
     grid-template-rows: 
         var(--header-height)
         1fr

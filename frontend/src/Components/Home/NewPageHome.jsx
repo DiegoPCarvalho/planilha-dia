@@ -7,6 +7,7 @@ import PuxarDados from '../Dashboard/DashboardModel/Estrutura/PuxarDados';
 import Grafico from '../Graficos/Grafico';
 import CardSS from '../Card/CardSS';
 import CardRamal from '../Card/CardRamal';
+import NewNav from '../Navbar/NewNav';
 
 import { Link } from 'react-router-dom';
 
@@ -221,6 +222,7 @@ export default class NewPageHome extends React.Component {
         return (
             <>
                 <Header icon="home" title="Home" />
+                {/* <NewNav /> */}
                 <nova className="corfundo content container-fluid ">
                     <div className="row mx-2 my-3">
                         <div className="col-6 col-md-9">
