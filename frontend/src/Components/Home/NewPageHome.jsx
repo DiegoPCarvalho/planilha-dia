@@ -138,18 +138,18 @@ export default class NewPageHome extends React.Component {
             <div className='d-flex justify-content-center align-items-baseline flex-column'>
                 <div className="row mt-2 mb-2">
                     <div className="col-6">
-                        <Link to="/DiretoriaLab" className='btn btn-success'><span className='fw-bold'> Diretoria </span></Link>
+                        <Link to="/Diretoria" className='btn btn-success'><span className='fw-bold'> Diretoria </span></Link>
                     </div>
                     <div className="col-6">
-                        <Link to="/Atividade" className='btn btn-success'><span className='fw-bold'> Técnico </span></Link>
+                        <Link to="/Laboratorio" className='btn btn-success'><span className='fw-bold'> Técnico </span></Link>
                     </div>
                 </div>
                 <div className="row mt-3">
                     <div className="col-6">
-                        <Link to="/GerenciaLab" className='btn btn-success'><span className='fw-bold'> Gerência </span></Link>
+                        <Link to="/Gerencia" className='btn btn-success'><span className='fw-bold'> Gerência </span></Link>
                     </div>
                     <div className="col-6 d-flex justify-content-end">
-                        <Link to="/PerfilUsuario" className='btn btn-success'><span className='fw-bold '> Usuário </span></Link>
+                        <Link to="/Usuario" className='btn btn-success'><span className='fw-bold '> Usuário </span></Link>
                     </div>
                 </div>
             </div>
