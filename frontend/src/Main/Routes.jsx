@@ -73,6 +73,8 @@ import SolicitarSeto from "../Components/Setores/Compras/Setores/SolicitacoesSet
 import Solicitar from '../Components/Setores/Solicitar/Solicitar';
 import FinalizadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
 
+import MenuIndexHam from '../Components/Navbar/Menu/Index';
+
 
 export default function Rotas() {
     return (
@@ -88,7 +90,7 @@ export default function Rotas() {
                 <Route index element={<Ramal />} />
             </Route> 
             <Route element={<Home />}>
-                <Route path="/DiretoriaLab" element={<Diretoria />}>
+                <Route path="/Diretoria" element={<Diretoria />}>
                     <Route path="Dashboard" element={<IndexDash />}>
                         <Route path="DashboardCentroCusto" element={<EmBreveSmart />} />
                     </Route>
@@ -101,7 +103,7 @@ export default function Rotas() {
                
             </Route>
             <Route element={<Home />}>
-                <Route path="/GerenciaLab" element={<HomeGerenciaLab />}>
+                <Route path="/Gerencia" element={<HomeGerenciaLab />}>
                     <Route path="Dashboard" element={<IndexDash />}>
                     </Route>
                     <Route path="CentroCusto" element={<CentroCustoLabGerencia />}>
@@ -157,7 +159,7 @@ export default function Rotas() {
                 </Route>
             </Route>
             <Route element={<Home />}>
-                <Route path="/Atividade" element={<CrudAtividade />}>
+                <Route path="/Laboratorio" element={<CrudAtividade />}>
                     <Route path="Formulario" element={<Formulario />} />
                     <Route path="Tabela" element={<Tabela />} />
                     <Route path="TabelaAntiga" element={<TabelaRegistroAntigo />} />
@@ -174,7 +176,7 @@ export default function Rotas() {
                 </Route>
                 <Route path="/Contratos" element={<Contratos/>}/>
             </Route>
-            <Route path="/PerfilUsuario" element={<Home />}>
+            <Route path="/Usuario" element={<Home />}>
                 <Route index element={<Perfil />} />
             </Route>
             <Route path="/EmBreve" element={<Home />}>

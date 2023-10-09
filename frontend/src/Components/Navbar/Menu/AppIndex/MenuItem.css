@@ -1,0 +1,13 @@
+.link-hover a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.link-hover a:hover {
+    background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
+}

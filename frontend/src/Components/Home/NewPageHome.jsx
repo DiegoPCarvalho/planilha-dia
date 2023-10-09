@@ -7,7 +7,7 @@ import PuxarDados from '../Dashboard/DashboardModel/Estrutura/PuxarDados';
 import Grafico from '../Graficos/Grafico';
 import CardSS from '../Card/CardSS';
 import CardRamal from '../Card/CardRamal';
-import NewNav from '../Navbar/NewNav';
+
 
 import { Link } from 'react-router-dom';
 

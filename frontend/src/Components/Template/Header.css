@@ -1,6 +1,7 @@
 header.header {
-    background: rgb(39,116,12);
-    background: linear-gradient(90deg, rgba(39,116,12,1) 11%, rgba(53,255,51,1) 38%, rgba(30,111,154,1) 75%);
+    /* background: rgb(39,116,12);
+    background: linear-gradient(90deg, rgba(39,116,12,1) 11%, rgba(53,255,51,1) 38%, rgba(30,111,154,1) 75%); */
+    background-color: var(--bg-dark);
     padding: 0px 15px;
     overflow: hidden;
     white-space: nowrap;

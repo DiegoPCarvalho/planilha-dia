@@ -28,11 +28,11 @@ export default class HomeDiretoria extends React.Component {
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between mb-5">
                         <div className="col-6">
-                            <Link to="/DiretoriaLab"><img src={Logo} alt=""/></Link>
+                            <Link to="/Diretoria"><img src={Logo} alt=""/></Link>
                         </div>
                     </div>
                     <div className="d-flex flex-row">
-                        <Link to="/DiretoriaLab/Dashboard" className="rounded flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbord Atividade</Link>
+                        <Link to="/Diretoria/Dashboard" className="rounded flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbord Atividade</Link>
                         {/* <Link to="/DiretoriaLab/CentroCusto" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Centro Custo</Link> */}
                     </div>
                     <div className="row mt-2 ">

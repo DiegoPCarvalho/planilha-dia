@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b830f334.css",
-    "main.js": "/static/js/main.7f74b9f3.js",
+    "main.css": "/static/css/main.7567380a.css",
+    "main.js": "/static/js/main.74eac19b.js",
     "static/media/telaFundoLogin.gif": "/static/media/telaFundoLogin.10c13698f9cffc876832.gif",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/VINICIUS GOMES .png": "/static/media/VINICIUS GOMES .1c50568ff13119b31be8.png",
@@ -18,11 +18,11 @@
     "static/media/logo.png": "/static/media/logo.f38c25782706b4691aa2.png",
     "static/media/logoZhaz.png": "/static/media/logoZhaz.f38c25782706b4691aa2.png",
     "index.html": "/index.html",
-    "main.b830f334.css.map": "/static/css/main.b830f334.css.map",
-    "main.7f74b9f3.js.map": "/static/js/main.7f74b9f3.js.map"
+    "main.7567380a.css.map": "/static/css/main.7567380a.css.map",
+    "main.74eac19b.js.map": "/static/js/main.74eac19b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b830f334.css",
-    "static/js/main.7f74b9f3.js"
+    "static/css/main.7567380a.css",
+    "static/js/main.74eac19b.js"
   ]
 }

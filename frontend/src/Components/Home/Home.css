@@ -21,15 +21,15 @@
 .App {
     margin: 0px;
     display: grid;
-    grid-template-columns: var(--aside-with) 1fr;
+    grid-template-columns: var(--aside-with);
     grid-template-rows: 
         var(--header-height)
         1fr
         var(--footer-height);
     grid-template-areas: 
         "logo header"
-        "menu content"
-        "menu footer";
+        "content content"
+        "footer footer";
     height: 100vh;
     background-color: #F5F5F5;
 }
@@ -64,6 +64,10 @@ aside.menu-area {
 }
 
 main.content {
+    grid-area: content;
+}
+
+nova.content {
     grid-area: content;
 }
 

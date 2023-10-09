@@ -32,14 +32,14 @@ export default class AtividadeCrud extends React.Component {
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between mb-5">
                         <div className="col-6">
-                            <Link to="/Atividade"><img src={Logo} alt="" /></Link>
+                            <Link to="/Laboratorio"><img src={Logo} alt="" /></Link>
                         </div>
                         <div className="col-6 d-flex align-items-center justify-content-end">
                             {/* <h4 className="mx-2 d-flex align-items-center">Addicionar</h4>
                             <ModalAtendimento corModal="success" Ititulo="plus fa-2x"
                                 classe="d-flex justify-content-center align-items-center" relatorio={this.formulario()}
                                 nome={this.renderI()} /> */}
-                            <Link to="/PerfilUsuario"><img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
+                            <Link to="/Usuario"><img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
                         </div>
                     </div>
                     {/* <div className="row mt-4">
@@ -50,13 +50,13 @@ export default class AtividadeCrud extends React.Component {
 
                     <div className="d-flex flex-row">
                         {/* <div className="col-6"> */}
-                        <Link to="/Atividade/Formulario" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Formulario</Link>
+                        <Link to="/Laboratorio/Formulario" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Formulario</Link>
                         {/* </div> */}
                         {/* <div className="col-6"> */}
-                        <Link to="/Atividade/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link>
+                        <Link to="/Laboratorio/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link>
                         {/* <Link to="/Atividade/Tabela" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}
                         {/* </div> */}
-                        <Link to="/Atividade/Relatorio" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Relatório</Link>
+                        <Link to="/Laboratorio/Relatorio" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Relatório</Link>
                     </div>
                     <div className="row mt-2 ">
                         <Outlet />

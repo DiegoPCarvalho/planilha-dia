@@ -6,33 +6,30 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 //components
-
-import Logo from '../Template/Logo';
-import Nav from   '../Template/Nav';
+import MenuIndexHam from '../Navbar/Menu/Index';
 import Footer from '../Template/Footer';
 
 
 
-export default function Home(){
-    return(
+export default function Home() {
+    return (
         <div className="App">
-        <Logo /> 
-        <Nav />
-        <Outlet />
-        <Footer />
-        {Logado()}
-    </div>
+            <MenuIndexHam />
+            <Outlet />
+            <Footer />
+            {Logado()}
+        </div>
     )
 
-    function Logado(){
-        if(localStorage.length === 0){
+    function Logado() {
+        if (localStorage.length === 0) {
             window.location.pathname = '/'
-        }else
-        if(localStorage.logado === "0"){
-            window.location.pathname = '/'
-        }
+        } else
+            if (localStorage.logado === "0") {
+                window.location.pathname = '/'
+            }
     }
 }
 
-    
+
 

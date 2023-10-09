@@ -29,14 +29,14 @@ export default class HomeGerencia extends React.Component {
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between mb-5">
                         <div className="col-6">
-                            <Link to="/GerenciaLab"><img src={Logo} alt="" /></Link>
+                            <Link to="/Gerencia"><img src={Logo} alt="" /></Link>
                         </div>
                     </div>
                     <div className="d-flex flex-row">
                 
-                        <Link to="/GerenciaLab/Dashboard" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbord Atividade</Link>
-                        <Link to="/GerenciaLab/Meta" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Meta</Link>
-                        <Link to="/GerenciaLab/TabelaGeral" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela Geral</Link>
+                        <Link to="/Gerencia/Dashboard" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbord Atividade</Link>
+                        <Link to="/Gerencia/Meta" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Meta</Link>
+                        <Link to="/Gerencia/TabelaGeral" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela Geral</Link>
                     </div>
                     <div className="row mt-2 ">
                         <Outlet />
