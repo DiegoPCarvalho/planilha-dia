@@ -135,21 +135,21 @@ export default class NewPageHome extends React.Component {
 
     setores() {
         return (
-            <div className='d-flex justify-content-center align-items-baseline flex-column'>
+            <div className='d-flex justify-content-center align-items-center flex-column'>
                 <div className="row mt-2 mb-2">
                     <div className="col-6">
-                        <Link to="/Diretoria" className='btn btn-success'><span className='fw-bold'> Diretoria </span></Link>
+                        <Link to="/Diretoria" className='btn btn-success'><i className="fa fa-2x fa-credit-card"></i></Link>
                     </div>
                     <div className="col-6">
-                        <Link to="/Laboratorio" className='btn btn-success'><span className='fw-bold'> Técnico </span></Link>
+                        <Link to="/Laboratorio" className='btn btn-success'><i className="fa fa-2x fa-barcode"></i></Link>
                     </div>
                 </div>
                 <div className="row mt-3">
                     <div className="col-6">
-                        <Link to="/Gerencia" className='btn btn-success'><span className='fw-bold'> Gerência </span></Link>
+                        <Link to="/Gerencia" className='btn btn-success'><i className="fa fa-2x fa-bar-chart"></i></Link>
                     </div>
                     <div className="col-6 d-flex justify-content-end">
-                        <Link to="/Usuario" className='btn btn-success'><span className='fw-bold '> Usuário </span></Link>
+                        <Link to="/Usuario" className='btn btn-success'><i className="fa fa-2x fa-address-book"></i></Link>
                     </div>
                 </div>
             </div>
