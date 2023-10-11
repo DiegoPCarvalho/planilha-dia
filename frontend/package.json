@@ -37,6 +37,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.7.4",
     "react-table": "^7.8.0",
+    "react-timer-hook": "^3.0.7",
     "svg-maps": "^1.0.0-beta.1",
     "web-vitals": "^2.1.4"
   },

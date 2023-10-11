@@ -515,7 +515,7 @@ export default class Tabela extends React.Component {
                     <div className='col-3 d-flex justify-content-end align-items-center'>
                         <button className='btn btn-success p-2 d-flex align-items-center'>
                             <i className='fa-2x fa fa-database'></i>
-                            <Link to="/Atividade/TabelaAntiga" style={{ textDecoration: "none", color: "white"}}>
+                            <Link to="/Laboratorio/TabelaAntiga" style={{ textDecoration: "none", color: "white"}}>
                                 <h4><b>Registro Antigo</b></h4>
                             </Link>
                         </button>

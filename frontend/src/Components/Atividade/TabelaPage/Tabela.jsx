@@ -8,7 +8,6 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
-import { Table } from 'react-bootstrap';
 
 const baseUrlEquip = Url("Equipamento");
 const baseUrlCont = Url("Contrato");
@@ -34,6 +33,7 @@ const initialState = {
         Tecnico: localStorage.usuario,
         TempoInicio: '',
         TempoFinal: '',
+        TempoLiquido: '',
         Finalizada: ''
     },
     list: [],
@@ -59,6 +59,12 @@ export default class Tabela extends React.Component {
         this.buscar()
         this.retornoMesAno()
     }
+
+    // componentDidUpdate(){
+    //     setInterval(() => {
+    //         this.retornoTabela()
+    //     },1000)
+    // }
 
     buscar() {
         axios(baseUrlEquip).then(resp => {
@@ -129,6 +135,7 @@ export default class Tabela extends React.Component {
                         Tecnico: tabela[i].Tecnico,
                         Status: tabela[i].Status,
                         Tempo: this.tempo(tabela[i].TempoInicio, tabela[i].TempoFinal),
+                        TempoLiquido: tabela[i].TempoLiquido,
                         Finalizada: tabela[i].Finalizada
                     })
                 }
@@ -460,7 +467,8 @@ export default class Tabela extends React.Component {
                         <th>Cliente</th>
                         <th>Equipamento</th>
                         <th>Modelo</th>
-                        <th>Tempo</th>
+                        <th>Tempo Bruto</th>
+                        <th>Tempo Liquido</th>
                         <th>Serviço</th>
                         <th>Ações</th>
                     </tr>
@@ -489,6 +497,7 @@ export default class Tabela extends React.Component {
                     <td>{Atividade.Equipamento}</td>
                     <td>{Atividade.Modelo}</td>
                     <td>{Atividade.Tempo}</td>
+                    <td>{Atividade.TempoLiquido}</td>
                     <td>{Atividade.Servico}</td>
                     <td className="d-flex justify-content-around">
                         <ModalAtendimento corModal="warning" Ititulo="expand" nome={this.renderI()}
@@ -532,7 +541,7 @@ export default class Tabela extends React.Component {
                     <div className='col-3 d-flex justify-content-end align-items-center'>
                         <button className='btn btn-success p-2 d-flex align-items-center'>
                             <i className='fa-2x fa fa-database'></i>
-                            <Link to="/Atividade/TabelaAntiga" style={{ textDecoration: "none", color: "white" }}>
+                            <Link to="/Laboratorio/TabelaAntiga" style={{ textDecoration: "none", color: "white" }}>
                                 <h4><b>Registro Antigo</b></h4>
                             </Link>
                         </button>

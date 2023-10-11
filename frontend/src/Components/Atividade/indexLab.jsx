@@ -32,10 +32,10 @@ export default class AtividadeCrud extends React.Component {
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between mb-5">
                         <div className="col-6">
-                            <Link to="/Atividade"><img src={Logo} alt="" /></Link>
+                            <Link to="/Laboratorio"><img src={Logo} alt="" /></Link>
                         </div>
                         <div className="col-6 d-flex align-items-center justify-content-end">
-                            <Link to="/PerfilUsuario"><img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
+                            <Link to="/Usuario"><img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" /></Link>
                         </div>
                     </div>
 

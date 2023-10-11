@@ -140,7 +140,7 @@ export default class TabelaRegistroAntigo extends React.Component {
                     <div className='col-2 d-flex justify-content-end align-items-start'>
                         <button className='btn btn-success d-flex align-items-start'>
                             <i className='fa-2x fa fa-table'></i>
-                            <Link to="/Atividade/Tabela" style={{ textDecoration: "none", color: "white" }}>
+                            <Link to="/Laboratorio/Tabela" style={{ textDecoration: "none", color: "white" }}>
                                 <h4><b>Voltar</b></h4>
                             </Link>
                         </button>

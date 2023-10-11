@@ -8,6 +8,7 @@ import $ from 'jquery';
 
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import MyStopwatch from '../Cronometro/index-Cronos';
 
 
 const baseUrl = Url("teste");
@@ -35,6 +36,7 @@ const initialState = {
         Tecnico: localStorage.usuario,
         TempoInicio: '',
         TempoFinal: '',
+        TempoLiquido: '',
         Finalizada: ''
     },
     list: [],
@@ -57,13 +59,13 @@ export default class Formulário extends React.Component {
         localStorage.Alterado = 0;
     }
 
-    componentDidUpdate(){
-        if(localStorage.upDate === "1"){
+    componentDidUpdate() {
+        if (localStorage.upDate === "1") {
             this.buscarlist()
             localStorage.upDate = 0
         }
     }
-    
+
 
     buscarlist() {
         axios(baseUrl).then(resp => {
@@ -91,6 +93,7 @@ export default class Formulário extends React.Component {
                         Status: tabela[i].Status,
                         TempoInicio: tabela[i].TempoInicio,
                         TempoFinal: tabela[i].TempoFinal,
+                        TempoLiquido: tabela[i].TempoLiquido,
                         Finalizada: tabela[i].Finalizada
                     })
                 }
@@ -158,6 +161,7 @@ export default class Formulário extends React.Component {
         let Contrato = document.getElementById("Contrato").value;
         let data = document.getElementById("data").value;
 
+
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
@@ -177,6 +181,7 @@ export default class Formulário extends React.Component {
                     this.save()
                     this.mensagemSalvo()
                     localStorage.UltimaOS = OS
+
                 } else if (localStorage.Alterado === "1") {
 
                     localStorage.Alterado = 0;
@@ -184,15 +189,22 @@ export default class Formulário extends React.Component {
                     this.save()
                     this.mensagemSalvo()
                     localStorage.UltimaOS = OS
-                    
+
+
                 } else if (localStorage.Alterado === "2") {
+                    let diaTemp = document.getElementById(`dia ${this.state.Atividade.id}`).innerText;
+                    let horaTemp = document.getElementById(`hora ${this.state.Atividade.id}`).innerText;
+                    let minutoTemp = document.getElementById(`minuto ${this.state.Atividade.id}`).innerText;
+                    let segundoTemp = document.getElementById(`segundo ${this.state.Atividade.id}`).innerText;
+
                     this.state.Atividade.TempoFinal = dt
                     this.state.Atividade.Finalizada = "Sim"
-                    localStorage.Alterado = 0;
-
+                    this.state.Atividade.TempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
+                    
                     this.save()
                     this.mensagemSalvo()
                     localStorage.UltimaOS = OS
+                    localStorage.Alterado = 0;
                     localStorage.upDate = 1
                 }
 
@@ -218,13 +230,19 @@ export default class Formulário extends React.Component {
                     this.mensagemSalvo()
                     localStorage.UltimaOS = OS
                 } else if (localStorage.Alterado === "2") {
+                    let diaTemp = document.getElementById(`dia ${this.state.Atividade.id}`).innerText;
+                    let horaTemp = document.getElementById(`hora ${this.state.Atividade.id}`).innerText;
+                    let minutoTemp = document.getElementById(`minuto ${this.state.Atividade.id}`).innerText;
+                    let segundoTemp = document.getElementById(`segundo ${this.state.Atividade.id}`).innerText;
+
                     this.state.Atividade.TempoFinal = dt
                     this.state.Atividade.Finalizada = "Sim"
-                    localStorage.Alterado = 0;
-
+                    this.state.Atividade.TempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
+                    
                     this.save()
                     this.mensagemSalvo()
                     localStorage.UltimaOS = OS
+                    localStorage.Alterado = 0;
                     localStorage.upDate = 1
                 }
             }
@@ -445,7 +463,7 @@ export default class Formulário extends React.Component {
                         <th>Cliente</th>
                         <th>Equipamento</th>
                         <th>Modelo</th>
-                        <th>Inicio</th>
+                        <th>Tempo</th>
                         <th>Finalizada</th>
                         <th>Serviço</th>
                         <th>Ações</th>
@@ -470,6 +488,7 @@ export default class Formulário extends React.Component {
     }
 
     renderRows() {
+        let id = 0
         return this.state.list.map(Atividade => {
             return (
                 <tr key={(Atividade.id)}>
@@ -479,11 +498,13 @@ export default class Formulário extends React.Component {
                     <td>{Atividade.Cliente}</td>
                     <td>{Atividade.Equipamento}</td>
                     <td>{Atividade.Modelo}</td>
-                    <td>{this.dataHora(Atividade.TempoInicio)}</td>
+                    <td>
+                        <MyStopwatch dia={`dia ${Atividade.id}`} hora={`hora ${Atividade.id}`} minuto={`minuto ${Atividade.id}`} segundo={`segundo ${Atividade.id}`} />
+                    </td>
                     <td>{Atividade.Finalizada}</td>
                     <td>{Atividade.Servico}</td>
                     <td className="d-flex justify-content-around">
-                        <button className='btn btn-success' onClick={() => this.loadCheck(Atividade)}>
+                        <button className='btn btn-success' onClick={() => this.valid(Atividade)}>
                             <i className="fa fa-check"></i>
                         </button>
                         <button className='btn btn-warning' onClick={() => this.load(Atividade)}>
@@ -504,6 +525,12 @@ export default class Formulário extends React.Component {
     loadCheck(Atividade) {
         localStorage.Alterado = 2
         this.setState({ Atividade })
+    }
+
+    valid(Atividade) {
+        this.loadCheck(Atividade)
+
+        this.verificar()
     }
 
     load(Atividade) {
@@ -537,7 +564,6 @@ export default class Formulário extends React.Component {
         })
 
     }
-
 
     render() {
         return (
