@@ -201,11 +201,11 @@ export default class Formulário extends React.Component {
                     this.state.Atividade.Finalizada = "Sim"
                     this.state.Atividade.TempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
                     
-                    this.save()
-                    this.mensagemSalvo()
+                    localStorage.upDate = 1
                     localStorage.UltimaOS = OS
                     localStorage.Alterado = 0;
-                    localStorage.upDate = 1
+                    this.save()
+                    this.mensagemSalvo()
                 }
 
 
@@ -241,9 +241,9 @@ export default class Formulário extends React.Component {
                     
                     this.save()
                     this.mensagemSalvo()
+                    localStorage.upDate = 1
                     localStorage.UltimaOS = OS
                     localStorage.Alterado = 0;
-                    localStorage.upDate = 1
                 }
             }
         }
@@ -523,14 +523,17 @@ export default class Formulário extends React.Component {
 
 
     loadCheck(Atividade) {
-        localStorage.Alterado = 2
         this.setState({ Atividade })
     }
 
     valid(Atividade) {
         this.loadCheck(Atividade)
+        localStorage.Alterado = 2
 
-        this.verificar()
+        setTimeout(() => {
+            this.verificar()
+            
+        }, 100);
     }
 
     load(Atividade) {
