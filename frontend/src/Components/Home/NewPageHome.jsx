@@ -13,19 +13,25 @@ import { Link } from 'react-router-dom';
 
 import ModalRamal from '../Modal/ModalRamal';
 
+import { BuscarFoto } from '../Dashboard/DashboardModel/Foto/FotoTecnico'
+
 
 const initialState = {
     totalOS: 0,
     totalRegistro: 0,
     totalUsuario: 0,
-    prodTec: [],
+    totalAvulso: 0,
+    totalContrato: 0,
+    servico: [],
+    serieServ: [],
     projAnual: [],
     prodDias: [],
     RamalComercial: [],
     RamalLabo: [],
     RamalADM: [],
     RamalDiretoria: [],
-    RamalGerencia: []
+    RamalGerencia: [],
+    
 }
 
 
@@ -43,18 +49,22 @@ export default class NewPageHome extends React.Component {
         const mes = data.getMonth() + 1
         const ano = data.getFullYear()
 
-        const tabela = await BuscarDados("Todos", "Todos", "Todos", "Todos");
-        const tab2 = await BuscarDados("Todos", "Todos", "Todos", `${ano}`);
-        const tabDia = await BuscarDados("Todos", "Todos", `${mes}`, `${ano}`);
+        const tabela = await BuscarDados(`${localStorage.usuario}`, "Todos", "Todos", `${ano}`);
+        const tabDia = await BuscarDados(`${localStorage.usuario}`, "Todos", `${mes}`, `${ano}`);
 
         const usuario = await PuxarDados("LoginUsuario");
+
+               
 
         return this.setState({
             totalOS: tabela.totalOS,
             totalRegistro: tabela.totalServico,
+            totalAvulso: tabela.avulsoContrato[0].y,
+            totalContrato: tabela.avulsoContrato[1].y,
             totalUsuario: usuario.length,
-            prodTec: tabela.totalTecnico,
-            projAnual: tab2.projecao,
+            servico: tabDia.servico,
+            serieServ: tabDia.servicoSerie,
+            projAnual: tabela.projecao,
             prodDias: tabDia.totalPorDia
         })
     }
@@ -219,24 +229,28 @@ export default class NewPageHome extends React.Component {
     }
 
     render() {
+        console.log()
         return (
             <>
+            
                 <Header icon="home" title="Home" />
-                {/* <NewNav /> */}
                 <nova className="corfundo content container-fluid ">
                     <div className="row mx-2 my-3">
                         <div className="col-6 col-md-9">
                             <div className="row d-flex justify-content-between">
-                                <div className="col-12 col-sm-4 d-flex flex-wrap"><CardHome
-                                    bg="ligth" titulo="Usuários" tipoTexto="text-dark boxShadow"
-                                    icone="users" valor={`Qtd.: ${this.state.totalUsuario}`} corBt="primary"
+                                <div className="col-12 col-sm-1 d-flex flex-wrap">
+                                    <img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" />
+                                </div>
+                                <div className="col-12 col-sm-3 d-flex flex-wrap"><CardHome
+                                    bg="ligth" titulo="Avulsos" tipoTexto="text-dark boxShadow"
+                                    icone="file" valor={`Qtd.: ${this.state.totalAvulso}`} corBt="warning"
                                 /></div>
-                                <div className="col-12 col-sm-4 d-flex flex-wrap"><CardHome
-                                    bg="ligth" titulo="T. de OS's" tipoTexto="text-dark boxShadow"
-                                    icone="file" valor={`Qtd.: ${this.state.totalOS}`} corBt="warning"
+                                <div className="col-12 col-sm-3 d-flex flex-wrap"><CardHome
+                                    bg="ligth" titulo="Contratos" tipoTexto="text-dark boxShadow"
+                                    icone="id-card" valor={`Qtd.: ${this.state.totalContrato}`} corBt="primary"
                                 /></div>
-                                <div className="col-12 col-sm-4 d-flex flex-wrap"><CardHome
-                                    bg="ligth" titulo="T. Registros" tipoTexto="text-dark boxShadow"
+                                <div className="col-12 col-sm-3 d-flex flex-wrap justify-content-end"><CardHome
+                                    bg="ligth" titulo="Serviços" tipoTexto="text-dark boxShadow"
                                     icone="book" valor={`Qtd.: ${this.state.totalRegistro}`} corBt="success"
                                 /></div>
                             </div>
@@ -256,12 +270,13 @@ export default class NewPageHome extends React.Component {
                         </div>
                         <div className="col-6 col-md-3">
                             <div className='boxShadow'>
-                                <Grafico tipo="bar" titulo="Prod. Geral Técnicos"
+                                <Grafico tipo="column" titulo="Servico no Mês"
                                     formate='<span style="color:{point.color}">{point.name}</span> : <b>{point.y:1f}</b> do total<br/>'
                                     texto='{point.y:1f}'
                                     nomeSerie="Serviço"
                                     cor={true}
-                                    dado={this.state.prodTec} />
+                                    dado={this.state.servico}
+                                    serie ={this.state.serieServ} />
                             </div>
                         </div>
                     </div>
