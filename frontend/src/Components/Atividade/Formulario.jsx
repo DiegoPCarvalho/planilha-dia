@@ -36,7 +36,8 @@ const initialState = {
     listServ: [],
     listCont: [],
     ultimaOS: 0,
-    Data: []
+    Data: [],
+    listarCosmos: []
 }
 
 
@@ -46,6 +47,7 @@ export default class Formulário extends React.Component {
 
     UNSAFE_componentWillMount() {
         this.buscar()
+        this.buscarCosmos()
     }
 
 
@@ -74,6 +76,13 @@ export default class Formulário extends React.Component {
     }
 
     clear() {
+        // document.getElementById('OS').value = ''
+        //         document.getElementById('Cliente').value = ''
+        //         document.getElementById('Equipamento').value = ''
+        //         document.getElementById('Modelo').value = ''
+        //         document.getElementById('NS').value = ''
+        //         document.getElementById('Contrato').value = ''
+        //         document.getElementById('Servico').value = ''
         this.setState({ Atividade: initialState.Atividade })
     }
 
@@ -97,6 +106,7 @@ export default class Formulário extends React.Component {
         let Servico = document.getElementById("Servico").value;
         let Contrato = document.getElementById("Contrato").value;
         let data = document.getElementById("data").value;
+        // let ns = document.getElementById("NS").value;
 
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
@@ -104,12 +114,29 @@ export default class Formulário extends React.Component {
             if (data.length === 0) {
 
                 const dt = new Date()
-                
+
 
                 this.state.Atividade.Data = dt
                 this.state.Atividade.Dia = dt.getDate()
                 this.state.Atividade.Mes = dt.getMonth() + 1
                 this.state.Atividade.Ano = dt.getFullYear()
+                // this.state.Atividade.OS = OS
+                // this.state.Atividade.Cliente = Cliente
+                // this.state.Atividade.Servico = Servico
+                // this.state.Atividade.Equipamento = Equipamento
+                // this.state.Atividade.Modelo = Modelo
+                // this.state.Atividade.Contrato = Contrato
+                // this.state.Atividade.NS = ns
+
+                
+
+                // document.getElementById('OS').value = ''
+                // document.getElementById('Cliente').value = ''
+                // document.getElementById('Equipamento').value = ''
+                // document.getElementById('Modelo').value = ''
+                // document.getElementById('NS').value = ''
+                // document.getElementById('Contrato').value = ''
+                // document.getElementById('Servico').value = ''
 
                 this.save()
                 this.mensagemSalvo()
@@ -121,6 +148,22 @@ export default class Formulário extends React.Component {
                 this.state.Atividade.Dia = dt.getDate()
                 this.state.Atividade.Mes = dt.getMonth() + 1
                 this.state.Atividade.Ano = dt.getFullYear()
+                // this.state.Atividade.OS = OS
+                // this.state.Atividade.Cliente = Cliente
+                // this.state.Atividade.Servico = Servico
+                // this.state.Atividade.Equipamento = Equipamento
+                // this.state.Atividade.Modelo = Modelo
+                // this.state.Atividade.Contrato = Contrato
+                // this.state.Atividade.NS = ns
+
+
+                // document.getElementById('OS').value = ''
+                // document.getElementById('Cliente').value = ''
+                // document.getElementById('Equipamento').value = ''
+                // document.getElementById('Modelo').value = ''
+                // document.getElementById('NS').value = ''
+                // document.getElementById('Contrato').value = ''
+                // document.getElementById('Servico').value = ''
 
                 this.save()
                 this.mensagemSalvo()
@@ -143,7 +186,7 @@ export default class Formulário extends React.Component {
                                     name="Data" id="data"
                                     value={this.state.Atividade.Data}
                                     onChange={e => this.updateField(e)}
-                                    
+
                                 />
                             </div>
                         </div>
@@ -153,7 +196,7 @@ export default class Formulário extends React.Component {
                                 <input type="text" className="form-control"
                                     name="OS" id="OS"
                                     value={this.state.Atividade.OS}
-                                    onChange={e => this.updateField(e)}
+                                    onChange={(e) => this.updateField(e)}
                                     placeholder="Digite a OS..."
                                     required />
                             </div>
@@ -196,7 +239,7 @@ export default class Formulário extends React.Component {
                             <div className="form-group">
                                 <label className='fw-bold'>Número de Serie</label>
                                 <input type="text" className="form-control"
-                                    name="NS"
+                                    name="NS" id="NS"
                                     value={this.state.Atividade.NS}
                                     onChange={e => this.updateField(e)}
                                     placeholder="Digite o Numero de Serie..." />
@@ -277,7 +320,7 @@ export default class Formulário extends React.Component {
                             <div className="form-group">
                                 <label className='fw-bold'>Observação: </label>
                                 <textarea className="form-control"
-                                    name="Observacao" rows="5"
+                                    name="Observacao" rows="5" id="Observacao"
                                     value={this.state.Atividade.Observacao}
                                     onChange={e => this.updateField(e)}
                                     placeholder="Digite a Sua Observação..." />
@@ -305,6 +348,48 @@ export default class Formulário extends React.Component {
                 </div>
             </form>
         )
+    }
+
+    funcaoTeste() {
+        const osid = document.getElementById('OS').value;
+
+        if (osid.length >= 5) {
+            let dado = []
+            const tab = this.state.listarCosmos
+
+            for (let i = 0; i < tab.length; i++) {
+                if (osid == tab[i].OS) {
+                    dado.push({
+                        user: tab[i].Cliente,
+                        serv: tab[i].Servico,
+                        equip: tab[i].Equipamento,
+                        mod: tab[i].Modelo,
+                        tip: tab[i].TipoOS,
+                        serial: tab[i].NS
+                    })
+                }
+            }
+
+
+            if (osid.length >= 5) {
+                document.getElementById('Cliente').value = dado[0].user
+                document.getElementById('Equipamento').value = dado[0].equip
+                document.getElementById('Modelo').value = dado[0].mod
+                document.getElementById('NS').value = dado[0].serial
+                document.getElementById('Contrato').value = dado[0].tip
+                document.getElementById('Servico').value = dado[0].serv
+            }
+        }
+
+
+
+    }
+
+    buscarCosmos() {
+        const url = "http://localhost:3001/"
+        axios(url).then(resp => {
+            this.setState({ listarCosmos: resp.data })
+        })
     }
 
     renderEquip() {
