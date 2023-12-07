@@ -332,6 +332,11 @@ export default class Formulário extends React.Component {
                             <div class="alert-box success">Salvo com Sucesso!!!</div>
                         </div>
                         <div className="col-12 col-md-6 d-flex justify-content-end">
+                        <button className=" mx-2"
+                                onClick={e => this.funcaoTeste(e)}
+                            >
+                                teste
+                            </button>
                             <button className="btn btn-primary mx-2"
                                 onClick={e => this.verificar(e)}
                             >
@@ -351,36 +356,42 @@ export default class Formulário extends React.Component {
     }
 
     funcaoTeste() {
-        const osid = document.getElementById('OS').value;
+        // const osid = document.getElementById('OS').value;
 
-        if (osid.length >= 5) {
-            let dado = []
-            const tab = this.state.listarCosmos
+        // if (osid.length >= 5) {
+        //     let dado = []
+        //     const tab = this.state.listarCosmos
 
-            for (let i = 0; i < tab.length; i++) {
-                if (osid == tab[i].OS) {
-                    dado.push({
-                        user: tab[i].Cliente,
-                        serv: tab[i].Servico,
-                        equip: tab[i].Equipamento,
-                        mod: tab[i].Modelo,
-                        tip: tab[i].TipoOS,
-                        serial: tab[i].NS
-                    })
-                }
-            }
+        //     for (let i = 0; i < tab.length; i++) {
+        //         if (osid == tab[i].OS) {
+        //             dado.push({
+        //                 user: tab[i].Cliente,
+        //                 serv: tab[i].Servico,
+        //                 equip: tab[i].Equipamento,
+        //                 mod: tab[i].Modelo,
+        //                 tip: tab[i].TipoOS,
+        //                 serial: tab[i].NS
+        //             })
+        //         }
+        //     }
 
 
-            if (osid.length >= 5) {
-                document.getElementById('Cliente').value = dado[0].user
-                document.getElementById('Equipamento').value = dado[0].equip
-                document.getElementById('Modelo').value = dado[0].mod
-                document.getElementById('NS').value = dado[0].serial
-                document.getElementById('Contrato').value = dado[0].tip
-                document.getElementById('Servico').value = dado[0].serv
-            }
-        }
+        //     if (osid.length >= 5) {
+        //         document.getElementById('Cliente').value = dado[0].user
+        //         document.getElementById('Equipamento').value = dado[0].equip
+        //         document.getElementById('Modelo').value = dado[0].mod
+        //         document.getElementById('NS').value = dado[0].serial
+        //         document.getElementById('Contrato').value = dado[0].tip
+        //         document.getElementById('Servico').value = dado[0].serv
+        //     }
+        // }
+            //     const nova = {
+            //         Cliente: 'inserido'
+            //     }
 
+            // return this.setState({
+            //     Atividade: nova
+            // })
 
 
     }
