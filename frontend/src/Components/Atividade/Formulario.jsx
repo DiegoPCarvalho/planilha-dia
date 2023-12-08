@@ -6,11 +6,12 @@ import CardForm from '../Card/CardForm';
 
 import $ from 'jquery';
 
-const banco = "Geral";
-const baseUrl = Url(banco);
+
+const baseUrl = Url("Geral");
 const baseUrlEquip = Url("Equipamento");
 const baseUrlCont = Url("Contrato");
 const baseUrlServ = Url("Servico");
+const baseUrlBanco = Url("Banco");
 
 const initialState = {
     Atividade: {
@@ -37,7 +38,8 @@ const initialState = {
     listCont: [],
     ultimaOS: 0,
     Data: [],
-    listarCosmos: []
+    listarCosmos: [],
+    listarBanco:[]
 }
 
 
@@ -47,7 +49,6 @@ export default class Formulário extends React.Component {
 
     UNSAFE_componentWillMount() {
         this.buscar()
-        this.buscarCosmos()
     }
 
 
@@ -73,6 +74,14 @@ export default class Formulário extends React.Component {
         axios(baseUrlCont).then(resp => {
             this.setState({ listCont: resp.data })
         })
+
+        axios(baseUrlBanco).then(resp => {
+            this.setState({ listarBanco: resp.data })
+        })
+
+        setTimeout(() => {
+            this.buscarCosmos()
+        }, 1000)
     }
 
     clear() {
@@ -128,7 +137,7 @@ export default class Formulário extends React.Component {
                 // this.state.Atividade.Contrato = Contrato
                 // this.state.Atividade.NS = ns
 
-                
+
 
                 // document.getElementById('OS').value = ''
                 // document.getElementById('Cliente').value = ''
@@ -197,6 +206,7 @@ export default class Formulário extends React.Component {
                                     name="OS" id="OS"
                                     value={this.state.Atividade.OS}
                                     onChange={(e) => this.updateField(e)}
+                                    onKeyDown={(e) => this.funcaoTeste(e)}
                                     placeholder="Digite a OS..."
                                     required />
                             </div>
@@ -332,11 +342,7 @@ export default class Formulário extends React.Component {
                             <div class="alert-box success">Salvo com Sucesso!!!</div>
                         </div>
                         <div className="col-12 col-md-6 d-flex justify-content-end">
-                        <button className=" mx-2"
-                                onClick={e => this.funcaoTeste(e)}
-                            >
-                                teste
-                            </button>
+                        
                             <button className="btn btn-primary mx-2"
                                 onClick={e => this.verificar(e)}
                             >
@@ -355,49 +361,71 @@ export default class Formulário extends React.Component {
         )
     }
 
-    funcaoTeste() {
-        // const osid = document.getElementById('OS').value;
+  
+      funcaoTeste() {
+        const os = this.state.Atividade.OS
 
-        // if (osid.length >= 5) {
-        //     let dado = []
-        //     const tab = this.state.listarCosmos
+        if (os.length >= 5) {
+            let dado = []
+            const tab = this.state.listarCosmos
 
-        //     for (let i = 0; i < tab.length; i++) {
-        //         if (osid == tab[i].OS) {
-        //             dado.push({
-        //                 user: tab[i].Cliente,
-        //                 serv: tab[i].Servico,
-        //                 equip: tab[i].Equipamento,
-        //                 mod: tab[i].Modelo,
-        //                 tip: tab[i].TipoOS,
-        //                 serial: tab[i].NS
-        //             })
-        //         }
-        //     }
+            for (let i = 0; i < tab.length; i++) {
+                if (os == tab[i].OS) {
+                    dado.push({
+                        user: tab[i].Cliente,
+                        serv: tab[i].Servico,
+                        equip: tab[i].Equipamento,
+                        mod: tab[i].Modelo,
+                        tip: tab[i].TipoOS,
+                        serial: tab[i].NS
+                    })
+                }
+            }
 
 
-        //     if (osid.length >= 5) {
-        //         document.getElementById('Cliente').value = dado[0].user
-        //         document.getElementById('Equipamento').value = dado[0].equip
-        //         document.getElementById('Modelo').value = dado[0].mod
-        //         document.getElementById('NS').value = dado[0].serial
-        //         document.getElementById('Contrato').value = dado[0].tip
-        //         document.getElementById('Servico').value = dado[0].serv
-        //     }
+            if (os.length >= 5) {
+                const novaAtividade = {
+                    Data: '',
+                    Dia: '',
+                    Mes: '',
+                    Ano: '',
+                    OS: os,
+                    Cliente: dado[0].user,
+                    Equipamento: dado[0].equip,
+                    Modelo: dado[0].mod,
+                    NS: dado[0].serial,
+                    Servico: dado[0].serv,
+                    Placa: '',
+                    Classificacao: '',
+                    Contrato: dado[0].tip,
+                    Observacao: '',
+                    Status: '',
+                    Tecnico: localStorage.usuario
+                }
+                return this.setState({
+                    Atividade: novaAtividade
+                })
+            }
+        }
+        
+
+
+        // if (os.length >= 5) {
+        //     console.log(os)
         // }
-            //     const nova = {
-            //         Cliente: 'inserido'
-            //     }
-
-            // return this.setState({
-            //     Atividade: nova
-            // })
-
-
     }
 
     buscarCosmos() {
-        const url = "http://localhost:3001/"
+       
+        let dado = []
+        let bcl = this.state.listarBanco
+
+        for(let i = 0; i < bcl.length; i++){
+            dado.push(bcl[i].nome)
+        }
+
+        const url = `http://${dado[0]}`
+        
         axios(url).then(resp => {
             this.setState({ listarCosmos: resp.data })
         })

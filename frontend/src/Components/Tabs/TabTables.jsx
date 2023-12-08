@@ -7,6 +7,7 @@ import Equipamentos from '../Admin/Equipamento';
 import Servico from '../Admin/Servico';
 import Contrato from '../Admin/Contrato';
 import Departamento from '../Admin/Departamento';
+import Banco from '../Admin/Banco';
 
 function TabAdmin(props) {
   return (
@@ -32,6 +33,9 @@ function TabAdmin(props) {
       </Tab>
       <Tab eventKey="Departamento" title="Departamento">
         <Departamento />
+      </Tab>
+      <Tab eventKey="Banco" title="Banco">
+        <Banco />
       </Tab>
     </Tabs>
   );

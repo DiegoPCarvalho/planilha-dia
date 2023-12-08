@@ -29,7 +29,7 @@ export default class TabelaGeral extends React.Component {
                         'csv', 'excel', 'print'
                     ]
                 });
-            }, 1000)
+            }, 10000)
         });
 
     }
