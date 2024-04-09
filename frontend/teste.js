@@ -2,44 +2,76 @@ const axios = require('axios')
 const app = require('express')()
 const cors = require('cors')
 
+
 app.use(cors())
 
+
 app.get('/', async (req, res) => {
-    const tabela = await axios(bancoApi(1)).then(resp => resp.data)
-    const tabela2 = await axios(bancoApi(2)).then(resp => resp.data)
-    const tabela3 = await axios(bancoApi(3)).then(resp => resp.data)
-    const tabela4 = await axios(bancoApi(4)).then(resp => resp.data)
-    const tabela5 = await axios(bancoApi(5)).then(resp => resp.data)
-    const tabela6 = await axios(bancoApi(8)).then(resp => resp.data)
-    const tabela7 = await axios(bancoApi(9)).then(resp => resp.data)
-    const tabela8 = await axios(bancoApi(11)).then(resp => resp.data)
-    const tabela9 = await axios(bancoApi(13)).then(resp => resp.data)
-    const tabela10 = await axios(bancoApi(16)).then(resp => resp.data)
-    const tabela11 = await axios(bancoApi(17)).then(resp => resp.data)
-    const tabela12 = await axios(bancoApi(25)).then(resp => resp.data)
-    const tabela13 = await axios(bancoApi(30)).then(resp => resp.data)
 
-    const tabelaGeral = [...tabela, ...tabela2, ...tabela3,
-    ...tabela4, ...tabela5, ...tabela6, ...tabela7, ...tabela8, 
-    ...tabela9,...tabela10, ...tabela11, ...tabela12,...tabela13]
-
+    const tabelaGeral = await buscarDados()
 
     let dado = []
 
-    for (let i = 0; i < tabelaGeral.length; i++) {
+    tabelaGeral.map(tabelaGeral => {
         dado.push({
-            OS: tabelaGeral[i].OSID,
-            Cliente: tabelaGeral[i].PessoaFantasia,
-            Servico: servico(tabelaGeral[i].EstagioDescricao, tabelaGeral[i].DescricaoTipoOS),
-            Equipamento: equipamento(tabelaGeral[i].NomeEquipamento),
-            Modelo: tabelaGeral[i].NomeEquipamento,
-            TipoOS: contrato(tabelaGeral[i].DescricaoTipoOS),
-            NS: tabelaGeral[i].EquipamentoLTS
+            OS: tabelaGeral.OSID,
+            Cliente: tabelaGeral.PessoaFantasia,
+            Servico: servico(tabelaGeral.EstagioDescricao, tabelaGeral.DescricaoTipoOS),
+            Equipamento: equipamento(tabelaGeral.NomeEquipamento),
+            Modelo: tabelaGeral.NomeEquipamento,
+            TipoOS: contrato(tabelaGeral.DescricaoTipoOS),
+            NS: tabelaGeral.EquipamentoLTS
         })
-    }
+    })
 
     res.json(dado)
 })
+
+
+app.get('/suporteAvulso', async (req, res) => {
+    
+    const tabelaGeral = await axios(bancoApi(2)).then(resp => resp.data)
+
+    let dadoSuporteAvulso = []
+
+    tabelaGeral.map(tabelaGeral => {
+        dadoSuporteAvulso.push({
+            Data: tabelaGeral.OSData,
+            OS: tabelaGeral.OSID,
+            Servico: tabelaGeral.DescricaoTipoOS,
+            Equipamento: tabelaGeral.NomeEquipamento,
+            NS: tabelaGeral.EquipamentoLTS,
+            AgenteComercial: tabelaGeral.AgenteNegNome,
+            ObservacaoEquip: tabelaGeral.ObservacaoEquip            
+        })
+    })
+
+    res.json(dadoSuporteAvulso)
+
+})
+
+app.get('/suporteContrato', async (req, res) => {
+    
+    const tabelaGeral = await axios(bancoApi(25)).then(resp => resp.data)
+
+    let dadoSuporteAvulso = []
+
+    tabelaGeral.map(tabelaGeral => {
+        dadoSuporteAvulso.push({
+            Data: tabelaGeral.OSData,
+            OS: tabelaGeral.OSID,
+            Servico: tabelaGeral.DescricaoTipoOS,
+            Equipamento: tabelaGeral.NomeEquipamento,
+            NS: tabelaGeral.EquipamentoLTS,
+            AgenteComercial: tabelaGeral.AgenteNegNome,
+            ObservacaoEquip: tabelaGeral.ObservacaoEquip            
+        })
+    })
+
+    res.json(dadoSuporteAvulso)
+
+})
+
 
 
 app.listen(3001, (e) => {
@@ -50,6 +82,35 @@ app.listen(3001, (e) => {
         console.log("Erro: " + err)
     }
 })
+
+
+//#region logica formulario
+
+async function buscarDados() {
+    const tabela = await axios(bancoApi(1)).then(resp => resp.data)
+    const tabela2 = await axios(bancoApi(2)).then(resp => resp.data)
+    const tabela3 = await axios(bancoApi(3)).then(resp => resp.data)
+    const tabela4 = await axios(bancoApi(4)).then(resp => resp.data)
+    const tabela5 = await axios(bancoApi(5)).then(resp => resp.data)
+    const tabela6 = await axios(bancoApi(6)).then(resp => resp.data)
+    const tabela7 = await axios(bancoApi(7)).then(resp => resp.data)
+    const tabela8 = await axios(bancoApi(8)).then(resp => resp.data)
+    const tabela9 = await axios(bancoApi(9)).then(resp => resp.data)
+    const tabela10 = await axios(bancoApi(10)).then(resp => resp.data)
+    const tabela11 = await axios(bancoApi(11)).then(resp => resp.data)
+    const tabela12 = await axios(bancoApi(12)).then(resp => resp.data)
+    const tabela13 = await axios(bancoApi(13)).then(resp => resp.data)
+    const tabela16 = await axios(bancoApi(16)).then(resp => resp.data)
+    const tabela17 = await axios(bancoApi(17)).then(resp => resp.data)
+    const tabela25 = await axios(bancoApi(25)).then(resp => resp.data)
+    const tabela30 = await axios(bancoApi(30)).then(resp => resp.data)
+    const tabelaGeral = [...tabela, ...tabela2, ...tabela3,
+    ...tabela4, ...tabela5, ...tabela6, ...tabela7, ...tabela8,
+    ...tabela9, ...tabela10, ...tabela11, ...tabela12, ...tabela13,
+    ...tabela16, ...tabela17, ...tabela25, ...tabela25, ...tabela30]
+
+    return tabelaGeral
+}
 
 
 function bancoApi(estagio) {
@@ -64,18 +125,18 @@ function servico(serv, tipo) {
         return "Manutenção Concluída"
     } else if (serv === "Reprovado (Aguardando Liberacao)" && (tipo.match(/CONTRATO/) || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES")) {
         return "Revisão de Reprovado"
-    } else if ((serv === "Aguardando Vistoria" || serv === "Em Manutencao / Atendimento" || serv === "Manutencao Concluida / Limpeza") && (tipo.match(/CONTRATO/) || tipo === "MANUTENCAO (ON-SITE)" || tipo === "C&A - (ON-SITE)")) {
+    } else if ((serv === "Aguardando Vistoria" || serv === "Em Manutencao / Atendimento" || serv === "Manutencao Concluida / Limpeza") && (tipo === "MANUTENCAO (ON-SITE)" || tipo === "C&A - (ON-SITE)")) {
         return "Chamado On-Site"
     } else if ((serv === "Abertura Suporte" || serv === "Em Atendimento - SR" || serv === "Vistoriado") && (tipo.match(/CONTRATO/) || tipo === "SUPORTE REMOTO" || tipo === "SUPORTE REMOTO - AMERICANAS")) {
         return "Suporte Remoto"
-    } else {
-        return serv
+    } else if ((serv === "Expedicao e Faturamento") && (tipo.match(/CONTRATO/) || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES" || tipo === "SUPORTE REMOTO" || tipo === "SUPORTE REMOTO - AMERICANAS" || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES")) {
+        return "Limpeza"
     }
 }
 
 function equipamento(equip) {
 
-    if(equip){
+    if (equip) {
         if (equip.match(/COLETOR DE/)) {
             return "Coletor de Dados"
         } else if (equip.match(/TERMINAL DE CONSULTA/)) {
@@ -113,7 +174,7 @@ function equipamento(equip) {
         } else {
             return equip
         }
-    }else {
+    } else {
         return
     }
 }
@@ -143,3 +204,4 @@ function contrato(cont) {
         return "Avulso"
     }
 }
+//#endregion
