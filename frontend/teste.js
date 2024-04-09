@@ -102,12 +102,13 @@ async function buscarDados() {
     const tabela13 = await axios(bancoApi(13)).then(resp => resp.data)
     const tabela16 = await axios(bancoApi(16)).then(resp => resp.data)
     const tabela17 = await axios(bancoApi(17)).then(resp => resp.data)
+    const tabela21 = await axios(bancoApi(21)).then(resp => resp.data)
     const tabela25 = await axios(bancoApi(25)).then(resp => resp.data)
     const tabela30 = await axios(bancoApi(30)).then(resp => resp.data)
     const tabelaGeral = [...tabela, ...tabela2, ...tabela3,
     ...tabela4, ...tabela5, ...tabela6, ...tabela7, ...tabela8,
     ...tabela9, ...tabela10, ...tabela11, ...tabela12, ...tabela13,
-    ...tabela16, ...tabela17, ...tabela25, ...tabela25, ...tabela30]
+    ...tabela16, ...tabela17, ...tabela21, ...tabela25, ...tabela30]
 
     return tabelaGeral
 }
