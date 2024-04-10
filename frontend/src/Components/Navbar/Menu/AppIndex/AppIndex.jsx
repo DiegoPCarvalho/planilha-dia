@@ -94,17 +94,18 @@ function validarIcon(valor) {
   else if (valor === 'Laboratorio') { return 'barcode' }
   else if (valor === 'Contratos') { return 'file-pdf' }
   else if (valor === 'Usuario') { return 'address-book' }
+  else if (valor === 'Painel Suporte') { return 'phone-square' }
   else { return 'copy' }
 }
 
 function validarAdm() {
-  if (localStorage.AdmGeral === "1") { return ['Diretoria', 'Gerencia', 'Laboratorio', 'Contratos', 'Usuario'] }
-  else if (localStorage.AdmDiretoria === "1") { return ["Diretoria", "Usuario"] }
+  if (localStorage.AdmGeral === "1") { return ['Diretoria', 'Gerencia', 'Laboratorio', 'Contratos', 'Usuario', 'Painel Suporte'] }
+  else if (localStorage.AdmDiretoria === "1") { return ["Diretoria", "Usuario", 'Painel Suporte'] }
     else if (localStorage.AdmGerencia === "1") {
       if (localStorage.AdmLaboratorio === "1") {
-        return ["Gerencia", "Laboratorio", "Usuario"]
+        return ["Gerencia", "Laboratorio", "Usuario", 'Painel Suporte']
       } else {
-        return ["Gerencia", "Usuario"]
+        return ["Gerencia", "Usuario", 'Painel Suporte']
       }
     }
     else if (localStorage.AdmLaboratorio === "1") { return ["Laboratorio", "Usuario"] }

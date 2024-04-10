@@ -73,7 +73,10 @@ import SolicitarSeto from "../Components/Setores/Compras/Setores/SolicitacoesSet
 import Solicitar from '../Components/Setores/Solicitar/Solicitar';
 import FinalizadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
 
-import MenuIndexHam from '../Components/Navbar/Menu/Index';
+//suporte
+import PainelSuporte from '../Components/PainelSuporte/Index';
+import Avulso from '../Components/PainelSuporte/Avulso/Avulso';
+import Contrato from '../Components/PainelSuporte/Contrato/Contrato';
 
 
 export default function Rotas() {
@@ -178,6 +181,12 @@ export default function Rotas() {
             </Route>
             <Route path="/Usuario" element={<Home />}>
                 <Route index element={<Perfil />} />
+            </Route>
+            <Route element={<Home />}>
+                <Route path="/Painel%20Suporte" element={<PainelSuporte />}>
+                    <Route path="Avulso" element={<Avulso />} />
+                    <Route path="Contrato" element={<Contrato />} />
+                </Route>
             </Route>
             <Route path="/EmBreve" element={<Home />}>
                 <Route index element={<EmBreve />} />
