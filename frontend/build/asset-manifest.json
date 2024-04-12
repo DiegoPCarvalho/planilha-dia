@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7567380a.css",
-    "main.js": "/static/js/main.55756436.js",
+    "main.js": "/static/js/main.067b77a6.js",
     "static/media/telaFundoLogin.gif": "/static/media/telaFundoLogin.10c13698f9cffc876832.gif",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/VINICIUS GOMES .png": "/static/media/VINICIUS GOMES .1c50568ff13119b31be8.png",
@@ -14,15 +14,16 @@
     "static/media/MATEUS DOVAL.png": "/static/media/MATEUS DOVAL.8712c83618284eac451f.png",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/tabSup.gif": "/static/media/tabSup.36361ef6b299910a1a79.gif",
     "static/media/NATANAEL MILTON.png": "/static/media/NATANAEL MILTON.9519e4a90fb7f3a1abd7.png",
     "static/media/logo.png": "/static/media/logo.f38c25782706b4691aa2.png",
     "static/media/logoZhaz.png": "/static/media/logoZhaz.f38c25782706b4691aa2.png",
     "index.html": "/index.html",
     "main.7567380a.css.map": "/static/css/main.7567380a.css.map",
-    "main.55756436.js.map": "/static/js/main.55756436.js.map"
+    "main.067b77a6.js.map": "/static/js/main.067b77a6.js.map"
   },
   "entrypoints": [
     "static/css/main.7567380a.css",
-    "static/js/main.55756436.js"
+    "static/js/main.067b77a6.js"
   ]
 }

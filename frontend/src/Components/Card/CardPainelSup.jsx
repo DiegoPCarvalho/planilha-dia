@@ -6,10 +6,10 @@ function CardSuporte(props) {
       <Card.Body>
         <Card.Text>
           <div className='row'>
-            <div className='col-4 fw-bold'><span className='bg-dark text-white p-1 rounded'>OS:</span> <span style={{ marginLeft: 1 }} className='p-1 bg-success rounded text-white'>{props.OS}</span></div>
-            <div className='col-5 fw-bold'><span className='bg-dark text-white p-1 rounded'>DATA:</span> <span style={{ marginLeft: 1 }} className='p-1 bg-success rounded text-white'>{props.Data}</span></div>
+            <div className='col-4 fw-bold'><span className='bg-dark text-white p-1 rounded'>OS:</span> <span style={{ marginLeft: 1 }} className={props.contrato ? `${props.className}` : 'p-1 bg-success rounded text-white'}>{props.OS}</span></div>
+            <div className='col-5 fw-bold'><span className='bg-dark text-white p-1 rounded'>DATA:</span> <span style={{ marginLeft: 1 }} className={props.contrato ? `${props.className}` : 'p-1 bg-success rounded text-white'}>{props.Data}</span></div>
             {props.contrato ? (
-              <div className='col-3 fw-bold'><span className='bg-dark text-white p-1 rounded'>SLA:</span> <span style={{ marginLeft: 1 }} className='p-1 bg-success rounded text-white'>{props.Sla}</span></div>
+              <div className='col-3 fw-bold'><span className='bg-dark text-white p-1 rounded'>SLA:</span> <span style={{ marginLeft: 1 }} className={props.contrato ? `${props.className}` : 'p-1 bg-success rounded text-white'}>{props.Sla}</span></div>
             ) : false}
 
           </div>
@@ -17,6 +17,11 @@ function CardSuporte(props) {
         <Card.Text>
           <div className="row">
             <div className='fw-bold'><span className='bg-dark text-white p-1 rounded'>EQUIPAMENTO:</span> <span>{props.Equipamento}</span></div>
+          </div>
+        </Card.Text>
+        <Card.Text>
+          <div className="row">
+            <div className='fw-bold'><span className='bg-dark text-white p-1 rounded'>CLIENTE:</span> <span>{props.Cliente}</span></div>
           </div>
         </Card.Text>
         <Card.Text>

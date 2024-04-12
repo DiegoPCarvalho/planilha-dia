@@ -115,6 +115,7 @@ export default class Avulso extends React.Component {
                     <td key={i} className="flex-fill d-flex justify-content-center">
                         <CardSuporte OS={equipamento.OS} Data={this.formatarData(equipamento.Data)} 
                                 Equipamento={equipamento.Equipamento} NS={equipamento.NS}
+                                Cliente={equipamento.Cliente}
                                 Agente={equipamento.AgenteComercial} Obs={equipamento.ObservacaoEquip}
                             />
                         
