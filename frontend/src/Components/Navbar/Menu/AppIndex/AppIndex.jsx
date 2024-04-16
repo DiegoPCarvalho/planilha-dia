@@ -108,6 +108,6 @@ function validarAdm() {
         return ["Gerencia", "Usuario", 'Painel Suporte']
       }
     }
-    else if (localStorage.AdmLaboratorio === "1") { return ["Laboratorio", "Usuario"] }
+    else if (localStorage.AdmLaboratorio === "1") { return ["Laboratorio", "Usuario",'Painel Suporte'] }
 }
 
