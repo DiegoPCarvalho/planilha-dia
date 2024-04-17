@@ -72,7 +72,7 @@ export default class IndexDash extends React.Component {
                     <div className="col-1"><FotoTecnico Tecnico={this.state.Simagem} /></div>
                     <div className="col-1  d-flex align-items-center flex-column justify-content-center">
                         <div className="row my-1"> <ProdDia dadosDia={this.state.SprodDiaria} /> </div>
-                        <div className="row my-1"> <Meta total={this.state.StotalServico} meta={this.state.Smeta} /></div>
+                        {/* <div className="row my-1"> <Meta total={this.state.StotalServico} meta={this.state.Smeta} /></div> */}
                     </div>
                     <ServOsLimp
                         TotalOS={this.state.StotalOS}

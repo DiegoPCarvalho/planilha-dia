@@ -13,7 +13,7 @@ import Url from '../Url/Url';
 
 import CardUser from '../Card/CardUser';
 
-import Modal from '../Modal/Modal.Atividade';
+import ModalUsuario from '../Modal/ModalUsuario';
 
 
 const banco = "LoginUsuario";
@@ -41,7 +41,8 @@ const initialState = {
         AdmLider: 0
     },
     userLocal: [],
-    list: []
+    list: [],
+    modal: false
 }
 
 const headerProps = {
@@ -55,6 +56,10 @@ export default class PageAdmin extends React.Component {
 
     componentWillMount() {
         this.consultarBanco()
+        this.consultaBancoUsuario()
+    }
+
+    componentDidUpdate(){
         this.consultaBancoUsuario()
     }
 
@@ -370,7 +375,7 @@ export default class PageAdmin extends React.Component {
 
 
     clear() {
-        this.setState({ usuario: initialState.usuario })
+        this.setState({ usuario: initialState.usuario, modal: false })
     }
 
 
@@ -410,22 +415,12 @@ export default class PageAdmin extends React.Component {
         axios[method](url, usuario)
             .then(resp => {
                 // const list = this.getUpdateList(resp.data)
-                this.setState({ usuario: initialState.usuario})
-                window.location.pathname = '/PerfilUsuario';
+                this.setState({ usuario: initialState.usuario, modal: false})
             })
     }
 
     load(usuario) {
-        this.setState({ usuario })
-    }
-
-
-    renderButtonPencil(usuario) {
-        return (
-            <button className="btn btn-warning" onClick={() => this.load(usuario)}>
-                <i className="fa fa-pencil"></i>
-            </button>
-        )
+        this.setState({ usuario, modal: true })
     }
 
 
@@ -448,8 +443,17 @@ export default class PageAdmin extends React.Component {
                     <CardUser nomeUsuario={usuario.nomeCompleto}
                         email={usuario.email}
                         departamento={usuario.departamento}
-                        alterar={<Modal corModal="warning" Ititulo="expand" nome="Alterar Usuario"
-                            relatorio={this.formularioUser()} load={this.renderButtonPencil(usuario)} />}
+                        alterar={
+                        <>
+                        <ModalUsuario corModal="warning" Ititulo="expand" nomeBotao="Usuario"
+                            Relatorio={this.formularioUser()} isShow={this.state.modal}
+                            close={() => this.setState({modal: false})}/>
+                            <button className="btn btn-warning mx-2"
+                            onClick={() => this.load(usuario)}>
+                            <i className="fa fa-pencil"></i>
+                            </button>
+                        </>
+                        }
                     />
                 </div>
             )
@@ -466,7 +470,7 @@ export default class PageAdmin extends React.Component {
 
     formularioUser() {
         return (
-            <form class="row g-3">
+            <form className="row" action="javascript:myFunction(); return false;">
                 <div className="row mt-2">
                  <div className="row mb-3">
                      <div className="col-12">
@@ -557,7 +561,7 @@ export default class PageAdmin extends React.Component {
                                         <option>Expedição</option>
                                         <option>Logística</option>
                                         <option>Recepção</option>
-                                        <option>Laborátorio</option>
+                                        <option>Laboratório</option>
                                         <option>Comercial</option>
                                     </select>
                                 </div>

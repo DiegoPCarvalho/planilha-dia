@@ -37,7 +37,8 @@ const initialState = {
     listServ: [],
     listCont: [],
     ano: 0,
-    mes: 0
+    mes: 0,
+    mostrarModal: false
 }
 
 
@@ -109,25 +110,28 @@ export default class Tabela extends React.Component {
 
         for (let i = 0; i < tabelaNome.length; i++) {
             if ((localStorage.usuario === tabelaNome[i].Tecnico) && (this.state.ano === tabelaNome[i].Ano) && (this.state.mes === tabelaNome[i].Mes)) {
-                dadoNome.push({
-                    id: tabelaNome[i].id,
-                    Data: tabelaNome[i].Data,
-                    Dia: tabelaNome[i].Dia,
-                    Mes: tabelaNome[i].Mes,
-                    Ano: tabelaNome[i].Ano,
-                    OS: tabelaNome[i].OS,
-                    Cliente: tabelaNome[i].Cliente,
-                    Equipamento: tabelaNome[i].Equipamento,
-                    Modelo: tabelaNome[i].Modelo,
-                    NS: tabelaNome[i].NS,
-                    Servico: tabelaNome[i].Servico,
-                    Placa: tabelaNome[i].Placa,
-                    Classificacao: tabelaNome[i].Classificacao,
-                    Contrato: tabelaNome[i].Contrato,
-                    Observacao: tabelaNome[i].Observacao,
-                    Tecnico: tabelaNome[i].Tecnico,
-                    Status: tabelaNome[i].Status
-                })
+                dadoNome.push(
+                //     {
+                //     id: tabelaNome[i].id,
+                //     Data: tabelaNome[i].Data,
+                //     Dia: tabelaNome[i].Dia,
+                //     Mes: tabelaNome[i].Mes,
+                //     Ano: tabelaNome[i].Ano,
+                //     OS: tabelaNome[i].OS,
+                //     Cliente: tabelaNome[i].Cliente,
+                //     Equipamento: tabelaNome[i].Equipamento,
+                //     Modelo: tabelaNome[i].Modelo,
+                //     NS: tabelaNome[i].NS,
+                //     Servico: tabelaNome[i].Servico,
+                //     Placa: tabelaNome[i].Placa,
+                //     Classificacao: tabelaNome[i].Classificacao,
+                //     Contrato: tabelaNome[i].Contrato,
+                //     Observacao: tabelaNome[i].Observacao,
+                //     Tecnico: tabelaNome[i].Tecnico,
+                //     Status: tabelaNome[i].Status
+                // } 
+                    {...tabelaNome[i] }
+                )
             }
         }
 
@@ -164,7 +168,7 @@ export default class Tabela extends React.Component {
     }
 
     clear() {
-        this.setState({ Atividade: initialState.Atividade })
+        this.setState({ Atividade: initialState.Atividade, mostrarModal: false })
     }
 
     updateField(event) {
@@ -180,7 +184,7 @@ export default class Tabela extends React.Component {
         axios[method](url, Atividade)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
-                this.setState({ Atividade: initialState.Atividade, list })
+                this.setState({ Atividade: initialState.Atividade, list, mostrarModal: false })
             })
     }
 
@@ -475,7 +479,13 @@ export default class Tabela extends React.Component {
                     <td>{Atividade.Servico}</td>
                     <td className="d-flex justify-content-around">
                         <ModalAtendimento corModal="warning" Ititulo="expand" nome={this.renderI()}
-                            relatorio={this.formulario()} load={this.renderButtonPencil(Atividade)} />
+                            relatorio={this.formulario()} isShow={this.state.mostrarModal}
+                            close={() => this.setState({ mostrarModal: false})}
+                        />
+                        <button className="btn btn-warning mx-2"
+                            onClick={() => this.load(Atividade)}>
+                            <i className="fa fa-pencil"></i>
+                        </button>
                         <button className="btn btn-danger mx-2"
                             onClick={() => this.confirmar(Atividade)}>
                             <i className="fa fa-trash"></i>
@@ -488,20 +498,12 @@ export default class Tabela extends React.Component {
     }
 
     load(Atividade) {
-        this.setState({ Atividade })
+        this.setState({ Atividade, mostrarModal: true })
     }
 
     renderI() {
         return (
             <i className="fa fa-address-card fa-3x" />
-        )
-    }
-
-    renderButtonPencil(Atividade) {
-        return (
-            <button className="btn btn-warning" onClick={() => this.load(Atividade)}>
-                <i className="fa fa-pencil"></i>
-            </button>
         )
     }
 
