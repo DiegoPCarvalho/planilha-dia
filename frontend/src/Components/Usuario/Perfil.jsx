@@ -350,7 +350,7 @@ export default class PageAdmin extends React.Component {
 
                 this.save()
 
-            } if (depar_cad === "Laborátorio") {
+            } if (depar_cad === "Laboratório") {
                 user_text.innerText = "Usuario:";
                 user_text.classList.add("text-dark");
 
@@ -415,7 +415,8 @@ export default class PageAdmin extends React.Component {
         axios[method](url, usuario)
             .then(resp => {
                 // const list = this.getUpdateList(resp.data)
-                this.setState({ usuario: initialState.usuario, modal: false})
+                this.setState({usuario: initialState.usuario})
+                window.location.pathname = "/Usuario"
             })
     }
 

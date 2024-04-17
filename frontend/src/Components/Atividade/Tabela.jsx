@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import ModalAtendimento from "../Modal/Modal.Atividade";
+import ModalTabela from "../Modal/ModalTabela";
 import Url from '../Url/Url';
 
 import { confirmAlert } from "react-confirm-alert";
@@ -38,7 +38,8 @@ const initialState = {
     listCont: [],
     ano: 0,
     mes: 0,
-    mostrarModal: false
+    dia: 0,
+    modal: false
 }
 
 
@@ -53,13 +54,15 @@ export default class Tabela extends React.Component {
 
 
     componentWillMount() {
-        this.retornoTabela()
-        this.pesquisar()
         this.buscar()
+        this.pesquisar()
         this.retornoMesAno()
     }
 
     buscar() {
+        axios(baseUrl).then(resp => {
+            this.setState({ list: resp.data })
+        })
         axios(baseUrlEquip).then(resp => {
             this.setState({ listEquip: resp.data })
         })
@@ -73,15 +76,15 @@ export default class Tabela extends React.Component {
         })
     }
 
-    retornoMesAno(){
+    retornoMesAno() {
         const data = new Date()
 
+        const dia = data.getDate()
         const mes = data.getMonth() + 1
         const ano = data.getFullYear()
 
         return this.setState({
-            ano: ano,
-            mes: mes
+            ano, mes, dia
         })
     }
 
@@ -100,43 +103,6 @@ export default class Tabela extends React.Component {
         $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
             $("div.success").fadeIn(300).delay(1500).fadeOut(400);
         });
-    }
-
-
-    async retornoTabela() {
-        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-        let dadoNome = []
-
-
-        for (let i = 0; i < tabelaNome.length; i++) {
-            if ((localStorage.usuario === tabelaNome[i].Tecnico) && (this.state.ano === tabelaNome[i].Ano) && (this.state.mes === tabelaNome[i].Mes)) {
-                dadoNome.push(
-                //     {
-                //     id: tabelaNome[i].id,
-                //     Data: tabelaNome[i].Data,
-                //     Dia: tabelaNome[i].Dia,
-                //     Mes: tabelaNome[i].Mes,
-                //     Ano: tabelaNome[i].Ano,
-                //     OS: tabelaNome[i].OS,
-                //     Cliente: tabelaNome[i].Cliente,
-                //     Equipamento: tabelaNome[i].Equipamento,
-                //     Modelo: tabelaNome[i].Modelo,
-                //     NS: tabelaNome[i].NS,
-                //     Servico: tabelaNome[i].Servico,
-                //     Placa: tabelaNome[i].Placa,
-                //     Classificacao: tabelaNome[i].Classificacao,
-                //     Contrato: tabelaNome[i].Contrato,
-                //     Observacao: tabelaNome[i].Observacao,
-                //     Tecnico: tabelaNome[i].Tecnico,
-                //     Status: tabelaNome[i].Status
-                // } 
-                    {...tabelaNome[i] }
-                )
-            }
-        }
-
-        return this.setState({ list: dadoNome })
-
     }
 
 
@@ -168,7 +134,7 @@ export default class Tabela extends React.Component {
     }
 
     clear() {
-        this.setState({ Atividade: initialState.Atividade, mostrarModal: false })
+        this.setState({ Atividade: initialState.Atividade, modal: false })
     }
 
     updateField(event) {
@@ -184,7 +150,7 @@ export default class Tabela extends React.Component {
         axios[method](url, Atividade)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
-                this.setState({ Atividade: initialState.Atividade, list, mostrarModal: false })
+                this.setState({ Atividade: initialState.Atividade, list, modal: false })
             })
     }
 
@@ -210,7 +176,7 @@ export default class Tabela extends React.Component {
             if (data.length === 0) {
 
                 const dt = new Date()
-                
+
 
                 this.state.Atividade.Data = dt
                 this.state.Atividade.Dia = dt.getDate()
@@ -410,16 +376,16 @@ export default class Tabela extends React.Component {
         )
     }
 
-    renderEquip(){
+    renderEquip() {
         return this.state.listEquip.map(Equip => {
-            return(
+            return (
                 <option>{Equip.nome}</option>
             )
         })
 
     }
 
-    renderServ(){
+    renderServ() {
         return this.state.listServ.map(Serv => {
             return (
                 <option>{Serv.nome}</option>
@@ -427,7 +393,7 @@ export default class Tabela extends React.Component {
         })
     }
 
-    renderCont(){
+    renderCont() {
         return this.state.listCont.map(Cont => {
             return (
                 <option>{Cont.nome}</option>
@@ -459,7 +425,7 @@ export default class Tabela extends React.Component {
         )
     }
 
-    dataNova(data){
+    dataNova(data) {
         const dd = data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1')
 
         return dd
@@ -467,38 +433,43 @@ export default class Tabela extends React.Component {
 
     renderRows() {
         return this.state.list.map(Atividade => {
-            return (
-                <tr key={(Atividade.id)}>
-                    <td>{Atividade.id}</td>
-                    <td>{this.dataNova(Atividade.Data)}</td>
-                    <td>{Atividade.OS}</td>
-                    <td>{Atividade.Cliente}</td>
-                    <td>{Atividade.Equipamento}</td>
-                    <td>{Atividade.Modelo}</td>
-                    <td>{Atividade.NS}</td>
-                    <td>{Atividade.Servico}</td>
-                    <td className="d-flex justify-content-around">
-                        <ModalAtendimento corModal="warning" Ititulo="expand" nome={this.renderI()}
-                            relatorio={this.formulario()} isShow={this.state.mostrarModal}
-                            close={() => this.setState({ mostrarModal: false})}
-                        />
-                        <button className="btn btn-warning mx-2"
+            if ((localStorage.usuario === Atividade.Tecnico) && (this.state.dia === Atividade.Dia)&& (this.state.ano === Atividade.Ano) && (this.state.mes === Atividade.Mes)) 
+            {
+                return (
+                    <tr key={(Atividade.id)}>
+                        <td>{Atividade.id}</td>
+                        <td>{this.dataNova(Atividade.Data)}</td>
+                        <td>{Atividade.OS}</td>
+                        <td>{Atividade.Cliente}</td>
+                        <td>{Atividade.Equipamento}</td>
+                        <td>{Atividade.Modelo}</td>
+                        <td>{Atividade.NS}</td>
+                        <td>{Atividade.Servico}</td>
+                        <td className="d-flex justify-content-around">
+                            <ModalTabela corModal="warning" nome={this.renderI()}
+                                Relatorio={this.formulario()} 
+                                isShow={this.state.modal}
+                                tamanho="lg"
+                            close={() => this.setState({ modal: false })}
+                            />
+                            <button className="btn btn-warning mx-2"
                             onClick={() => this.load(Atividade)}>
                             <i className="fa fa-pencil"></i>
-                        </button>
-                        <button className="btn btn-danger mx-2"
-                            onClick={() => this.confirmar(Atividade)}>
-                            <i className="fa fa-trash"></i>
-                        </button>
+                            </button>
+                            <button className="btn btn-danger mx-2"
+                                onClick={() => this.confirmar(Atividade)}>
+                                <i className="fa fa-trash"></i>
+                            </button>
 
-                    </td>
-                </tr>
-            )
+                        </td>
+                    </tr>
+                )
+            }
         })
     }
 
-    load(Atividade) {
-        this.setState({ Atividade, mostrarModal: true })
+    load (Atividade){
+        this.setState({Atividade, modal: true })
     }
 
     renderI() {
@@ -517,7 +488,7 @@ export default class Tabela extends React.Component {
                     <div className='col-3 d-flex justify-content-end align-items-center'>
                         <button className='btn btn-success p-2 d-flex align-items-center'>
                             <i className='fa-2x fa fa-database'></i>
-                            <Link to="/Laboratorio/TabelaAntiga" style={{ textDecoration: "none", color: "white"}}>
+                            <Link to="/Laboratorio/TabelaAntiga" style={{ textDecoration: "none", color: "white" }}>
                                 <h4><b>Registro Antigo</b></h4>
                             </Link>
                         </button>
