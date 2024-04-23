@@ -85,13 +85,6 @@ export default class Formulário extends React.Component {
     }
 
     clear() {
-        // document.getElementById('OS').value = ''
-        //         document.getElementById('Cliente').value = ''
-        //         document.getElementById('Equipamento').value = ''
-        //         document.getElementById('Modelo').value = ''
-        //         document.getElementById('NS').value = ''
-        //         document.getElementById('Contrato').value = ''
-        //         document.getElementById('Servico').value = ''
         this.setState({ Atividade: initialState.Atividade })
     }
 
@@ -115,8 +108,7 @@ export default class Formulário extends React.Component {
         let Servico = document.getElementById("Servico").value;
         let Contrato = document.getElementById("Contrato").value;
         let data = document.getElementById("data").value;
-        // let ns = document.getElementById("NS").value;
-
+       
         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
 
         } else {
@@ -129,24 +121,7 @@ export default class Formulário extends React.Component {
                 this.state.Atividade.Dia = dt.getDate()
                 this.state.Atividade.Mes = dt.getMonth() + 1
                 this.state.Atividade.Ano = dt.getFullYear()
-                // this.state.Atividade.OS = OS
-                // this.state.Atividade.Cliente = Cliente
-                // this.state.Atividade.Servico = Servico
-                // this.state.Atividade.Equipamento = Equipamento
-                // this.state.Atividade.Modelo = Modelo
-                // this.state.Atividade.Contrato = Contrato
-                // this.state.Atividade.NS = ns
-
-
-
-                // document.getElementById('OS').value = ''
-                // document.getElementById('Cliente').value = ''
-                // document.getElementById('Equipamento').value = ''
-                // document.getElementById('Modelo').value = ''
-                // document.getElementById('NS').value = ''
-                // document.getElementById('Contrato').value = ''
-                // document.getElementById('Servico').value = ''
-
+                
                 this.save()
                 this.mensagemSalvo()
                 localStorage.UltimaOS = OS
@@ -157,23 +132,7 @@ export default class Formulário extends React.Component {
                 this.state.Atividade.Dia = dt.getDate()
                 this.state.Atividade.Mes = dt.getMonth() + 1
                 this.state.Atividade.Ano = dt.getFullYear()
-                // this.state.Atividade.OS = OS
-                // this.state.Atividade.Cliente = Cliente
-                // this.state.Atividade.Servico = Servico
-                // this.state.Atividade.Equipamento = Equipamento
-                // this.state.Atividade.Modelo = Modelo
-                // this.state.Atividade.Contrato = Contrato
-                // this.state.Atividade.NS = ns
-
-
-                // document.getElementById('OS').value = ''
-                // document.getElementById('Cliente').value = ''
-                // document.getElementById('Equipamento').value = ''
-                // document.getElementById('Modelo').value = ''
-                // document.getElementById('NS').value = ''
-                // document.getElementById('Contrato').value = ''
-                // document.getElementById('Servico').value = ''
-
+                
                 this.save()
                 this.mensagemSalvo()
                 localStorage.UltimaOS = OS
