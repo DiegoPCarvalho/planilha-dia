@@ -13,6 +13,7 @@ import NewPageHome from '../Components/Home/NewPageHome';
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import Formulario from "../Components/Atividade/Formulario";
 import Tabela from "../Components/Atividade/Tabela";
+import Table from "../Components/Atividade/Testes/table";
 import FormTable from "../Components/Atividade/FormTable";
 import TabelaRegistroAntigo from "../Components/Atividade/TabRegistroAntigo";
 import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
@@ -165,7 +166,7 @@ export default function Rotas() {
             <Route element={<Home />}>
                 <Route path="/Laboratorio" element={<CrudAtividade />}>
                     <Route path="Formulario" element={<Formulario />} />
-                    <Route path="Tabela" element={<Tabela />} />
+                    <Route path="Tabela" element={<FormTable/>} />
                     <Route path="TabelaAntiga" element={<TabelaRegistroAntigo />} />
                     <Route path="Relatorio" element={<RelatorioPessoal />} />
                 </Route>

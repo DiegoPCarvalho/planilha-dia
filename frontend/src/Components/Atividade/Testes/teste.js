@@ -1,29 +1,3 @@
-import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
-import Url from '../Url/Url';
-
-import cloneDeep from "lodash/cloneDeep";
-import throttle from "lodash/throttle";
-
-import CardForm from '../Card/CardForm';
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
-
-import { initialAtividade } from '../../Interfaces/FormTable';
-
-import $ from 'jquery';
-import { Link } from 'react-router-dom';
-
-import Pagination from "rc-pagination";
-import "rc-pagination/assets/index.css";
-
-const baseUrl = Url("Geral");
-const baseUrlEquip = Url("Equipamento");
-const baseUrlCont = Url("Contrato");
-const baseUrlServ = Url("Servico");
-const baseUrlBanco = Url("Banco");
-
-//componente class
 {
     // const initialState = {
     //     Atividade: {
@@ -58,28 +32,28 @@ const baseUrlBanco = Url("Banco");
     //     mudar: 'form',
     //     table_on: false,
     //     vl: "",
-    //     currentPerPage: 1,
+    //     currentPage: 1,
     //     teste: false
     // }
-
+    
     // const countPerPage = 10
-
+    
     // export default class FormTable extends React.Component {
-
+    
     //     state = { ...initialState }
-
+    
     //     componentDidMount() {
     //         this.retornoTabela()
     //         this.buscar()
     //         this.retornoMesAno()
     //     }
-
+    
     //     //#region buscar
     //     async retornoTabela() {
     //         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
     //         let dadoNome = []
-
-
+    
+    
     //         for (let i = 0; i < tabelaNome.length; i++) {
     //             if ((localStorage.usuario === tabelaNome[i].Tecnico) && (this.state.ano === tabelaNome[i].Ano) && (this.state.mes === tabelaNome[i].Mes)) {
     //                 dadoNome.push(
@@ -106,83 +80,83 @@ const baseUrlBanco = Url("Banco");
     //                 )
     //             }
     //         }
-
+    
     //         this.updatePage(1)
-
+    
     //         return this.setState({ list: dadoNome, list2: dadoNome.length })
-
+    
     //     }
-
+    
     //     retornoMesAno() {
     //         const data = new Date()
-
+    
     //         const mes = data.getMonth() + 1
     //         const ano = data.getFullYear()
-
+    
     //         return this.setState({
     //             ano: ano,
     //             mes: mes
     //         })
     //     }
-
+    
     //     buscar() {
     //         axios(baseUrlEquip).then(resp => {
     //             this.setState({ listEquip: resp.data })
     //         })
-
+    
     //         axios(baseUrlServ).then(resp => {
     //             this.setState({ listServ: resp.data })
     //         })
-
+    
     //         axios(baseUrlCont).then(resp => {
     //             this.setState({ listCont: resp.data })
     //         })
-
+    
     //         axios(baseUrlBanco).then(resp => {
     //             this.setState({ listarBanco: resp.data })
     //         })
-
+    
     //         setTimeout(() => {
     //             this.buscarCosmos()
     //         },)
     //     }
-
+    
     //     buscarCosmos() {
-
+    
     //         let dado = []
     //         let bcl = this.state.listarBanco
-
+    
     //         for (let i = 0; i < bcl.length; i++) {
     //             dado.push(bcl[i].nome)
     //         }
-
+    
     //         const url = `http://${dado[0]}`
-
+    
     //         axios(url).then(resp => {
     //             this.setState({ listarCosmos: resp.data })
     //         })
     //     }
-
+    
     //     //#endregion
-
+    
     //     //#region CRUD
-
+    
     //     clear() {
     //         this.setState({ Atividade: initialState.Atividade })
     //     } //limpar
-
+    
     //     updateField(event) {
     //         const Atividade = { ...this.state.Atividade }
     //         Atividade[event.target.name] = event.target.value
     //         this.setState({ Atividade })
     //     }// atualizar o campo
-
+    
     //     mensagemSalvo() {
     //         $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
     //             $("div.success").fadeIn(300).delay(1500).fadeOut(400);
     //         });
     //     } //msg de salvo
-
+    
     //     save() {
     //         if (this.state.mudar === 'form' && this.state.table_on === false) {
     //             const Atividade = this.state.Atividade
@@ -205,7 +179,7 @@ const baseUrlBanco = Url("Banco");
     //                 })
     //         }
     //     } //salvar e alterar
-
+    
     //     verificar() {
     //         let OS = document.getElementById("OS").value;
     //         let Cliente = document.getElementById("Cliente").value;
@@ -214,38 +188,38 @@ const baseUrlBanco = Url("Banco");
     //         let Servico = document.getElementById("Servico").value;
     //         let Contrato = document.getElementById("Contrato").value;
     //         let data = document.getElementById("data").value;
-
+    
     //         if ((OS === '') || (Cliente === '') || (Equipamento === '') || (Modelo === '') || (Servico === '') || (Contrato === '')) {
-
+    
     //         } else {
     //             if (data.length === 0) {
-
+    
     //                 const dt = new Date()
-
-
+    
+    
     //                 this.state.Atividade.Data = dt
     //                 this.state.Atividade.Dia = dt.getDate()
     //                 this.state.Atividade.Mes = dt.getMonth() + 1
     //                 this.state.Atividade.Ano = dt.getFullYear()
-
+    
     //                 this.save()
     //                 this.mensagemSalvo()
     //                 localStorage.UltimaOS = OS
-
+    
     //             } else {
     //                 const dt = new Date(data)
-
+    
     //                 this.state.Atividade.Dia = dt.getDate()
     //                 this.state.Atividade.Mes = dt.getMonth() + 1
     //                 this.state.Atividade.Ano = dt.getFullYear()
-
+    
     //                 this.save()
     //                 this.mensagemSalvo()
     //                 localStorage.UltimaOS = OS
     //             }
     //         }
     //     } // verificar
-
+    
     //     remove(Atividade) {
     //         axios.delete(`${baseUrl}/${Atividade.id}`)
     //             .then(resp => {
@@ -253,17 +227,17 @@ const baseUrlBanco = Url("Banco");
     //                 this.setState({ list })
     //             })
     //     } // deletar
-
+    
     //     getUpdatedList(Atividade, add = true) {
     //         const list = this.state.list.filter(a => a.id !== Atividade.id)
     //         if (add) list.push(Atividade)
     //         return list
     //     } // atualizar lista
-
+    
     //     load(Atividade) {
     //         this.setState({ Atividade, mudar: 'form', table_on: true })
     //     }//buscar dados
-
+    
     //     confirmar(Atividade) {
     //         confirmAlert({
     //             title: "Deletar",
@@ -281,11 +255,11 @@ const baseUrlBanco = Url("Banco");
     //             ]
     //         })
     //     }// confirmar deletar
-
+    
     //     //#endregion
-
+    
     //     //#region FORM
-
+    
     //     formulario() {
     //         return (
     //             <form className="row g-3" action="javascript:myFunction(); return false;">
@@ -298,7 +272,7 @@ const baseUrlBanco = Url("Banco");
     //                                     name="Data" id="data"
     //                                     value={this.state.Atividade.Data}
     //                                     onChange={e => this.updateField(e)}
-
+    
     //                                 />
     //                             </div>
     //                         </div>
@@ -445,13 +419,13 @@ const baseUrlBanco = Url("Banco");
     //                             <div class="alert-box success">Salvo com Sucesso!!!</div>
     //                         </div>
     //                         <div className="col-12 col-md-6 d-flex justify-content-end">
-
+    
     //                             <button className="btn btn-primary mx-2"
     //                                 onClick={e => this.verificar(e)}
     //                             >
     //                                 Salvar
     //                             </button>
-
+    
     //                             <button className="btn btn-danger"
     //                                 onClick={e => this.clear(e)}
     //                             >
@@ -463,14 +437,14 @@ const baseUrlBanco = Url("Banco");
     //             </form>
     //         )
     //     }
-
+    
     //     funcaoTeste() {
     //         const os = this.state.Atividade.OS
-
+    
     //         if (os.length >= 5) {
     //             let dado = []
     //             const tab = this.state.listarCosmos
-
+    
     //             for (let i = 0; i < tab.length; i++) {
     //                 if (os == tab[i].OS) {
     //                     dado.push({
@@ -483,8 +457,8 @@ const baseUrlBanco = Url("Banco");
     //                     })
     //                 }
     //             }
-
-
+    
+    
     //             if (os.length >= 5) {
     //                 const novaAtividade = {
     //                     Data: '',
@@ -510,17 +484,17 @@ const baseUrlBanco = Url("Banco");
     //             }
     //         }
     //     } // funcao busca cosmos
-
-
+    
+    
     //     renderEquip() {
     //         return this.state.listEquip.map(Equip => {
     //             return (
     //                 <option>{Equip.nome}</option>
     //             )
     //         })
-
+    
     //     }
-
+    
     //     renderServ() {
     //         return this.state.listServ.map(Serv => {
     //             return (
@@ -528,7 +502,7 @@ const baseUrlBanco = Url("Banco");
     //             )
     //         })
     //     }
-
+    
     //     renderCont() {
     //         return this.state.listCont.map(Cont => {
     //             return (
@@ -536,9 +510,9 @@ const baseUrlBanco = Url("Banco");
     //             )
     //         })
     //     }
-
+    
     //     //#endregion
-
+    
     //     //#region Table
     //     renderTable() {
     //         return (
@@ -579,7 +553,7 @@ const baseUrlBanco = Url("Banco");
     //             </div>
     //         )
     //     }
-
+    
     //     updatePage = p => {
     //         this.setState({ currentPerPage: p });
     //         const listar = this.state.list
@@ -587,13 +561,13 @@ const baseUrlBanco = Url("Banco");
     //         const from = to - countPerPage;
     //         this.setState({list: listar.slice(from, to)})
     //       };
-
+    
     //     dataNova(data) {
     //         const dd = data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1')
-
+    
     //         return dd
     //     }
-
+    
     //     renderRows() {
     //         return this.state.list.map(Atividade => {
     //             return (
@@ -615,28 +589,28 @@ const baseUrlBanco = Url("Banco");
     //                             onClick={() => this.confirmar(Atividade)}>
     //                             <i className="fa fa-trash"></i>
     //                         </button>
-
+    
     //                     </td>
     //                 </tr>
     //             )
     //         })
     //     }
-
+    
     //     searchData() {
     //         const valor = this.state.vl
-
+    
     //         if (valor.length >= 5) {
     //             const data = this.state.list
     //             const retorno = data.filter(obj => obj.OS === valor)
-
+    
     //             this.setState({ list: [...retorno] })
     //         } else if (valor.length === 0) {
     //             this.retornoTabela()
     //         }
     //     }
-
+    
     //     //#endregion
-
+    
     //     //#region mudarTela
     //     formRender() {
     //         return (
@@ -657,7 +631,7 @@ const baseUrlBanco = Url("Banco");
     //             </>
     //         )
     //     }
-
+    
     //     tableRender() {
     //         return (
     //             <div>
@@ -680,9 +654,9 @@ const baseUrlBanco = Url("Banco");
     //             </div>
     //         )
     //     }
-
+    
     //     //#endregion
-
+    
     //     render() {
     //         return this.state.mudar === 'form' ?
     //             this.formRender()
@@ -690,619 +664,4 @@ const baseUrlBanco = Url("Banco");
     //             this.tableRender()
     //     }
     // }
-}
-
-//component funcional
-
-export default function FormTable() {
-    const countPerPage = 10;
-    const [ativ, setAtiv] = useState(initialAtividade);
-    const [list, setList] = useState([]);
-    const [listEquip, setListEquip] = useState([]);
-    const [listServ, setListServ] = useState([]);
-    const [listCont, setListCont] = useState([]);
-    const [listarCosmos, setListarCosmos] = useState([]);
-    const [listarBanco, setListarBanco] = useState([]);
-    const [ano, setAno] = useState(0);
-    const [mes, setMes] = useState(0);
-    const [mudar, setMudar] = useState('form');
-    const [tableOn, setTableOn] = useState(false);
-    const [valor, setValor] = useState("");
-    const [currentPage, setCurrentPage] = useState(1);
-
-    useEffect(() => {
-        retornoTabela()
-        retornoMesAno()
-        buscar()
-
-    }, [list, listEquip, listServ,
-        listarBanco, listarCosmos,
-        listCont, mes, ano])
-
-
-    //#region buscar
-    const retornoMesAno = () => {
-        const data = new Date()
-
-        const mes = data.getMonth() + 1
-        const ano = data.getFullYear()
-
-        setAno(ano)
-        setMes(mes)
     }
-
-
-    const buscar = () => {
-        axios(baseUrlEquip).then(resp => {
-            setListEquip(resp.data)
-        })
-
-        axios(baseUrlServ).then(resp => {
-            setListServ(resp.data)
-        })
-
-        axios(baseUrlCont).then(resp => {
-            setListCont(resp.data)
-        })
-
-        axios(baseUrlBanco).then(resp => {
-            setListarBanco(resp.data)
-        })
-
-        setTimeout(() => {
-            buscarCosmos()
-        }, 1000)
-    }
-
-    const buscarCosmos = () => {
-
-        let dado = []
-        let bcl = listarBanco
-
-        for (let i = 0; i < bcl.length; i++) {
-            dado.push(bcl[i].nome)
-        }
-
-        const url = `http://${dado[0]}`
-
-
-        axios(url).then(resp => {
-            return setListarCosmos(resp.data)
-        })
-    }
-
-    const retornoTabela = () => {
-        axios(baseUrl).then(resp => {
-            const dados = resp.data
-            let dadoNovo = []
-
-            dados.map(dado => {
-                if ((localStorage.usuario === dado.Tecnico) && (ano === dado.Ano) && (mes === dado.Mes)) {
-                    dadoNovo.push({ ...dado })
-                }
-            })
-
-            return setList(dadoNovo)
-        })
-    }
-
-
-    //#endregion
-
-    //#region CRUD
-
-    const clear = () => {
-        setAtiv(initialAtividade)
-    } //limpar
-
-    const updateField = (event) => {
-        const Atividade = { ...ativ }
-        Atividade[event.target.name] = event.target.value
-        setAtiv(Atividade)
-    }// atualizar o campo
-
-    function mensagemSalvo() {
-        $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
-            $("div.success").fadeIn(300).delay(1500).fadeOut(400);
-        });
-    } //msg de salvo
-
-    const save = () => {
-        if (mudar === 'form' && tableOn === false) {
-        const Atividade = ativ
-        const method = Atividade.id ? 'put' : 'post'
-        const url = Atividade.id ? `${baseUrl}/${Atividade.id}` : baseUrl
-        axios[method](url, Atividade)
-            .then(resp => {
-                const list = getUpdatedList(resp.data)
-                setAtiv(initialAtividade)
-                setList(list)
-                setTableOn(false)
-            })
-
-        mensagemSalvo()
-        }
-        if (tableOn === true) {
-            const Atividade = ativ
-            const method = Atividade.id ? 'put' : 'post'
-            const url = Atividade.id ? `${baseUrl}/${Atividade.id}` : baseUrl
-            axios[method](url, Atividade)
-                .then(resp => {
-                    const list = this.getUpdatedList(resp.data)
-                    setAtiv(initialAtividade)
-                    setList(list)
-                    setMudar('table')
-                    setTableOn(false)
-                })
-         mensagemSalvo()
-        }
-    } //salvar e alterar
-
-    const verificar = () => {
-
-        const atividade = ativ
-
-        if ((atividade.OS === '') || (atividade.Cliente === '') || (atividade.Equipamento === '') || (atividade.Modelo === '') || (atividade.Servico === '') || (atividade.Contrato === '')) {
-
-        } else {
-            if (atividade.Data.length === 0) {
-
-                const dt = new Date()
-
-                atividade.Data = dt
-                atividade.Dia = dt.getDate()
-                atividade.Mes = dt.getMonth() + 1
-                atividade.Ano = dt.getFullYear()
-
-                save()
-                localStorage.UltimaOS = atividade.OS
-
-            } else {
-                const dt = new Date(atividade.Data)
-
-                atividade.Dia = dt.getDate()
-                atividade.Mes = dt.getMonth() + 1
-                atividade.Ano = dt.getFullYear()
-
-                save()
-                localStorage.UltimaOS = atividade.OS
-            }
-        }
-    } // verificar
-
-    const remove = (Atividade) => {
-        axios.delete(`${baseUrl}/${Atividade.id}`)
-            .then(resp => {
-                const list = this.getUpdatedList(Atividade, false)
-                setList(list)
-            })
-    } // deletar
-
-    const getUpdatedList = (Atividade, add = true) => {
-        const lista = list.filter(a => a.id !== Atividade.id)
-        if (add) lista.push(Atividade)
-        return lista
-    } // atualizar lista
-
-    const load = (Atividade) => {
-        setAtiv(Atividade)
-        setMudar('form')
-        setTableOn(true)
-    }//buscar dados
-
-
-    function confirmar(Atividade) {
-        confirmAlert({
-            title: "Deletar",
-            message: "Deseja Realmente Deletar?",
-            buttons: [
-                {
-                    label: "Sim",
-                    className: "btn btn-danger",
-                    onClick: () => remove(Atividade)
-                },
-                {
-                    label: "Não",
-                    className: "btn btn-secondary"
-                }
-            ]
-        })
-    }// confirmar deletar
-
-    //#endregion
-
-    //#region form
-    const formulario = () => {
-        return (
-            <form className="row g-3" action="javascript:myFunction(); return false;">
-                <div className="form">
-                    <div className="row">
-                        <div className="col-6 col-md-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Data: </label>
-                                <input type="datetime-local" className="form-control"
-                                    name="Data" id="data"
-                                    value={ativ.Data}
-                                    onChange={e => updateField(e)}
-
-                                />
-                            </div>
-                        </div>
-                        <div className="col-6 col-md-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>OS: </label>
-                                <input type="text" className="form-control"
-                                    name="OS" id="OS"
-                                    value={ativ.OS}
-                                    onChange={(e) => updateField(e)}
-                                    onKeyDown={(e) => funcaoTeste(e)}
-                                    placeholder="Digite a OS..."
-                                    required />
-                            </div>
-                        </div>
-                        <div className="col-6 col-md-4">
-                            <div className="form-group">
-                                <label className='fw-bold'>Cliente: </label>
-                                <input type="text" className="form-control"
-                                    name="Cliente" id="Cliente"
-                                    value={ativ.Cliente}
-                                    onChange={e => updateField(e)}
-                                    placeholder="Digite o Cliente..." required />
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4">
-                            <div className="form-group">
-                                <label className='fw-bold'>Equipamento: </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    name="Equipamento" id="Equipamento"
-                                    onChange={e => updateField(e)}
-                                    value={ativ.Equipamento}
-                                    required
-                                >
-                                    <option selected disabled value="">Selecione o Equipamento</option>
-                                    {renderEquip()}
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-3 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Modelo: </label>
-                                <input type="text" className="form-control"
-                                    name="Modelo" id="Modelo"
-                                    value={ativ.Modelo}
-                                    onChange={e => updateField(e)}
-                                    placeholder="Digite o modelo..." required />
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-3 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Número de Serie</label>
-                                <input type="text" className="form-control"
-                                    name="NS" id="NS"
-                                    value={ativ.NS}
-                                    onChange={e => updateField(e)}
-                                    placeholder="Digite o Numero de Serie..." />
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-3 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Serviço: </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    name="Servico" id="Servico"
-                                    onChange={e => updateField(e)}
-                                    value={ativ.Servico} required>
-                                    <option selected disabled value="">Selecione o Serviço</option>
-                                    {renderServ()}
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-3 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Recuperação de Placa: </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    name="Placa"
-                                    onChange={e => updateField(e)}
-                                    value={ativ.Placa}>
-                                    <option selected>...</option>
-                                    <option>Recuperada</option>
-                                    <option>Não Recuperada</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Classificação: </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    name="Classificacao"
-                                    onChange={e => updateField(e)}
-                                    value={ativ.Classificacao}>
-                                    <option selected disabled value="">Selecione a Classificação</option>
-                                    <option>Desgaste de Uso</option>
-                                    <option>Defeito</option>
-                                    <option>Uso Indevido</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Contrato: </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    name="Contrato" id="Contrato"
-                                    onChange={e => updateField(e)}
-                                    value={ativ.Contrato}
-                                    required>
-                                    <option selected disabled value="">Selecione...</option>
-                                    <option>Avulso</option>
-                                    {renderCont()}
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Status: </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    name="Status"
-                                    onChange={e => updateField(e)}
-                                    value={ativ.Status}>
-                                    <option selected>Selecione a Status</option>
-                                    <option>Pronto</option>
-                                    <option>Garantia</option>
-                                    <option>Enviar p/Zhaz</option>
-                                    <option>Excede - Aguardando Aprovação</option>
-                                    <option>Aguardando Aprovação</option>
-                                    <option>Reprovado</option>
-                                    <option>Revisado</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-12 mt-2">
-                            <div className="form-group">
-                                <label className='fw-bold'>Observação: </label>
-                                <textarea className="form-control"
-                                    name="Observacao" rows="5" id="Observacao"
-                                    value={ativ.Observacao}
-                                    onChange={e => updateField(e)}
-                                    placeholder="Digite a Sua Observação..." />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-3">
-                        <div className="col-12 col-md-6 d-flex align-items-center">
-                            <div class="alert-box success">Salvo com Sucesso!!!</div>
-                        </div>
-                        <div className="col-12 col-md-6 d-flex justify-content-end">
-
-                            <button className="btn btn-primary mx-2"
-                                onClick={e => verificar(e)}
-                            >
-                                Salvar
-                            </button>
-
-                            <button className="btn btn-danger"
-                                onClick={e => clear(e)}
-                            >
-                                Cancelar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        )
-    }
-
-    const funcaoTeste = () => {
-        const os = ativ.OS
-
-        if (os.length >= 5) {
-            let dado = []
-            const tab = listarCosmos
-
-            for (let i = 0; i < tab.length; i++) {
-                if (os == tab[i].OS) {
-                    dado.push({
-                        user: tab[i].Cliente,
-                        serv: tab[i].Servico,
-                        equip: tab[i].Equipamento,
-                        mod: tab[i].Modelo,
-                        tip: tab[i].TipoOS,
-                        serial: tab[i].NS
-                    })
-                }
-            }
-
-
-            if (os.length >= 5) {
-                const novaAtividade = {
-                    Data: '',
-                    Dia: '',
-                    Mes: '',
-                    Ano: '',
-                    OS: os,
-                    Cliente: dado[0].user,
-                    Equipamento: dado[0].equip,
-                    Modelo: dado[0].mod,
-                    NS: dado[0].serial,
-                    Servico: dado[0].serv,
-                    Placa: '',
-                    Classificacao: '',
-                    Contrato: dado[0].tip,
-                    Observacao: '',
-                    Status: '',
-                    Tecnico: localStorage.usuario
-                }
-                return setAtiv(novaAtividade)
-            }
-        }
-    } // funcao busca cosmos
-
-    const renderEquip = () => {
-        return listEquip.map(Equip => {
-            return (
-                <option>{Equip.nome}</option>
-            )
-        })
-    }
-
-    const renderServ = () => {
-        return listServ.map(Serv => {
-            return (
-                <option>{Serv.nome}</option>
-            )
-        })
-    }
-
-    const renderCont = () => {
-        return listCont.map(Cont => {
-            return (
-                <option>{Cont.nome}</option>
-            )
-        })
-    }
-
-    //#endregion
-
-    //#region Table
-    const renderTable = () => {
-        return (
-            <div>
-                <div className='row d-flex justify-content-end'>
-                    <div className='col-3'>
-                        <input type="text" className='form-control'
-                            value={valor}
-                            onChange={(e) => setValor(e.target.value)}
-                            onKeyDown={() => searchData()}
-                            placeholder='Buscar' />
-                    </div>
-                </div>
-                <div className='row d-block'>
-                    <table className="table mt-3 table-bordered table-striped col-12">
-                        <thead className="table-dark">
-                            <tr>
-                                <th>Index</th>
-                                <th>Data</th>
-                                <th>OS</th>
-                                <th>Cliente</th>
-                                <th>Equipamento</th>
-                                <th>Modelo</th>
-                                <th>NS</th>
-                                <th>Serviço</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody className='overflow-auto'>
-                            {renderRows()}
-                        </tbody>
-                    </table>
-                </div>
-
-                {/* <Pagination
-                    pageSize={countPerPage}
-                    onChange={updatePage}
-                    current={currentPage}
-                    total={list.length}
-                /> */}
-            </div>
-        )
-    }
-
-    const dataNova = (data) => {
-        const dd = data.replace(/(\d*)-(\d*)-(\d*)T(\d*):(\d*).*/, '$3/$2/$1')
-
-        return dd
-    }
-
-    const renderRows = () => {
-        return list.map(Atividade => {
-            return (
-                <tr key={(Atividade.id)}>
-                    <td>{Atividade.id}</td>
-                    <td>{dataNova(Atividade.Data)}</td>
-                    <td>{Atividade.OS}</td>
-                    <td>{Atividade.Cliente}</td>
-                    <td>{Atividade.Equipamento}</td>
-                    <td>{Atividade.Modelo}</td>
-                    <td>{Atividade.NS}</td>
-                    <td>{Atividade.Servico}</td>
-                    <td className="d-flex justify-content-around">
-                        <button className="btn btn-warning mx-2"
-                            onClick={() => load(Atividade)}>
-                            <i className="fa fa-pencil"></i>
-                        </button>
-                        <button className="btn btn-danger mx-2"
-                            onClick={() => confirmar(Atividade)}>
-                            <i className="fa fa-trash"></i>
-                        </button>
-
-                    </td>
-                </tr>
-            )
-        })
-    }
-
-    const searchData = () => {
-        const vl = valor
-
-        if (vl.length >= 5) {
-            const data = list
-            const retorno = data.filter(obj => obj.OS === valor)
-
-            setList([...retorno])
-        } else if (valor.length === 0) {
-            retornoTabela()
-        }
-    }
-
-    //#endregion
-
-    //#region mudarTela
-    const formRender = () => {
-        return (
-            <>
-                <div className='row d-flex justify-content-between'>
-                    <div className='col-1 mb-3'>
-                        <i className="fa fa-table fa-4x" style={{ cursor: 'pointer' }} onClick={() => setMudar('table')}></i>
-                    </div>
-                    <div className="col-2 d-flex justify-content-end">
-                        <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className='col-12'>
-                        {formulario()}
-                    </div>
-                </div>
-            </>
-        )
-    }
-
-    const tableRender = () => {
-        return (
-            <div>
-                <div className='row d-flex justify-content-between'>
-                    <div className='mb-3 col-3'>
-                        <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => setMudar('form')}></i>
-                    </div>
-                    <div className='col-3 d-flex justify-content-end align-items-center'>
-                        <button className='btn btn-success p-2 d-flex align-items-center'>
-                            <i className='fa-2x fa fa-database'></i>
-                            <Link to="/Laboratorio/TabelaAntiga" style={{ textDecoration: "none", color: "white" }}>
-                                <h4 className='mx-2'><b>Registro Antigo</b></h4>
-                            </Link>
-                        </button>
-                    </div>
-                </div>
-                <div className="mt-4">
-                    {renderTable()}
-                </div>
-            </div>
-        )
-    }
-
-    //#endregion
-
-
-    return mudar === 'form' ?
-                formRender()
-                :
-                tableRender()
-}

@@ -92,7 +92,7 @@ export default class Contrato extends React.Component {
 
     renderTable(Equip, dados, retorno) {
         return (
-            <table style={{ maxHeight: '50vh' }} className="table  mt-3">
+            <table  className="table mt-3">
                 <thead className='table-dark'>
                     <tr>
                         <th className="d-flex justify-content-center">{Equip}</th>
