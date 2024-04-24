@@ -17,7 +17,7 @@ export default class Filtro extends React.Component {
 
     state = { ...initialState }
 
-    componentWillMount() {
+    componentDidMount() {
         this.BuscarTec()
         this.statusPadrao()
         console.log(this.state.optionsTec)

@@ -89,12 +89,12 @@ export default class TabelaRegistroAntigo extends React.Component {
         }
     }
 
-    render() {
+    render(props) {
         return (
             <div>
                 <div className="row mt-4">
                     <div className="col-2">
-                        <i className="fa fa-table fa-4x"></i>
+                        
                     </div>
                     <div className="col-8 d-flex justify-content-around">
                         <div className="col-2 d-flex flex-row justify-content-end align-items-end">
@@ -138,11 +138,9 @@ export default class TabelaRegistroAntigo extends React.Component {
                         </div>
                     </div>
                     <div className='col-2 d-flex justify-content-end align-items-start'>
-                        <button className='btn btn-success d-flex align-items-start'>
+                        <button onClick={this.props.mudar} className='btn btn-success d-flex align-items-start'>
                             <i className='fa-2x fa fa-table'></i>
-                            <Link to="/Laboratorio/Tabela" style={{ textDecoration: "none", color: "white" }}>
-                                <h4><b>Voltar</b></h4>
-                            </Link>
+                                <h4 className='mx-2'><b>Voltar</b></h4>
                         </button>
 
                     </div>

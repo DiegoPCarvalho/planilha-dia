@@ -50,10 +50,10 @@ export default class AtividadeCrud extends React.Component {
 
                     <div className="d-flex flex-row">
                         {/* <div className="col-6"> */}
-                        <Link to="/Laboratorio/Formulario" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Formulario</Link>
+                        <Link to="/Laboratorio/Atividade" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Atividade</Link>
                         {/* </div> */}
                         {/* <div className="col-6"> */}
-                        <Link to="/Laboratorio/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link>
+                        {/* <Link to="/Laboratorio/Tabela" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}
                         {/* <Link to="/Atividade/Tabela" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela</Link> */}
                         {/* </div> */}
                         <Link to="/Laboratorio/Relatorio" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Relatório</Link>

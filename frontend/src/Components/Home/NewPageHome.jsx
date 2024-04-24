@@ -31,7 +31,7 @@ const initialState = {
     RamalADM: [],
     RamalDiretoria: [],
     RamalGerencia: [],
-    
+
 }
 
 
@@ -54,7 +54,7 @@ export default class NewPageHome extends React.Component {
 
         const usuario = await PuxarDados("LoginUsuario");
 
-               
+
 
         return this.setState({
             totalOS: tabela.totalOS,
@@ -144,7 +144,7 @@ export default class NewPageHome extends React.Component {
     }
 
     setores() {
-        return (
+        return localStorage.AdmGeral === "1" ? (
             <div className='d-flex justify-content-center align-items-center flex-column'>
                 <div className="row mt-2 mb-2">
                     <div className="col-6">
@@ -163,6 +163,19 @@ export default class NewPageHome extends React.Component {
                     </div>
                 </div>
             </div>
+        ) : (
+            <div className='d-flex justify-content-center align-items-center flex-column'>
+                <div className="row mt-3">
+                    <div className="col-6">
+                        <Link to="/Laboratorio" className='btn btn-success'><i className="fa fa-2x fa-barcode"></i></Link>
+                    </div>
+                </div>
+                <div className="row mt-3 d-flex justify-content-center">
+                    <div className="col-6 d-flex justify-content-center">
+                        <Link to="/Usuario" className='btn btn-success'><i className="fa fa-2x fa-address-book"></i></Link>
+                    </div>
+                </div>
+            </div>
         )
     }
 
@@ -176,53 +189,53 @@ export default class NewPageHome extends React.Component {
                 </div>
                 <div className="row d-flex justify-content-center mt-3 ">
                     <div className="col-3 d-flex justify-content-center">
-                        <ModalRamal nomeBotao="Comercial" corModal="secondary" 
-                        Relatorio={this.ramalList(this.state.RamalComercial)}/>
+                        <ModalRamal nomeBotao="Comercial" corModal="secondary"
+                            Relatorio={this.ramalList(this.state.RamalComercial)} />
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
-                        <ModalRamal nomeBotao="ADM" corModal="secondary" 
-                        Relatorio={this.ramalAdm()}/>
+                        <ModalRamal nomeBotao="ADM" corModal="secondary"
+                            Relatorio={this.ramalAdm()} />
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
-                        <ModalRamal nomeBotao="Laboratório" corModal="secondary" 
-                        Relatorio={this.ramalList(this.state.RamalLabo)}/>
+                        <ModalRamal nomeBotao="Laboratório" corModal="secondary"
+                            Relatorio={this.ramalList(this.state.RamalLabo)} />
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
-                        <ModalRamal nomeBotao="Gerencia" corModal="secondary" 
-                        Relatorio={this.ramalList(this.state.RamalGerencia)}/>
+                        <ModalRamal nomeBotao="Gerencia" corModal="secondary"
+                            Relatorio={this.ramalList(this.state.RamalGerencia)} />
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-3 d-flex justify-content-center">
-                        <ModalRamal nomeBotao="Diretoria" corModal="secondary" 
-                        Relatorio={this.ramalList(this.state.RamalDiretoria)}/>
+                        <ModalRamal nomeBotao="Diretoria" corModal="secondary"
+                            Relatorio={this.ramalList(this.state.RamalDiretoria)} />
                     </div>
                 </div>
             </div>
         )
     }
 
-    ramalList(depar){
+    ramalList(depar) {
         return depar.map(item => {
-            return(
+            return (
                 <>
-                    <CardRamal titulo={item.Usuario} valor={item.Ramal} corBt="success" icone="phone" bg="light" tipoTexto="mb-2"/>
+                    <CardRamal titulo={item.Usuario} valor={item.Ramal} corBt="success" icone="phone" bg="light" tipoTexto="mb-2" />
                 </>
             )
         })
     }
 
-    ramalAdm(){
+    ramalAdm() {
         return this.state.RamalADM.map(item => {
-            return(
+            return (
                 <>
-                    <CardRamal titulo={`${item.Usuario} - ${item.Departamento}`} valor={item.Ramal} corBt="success" icone="phone" bg="light" tipoTexto="mb-2"/>
+                    <CardRamal titulo={`${item.Usuario} - ${item.Departamento}`} valor={item.Ramal} corBt="success" icone="phone" bg="light" tipoTexto="mb-2" />
                 </>
             )
         })
@@ -232,7 +245,7 @@ export default class NewPageHome extends React.Component {
         console.log()
         return (
             <>
-            
+
                 <Header icon="home" title="Home" />
                 <nova className="corfundo content container-fluid ">
                     <div className="row mx-2 my-3">
@@ -276,7 +289,7 @@ export default class NewPageHome extends React.Component {
                                     nomeSerie="Serviço"
                                     cor={true}
                                     dado={this.state.servico}
-                                    serie ={this.state.serieServ} />
+                                    serie={this.state.serieServ} />
                             </div>
                         </div>
                     </div>
