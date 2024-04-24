@@ -89,7 +89,7 @@ export default class TabelaRegistroAntigo extends React.Component {
         }
     }
 
-    render(props) {
+    render() {
         return (
             <div>
                 <div className="row mt-4">

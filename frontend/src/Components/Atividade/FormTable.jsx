@@ -7,7 +7,6 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
 
 import TabelaRegistroAntigo from './TabRegistroAntigo';
 
@@ -62,21 +61,21 @@ export default class FormTable extends React.Component {
         this.retornoMesAno()
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.pagination()
     }
 
-    pagination(){
+    pagination() {
         $(document).ready(function () {
-                $('#tabela').DataTable({
-                    language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
-                });
+            $('#tabela').DataTable({
+                language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
+            });
         });
     }
 
     //#region buscar
     retornoTabela() {
-        axios(baseUrl).then(resp =>{
+        axios(baseUrl).then(resp => {
             const tabela = resp.data
             let dadoNovo = []
 
@@ -90,11 +89,11 @@ export default class FormTable extends React.Component {
 
             return this.setState({ list: dadoNovo })
         })
-       
 
-    
 
-        
+
+
+
     }
 
     retornoMesAno() {
@@ -128,7 +127,7 @@ export default class FormTable extends React.Component {
 
         setTimeout(() => {
             this.buscarCosmos()
-        },1000)
+        }, 1000)
     }
 
     buscarCosmos() {
@@ -152,7 +151,12 @@ export default class FormTable extends React.Component {
     //#region CRUD
 
     clear() {
-        this.setState({ Atividade: initialState.Atividade })
+        if (this.state.mudar === 'form' && this.state.table_on === false) {
+            this.setState({ Atividade: initialState.Atividade, table_on: false })
+        }
+        if (this.state.table_on === true) {
+            this.setState({ Atividade: initialState.Atividade, mudar: 'table', table_on: false })
+        }
     } //limpar
 
     updateField(event) {
@@ -178,7 +182,7 @@ export default class FormTable extends React.Component {
                     this.setState({ Atividade: initialState.Atividade, list, table_on: false })
                 })
 
-                this.mensagemSalvo()
+            this.mensagemSalvo()
         }
         if (this.state.table_on === true) {
             const Atividade = this.state.Atividade
@@ -190,7 +194,7 @@ export default class FormTable extends React.Component {
                     this.setState({ Atividade: initialState.Atividade, list, mudar: 'table', table_on: false })
                 })
 
-                this.mensagemSalvo()
+            this.mensagemSalvo()
         }
     } //salvar e alterar
 
@@ -595,12 +599,18 @@ export default class FormTable extends React.Component {
     //#endregion
 
     //#region mudarTela
+    mudarTela(){
+        if(this.state.mudar === 'form'){
+            this.setState({ Atividade: initialState.Atividade, mudar:'table', table_on: false })
+        }
+    }
+
     formRender() {
         return (
             <>
                 <div className='row d-flex justify-content-between'>
                     <div className='col-1 mb-3 d-flex justify-content-start align-items-center'>
-                        <i className="fa fa-table fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'table' })}></i>
+                        <i className="fa fa-table fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
                         <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
                         <span className='fw-bold h4 mt-2'>Tabela</span>
                     </div>
@@ -627,9 +637,9 @@ export default class FormTable extends React.Component {
                         <span className='fw-bold h4 mt-2'>Formulário</span>
                     </div>
                     <div className='col-3 d-flex justify-content-end align-items-center'>
-                        <button onClick={() => this.setState({ mudar: 'tableAntiga'})} className='btn btn-success p-2 d-flex align-items-center'>
+                        <button onClick={() => this.setState({ mudar: 'tableAntiga' })} className='btn btn-success p-2 d-flex align-items-center'>
                             <i className='fa-2x fa fa-database'></i>
-                                <h4 className='mx-2'><b>Registro Antigo</b></h4>
+                            <h4 className='mx-2'><b>Registro Antigo</b></h4>
                         </button>
                     </div>
                 </div>
@@ -646,6 +656,8 @@ export default class FormTable extends React.Component {
         return this.state.mudar === 'form' ?
             this.formRender()
             : this.state.mudar === 'table' ?
-            this.tableRender() : <TabelaRegistroAntigo mudar={() => this.setState({mudar: 'table'})} />
+                this.tableRender() : <TabelaRegistroAntigo mudar={() => this.setState({ mudar: 'table' })} />
     }
 }
+
+
