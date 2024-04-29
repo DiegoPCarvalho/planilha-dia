@@ -72,6 +72,40 @@ app.get('/suporteContrato', async (req, res) => {
 
 })
 
+app.get('/AguardandoVistoria', async (req, res) =>{
+    const tabela = await axios(bancoApi(3)).then(resp => {
+        const registros = resp.data
+        let dados = {contrato: [], avulso: []}
+
+        registros.map(registro => {
+            var c = registro.DescricaoTipoOS
+            if(c.match(/CONTRATO/)) dados.contrato.push(gerenciador(registro))
+            else dados.avulso.push(gerenciador(registro))
+        })
+
+        return dados
+    })
+
+    res.json(tabela)
+})
+
+app.get('/Aprovado', async (req, res) =>{
+    const tabela = await axios(bancoApi(8)).then(resp => {
+        const registros = resp.data
+        let dados = {contrato: [], avulso: []}
+
+        registros.map(registro => {
+            var c = registro.DescricaoTipoOS
+            if(c.match(/CONTRATO/)) dados.contrato.push(gerenciador(registro))
+            else dados.avulso.push(gerenciador(registro))
+        })
+
+        return dados
+    })
+
+    res.json(tabela)
+})
+
 
 
 app.listen(3001, (e) => {
@@ -205,4 +239,17 @@ function contrato(cont) {
         return "Avulso"
     }
 }
+//#endregion
+
+//#region logica /AgardandoVistoria
+function gerenciador(registro){
+    return {
+        OS: registro.OSID,
+        Cliente: registro.PessoaFantasia,
+        Servico: servico(registro.EstagioDescricao, registro.DescricaoTipoOS),
+        Equipamento: registro.NomeEquipamento,
+        NS: registro.EquipamentoLTS,
+    }
+}
+
 //#endregion
