@@ -23,6 +23,9 @@ import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 import EmBreve from "../Components/EmBreve/EmBreve";
 import EmBreveSmart from "../Components/EmBreve/EmBreveSmart";
 
+//Fila Tecnica
+import FilaTecnica from '../Components/FilaTecnica/index';
+
 //Perfil
 import Perfil from '../Components/Usuario/Perfil';
 
@@ -116,7 +119,7 @@ export default function Rotas() {
                         <Route path="Aprovados" element={<AprovadosLab />} />
                         <Route path="Finalizados" element={<FinalizadosLab />} />
                     </Route>
-                    <Route path="Meta" element={<MetaLab />}/>
+                    <Route path="FilaTecnica" element={<FilaTecnica />}/>
                     <Route path="TabelaGeral" element={<TabelaGeral />}/>
                 </Route>
                 <Route path="/GerenciaAdm" element={<HomeGerenciaAdm />}>

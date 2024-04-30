@@ -59,10 +59,6 @@ export default class PageAdmin extends React.Component {
         this.consultaBancoUsuario()
     }
 
-    componentDidUpdate(){
-        this.consultaBancoUsuario()
-    }
-
     consultarBanco() {
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })

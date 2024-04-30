@@ -35,7 +35,7 @@ export default class HomeGerencia extends React.Component {
                     <div className="d-flex flex-row">
                 
                         <Link to="/Gerencia/Dashboard" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Dashbord Atividade</Link>
-                        <Link to="/Gerencia/Meta" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Meta</Link>
+                        <Link to="/Gerencia/FilaTecnica" className="flex-fill link bg-secondary fw-bold d-flex justify-content-center">Fila Técnica</Link>
                         <Link to="/Gerencia/TabelaGeral" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Tabela Geral</Link>
                     </div>
                     <div className="row mt-2 ">
