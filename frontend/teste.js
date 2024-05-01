@@ -73,16 +73,12 @@ app.get('/suporteContrato', async (req, res) => {
 })
 
 app.get('/AguardandoVistoria', async (req, res) =>{
-    const tabela = await axios(bancoApi(9)).then(resp => {
+    const tabela = await axios(bancoApi(3)).then(resp => {
         const registros = resp.data
         let dados = []
-        // {contrato: [], avulso: []}
 
         registros.map(registro => {
             dados.push(gerenciador(registro))
-            // var c = registro.DescricaoTipoOS
-            // if(c.match(/CONTRATO/)) dados.contrato.push(gerenciador(registro))
-            // else dados.avulso.push(gerenciador(registro))
         })
 
         return dados
@@ -92,17 +88,12 @@ app.get('/AguardandoVistoria', async (req, res) =>{
 })
 
 app.get('/Aprovado', async (req, res) =>{
-    const tabela = await axios(bancoApi(9)).then(resp => {
+    const tabela = await axios(bancoApi(8)).then(resp => {
         const registros = resp.data
         let dados = []
-        // {contrato: [], avulso: []}
 
         registros.map(registro => {
             dados.push(gerenciador(registro))
-            // var c = registro.DescricaoTipoOS
-            // if(c.match(/CONTRATO/)) dados.contrato.push(gerenciador(registro))
-            // else dados.avulso.push(gerenciador(registro))
-
         })
 
         return dados
@@ -250,6 +241,8 @@ function contrato(cont) {
 function gerenciador(registro){
     return {
         OS: registro.OSID,
+        Data: registro.OSData,
+        DataFinalMovto: registro.DataFinalMovto,
         Cliente: registro.PessoaFantasia,
         Servico: servico(registro.EstagioDescricao, registro.DescricaoTipoOS),
         Equipamento: registro.NomeEquipamento,
