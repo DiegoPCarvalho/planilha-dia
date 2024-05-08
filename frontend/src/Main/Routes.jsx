@@ -9,13 +9,9 @@ import Home from '../Components/Home/Home';
 
 //pagehome
 import NewPageHome from '../Components/Home/NewPageHome';
-
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
-// import Formulario from "../Components/Atividade/Formulario";
-// import Tabela from "../Components/Atividade/Tabela";
-// import Table from "../Components/Atividade/Testes/table";
 import FormTable from "../Components/Atividade/FormTable";
-// import TabelaRegistroAntigo from "../Components/Atividade/TabRegistroAntigo";
+import HomeFilaTecnico from "../Components/FilaAtividade";
 import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 
 
@@ -56,7 +52,6 @@ import PageFinanceiro from "../Components/Setores/Gerencia/PageFinanceiro";
 import PageFinanceiroPro from '../Components/Setores/Gerencia/PageFinanceiroProcess';
 import SolicitacoesLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Solicitacoes";
 import AprovadosLab from "../Components/Setores/Gerencia/LaboratorioGerencia/Aprovados";
-import MetaLab from "../Components/Setores/Gerencia/MetaLab";
 import TabelaGeral from "../Components/Setores/Gerencia/LaboratorioGerencia/TabelaGeral";
 import IndexDash  from "../Components/Dashboard/DashboardModel/Index";
 
@@ -108,7 +103,6 @@ export default function Rotas() {
                         <Route path="Finalizados" element={<FinaliadosLab />} />
                     </Route>
                 </Route>
-               
             </Route>
             <Route element={<Home />}>
                 <Route path="/Gerencia" element={<HomeGerenciaLab />}>
@@ -169,8 +163,7 @@ export default function Rotas() {
             <Route element={<Home />}>
                 <Route path="/Laboratorio" element={<CrudAtividade />}>
                     <Route path="Atividade" element={<FormTable />} />
-                    {/* <Route path="Tabela" element={<FormTable/>} />
-                    <Route path="TabelaAntiga" element={<TabelaRegistroAntigo />} /> */}
+                    <Route path="FilaAtividade" element={<HomeFilaTecnico />} />                    
                     <Route path="Relatorio" element={<RelatorioPessoal />} />
                 </Route>
                 <Route path="/CentroCustoLab" element={<CentroCustoLab />}>
@@ -196,7 +189,9 @@ export default function Rotas() {
             <Route path="/EmBreve" element={<Home />}>
                 <Route index element={<EmBreve />} />
             </Route>
-            <Route path="*" element={<Login />} />
+            <Route element={<Login />}>
+                <Route path="*" element={<LoginMain />} />
+            </Route>
         </Routes>
     )
 }

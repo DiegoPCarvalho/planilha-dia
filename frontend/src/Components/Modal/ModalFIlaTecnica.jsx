@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 
 const MODAL_STYLE = {
@@ -8,7 +8,7 @@ const MODAL_STYLE = {
         left: '25%',
         right: 'auto',
         bottom: 'auto',
-        height: 360,
+        height: 390,
         width: 700
     },
     overlay: {

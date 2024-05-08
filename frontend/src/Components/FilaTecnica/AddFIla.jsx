@@ -240,13 +240,6 @@ export default class AddFila extends React.Component {
                         <td>{Atividade.Equipamento}</td>
                         <td>{this.manutencao(Atividade.Servico)}</td>
                         <td>
-                            {/* <ModalTabela corModal="warning" nome={this.renderI()}
-                                Relatorio={this.formulario()} 
-                                isShow={this.state.modal}
-                                tamanho="lg"
-                            close={() => this.setState({ modal: false })}
-                            /> */}
-
                             <button className="btn btn-success mx-2 mt-2"
                                 onClick={() => this.load(Atividade)}
                             >
@@ -318,6 +311,7 @@ export default class AddFila extends React.Component {
     //verificar
     verfificar() {
         const tecnico = this.state.Atividade.Tecnico
+        const dt = new Date()
 
 
         if (tecnico === '') {
@@ -325,6 +319,7 @@ export default class AddFila extends React.Component {
         } else {
 
             this.state.Atividade.Estagio = "Enviado"
+            this.state.Atividade.dt = dt
             // this.state.Atividade.Tecnico = tecnico
 
             this.save()
@@ -433,7 +428,9 @@ export default class AddFila extends React.Component {
                         <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
                         <span className='fw-bold h4 mt-2'>Fila Montada</span>
                     </div>
-                    <div className="col-6"></div>
+                    <div className='col-6 mb-3 d-flex justify-content-center align-items-center'>
+                        <span className='fw-bold h2 p-lg-2 text-light rounded bg-success mt-2'>Add Fila</span>
+                    </div>
                     <div className="col-3">
                         <div className="alert-box h6 success">Salvo com Sucesso!!!</div>
                     </div>
@@ -446,7 +443,6 @@ export default class AddFila extends React.Component {
                 </div>
 
                 <div>
-                    <button onClick={() => this.setState({ modal: true })}>mostar</button>
                     <ModalFilaTecnica modal={this.state.modal}
                         close={() => this.setState({ modal: false, Atividade: initialState.Atividade })}
                         relatorio={this.formulario()}
