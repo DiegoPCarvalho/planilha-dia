@@ -1,5 +1,6 @@
 import React from "react";
 import FilaDoTecnico from "./FilaDoTecnico";
+import TabelaFila from "./TabelaFila";
 
 const initialState = {
     mudarPagina: false
@@ -10,7 +11,7 @@ export default class HomeFilaTecnico extends React.Component {
 
     render(){
         return this.state.mudarPagina === false ? <FilaDoTecnico mudar={() => this.setState({mudarPagina: true})}/> : (
-            <div> <button onClick={() => this.setState({ mudarPagina: false})}>voltar</button></div>
+            <TabelaFila  mudar={() => this.setState({mudarPagina: false})}/>
         )
     }
 }

@@ -7,7 +7,7 @@ function CardFilaTecnica(props) {
                 <Card.Header>
                     <div className='text-light d-flex'>
                         <div className='fw-bolder'>OS: {props.os} -</div>
-                        <div className=' mx-1 fw-bolder'>DATA: {props.dt} </div>
+                        <div className=' mx-1 fw-bolder d-none d-lg-flex'>DATA: {props.dt} </div>
                     </div>
                 </Card.Header>
                 <Card.Body>
