@@ -11,7 +11,6 @@ import Home from '../Components/Home/Home';
 import NewPageHome from '../Components/Home/NewPageHome';
 import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import FormTable from "../Components/Atividade/FormTable";
-import HomeFilaTecnico from "../Components/FilaAtividade";
 import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 
 
@@ -162,8 +161,7 @@ export default function Rotas() {
             </Route>
             <Route element={<Home />}>
                 <Route path="/Laboratorio" element={<CrudAtividade />}>
-                    <Route path="Atividade" element={<FormTable />} />
-                    <Route path="FilaAtividade" element={<HomeFilaTecnico />} />                    
+                    <Route path="Atividade" element={<FormTable />} />                  
                     <Route path="Relatorio" element={<RelatorioPessoal />} />
                 </Route>
                 <Route path="/CentroCustoLab" element={<CentroCustoLab />}>

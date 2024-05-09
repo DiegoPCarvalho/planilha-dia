@@ -47,7 +47,7 @@ const initialState = {
     listarBanco: [],
     ano: 0,
     mes: 0,
-    mudar: 'form',
+    mudar: 'fila',
     table_on: false,
 }
 
@@ -55,10 +55,15 @@ export default class FormTable extends React.Component {
 
     state = { ...initialState }
 
+    //#region montagem comp.
     componentDidMount() {
         this.retornoTabela()
         this.buscar()
         this.retornoMesAno()
+
+        if (localStorage.departamento == 'Limpeza Lab') {
+            return this.setState({ mudar: 'form' })
+        }
     }
 
     componentDidUpdate() {
@@ -72,6 +77,7 @@ export default class FormTable extends React.Component {
             });
         });
     }
+    //#endregion
 
     //#region buscar
     retornoTabela() {
@@ -89,10 +95,6 @@ export default class FormTable extends React.Component {
 
             return this.setState({ list: dadoNovo })
         })
-
-
-
-
 
     }
 
@@ -599,9 +601,9 @@ export default class FormTable extends React.Component {
     //#endregion
 
     //#region mudarTela
-    mudarTela(){
-        if(this.state.mudar === 'form'){
-            this.setState({ Atividade: initialState.Atividade, mudar:'table', table_on: false })
+    mudarTela() {
+        if (this.state.mudar === 'form') {
+            this.setState({ Atividade: initialState.Atividade, mudar: 'table', table_on: false })
         }
     }
 
@@ -652,11 +654,35 @@ export default class FormTable extends React.Component {
 
     //#endregion
 
-    render() {
+    //#region Fila Tenica
+    filaRender() {
+        return (
+            <>
+                <button onClick={() => this.setState({ mudar: 'form' })}>mudar</button>
+            </>
+        )
+    }
+    //#endregion
+
+    //#region render setor
+    renderLimpeza() {
         return this.state.mudar === 'form' ?
             this.formRender()
             : this.state.mudar === 'table' ?
                 this.tableRender() : <TabelaRegistroAntigo mudar={() => this.setState({ mudar: 'table' })} />
+    }
+
+    renderLabo() {
+        return this.state.mudar === 'fila' ?
+            this.filaRender() : this.state.mudar === 'form' ? this.formRender()
+                : this.state.mudar === 'table' ?
+                    this.tableRender() : <TabelaRegistroAntigo mudar={() => this.setState({ mudar: 'table' })} />
+    }
+    //#endregion
+
+    render() {
+        return localStorage.departamento === 'Limpeza Lab' ? this.renderLimpeza() : this.renderLabo()
+
     }
 }
 

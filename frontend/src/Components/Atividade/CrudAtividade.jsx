@@ -39,11 +39,7 @@ export default class AtividadeCrud extends React.Component {
                         </div>
                     </div>
                     <div className="d-flex flex-row">
-                        {localStorage.departamento === 'Limpeza' ? (
-                            <Link to="/Laboratorio/Atividade" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Atividade</Link>
-                        ) : (
-                            <Link to="/Laboratorio/FilaAtividade" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Atividade</Link>
-                        )}
+                        <Link to="/Laboratorio/Atividade" className="rounded-start flex-fill link bg-secondary fw-bold d-flex justify-content-center">Atividade</Link>
                         <Link to="/Laboratorio/Relatorio" className="rounded-end flex-fill link bg-secondary fw-bold d-flex justify-content-center">Relatório</Link>
                     </div>
 
