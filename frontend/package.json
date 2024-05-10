@@ -51,7 +51,7 @@
     "serve": "serve -s build",
     "exp": "node server.js",
     "dev": "nodemon server.js",
-    "dash": "nodemon teste.js"
+    "dash": "nodemon index.js"
   },
   "eslintConfig": {
     "extends": [

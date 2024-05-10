@@ -9,7 +9,7 @@ function CardGD(props) {
           className={props.tipoTexto}
         >
           <Card.Body>
-            <Card.Title><div className='h3 fw-bold d-flex justify-content-center'>{props.nomeTitulo}</div></Card.Title>
+            <Card.Title><div className='h4 fw-bold d-flex justify-content-center'>{props.nomeTitulo}</div></Card.Title>
             <Card.Text>
               <div className='row mt-2'>
                 <div className="col-2">

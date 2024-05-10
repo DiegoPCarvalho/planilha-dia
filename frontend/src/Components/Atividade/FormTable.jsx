@@ -274,7 +274,7 @@ export default class FormTable extends React.Component {
 
     formulario() {
         return (
-            <form className="row g-3" action="javascript:myFunction(); return false;">
+            <form className="row g-3 mt-3" action="javascript:myFunction(); return false;">
                 <div className="form">
                     <div className="row">
                         <div className="col-6 col-md-2">
@@ -432,13 +432,13 @@ export default class FormTable extends React.Component {
                         </div>
                         <div className="col-12 col-md-6 d-flex justify-content-end">
 
-                            <button className="btn btn-primary mx-2"
+                            <button className="btn btn-primary mx-2 fw-bold"
                                 onClick={e => this.verificar(e)}
                             >
                                 Salvar
                             </button>
 
-                            <button className="btn btn-danger"
+                            <button className="btn btn-danger fw-bold"
                                 onClick={e => this.clear(e)}
                             >
                                 Cancelar
@@ -604,21 +604,59 @@ export default class FormTable extends React.Component {
     mudarTela() {
         if (this.state.mudar === 'form') {
             this.setState({ Atividade: initialState.Atividade, mudar: 'table', table_on: false })
+        } else if (this.state.mudar === 'fila') {
+            this.setState({ Atividade: initialState.Atividade, mudar: 'form' })
         }
+    }
+
+    mudarTelaRapido() {
+        this.setState({ mudar: 'form' })
+
+        setTimeout(() => {
+            this.setState({ mudar: 'fila' })
+        }, 1);
     }
 
     formRender() {
         return (
             <>
                 <div className='row d-flex justify-content-between'>
-                    <div className='col-1 mb-3 d-flex justify-content-start align-items-center'>
-                        <i className="fa fa-table fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
-                        <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
-                        <span className='fw-bold h4 mt-2'>Tabela</span>
-                    </div>
-                    <div className="col-2 d-flex justify-content-end">
-                        <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
-                    </div>
+                    {localStorage.departamento === 'Limpeza Lab' ? (
+                        <>
+                            <div className='col-3 d-flex justify-content-start align-items-center'>
+                                <i className="fa fa-table fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
+                                <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
+                                <span className='fw-bold h4 mt-2'>Tabela</span>
+                            </div>
+                            <div className="col-3 d-flex justify-content-end">
+                                <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className='col-4 d-flex justify-content-start align-items-center'>
+                                <i className="fa fa-list-alt fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'fila' })}></i>
+                                <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
+                                <span className='fw-bold h4 mt-2'>Fila</span>
+                            </div>
+                            <div className="col-4 d-flex justify-content-center">
+                                <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
+                            </div>
+                            <div className='col-4 d-flex justify-content-start align-items-end flex-column'>
+                                <div className='d-flex align-items-center'>
+                                    <span className='fw-bold h5 mt-2'>Tabela</span>
+                                    <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                                    <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
+                                </div>
+                                <div className='d-flex align-items-center'>
+                                    <span className='fw-bold h5 mt-2'>Reg. Antigo</span>
+                                    <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                                    <i className="fa fa-database fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'tableAntiga', Atividade: initialState.Atividade, cont: 1 })}></i>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
                 </div>
                 <div className="row">
                     <div className='col-12'>
@@ -632,17 +670,31 @@ export default class FormTable extends React.Component {
     tableRender() {
         return (
             <div>
-                <div className='row d-flex justify-content-between'>
-                    <div className='mb-3 col-3 d-flex justify-content-start align-items-center'>
-                        <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'form' })}></i>
-                        <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
-                        <span className='fw-bold h4 mt-2'>Formulário</span>
-                    </div>
-                    <div className='col-3 d-flex justify-content-end align-items-center'>
-                        <button onClick={() => this.setState({ mudar: 'tableAntiga' })} className='btn btn-success p-2 d-flex align-items-center'>
-                            <i className='fa-2x fa fa-database'></i>
-                            <h4 className='mx-2'><b>Registro Antigo</b></h4>
-                        </button>
+                <div className='row d-flex justify-content-between align-items-center'>
+                    {localStorage.departamento === 'Limpeza Lab' ? (
+                        <div className='mb-3 col-3 d-flex justify-content-start align-items-center'>
+                            <i className="mt-3 fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'form' })}></i>
+                            <i className='fa fa-arrow-left mx-3 mt-3 fa-2x text-danger'></i>
+                            <span className='fw-bold h4 mt-4'>Formulário</span>
+                        </div>
+                    ) : (
+                        <div className="col-3 d-flex justify-content-end align-items-start flex-column">
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-list-alt fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTelaRapido()}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Fila</span>
+                            </div>
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-address-card fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'form' })}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Formulário</span>
+                            </div>
+                        </div>
+                    )}
+                    <div className='col-6 d-flex justify-content-end align-items-center'>
+                        <span className='fw-bold h4 mt-2'>Registro Antigo</span>
+                        <i className='fa fa-arrow-right mx-3 fa-2x text-danger'></i>
+                        <i className="fa fa-database fa-3x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'tableAntiga' })}></i>
                     </div>
                 </div>
                 <div className="mt-5">
@@ -652,16 +704,39 @@ export default class FormTable extends React.Component {
         )
     }
 
-    //#endregion
-
-    //#region Fila Tenica
     filaRender() {
         return (
             <>
-                <button onClick={() => this.setState({ mudar: 'form' })}>mudar</button>
+                <div className='row d-flex justify-content-between'>
+                    <div className='col-6 mb-3 d-flex justify-content-start align-items-center'>
+                        <i className="fa fa-list-alt fa-4x"></i>
+                    </div>
+                    <div className="col-6 d-flex justify-content-end align-items-end flex-column">
+                        <div className='d-flex align-items-center'>
+                            <span className='fw-bold h6 mt-2'>Formulário</span>
+                            <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                            <i className="fa fa-address-card fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                            <span className='fw-bold h6 mt-2'>Tabela</span>
+                            <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                            <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'table', Atividade: initialState.Atividade, cont: 1 })}></i>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                            <span className='fw-bold h6 mt-2'>Registro Antigo</span>
+                            <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                            <i className="fa fa-database fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'tableAntiga', Atividade: initialState.Atividade, cont: 1 })}></i>
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }
+
+    //#endregion
+
+    //#region Fila Tenica
+
     //#endregion
 
     //#region render setor
@@ -669,20 +744,26 @@ export default class FormTable extends React.Component {
         return this.state.mudar === 'form' ?
             this.formRender()
             : this.state.mudar === 'table' ?
-                this.tableRender() : <TabelaRegistroAntigo mudar={() => this.setState({ mudar: 'table' })} />
+                this.tableRender() : <TabelaRegistroAntigo
+                    table={() => this.setState({ mudar: 'table' })}
+                    form={() => this.setState({ mudar: 'form' })}
+                />
     }
 
     renderLabo() {
         return this.state.mudar === 'fila' ?
             this.filaRender() : this.state.mudar === 'form' ? this.formRender()
                 : this.state.mudar === 'table' ?
-                    this.tableRender() : <TabelaRegistroAntigo mudar={() => this.setState({ mudar: 'table' })} />
+                    this.tableRender() : <TabelaRegistroAntigo
+                        table={() => this.setState({ mudar: 'table' })}
+                        fila={() => this.setState({ mudar: 'fila' })}
+                        form={() => this.setState({ mudar: 'form' })}
+                    />
     }
     //#endregion
 
     render() {
         return localStorage.departamento === 'Limpeza Lab' ? this.renderLimpeza() : this.renderLabo()
-
     }
 }
 

@@ -24,7 +24,7 @@ export default class TabelaRegistroAntigo extends React.Component {
 
         await this.formataData(tabelaNome)
 
-        if((mes === "Todos")&&(ano !== "Todos")){
+        if ((mes === "Todos") && (ano !== "Todos")) {
             for (let i = 0; i < tabelaNome.length; i++) {
                 if ((localStorage.usuario === tabelaNome[i].Tecnico) && (ano === `${tabelaNome[i].Ano}`)) {
                     dados.push({
@@ -39,11 +39,11 @@ export default class TabelaRegistroAntigo extends React.Component {
                     })
                 }
             }
-    
+
             return this.setState({ listar: dados })
         }
 
-        if((mes !== "Todos")&&(ano !== "Todos")){
+        if ((mes !== "Todos") && (ano !== "Todos")) {
             for (let i = 0; i < tabelaNome.length; i++) {
                 if ((localStorage.usuario === tabelaNome[i].Tecnico) && (mes === `${tabelaNome[i].Mes}`) && (ano === `${tabelaNome[i].Ano}`)) {
                     dados.push({
@@ -58,7 +58,7 @@ export default class TabelaRegistroAntigo extends React.Component {
                     })
                 }
             }
-    
+
             return this.setState({ listar: dados })
         }
 
@@ -68,15 +68,15 @@ export default class TabelaRegistroAntigo extends React.Component {
     chamarAno() {
         const ano = document.getElementById("ano").value;
         const mes = document.getElementById("mes").value;
-        
 
-        if((mes === "Todos")&&(ano !== "Todos")){
+
+        if ((mes === "Todos") && (ano !== "Todos")) {
             this.buscarDados(mes, ano)
         }
-        if((mes !== "Todos")&&(ano !== "Todos")){
+        if ((mes !== "Todos") && (ano !== "Todos")) {
             this.buscarDados(mes, ano)
-        }else{
-            return this.setState({listar: []})
+        } else {
+            return this.setState({ listar: [] })
         }
 
     }
@@ -93,13 +93,47 @@ export default class TabelaRegistroAntigo extends React.Component {
         return (
             <div>
                 <div className="row mt-4">
-                    <div className="col-2">
-                        
+                    {localStorage.departamento === "Limpeza Lab" ? (
+                    <div className="col-3">
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-address-card fa-2x" style={{ cursor: 'pointer' }} onClick={this.props.form}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Formulário</span>
+                            </div>
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={this.props.table}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Tabela</span>
+                            </div>
                     </div>
-                    <div className="col-8 d-flex justify-content-around">
-                        <div className="col-2 d-flex flex-row justify-content-end align-items-end">
-                            <i className="fa fa-search fa-2x text-danger" />
+                ) : (
+                        <div className="col-3">
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-list-alt fa-2x" style={{ cursor: 'pointer' }} onClick={this.props.fila}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Fila</span>
+                            </div>
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-address-card fa-2x" style={{ cursor: 'pointer' }} onClick={this.props.form}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Formulário</span>
+                            </div>
+                            <div className='d-flex align-items-center'>
+                                <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={this.props.table}></i>
+                                <i className='fa fa-arrow-left mx-3  text-danger'></i>
+                                <span className='fw-bold h5 mt-2'>Tabela</span>
+                            </div>
                         </div>
+                    )}
+                    <div className="col-6 d-flex justify-content-around">
+                        {localStorage.departamento === "Limpeza Lab" ? (
+                            <div className="col-2 d-flex flex-row justify-content-end align-items-end">
+                                <i className="fa fa-search fa-2x text-danger" />
+                            </div>) : (
+                            <div className="col-2 d-flex flex-row justify-content-end align-items-center">
+                                <i className="fa fa-search fa-2x text-danger" />
+                            </div>
+                        )}
                         <div className="col-3">
                             <label className='fw-bold d-flex justify-content-center h3'>Mês: </label>
                             <select id="mes" class="form-select" aria-label="Default select example">
@@ -133,16 +167,14 @@ export default class TabelaRegistroAntigo extends React.Component {
                                 <option>2030</option>
                             </select>
                         </div>
-                        <div className="col-2 d-flex align-items-end">
-                            <button className="btn btn-success fw-bold" onClick={() => this.chamarAno()}>Buscar</button>
-                        </div>
-                    </div>
-                    <div className='col-2 d-flex justify-content-end align-items-start'>
-                        <button onClick={this.props.mudar} className='btn btn-success d-flex align-items-start'>
-                            <i className='fa-2x fa fa-table'></i>
-                                <h4 className='mx-2'><b>Voltar</b></h4>
-                        </button>
-
+                        {localStorage.departamento === "Limpeza Lab" ? (
+                            <div className="col-2 d-flex align-items-end">
+                                <button className="btn btn-success fw-bold" onClick={() => this.chamarAno()}>Buscar</button>
+                            </div>) : (
+                            <div className="col-2 d-flex align-items-center">
+                                <button className="btn btn-success fw-bold" onClick={() => this.chamarAno()}>Buscar</button>
+                            </div>)
+                        }
                     </div>
                 </div>
                 <div className='row mt-4'>
