@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import Url from '../Url/Url';
-
+import SupGif from '../../Assets/gifs/tabSup.gif';
+import CardFilaTecnica from "../Card/CardFIlaTecnica";
 import CardForm from '../Card/CardForm';
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import Cronometro from './Cronometro/index-Cronos';
 
 import $ from 'jquery';
 
@@ -16,6 +18,7 @@ const baseUrlEquip = Url("Equipamento");
 const baseUrlCont = Url("Contrato");
 const baseUrlServ = Url("Servico");
 const baseUrlBanco = Url("Banco");
+const bancoUrl = Url("FilaTecnica");
 
 //componente class
 const initialState = {
@@ -35,20 +38,45 @@ const initialState = {
         Contrato: '',
         Observacao: '',
         Status: '',
+        Estagio: '',
+        DataInicialBruto: '',
+        DataFinalBruto: '',
+        TempoLiquido: '',
         Tecnico: localStorage.usuario
     },
+    Fila: {
+        id: '',
+        OS: '',
+        Data: '',
+        DataFinalMovto: '',
+        Cliente: '',
+        Equipamento: '',
+        NS: '',
+        TipoOS: '',
+        Estagio: '',
+        Tecnico: ''
+    },
     list: [],
-    list2: [],
+    listarFila: [],
     listEquip: [],
     listServ: [],
     listCont: [],
     ultimaOS: 0,
     listarCosmos: [],
     listarBanco: [],
+    listIni: [],
+    listFim: [],
     ano: 0,
     mes: 0,
+    dia: 0,
     mudar: 'fila',
     table_on: false,
+}
+
+const estilo = {
+    height: 70,
+    width: 70,
+    borderRadius: '50%'
 }
 
 export default class FormTable extends React.Component {
@@ -60,10 +88,12 @@ export default class FormTable extends React.Component {
         this.retornoTabela()
         this.buscar()
         this.retornoMesAno()
+        this.buscarInicioEfim()
 
         if (localStorage.departamento == 'Limpeza Lab') {
             return this.setState({ mudar: 'form' })
         }
+
     }
 
     componentDidUpdate() {
@@ -86,14 +116,14 @@ export default class FormTable extends React.Component {
             let dadoNovo = []
 
             tabela.map(dado => {
-                if ((localStorage.usuario === dado.Tecnico) && (this.state.ano === dado.Ano) && (this.state.mes === dado.Mes)) {
+                if ((localStorage.usuario === dado.Tecnico) && (this.state.ano === dado.Ano) && (this.state.mes === dado.Mes) && (dado.Estagio === 'Finalizado')) {
                     dadoNovo.push(
                         { ...dado }
                     )
                 }
             })
 
-            return this.setState({ list: dadoNovo })
+            return this.setState({ list: dadoNovo})
         })
 
     }
@@ -103,10 +133,12 @@ export default class FormTable extends React.Component {
 
         const mes = data.getMonth() + 1
         const ano = data.getFullYear()
+        const dia = data.getDate()
 
         return this.setState({
-            ano: ano,
-            mes: mes
+            ano, 
+            mes, 
+            dia
         })
     }
 
@@ -145,6 +177,46 @@ export default class FormTable extends React.Component {
 
         axios(url).then(resp => {
             this.setState({ listarCosmos: resp.data })
+        })
+    }
+
+    buscarInicioEfim() {
+        axios(baseUrl).then(resp => {
+            const tabela = resp.data
+            let dado = []
+
+            tabela.map(registro => {
+                if((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')){
+                    dado.push({ ...registro })
+                }
+            })
+
+            this.setState({ listFim: dado })
+        })
+
+        axios(bancoUrl).then(resp => {
+            const tabela = resp.data
+            let dado = []
+
+            tabela.map(registro => {
+                if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
+                    dado.push({ ...registro })
+                }
+            })
+
+            this.setState({ listIni: dado })
+        })
+        axios(bancoUrl).then(resp => {
+            const tabela = resp.data
+            let dado = []
+
+            tabela.map(registro => {
+                if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
+                    dado.push({ ...registro })
+                }
+            })
+
+            this.setState({ listarFila: dado })
         })
     }
 
@@ -729,6 +801,12 @@ export default class FormTable extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="row mt-3">
+                    {this.renderGrade()}
+                </div>
+                <div>
+                    <button onClick={() => console.log(this.state.Fila)}>buscar</button>
+                </div>
             </>
         )
     }
@@ -736,6 +814,328 @@ export default class FormTable extends React.Component {
     //#endregion
 
     //#region Fila Tenica
+
+    //#region estrutura
+    async iniciar(registro) {
+        await this.setState({ Fila: registro })
+        const data = new Date()
+
+        this.state.Fila.Data = data
+        this.state.Fila.dt = data
+        this.state.Fila.DataInicialBruto = data
+        this.state.Fila.Estagio = "Iniciado"
+
+        this.salvar()
+        this.buscaSimples('Iniciado')
+    }
+
+    buscaSimples(modo) {
+        if (modo === 'Iniciado') {
+            axios(baseUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')){
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listFim: dado })
+            })
+
+            axios(bancoUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listIni: dado })
+            })
+            axios(bancoUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listarFila: dado })
+            })
+        } else if (modo === "Finalizado") {
+            axios(bancoUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listarFila: dado })
+            })
+
+            axios(bancoUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listIni: dado })
+            })
+
+            axios(baseUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')){
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listFim: dado })
+            })
+
+        }
+    }
+
+    deletar(Fila) {
+        axios.delete(`${bancoUrl}/${Fila.id}`).then(resp => {
+            this.setState({Fila: initialState.Fila})
+        })
+    }
+
+    salvar() {
+            const Fila = this.state.Fila
+            const method = Fila.id ? 'put' : 'post'
+            const url = Fila.id ? `${bancoUrl}/${Fila.id}` : bancoUrl
+            axios[method](url, Fila)
+                .then(resp => {
+                    const listarFila = this.atualizarLista(resp.data, this.state.listarFila)
+                    this.setState({ Fila: initialState.Fila, listarFila})
+                })
+    }
+
+    atualizarLista(Fila, banco, add = true) {
+        const listarFila = banco.filter(a => a.id !== Fila.id)
+        if (add) listarFila.unshift(Fila)
+        return listarFila
+    }
+
+    async finalizar(registro) {
+        await this.setState({ Fila: registro })
+
+        const data = new Date()
+
+        let diaTemp = document.getElementById(`dia ${this.state.Fila.id}`).innerText;
+        let horaTemp = document.getElementById(`hora ${this.state.Fila.id}`).innerText;
+        let minutoTemp = document.getElementById(`minuto ${this.state.Fila.id}`).innerText;
+        let segundoTemp = document.getElementById(`segundo ${this.state.Fila.id}`).innerText;
+
+        const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
+
+        const Fila = this.state.Fila
+
+        const Atividade = {}
+        Atividade.Data = data
+        Atividade.Dia = data.getDate()
+        Atividade.Mes = data.getMonth() + 1
+        Atividade.Ano = data.getFullYear()
+        Atividade.OS = Fila.OS
+        Atividade.Cliente = Fila.Cliente
+        Atividade.Equipamento = this.equipamento(Fila.Equipamento)
+        Atividade.Modelo = Fila.Equipamento
+        Atividade.NS = Fila.NS
+        Atividade.Servico = Fila.Servico
+        Atividade.Contrato = Fila.TipoOS
+        Atividade.Estagio = "Finalizado"
+        Atividade.DataInicialBruto = Fila.DataInicialBruto
+        Atividade.DataFinalBruto = data
+        Atividade.TempoLiquido = tempoLiquido
+        Atividade.Tecnico = Fila.Tecnico
+
+
+        this.saveFinal(Atividade)
+        this.deletar(Fila)
+        this.buscaSimples('Finalizado')
+    }
+
+    saveFinal(dado) {
+        const Atividade = dado
+        const method = Atividade.id ? 'put' : 'post'
+        const url = Atividade.id ? `${baseUrl}/${Atividade.id}` : baseUrl
+        axios[method](url, Atividade)
+            .then(resp => {
+                const list = this.getUpdatedList(resp.data)
+                this.setState({ list })
+            })
+    }
+
+    equipamento(equip) {
+
+        if (equip) {
+            if (equip.match(/COLETOR DE/)) {
+                return "Coletor de Dados"
+            } else if (equip.match(/TERMINAL DE CONSULTA/)) {
+                return "Terminal de Consulta"
+            } else if (equip.match(/IMPRESSORA/)) {
+                return "Impressora Térmica"
+            } else if (equip.match(/LEITOR DE RFID/) || equip.match(/ANTENA RFID/)) {
+                return "Leitor de RFID"
+            } else if (equip.match(/LEITOR/)) {
+                return "Leitor de Dados"
+            } else if (equip.match(/3 POSICOES/)) {
+                return "Carregador de 3 Posições"
+            } else if (equip.match(/4 POSICOES/)) {
+                return "Carregador de 4 Posições"
+            } else if (equip.match(/5 POSICOES/)) {
+                return "Carregador de 5 Posições"
+            } else if (equip.match(/6 POSICOES/)) {
+                return "Carregador de 6 Posições"
+            } else if (equip.match(/1 POSICOES/)) {
+                return "Berço de Comunicação"
+            } else if (equip.match(/FONTE/)) {
+                return "Fonte de Alimentação"
+            } else if (equip.match(/CABO CONFECCIONADO/)) {
+                return "Cabo Confeccionado"
+            } else if (equip.match(/BATERIA/)) {
+                return "Bateria"
+            } else if (equip.match(/TECLADO/)) {
+                return "Teclado"
+            } else if (equip.match(/GATILHO/)) {
+                return "Gatilho Móvel"
+            } else if (equip.match(/TABLET/) && equip !== "BERCO DE 4 POSICOES PARA TABLET ZEBRA ET51") {
+                return "Tablet"
+            } else if (equip.match(/CELULAR/)) {
+                return "Smartphone"
+            } else if (equip === "DOCKING STATION ZEBRA GAMBER JOHNSON HDMI") {
+                return "Doca p/Tablet"
+            }
+            else {
+                return equip
+            }
+        } else {
+            return
+        }
+    }
+
+    //#endregion
+
+    //#region Grade
+    renderGrade() {
+        return (
+            <>
+                <div className="col-4 d-flex flex-column">
+                    {this.renderTableFila(this.state.listarFila, 'TO DO', 'primary')}
+                </div>
+                <div className="col-4">
+                    {this.renderTableFila(this.state.listIni, 'DOING')}
+                </div>
+                <div className="col-4">
+                    {this.renderTableFila(this.state.listFim, 'DOES', 'secondary')}
+                </div>
+            </>
+        )
+    }
+
+    renderTableFila(dados, nome, cor) {
+        return (
+            <table className="table table-bordered">
+                <thead className="table-dark">
+                    <tr>
+                        <th className="d-flex justify-content-center">{nome}</th>
+                    </tr>
+                </thead>
+                <tbody style={{ overflow: 'auto', height: 400 }} className="d-block">
+                    {dados.length === 0 ?
+                        this.renderBuscando()
+                        : this.renderRowsFila(dados, cor, nome)
+                    }
+                </tbody>
+            </table>
+        )
+    }
+
+    renderRowsFila(dados, cor, modo) {
+        const dt = new Date()
+
+        return dados.map(registro => {
+            if (modo === 'TO DO') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            os={registro.OS}
+                            dt={this.dataNova(registro.dt)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            bg={cor ? cor : 'success'}
+                            icone="play-circle"
+                            corBotao="success"
+                            abrir={() => this.iniciar(registro)}
+                        />
+                    </div>
+                )
+            } else if (modo === 'DOING') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            os={registro.OS}
+                            dt={this.dataNova(registro.dt)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            bg={cor ? cor : 'success'}
+                            icone="flag-checkered"
+                            corBotao="danger"
+                            cronos={
+                                <Cronometro
+                                    dia={`dia ${registro.id}`}
+                                    hora={`hora ${registro.id}`}
+                                    minuto={`minuto ${registro.id}`}
+                                    segundo={`segundo ${registro.id}`} />
+                            }
+                            abrir={() => this.finalizar(registro)}
+                        />
+                    </div>
+                )
+            } else if (modo === 'DOES') {
+                    return (
+                        <div className="d-flex justify-content-center">
+                            <CardFilaTecnica
+                                os={registro.OS}
+                                dt={this.dataNova(registro.Data)}
+                                Equip={registro.Equipamento}
+                                Cliente={registro.Cliente}
+                                bg={cor ? cor : 'success'}
+                            />
+                        </div>
+                    )
+            }
+        })
+    }
+
+    renderBuscando() {
+        return (
+            <div className="d-flex justify-content-center align-items-center">
+                <img src={SupGif} alt="" style={estilo} />
+                <span className="fw-bold mx-2">Aguardando</span>
+            </div>
+        )
+    }
+    //#endregion
+
+
 
     //#endregion
 

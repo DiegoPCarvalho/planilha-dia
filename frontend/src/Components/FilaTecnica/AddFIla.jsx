@@ -320,8 +320,7 @@ export default class AddFila extends React.Component {
 
             this.state.Atividade.Estagio = "Enviado"
             this.state.Atividade.dt = dt
-            // this.state.Atividade.Tecnico = tecnico
-
+               
             this.save()
         }
     }

@@ -184,6 +184,8 @@ export default class FilaTecnica extends React.Component {
                         Equip={registro.Equipamento}
                         Cliente={registro.Cliente}
                         bg={cor ? cor : 'success'}
+                        icone="pencil-square"
+                        corBotao="warning fa-2x"
                         abrir={() => this.load(registro)}
                     />
                 </div>

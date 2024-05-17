@@ -8,7 +8,7 @@ import $ from 'jquery';
 
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import MyStopwatch from '../Cronometro/index-Cronos';
+import Cronometro from '../Cronometro/index-Cronos';
 
 
 const baseUrl = Url("teste");
@@ -488,7 +488,6 @@ export default class Formulário extends React.Component {
     }
 
     renderRows() {
-        let id = 0
         return this.state.list.map(Atividade => {
             return (
                 <tr key={(Atividade.id)}>
@@ -499,7 +498,7 @@ export default class Formulário extends React.Component {
                     <td>{Atividade.Equipamento}</td>
                     <td>{Atividade.Modelo}</td>
                     <td>
-                        <MyStopwatch dia={`dia ${Atividade.id}`} hora={`hora ${Atividade.id}`} minuto={`minuto ${Atividade.id}`} segundo={`segundo ${Atividade.id}`} />
+                        <Cronometro dia={`dia ${Atividade.id}`} hora={`hora ${Atividade.id}`} minuto={`minuto ${Atividade.id}`} segundo={`segundo ${Atividade.id}`} />
                     </td>
                     <td>{Atividade.Finalizada}</td>
                     <td>{Atividade.Servico}</td>
