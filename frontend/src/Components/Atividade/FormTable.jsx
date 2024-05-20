@@ -116,14 +116,14 @@ export default class FormTable extends React.Component {
             let dadoNovo = []
 
             tabela.map(dado => {
-                if ((localStorage.usuario === dado.Tecnico) && (this.state.ano === dado.Ano) && (this.state.mes === dado.Mes) && (dado.Estagio === 'Finalizado')) {
+                if ((localStorage.usuario === dado.Tecnico) && (this.state.ano === dado.Ano) && (this.state.mes === dado.Mes)) {
                     dadoNovo.push(
                         { ...dado }
                     )
                 }
             })
 
-            return this.setState({ list: dadoNovo})
+            return this.setState({ list: dadoNovo })
         })
 
     }
@@ -136,8 +136,8 @@ export default class FormTable extends React.Component {
         const dia = data.getDate()
 
         return this.setState({
-            ano, 
-            mes, 
+            ano,
+            mes,
             dia
         })
     }
@@ -186,7 +186,7 @@ export default class FormTable extends React.Component {
             let dado = []
 
             tabela.map(registro => {
-                if((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')){
+                if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
                     dado.push({ ...registro })
                 }
             })
@@ -601,7 +601,7 @@ export default class FormTable extends React.Component {
     renderTable() {
         return (
             <div>
-                <table className="table mt-3 table-bordered table-striped" id="tabela">
+                <table className="table mt-3 table-bordered table-striped table-hover" id="tabela">
                     <thead className="table-dark">
                         <tr>
                             <th>Index</th>
@@ -641,16 +641,20 @@ export default class FormTable extends React.Component {
                     <td>{Atividade.Modelo}</td>
                     <td>{Atividade.NS}</td>
                     <td>{Atividade.Servico}</td>
-                    <td className="d-flex justify-content-around">
-                        <button className="btn btn-warning mx-2"
-                            onClick={() => this.load(Atividade)}>
-                            <i className="fa fa-pencil"></i>
-                        </button>
-                        <button className="btn btn-danger mx-2"
-                            onClick={() => this.confirmar(Atividade)}>
-                            <i className="fa fa-trash"></i>
-                        </button>
-
+                    <td className="d-flex justify-content-around p-3">
+                        {Atividade.Estagio === "" ? (<>
+                            <button className="btn btn-warning mx-2"
+                                onClick={() => this.load(Atividade)}>
+                                <i className="fa fa-pencil"></i>
+                            </button>
+                            <button className="btn btn-danger mx-2"
+                                onClick={() => this.confirmar(Atividade)}>
+                                <i className="fa fa-trash"></i>
+                            </button>
+                        </>
+                        ) : (
+                            <td className='p-3 fw-bold'>{Atividade.Estagio}</td>
+                        )}
                     </td>
                 </tr>
             )
@@ -804,9 +808,6 @@ export default class FormTable extends React.Component {
                 <div className="row mt-3">
                     {this.renderGrade()}
                 </div>
-                <div>
-                    <button onClick={() => console.log(this.state.Fila)}>buscar</button>
-                </div>
             </>
         )
     }
@@ -836,7 +837,7 @@ export default class FormTable extends React.Component {
                 let dado = []
 
                 tabela.map(registro => {
-                    if((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')){
+                    if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
                         dado.push({ ...registro })
                     }
                 })
@@ -900,7 +901,7 @@ export default class FormTable extends React.Component {
                 let dado = []
 
                 tabela.map(registro => {
-                    if((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')){
+                    if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
                         dado.push({ ...registro })
                     }
                 })
@@ -913,19 +914,19 @@ export default class FormTable extends React.Component {
 
     deletar(Fila) {
         axios.delete(`${bancoUrl}/${Fila.id}`).then(resp => {
-            this.setState({Fila: initialState.Fila})
+            this.setState({ Fila: initialState.Fila })
         })
     }
 
     salvar() {
-            const Fila = this.state.Fila
-            const method = Fila.id ? 'put' : 'post'
-            const url = Fila.id ? `${bancoUrl}/${Fila.id}` : bancoUrl
-            axios[method](url, Fila)
-                .then(resp => {
-                    const listarFila = this.atualizarLista(resp.data, this.state.listarFila)
-                    this.setState({ Fila: initialState.Fila, listarFila})
-                })
+        const Fila = this.state.Fila
+        const method = Fila.id ? 'put' : 'post'
+        const url = Fila.id ? `${bancoUrl}/${Fila.id}` : bancoUrl
+        axios[method](url, Fila)
+            .then(resp => {
+                const listarFila = this.atualizarLista(resp.data, this.state.listarFila)
+                this.setState({ Fila: initialState.Fila, listarFila })
+            })
     }
 
     atualizarLista(Fila, banco, add = true) {
@@ -1081,6 +1082,7 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             bg={cor ? cor : 'success'}
+                            final={registro.Estagio}
                             icone="play-circle"
                             corBotao="success"
                             abrir={() => this.iniciar(registro)}
@@ -1098,6 +1100,7 @@ export default class FormTable extends React.Component {
                             bg={cor ? cor : 'success'}
                             icone="flag-checkered"
                             corBotao="danger"
+                            final={registro.Estagio}
                             cronos={
                                 <Cronometro
                                     dia={`dia ${registro.id}`}
@@ -1110,19 +1113,38 @@ export default class FormTable extends React.Component {
                     </div>
                 )
             } else if (modo === 'DOES') {
-                    return (
-                        <div className="d-flex justify-content-center">
-                            <CardFilaTecnica
-                                os={registro.OS}
-                                dt={this.dataNova(registro.Data)}
-                                Equip={registro.Equipamento}
-                                Cliente={registro.Cliente}
-                                bg={cor ? cor : 'success'}
-                            />
-                        </div>
-                    )
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            id={registro.id}
+                            os={registro.OS}
+                            dt={this.dataNova(registro.Data)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            bg={cor ? cor : 'success'}
+                            liquido={registro.TempoLiquido}
+                            bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
+                            final={registro.Estagio}
+                        />
+                    </div>
+                )
             }
         })
+    }
+
+    tempo(ini, fm) {
+        var inicio = new Date(ini);
+        var fim = new Date(fm);
+        var diferenca = new Date(fim - inicio);
+
+        // var resultado = diferenca.getUTCFullYear() - 1970 + "a ";
+        var resultado = diferenca.getUTCMonth() + " M : ";
+        resultado += diferenca.getUTCDate() - 1 + " d : ";
+        resultado += diferenca.getUTCHours() + " h : ";
+        resultado += diferenca.getUTCMinutes() + " m : ";
+        resultado += diferenca.getUTCSeconds() + " s";
+
+        return resultado
     }
 
     renderBuscando() {
