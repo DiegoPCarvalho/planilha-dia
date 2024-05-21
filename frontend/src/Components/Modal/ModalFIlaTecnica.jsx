@@ -22,9 +22,6 @@ const MODAL_STYLE = {
     }
 }
 
-
-
-
 export default function ModalFilaTecnica(props) {
 
 

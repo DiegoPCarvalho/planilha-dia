@@ -11,6 +11,7 @@ import Cronometro from './Cronometro/index-Cronos';
 import $ from 'jquery';
 
 import TabelaRegistroAntigo from './TabRegistroAntigo';
+import ModalToDo from '../Modal/ModalToDo';
 
 
 const baseUrl = Url("Geral");
@@ -71,6 +72,8 @@ const initialState = {
     dia: 0,
     mudar: 'fila',
     table_on: false,
+    mode: false,
+    modalToDo: false
 }
 
 const estilo = {
@@ -101,10 +104,8 @@ export default class FormTable extends React.Component {
     }
 
     pagination() {
-        $(document).ready(function () {
-            $('#tabela').DataTable({
-                language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
-            });
+        $('#tabela').DataTable({
+            language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
         });
     }
     //#endregion
@@ -307,8 +308,9 @@ export default class FormTable extends React.Component {
     remove(Atividade) {
         axios.delete(`${baseUrl}/${Atividade.id}`)
             .then(resp => {
+                this.setState({ mudar: 'form', mode: true })
                 const list = this.getUpdatedList(Atividade, false)
-                this.setState({ list })
+                return this.setState({ list })
             })
     } // deletar
 
@@ -345,6 +347,10 @@ export default class FormTable extends React.Component {
     //#region FORM
 
     formulario() {
+        if (this.state.mode === true) {
+            this.setState({ mudar: 'table', mode: false })
+        }
+
         return (
             <form className="row g-3 mt-3" action="javascript:myFunction(); return false;">
                 <div className="form">
@@ -699,13 +705,23 @@ export default class FormTable extends React.Component {
                 <div className='row d-flex justify-content-between'>
                     {localStorage.departamento === 'Limpeza Lab' ? (
                         <>
-                            <div className='col-3 d-flex justify-content-start align-items-center'>
-                                <i className="fa fa-table fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
-                                <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
-                                <span className='fw-bold h4 mt-2'>Tabela</span>
+                            <div className='col-4 d-flex justify-content-start align-items-center'>
+                                <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'fila' })}></i>
                             </div>
-                            <div className="col-3 d-flex justify-content-end">
+                            <div className="col-4 d-flex justify-content-center">
                                 <CardForm nomeTitulo="Ultima OS" icone="steam" dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
+                            </div>
+                            <div className='col-4 d-flex justify-content-start align-items-end flex-column'>
+                                <div className='d-flex align-items-center'>
+                                    <span className='fw-bold h5 mt-2'>Tabela</span>
+                                    <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                                    <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.mudarTela()}></i>
+                                </div>
+                                <div className='d-flex align-items-center'>
+                                    <span className='fw-bold h5 mt-2'>Reg. Antigo</span>
+                                    <i className='fa fa-arrow-right mx-3  text-danger'></i>
+                                    <i className="fa fa-database fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ mudar: 'tableAntiga', Atividade: initialState.Atividade, cont: 1 })}></i>
+                                </div>
                             </div>
                         </>
                     ) : (
@@ -807,6 +823,9 @@ export default class FormTable extends React.Component {
                 </div>
                 <div className="row mt-3">
                     {this.renderGrade()}
+                </div>
+                <div>
+                    <ModalToDo modal={this.state.modalToDo} close={() => this.setState({ modalToDo: false })} relatorio={this.formModal()} />
                 </div>
             </>
         )
@@ -935,42 +954,41 @@ export default class FormTable extends React.Component {
         return listarFila
     }
 
-    async finalizar(registro) {
-        await this.setState({ Fila: registro })
+    finalizar(registro) {
+            const data = new Date()
 
-        const data = new Date()
+            let diaTemp = document.getElementById(`dia ${this.state.Fila.id}`).innerText;
+            let horaTemp = document.getElementById(`hora ${this.state.Fila.id}`).innerText;
+            let minutoTemp = document.getElementById(`minuto ${this.state.Fila.id}`).innerText;
+            let segundoTemp = document.getElementById(`segundo ${this.state.Fila.id}`).innerText;
 
-        let diaTemp = document.getElementById(`dia ${this.state.Fila.id}`).innerText;
-        let horaTemp = document.getElementById(`hora ${this.state.Fila.id}`).innerText;
-        let minutoTemp = document.getElementById(`minuto ${this.state.Fila.id}`).innerText;
-        let segundoTemp = document.getElementById(`segundo ${this.state.Fila.id}`).innerText;
+            const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
 
-        const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
+            const Fila = registro
 
-        const Fila = this.state.Fila
-
-        const Atividade = {}
-        Atividade.Data = data
-        Atividade.Dia = data.getDate()
-        Atividade.Mes = data.getMonth() + 1
-        Atividade.Ano = data.getFullYear()
-        Atividade.OS = Fila.OS
-        Atividade.Cliente = Fila.Cliente
-        Atividade.Equipamento = this.equipamento(Fila.Equipamento)
-        Atividade.Modelo = Fila.Equipamento
-        Atividade.NS = Fila.NS
-        Atividade.Servico = Fila.Servico
-        Atividade.Contrato = Fila.TipoOS
-        Atividade.Estagio = "Finalizado"
-        Atividade.DataInicialBruto = Fila.DataInicialBruto
-        Atividade.DataFinalBruto = data
-        Atividade.TempoLiquido = tempoLiquido
-        Atividade.Tecnico = Fila.Tecnico
+            const Atividade = {}
+            Atividade.Data = data
+            Atividade.Dia = data.getDate()
+            Atividade.Mes = data.getMonth() + 1
+            Atividade.Ano = data.getFullYear()
+            Atividade.OS = Fila.OS
+            Atividade.Cliente = Fila.Cliente
+            Atividade.Equipamento = this.equipamento(Fila.Equipamento)
+            Atividade.Modelo = Fila.Equipamento
+            Atividade.NS = Fila.NS
+            Atividade.Servico = Fila.Servico
+            Atividade.Contrato = Fila.TipoOS
+            Atividade.Estagio = "Finalizado"
+            Atividade.DataInicialBruto = Fila.DataInicialBruto
+            Atividade.DataFinalBruto = data
+            Atividade.TempoLiquido = tempoLiquido
+            Atividade.Tecnico = Fila.Tecnico
+            Atividade.Observacao = this.state.Atividade.Observacao
 
 
-        this.saveFinal(Atividade)
-        this.deletar(Fila)
-        this.buscaSimples('Finalizado')
+            this.saveFinal(Atividade)
+            this.deletar(Fila)
+            this.buscaSimples('Finalizado')
     }
 
     saveFinal(dado) {
@@ -980,7 +998,7 @@ export default class FormTable extends React.Component {
         axios[method](url, Atividade)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
-                this.setState({ list })
+                this.setState({ list, Atividade: initialState.Atividade, modalToDo: false })
             })
     }
 
@@ -1030,6 +1048,69 @@ export default class FormTable extends React.Component {
         } else {
             return
         }
+    }
+
+    formModal() {
+        return (
+            <form className="row g-3 mt-3" action="javascript:myFunction(); return false;">
+                <div className="row">
+                    <div className="col-12 mt-2">
+                        <div className="form-group">
+                            <label className='fw-bold'>PORQUE DEMOROU TANTO? </label>
+                            <textarea className="form-control"
+                                name="Observacao" rows="3" id="Observacao"
+                                value={this.state.Atividade.Observacao}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite o Motivo..."
+                                required />
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-2 d-flex justify-content-end">
+                    <div className="col-12 col-md-6 d-flex justify-content-end">
+
+                        <button className="btn btn-primary mx-2 fw-bold"
+                            onClick={e => this.verificarCampo(e)}
+                        >
+                            Finalizar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        )
+    }
+
+    verificarCampo() {
+        const ativ = this.state.Atividade
+        const Fila = this.state.Fila
+
+        if (ativ.Observacao === '') {
+
+        } else {
+            this.finalizar(Fila)
+        }
+    }
+
+    async excecao(registro) {
+        await this.setState({ Fila: registro })
+        const tempo = this.diferenca(this.state.Fila.DataInicialBruto)
+
+        const Fila = this.state.Fila
+
+        if (tempo >= 3) {
+            this.setState({ modalToDo: true })
+        } else {
+            this.finalizar(Fila)
+        }
+    }
+
+    diferenca(data) {
+        const d2 = new Date()
+
+        const dif = d2 - new Date(data)
+        const diferenca = dif / (1000 * 60 * 60);
+
+        return +diferenca.toFixed(0)
     }
 
     //#endregion
@@ -1108,7 +1189,7 @@ export default class FormTable extends React.Component {
                                     minuto={`minuto ${registro.id}`}
                                     segundo={`segundo ${registro.id}`} />
                             }
-                            abrir={() => this.finalizar(registro)}
+                            abrir={() => this.excecao(registro)}
                         />
                     </div>
                 )
@@ -1156,8 +1237,6 @@ export default class FormTable extends React.Component {
         )
     }
     //#endregion
-
-
 
     //#endregion
 

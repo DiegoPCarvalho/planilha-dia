@@ -26,7 +26,7 @@ function CardSuporte(props) {
         </Card.Text>
         <Card.Text>
           <div className='row'>
-            <div className='col-5 fw-bold'><span className='bg-dark text-white p-1 rounded'>NS:</span> <span style={{ marginLeft: 1 }} className='p-1 bg-danger rounded text-white'>{props.NS}</span></div>
+            <div className='col-5 fw-bold'><span className='bg-dark text-white p-1 rounded'>NS:</span> <span style={{ marginLeft: 1 }} className={props.className}>{props.NS}</span></div>
             <div className='col-7 fw-bold'><span className='bg-dark text-white p-1 rounded'>AGENTE:</span> <span style={{ marginLeft: 1 }}>{props.Agente}</span></div>
           </div>
         </Card.Text>

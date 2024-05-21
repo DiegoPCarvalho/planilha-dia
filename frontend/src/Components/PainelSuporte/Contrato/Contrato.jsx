@@ -116,7 +116,7 @@ export default class Contrato extends React.Component {
                                 Equipamento={equipamento.Equipamento} NS={equipamento.NS}
                                 Cliente={equipamento.Cliente}
                                 Agente={equipamento.AgenteComercial} Obs={equipamento.ObservacaoEquip}
-                                contrato Sla={equipamento.SLA} className={this.MudarCor(equipamento.SLA)}
+                                contrato Sla={equipamento.Sla} className={this.MudarCor(equipamento.Sla)}
                             />
                         
                     </td>
@@ -135,11 +135,11 @@ export default class Contrato extends React.Component {
     }
 
     MudarCor(classe){
-        if(classe <= "1"){
+        if(classe <= 1){
             return 'p-1 bg-success rounded text-white'
-        }else if(classe === "2"){
+        }else if(classe === 2){
             return 'p-1 bg-warning rounded'
-        }else if(classe >= "3"){
+        }else if(classe >= 3){
             return 'p-1 bg-danger rounded text-white'
         }
     }
@@ -147,10 +147,14 @@ export default class Contrato extends React.Component {
     render() {
         return (
             <>
-                <div className='row d-flex justify-content-between'>
-                    <div className='col-1 mb-3'>
+                <div className='row'>
+                    <div className='col-3 mb-3'>
                         <i className="fa fa-phone-square fa-4x"></i>
                     </div>
+                    <div className="col-6 d-flex justify-content-center align-items-center">
+                        <div className="h3 bg-success rounded text-light fw-bold p-2">Contrato</div>
+                    </div>
+                    <div className="col-3"></div>
                 </div>
                 <div className="row">
                     <div className='col-12 col-md-4'>

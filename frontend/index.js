@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
 
 
 app.get('/suporteAvulso', async (req, res) => {
-    
+
     const tabelaGeral = await axios(bancoApi(2)).then(resp => resp.data)
 
     let dadoSuporteAvulso = []
@@ -40,9 +40,10 @@ app.get('/suporteAvulso', async (req, res) => {
             OS: tabelaGeral.OSID,
             Servico: tabelaGeral.DescricaoTipoOS,
             Equipamento: tabelaGeral.NomeEquipamento,
+            Cliente: tabelaGeral.PessoaFantasia,
             NS: tabelaGeral.EquipamentoLTS,
             AgenteComercial: tabelaGeral.AgenteNegNome,
-            ObservacaoEquip: tabelaGeral.ObservacaoEquip            
+            ObservacaoEquip: tabelaGeral.ObservacaoEquip
         })
     })
 
@@ -51,7 +52,7 @@ app.get('/suporteAvulso', async (req, res) => {
 })
 
 app.get('/suporteContrato', async (req, res) => {
-    
+
     const tabelaGeral = await axios(bancoApi(25)).then(resp => resp.data)
 
     let dadoSuporteAvulso = []
@@ -62,9 +63,11 @@ app.get('/suporteContrato', async (req, res) => {
             OS: tabelaGeral.OSID,
             Servico: tabelaGeral.DescricaoTipoOS,
             Equipamento: tabelaGeral.NomeEquipamento,
+            Cliente: tabelaGeral.PessoaFantasia,
             NS: tabelaGeral.EquipamentoLTS,
             AgenteComercial: tabelaGeral.AgenteNegNome,
-            ObservacaoEquip: tabelaGeral.ObservacaoEquip            
+            ObservacaoEquip: tabelaGeral.ObservacaoEquip,
+            Sla: sla(tabelaGeral.OSData)
         })
     })
 
@@ -72,7 +75,7 @@ app.get('/suporteContrato', async (req, res) => {
 
 })
 
-app.get('/AguardandoVistoria', async (req, res) =>{
+app.get('/AguardandoVistoria', async (req, res) => {
     const tabela = await axios(bancoApi(3)).then(resp => {
         const registros = resp.data
         let dados = []
@@ -87,7 +90,7 @@ app.get('/AguardandoVistoria', async (req, res) =>{
     res.json(tabela)
 })
 
-app.get('/Aprovado', async (req, res) =>{
+app.get('/Aprovado', async (req, res) => {
     const tabela = await axios(bancoApi(8)).then(resp => {
         const registros = resp.data
         let dados = []
@@ -143,6 +146,15 @@ async function buscarDados() {
     return tabelaGeral
 }
 
+function sla(data) {
+    const d2 = new Date()
+
+    const dif = d2 - new Date(d1)
+    const diferenca = dif / (1000 * 60 * 60 * 24);
+
+    return diferenca
+}
+
 
 function bancoApi(estagio) {
     return `http://app2.cosmoserp.com/zhaz/aWSPCosmosFBX.aspx?f2117e5dfa7f998f93afd92547d0ba9b,vApiOS,${estagio}`
@@ -158,7 +170,7 @@ function servico(serv, tipo) {
         return "Revisão de Reprovado"
     } else if ((serv === "Aguardando Vistoria" || serv === "Em Manutencao / Atendimento" || serv === "Manutencao Concluida / Limpeza") && (tipo === "MANUTENCAO (ON-SITE)" || tipo === "C&A - (ON-SITE)")) {
         return "Chamado On-Site"
-    } else if ((serv === "Abertura Suporte" || serv === "Em Atendimento - SR" || serv === "Vistoriado") && (tipo.match(/CONTRATO/) || tipo === "SUPORTE REMOTO" || tipo === "SUPORTE REMOTO - AMERICANAS")) {
+    } else if ((serv === "Suporte Remoto" || serv === "Abertura Suporte" || serv === "Em Atendimento - SR" || serv === "Vistoriado") && (tipo.match(/CONTRATO/) || tipo === "SUPORTE REMOTO" || tipo === "SUPORTE REMOTO - AMERICANAS" || tipo === "SUPORTE REMOTO - CONTRATO ASSAI")) {
         return "Suporte Remoto"
     } else if ((serv === "Expedicao e Faturamento") && (tipo.match(/CONTRATO/) || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES" || tipo === "SUPORTE REMOTO" || tipo === "SUPORTE REMOTO - AMERICANAS" || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES")) {
         return "Limpeza"
@@ -205,7 +217,7 @@ function equipamento(equip) {
         } else if (equip === "DOCKING STATION ZEBRA GAMBER JOHNSON HDMI") {
             return "Doca p/Tablet"
         }
-         else {
+        else {
             return equip
         }
     } else {
@@ -241,7 +253,7 @@ function contrato(cont) {
 //#endregion
 
 //#region logica /AgardandoVistoria
-function gerenciador(registro){
+function gerenciador(registro) {
     return {
         OS: registro.OSID,
         Data: registro.OSData,

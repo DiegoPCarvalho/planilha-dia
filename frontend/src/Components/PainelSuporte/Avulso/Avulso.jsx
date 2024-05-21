@@ -115,7 +115,7 @@ export default class Avulso extends React.Component {
                     <td key={i} className="flex-fill d-flex justify-content-center">
                         <CardSuporte OS={equipamento.OS} Data={this.formatarData(equipamento.Data)} 
                                 Equipamento={equipamento.Equipamento} NS={equipamento.NS}
-                                Cliente={equipamento.Cliente}
+                                Cliente={equipamento.Cliente} className={'p-1 rounded bg-success text-light fw-bold'}
                                 Agente={equipamento.AgenteComercial} Obs={equipamento.ObservacaoEquip}
                             />
                         
@@ -137,10 +137,14 @@ export default class Avulso extends React.Component {
     render() {
         return (
             <>
-                <div className='row d-flex justify-content-between'>
-                    <div className='col-1 mb-3'>
+                <div className='row'>
+                    <div className='col-3 mb-3'>
                         <i className="fa fa-phone-square fa-4x"></i>
                     </div>
+                    <div className="col-6 d-flex justify-content-center align-items-center">
+                        <div className="h3 bg-success rounded text-light fw-bold p-2">Avulso</div>
+                    </div>
+                    <div className="col-3"></div>
                 </div>
                 <div className="row">
                     <div className='col-12 col-md-4'>
