@@ -8,6 +8,7 @@ import $ from 'jquery';
 
 const initialState = {
     list: [],
+    listBanco: [],
     listTec: [],
     listEnv: [],
     listIni: [],
@@ -28,6 +29,7 @@ const initialState = {
         Estagio: '',
         Tecnico: ''
     },
+    data: ''
 }
 
 const estilo = {
@@ -36,6 +38,8 @@ const estilo = {
     borderRadius: '50%'
 }
 
+const data = new Date()
+const baseUrl = Url("Geral");
 const bancoUrl = Url("FilaTecnica");
 const baseUrlTec = Url("LoginUsuario");
 export default class FilaTecnica extends React.Component {
@@ -59,18 +63,37 @@ export default class FilaTecnica extends React.Component {
             this.setState({ listTec: lista })
         })
 
-        axios(bancoUrl).then(resp => {
-            const tabela = resp.data
-            let dado = []
+        const data = new Date()
 
-            tabela.map(registro => {
-                if (registro.Estagio === "Enviado") {
-                    dado.push({ ...registro })
-                }
-            })
+        this.setState({ data })
 
-            this.setState({ list: dado })
-        })
+
+        // axios(bancoUrl).then(resp => {
+        //     const tabela = resp.data
+        //     let dado = []
+
+        //     tabela.map(registro => {
+        //         dado.push({ ...registro })
+        //     })
+
+        //     this.setState({ listBanco: dado })
+        // })
+
+        // axios(baseUrl).then(resp => {
+        //     const tabela = resp.data
+        //     let dado = []
+
+        //     const mes = data.getMonth() + 1
+        //     const ano = data.getFullYear()
+            
+        //     tabela.map(registro => {
+        //         if (registro.Mes === mes && registro.Ano === ano) {
+        //             dado.push({ ...registro })
+        //         }
+        //     })
+
+        //     this.setState({ list: dado})
+        // })
     }
     //#endregion
 
@@ -98,7 +121,7 @@ export default class FilaTecnica extends React.Component {
                     </select>
                 </div>
                 <div className="col-3 d-flex align-items-end">
-                    <button className="mx-2 btn-primary btn fw-bold" onClick={this.buscar}>
+                    <button className="mx-2 btn-primary btn fw-bold" onClick={() => this.buscar()}>
                         <span className="h4 fw-bold p-2">Buscar</span>
                     </button>
                 </div>
@@ -121,19 +144,39 @@ export default class FilaTecnica extends React.Component {
         this.setState({ Atividade })
     }
 
-    buscar = () => {
+    async buscar() {
+        const dt = new Date()
+        await this.setState({ data: dt})
         const tecnico = this.state.Busca.Tecnico
-        const list = this.state.list
-        let dado = []
+        const listBanco = await axios(bancoUrl).then(resp => resp.data)
+        const list = await axios(baseUrl).then(resp => resp.data)
+        let dadoEnv = []
+        let dadoIni = []
+        let dadoFim = []
+        
+        const data = this.state.data
+        const dia = data.getDate()
+        const mes = data.getMonth() + 1
+        const ano = data.getFullYear()
+
+        listBanco.map(registro => {
+            if (registro.Tecnico === tecnico && registro.Estagio === "Enviado") {
+                dadoEnv.push({ ...registro })
+            } else if (registro.Tecnico === tecnico && registro.Estagio === "Iniciado") {
+                dadoIni.push({ ...registro })
+            }
+        })
 
         list.map(registro => {
-            if (registro.Tecnico === tecnico) {
-                dado.push({ ...registro })
+            if ((registro.Tecnico === tecnico) && (registro.Estagio === "Finalizado") && (registro.Dia === dia) && (registro.Ano === ano) && (registro.Mes === mes)) {
+                dadoFim.push({ ...registro })
             }
         })
 
         return this.setState({
-            listEnv: dado
+            listEnv: dadoEnv,
+            listIni: dadoIni,
+            listFim: dadoFim
         })
 
     }
@@ -158,7 +201,7 @@ export default class FilaTecnica extends React.Component {
 
     renderTable(dados, nome, cor) {
         return (
-            <table className="table table-bordered" id="tabela">
+            <table className="table table-bordered">
                 <thead className="table-dark">
                     <tr>
                         <th className="d-flex justify-content-center">{nome}</th>
@@ -167,29 +210,64 @@ export default class FilaTecnica extends React.Component {
                 <tbody style={{ overflow: 'auto', height: 400 }} className="d-block">
                     {dados.length === 0 ?
                         this.renderBuscando()
-                        : this.renderRows(dados, cor)
+                        : this.renderRows(dados, nome, cor)
                     }
                 </tbody>
             </table>
         )
     }
 
-    renderRows(dados, cor) {
+    renderRows(dados, nome, cor) {
         return dados.map(registro => {
-            return (
-                <div className="d-flex justify-content-center">
-                    <CardFilaTecnica
-                        os={registro.OS}
-                        dt={this.dataNova(registro.dt)}
-                        Equip={registro.Equipamento}
-                        Cliente={registro.Cliente}
-                        bg={cor ? cor : 'success'}
-                        icone="pencil-square"
-                        corBotao="warning fa-2x"
-                        abrir={() => this.load(registro)}
-                    />
-                </div>
-            )
+            if (nome === 'TO DO') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            os={registro.OS}
+                            dt={this.dataNova(registro.dt)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            bg={cor ? cor : 'success'}
+                            icone="pencil-square"
+                            corBotao="warning fa-2x"
+                            abrir={() => this.load(registro)}
+                        />
+                    </div>
+                )
+            } else if (nome === 'DOING') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            os={registro.OS}
+                            dt={this.dataNova(registro.dt)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            bg={cor ? cor : 'success'}
+                            icone="pencil-square"
+                            corBotao="warning fa-2x"
+                            bruto={this.tempo(registro.DataInicialBruto, this.state.data)}
+                            gerencia
+                        />
+                    </div>
+                )
+            }else if (nome === 'DOES') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            os={registro.OS}
+                            dt={this.dataNova(registro.Data)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            bg={cor ? cor : 'success'}
+                            icone="pencil-square"
+                            bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
+                            liquido={registro.TempoLiquido}
+                            corBotao="warning fa-2x"
+                            final={registro.Estagio}
+                        />
+                    </div>
+                )
+            }
         })
     }
 
@@ -199,6 +277,20 @@ export default class FilaTecnica extends React.Component {
         return dd
     }
 
+    tempo(ini, fm) {
+        var inicio = new Date(ini);
+        var fim = new Date(fm);
+        var diferenca = new Date(fim - inicio);
+
+        // var resultado = diferenca.getUTCFullYear() - 1970 + "a ";
+        var resultado = diferenca.getUTCMonth() + " M : ";
+        resultado += diferenca.getUTCDate() - 1 + " d : ";
+        resultado += diferenca.getUTCHours() + " h : ";
+        resultado += diferenca.getUTCMinutes() + " m : ";
+        resultado += diferenca.getUTCSeconds() + " s";
+
+        return resultado
+    }
 
     renderBuscando() {
         return (
@@ -308,14 +400,14 @@ export default class FilaTecnica extends React.Component {
         axios[method](url, Atividade)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
-                this.setState({ Atividade: initialState.Atividade, list, modal: false})
+                this.setState({ Atividade: initialState.Atividade, list, modal: false })
             })
-        
+
         this.espelho()
         this.mensagemSalvo()
     }
 
-    espelho(){
+    espelho() {
         this.buscarLists()
 
         setTimeout(() => {
