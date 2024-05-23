@@ -14,6 +14,9 @@ function CardFilaTecnica(props) {
                 <div className="row text-light">
                     <div><span className='fw-bold h6'>Cliente:</span> <span style={{ fontSize: 12 }}>{props.Cliente}</span></div>
                 </div>
+                <div className="row text-light">
+                    <div><span className='fw-bold h6'>Servico:</span> <span style={{ fontSize: 12 }}>{props.Servico}</span></div>
+                </div>
             </>
         )
     }

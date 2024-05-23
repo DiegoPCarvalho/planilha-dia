@@ -5,6 +5,7 @@ import SupGif from '../../Assets/gifs/tabSup.gif';
 import CardFilaTecnica from "../Card/CardFIlaTecnica";
 import ModalFilaTecnica from "../Modal/ModalFIlaTecnica";
 import $ from 'jquery';
+import carregando from '../../Assets/gifs/carregar.gif';
 
 const initialState = {
     list: [],
@@ -29,7 +30,8 @@ const initialState = {
         Estagio: '',
         Tecnico: ''
     },
-    data: ''
+    data: '',
+    carregando: false
 }
 
 const estilo = {
@@ -38,7 +40,6 @@ const estilo = {
     borderRadius: '50%'
 }
 
-const data = new Date()
 const baseUrl = Url("Geral");
 const bancoUrl = Url("FilaTecnica");
 const baseUrlTec = Url("LoginUsuario");
@@ -67,33 +68,6 @@ export default class FilaTecnica extends React.Component {
 
         this.setState({ data })
 
-
-        // axios(bancoUrl).then(resp => {
-        //     const tabela = resp.data
-        //     let dado = []
-
-        //     tabela.map(registro => {
-        //         dado.push({ ...registro })
-        //     })
-
-        //     this.setState({ listBanco: dado })
-        // })
-
-        // axios(baseUrl).then(resp => {
-        //     const tabela = resp.data
-        //     let dado = []
-
-        //     const mes = data.getMonth() + 1
-        //     const ano = data.getFullYear()
-            
-        //     tabela.map(registro => {
-        //         if (registro.Mes === mes && registro.Ano === ano) {
-        //             dado.push({ ...registro })
-        //         }
-        //     })
-
-        //     this.setState({ list: dado})
-        // })
     }
     //#endregion
 
@@ -145,15 +119,16 @@ export default class FilaTecnica extends React.Component {
     }
 
     async buscar() {
+        this.setState({ carregando: true })
         const dt = new Date()
-        await this.setState({ data: dt})
+        await this.setState({ data: dt })
         const tecnico = this.state.Busca.Tecnico
         const listBanco = await axios(bancoUrl).then(resp => resp.data)
         const list = await axios(baseUrl).then(resp => resp.data)
         let dadoEnv = []
         let dadoIni = []
         let dadoFim = []
-        
+
         const data = this.state.data
         const dia = data.getDate()
         const mes = data.getMonth() + 1
@@ -176,7 +151,8 @@ export default class FilaTecnica extends React.Component {
         return this.setState({
             listEnv: dadoEnv,
             listIni: dadoIni,
-            listFim: dadoFim
+            listFim: dadoFim,
+            carregando: false
         })
 
     }
@@ -227,6 +203,7 @@ export default class FilaTecnica extends React.Component {
                             dt={this.dataNova(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
+                            Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
@@ -242,6 +219,7 @@ export default class FilaTecnica extends React.Component {
                             dt={this.dataNova(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
+                            Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
@@ -250,7 +228,7 @@ export default class FilaTecnica extends React.Component {
                         />
                     </div>
                 )
-            }else if (nome === 'DOES') {
+            } else if (nome === 'DOES') {
                 return (
                     <div className="d-flex justify-content-center">
                         <CardFilaTecnica
@@ -258,6 +236,7 @@ export default class FilaTecnica extends React.Component {
                             dt={this.dataNova(registro.Data)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
+                            Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             icone="pencil-square"
                             bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
@@ -443,9 +422,19 @@ export default class FilaTecnica extends React.Component {
                     {this.renderBuscar()}
                 </div>
 
-                <div className="row mt-3">
-                    {this.renderGrade()}
-                </div>
+                {this.state.carregando === true ? (
+                    <div className="row d-flex justify-content-center align-items-center mt-5">
+                        <div className="col-6 d-flex justify-content-center ">
+                            <img src={carregando} className="w-50 h-50" />
+
+                        </div>
+                    </div>
+                ) : (
+                    <div className="row mt-3">
+                        {this.renderGrade()}
+                    </div >
+                )
+                }
 
                 <div>
                     <ModalFilaTecnica modal={this.state.modal}

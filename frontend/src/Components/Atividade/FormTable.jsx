@@ -1162,6 +1162,7 @@ export default class FormTable extends React.Component {
                             dt={this.dataNova(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
+                            Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             final={registro.Estagio}
                             icone="play-circle"
@@ -1178,6 +1179,7 @@ export default class FormTable extends React.Component {
                             dt={this.dataNova(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
+                            Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             icone="flag-checkered"
                             corBotao="danger"
@@ -1202,6 +1204,7 @@ export default class FormTable extends React.Component {
                             dt={this.dataNova(registro.Data)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
+                            Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             liquido={registro.TempoLiquido}
                             bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
