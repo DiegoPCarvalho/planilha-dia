@@ -63,7 +63,7 @@ function CardFilaTecnica(props) {
         <>
             <Card bg={props.bg} className='mt-2' style={{ width: '80%' }}>
                 <Card.Header>
-                    <div className='text-light d-flex justify-content-around h5'>
+                    <div className='text-light d-flex justify-content-around'>
                         <div className='fw-bolder'>OS: {props.os}</div>
                         <div className=' mx-1 fw-bolder d-none d-lg-flex'>DATA: {props.dt} </div>
                     </div>

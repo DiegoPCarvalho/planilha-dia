@@ -66,6 +66,7 @@ const initialState = {
     listarCosmos: [],
     listarBanco: [],
     listIni: [],
+    listProblem: [],
     listFim: [],
     ano: 0,
     mes: 0,
@@ -1119,13 +1120,16 @@ export default class FormTable extends React.Component {
     renderGrade() {
         return (
             <>
-                <div className="col-4 d-flex flex-column">
+                <div className="col-3 d-flex flex-column">
                     {this.renderTableFila(this.state.listarFila, 'TO DO', 'primary')}
                 </div>
-                <div className="col-4">
+                <div className="col-3">
                     {this.renderTableFila(this.state.listIni, 'DOING')}
                 </div>
-                <div className="col-4">
+                <div className="col-3">
+                    {this.renderTableFila(this.state.listProblem, 'PROBLEM', 'danger')}
+                </div>
+                <div className="col-3">
                     {this.renderTableFila(this.state.listFim, 'DOES', 'secondary')}
                 </div>
             </>
