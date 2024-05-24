@@ -858,6 +858,7 @@ export default class FormTable extends React.Component {
     async iniciar(registro) {
         await this.setState({ Fila: registro })
         const data = new Date()
+        const fila = this.state.fila
 
         this.state.Fila.Data = data
         this.state.Fila.dt = data
@@ -868,7 +869,7 @@ export default class FormTable extends React.Component {
         this.buscaSimples('Iniciado')
     }
 
-    async problem(registro){
+    async problem(registro) {
         await this.setState({ Fila: registro })
         const data = new Date()
         const fila = this.state.Fila
@@ -880,7 +881,7 @@ export default class FormTable extends React.Component {
         this.buscaSimples('Iniciado')
     }
 
-    async certo(registro){
+    async certo(registro) {
         await this.setState({ Fila: registro })
         const fila = this.state.Fila
         const data = new Date()
@@ -893,15 +894,15 @@ export default class FormTable extends React.Component {
         this.buscaSimples('Finalizado')
     }
 
-    async voltar(registro){
-        await this.setState({ Fila: registro})
+    async voltar(registro) {
+        await this.setState({ Fila: registro })
         const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Voltar')
         
-        if(tempo >= 3){
+        if (tempo >= 3) {
 
-        }else {
+        } else {
             this.state.Fila.Estagio = "Enviado"
-    
+
             this.salvar()
             this.buscaSimples('Iniciado')
         }
@@ -1028,7 +1029,7 @@ export default class FormTable extends React.Component {
         const url = Fila.id ? `${bancoUrl}/${Fila.id}` : bancoUrl
         axios[method](url, Fila)
             .then(resp => {
-                this.setState({ Fila: initialState.Fila})
+                this.setState({ Fila: initialState.Fila })
             })
     }
 
@@ -1039,42 +1040,42 @@ export default class FormTable extends React.Component {
     }
 
     finalizar(registro) {
-            const data = new Date()
+        const data = new Date()
 
-            let diaTemp = document.getElementById(`dia ${this.state.Fila.id}`).innerText;
-            let horaTemp = document.getElementById(`hora ${this.state.Fila.id}`).innerText;
-            let minutoTemp = document.getElementById(`minuto ${this.state.Fila.id}`).innerText;
-            let segundoTemp = document.getElementById(`segundo ${this.state.Fila.id}`).innerText;
+        let diaTemp = document.getElementById(`dia ${this.state.Fila.id}`).innerText;
+        let horaTemp = document.getElementById(`hora ${this.state.Fila.id}`).innerText;
+        let minutoTemp = document.getElementById(`minuto ${this.state.Fila.id}`).innerText;
+        let segundoTemp = document.getElementById(`segundo ${this.state.Fila.id}`).innerText;
 
-            const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
+        const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
 
-            const Fila = registro
+        const Fila = registro
 
-            const Atividade = {}
-            Atividade.Data = data
-            Atividade.Dia = data.getDate()
-            Atividade.Mes = data.getMonth() + 1
-            Atividade.Ano = data.getFullYear()
-            Atividade.OS = Fila.OS
-            Atividade.Cliente = Fila.Cliente
-            Atividade.Equipamento = this.equipamento(Fila.Equipamento)
-            Atividade.Modelo = Fila.Equipamento
-            Atividade.NS = Fila.NS
-            Atividade.Servico = Fila.Servico
-            Atividade.Contrato = Fila.TipoOS
-            Atividade.Estagio = "Finalizado"
-            Atividade.DataInicialBruto = Fila.DataInicialBruto
-            Atividade.DataFinalBruto = data
-            Atividade.DataInicioProblema = Fila.DataInicioProblema ? Fila.DataInicioProblema : ''
-            Atividade.DataFinalProblema = Fila.DataFinalProblema ? Fila.DataFinalProblema : ''
-            Atividade.TempoLiquido = tempoLiquido
-            Atividade.Tecnico = Fila.Tecnico
-            Atividade.Observacao = this.state.Atividade.Observacao
+        const Atividade = {}
+        Atividade.Data = data
+        Atividade.Dia = data.getDate()
+        Atividade.Mes = data.getMonth() + 1
+        Atividade.Ano = data.getFullYear()
+        Atividade.OS = Fila.OS
+        Atividade.Cliente = Fila.Cliente
+        Atividade.Equipamento = this.equipamento(Fila.Equipamento)
+        Atividade.Modelo = Fila.Equipamento
+        Atividade.NS = Fila.NS
+        Atividade.Servico = Fila.Servico
+        Atividade.Contrato = Fila.TipoOS
+        Atividade.Estagio = "Finalizado"
+        Atividade.DataInicialBruto = Fila.DataInicialBruto
+        Atividade.DataFinalBruto = data
+        Atividade.DataInicioProblema = Fila.DataInicioProblema ? Fila.DataInicioProblema : ''
+        Atividade.DataFinalProblema = Fila.DataFinalProblema ? Fila.DataFinalProblema : ''
+        Atividade.TempoLiquido = tempoLiquido
+        Atividade.Tecnico = Fila.Tecnico
+        Atividade.Observacao = this.state.Atividade.Observacao
 
 
-            this.saveFinal(Atividade)
-            this.deletar(Fila)
-            this.buscaSimples('Finalizado')
+        this.saveFinal(Atividade)
+        this.deletar(Fila)
+        this.buscaSimples('Finalizado')
     }
 
     saveFinal(dado) {
@@ -1193,15 +1194,15 @@ export default class FormTable extends React.Component {
     diferenca(data, modo) {
         const d2 = new Date()
 
-        if(modo === 'Iniciado'){
+        if (modo === 'Iniciado') {
             const dif = d2 - new Date(data)
             const diferenca = dif / (1000 * 60 * 60);
-    
+
             return +diferenca.toFixed(0)
-        }else {
+        } else {
             const dif = d2 - new Date(data)
             const diferenca = dif / (1000 * 60);
-    
+
             return +diferenca.toFixed(0)
         }
     }
@@ -1246,6 +1247,12 @@ export default class FormTable extends React.Component {
         )
     }
 
+    dataCorreta(data) {
+        const dt = new Date(data)
+
+        return dt.toLocaleDateString()
+    }
+
     renderRowsFila(dados, cor, modo) {
         const dt = new Date()
 
@@ -1255,7 +1262,7 @@ export default class FormTable extends React.Component {
                     <div className="d-flex justify-content-center">
                         <CardFilaTecnica
                             os={registro.OS}
-                            dt={this.dataNova(registro.dt)}
+                            dt={this.dataCorreta(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
@@ -1296,7 +1303,7 @@ export default class FormTable extends React.Component {
                         />
                     </div>
                 )
-            }else if (modo === 'PROBLEM') {
+            } else if (modo === 'PROBLEM') {
                 return (
                     <div className="d-flex justify-content-center">
                         <CardFilaTecnica
@@ -1315,7 +1322,7 @@ export default class FormTable extends React.Component {
                         />
                     </div>
                 )
-            }else if (modo === 'DOES') {
+            } else if (modo === 'DOES') {
                 return (
                     <div className="d-flex justify-content-center">
                         <CardFilaTecnica
