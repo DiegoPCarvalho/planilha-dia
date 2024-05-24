@@ -74,7 +74,8 @@ const initialState = {
     mudar: 'fila',
     table_on: false,
     mode: false,
-    modalToDo: false
+    modalToDo: false,
+    data: ''
 }
 
 const estilo = {
@@ -97,6 +98,10 @@ export default class FormTable extends React.Component {
         if (localStorage.departamento == 'Limpeza Lab') {
             return this.setState({ mudar: 'form' })
         }
+
+        const data = new Date()
+
+        this.setState({ data })
 
     }
 
@@ -194,6 +199,19 @@ export default class FormTable extends React.Component {
             })
 
             this.setState({ listFim: dado })
+        })
+
+        axios(bancoUrl).then(resp => {
+            const tabela = resp.data
+            let dado = []
+
+            tabela.map(registro => {
+                if ((registro.Estagio === "Problema") && (localStorage.usuario === registro.Tecnico)) {
+                    dado.push({ ...registro })
+                }
+            })
+
+            this.setState({ listProblem: dado })
         })
 
         axios(bancoUrl).then(resp => {
@@ -850,6 +868,46 @@ export default class FormTable extends React.Component {
         this.buscaSimples('Iniciado')
     }
 
+    async problem(registro){
+        await this.setState({ Fila: registro })
+        const data = new Date()
+        const fila = this.state.Fila
+
+        this.state.Fila.Estagio = "Problema"
+        this.state.Fila.DataInicioProblema = fila.DataInicioProblema ? fila.DataInicioProblema : data
+
+        this.salvar()
+        this.buscaSimples('Iniciado')
+    }
+
+    async certo(registro){
+        await this.setState({ Fila: registro })
+        const fila = this.state.Fila
+        const data = new Date()
+
+        this.state.Fila.DataInicialBruto = fila.DataInicialBruto ? fila.DataInicialBruto : data
+        this.state.Fila.Estagio = "Iniciado"
+        this.state.Fila.DataFinalProblema = data
+
+        this.salvar()
+        this.buscaSimples('Finalizado')
+    }
+
+    async voltar(registro){
+        await this.setState({ Fila: registro})
+        const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Voltar')
+        
+        if(tempo >= 3){
+
+        }else {
+            this.state.Fila.Estagio = "Enviado"
+    
+            this.salvar()
+            this.buscaSimples('Iniciado')
+        }
+
+    }
+
     buscaSimples(modo) {
         if (modo === 'Iniciado') {
             axios(baseUrl).then(resp => {
@@ -863,6 +921,19 @@ export default class FormTable extends React.Component {
                 })
 
                 this.setState({ listFim: dado })
+            })
+
+            axios(bancoUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if ((registro.Estagio === "Problema") && (localStorage.usuario === registro.Tecnico)) {
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listProblem: dado })
             })
 
             axios(bancoUrl).then(resp => {
@@ -929,6 +1000,19 @@ export default class FormTable extends React.Component {
                 this.setState({ listFim: dado })
             })
 
+            axios(bancoUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+
+                tabela.map(registro => {
+                    if ((registro.Estagio === "Problema") && (localStorage.usuario === registro.Tecnico)) {
+                        dado.push({ ...registro })
+                    }
+                })
+
+                this.setState({ listProblem: dado })
+            })
+
         }
     }
 
@@ -944,8 +1028,7 @@ export default class FormTable extends React.Component {
         const url = Fila.id ? `${bancoUrl}/${Fila.id}` : bancoUrl
         axios[method](url, Fila)
             .then(resp => {
-                const listarFila = this.atualizarLista(resp.data, this.state.listarFila)
-                this.setState({ Fila: initialState.Fila, listarFila })
+                this.setState({ Fila: initialState.Fila})
             })
     }
 
@@ -982,6 +1065,8 @@ export default class FormTable extends React.Component {
             Atividade.Estagio = "Finalizado"
             Atividade.DataInicialBruto = Fila.DataInicialBruto
             Atividade.DataFinalBruto = data
+            Atividade.DataInicioProblema = Fila.DataInicioProblema ? Fila.DataInicioProblema : ''
+            Atividade.DataFinalProblema = Fila.DataFinalProblema ? Fila.DataFinalProblema : ''
             Atividade.TempoLiquido = tempoLiquido
             Atividade.Tecnico = Fila.Tecnico
             Atividade.Observacao = this.state.Atividade.Observacao
@@ -1094,7 +1179,7 @@ export default class FormTable extends React.Component {
 
     async excecao(registro) {
         await this.setState({ Fila: registro })
-        const tempo = this.diferenca(this.state.Fila.DataInicialBruto)
+        const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Iniciado')
 
         const Fila = this.state.Fila
 
@@ -1105,13 +1190,20 @@ export default class FormTable extends React.Component {
         }
     }
 
-    diferenca(data) {
+    diferenca(data, modo) {
         const d2 = new Date()
 
-        const dif = d2 - new Date(data)
-        const diferenca = dif / (1000 * 60 * 60);
-
-        return +diferenca.toFixed(0)
+        if(modo === 'Iniciado'){
+            const dif = d2 - new Date(data)
+            const diferenca = dif / (1000 * 60 * 60);
+    
+            return +diferenca.toFixed(0)
+        }else {
+            const dif = d2 - new Date(data)
+            const diferenca = dif / (1000 * 60);
+    
+            return +diferenca.toFixed(0)
+        }
     }
 
     //#endregion
@@ -1186,7 +1278,10 @@ export default class FormTable extends React.Component {
                             Servico={registro.Servico}
                             bg={cor ? cor : 'success'}
                             icone="flag-checkered"
-                            corBotao="danger"
+                            corBotao="primary"
+                            iniciado
+                            icone2="backward"
+                            corBotao2="danger"
                             final={registro.Estagio}
                             cronos={
                                 <Cronometro
@@ -1196,10 +1291,31 @@ export default class FormTable extends React.Component {
                                     segundo={`segundo ${registro.id}`} />
                             }
                             abrir={() => this.excecao(registro)}
+                            alerta={() => this.problem(registro)}
+                            voltar={() => this.voltar(registro)}
                         />
                     </div>
                 )
-            } else if (modo === 'DOES') {
+            }else if (modo === 'PROBLEM') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            id={registro.id}
+                            os={registro.OS}
+                            dt={this.dataNova(registro.dt)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            Servico={registro.Servico}
+                            abrir={() => this.certo(registro)}
+                            icone="check"
+                            corBotao="success"
+                            problem
+                            bg={cor ? cor : 'success'}
+                            tempo={this.tempo(registro.DataInicioProblema, this.state.data)}
+                        />
+                    </div>
+                )
+            }else if (modo === 'DOES') {
                 return (
                     <div className="d-flex justify-content-center">
                         <CardFilaTecnica
@@ -1212,7 +1328,7 @@ export default class FormTable extends React.Component {
                             bg={cor ? cor : 'success'}
                             liquido={registro.TempoLiquido}
                             bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
-                            final={registro.Estagio}
+                            finalizado
                         />
                     </div>
                 )

@@ -13,6 +13,9 @@ function CardTabelaGeral(props) {
                         <div className="row text-light mt-1">
                             <div className='d-flex flex-column align-items-center'><span className='fw-bold h6'>T. LIQUIDO:</span> <span style={{ fontSize: 12 }}>{props.liquido}</span></div>
                         </div>
+                        <div className="row text-light mt-1">
+                            <div className='d-flex flex-column align-items-center'><span className='fw-bold h6'>T. PROBLEMA:</span> <span style={{ fontSize: 12 }}>{props.problema}</span></div>
+                        </div>
                     </>
                 </Card.Body>
             </Card >

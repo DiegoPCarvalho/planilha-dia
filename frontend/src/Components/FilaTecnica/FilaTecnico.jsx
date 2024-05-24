@@ -13,6 +13,7 @@ const initialState = {
     listTec: [],
     listEnv: [],
     listIni: [],
+    listProblem: [],
     listFim: [],
     Busca: {
         Tecnico: ''
@@ -127,6 +128,7 @@ export default class FilaTecnica extends React.Component {
         const list = await axios(baseUrl).then(resp => resp.data)
         let dadoEnv = []
         let dadoIni = []
+        let dadoProblem = []
         let dadoFim = []
 
         const data = this.state.data
@@ -139,6 +141,8 @@ export default class FilaTecnica extends React.Component {
                 dadoEnv.push({ ...registro })
             } else if (registro.Tecnico === tecnico && registro.Estagio === "Iniciado") {
                 dadoIni.push({ ...registro })
+            }else if(registro.Tecnico === tecnico && registro.Estagio === "Problema"){
+                dadoProblem.push({ ...registro})
             }
         })
 
@@ -152,6 +156,7 @@ export default class FilaTecnica extends React.Component {
             listEnv: dadoEnv,
             listIni: dadoIni,
             listFim: dadoFim,
+            listProblem: dadoProblem,
             carregando: false
         })
 
@@ -162,13 +167,16 @@ export default class FilaTecnica extends React.Component {
     renderGrade() {
         return (
             <>
-                <div className="col-4 d-flex flex-column">
+                <div className="col-3 d-flex flex-column">
                     {this.renderTable(this.state.listEnv, 'TO DO', 'primary')}
                 </div>
-                <div className="col-4">
+                <div className="col-3">
                     {this.renderTable(this.state.listIni, 'DOING')}
                 </div>
-                <div className="col-4">
+                <div className="col-3">
+                    {this.renderTable(this.state.listProblem, 'PROBLEM', 'danger')}
+                </div>
+                <div className="col-3">
                     {this.renderTable(this.state.listFim, 'DOES', 'secondary')}
                 </div>
             </>
@@ -228,6 +236,22 @@ export default class FilaTecnica extends React.Component {
                         />
                     </div>
                 )
+            } else if (nome === 'PROBLEM') {
+                return (
+                    <div className="d-flex justify-content-center">
+                        <CardFilaTecnica
+                            os={registro.OS}
+                            dt={this.dataNova(registro.dt)}
+                            Equip={registro.Equipamento}
+                            Cliente={registro.Cliente}
+                            Servico={registro.Servico}
+                            bg={cor ? cor : 'success'}
+                            tempo={this.tempo(registro.DataInicioProblema, this.state.data)}
+                            problem
+                            gerencia
+                        />
+                    </div>
+                )
             } else if (nome === 'DOES') {
                 return (
                     <div className="d-flex justify-content-center">
@@ -242,7 +266,8 @@ export default class FilaTecnica extends React.Component {
                             bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
                             liquido={registro.TempoLiquido}
                             corBotao="warning fa-2x"
-                            final={registro.Estagio}
+                            finalizado
+                            gerencia
                         />
                     </div>
                 )

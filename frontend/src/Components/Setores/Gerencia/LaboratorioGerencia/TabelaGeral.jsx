@@ -2,10 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import Url from '../../../Url/Url';
 import carregando from '../../../../Assets/gifs/carregar.gif'
-import CardTabelaGeral from '../../../Card/CardTabelaGeral'
 import OverlayTabelaGeral from '../../../Overlay/OverlayTabelaGeral'
 
 import $ from 'jquery';
+import OverlayTempoTabelaGeral from '../../../Overlay/OverlayTempoTabelaGeral';
 
 const initialState = {
     list: [],
@@ -158,7 +158,11 @@ export default class TabelaGeral extends React.Component {
                         <td>{this.formataData(Atividade.Data)}</td>
                         <td>{Atividade.OS}</td>
                         <td>{Atividade.Cliente}</td>
-                        <td><CardTabelaGeral bruto={this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)} liquido={Atividade.TempoLiquido} bg={'primary'}/></td>
+                        <td><OverlayTempoTabelaGeral 
+                            bruto={this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)} 
+                            liquido={Atividade.TempoLiquido} 
+                            problema={this.tempo(Atividade.DataInicioProblema, Atividade.DataFinalProblema)}
+                            bg={'primary'}/></td>
                         <td className='mt-5'><OverlayTabelaGeral Obs={Atividade.Observacao} Equip={Atividade.Equipamento} Servico={Atividade.Servico}/></td>
                     </tr>
                 )
