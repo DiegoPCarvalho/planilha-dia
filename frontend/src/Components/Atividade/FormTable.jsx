@@ -12,6 +12,7 @@ import $ from 'jquery';
 
 import TabelaRegistroAntigo from './TabRegistroAntigo';
 import ModalToDo from '../Modal/ModalToDo';
+import ModalProblem from '../Modal/ModalProblem';
 
 
 const baseUrl = Url("Geral");
@@ -38,6 +39,7 @@ const initialState = {
         Classificacao: '',
         Contrato: '',
         Observacao: '',
+        ProblemObs: '',
         Status: '',
         Estagio: '',
         DataInicialBruto: '',
@@ -55,7 +57,11 @@ const initialState = {
         NS: '',
         TipoOS: '',
         Estagio: '',
-        Tecnico: ''
+        Tecnico: '',
+        ProblemObs: '',
+        Problema: 'Não',
+        DataInicialProblema: '',
+        ContProblema: 0
     },
     list: [],
     listarFila: [],
@@ -75,6 +81,7 @@ const initialState = {
     table_on: false,
     mode: false,
     modalToDo: false,
+    modalProblem: false,
     data: ''
 }
 
@@ -199,19 +206,6 @@ export default class FormTable extends React.Component {
             })
 
             this.setState({ listFim: dado })
-        })
-
-        axios(bancoUrl).then(resp => {
-            const tabela = resp.data
-            let dado = []
-
-            tabela.map(registro => {
-                if ((registro.Estagio === "Problema") && (localStorage.usuario === registro.Tecnico)) {
-                    dado.push({ ...registro })
-                }
-            })
-
-            this.setState({ listProblem: dado })
         })
 
         axios(bancoUrl).then(resp => {
@@ -819,8 +813,11 @@ export default class FormTable extends React.Component {
         return (
             <>
                 <div className='row d-flex justify-content-between'>
-                    <div className='col-6 mb-3 d-flex justify-content-start align-items-center'>
+                    <div className='col-3 mb-3 d-flex justify-content-start align-items-center'>
                         <i className="fa fa-list-alt fa-4x"></i>
+                    </div>
+                    <div className="col-3 d-flex align-items-center justify-content-end">
+                        <i className="fa fa-retweet fa-3x btn btn-success" style={{ cursor: 'pointer' }} onClick={() => this.buscarInicioEfim()} />
                     </div>
                     <div className="col-6 d-flex justify-content-end align-items-end flex-column">
                         <div className='d-flex align-items-center'>
@@ -844,7 +841,11 @@ export default class FormTable extends React.Component {
                     {this.renderGrade()}
                 </div>
                 <div>
-                    <ModalToDo modal={this.state.modalToDo} close={() => this.setState({ modalToDo: false })} relatorio={this.formModal()} />
+                    <ModalToDo modal={this.state.modalToDo} close={() => this.setState({ modalToDo: false })} relatorio={this.formModal("Finalizado")} />
+                </div>
+                <div>
+                    <ModalProblem modal={this.state.modalProblem} close={() => this.setState({ modalProblem: false })}
+                        nome={'Problema'} Relatorio={this.formModal("Problema")} />
                 </div>
             </>
         )
@@ -858,46 +859,57 @@ export default class FormTable extends React.Component {
     async iniciar(registro) {
         await this.setState({ Fila: registro })
         const data = new Date()
-        const fila = this.state.fila
+        const Fila = this.state.Fila
+
 
         this.state.Fila.Data = data
         this.state.Fila.dt = data
-        this.state.Fila.DataInicialBruto = data
+        this.state.Fila.DataInicialBruto = Fila.Problema === "Não" ? data : Fila.DataInicialBruto
         this.state.Fila.Estagio = "Iniciado"
 
         this.salvar()
         this.buscaSimples('Iniciado')
     }
 
-    async problem(registro) {
-        await this.setState({ Fila: registro })
+    problem(registro) {
         const data = new Date()
-        const fila = this.state.Fila
-
-        this.state.Fila.Estagio = "Problema"
-        this.state.Fila.DataInicioProblema = fila.DataInicioProblema ? fila.DataInicioProblema : data
+        const {DataInicialProblema, ContProblema } = registro
+                
+        this.state.Fila.Estagio = "Em Aberto"
+        this.state.Fila.Problema = "Sim"
+        this.state.Fila.ContProblema = ContProblema + 1
+        this.state.Fila.DataInicialProblema = DataInicialProblema !== '' ? DataInicialProblema : data
 
         this.salvar()
         this.buscaSimples('Iniciado')
+        this.setState({ modalProblem: false, Fila: initialState.Fila })
     }
 
-    async certo(registro) {
-        await this.setState({ Fila: registro })
-        const fila = this.state.Fila
-        const data = new Date()
+    verificarProblem() {
+        const Fila = this.state.Fila
 
-        this.state.Fila.DataInicialBruto = fila.DataInicialBruto ? fila.DataInicialBruto : data
-        this.state.Fila.Estagio = "Iniciado"
-        this.state.Fila.DataFinalProblema = data
+        if (Fila.ProblemObs === '') {
 
-        this.salvar()
-        this.buscaSimples('Finalizado')
+        } else {
+            // console.log(Fila)
+            this.problem(Fila)
+        }
+    }
+
+    AtualizarCampo(event) {
+        const Fila = { ...this.state.Fila }
+        Fila[event.target.name] = event.target.value
+        this.setState({ Fila })
+    }
+
+    async modalPro(registro) {
+        await this.setState({ modalProblem: true, Fila: registro })
     }
 
     async voltar(registro) {
         await this.setState({ Fila: registro })
-        const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Voltar')
-        
+        const tempo = this.diferenca(this.state.Fila.DataInicialBruto)
+
         if (tempo >= 3) {
 
         } else {
@@ -922,19 +934,6 @@ export default class FormTable extends React.Component {
                 })
 
                 this.setState({ listFim: dado })
-            })
-
-            axios(bancoUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((registro.Estagio === "Problema") && (localStorage.usuario === registro.Tecnico)) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listProblem: dado })
             })
 
             axios(bancoUrl).then(resp => {
@@ -1000,20 +999,6 @@ export default class FormTable extends React.Component {
 
                 this.setState({ listFim: dado })
             })
-
-            axios(bancoUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((registro.Estagio === "Problema") && (localStorage.usuario === registro.Tecnico)) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listProblem: dado })
-            })
-
         }
     }
 
@@ -1041,15 +1026,15 @@ export default class FormTable extends React.Component {
 
     finalizar(registro) {
         const data = new Date()
+        const Fila = registro
 
-        let diaTemp = document.getElementById(`dia ${this.state.Fila.id}`).innerText;
-        let horaTemp = document.getElementById(`hora ${this.state.Fila.id}`).innerText;
-        let minutoTemp = document.getElementById(`minuto ${this.state.Fila.id}`).innerText;
-        let segundoTemp = document.getElementById(`segundo ${this.state.Fila.id}`).innerText;
+        let diaTemp = document.getElementById(`dia ${Fila.id}`).innerText;
+        let horaTemp = document.getElementById(`hora ${Fila.id}`).innerText;
+        let minutoTemp = document.getElementById(`minuto ${Fila.id}`).innerText;
+        let segundoTemp = document.getElementById(`segundo ${Fila.id}`).innerText;
 
         const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
 
-        const Fila = registro
 
         const Atividade = {}
         Atividade.Data = data
@@ -1066,11 +1051,14 @@ export default class FormTable extends React.Component {
         Atividade.Estagio = "Finalizado"
         Atividade.DataInicialBruto = Fila.DataInicialBruto
         Atividade.DataFinalBruto = data
-        Atividade.DataInicioProblema = Fila.DataInicioProblema ? Fila.DataInicioProblema : ''
+        Atividade.DataInicialProblema = Fila.DataInicialProblema ? Fila.DataInicialProblema : ''
         Atividade.DataFinalProblema = Fila.DataFinalProblema ? Fila.DataFinalProblema : ''
         Atividade.TempoLiquido = tempoLiquido
         Atividade.Tecnico = Fila.Tecnico
         Atividade.Observacao = this.state.Atividade.Observacao
+        Atividade.Problema = Fila.Problema ? Fila.Problema : ''
+        Atividade.ProblemObs = Fila.ProblemObs
+        Atividade.ContProblema = Fila.ContProblema ? Fila.ContProblema : 0
 
 
         this.saveFinal(Atividade)
@@ -1137,34 +1125,64 @@ export default class FormTable extends React.Component {
         }
     }
 
-    formModal() {
-        return (
-            <form className="row g-3 mt-3" action="javascript:myFunction(); return false;">
-                <div className="row">
-                    <div className="col-12 mt-2">
-                        <div className="form-group">
-                            <label className='fw-bold'>PORQUE DEMOROU TANTO? </label>
-                            <textarea className="form-control"
-                                name="Observacao" rows="3" id="Observacao"
-                                value={this.state.Atividade.Observacao}
-                                onChange={e => this.updateField(e)}
-                                placeholder="Digite o Motivo..."
-                                required />
+    formModal(modo) {
+        if (modo === 'Finalizado') {
+            return (
+                <form className="row g-3 mt-3" action="javascript:myFunction(); return false;">
+                    <div className="row">
+                        <div className="col-12 mt-2">
+                            <div className="form-group">
+                                <label className='fw-bold'>Informe o Motivo da Demora: </label>
+                                <textarea className="form-control"
+                                    name="Observacao" rows="3"
+                                    value={this.state.Atividade.Observacao}
+                                    onChange={e => this.updateField(e)}
+                                    placeholder="Digite o Motivo..."
+                                    required />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="row mt-2 d-flex justify-content-end">
-                    <div className="col-12 col-md-6 d-flex justify-content-end">
+                    <div className="row mt-2 d-flex justify-content-end">
+                        <div className="col-12 col-md-6 d-flex justify-content-end">
 
-                        <button className="btn btn-primary mx-2 fw-bold"
-                            onClick={e => this.verificarCampo(e)}
-                        >
-                            Finalizar
-                        </button>
+                            <button className="btn btn-primary mx-2 fw-bold"
+                                onClick={e => this.verificarCampo(e)}
+                            >
+                                Finalizar
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        )
+                </form>
+            )
+        } else if (modo === 'Problema') {
+            return (
+                <form className="row g-3" action="javascript:myFunction(); return false;">
+                    <div className="row">
+                        <div className="col-12 mt-2">
+                            <div className="form-group">
+                                <label className='fw-bold'>Informe o Problema: </label>
+                                <textarea className="form-control"
+                                    name="ProblemObs" rows="3"
+                                    value={this.state.Fila.ProblemObs}
+                                    onChange={e => this.AtualizarCampo(e)}
+                                    placeholder="Digite o Motivo..."
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row mt-2 d-flex justify-content-end">
+                        <div className="col-12 col-md-6 d-flex justify-content-end">
+
+                            <button className="btn btn-danger mx-2 fw-bold"
+                                onClick={() => this.verificarProblem()}
+                            >
+                                Problema
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            )
+        }
     }
 
     verificarCampo() {
@@ -1191,20 +1209,13 @@ export default class FormTable extends React.Component {
         }
     }
 
-    diferenca(data, modo) {
+    diferenca(data) {
         const d2 = new Date()
 
-        if (modo === 'Iniciado') {
-            const dif = d2 - new Date(data)
-            const diferenca = dif / (1000 * 60 * 60);
+        const dif = d2 - new Date(data)
+        const diferenca = dif / (1000 * 60 * 60);
 
-            return +diferenca.toFixed(0)
-        } else {
-            const dif = d2 - new Date(data)
-            const diferenca = dif / (1000 * 60);
-
-            return +diferenca.toFixed(0)
-        }
+        return +diferenca.toFixed(0)
     }
 
     //#endregion
@@ -1213,23 +1224,20 @@ export default class FormTable extends React.Component {
     renderGrade() {
         return (
             <>
-                <div className="col-3 d-flex flex-column">
-                    {this.renderTableFila(this.state.listarFila, 'TO DO', 'primary')}
+                <div className="col-4 d-flex flex-column">
+                    {this.renderTableFila(this.state.listarFila, 'TO DO')}
                 </div>
-                <div className="col-3">
+                <div className="col-4">
                     {this.renderTableFila(this.state.listIni, 'DOING')}
                 </div>
-                <div className="col-3">
-                    {this.renderTableFila(this.state.listProblem, 'PROBLEM', 'danger')}
-                </div>
-                <div className="col-3">
-                    {this.renderTableFila(this.state.listFim, 'DOES', 'secondary')}
+                <div className="col-4">
+                    {this.renderTableFila(this.state.listFim, 'DOES')}
                 </div>
             </>
         )
     }
 
-    renderTableFila(dados, nome, cor) {
+    renderTableFila(dados, nome) {
         return (
             <table className="table table-bordered">
                 <thead className="table-dark">
@@ -1240,7 +1248,7 @@ export default class FormTable extends React.Component {
                 <tbody style={{ overflow: 'auto', height: 400 }} className="d-block">
                     {dados.length === 0 ?
                         this.renderBuscando()
-                        : this.renderRowsFila(dados, cor, nome)
+                        : this.renderRowsFila(dados, nome)
                     }
                 </tbody>
             </table>
@@ -1253,7 +1261,7 @@ export default class FormTable extends React.Component {
         return dt.toLocaleDateString()
     }
 
-    renderRowsFila(dados, cor, modo) {
+    renderRowsFila(dados, modo) {
         const dt = new Date()
 
         return dados.map(registro => {
@@ -1266,7 +1274,7 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
+                            bg={registro.Problema === "Não" ? 'primary' : 'danger'}
                             final={registro.Estagio}
                             icone="play-circle"
                             corBotao="success"
@@ -1283,7 +1291,7 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
+                            bg={'success'}
                             icone="flag-checkered"
                             corBotao="primary"
                             iniciado
@@ -1298,27 +1306,8 @@ export default class FormTable extends React.Component {
                                     segundo={`segundo ${registro.id}`} />
                             }
                             abrir={() => this.excecao(registro)}
-                            alerta={() => this.problem(registro)}
+                            alerta={() => this.modalPro(registro)}
                             voltar={() => this.voltar(registro)}
-                        />
-                    </div>
-                )
-            } else if (modo === 'PROBLEM') {
-                return (
-                    <div className="d-flex justify-content-center">
-                        <CardFilaTecnica
-                            id={registro.id}
-                            os={registro.OS}
-                            dt={this.dataNova(registro.dt)}
-                            Equip={registro.Equipamento}
-                            Cliente={registro.Cliente}
-                            Servico={registro.Servico}
-                            abrir={() => this.certo(registro)}
-                            icone="check"
-                            corBotao="success"
-                            problem
-                            bg={cor ? cor : 'success'}
-                            tempo={this.tempo(registro.DataInicioProblema, this.state.data)}
                         />
                     </div>
                 )
@@ -1332,7 +1321,7 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
+                            bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
                             liquido={registro.TempoLiquido}
                             bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
                             finalizado
@@ -1355,7 +1344,7 @@ export default class FormTable extends React.Component {
         resultado += diferenca.getUTCMinutes() + " m : ";
         resultado += diferenca.getUTCSeconds() + " s";
 
-        return resultado
+        return resultado  === "NaN M : NaN d : NaN h : NaN m : NaN s" ? "00:00" : resultado
     }
 
     renderBuscando() {

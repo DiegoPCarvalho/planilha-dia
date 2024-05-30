@@ -167,23 +167,20 @@ export default class FilaTecnica extends React.Component {
     renderGrade() {
         return (
             <>
-                <div className="col-3 d-flex flex-column">
-                    {this.renderTable(this.state.listEnv, 'TO DO', 'primary')}
+                <div className="col-4 d-flex flex-column">
+                    {this.renderTable(this.state.listEnv, 'TO DO')}
                 </div>
-                <div className="col-3">
+                <div className="col-4">
                     {this.renderTable(this.state.listIni, 'DOING')}
                 </div>
-                <div className="col-3">
-                    {this.renderTable(this.state.listProblem, 'PROBLEM', 'danger')}
-                </div>
-                <div className="col-3">
-                    {this.renderTable(this.state.listFim, 'DOES', 'secondary')}
+                <div className="col-4">
+                    {this.renderTable(this.state.listFim, 'DOES')}
                 </div>
             </>
         )
     }
 
-    renderTable(dados, nome, cor) {
+    renderTable(dados, nome) {
         return (
             <table className="table table-bordered">
                 <thead className="table-dark">
@@ -194,14 +191,14 @@ export default class FilaTecnica extends React.Component {
                 <tbody style={{ overflow: 'auto', height: 400 }} className="d-block">
                     {dados.length === 0 ?
                         this.renderBuscando()
-                        : this.renderRows(dados, nome, cor)
+                        : this.renderRows(dados, nome)
                     }
                 </tbody>
             </table>
         )
     }
 
-    renderRows(dados, nome, cor) {
+    renderRows(dados, nome) {
         return dados.map(registro => {
             if (nome === 'TO DO') {
                 return (
@@ -212,7 +209,7 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
+                            bg={registro.Problema === "Não" ? 'primary' : 'danger'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
                             abrir={() => this.load(registro)}
@@ -228,27 +225,12 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
+                            bg={'success'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
-                            bruto={this.tempo(registro.DataInicialBruto, this.state.data)}
+                            tempo={this.tempo(registro.DataInicialBruto, this.state.data)}
                             gerencia
-                        />
-                    </div>
-                )
-            } else if (nome === 'PROBLEM') {
-                return (
-                    <div className="d-flex justify-content-center">
-                        <CardFilaTecnica
-                            os={registro.OS}
-                            dt={this.dataNova(registro.dt)}
-                            Equip={registro.Equipamento}
-                            Cliente={registro.Cliente}
-                            Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
-                            tempo={this.tempo(registro.DataInicioProblema, this.state.data)}
-                            problem
-                            gerencia
+                            finalizado
                         />
                     </div>
                 )
@@ -261,13 +243,12 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={cor ? cor : 'success'}
+                            bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
                             icone="pencil-square"
                             bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
                             liquido={registro.TempoLiquido}
                             corBotao="warning fa-2x"
                             finalizado
-                            gerencia
                         />
                     </div>
                 )
@@ -293,7 +274,7 @@ export default class FilaTecnica extends React.Component {
         resultado += diferenca.getUTCMinutes() + " m : ";
         resultado += diferenca.getUTCSeconds() + " s";
 
-        return resultado
+        return resultado  === "NaN M : NaN d : NaN h : NaN m : NaN s" ? "00:00" : resultado
     }
 
     renderBuscando() {

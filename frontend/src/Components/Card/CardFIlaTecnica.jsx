@@ -28,10 +28,6 @@ function CardFilaTecnica(props) {
                     <div className="row text-light">
                         <div className='d-flex flex-column align-items-center'><span className='fw-bold h6'>TEMPO:</span> <span style={{ fontSize: 12 }}>{props.tempo}</span></div>
                     </div>
-                ) : props.problem ? (
-                    <div className="row text-light">
-                        <div className='d-flex flex-column align-items-center'><span className='fw-bold h6'>TEMPO:</span> <span style={{ fontSize: 12 }}>{props.tempo}</span></div>
-                    </div>
                 ) : (
                     <>
                         <div className="row text-light">
@@ -103,12 +99,6 @@ function CardFilaTecnica(props) {
                                     </OverlayTrigger>
                                 </div>
                                 {props.gerencia && props.finalizado ? (
-                                    <div className="col-3">
-                                        <OverlayTrigger placement='left' overlay={popoverTempo}>
-                                            <i className='fa fa-clock fa-2x btn btn-primary' />
-                                        </OverlayTrigger>
-                                    </div>
-                                ) : props.gerencia && props.problem ? (
                                     <div className="col-3">
                                         <OverlayTrigger placement='left' overlay={popoverTempo}>
                                             <i className='fa fa-clock fa-2x btn btn-primary' />

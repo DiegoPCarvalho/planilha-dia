@@ -6,14 +6,13 @@ import Main from "../Template/Main";
 import { BuscarFoto } from '../Dashboard/DashboardModel/Foto/FotoTecnico'
 
 import { confirmAlert } from "react-confirm-alert";
-import TabAdmin from '../Tabs/TabTables';
-
 
 import Url from '../Url/Url';
 
 import CardUser from '../Card/CardUser';
 
 import ModalUsuario from '../Modal/ModalUsuario';
+import AdminCadastro from "./AdminCadastros";
 
 
 const banco = "LoginUsuario";
@@ -596,7 +595,7 @@ export default class PageAdmin extends React.Component {
                         <img src={BuscarFoto(localStorage.usuario)} alt="" className="imagem rounded-circle" />
                     </div>
                     <div className="mt-5">
-                        <TabAdmin />
+                        <AdminCadastro />
                     </div>
                 </div>
             </div>

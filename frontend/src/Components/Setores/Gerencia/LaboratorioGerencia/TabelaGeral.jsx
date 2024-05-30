@@ -124,11 +124,12 @@ export default class TabelaGeral extends React.Component {
             <table className="table mt-5 table-bordered table-striped" id="tabelaGeral">
                 <thead className="table-dark">
                     <tr>
-                        <th className='col-1'>Id</th>
                         <th className='col-1'>Data</th>
                         <th className="col-1">OS</th>
                         <th className='col-2'>Cliente</th>
-                        <th className='col-1'>Tempo</th>
+                        <th className='col-1'>T. Bruto</th>
+                        <th className='col-1'>T. Liquido</th>
+                        <th className='col-1'>T. Problema</th>
                         <th className='col-1'>Info.</th>
                     </tr>
                 </thead>
@@ -153,17 +154,14 @@ export default class TabelaGeral extends React.Component {
                 </div>
             ) : this.state.list.map(Atividade => {
                 return (
-                    <tr key={(Atividade.id)}>
-                        <td>{Atividade.id}</td>
+                    <tr key={(Atividade.id)} className={Atividade.Problema === "Sim" ? 'table-danger' : ''}>
                         <td>{this.formataData(Atividade.Data)}</td>
                         <td>{Atividade.OS}</td>
                         <td>{Atividade.Cliente}</td>
-                        <td><OverlayTempoTabelaGeral 
-                            bruto={this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)} 
-                            liquido={Atividade.TempoLiquido} 
-                            problema={this.tempo(Atividade.DataInicioProblema, Atividade.DataFinalProblema)}
-                            bg={'primary'}/></td>
-                        <td className='mt-5'><OverlayTabelaGeral Obs={Atividade.Observacao} Equip={Atividade.Equipamento} Servico={Atividade.Servico}/></td>
+                        <td>{this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)}</td> 
+                        <td>{Atividade.TempoLiquido}</td> 
+                        <td>{this.tempo(Atividade.DataInicialProblema, Atividade.DataFinalProblema)}</td>
+                        <td className='mt-5'><OverlayTabelaGeral Obs={Atividade.Observacao} ProbObs={Atividade.ProblemObs} Qtda={Atividade.ContProblema}/></td>
                     </tr>
                 )
             })
@@ -213,7 +211,7 @@ export default class TabelaGeral extends React.Component {
         resultado += diferenca.getUTCMinutes() + " m : ";
         resultado += diferenca.getUTCSeconds() + " s";
 
-        return resultado
+        return resultado  === "NaN M : NaN d : NaN h : NaN m : NaN s" ? "00:00" : resultado
     }
 
     render() {

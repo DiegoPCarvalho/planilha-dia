@@ -22,7 +22,11 @@ const initialState = {
         NS: '',
         TipoOS: '',
         Estagio: '',
-        Tecnico: ''
+        Tecnico: '',
+        ProblemObs: '',
+        Problema: 'Não',
+        DataInicialProblema: '',
+        ContProblema: 0
     },
     Filtro: {
         EstagioOS: '',
@@ -76,6 +80,7 @@ export default class AddFila extends React.Component {
             }
             else {
                 reg.Estagio = 'Em Aberto'
+                reg.Problema = 'Não'
                 reg.Tecnico = ''
                 this.saves(reg)
             }
@@ -86,6 +91,7 @@ export default class AddFila extends React.Component {
             }
             else {
                 reg.Estagio = 'Em Aberto'
+                reg.Problema = 'Não'
                 reg.Tecnico = ''
                 this.saves(reg)
             }
@@ -232,7 +238,7 @@ export default class AddFila extends React.Component {
         return this.state.listagem.map(Atividade => {
             if (Atividade.Estagio === "Em Aberto") {
                 return (
-                    <tr key={(Atividade.id)}>
+                    <tr className={Atividade.Problema === "Sim" ? 'table-danger' : ''} key={(Atividade.id)}>
                         <td>{Atividade.id}</td>
                         <td>{this.dataNova(Atividade.Data)}</td>
                         <td>{Atividade.OS}</td>
@@ -310,17 +316,19 @@ export default class AddFila extends React.Component {
 
     //verificar
     verfificar() {
-        const tecnico = this.state.Atividade.Tecnico
+        const { Tecnico, Problema, DataInicialProblema, ContProblema } = this.state.Atividade
         const dt = new Date()
 
 
-        if (tecnico === '') {
+        if (Tecnico === '') {
 
         } else {
 
             this.state.Atividade.Estagio = "Enviado"
             this.state.Atividade.dt = dt
-               
+            this.state.Atividade.DataFinalProblema = Problema === "Sim" ? dt : ''
+            this.state.Atividade.DataInicialProblema = DataInicialProblema ? DataInicialProblema : ''
+            this.state.Atividade.ContProblema = ContProblema ? ContProblema : 0
             this.save()
         }
     }

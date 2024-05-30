@@ -7,9 +7,9 @@ function OverlayTabelaGeral(props) {
     const popoverTempo = (
         <Popover className='bg-dark'>
             <Popover.Body>
-                <div className="text-light"><span className='h6 fw-bold'>Equip.: </span>{props.Equip}</div>
-                <div className="text-light"><span className='h6 fw-bold'>Serviço: </span>{props.Servico}</div>
                 <div className="text-light"><span className='h6 fw-bold'>Observação: </span>{props.Obs}</div>
+                <div className="text-light"><span className='h6 fw-bold'>Obs Problema: </span>{props.ProbObs}</div>
+                <div className="text-light"><span className='h6 fw-bold'>Qtda. Problema: </span>{props.Qtda}</div>
             </Popover.Body>
         </Popover>
     )
