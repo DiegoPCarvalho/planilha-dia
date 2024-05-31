@@ -13,6 +13,7 @@ import $ from 'jquery';
 import TabelaRegistroAntigo from './TabRegistroAntigo';
 import ModalToDo from '../Modal/ModalToDo';
 import ModalProblem from '../Modal/ModalProblem';
+import moment from 'moment';
 
 
 const baseUrl = Url("Geral");
@@ -1028,12 +1029,11 @@ export default class FormTable extends React.Component {
         const data = new Date()
         const Fila = registro
 
-        let diaTemp = document.getElementById(`dia ${Fila.id}`).innerText;
         let horaTemp = document.getElementById(`hora ${Fila.id}`).innerText;
         let minutoTemp = document.getElementById(`minuto ${Fila.id}`).innerText;
         let segundoTemp = document.getElementById(`segundo ${Fila.id}`).innerText;
 
-        const tempoLiquido = `${diaTemp} d : ${horaTemp} h : ${minutoTemp} m : ${segundoTemp} s`
+        const tempoLiquido = `${horaTemp}:${minutoTemp}:${segundoTemp}`
 
 
         const Atividade = {}
@@ -1300,7 +1300,6 @@ export default class FormTable extends React.Component {
                             final={registro.Estagio}
                             cronos={
                                 <Cronometro
-                                    dia={`dia ${registro.id}`}
                                     hora={`hora ${registro.id}`}
                                     minuto={`minuto ${registro.id}`}
                                     segundo={`segundo ${registro.id}`} />
@@ -1322,8 +1321,8 @@ export default class FormTable extends React.Component {
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
                             bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
-                            liquido={registro.TempoLiquido}
-                            bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
+                            liquido={this.formatarTempoLiq(registro.TempoLiquido)}
+                            bruto={this.formatarTempoBto(this.tempo(registro.DataInicialBruto, registro.DataFinalBruto))}
                             finalizado
                         />
                     </div>
@@ -1332,19 +1331,27 @@ export default class FormTable extends React.Component {
         })
     }
 
+    formatarTempoLiq(tempo){
+        let novo = tempo.replace(/(\d):(\d):(\d)/, '$1 h : $2 m : $3 s')
+
+        return novo
+    }
+
+    formatarTempoBto(tempo){
+        let novo = tempo.replace(/(\d*):(\d\d):(\d\d)/, '$1 h : $2 m : $3 s')
+
+        return novo
+    }
+
     tempo(ini, fm) {
-        var inicio = new Date(ini);
-        var fim = new Date(fm);
-        var diferenca = new Date(fim - inicio);
+        let dtChegada = `${fm}`;
+        let dtPartida = `${ini}`;
 
-        // var resultado = diferenca.getUTCFullYear() - 1970 + "a ";
-        var resultado = diferenca.getUTCMonth() + " M : ";
-        resultado += diferenca.getUTCDate() - 1 + " d : ";
-        resultado += diferenca.getUTCHours() + " h : ";
-        resultado += diferenca.getUTCMinutes() + " m : ";
-        resultado += diferenca.getUTCSeconds() + " s";
+        let ms = moment(dtChegada, "YYYY-MM-DDTHH:mm:ssZ").diff(moment(dtPartida, "YYYY-MM-DDTHH:mm:ssZ"));
+        let d = moment.duration(ms);
+        let s = Math.floor(d.asHours()) + moment.utc(ms).format(":mm:ss");
 
-        return resultado  === "NaN M : NaN d : NaN h : NaN m : NaN s" ? "00:00" : resultado
+        return s.match(/NaN/) ? "00:00:00" : s
     }
 
     renderBuscando() {

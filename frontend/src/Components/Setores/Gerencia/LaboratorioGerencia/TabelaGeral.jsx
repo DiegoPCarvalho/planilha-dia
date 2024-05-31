@@ -3,6 +3,7 @@ import axios from 'axios';
 import Url from '../../../Url/Url';
 import carregando from '../../../../Assets/gifs/carregar.gif'
 import OverlayTabelaGeral from '../../../Overlay/OverlayTabelaGeral'
+import moment from 'moment';
 
 import $ from 'jquery';
 import OverlayTempoTabelaGeral from '../../../Overlay/OverlayTempoTabelaGeral';
@@ -127,9 +128,11 @@ export default class TabelaGeral extends React.Component {
                         <th className='col-1'>Data</th>
                         <th className="col-1">OS</th>
                         <th className='col-2'>Cliente</th>
+                        <th className='col-2'>Serviço</th>
                         <th className='col-1'>T. Bruto</th>
                         <th className='col-1'>T. Liquido</th>
                         <th className='col-1'>T. Problema</th>
+                        <th className='col-1'>Obs Problema</th>
                         <th className='col-1'>Info.</th>
                     </tr>
                 </thead>
@@ -158,10 +161,12 @@ export default class TabelaGeral extends React.Component {
                         <td>{this.formataData(Atividade.Data)}</td>
                         <td>{Atividade.OS}</td>
                         <td>{Atividade.Cliente}</td>
+                        <td>{Atividade.Servico}</td>
                         <td>{this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)}</td> 
-                        <td>{Atividade.TempoLiquido}</td> 
+                        <td>{Atividade.TempoLiquido}</td>
                         <td>{this.tempo(Atividade.DataInicialProblema, Atividade.DataFinalProblema)}</td>
-                        <td className='mt-5'><OverlayTabelaGeral Obs={Atividade.Observacao} ProbObs={Atividade.ProblemObs} Qtda={Atividade.ContProblema}/></td>
+                        <td>{Atividade.ProblemObs}</td>
+                        <td className='mt-5'><OverlayTabelaGeral Obs={Atividade.Observacao} Qtda={Atividade.ContProblema} /></td>
                     </tr>
                 )
             })
@@ -200,18 +205,14 @@ export default class TabelaGeral extends React.Component {
     }
 
     tempo(ini, fm) {
-        var inicio = new Date(ini);
-        var fim = new Date(fm);
-        var diferenca = new Date(fim - inicio);
+        let dtChegada = `${fm}`;
+        let dtPartida = `${ini}`;
 
-        // var resultado = diferenca.getUTCFullYear() - 1970 + "a ";
-        var resultado = diferenca.getUTCMonth() + " M : ";
-        resultado += diferenca.getUTCDate() - 1 + " d : ";
-        resultado += diferenca.getUTCHours() + " h : ";
-        resultado += diferenca.getUTCMinutes() + " m : ";
-        resultado += diferenca.getUTCSeconds() + " s";
+        let ms = moment(dtChegada, "YYYY-MM-DDTHH:mm:ssZ").diff(moment(dtPartida, "YYYY-MM-DDTHH:mm:ssZ"));
+        let d = moment.duration(ms);
+        let s = Math.floor(d.asHours()) + moment.utc(ms).format(":mm:ss");
 
-        return resultado  === "NaN M : NaN d : NaN h : NaN m : NaN s" ? "00:00" : resultado
+        return s.match(/NaN/) ? "00:00:00" : s
     }
 
     render() {
