@@ -6,9 +6,10 @@ const HeaderProps = {
     title: "Em Breve"
 }
 
-export default function EmBreve(){
+export default function EmBreve() {
     return(
         <Main {...HeaderProps}>
+
             <div className="btn-pisca col-12 d-flex justify-content-center display-1">Em Breve!</div>
         </Main>
     )

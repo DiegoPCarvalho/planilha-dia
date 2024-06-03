@@ -364,7 +364,6 @@ export default class FormTable extends React.Component {
         if (this.state.mode === true) {
             this.setState({ mudar: 'table', mode: false })
         }
-
         return (
             <form className="row g-3 mt-3" action="javascript:myFunction(); return false;">
                 <div className="form">

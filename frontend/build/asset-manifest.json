@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.7567380a.css",
-    "main.js": "/static/js/main.ef614357.js",
+    "main.css": "/static/css/main.27808d60.css",
+    "main.js": "/static/js/main.1708aa10.js",
     "static/media/telaFundoLogin.gif": "/static/media/telaFundoLogin.10c13698f9cffc876832.gif",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/VINICIUS GOMES .png": "/static/media/VINICIUS GOMES .1c50568ff13119b31be8.png",
     "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/carregar.gif": "/static/media/carregar.46f1ece57b3728850258.gif",
     "static/media/GABRIEL KAIQUE.png": "/static/media/GABRIEL KAIQUE.b07d6eb056d85bb43bbd.png",
     "static/media/BRUNO BEDANI (1).png": "/static/media/BRUNO BEDANI (1).01b88df5d6ee002effda.png",
     "static/media/DIEGO CARVALHO.png": "/static/media/DIEGO CARVALHO.37c6218a485fe15295ed.png",
@@ -19,11 +20,11 @@
     "static/media/logo.png": "/static/media/logo.f38c25782706b4691aa2.png",
     "static/media/logoZhaz.png": "/static/media/logoZhaz.f38c25782706b4691aa2.png",
     "index.html": "/index.html",
-    "main.7567380a.css.map": "/static/css/main.7567380a.css.map",
-    "main.ef614357.js.map": "/static/js/main.ef614357.js.map"
+    "main.27808d60.css.map": "/static/css/main.27808d60.css.map",
+    "main.1708aa10.js.map": "/static/js/main.1708aa10.js.map"
   },
   "entrypoints": [
-    "static/css/main.7567380a.css",
-    "static/js/main.ef614357.js"
+    "static/css/main.27808d60.css",
+    "static/js/main.1708aa10.js"
   ]
 }

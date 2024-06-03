@@ -13,6 +13,9 @@ import CrudAtividade from '../Components/Atividade/CrudAtividade';
 import FormTable from "../Components/Atividade/FormTable";
 import RelatorioPessoal from '../Components/RelatorioPessoal/RelatorioPessoal';
 
+//VHL
+import VHL from '../Components/VHL/index';
+import AtividadeVHL from "../Components/VHL/Atividade/AtividadeVHL";
 
 //Em Breve
 import EmBreve from "../Components/EmBreve/EmBreve";
@@ -172,6 +175,10 @@ export default function Rotas() {
                 <Route path="/teste" element={<IndexLab />}>
                     <Route path="Formulario" element={<FormTeste />} />
                     <Route path="Tabela" element={<TabTeste />} />
+                </Route>
+                <Route path="/VHL" element={<VHL />}>
+                    <Route path="Atividade" element={<AtividadeVHL />} />
+                    <Route path="Relatorio" element={<EmBreveSmart/>} />
                 </Route>
                 <Route path="/Contratos" element={<Contratos/>}/>
             </Route>
