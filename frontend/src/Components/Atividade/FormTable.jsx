@@ -7,6 +7,7 @@ import CardForm from '../Card/CardForm';
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import Cronometro from './Cronometro/index-Cronos';
+import Carregando from '../../Assets/gifs/carregar.gif';
 
 import $ from 'jquery';
 
@@ -211,27 +212,19 @@ export default class FormTable extends React.Component {
 
         axios(bancoUrl).then(resp => {
             const tabela = resp.data
-            let dado = []
+            let dadoIni = []
+            let dadoEnv = []
 
             tabela.map(registro => {
                 if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
-                    dado.push({ ...registro })
+                    dadoIni.push({ ...registro })
                 }
-            })
-
-            this.setState({ listIni: dado })
-        })
-        axios(bancoUrl).then(resp => {
-            const tabela = resp.data
-            let dado = []
-
-            tabela.map(registro => {
                 if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
-                    dado.push({ ...registro })
+                    dadoEnv.push({ ...registro })
                 }
             })
-
-            this.setState({ listarFila: dado })
+            
+            this.setState({ listIni: dadoIni, listarFila: dadoEnv })
         })
     }
 
@@ -867,22 +860,23 @@ export default class FormTable extends React.Component {
         this.state.Fila.DataInicialBruto = Fila.Problema === "Não" ? data : Fila.DataInicialBruto
         this.state.Fila.Estagio = "Iniciado"
 
+        
         this.salvar()
-        this.buscaSimples('Iniciado')
+        this.buscaSimples()
     }
 
     problem(registro) {
         const data = new Date()
-        const {DataInicialProblema, ContProblema } = registro
-                
+        const { DataInicialProblema, ContProblema } = registro
+
         this.state.Fila.Estagio = "Em Aberto"
         this.state.Fila.Problema = "Sim"
         this.state.Fila.ContProblema = ContProblema + 1
         this.state.Fila.DataInicialProblema = DataInicialProblema !== '' ? DataInicialProblema : data
 
         this.salvar()
-        this.buscaSimples('Iniciado')
-        this.setState({ modalProblem: false, Fila: initialState.Fila })
+        this.buscaSimples()
+        this.setState({modalProblem: false})
     }
 
     verificarProblem() {
@@ -891,7 +885,6 @@ export default class FormTable extends React.Component {
         if (Fila.ProblemObs === '') {
 
         } else {
-            // console.log(Fila)
             this.problem(Fila)
         }
     }
@@ -916,13 +909,12 @@ export default class FormTable extends React.Component {
             this.state.Fila.Estagio = "Enviado"
 
             this.salvar()
-            this.buscaSimples('Iniciado')
+            this.buscaSimples()
         }
 
     }
 
-    buscaSimples(modo) {
-        if (modo === 'Iniciado') {
+   buscaSimples() {
             axios(baseUrl).then(resp => {
                 const tabela = resp.data
                 let dado = []
@@ -935,71 +927,24 @@ export default class FormTable extends React.Component {
 
                 this.setState({ listFim: dado })
             })
-
-            axios(bancoUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
-                        dado.push({ ...registro })
-                    }
+            setTimeout(() => {
+                axios(bancoUrl).then(resp => {
+                    const tabela = resp.data
+                    let dadoEnv = []
+                    let dadoIni = []
+                    
+                    tabela.map(registro => {
+                        if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
+                            dadoEnv.push({ ...registro })
+                        }else 
+                        if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
+                            dadoIni.push({ ...registro })
+                        }
+                    })
+                    
+                    return this.setState({ listarFila: dadoEnv, listIni: dadoIni })
                 })
-
-                this.setState({ listIni: dado })
-            })
-            axios(bancoUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listarFila: dado })
-            })
-        } else if (modo === "Finalizado") {
-            axios(bancoUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listarFila: dado })
-            })
-
-            axios(bancoUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listIni: dado })
-            })
-
-            axios(baseUrl).then(resp => {
-                const tabela = resp.data
-                let dado = []
-
-                tabela.map(registro => {
-                    if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listFim: dado })
-            })
-        }
+            }, 1000);
     }
 
     deletar(Fila) {
@@ -1062,7 +1007,7 @@ export default class FormTable extends React.Component {
 
         this.saveFinal(Atividade)
         this.deletar(Fila)
-        this.buscaSimples('Finalizado')
+        this.buscaSimples()
     }
 
     saveFinal(dado) {
@@ -1254,6 +1199,14 @@ export default class FormTable extends React.Component {
         )
     }
 
+    carregar() {
+        return (
+            <div className='d-flex justify-content-center'>
+                <img src={Carregando} alt="" style={{ width: 200, height: 200 }} />
+            </div>
+        )
+    }
+
     dataCorreta(data) {
         const dt = new Date(data)
 
@@ -1330,13 +1283,13 @@ export default class FormTable extends React.Component {
         })
     }
 
-    formatarTempoLiq(tempo){
+    formatarTempoLiq(tempo) {
         let novo = tempo.replace(/(\d):(\d):(\d)/, '$1 h : $2 m : $3 s')
 
         return novo
     }
 
-    formatarTempoBto(tempo){
+    formatarTempoBto(tempo) {
         let novo = tempo.replace(/(\d*):(\d\d):(\d\d)/, '$1 h : $2 m : $3 s')
 
         return novo

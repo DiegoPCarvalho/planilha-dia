@@ -431,7 +431,7 @@ export default class FilaTecnica extends React.Component {
                 {this.state.carregando === true ? (
                     <div className="row d-flex justify-content-center align-items-center mt-5">
                         <div className="col-6 d-flex justify-content-center ">
-                            <img src={carregando} className="w-50 h-50" />
+                            <img src={carregando} style={{ width: 400, height: 400 }} />
 
                         </div>
                     </div>
