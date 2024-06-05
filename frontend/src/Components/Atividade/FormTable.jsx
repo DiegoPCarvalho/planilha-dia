@@ -861,8 +861,6 @@ export default class FormTable extends React.Component {
         const Fila = this.state.Fila
 
         if (Fila.Problema === "Sim" && Fila.Servico === "Laudo") {
-            this.state.Fila.Data = data
-            this.state.Fila.dt = data
             this.state.Fila.DataFinalProblema = data
             this.state.Fila.DataInicialBruto = Fila.DataInicialBruto
             this.state.Fila.Estagio = "Iniciado"
@@ -1189,9 +1187,9 @@ export default class FormTable extends React.Component {
 
     async excecao(registro) {
         await this.setState({ Fila: registro })
-        const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Final')
-
         const Fila = this.state.Fila
+        const tempo = this.diferenca(Fila.DataInicialBruto, 'final')
+
 
         if (tempo >= 3) {
             this.setState({ modalToDo: true })

@@ -16,6 +16,7 @@ const initialState = {
         id: '',
         OS: '',
         Data: '',
+        dt: '',
         DataFinalMovto: '',
         Cliente: '',
         Equipamento: '',
@@ -79,7 +80,7 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
-                if (reg.EmpresaID === 1) {
+                if (reg.Empresa === 1) {
                     reg.Estagio = 'Em Aberto'
                     reg.Problema = 'Não'
                     reg.Tecnico = ''
@@ -92,7 +93,7 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
-                if (reg.EmpresaID === 1) {
+                if (reg.Empresa === 1) {
                     reg.Estagio = 'Em Aberto'
                     reg.Problema = 'Não'
                     reg.Tecnico = ''
@@ -319,21 +320,29 @@ export default class AddFila extends React.Component {
     //deletar
 
     //verificar
-    verfificar() {
-        const { Tecnico, Problema, DataInicialProblema, ContProblema } = this.state.Atividade
-        const dt = new Date()
+    verificar() {
+        const { Tecnico, Problema, DataInicialProblema, ContProblema, dt } = this.state.Atividade
+        const data = new Date()
 
 
         if (Tecnico === '') {
 
         } else {
 
-            this.state.Atividade.Estagio = "Enviado"
-            this.state.Atividade.dt = dt
-            this.state.Atividade.DataFinalProblema = Problema === "Sim" ? dt : ''
-            this.state.Atividade.DataInicialProblema = DataInicialProblema ? DataInicialProblema : ''
-            this.state.Atividade.ContProblema = ContProblema ? ContProblema : 0
-            this.save()
+            if(Problema === "Sim"){
+                this.state.Atividade.Estagio = "Enviado"
+                this.state.Atividade.dt = dt
+                this.state.Atividade.DataFinalProblema = data 
+                this.state.Atividade.DataInicialProblema = DataInicialProblema 
+                this.state.Atividade.ContProblema = ContProblema
+                
+                this.save()
+            }else {
+                this.state.Atividade.Estagio = "Enviado"
+                this.state.Atividade.dt = data
+
+                this.save()
+            }
         }
     }
 
@@ -397,7 +406,7 @@ export default class AddFila extends React.Component {
 
                     </div>
                     <div className="col-6 d-flex justify-content-end">
-                        <button className="btn btn-primary fw-bold mx-2" onClick={() => this.verfificar()}>Salvar</button>
+                        <button className="btn btn-primary fw-bold mx-2" onClick={() => this.verificar()}>Salvar</button>
                         <button className="btn btn-danger fw-bold" style={{ marginRight: 10 }} onClick={() => this.clear()}>Cancelar</button>
                     </div>
                 </div>
