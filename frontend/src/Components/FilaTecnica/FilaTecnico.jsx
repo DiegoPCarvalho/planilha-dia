@@ -6,6 +6,7 @@ import CardFilaTecnica from "../Card/CardFIlaTecnica";
 import ModalFilaTecnica from "../Modal/ModalFIlaTecnica";
 import $ from 'jquery';
 import carregando from '../../Assets/gifs/carregar.gif';
+import moment from 'moment';
 
 const initialState = {
     list: [],
@@ -68,7 +69,6 @@ export default class FilaTecnica extends React.Component {
         const data = new Date()
 
         this.setState({ data })
-
     }
     //#endregion
 
@@ -122,13 +122,12 @@ export default class FilaTecnica extends React.Component {
     async buscar() {
         this.setState({ carregando: true })
         const dt = new Date()
-        await this.setState({ data: dt })
+        this.setState({ data: dt})
         const tecnico = this.state.Busca.Tecnico
         const listBanco = await axios(bancoUrl).then(resp => resp.data)
         const list = await axios(baseUrl).then(resp => resp.data)
         let dadoEnv = []
         let dadoIni = []
-        let dadoProblem = []
         let dadoFim = []
 
         const data = this.state.data
@@ -141,8 +140,6 @@ export default class FilaTecnica extends React.Component {
                 dadoEnv.push({ ...registro })
             } else if (registro.Tecnico === tecnico && registro.Estagio === "Iniciado") {
                 dadoIni.push({ ...registro })
-            }else if(registro.Tecnico === tecnico && registro.Estagio === "Problema"){
-                dadoProblem.push({ ...registro})
             }
         })
 
@@ -156,7 +153,6 @@ export default class FilaTecnica extends React.Component {
             listEnv: dadoEnv,
             listIni: dadoIni,
             listFim: dadoFim,
-            listProblem: dadoProblem,
             carregando: false
         })
 
@@ -228,10 +224,11 @@ export default class FilaTecnica extends React.Component {
                             bg={'success'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
-                            tempo={this.tempo(registro.DataInicialBruto, this.state.data)}
+                            tempo={this.tempo2(registro.DataInicialBruto, this.state.data)}
                             gerencia
                             finalizado
                         />
+                        {console.log(registro.DataInicialBruto)}
                     </div>
                 )
             } else if (nome === 'DOES') {
@@ -245,8 +242,8 @@ export default class FilaTecnica extends React.Component {
                             Servico={registro.Servico}
                             bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
                             icone="pencil-square"
-                            bruto={this.tempo(registro.DataInicialBruto, registro.DataFinalBruto)}
-                            liquido={registro.TempoLiquido}
+                            bruto={this.formatarTempoBto(this.tempo(registro.DataInicialBruto, registro.DataFinalBruto))}
+                            liquido={this.formatarTempoLiq(registro.TempoLiquido)}
                             corBotao="warning fa-2x"
                             finalizado
                         />
@@ -263,6 +260,17 @@ export default class FilaTecnica extends React.Component {
     }
 
     tempo(ini, fm) {
+        let dtPartida = `${ini}`;
+        let dtChegada = `${fm}`;
+
+        let ms = moment(dtChegada, "YYYY-MM-DDTHH:mm:ssZ").diff(moment(dtPartida, "YYYY-MM-DDTHH:mm:ssZ"));
+        let d = moment.duration(ms);
+        let s = Math.floor(d.asHours()) + moment.utc(ms).format(":mm:ss");
+
+        return s.match(/NaN/) ? "00:00:00" : s
+    }
+
+    tempo2(ini, fm) {
         var inicio = new Date(ini);
         var fim = new Date(fm);
         var diferenca = new Date(fim - inicio);
@@ -275,6 +283,19 @@ export default class FilaTecnica extends React.Component {
         resultado += diferenca.getUTCSeconds() + " s";
 
         return resultado  === "NaN M : NaN d : NaN h : NaN m : NaN s" ? "00:00" : resultado
+    }
+
+
+    formatarTempoLiq(tempo) {
+        let novo = tempo.replace(/(\d+):(\d+):(\d+)/, '$1 h : $2 m : $3 s')
+
+        return novo
+    }
+
+    formatarTempoBto(tempo) {
+        let novo = tempo.replace(/(\d+):(\d+):(\d+)/, '$1 h : $2 m : $3 s')
+
+        return novo
     }
 
     renderBuscando() {

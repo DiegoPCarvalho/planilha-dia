@@ -14,9 +14,9 @@ function OverlayTabelaGeral(props) {
     )
 
     return (
-        <div className='d-flex justify-content-center'>
+        <div>
             <OverlayTrigger placement='top' overlay={popoverTempo}>
-                <i className='fa fa-exclamation-circle fa-2x btn btn-warning' />
+                <i className='fa fa-exclamation-circle btn btn-warning' style={{ fontSize: 25}}/>
             </OverlayTrigger>
         </div>
     );

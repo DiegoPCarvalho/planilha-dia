@@ -79,10 +79,12 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
-                reg.Estagio = 'Em Aberto'
-                reg.Problema = 'Não'
-                reg.Tecnico = ''
-                this.saves(reg)
+                if (reg.EmpresaID === 1) {
+                    reg.Estagio = 'Em Aberto'
+                    reg.Problema = 'Não'
+                    reg.Tecnico = ''
+                    this.saves(reg)
+                }
             }
         })
 
@@ -90,10 +92,12 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
-                reg.Estagio = 'Em Aberto'
-                reg.Problema = 'Não'
-                reg.Tecnico = ''
-                this.saves(reg)
+                if (reg.EmpresaID === 1) {
+                    reg.Estagio = 'Em Aberto'
+                    reg.Problema = 'Não'
+                    reg.Tecnico = ''
+                    this.saves(reg)
+                }
             }
         })
     }
@@ -239,13 +243,13 @@ export default class AddFila extends React.Component {
             if (Atividade.Estagio === "Em Aberto") {
                 return (
                     <tr className={Atividade.Problema === "Sim" ? 'table-danger' : ''} key={(Atividade.id)}>
-                        <td>{Atividade.id}</td>
-                        <td>{this.dataNova(Atividade.Data)}</td>
-                        <td>{Atividade.OS}</td>
-                        <td>{Atividade.Cliente}</td>
-                        <td>{Atividade.Equipamento}</td>
-                        <td>{this.manutencao(Atividade.Servico)}</td>
-                        <td>
+                        <td className="col-1">{Atividade.id}</td>
+                        <td className="col-1">{this.dataNova(Atividade.Data)}</td>
+                        <td className="col-1">{Atividade.OS}</td>
+                        <td className="col-4">{Atividade.Cliente}</td>
+                        <td className="col-4">{Atividade.Equipamento}</td>
+                        <td className="col-1">{this.manutencao(Atividade.Servico)}</td>
+                        <td className="col-1">
                             <button className="btn btn-success mx-2 mt-2"
                                 onClick={() => this.load(Atividade)}
                             >

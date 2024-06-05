@@ -6,7 +6,6 @@ import OverlayTabelaGeral from '../../../Overlay/OverlayTabelaGeral'
 import moment from 'moment';
 
 import $ from 'jquery';
-import OverlayTempoTabelaGeral from '../../../Overlay/OverlayTempoTabelaGeral';
 
 const initialState = {
     list: [],
@@ -120,6 +119,20 @@ export default class TabelaGeral extends React.Component {
         return dataF
     }
 
+    remove(Atividade) {
+        axios.delete(`${baseUrl}/${Atividade.id}`)
+            .then(resp => {
+                const list = this.getUpdatedList(Atividade, false)
+                return this.setState({ list })
+            })
+    }
+
+    getUpdatedList(Atividade, add = true) {
+        const list = this.state.list.filter(a => a.id !== Atividade.id)
+        if (add) list.push(Atividade)
+        return list
+    }
+
     renderTable() {
         return (
             <table className="table mt-5 table-bordered table-striped" id="tabelaGeral">
@@ -166,7 +179,12 @@ export default class TabelaGeral extends React.Component {
                         <td>{Atividade.TempoLiquido}</td>
                         <td>{this.tempo(Atividade.DataInicialProblema, Atividade.DataFinalProblema)}</td>
                         <td>{Atividade.ProblemObs}</td>
-                        <td className='mt-5'><OverlayTabelaGeral Obs={Atividade.Observacao} Qtda={Atividade.ContProblema} /></td>
+                        <td className='d-flex justify-content-around' onClick={() => this.remove(Atividade)}>
+                            <button className='btn btn-danger'>
+                                <i className="fa fa-trash" style={{ fontSize: 25}}></i>
+                            </button>
+                            <OverlayTabelaGeral Obs={Atividade.Observacao} Qtda={Atividade.ContProblema} />
+                        </td>
                     </tr>
                 )
             })

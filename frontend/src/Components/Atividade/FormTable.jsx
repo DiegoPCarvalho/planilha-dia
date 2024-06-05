@@ -63,6 +63,7 @@ const initialState = {
         ProblemObs: '',
         Problema: 'Não',
         DataInicialProblema: '',
+        DataFinalProblema: '',
         ContProblema: 0
     },
     list: [],
@@ -223,7 +224,7 @@ export default class FormTable extends React.Component {
                     dadoEnv.push({ ...registro })
                 }
             })
-            
+
             this.setState({ listIni: dadoIni, listarFila: dadoEnv })
         })
     }
@@ -295,6 +296,7 @@ export default class FormTable extends React.Component {
                 this.state.Atividade.Dia = dt.getDate()
                 this.state.Atividade.Mes = dt.getMonth() + 1
                 this.state.Atividade.Ano = dt.getFullYear()
+                this.state.Atividade.Estagio = ''
 
                 this.save()
                 localStorage.UltimaOS = ativ.OS
@@ -305,6 +307,7 @@ export default class FormTable extends React.Component {
                 this.state.Atividade.Dia = dt.getDate()
                 this.state.Atividade.Mes = dt.getMonth() + 1
                 this.state.Atividade.Ano = dt.getFullYear()
+                this.state.Atividade.Estagio = ''
 
                 this.save()
                 localStorage.UltimaOS = ativ.OS
@@ -512,7 +515,7 @@ export default class FormTable extends React.Component {
                     </div>
                     <div className="row mt-3">
                         <div className="col-12 col-md-6 d-flex align-items-center">
-                            <div class="alert-box success">Salvo com Sucesso!!!</div>
+                            <div class="success fw-bold p-2 rounded">Salvo com Sucesso!!!</div>
                         </div>
                         <div className="col-12 col-md-6 d-flex justify-content-end">
 
@@ -654,7 +657,7 @@ export default class FormTable extends React.Component {
                     <td>{Atividade.NS}</td>
                     <td>{Atividade.Servico}</td>
                     <td className="d-flex justify-content-around p-3">
-                        {Atividade.Estagio === "" ? (<>
+                        {Atividade.Estagio === '' ? (<>
                             <button className="btn btn-warning mx-2"
                                 onClick={() => this.load(Atividade)}>
                                 <i className="fa fa-pencil"></i>
@@ -665,7 +668,10 @@ export default class FormTable extends React.Component {
                             </button>
                         </>
                         ) : (
-                            <td className='p-3 fw-bold'>{Atividade.Estagio}</td>
+                            <button className="btn btn-danger mx-2"
+                                onClick={() => this.confirmar(Atividade)}>
+                                <i className="fa fa-trash"></i>
+                            </button>
                         )}
                     </td>
                 </tr>
@@ -854,29 +860,52 @@ export default class FormTable extends React.Component {
         const data = new Date()
         const Fila = this.state.Fila
 
+        if (Fila.Problema === "Sim" && Fila.Servico === "Laudo") {
+            this.state.Fila.Data = data
+            this.state.Fila.dt = data
+            this.state.Fila.DataFinalProblema = data
+            this.state.Fila.DataInicialBruto = Fila.DataInicialBruto
+            this.state.Fila.Estagio = "Iniciado"
 
-        this.state.Fila.Data = data
-        this.state.Fila.dt = data
-        this.state.Fila.DataInicialBruto = Fila.Problema === "Não" ? data : Fila.DataInicialBruto
-        this.state.Fila.Estagio = "Iniciado"
+            this.salvar()
+            this.buscaSimples()
 
-        
-        this.salvar()
-        this.buscaSimples()
+        } else {
+            this.state.Fila.Data = data
+            this.state.Fila.dt = data
+            this.state.Fila.DataInicialBruto = data
+            this.state.Fila.Estagio = "Iniciado"
+            
+            this.salvar()
+            this.buscaSimples()
+        }
+
     }
 
     problem(registro) {
         const data = new Date()
         const { DataInicialProblema, ContProblema } = registro
 
-        this.state.Fila.Estagio = "Em Aberto"
-        this.state.Fila.Problema = "Sim"
-        this.state.Fila.ContProblema = ContProblema + 1
-        this.state.Fila.DataInicialProblema = DataInicialProblema !== '' ? DataInicialProblema : data
+        if (registro.Servico === 'Laudo') {
+            this.state.Fila.Estagio = "Enviado"
+            this.state.Fila.Problema = "Sim"
+            this.state.Fila.ContProblema = ContProblema + 1
+            this.state.Fila.DataInicialProblema = DataInicialProblema !== '' ? DataInicialProblema : data
 
-        this.salvar()
-        this.buscaSimples()
-        this.setState({modalProblem: false})
+            this.salvar()
+            this.buscaSimples()
+            this.setState({ modalProblem: false })
+        } else {
+            this.state.Fila.Estagio = "Em Aberto"
+            this.state.Fila.Problema = "Sim"
+            this.state.Fila.ContProblema = ContProblema + 1
+            this.state.Fila.DataInicialProblema = DataInicialProblema !== '' ? DataInicialProblema : data
+
+            this.salvar()
+            this.buscaSimples()
+            this.setState({ modalProblem: false })
+        }
+
     }
 
     verificarProblem() {
@@ -914,37 +943,55 @@ export default class FormTable extends React.Component {
 
     }
 
-   buscaSimples() {
-            axios(baseUrl).then(resp => {
+    confirmarFinalizar(registro) {
+        confirmAlert({
+            title: "Finalizar",
+            message: "Deseja Realmente Finalizar?",
+            buttons: [
+                {
+                    label: "Sim",
+                    className: "btn btn-success",
+                    onClick: () => this.excecao(registro)
+                },
+                {
+                    label: "Não",
+                    className: "btn btn-danger"
+                }
+            ]
+        })
+    }// confirmar deletar
+
+    buscaSimples() {
+        axios(baseUrl).then(resp => {
+            const tabela = resp.data
+            let dado = []
+
+            tabela.map(registro => {
+                if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
+                    dado.push({ ...registro })
+                }
+            })
+
+            this.setState({ listFim: dado })
+        })
+        setTimeout(() => {
+            axios(bancoUrl).then(resp => {
                 const tabela = resp.data
-                let dado = []
+                let dadoEnv = []
+                let dadoIni = []
 
                 tabela.map(registro => {
-                    if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
-                        dado.push({ ...registro })
-                    }
-                })
-
-                this.setState({ listFim: dado })
-            })
-            setTimeout(() => {
-                axios(bancoUrl).then(resp => {
-                    const tabela = resp.data
-                    let dadoEnv = []
-                    let dadoIni = []
-                    
-                    tabela.map(registro => {
-                        if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
-                            dadoEnv.push({ ...registro })
-                        }else 
+                    if ((registro.Estagio === "Enviado") && (localStorage.usuario === registro.Tecnico)) {
+                        dadoEnv.push({ ...registro })
+                    } else
                         if ((registro.Estagio === "Iniciado") && (localStorage.usuario === registro.Tecnico)) {
                             dadoIni.push({ ...registro })
                         }
-                    })
-                    
-                    return this.setState({ listarFila: dadoEnv, listIni: dadoIni })
                 })
-            }, 1000);
+
+                return this.setState({ listarFila: dadoEnv, listIni: dadoIni })
+            })
+        }, 1000);
     }
 
     deletar(Fila) {
@@ -1142,7 +1189,7 @@ export default class FormTable extends React.Component {
 
     async excecao(registro) {
         await this.setState({ Fila: registro })
-        const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Iniciado')
+        const tempo = this.diferenca(this.state.Fila.DataInicialBruto, 'Final')
 
         const Fila = this.state.Fila
 
@@ -1153,13 +1200,21 @@ export default class FormTable extends React.Component {
         }
     }
 
-    diferenca(data) {
+    diferenca(data, modo) {
         const d2 = new Date()
 
-        const dif = d2 - new Date(data)
-        const diferenca = dif / (1000 * 60 * 60);
+        if(modo === 'final'){
+            const dif = d2 - new Date(data)
+            const diferenca = dif / (1000 * 60 * 60);
+    
+            return +diferenca.toFixed(0)
 
-        return +diferenca.toFixed(0)
+        }else {
+            const dif = d2 - new Date(data)
+            const diferenca = dif / (1000 * 60);
+    
+            return +diferenca.toFixed(0)
+        }
     }
 
     //#endregion
@@ -1219,7 +1274,7 @@ export default class FormTable extends React.Component {
         return dados.map(registro => {
             if (modo === 'TO DO') {
                 return (
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center" key={registro.id}>
                         <CardFilaTecnica
                             os={registro.OS}
                             dt={this.dataCorreta(registro.dt)}
@@ -1236,7 +1291,7 @@ export default class FormTable extends React.Component {
                 )
             } else if (modo === 'DOING') {
                 return (
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center" key={registro.id}>
                         <CardFilaTecnica
                             os={registro.OS}
                             dt={this.dataNova(registro.dt)}
@@ -1256,7 +1311,7 @@ export default class FormTable extends React.Component {
                                     minuto={`minuto ${registro.id}`}
                                     segundo={`segundo ${registro.id}`} />
                             }
-                            abrir={() => this.excecao(registro)}
+                            abrir={() => this.confirmarFinalizar(registro)}
                             alerta={() => this.modalPro(registro)}
                             voltar={() => this.voltar(registro)}
                         />
@@ -1264,7 +1319,7 @@ export default class FormTable extends React.Component {
                 )
             } else if (modo === 'DOES') {
                 return (
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center" key={registro.id}>
                         <CardFilaTecnica
                             id={registro.id}
                             os={registro.OS}
@@ -1284,13 +1339,13 @@ export default class FormTable extends React.Component {
     }
 
     formatarTempoLiq(tempo) {
-        let novo = tempo.replace(/(\d):(\d):(\d)/, '$1 h : $2 m : $3 s')
+        let novo = tempo.replace(/(\d+):(\d+):(\d+)/, '$1 h : $2 m : $3 s')
 
         return novo
     }
 
     formatarTempoBto(tempo) {
-        let novo = tempo.replace(/(\d*):(\d\d):(\d\d)/, '$1 h : $2 m : $3 s')
+        let novo = tempo.replace(/(\d+):(\d+):(\d+)/, '$1 h : $2 m : $3 s')
 
         return novo
     }
