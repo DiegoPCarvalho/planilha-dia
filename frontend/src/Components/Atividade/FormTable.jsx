@@ -960,18 +960,21 @@ export default class FormTable extends React.Component {
     }// confirmar deletar
 
     buscaSimples() {
-        axios(baseUrl).then(resp => {
-            const tabela = resp.data
-            let dado = []
-
-            tabela.map(registro => {
-                if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
-                    dado.push({ ...registro })
-                }
+        setTimeout(() => {
+            axios(baseUrl).then(resp => {
+                const tabela = resp.data
+                let dado = []
+    
+                tabela.map(registro => {
+                    if ((localStorage.usuario === registro.Tecnico) && (this.state.ano === registro.Ano) && (this.state.mes === registro.Mes) && (this.state.dia === registro.Dia) && (registro.Estagio === 'Finalizado')) {
+                        dado.push({ ...registro })
+                    }
+                })
+    
+                this.setState({ listFim: dado })
             })
-
-            this.setState({ listFim: dado })
-        })
+        }, 500);
+        
         setTimeout(() => {
             axios(bancoUrl).then(resp => {
                 const tabela = resp.data
@@ -1165,7 +1168,7 @@ export default class FormTable extends React.Component {
                             <button className="btn btn-danger mx-2 fw-bold"
                                 onClick={() => this.verificarProblem()}
                             >
-                                Problema
+                                Enviar
                             </button>
                         </div>
                     </div>

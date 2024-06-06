@@ -9,6 +9,7 @@ const initialState = {
     list: [],
     listTec: [],
     statusKin: 0,
+    QTDE: 0,
     Filtro: {
         Mes: '',
         Ano: ''
@@ -45,20 +46,25 @@ export default class TabelaAntiga extends React.Component {
         this.setState({ carregando: true })
         const tabelaNome = await axios(baseUrl).then(resp => resp.data)
         let dadoNome = []
+        let qtd = []
 
         if ((mes === "Todos") && (ano !== "Todos")) {
 
             tabelaNome.map(registro => {
                 if ((+ano === registro.Ano)) {
                     dadoNome.push({ ...registro })
+                    qtd.push(+registro.QTDE)
                 }
             })
+
+            const QTDE = qtd.reduce((acul, ele) => acul + ele)
 
             return this.setState({
                 list: dadoNome,
                 carregando: false,
                 pesquisar: true,
-                disabled: true
+                disabled: true,
+                QTDE
             })
 
         } else
@@ -67,18 +73,22 @@ export default class TabelaAntiga extends React.Component {
                 tabelaNome.map(registro => {
                     if ((+mes === registro.Mes) && (+ano === registro.Ano)) {
                         dadoNome.push({ ...registro })
+                        qtd.push(+registro.QTDE)
                     }
                 })
+
+                const QTDE = qtd.reduce((acul, ele) => acul + ele)
 
                 return this.setState({
                     list: dadoNome,
                     carregando: false,
                     pesquisar: true,
-                    disabled: true
+                    disabled: true,
+                    QTDE
                 })
             }
 
-        this.setState({ carregando: false })
+        return this.setState({ carregando: false })
     }
 
     formataData(dataItem) {
@@ -98,6 +108,8 @@ export default class TabelaAntiga extends React.Component {
                         <th>Pedido</th>
                         <th>Cliente</th>
                         <th>Serviço</th>
+                        <th>QTDE</th>
+                        <th>Tecnico</th>
                         <th>Equip.</th>
                     </tr>
                 </thead>
@@ -128,6 +140,8 @@ export default class TabelaAntiga extends React.Component {
                         <td>{registro.Pedido}</td>
                         <td>{registro.Cliente}</td>
                         <td>{registro.Servico}</td>
+                        <td>{registro.QTDE}</td>
+                        <td>{registro.Tecnico}</td>
                         <td>{registro.Equipamento.map(reg => {
                             return (
                                 <p>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
@@ -182,8 +196,8 @@ export default class TabelaAntiga extends React.Component {
                             <span className='fw-bold h5 mt-2'>Tabela</span>
                         </div>
                     </div>
-                    <div className="col-9 d-flex justify-content-between">
-                        <div className="col-1 d-flex flex-row justify-content-end align-items-end">
+                    <div className="col-7 d-flex justify-content-between align-items-end">
+                        <div className="col-1 d-flex justify-content-end align-items-end">
                             <i className="fa fa-search fa-2x text-danger" />
                         </div>
                         <div className="col-3 d-flex flex-column justify-content-start">
@@ -236,6 +250,12 @@ export default class TabelaAntiga extends React.Component {
                             <button className="btn btn-success fw-bold" onClick={() => this.selecioneBotao()}>{this.state.nomeBotao}</button>
                         </div>
                     </div>
+                    <div className="col-3 d-flex justify-content-center align-items-center">
+                        <div className="bg-success p-3 rounded d-flex flex-column align-items-center fw-bold text-light">
+                                <p className="h2 fw-bold">Qtd. Equip.</p>
+                                <p className="h4">{this.state.QTDE}</p>
+                        </div>
+                    </div>
                 </div>
                 <div className="row mt-3">
                     {this.renderTable()}
@@ -248,7 +268,8 @@ export default class TabelaAntiga extends React.Component {
                     disabled: false,
                     nomeBotao: 'Buscar',
                     list: [],
-                    Filtro: initialState.Filtro
+                    Filtro: initialState.Filtro,
+                    QTDE: 0
                 })}
             </div>
         )

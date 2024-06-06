@@ -2,13 +2,13 @@ import React from "react";
 import Url from '../../Url/Url';
 import $ from 'jquery';
 import axios from "axios";
-import OverlayVHL from "../../Overlay/OverlayVHL";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import TabelaAntiga from "../RelatorioAntigoVHL/TabelaAntiga";
 
 
 const baseUrlServ = Url("Servico");
+const baseUrlEquip = Url("Equipamento");
 const baseUrl = Url("VHL");
 
 const initialState = {
@@ -27,16 +27,21 @@ const initialState = {
         Tecnico: localStorage.usuario
     },
     AtivEquip: {
+        Equipamento: '',
         Modelo: '',
         NS: '',
         Observacao: ''
     },
     list: [],
+    QTDE: 0,
     listServ: [],
+    listEquip: [],
     Equipamento: [],
     mudar: 'form',
     table_on: false,
-    modeDel: false
+    modeDel: false,
+    modeQtd: false,
+    modoInicial: false
 }
 
 export default class AtividadeVHL extends React.Component {
@@ -47,14 +52,6 @@ export default class AtividadeVHL extends React.Component {
     componentDidMount() {
         this.buscar()
         this.buscarTable()
-    }
-
-    buscarMesAno() {
-        const data = new Date()
-        const mes = data.getMonth() + 1
-        const ano = data.getFullYear()
-
-        return this.setState({ mes, ano })
     }
 
     buscar() {
@@ -74,29 +71,41 @@ export default class AtividadeVHL extends React.Component {
             this.setState({ listServ: dado })
         })
 
+        axios(baseUrlEquip).then(resp => {
+            this.setState({ listEquip: resp.data })
+        })
+
     }
 
     buscarTable() {
         axios(baseUrl).then(resp => {
             const tabela = resp.data
             let list = []
+            let qtd = []
 
             const data = new Date()
             const mes = data.getMonth() + 1
             const ano = data.getFullYear()
 
             tabela.map(registro => {
-                if (registro.Mes === mes && registro.Ano === ano) {
+                if (localStorage.usuario === registro.Tecnico && registro.Mes === mes && registro.Ano === ano) {
                     list.push({ ...registro })
+                    qtd.push(+registro.QTDE)
                 }
             })
+            
+            const QTDE = qtd.reduce((acum, ele) => acum + ele)
 
-            return this.setState({ list })
+            return this.setState({ list, QTDE })
         })
     }
 
     componentDidUpdate() {
-        this.pesquisar()
+        if(this.state.modeQtd === true){
+            this.buscarQtd()
+        }else {
+            this.pesquisar()
+        }
     }
 
     pesquisar() {
@@ -195,7 +204,7 @@ export default class AtividadeVHL extends React.Component {
             axios[method](url, Atividade)
                 .then(resp => {
                     const list = this.getUpdatedList(resp.data)
-                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list })
+                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, modoInicial: true})
                 })
 
             this.mensagemSalvo()
@@ -207,7 +216,7 @@ export default class AtividadeVHL extends React.Component {
             axios[method](url, Atividade)
                 .then(resp => {
                     const list = this.getUpdatedList(resp.data)
-                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, mudar: 'table', table_on: false })
+                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, mudar:'table', table_on: false, modeQtd: true })
                 })
 
             this.mensagemSalvo()
@@ -215,9 +224,11 @@ export default class AtividadeVHL extends React.Component {
     } //salvar e alterar
 
     remove(Atividade) {
+        this.state.QTDE = this.state.QTDE - Atividade.QTDE
+
         axios.delete(`${baseUrl}/${Atividade.id}`)
             .then(resp => {
-                this.setState({ mudar: 'form', modeDel: true })
+                this.setState({ mudar: 'form', modeDel: true, modoInicial: false })
                 const list = this.getUpdatedList(Atividade, false)
                 return this.setState({ list })
             })
@@ -349,7 +360,20 @@ export default class AtividadeVHL extends React.Component {
                         </div>
                         <div className="col-6" style={{ borderLeft: "3px solid gray" }}>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-4">
+                                    <div className="form-group">
+                                        <label className='fw-bold'>Equipamento: </label>
+                                        <select class="form-select" aria-label="Default select example"
+                                            name="Equipamento"
+                                            onChange={e => this.updateField(e, true)}
+                                            value={this.state.AtivEquip.Equipamento}
+                                        >
+                                            <option selected disabled value="">Selecione o Equipamento</option>
+                                            {this.renderEquip()}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="col-4">
                                     <div className="form-group">
                                         <label className='fw-bold'>Modelo: </label>
                                         <input type="text" className="form-control"
@@ -359,7 +383,7 @@ export default class AtividadeVHL extends React.Component {
                                             placeholder="Digite o modelo..." />
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col-4">
                                     <div className="form-group">
                                         <label className='fw-bold'>Número de Serie</label>
                                         <input type="text" className="form-control"
@@ -424,6 +448,7 @@ export default class AtividadeVHL extends React.Component {
         return this.state.Equipamento.map((Atividade) => {
             return (
                 <tr key={Atividade.id}>
+                    <td className="col-1">{Atividade.Equipamento}</td>
                     <td className="col-2">{Atividade.Modelo}</td>
                     <td className="col-2">{Atividade.NS}</td>
                     <td className="col-2">{Atividade.Observacao}</td>
@@ -459,6 +484,7 @@ export default class AtividadeVHL extends React.Component {
 
         Equipamento.push({
             id: Atividade.NS,
+            Equipamento: Atividade.Equipamento,
             Modelo: Atividade.Modelo,
             NS: Atividade.NS,
             Observacao: Atividade.Observacao
@@ -481,9 +507,44 @@ export default class AtividadeVHL extends React.Component {
         })
     }
 
+    renderEquip() {
+        return this.state.listEquip.map(Equip => {
+            return (
+                <option>{Equip.nome}</option>
+            )
+        })
+
+    }
+
     //#endregion
 
     //#region table
+
+    async buscarQtd() {
+        if(this.state.QTDE === 0 && this.state.modoInicial === false){
+            this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modoInicial: false})
+        }else {
+        await axios(baseUrl).then(resp => {
+            const tabela = resp.data
+            let qtd = []
+            
+            const data = new Date()
+            const mes = data.getMonth() + 1
+            const ano = data.getFullYear()
+            
+            tabela.map(registro => {
+                if (localStorage.usuario === registro.Tecnico && registro.Mes === mes && registro.Ano === ano) {
+                    qtd.push(+registro.QTDE)
+                }
+            })
+            
+            const QTDE = qtd.reduce((acumulador, elemento) => acumulador + elemento)
+            
+            return this.setState({modeQtd: false, QTDE, Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modeInicial: false  })
+            })
+        }
+    }
+            
     renderTable() {
         return (
             <div>
@@ -496,6 +557,8 @@ export default class AtividadeVHL extends React.Component {
                             <th>Cliente</th>
                             <th>Serviço</th>
                             <th>Equip.</th>
+                            <th>QTDE</th>
+                            <th>Tecnico</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -528,6 +591,8 @@ export default class AtividadeVHL extends React.Component {
                         )
                     })
                     }</td>
+                    <td>{registro.QTDE}</td>
+                    <td>{registro.Tecnico}</td>
                     <td>
                         <div className="d-flex justify-content-around align-items-center">
                             <button className="btn btn-warning mx-2"
@@ -554,6 +619,12 @@ export default class AtividadeVHL extends React.Component {
                         <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form' })}></i>
                         <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
                         <span className='fw-bold h4 mt-2'>Formulário</span>
+                    </div>
+                    <div className="col-3 d-flex justify-content-center">
+                        <div className="bg-success p-3 rounded d-flex flex-column align-items-center fw-bold text-light">
+                                <p className="h2 fw-bold">Qtd. Equip.</p>
+                                <p className="h4">{this.state.QTDE}</p>
+                        </div>
                     </div>
                     <div className="col-3 d-flex justify-content-end align-items-center">
                         <span className='fw-bold h4 mt-2'>Reg. Antigo</span>
@@ -582,7 +653,7 @@ export default class AtividadeVHL extends React.Component {
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='fw-bold h5 mt-2'>Tabela</span>
                             <i className='fa fa-arrow-right mx-3 text-danger'></i>
-                            <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table' })}></i>
+                            <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.buscarQtd()}></i>
                         </div>
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='fw-bold h5 mt-2'>Reg. Antigo</span>
@@ -597,6 +668,6 @@ export default class AtividadeVHL extends React.Component {
             </>
         ) : <TabelaAntiga
             form={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form' })}
-            table={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table' })} />
+            table={() => this.buscarQtd()} />
     }
 }
