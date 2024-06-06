@@ -1278,7 +1278,7 @@ export default class FormTable extends React.Component {
                             dt={this.dataCorreta(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
-                            Servico={registro.Servico}
+                            Servico={this.servico(registro.Servico)}
                             bg={registro.Problema === "Não" ? 'primary' : 'danger'}
                             final={registro.Estagio}
                             icone="play-circle"
@@ -1295,7 +1295,7 @@ export default class FormTable extends React.Component {
                             dt={this.dataNova(registro.dt)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
-                            Servico={registro.Servico}
+                            Servico={this.servico(registro.Servico)}
                             bg={'success'}
                             icone="flag-checkered"
                             corBotao="primary"
@@ -1324,7 +1324,7 @@ export default class FormTable extends React.Component {
                             dt={this.dataNova(registro.Data)}
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
-                            Servico={registro.Servico}
+                            Servico={this.servico(registro.Servico)}
                             bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
                             liquido={this.formatarTempoLiq(registro.TempoLiquido)}
                             bruto={this.formatarTempoBto(this.tempo(registro.DataInicialBruto, registro.DataFinalBruto))}
@@ -1366,6 +1366,14 @@ export default class FormTable extends React.Component {
                 <span className="fw-bold mx-2">Aguardando</span>
             </div>
         )
+    }
+
+    servico(serv){
+        if(serv === "Manutenção Concluída"){
+            return "Manutenção"
+        }else {
+            return serv
+        }
     }
     //#endregion
 

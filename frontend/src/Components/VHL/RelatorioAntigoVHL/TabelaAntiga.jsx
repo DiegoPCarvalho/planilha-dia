@@ -2,10 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Url from '../../Url/Url';
 import carregando from '../../../Assets/gifs/carregar.gif'
-
-
 import $ from 'jquery';
-import OverlayVHL from '../../Overlay/OverlayVHL';
+
 
 const initialState = {
     list: [],
@@ -130,18 +128,12 @@ export default class TabelaAntiga extends React.Component {
                         <td>{registro.Pedido}</td>
                         <td>{registro.Cliente}</td>
                         <td>{registro.Servico}</td>
-                        <td className='d-flex justify-content-center'>
-                            <OverlayVHL
-                                relatorio={
-                                    registro.Equipamento.map(reg => {
-                                        return (
-                                            <p className="fw-bold text-light">Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
-                                        )
-                                    })
-                                }
-                            />
-                        </td>
-
+                        <td>{registro.Equipamento.map(reg => {
+                            return (
+                                <p>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
+                            )
+                        })
+                        }</td>
                     </tr>
                 )
             })

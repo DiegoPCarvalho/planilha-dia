@@ -518,28 +518,27 @@ export default class AtividadeVHL extends React.Component {
             return (
                 <tr key={registro.id}>
                     <td>{registro.id}</td>
-                    <td>{registro.Data}</td>
+                    <td>{this.dataNova(registro.Data)}</td>
                     <td>{registro.Pedido}</td>
                     <td>{registro.Cliente}</td>
                     <td>{registro.Servico}</td>
-                    <td><OverlayVHL
-                        relatorio={
-                            registro.Equipamento.map(reg => {
-                                return (
-                                    <p className="fw-bold text-light">Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
-                                )
-                            })
-                        }
-                    /></td>
-                    <td className="d-flex justify-content-around p-3">
-                        <button className="btn btn-warning mx-2"
-                            onClick={() => this.load(registro)}>
-                            <i className="fa fa-pencil"></i>
-                        </button>
-                        <button className="btn btn-danger mx-2"
-                            onClick={() => this.confirmar(registro)}>
-                            <i className="fa fa-trash"></i>
-                        </button>
+                    <td>{registro.Equipamento.map(reg => {
+                        return (
+                            <p>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
+                        )
+                    })
+                    }</td>
+                    <td>
+                        <div className="d-flex justify-content-around align-items-center">
+                            <button className="btn btn-warning mx-2"
+                                onClick={() => this.load(registro)}>
+                                <i className="fa fa-pencil"></i>
+                            </button>
+                            <button className="btn btn-danger mx-2"
+                                onClick={() => this.confirmar(registro)}>
+                                <i className="fa fa-trash"></i>
+                            </button>
+                        </div>
                     </td>
                 </tr>
             )
@@ -552,7 +551,7 @@ export default class AtividadeVHL extends React.Component {
             <>
                 <div className="row d-flex justify-content-between">
                     <div className="col-3 d-flex justify-content-start align-items-center">
-                        <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form' })}></i>
+                        <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form' })}></i>
                         <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
                         <span className='fw-bold h4 mt-2'>Formulário</span>
                     </div>
@@ -583,7 +582,7 @@ export default class AtividadeVHL extends React.Component {
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='fw-bold h5 mt-2'>Tabela</span>
                             <i className='fa fa-arrow-right mx-3 text-danger'></i>
-                            <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table'})}></i>
+                            <i className="fa fa-table fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table' })}></i>
                         </div>
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='fw-bold h5 mt-2'>Reg. Antigo</span>
