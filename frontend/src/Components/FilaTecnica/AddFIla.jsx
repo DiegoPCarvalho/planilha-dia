@@ -90,7 +90,7 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOs === "Contrato C&A"){
+                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"){
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
@@ -119,7 +119,7 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOs === "Contrato C&A"){
+                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"){
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
