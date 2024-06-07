@@ -11,8 +11,8 @@ const initialState = {
     statusKin: 0,
     QTDE: 0,
     Filtro: {
-        Mes: '',
-        Ano: ''
+        Mes: 'Todos',
+        Ano: 'Todos'
     },
     carregando: false,
     pesquisar: false,
@@ -42,36 +42,16 @@ export default class TabelaAntiga extends React.Component {
         }, 1000);
     }
 
-    async retornoTabela(mes, ano) {
+    retornoTabela(mes, ano) {
         this.setState({ carregando: true })
-        const tabelaNome = await axios(baseUrl).then(resp => resp.data)
-        let dadoNome = []
-        let qtd = []
-
         if ((mes === "Todos") && (ano !== "Todos")) {
-
-            tabelaNome.map(registro => {
-                if ((+ano === registro.Ano)) {
-                    dadoNome.push({ ...registro })
-                    qtd.push(+registro.QTDE)
-                }
-            })
-
-            const QTDE = qtd.reduce((acul, ele) => acul + ele)
-
-            return this.setState({
-                list: dadoNome,
-                carregando: false,
-                pesquisar: true,
-                disabled: true,
-                QTDE
-            })
-
-        } else
-            if ((mes !== "Todos") && (ano !== "Todos")) {
+            axios(baseUrl).then(resp => {
+                const tabelaNome = resp.data
+                let dadoNome = []
+                let qtd = []
 
                 tabelaNome.map(registro => {
-                    if ((+mes === registro.Mes) && (+ano === registro.Ano)) {
+                    if (+ano === registro.Ano) {
                         dadoNome.push({ ...registro })
                         qtd.push(+registro.QTDE)
                     }
@@ -86,9 +66,34 @@ export default class TabelaAntiga extends React.Component {
                     disabled: true,
                     QTDE
                 })
+            })
+        } else
+            if ((mes !== "Todos") && (ano !== "Todos")) {
+                axios(baseUrl).then(resp => {
+                    const tabelaNome = resp.data
+                    let dadoNome = []
+                    let qtd = []
+
+                    tabelaNome.map(registro => {
+                        if ((+mes === registro.Mes) && (+ano === registro.Ano)) {
+                            dadoNome.push({ ...registro })
+                            qtd.push(+registro.QTDE)
+                        }
+                    })
+
+                    const QTDE = qtd.reduce((acul, ele) => acul + ele)
+
+                    return this.setState({
+                        list: dadoNome,
+                        carregando: false,
+                        pesquisar: true,
+                        disabled: true,
+                        QTDE
+                    })
+                })
             }
 
-        return this.setState({ carregando: false })
+            return this.setState({ carregando: false })
     }
 
     formataData(dataItem) {
@@ -144,7 +149,10 @@ export default class TabelaAntiga extends React.Component {
                         <td>{registro.Tecnico}</td>
                         <td>{registro.Equipamento.map(reg => {
                             return (
-                                <p>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
+                                <>
+                                    <span style={{ fontSize: 10 }}>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</span>
+                                    <br />
+                                </>
                             )
                         })
                         }</td>
@@ -169,16 +177,11 @@ export default class TabelaAntiga extends React.Component {
             await this.retornoTabela(Mes, Ano)
             this.pesquisa()
         } else
-            if ((Ano !== "Todos") && (Mes !== "Todos")) {
-                await this.retornoTabela(Mes, Ano)
-                this.pesquisa()
-            } else
-                if ((Ano !== "Todos") && (Mes !== "Todos")) {
-                    await this.retornoTabela(Mes, Ano)
-                    this.pesquisa()
-                }
+        if ((Ano !== "Todos") && (Mes !== "Todos")) {
+           await this.retornoTabela(Mes, Ano)
+            this.pesquisa()
+        }
     }
-
 
     render() {
         return this.state.mudarTela === 'table' ? (
@@ -252,8 +255,8 @@ export default class TabelaAntiga extends React.Component {
                     </div>
                     <div className="col-3 d-flex justify-content-center align-items-center">
                         <div className="bg-success p-3 rounded d-flex flex-column align-items-center fw-bold text-light">
-                                <p className="h2 fw-bold">Qtd. Equip.</p>
-                                <p className="h4">{this.state.QTDE}</p>
+                            <p className="h2 fw-bold">Qtd. Equip.</p>
+                            <p className="h4">{this.state.QTDE}</p>
                         </div>
                     </div>
                 </div>

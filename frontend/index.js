@@ -255,6 +255,7 @@ function contrato(cont) {
 //#region logica /AgardandoVistoria
 function gerenciador(registro) {
     return {
+        Empresa: registro.EmpresaID,
         OS: registro.OSID,
         Data: registro.OSData,
         DataFinalMovto: registro.DataFinalMovto,

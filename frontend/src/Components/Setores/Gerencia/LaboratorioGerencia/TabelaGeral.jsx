@@ -12,9 +12,9 @@ const initialState = {
     listTec: [],
     statusKin: 0,
     Filtro: {
-        Tecnico: '',
-        Mes: '',
-        Ano: ''
+        Tecnico: 'Todos',
+        Mes: 'Todos',
+        Ano: 'Todos'
     },
     carregando: false,
     pesquisar: false,
@@ -139,9 +139,11 @@ export default class TabelaGeral extends React.Component {
                 <thead className="table-dark">
                     <tr>
                         <th className='col-1'>Data</th>
-                        <th className="col-1">OS</th>
-                        <th className='col-2'>Cliente</th>
-                        <th className='col-2'>Serviço</th>
+                        <th className='col-1'>OS</th>
+                        <th className='col-1'>Cliente</th>
+                        <th className='col-1'>Serviço</th>
+                        <th className='col-1'>Equip.</th>
+                        <th className='col-1'>Técnico</th>
                         <th className='col-1'>T. Bruto</th>
                         <th className='col-1'>T. Liquido</th>
                         <th className='col-1'>T. Problema</th>
@@ -175,15 +177,19 @@ export default class TabelaGeral extends React.Component {
                         <td>{Atividade.OS}</td>
                         <td>{Atividade.Cliente}</td>
                         <td>{Atividade.Servico}</td>
-                        <td>{this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)}</td> 
+                        <td>{Atividade.Equipamento}</td>
+                        <td>{Atividade.Tecnico}</td>
+                        <td>{this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)}</td>
                         <td>{Atividade.TempoLiquido}</td>
                         <td>{this.tempo(Atividade.DataInicialProblema, Atividade.DataFinalProblema)}</td>
                         <td>{Atividade.ProblemObs}</td>
-                        <td className='d-flex justify-content-around' onClick={() => this.remove(Atividade)}>
-                            <button className='btn btn-danger'>
-                                <i className="fa fa-trash" style={{ fontSize: 25}}></i>
-                            </button>
-                            <OverlayTabelaGeral Obs={Atividade.Observacao} Qtda={Atividade.ContProblema} />
+                        <td>
+                            <div className="d-flex justify-content-around align-items-center">
+                                <button className='btn btn-danger' onClick={() => this.remove(Atividade)}>
+                                    <i className="fa fa-trash" style={{ fontSize: 25 }}></i>
+                                </button>
+                                <OverlayTabelaGeral Obs={Atividade.Observacao} Qtda={Atividade.ContProblema} />
+                            </div>
                         </td>
                     </tr>
                 )

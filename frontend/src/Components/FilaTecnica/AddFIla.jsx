@@ -68,6 +68,7 @@ export default class AddFila extends React.Component {
         const AguardandoVistoria = await axios(baseUrl).then(resp => resp.data)
         const Aprovado = await axios(baseUrl2).then(resp => resp.data)
         const bancoZhazSys = await axios(bancoUrl).then(resp => resp.data)
+        const data = new Date()
 
         const lista = bancoZhazSys.map(registro => {
             return {
@@ -77,14 +78,31 @@ export default class AddFila extends React.Component {
         })
 
         AguardandoVistoria.map(reg => {
+            
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
                 if (reg.Empresa === 1) {
-                    reg.Estagio = 'Em Aberto'
-                    reg.Problema = 'Não'
-                    reg.Tecnico = ''
-                    this.saves(reg)
+                    if(reg.Cliente.match(/ASSAI/) && !reg.Equipamento.match(/CELULAR/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Eric Medeiros'
+                        this.saves(reg)
+                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOs === "Contrato C&A"){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    }else {
+                        reg.Estagio = 'Em Aberto'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = ''
+                        this.saves(reg)
+                    }
                 }
             }
         })
@@ -94,10 +112,26 @@ export default class AddFila extends React.Component {
             }
             else {
                 if (reg.Empresa === 1) {
-                    reg.Estagio = 'Em Aberto'
-                    reg.Problema = 'Não'
-                    reg.Tecnico = ''
-                    this.saves(reg)
+                    if(reg.Cliente.match(/ASSAI/) && !reg.Equipamento.match(/CELULAR/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Eric Medeiros'
+                        this.saves(reg)
+                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOs === "Contrato C&A"){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    }else {
+                        reg.Estagio = 'Em Aberto'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = ''
+                        this.saves(reg)
+                    }
                 }
             }
         })

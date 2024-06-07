@@ -93,7 +93,7 @@ export default class AtividadeVHL extends React.Component {
                     qtd.push(+registro.QTDE)
                 }
             })
-            
+
             const QTDE = qtd.reduce((acum, ele) => acum + ele)
 
             return this.setState({ list, QTDE })
@@ -101,9 +101,9 @@ export default class AtividadeVHL extends React.Component {
     }
 
     componentDidUpdate() {
-        if(this.state.modeQtd === true){
+        if (this.state.modeQtd === true) {
             this.buscarQtd()
-        }else {
+        } else {
             this.pesquisar()
         }
     }
@@ -204,7 +204,7 @@ export default class AtividadeVHL extends React.Component {
             axios[method](url, Atividade)
                 .then(resp => {
                     const list = this.getUpdatedList(resp.data)
-                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, modoInicial: true})
+                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, modoInicial: true })
                 })
 
             this.mensagemSalvo()
@@ -216,7 +216,7 @@ export default class AtividadeVHL extends React.Component {
             axios[method](url, Atividade)
                 .then(resp => {
                     const list = this.getUpdatedList(resp.data)
-                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, mudar:'table', table_on: false, modeQtd: true })
+                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, mudar: 'table', table_on: false, modeQtd: true })
                 })
 
             this.mensagemSalvo()
@@ -521,30 +521,30 @@ export default class AtividadeVHL extends React.Component {
     //#region table
 
     async buscarQtd() {
-        if(this.state.QTDE === 0 && this.state.modoInicial === false){
-            this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modoInicial: false})
-        }else {
-        await axios(baseUrl).then(resp => {
-            const tabela = resp.data
-            let qtd = []
-            
-            const data = new Date()
-            const mes = data.getMonth() + 1
-            const ano = data.getFullYear()
-            
-            tabela.map(registro => {
-                if (localStorage.usuario === registro.Tecnico && registro.Mes === mes && registro.Ano === ano) {
-                    qtd.push(+registro.QTDE)
-                }
-            })
-            
-            const QTDE = qtd.reduce((acumulador, elemento) => acumulador + elemento)
-            
-            return this.setState({modeQtd: false, QTDE, Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modeInicial: false  })
+        if (this.state.QTDE === 0 && this.state.modoInicial === false) {
+            this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modoInicial: false })
+        } else {
+            await axios(baseUrl).then(resp => {
+                const tabela = resp.data
+                let qtd = []
+
+                const data = new Date()
+                const mes = data.getMonth() + 1
+                const ano = data.getFullYear()
+
+                tabela.map(registro => {
+                    if (localStorage.usuario === registro.Tecnico && registro.Mes === mes && registro.Ano === ano) {
+                        qtd.push(+registro.QTDE)
+                    }
+                })
+
+                const QTDE = qtd.reduce((acumulador, elemento) => acumulador + elemento)
+
+                return this.setState({ modeQtd: false, QTDE, Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modeInicial: false })
             })
         }
     }
-            
+
     renderTable() {
         return (
             <div>
@@ -587,7 +587,10 @@ export default class AtividadeVHL extends React.Component {
                     <td>{registro.Servico}</td>
                     <td>{registro.Equipamento.map(reg => {
                         return (
-                            <p>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</p>
+                            <>
+                                <span style={{ fontSize: 12 }}>Modelo: {reg.Modelo} - NS: {reg.NS} - OBS: {reg.Observacao}</span>
+                                <br />
+                            </>
                         )
                     })
                     }</td>
@@ -622,8 +625,8 @@ export default class AtividadeVHL extends React.Component {
                     </div>
                     <div className="col-3 d-flex justify-content-center">
                         <div className="bg-success p-3 rounded d-flex flex-column align-items-center fw-bold text-light">
-                                <p className="h2 fw-bold">Qtd. Equip.</p>
-                                <p className="h4">{this.state.QTDE}</p>
+                            <p className="h2 fw-bold">Qtd. Equip.</p>
+                            <p className="h4">{this.state.QTDE}</p>
                         </div>
                     </div>
                     <div className="col-3 d-flex justify-content-end align-items-center">

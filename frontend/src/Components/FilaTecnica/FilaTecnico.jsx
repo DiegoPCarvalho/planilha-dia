@@ -92,6 +92,8 @@ export default class FilaTecnica extends React.Component {
                         value={this.state.Busca.Tecnico}
                         required>
                         <option selected disabled value="">Selecione...</option>
+                        <option>Eric Medeiros</option>
+                        <option>Marlon Fidelis</option>
                         {this.renderTec()}
                     </select>
                 </div>
