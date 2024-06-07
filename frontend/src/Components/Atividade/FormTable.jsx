@@ -1282,7 +1282,9 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={this.servico(registro.Servico)}
-                            bg={registro.Problema === "Não" ? 'primary' : 'danger'}
+                            corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#2F4F4F' : '#0000CD') : '#dc3545'}
+                            pb={registro.Problema}
+                            Problema={registro.ProblemObs}
                             final={registro.Estagio}
                             icone="play-circle"
                             corBotao="success"
@@ -1300,6 +1302,8 @@ export default class FormTable extends React.Component {
                             Cliente={registro.Cliente}
                             Servico={this.servico(registro.Servico)}
                             bg={'success'}
+                            pb={registro.Problema}
+                            Problema={registro.ProblemObs}
                             icone="flag-checkered"
                             corBotao="primary"
                             iniciado
@@ -1328,7 +1332,9 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={this.servico(registro.Servico)}
-                            bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
+                            corInicial={registro.Problema === "Não" ? '#696969' : '#dc3545'}
+                            pb={registro.Problema}
+                            Problema={registro.ProblemObs}
                             liquido={this.formatarTempoLiq(registro.TempoLiquido)}
                             bruto={this.formatarTempoBto(this.tempo(registro.DataInicialBruto, registro.DataFinalBruto))}
                             finalizado

@@ -17,6 +17,11 @@ function CardFilaTecnica(props) {
                 <div className="row text-light">
                     <div><span className='fw-bold h6'>Servico:</span> <span style={{ fontSize: 12 }}>{props.Servico}</span></div>
                 </div>
+                {props.pb === "Sim" ? (
+                    <div className="row text-light">
+                        <div><span className='fw-bold h6'>Problema:</span> <span style={{ fontSize: 12 }}>{props.Problema}</span></div>
+                    </div>
+                ) : false}
             </>
         )
     }
@@ -61,7 +66,7 @@ function CardFilaTecnica(props) {
 
     return (
         <>
-            <Card bg={props.bg} className='mt-2' style={{ width: '100%' }}>
+            <Card bg={props.bg} className='mt-2' style={{ width: '100%', backgroundColor: props.corInicial }}>
                 <Card.Header>
                     <div className='text-light d-flex justify-content-between align-items-center'>
                         {props.iniciado ? (

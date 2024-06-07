@@ -205,7 +205,9 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={registro.Problema === "Não" ? 'primary' : 'danger'}
+                            corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#2F4F4F' : '#0000CD') : '#dc3545'}
+                            pb={registro.Problema}
+                            Problema={registro.ProblemObs}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
                             abrir={() => this.load(registro)}
@@ -221,6 +223,8 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
+                            pb={registro.Problema}
+                            Problema={registro.ProblemObs}
                             bg={'success'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
@@ -240,7 +244,9 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            bg={registro.Problema === "Não" ? 'secondary' : 'danger'}
+                            corInicial={registro.Problema === "Não" ? '#696969' : '#dc3545'}
+                            pb={registro.Problema}
+                            Problema={registro.ProblemObs}
                             icone="pencil-square"
                             bruto={this.formatarTempoBto(this.tempo(registro.DataInicialBruto, registro.DataFinalBruto))}
                             liquido={this.formatarTempoLiq(registro.TempoLiquido)}

@@ -236,7 +236,7 @@ export default class AtividadeVHL extends React.Component {
 
     getUpdatedList(Atividade, add = true) {
         const list = this.state.list.filter(a => a.id !== Atividade.id)
-        if (add) list.push(Atividade)
+        if (add) list.unshift(Atividade)
         return list
     } // atualizar lista
 
@@ -482,7 +482,7 @@ export default class AtividadeVHL extends React.Component {
         const Atividade = this.state.AtivEquip
         const Equipamento = this.state.Equipamento
 
-        Equipamento.push({
+        Equipamento.unshift({
             id: Atividade.NS,
             Equipamento: Atividade.Equipamento,
             Modelo: Atividade.Modelo,
