@@ -217,7 +217,7 @@ export default class AtividadeVHL extends React.Component {
             axios[method](url, Atividade)
                 .then(resp => {
                     const list = this.getUpdatedList(resp.data)
-                    this.setState({list})
+                    this.setState({ list })
                 })
 
             this.mensagemSalvo()
@@ -225,10 +225,35 @@ export default class AtividadeVHL extends React.Component {
     } //salvar e alterar
 
     finalizar() {
-        this.setState({
-            Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', table_on: false, modeQtd: true
-        })
+        const ativ = this.state.Atividade
+        const equip = this.state.Equipamento
+        const Atividade = {}
 
+        Atividade.id = ativ.id
+        Atividade.Data = ativ.Data
+        Atividade.Dia = ativ.Dia
+        Atividade.Mes = ativ.Mes
+        Atividade.Ano = ativ.Ano
+        Atividade.Pedido = ativ.Pedido
+        Atividade.Cliente = ativ.Cliente
+        Atividade.Servico = ativ.Servico
+        Atividade.Observacao = ativ.Observacao
+        Atividade.QTDE = ativ.QTDE
+        Atividade.Tecnico = ativ.Tecnico
+        Atividade.Equipamento = equip
+
+
+        const method = Atividade.id ? 'put' : 'post'
+        const url = Atividade.id ? `${baseUrl}/${Atividade.id}` : baseUrl
+        axios[method](url, Atividade)
+            .then(resp => {
+                const list = this.getUpdatedList(resp.data)
+                this.setState({
+                    Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, mudar: 'table', table_on: false, modeQtd: true
+                })
+            })
+
+        this.mensagemSalvo()
     }
 
     remove(Atividade) {
@@ -439,7 +464,7 @@ export default class AtividadeVHL extends React.Component {
                                 <button className="btn btn-success mx-2 fw-bold"
                                     onClick={() => this.finalizar()}
                                 >
-                                    finalizar
+                                    Finalizar
                                 </button>
 
                             ) : false}
