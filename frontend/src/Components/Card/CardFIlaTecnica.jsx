@@ -112,11 +112,11 @@ function CardFilaTecnica(props) {
                                 ) : (
                                     <>
                                         <div className="col-3">
-                                            <div onClick={props.abrir} className={`btn btn-${props.corBotao} fw-bold`}
+                                            <button onClick={props.abrir} className={`btn btn-${props.corBotao} fw-bold`}
                                                 style={{ fontSize: 25 }}
                                             >
                                                 <i className={`fa fa-${props.icone}`}></i>
-                                            </div>
+                                            </button>
                                         </div>
                                     </>
                                 )}

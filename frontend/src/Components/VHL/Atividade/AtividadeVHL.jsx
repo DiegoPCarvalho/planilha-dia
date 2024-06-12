@@ -168,6 +168,7 @@ export default class AtividadeVHL extends React.Component {
                 Atividade.Tecnico = ativ.Tecnico
                 Atividade.Equipamento = equip
 
+
                 this.save(Atividade)
 
             } else {
@@ -216,12 +217,19 @@ export default class AtividadeVHL extends React.Component {
             axios[method](url, Atividade)
                 .then(resp => {
                     const list = this.getUpdatedList(resp.data)
-                    this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], list, mudar: 'table', table_on: false, modeQtd: true })
+                    this.setState({list})
                 })
 
             this.mensagemSalvo()
         }
     } //salvar e alterar
+
+    finalizar() {
+        this.setState({
+            Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', table_on: false, modeQtd: true
+        })
+
+    }
 
     remove(Atividade) {
         this.state.QTDE = this.state.QTDE - Atividade.QTDE
@@ -385,7 +393,7 @@ export default class AtividadeVHL extends React.Component {
                                 </div>
                                 <div className="col-4">
                                     <div className="form-group">
-                                        <label className='fw-bold'>Número de Serie</label>
+                                        <label className='fw-bold'>NS:</label>
                                         <input type="text" className="form-control"
                                             name="NS" id="NS"
                                             value={this.state.AtivEquip.NS}
@@ -427,6 +435,14 @@ export default class AtividadeVHL extends React.Component {
                     </div>
                     <div className="row mt-3 d-flex justify-content-end">
                         <div className="col-12 col-md-6 d-flex justify-content-end">
+                            {this.state.table_on === true ? (
+                                <button className="btn btn-success mx-2 fw-bold"
+                                    onClick={() => this.finalizar()}
+                                >
+                                    finalizar
+                                </button>
+
+                            ) : false}
                             <button className="btn btn-primary mx-2 fw-bold"
                                 onClick={() => this.verificar()}
                             >
@@ -453,16 +469,35 @@ export default class AtividadeVHL extends React.Component {
                     <td className="col-2">{Atividade.NS}</td>
                     <td className="col-2">{Atividade.Observacao}</td>
                     <td className="col-1">
-                        <button className="btn btn-danger col-12">
-                            <i className="fa fa-trash fw-bold" onClick={() => this.apagarEquipamento(Atividade)}></i>
-                        </button>
+                        <div className="d-flex justify-content-between">
+                            <button className="btn btn-warning col-5" onClick={() => this.editarEquipamento(Atividade)}>
+                                <i className="fa fa-pencil fw-bold"></i>
+                            </button>
+                            <button className="btn btn-danger col-5" onClick={() => this.apagarEquipamento(Atividade)}>
+                                <i className="fa fa-trash fw-bold"></i>
+                            </button>
+                        </div>
                     </td>
                 </tr>
             )
         })
     }
 
-    async apagarEquipamento(registro) {
+    async apagarEquipamento(dado) {
+
+        const equip = this.state.Equipamento
+        let novo = []
+
+        equip.map(registro => {
+            if (registro.id !== dado.id) {
+                novo.push({ ...registro })
+            }
+        })
+
+        this.setState({ Equipamento: novo })
+    }
+
+    async editarEquipamento(registro) {
         await this.setState({ AtivEquip: registro })
 
         const AtivEquip = this.state.AtivEquip

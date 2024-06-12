@@ -205,7 +205,7 @@ export default class FilaTecnica extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={registro.Servico}
-                            corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#2F4F4F' : '#0000CD') : '#dc3545'}
+                            corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#0047AB' : '#006400') : '#dc3545'}
                             pb={registro.Problema}
                             Problema={registro.ProblemObs}
                             icone="pencil-square"
@@ -225,7 +225,7 @@ export default class FilaTecnica extends React.Component {
                             Servico={registro.Servico}
                             pb={registro.Problema}
                             Problema={registro.ProblemObs}
-                            bg={'success'}
+                            corInicial={'#2F4F4F'}
                             icone="pencil-square"
                             corBotao="warning fa-2x"
                             tempo={this.tempo2(registro.DataInicialBruto, this.state.data)}

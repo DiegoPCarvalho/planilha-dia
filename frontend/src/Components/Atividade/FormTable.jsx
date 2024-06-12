@@ -100,8 +100,8 @@ export default class FormTable extends React.Component {
 
     //#region montagem comp.
     componentDidMount() {
-        this.retornoTabela()
         this.buscar()
+        this.retornoTabela()
         this.retornoMesAno()
         this.buscarInicioEfim()
 
@@ -1282,7 +1282,7 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={this.servico(registro.Servico)}
-                            corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#2F4F4F' : '#0000CD') : '#dc3545'}
+                            corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#0047AB' : '#006400') : '#dc3545'}
                             pb={registro.Problema}
                             Problema={registro.ProblemObs}
                             final={registro.Estagio}
@@ -1301,7 +1301,7 @@ export default class FormTable extends React.Component {
                             Equip={registro.Equipamento}
                             Cliente={registro.Cliente}
                             Servico={this.servico(registro.Servico)}
-                            bg={'success'}
+                            corInicial={'#2F4F4F'}
                             pb={registro.Problema}
                             Problema={registro.ProblemObs}
                             icone="flag-checkered"

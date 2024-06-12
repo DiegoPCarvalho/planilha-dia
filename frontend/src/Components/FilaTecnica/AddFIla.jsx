@@ -82,13 +82,22 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
+                let c = reg.Equipamento
+
                 if (reg.Empresa === 1) {
-                    if(reg.Cliente.match(/ASSAI/) && !reg.Equipamento.match(/CELULAR/)){
+                    if(reg.Cliente.match(/ASSAI/) && reg.Equipamento !== c.match(/CELULAR/) && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)){
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
+                        this.saves(reg)
+                    }else if(reg.Cliente.match(/ASSAI/) && reg.Equipamento === c.match(/LEITOR/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
                     }else if(reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"){
                         reg.Data = data
@@ -111,13 +120,21 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
+                let c = reg.Equipamento
                 if (reg.Empresa === 1) {
-                    if(reg.Cliente.match(/ASSAI/) && !reg.Equipamento.match(/CELULAR/)){
+                    if(reg.Cliente.match(/ASSAI/) && reg.Equipamento !== c.match(/CELULAR/) && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)){
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
+                        this.saves(reg)
+                    }else if(reg.Cliente.match(/ASSAI/) && reg.Equipamento === c.match(/LEITOR/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
                     }else if(reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"){
                         reg.Data = data
