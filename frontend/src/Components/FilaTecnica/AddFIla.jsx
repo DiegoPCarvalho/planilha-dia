@@ -85,14 +85,16 @@ export default class AddFila extends React.Component {
                 let c = reg.Equipamento
 
                 if (reg.Empresa === 1) {
-                    if(reg.Cliente.match(/ASSAI/) && reg.Equipamento !== c.match(/CELULAR/) && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)){
+                    if(reg.Cliente.match(/ASSAI/) && reg.Cliente.match(/SENDAS/) && reg.Equipamento !== c.match(/CELULAR/) 
+                            && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)
+                            && reg.Equipamento !== "LEITOR DE DADOS MOTOROLA LS2208"){
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/ASSAI/) && reg.Equipamento === c.match(/LEITOR/)){
+                    }else if(reg.Cliente.match(/ASSAI/) && reg.Cliente.match(/SENDAS/) && reg.Equipamento === c.match(/LEITOR/) && reg.Equipamento === "LEITOR DE DADOS MOTOROLA LS2208"){
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
