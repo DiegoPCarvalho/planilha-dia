@@ -78,37 +78,37 @@ export default class AddFila extends React.Component {
         })
 
         AguardandoVistoria.map(reg => {
-            
+
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
                 let c = reg.Equipamento
 
                 if (reg.Empresa === 1) {
-                    if(reg.Cliente.match(/ASSAI/) && reg.Cliente.match(/SENDAS/) && reg.Equipamento !== c.match(/CELULAR/) 
-                            && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)
-                            && reg.Equipamento !== "LEITOR DE DADOS MOTOROLA LS2208"){
+                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento !== c.match(/CELULAR/)
+                        && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)
+                        && reg.Equipamento !== "LEITOR DE DADOS MOTOROLA LS2208") {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/ASSAI/) && reg.Cliente.match(/SENDAS/) && reg.Equipamento === c.match(/LEITOR/) && reg.Equipamento === "LEITOR DE DADOS MOTOROLA LS2208"){
+                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento === c.match(/LEITOR/) && reg.Equipamento === "LEITOR DE DADOS MOTOROLA LS2208") {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"){
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A") {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    }else {
+                    } else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -124,28 +124,30 @@ export default class AddFila extends React.Component {
             else {
                 let c = reg.Equipamento
                 if (reg.Empresa === 1) {
-                    if(reg.Cliente.match(/ASSAI/) && reg.Equipamento !== c.match(/CELULAR/) && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)){
+                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento !== c.match(/CELULAR/)
+                        && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)
+                        && reg.Equipamento !== "LEITOR DE DADOS MOTOROLA LS2208") {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/ASSAI/) && reg.Equipamento === c.match(/LEITOR/)){
+                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento === c.match(/LEITOR/) && reg.Equipamento === "LEITOR DE DADOS MOTOROLA LS2208") {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    }else if(reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"){
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A") {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    }else {
+                    } else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -382,15 +384,15 @@ export default class AddFila extends React.Component {
 
         } else {
 
-            if(Problema === "Sim"){
+            if (Problema === "Sim") {
                 this.state.Atividade.Estagio = "Enviado"
                 this.state.Atividade.dt = dt
-                this.state.Atividade.DataFinalProblema = data 
-                this.state.Atividade.DataInicialProblema = DataInicialProblema 
+                this.state.Atividade.DataFinalProblema = data
+                this.state.Atividade.DataInicialProblema = DataInicialProblema
                 this.state.Atividade.ContProblema = ContProblema
-                
+
                 this.save()
-            }else {
+            } else {
                 this.state.Atividade.Estagio = "Enviado"
                 this.state.Atividade.dt = data
 
