@@ -145,7 +145,7 @@ export default class DeletarFila extends React.Component {
             return (
                 <tr className={Atividade.Problema === "Sim" ? 'table-danger' : ''} key={(Atividade.id)}>
                     <td className="col-1">{Atividade.id}</td>
-                    <td className="col-1">{this.dataNova(Atividade.Data)}</td>
+                    <td className="col-1">{this.dataNova(Atividade.dt)}</td>
                     <td className="col-1">{Atividade.OS}</td>
                     <td className="col-4">{Atividade.Cliente}</td>
                     <td className="col-4">{Atividade.Equipamento}</td>

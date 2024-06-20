@@ -292,6 +292,24 @@ export default class AtividadeVHL extends React.Component {
         })
     }// confirmar deletar
 
+    conf(Atividade) {
+        confirmAlert({
+            title: "Deletar",
+            message: "Deseja Realmente Deletar?",
+            buttons: [
+                {
+                    label: "Sim",
+                    className: "btn btn-danger",
+                    onClick: () => this.apagarEquipamento(Atividade)
+                },
+                {
+                    label: "Não",
+                    className: "btn btn-secondary"
+                }
+            ]
+        })
+    }// confirmar deletar
+
 
     async load(Atividade) {
         await this.setState({ Atividade, mudar: 'form', table_on: true })
@@ -498,7 +516,7 @@ export default class AtividadeVHL extends React.Component {
                             <button className="btn btn-warning col-5" onClick={() => this.editarEquipamento(Atividade)}>
                                 <i className="fa fa-pencil fw-bold"></i>
                             </button>
-                            <button className="btn btn-danger col-5" onClick={() => this.apagarEquipamento(Atividade)}>
+                            <button className="btn btn-danger col-5" onClick={() => this.conf(Atividade)}>
                                 <i className="fa fa-trash fw-bold"></i>
                             </button>
                         </div>

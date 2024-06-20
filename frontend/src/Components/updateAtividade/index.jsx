@@ -6,15 +6,58 @@ import Tabela from './Table/Tabela';
 import RegistroAntigo from './RegAntrigo/RegistroAntigo';
 
 
-
 export default class IndexHomeAtividade extends React.Component {
-    state = {...initialState }
+    state = { ...initialState }
+
+    componentDidMount() {
+        if (localStorage.departamento == 'Limpeza Lab') {
+            return this.setState({ mudar: 'form' })
+        }
+    }
+
+    //#region render setor
+    renderLimpeza() {
+        return this.state.mudar === 'form' ?
+            <Formulario
+                table={() => this.setState({ mudar: 'table' })}
+                old={() => this.setState({ mudar: 'antiga' })}
+            />
+            : this.state.mudar === 'table' ?
+                <Tabela
+                    form={() => this.setState({ mudar: 'form' })}
+                    old={() => this.setState({ mudar: 'antiga' })}
+                /> : <RegistroAntigo
+                    table={() => this.setState({ mudar: 'table' })}
+                    form={() => this.setState({ mudar: 'form' })}
+                />
+    }
+
+    renderLabo() {
+        return this.state.mudar === 'fila' ?
+            <FilaTecnica
+                form={() => this.setState({ mudar: 'form' })}
+                table={() => this.setState({ mudar: 'table' })}
+                old={() => this.setState({ mudar: 'antiga' })}
+            /> : this.state.mudar === 'form' ? <Formulario
+                        fila={() => this.setState({ mudar: 'fila' })}
+                        table={() => this.setState({ mudar: 'table' })}
+                        old={() => this.setState({ mudar: 'antiga' })}
+                    />
+                : this.state.mudar === 'table' ?
+                    <Tabela 
+                        fila={() => this.setState({ mudar: 'fila' })}
+                        form={() => this.setState({ mudar: 'form' })}
+                        old={() => this.setState({ mudar: 'antiga' })}
+                    /> : <RegistroAntigo 
+                        fila={() => this.setState({ mudar: 'fila' })}
+                        form={() => this.setState({ mudar: 'form' })}
+                        table={() => this.setState({ mudar: 'table' })}
+                    />
+    }
+    //#endregion
+
 
     render() {
-        return(
-            <div>
-                <RegistroAntigo />
-            </div>
-        )
+        return localStorage.departamento === 'Limpeza Lab' ? this.renderLimpeza() : this.renderLabo()
     }
 }

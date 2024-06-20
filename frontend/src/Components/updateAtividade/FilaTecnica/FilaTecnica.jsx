@@ -1,6 +1,7 @@
 import React from "react";
 import { initialState } from '../config';
 import MenuItem from "../comp/MenuItem";
+import Grade from "./Grade";
 
 
 export default class FilaTecnica extends React.Component {
@@ -19,17 +20,20 @@ export default class FilaTecnica extends React.Component {
                     <div className="col-3 flex-column d-flex justify-content-end align-items-end">
                         <MenuItem direita nome="Formulário" h="6"
                             classe="fa fa-address-card fa-2x"
-
+                            mudar={this.props.form}
                         />
                         <MenuItem direita nome="Tabela" h="6"
                             classe="fa fa-table fa-2x"
-
+                            mudar={this.props.table}
                         />
                         <MenuItem direita nome="Reg. Antigo"
                             classe="fa fa-database fa-2x" h="6"
-
+                            mudar={this.props.old}
                         />
                     </div>
+                </div>
+                <div className="row mt-4">
+                    <Grade />
                 </div>
             </>
         )

@@ -101,7 +101,7 @@ export default class FilaTecnica extends React.Component {
                         <span className="h4 fw-bold p-2">Buscar</span>
                     </button>
                 </div>
-                <div className="col-3">
+                <div className="col-3 d-flex justify-content-center align-items-center">
                         <div className="success fw-bold p-2 rounded">Salvo com Sucesso!!!</div>
                 </div>
             </div>

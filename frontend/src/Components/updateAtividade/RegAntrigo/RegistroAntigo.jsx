@@ -14,20 +14,30 @@ export default class RegistroAntigo extends React.Component {
                         <>
                             <div className="col-3">
                                 <MenuItem nome="Formulário" h="5"
-                                    classe="fa fa-address-card fa-2x"/>
+                                    classe="fa fa-address-card fa-2x"
+                                    mudar={this.props.form}
+                                    />
                                 <MenuItem nome="Tabela" h="5"
-                                    classe="fa fa-table fa-2x"/>
+                                    classe="fa fa-table fa-2x"
+                                    mudar={this.props.table}
+                                    />
                             </div>
                         </>
                     ) : (
                         <>
                             <div className="col-3">
                                 <MenuItem  nome="Fila Técnica" h="5" 
-                                    classe="fa fa-list-alt fa-2x"/>
+                                    classe="fa fa-list-alt fa-2x"
+                                    mudar={this.props.fila}
+                                    />
                                 <MenuItem nome="Formulário" h="5"
-                                    classe="fa fa-address-card fa-2x"/>
+                                    classe="fa fa-address-card fa-2x"
+                                    mudar={this.props.form}
+                                    />
                                 <MenuItem nome="Tabela" h="5"
-                                    classe="fa fa-table fa-2x"/>
+                                    classe="fa fa-table fa-2x"
+                                    mudar={this.props.table}
+                                    />
                             </div>
                         </>
                     )}
