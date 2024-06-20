@@ -83,7 +83,8 @@ export default class FilaTecnica extends React.Component {
 
     renderBuscar() {
         return (
-            <>
+            <div className="row d-flex">
+                <div className="col-3"></div>
                 <div className="col-3 d-flex flex-column justify-content-end">
                     <label className='fw-bold h5 p-1 rounded mt-1'>Tecnico:</label>
                     <select className="form-select mx-2"
@@ -100,7 +101,10 @@ export default class FilaTecnica extends React.Component {
                         <span className="h4 fw-bold p-2">Buscar</span>
                     </button>
                 </div>
-            </>
+                <div className="col-3">
+                        <div className="success fw-bold p-2 rounded">Salvo com Sucesso!!!</div>
+                </div>
+            </div>
         )
     }
 
@@ -440,15 +444,17 @@ export default class FilaTecnica extends React.Component {
             <>
                 <div className="row">
                     <div className='col-3 mb-3 d-flex justify-content-start align-items-center'>
-                        <i className="fa fa-cart-plus fa-4x" style={{ cursor: 'pointer' }} onClick={this.props.mudar}></i>
+                        <i className="fa fa-cart-plus fa-4x" style={{ cursor: 'pointer' }} onClick={this.props.add}></i>
                         <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
                         <span className='fw-bold h4 mt-2'>Add Fila</span>
                     </div>
                     <div className='col-6 mb-3 d-flex justify-content-center align-items-center'>
                         <span className='fw-bold h2 p-lg-2 text-light rounded bg-success mt-2'>Fila Montada</span>
                     </div>
-                    <div className="col-3">
-                        <div className="alert-box h6 success">Salvo com Sucesso!!!</div>
+                    <div className='col-3 mb-3 d-flex justify-content-end align-items-center'>
+                        <span className='fw-bold h4 mt-2'>Del. Fila</span>
+                        <i className='fa fa-arrow-right mx-3 fa-2x text-danger'></i>
+                        <i className="fa fa-trash fa-3x" style={{ cursor: 'pointer' }} onClick={this.props.del}></i>
                     </div>
                 </div>
                 <div className="row d-flex justify-content-center mb-3">

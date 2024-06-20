@@ -58,11 +58,6 @@ export default class AddFila extends React.Component {
         this.buscarLists()
     }
 
-    // componentDidUpdate(){
-    //     this.pagination()
-    // }
-    //#endregion
-
     //#region buscar dados nos bancos
     async buscarBanco() {
         const AguardandoVistoria = await axios(baseUrl).then(resp => resp.data)
@@ -82,19 +77,16 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
-                let c = reg.Equipamento
-
                 if (reg.Empresa === 1) {
-                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento !== c.match(/CELULAR/)
-                        && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)
-                        && reg.Equipamento !== "LEITOR DE DADOS MOTOROLA LS2208") {
+                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/))
+                        && (!reg.Equipamento.match(/CELULAR/) && !reg.Equipamento.match(/LEITOR/))) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento === c.match(/LEITOR/) && reg.Equipamento === "LEITOR DE DADOS MOTOROLA LS2208") {
+                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento.match(/LEITOR/)) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
@@ -122,18 +114,16 @@ export default class AddFila extends React.Component {
             if (lista.find(dado => dado.os === reg.OS && dado.serv === reg.Servico)) {
             }
             else {
-                let c = reg.Equipamento
                 if (reg.Empresa === 1) {
-                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento !== c.match(/CELULAR/)
-                        && reg.Equipamento !== c.match(/LEITOR/) && reg.Equipamento !== c.match(/IMPRESSORA/)
-                        && reg.Equipamento !== "LEITOR DE DADOS MOTOROLA LS2208") {
+                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/))
+                        && (!reg.Equipamento.match(/CELULAR/) && !reg.Equipamento.match(/LEITOR/))) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Eric Medeiros'
                         this.saves(reg)
-                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/CD/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento === c.match(/LEITOR/) && reg.Equipamento === "LEITOR DE DADOS MOTOROLA LS2208") {
+                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento.match(/LEITOR/)) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'

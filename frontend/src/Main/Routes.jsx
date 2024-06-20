@@ -30,6 +30,9 @@ import Perfil from '../Components/Usuario/Perfil';
 //Ramais
 import Ramal from '../Components/Ramais/Ramais';
 
+//Nova Atividade
+import IndexHomeAtividade from '../Components/updateAtividade/index';
+
 //setores
 //financeiro
 import Financeiro from "../Components/Setores/Financeiro/Financeiro";
@@ -173,7 +176,7 @@ export default function Rotas() {
                     <Route path="Finalizados" element={<FinaliadosLab />} />
                 </Route>
                 <Route path="/teste" element={<IndexLab />}>
-                    <Route path="Formulario" element={<FormTeste />} />
+                    <Route path="Formulario" element={<IndexHomeAtividade />} />
                     <Route path="Tabela" element={<TabTeste />} />
                 </Route>
                 <Route path="/VHL" element={<VHL />}>
