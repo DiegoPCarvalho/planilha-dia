@@ -19,17 +19,17 @@ export default function TabelaGnc(props) {
     }
 
     return (
-        <table className="table table-bordered" id={props.id}>
+        <table className={`table table-bordered ${props.tb}`} id={props.id}>
             <thead className="table-dark">
                 <tr>
                     {props.head}
                 </tr>
             </thead>
             <tbody style={props.styles} className={props.classe}>
-                {props.dados === 0 ?
-                    renderBuscando()
-                    : props.children
-                }
+                    {props.dados === 0 ?
+                        renderBuscando()
+                        : props.children
+                    }
             </tbody>
         </table>
     )
