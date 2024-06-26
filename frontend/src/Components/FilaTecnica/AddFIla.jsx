@@ -93,14 +93,21 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A") {
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && !reg.Equipamento.match(/IMPRESSORA/)) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    } else {
+                    }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Anderson Rocha'
+                        this.saves(reg)
+                    }else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -130,14 +137,21 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A") {
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && !reg.Equipamento.match(/IMPRESSORA/)) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    } else {
+                    }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Anderson Rocha'
+                        this.saves(reg)
+                    }else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -295,6 +309,7 @@ export default class AddFila extends React.Component {
                         <td className="col-4">{Atividade.Cliente}</td>
                         <td className="col-4">{Atividade.Equipamento}</td>
                         <td className="col-1">{this.manutencao(Atividade.Servico)}</td>
+                        <td className="col-4">{Atividade.AgenteTecnico}</td>
                         <td className="col-1">
                             <button className="btn btn-success mx-2 mt-2"
                                 onClick={() => this.load(Atividade)}

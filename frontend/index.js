@@ -125,39 +125,48 @@ async function buscarDados() {
     const tabela3 = await axios(bancoApi(3)).then(resp => resp.data)
     const tabela4 = await axios(bancoApi(4)).then(resp => resp.data)
     const tabela5 = await axios(bancoApi(5)).then(resp => resp.data)
-    const tabela6 = await axios(bancoApi(6)).then(resp => resp.data)
-    const tabela7 = await axios(bancoApi(7)).then(resp => resp.data)
     const tabela8 = await axios(bancoApi(8)).then(resp => resp.data)
     const tabela9 = await axios(bancoApi(9)).then(resp => resp.data)
-    const tabela10 = await axios(bancoApi(10)).then(resp => resp.data)
     const tabela11 = await axios(bancoApi(11)).then(resp => resp.data)
-    const tabela12 = await axios(bancoApi(12)).then(resp => resp.data)
     const tabela13 = await axios(bancoApi(13)).then(resp => resp.data)
     const tabela16 = await axios(bancoApi(16)).then(resp => resp.data)
-    const tabela17 = await axios(bancoApi(17)).then(resp => resp.data)
+    const tabela17 = await axios(bancoApi(17)).then(resp => {
+        const tab = resp.data
+        let dado = []
+
+        tab.map(registro => {
+            if(registro.OSSituacao === "Expedição"){
+                dado.push({...registro})
+            }
+        })
+
+        return dado
+    })
     const tabela21 = await axios(bancoApi(21)).then(resp => resp.data)
     const tabela25 = await axios(bancoApi(25)).then(resp => resp.data)
     const tabela30 = await axios(bancoApi(30)).then(resp => resp.data)
+    
     const tabelaGeral = [...tabela, ...tabela2, ...tabela3,
-    ...tabela4, ...tabela5, ...tabela6, ...tabela7, ...tabela8,
-    ...tabela9, ...tabela10, ...tabela11, ...tabela12, ...tabela13,
+    ...tabela4, ...tabela5, ...tabela8,
+    ...tabela9, ...tabela11, ...tabela13,
     ...tabela16, ...tabela17, ...tabela21, ...tabela25, ...tabela30]
 
     return tabelaGeral
 }
 
-function sla(data) {
-    const d2 = new Date()
-
-    const dif = d2 - new Date(d1)
-    const diferenca = dif / (1000 * 60 * 60 * 24);
-
-    return diferenca
-}
-
 
 function bancoApi(estagio) {
     return `http://app2.cosmoserp.com/zhaz/aWSPCosmosFBX.aspx?f2117e5dfa7f998f93afd92547d0ba9b,vApiOS,${estagio}`
+}
+
+
+function sla(data) {
+    const d2 = new Date()
+
+    const dif = d2 - new Date(data)
+    const diferenca = dif / (1000 * 60 * 60 * 24);
+
+    return +diferenca.toFixed(0)
 }
 
 
@@ -258,6 +267,7 @@ function gerenciador(registro) {
         Empresa: registro.EmpresaID,
         OS: registro.OSID,
         Data: registro.OSData,
+        AgenteTecnico: registro.AgenteTecNome,
         DataFinalMovto: registro.DataFinalMovto,
         Cliente: registro.PessoaFantasia,
         Servico: servico(registro.EstagioDescricao, registro.DescricaoTipoOS),
