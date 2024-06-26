@@ -600,7 +600,7 @@ export default class AtividadeVHL extends React.Component {
 
     async buscarQtd() {
         if (this.state.QTDE === 0 && this.state.modoInicial === false) {
-            this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modoInicial: false })
+            this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'table', modoInicial: false, table_on: false })
         } else {
             await axios(baseUrl).then(resp => {
                 const tabela = resp.data
@@ -697,7 +697,7 @@ export default class AtividadeVHL extends React.Component {
             <>
                 <div className="row d-flex justify-content-between">
                     <div className="col-3 d-flex justify-content-start align-items-center">
-                        <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form' })}></i>
+                        <i className="fa fa-address-card fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form', table_on: false })}></i>
                         <i className='fa fa-arrow-left mx-3 fa-2x text-danger'></i>
                         <span className='fw-bold h4 mt-2'>Formulário</span>
                     </div>
@@ -710,7 +710,7 @@ export default class AtividadeVHL extends React.Component {
                     <div className="col-3 d-flex justify-content-end align-items-center">
                         <span className='fw-bold h4 mt-2'>Reg. Antigo</span>
                         <i className='fa fa-arrow-right mx-3 fa-2x text-danger'></i>
-                        <i className="fa fa-database fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'antigo' })}></i>
+                        <i className="fa fa-database fa-4x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'antigo', table_on: false })}></i>
                     </div>
                 </div>
                 <div className="row mt-4">
@@ -739,7 +739,7 @@ export default class AtividadeVHL extends React.Component {
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='fw-bold h5 mt-2'>Reg. Antigo</span>
                             <i className='fa fa-arrow-right mx-3 text-danger'></i>
-                            <i className="fa fa-database fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'antigo' })}></i>
+                            <i className="fa fa-database fa-2x" style={{ cursor: 'pointer' }} onClick={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'antigo', table_on: false })}></i>
                         </div>
                     </div>
                 </div>
@@ -748,7 +748,7 @@ export default class AtividadeVHL extends React.Component {
                 </div>
             </>
         ) : <TabelaAntiga
-            form={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form' })}
+            form={() => this.setState({ Atividade: initialState.Atividade, AtivEquip: initialState.AtivEquip, Equipamento: [], mudar: 'form', table_on: false })}
             table={() => this.buscarQtd()} />
     }
 }
