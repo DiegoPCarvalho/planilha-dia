@@ -6,6 +6,7 @@ export async function buscarFila(){
         dadoIni: [],
         dadoFim: []
     }
+    
     const data = new Date()
     
     const dia = data.getDate()

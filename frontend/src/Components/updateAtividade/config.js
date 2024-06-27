@@ -57,6 +57,7 @@ export const initialState = {
     mode: false,
     modalToDo: false,
     modalProblem: false,
+    teste: ''
 }
 
 export function dataCorreta(data) {

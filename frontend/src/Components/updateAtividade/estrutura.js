@@ -1,3 +1,4 @@
+import UseAppData from '../../data/hook/UseAppData';
 import Url from '../Url/Url';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ export default async function PuxarDados(banco) {
 
     return tabela
 }
+
 
 export function iniciar(dado) {
     const Fila = dado
