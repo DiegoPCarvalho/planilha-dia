@@ -1,6 +1,6 @@
-import UseAppData from '../../data/hook/UseAppData';
 import Url from '../Url/Url';
 import axios from 'axios';
+import { diferenca } from './config';
 
 export default async function PuxarDados(banco) {
     const baseUrl = Url(banco);
@@ -31,12 +31,25 @@ export function iniciar(dado) {
     }
 }
 
+export function voltar(dado) {
+    const Fila = dado
+    const tempo = diferenca(Fila.DataInicialBruto)
+
+    if (tempo >= 3) {
+
+    } else {
+        Fila.Estagio = "Enviado"
+
+        salvar(Fila)
+    }
+}
+
+
+
 function salvar(dado) {
     const Fila = dado
     const bancoUrl = Url("FilaTecnica")
     const method = Fila.id ? 'put' : 'post'
     const url = Fila.id ? `${bancoUrl}/${Fila.id}` : bancoUrl
-    axios[method](url, Fila).then(resp => {
-        
-    })
+    axios[method](url, Fila)
 }

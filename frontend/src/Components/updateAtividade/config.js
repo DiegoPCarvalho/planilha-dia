@@ -1,57 +1,7 @@
 import moment from "moment"
 
 export const initialState = {
-    Atividade: {
-        Data: '',
-        Dia: '',
-        Mes: '',
-        Ano: '',
-        OS: '',
-        Cliente: '',
-        Equipamento: '',
-        Modelo: '',
-        NS: '',
-        Servico: '',
-        Placa: '',
-        Classificacao: '',
-        Contrato: '',
-        Observacao: '',
-        ProblemObs: '',
-        Status: '',
-        Estagio: '',
-        DataInicialBruto: '',
-        DataFinalBruto: '',
-        TempoLiquido: '',
-        Tecnico: localStorage.usuario
-    },
-    Fila: {
-        id: '',
-        OS: '',
-        Data: '',
-        DataFinalMovto: '',
-        Cliente: '',
-        Equipamento: '',
-        NS: '',
-        TipoOS: '',
-        Estagio: '',
-        Tecnico: '',
-        ProblemObs: '',
-        Problema: 'Não',
-        DataInicialProblema: '',
-        DataFinalProblema: '',
-        ContProblema: 0
-    },
-    list: [],
-    listarFila: [],
-    listEquip: [],
-    listServ: [],
-    listCont: [],
     ultimaOS: 0,
-    listarCosmos: [],
-    listarBanco: [],
-    listIni: [],
-    listProblem: [],
-    listFim: [],
     mudar: 'fila',
     table_on: false,
     mode: false,
@@ -60,16 +10,71 @@ export const initialState = {
     teste: ''
 }
 
+export const bancosFila = {
+    listarFila: [],
+    listIni: [],
+    listFim: [],
+}
+
+export const bancosFormulario = {
+    listEquip: [],
+    listServ: [],
+    listCont: [],
+    listarCosmos: [],
+}
+
+export const Atividade = {
+    Data: '',
+    Dia: '',
+    Mes: '',
+    Ano: '',
+    OS: '',
+    Cliente: '',
+    Equipamento: '',
+    Modelo: '',
+    NS: '',
+    Servico: '',
+    Placa: '',
+    Classificacao: '',
+    Contrato: '',
+    Observacao: '',
+    ProblemObs: '',
+    Status: '',
+    Estagio: '',
+    DataInicialBruto: '',
+    DataFinalBruto: '',
+    TempoLiquido: '',
+    Tecnico: localStorage.usuario
+}
+
+export const Fila = {
+    id: '',
+    OS: '',
+    Data: '',
+    DataFinalMovto: '',
+    Cliente: '',
+    Equipamento: '',
+    NS: '',
+    TipoOS: '',
+    Estagio: '',
+    Tecnico: '',
+    ProblemObs: '',
+    Problema: 'Não',
+    DataInicialProblema: '',
+    DataFinalProblema: '',
+    ContProblema: 0
+}
+
 export function dataCorreta(data) {
     const dt = new Date(data)
 
     return dt.toLocaleDateString()
 }
 
-export function servico(serv){
-    if(serv === "Manutenção Concluída"){
+export function servico(serv) {
+    if (serv === "Manutenção Concluída") {
         return "Manutenção"
-    }else {
+    } else {
         return serv
     }
 }
@@ -95,4 +100,21 @@ export function tempo(ini, fm) {
     let s = Math.floor(d.asHours()) + moment.utc(ms).format(":mm:ss");
 
     return s.match(/NaN/) ? "00:00:00" : s
+}
+
+export function diferenca(data, modo) {
+    const d2 = new Date()
+
+    if (modo === 'final') {
+        const dif = d2 - new Date(data)
+        const diferenca = dif / (1000 * 60 * 60);
+
+        return +diferenca.toFixed(0)
+
+    } else {
+        const dif = d2 - new Date(data)
+        const diferenca = dif / (1000 * 60);
+
+        return +diferenca.toFixed(0)
+    }
 }

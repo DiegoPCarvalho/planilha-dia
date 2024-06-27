@@ -3,6 +3,9 @@ import MenuItem from '../comp/MenuItem';
 import Grade from "./Grade";
 import UseAppData from "../../../data/hook/UseAppData";
 import { useEffect } from "react";
+import ModalProblem from "../../Modal/ModalProblem";
+import ModalToDo from "../../Modal/ModalToDo";
+import FormularioProblema from "./FormProblem";
 
 
 // export default class FilaTecnica extends React.Component {
@@ -59,8 +62,8 @@ import { useEffect } from "react";
 
 
 export default function FilaTecnica(props){
-    const { nome, novo, inicio, busca } = UseAppData();
-
+    const { state, novo, inicio, busca, problem, modalProblem, ObsProblem, mudarCampoProblem, mostrar } = UseAppData();
+  
     useEffect(() => {
         if(novo === 1){
             busca()
@@ -95,7 +98,15 @@ export default function FilaTecnica(props){
                     </div>
                 </div>
                 <div className="row mt-4">
-                    <Grade Fila={nome.listarFila} Inicio={nome.listIni} Fim={nome.listFim}/>
+                    <Grade Fila={state.listarFila} Inicio={state.listIni} Fim={state.listFim}/>
+                </div>
+                <div>
+                    <ModalProblem modal={modalProblem} close={() => problem()} nome='Problema'
+                        Relatorio={<FormularioProblema 
+                            valor={ObsProblem} mudou={(e) => mudarCampoProblem(e.target.value)}
+                            onClick={() => mostrar()}
+
+                        />}/>
                 </div>
             </>
     )

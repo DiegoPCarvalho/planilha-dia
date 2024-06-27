@@ -3,7 +3,6 @@ import { dataCorreta, servico, formatarTempoLiq, formatarTempoBto, tempo } from 
 import TabelaGnc from '../comp/TabelaGenerica';
 import CardFilaTecnica from '../../Card/CardFIlaTecnica';
 import Cronometro from '../../Atividade/Cronometro/index-Cronos';
-import { iniciar } from '../estrutura';
 import UseAppData from '../../../data/hook/UseAppData';
 
 // export default class Grade extends React.Component {
@@ -111,7 +110,7 @@ import UseAppData from '../../../data/hook/UseAppData';
 // }
 
 export default function(props){
-    const { start } = UseAppData();
+    const { start, back, problem } = UseAppData();
 
     return(
         <>
@@ -172,8 +171,8 @@ export default function(props){
                                                 segundo={`segundo ${registro.id}`} />
                                         }
                                     // abrir={() => this.confirmarFinalizar(registro)}
-                                    // alerta={() => this.modalPro(registro)}
-                                    // voltar={() => this.voltar(registro)}
+                                    alerta={() => problem(registro)}
+                                    voltar={() => back(registro)}
                                     />
                                 </div>
                             )

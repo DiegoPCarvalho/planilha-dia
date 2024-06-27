@@ -1,20 +1,23 @@
 import React, { createContext, useState } from 'react';
-import { initialState } from '../../Components/updateAtividade/config';
+import { Fila, bancosFila } from '../../Components/updateAtividade/config';
 import { buscarFila } from '../../Components/updateAtividade/busca';
-import { iniciar } from '../../Components/updateAtividade/estrutura';
+import { iniciar, voltar } from '../../Components/updateAtividade/estrutura';
 
 const AppContext = createContext({})
 
 export function AppProvider(props) {
 
-    const [nome, setNome] = useState(initialState)
+    const [state, setState] = useState(bancosFila)
     const [novo, setNovo] = useState(0)
+    const [modalProblem, setModalProblem] = useState(false)
+    const [ObsProblem, setObsProblem] = useState('')
+    const [fila, setFila] = useState(Fila)
     
     
     async function busca() {
         const banco = await buscarFila()
 
-        setNome({ 
+        setState({ 
             listarFila: banco.dadoLista,
             listIni: banco.dadoIni,
             listFim: banco.dadoFim
@@ -29,20 +32,54 @@ export function AppProvider(props) {
         setNovo(0)
     }
 
+    
+
+    //#region Fila
     function start(dado){
         iniciar(dado)
         add()
     }
 
+    function back(dado){
+        voltar(dado)
+        add()
+    }
+
+    function problem(dado){
+        if(modalProblem === true){
+            setModalProblem(!modalProblem)
+        }else {
+            setFila(dado)
+            setModalProblem(!modalProblem)
+        }
+    }
+
+    function mudarCampoProblem(event){
+        setObsProblem(event)
+    }
+    
+
+    function mostrar(){
+        fila.ProblemObs = ObsProblem
+        console.log(fila)
+    }
+    //#endregion
+
     return (
         <AppContext.Provider
             value={{
-                nome,
+                state,
                 novo,
+                modalProblem,
+                ObsProblem,
                 busca,
                 add,
                 inicio,
-                start
+                start,
+                back,
+                problem,
+                mudarCampoProblem,
+                mostrar
             }}
         >
             {props.children}
