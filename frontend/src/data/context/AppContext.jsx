@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
-import { Fila, bancosFila } from '../../Components/updateAtividade/config';
+import { Atividade, Fila, bancosFila } from '../../Components/updateAtividade/config';
 import { buscarFila } from '../../Components/updateAtividade/busca';
-import { iniciar, voltar } from '../../Components/updateAtividade/estrutura';
+import { iniciar, voltar, problema, finalizar } from '../../Components/updateAtividade/estrutura';
 
 const AppContext = createContext({})
 
@@ -11,7 +11,10 @@ export function AppProvider(props) {
     const [novo, setNovo] = useState(0)
     const [modalProblem, setModalProblem] = useState(false)
     const [ObsProblem, setObsProblem] = useState('')
+    const [modalFinal, setModalFinal] = useState(false)
+    const [ObsFinal, setObsFinal] = useState('')
     const [fila, setFila] = useState(Fila)
+    const [atividade, setAtividade] = useState(Atividade)
     
     
     async function busca() {
@@ -50,6 +53,7 @@ export function AppProvider(props) {
             setModalProblem(!modalProblem)
         }else {
             setFila(dado)
+            setObsProblem(dado.ProblemObs)
             setModalProblem(!modalProblem)
         }
     }
@@ -59,10 +63,32 @@ export function AppProvider(props) {
     }
     
 
-    function mostrar(){
+    function sendProblem(){
         fila.ProblemObs = ObsProblem
-        console.log(fila)
+
+        if(ObsProblem === undefined){
+            
+        }else{
+            problema(fila)
+            add()
+            setModalProblem(false)
+            setObsProblem('')
+        }
     }
+
+    function finish(dado){
+        if(modalFinal === true){
+            setModalProblem(!modalFinal)
+        }else {
+            setAtividade(dado)
+            setModalProblem(!modalFinal)
+        }
+    }
+
+    function mudarCampoFinal(event){
+        setObsFinal(event)
+    }
+
     //#endregion
 
     return (
@@ -72,6 +98,8 @@ export function AppProvider(props) {
                 novo,
                 modalProblem,
                 ObsProblem,
+                ObsFinal,
+                modalFinal,
                 busca,
                 add,
                 inicio,
@@ -79,7 +107,9 @@ export function AppProvider(props) {
                 back,
                 problem,
                 mudarCampoProblem,
-                mostrar
+                sendProblem,
+                finish,
+                mudarCampoFinal
             }}
         >
             {props.children}

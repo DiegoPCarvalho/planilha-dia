@@ -110,7 +110,7 @@ import UseAppData from '../../../data/hook/UseAppData';
 // }
 
 export default function(props){
-    const { start, back, problem } = UseAppData();
+    const { start, back, problem, finish } = UseAppData();
 
     return(
         <>
@@ -170,7 +170,7 @@ export default function(props){
                                                 minuto={`minuto ${registro.id}`}
                                                 segundo={`segundo ${registro.id}`} />
                                         }
-                                    // abrir={() => this.confirmarFinalizar(registro)}
+                                    abrir={() => finish(registro)}
                                     alerta={() => problem(registro)}
                                     voltar={() => back(registro)}
                                     />
