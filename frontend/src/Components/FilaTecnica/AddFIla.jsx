@@ -93,21 +93,25 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && !reg.Equipamento.match(/IMPRESSORA/)) {
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" 
+                    // && !reg.Equipamento.match(/IMPRESSORA/)
+                    ) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
-                        reg.Data = data
-                        reg.dt = data
-                        reg.Estagio = 'Enviado'
-                        reg.Problema = 'Não'
-                        reg.Tecnico = 'Anderson Rocha'
-                        this.saves(reg)
-                    }else {
+                    }
+                    // }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                    //     reg.Data = data
+                    //     reg.dt = data
+                    //     reg.Estagio = 'Enviado'
+                    //     reg.Problema = 'Não'
+                    //     reg.Tecnico = 'Anderson Rocha'
+                    //     this.saves(reg)
+                    // }
+                    else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -137,21 +141,25 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && !reg.Equipamento.match(/IMPRESSORA/)) {
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" 
+                        // && !reg.Equipamento.match(/IMPRESSORA/)
+                    ) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
-                        reg.Data = data
-                        reg.dt = data
-                        reg.Estagio = 'Enviado'
-                        reg.Problema = 'Não'
-                        reg.Tecnico = 'Anderson Rocha'
-                        this.saves(reg)
-                    }else {
+                    }
+                    // else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                    //     reg.Data = data
+                    //     reg.dt = data
+                    //     reg.Estagio = 'Enviado'
+                    //     reg.Problema = 'Não'
+                    //     reg.Tecnico = 'Anderson Rocha'
+                    //     this.saves(reg)
+                    // }
+                    else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''

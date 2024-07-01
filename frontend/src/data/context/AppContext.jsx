@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { Atividade, Fila, bancosFila } from '../../Components/updateAtividade/config';
+import { Atividade, Fila, bancosFila, diferenca } from '../../Components/updateAtividade/config';
 import { buscarFila } from '../../Components/updateAtividade/busca';
 import { iniciar, voltar, problema, finalizar } from '../../Components/updateAtividade/estrutura';
 
@@ -71,17 +71,49 @@ export function AppProvider(props) {
         }else{
             problema(fila)
             add()
-            setModalProblem(false)
+            setModalProblem(!modalProblem)
             setObsProblem('')
+            setFila(Fila)
         }
     }
 
     function finish(dado){
         if(modalFinal === true){
-            setModalProblem(!modalFinal)
+            setModalFinal(!modalFinal)
         }else {
             setAtividade(dado)
-            setModalProblem(!modalFinal)
+            setObsFinal(dado.Observacao)
+            tempoFinalRompido(dado)
+        }
+    }
+
+    function sendFinish(){
+        atividade.Observacao = ObsFinal
+
+        if(ObsFinal === undefined){
+
+        }else {
+            finalizar(atividade)
+            add()
+            setModalFinal(!modalFinal)
+            setObsFinal('')
+            setAtividade(Atividade)
+            setFila(Fila)
+        }
+    }
+
+    function tempoFinalRompido(dado){
+        const filaData = dado
+        const tempo = diferenca(filaData.DataInicialBruto, 'final')
+
+        if(tempo >= 3){
+            setModalFinal(!modalFinal)
+        }else {
+            finalizar(filaData)
+            add()
+            setObsFinal('')
+            setAtividade(Atividade)
+            setFila(Fila)
         }
     }
 
@@ -109,7 +141,9 @@ export function AppProvider(props) {
                 mudarCampoProblem,
                 sendProblem,
                 finish,
-                mudarCampoFinal
+                mudarCampoFinal,
+                sendFinish,
+                tempoFinalRompido
             }}
         >
             {props.children}

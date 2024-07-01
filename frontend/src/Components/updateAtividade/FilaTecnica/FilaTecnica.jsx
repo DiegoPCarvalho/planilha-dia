@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import ModalProblem from "../../Modal/ModalProblem";
 import ModalToDo from "../../Modal/ModalToDo";
 import FormularioProblema from "./FormProblem";
+import FormularioFinal from "./FormFinal";
 
 
 // export default class FilaTecnica extends React.Component {
@@ -65,7 +66,8 @@ export default function FilaTecnica(props) {
     const { state, novo, inicio, 
         busca, problem, modalProblem, 
         ObsProblem, mudarCampoProblem, sendProblem, 
-        mudarCampoFinal, ObsFinal, modalFinal } = UseAppData();
+        mudarCampoFinal, ObsFinal, modalFinal, finish,
+        sendFinish } = UseAppData();
 
     useEffect(() => {
         if (novo === 1) {
@@ -76,6 +78,7 @@ export default function FilaTecnica(props) {
         }
     }, [novo])
 
+    
     return (
         <>
             <div className="row">
@@ -108,6 +111,11 @@ export default function FilaTecnica(props) {
                     Relatorio={<FormularioProblema
                         valor={ObsProblem} mudou={(e) => mudarCampoProblem(e.target.value)}
                         onClick={() => sendProblem()}
+
+                    />} />
+                <ModalToDo modal={modalFinal} close={() => finish()} nome="Atividade" relatorio={<FormularioFinal
+                        valor={ObsFinal} mudou={(e) => mudarCampoFinal(e.target.value)}
+                        onClick={() => sendFinish()}
 
                     />} />
             </div>

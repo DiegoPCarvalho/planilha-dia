@@ -90,15 +90,14 @@ export function finalizar(registro) {
     Atividade.DataFinalProblema = Fila.DataFinalProblema ? Fila.DataFinalProblema : ''
     Atividade.TempoLiquido = tempoLiquido
     Atividade.Tecnico = Fila.Tecnico
-    // Atividade.Observacao = this.state.Atividade.Observacao
+    Atividade.Observacao = Fila.Observacao
     Atividade.Problema = Fila.Problema ? Fila.Problema : ''
     Atividade.ProblemObs = Fila.ProblemObs
     Atividade.ContProblema = Fila.ContProblema ? Fila.ContProblema : 0
 
-    console.log(Atividade)
-
-    // salvar(Atividade,"Final")
-    // this.deletar(Fila)
+    
+    salvar(Atividade,"Final")
+    remover(Fila)
 
 }
 
@@ -108,4 +107,10 @@ function salvar(dado, modo) {
     const method = Data.id ? 'put' : 'post'
     const url = Data.id ? `${bancoUrl}/${Data.id}` : bancoUrl
     axios[method](url, Data)
+}
+
+function remover(dado){
+    const bancoUrl = Url("FilaTecnica")
+
+    axios.delete(`${bancoUrl}/${dado.id}`)
 }
