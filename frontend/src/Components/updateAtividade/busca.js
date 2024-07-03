@@ -33,3 +33,16 @@ export async function buscarFila(){
     
     return obj
 }
+
+export async function buscarGeral(mes, ano){
+    const geral = await PuxarDados("Geral")
+    let dado = []
+
+    geral.map(registro => {
+        if((localStorage.usuario === registro.Tecnico) && (+ano === registro.Ano) && (+mes === registro.Mes)){
+            dado.push({ ...registro })
+        }
+    })
+
+    return dado
+}

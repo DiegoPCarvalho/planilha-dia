@@ -23,6 +23,11 @@ export const bancosFormulario = {
     listarCosmos: [],
 }
 
+export const Filtro = {
+    mes: '',
+    ano: ''
+}
+
 export const Atividade = {
     Data: '',
     Dia: '',

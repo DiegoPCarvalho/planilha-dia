@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
-import { Atividade, Fila, bancosFila, diferenca } from '../../Components/updateAtividade/config';
-import { buscarFila } from '../../Components/updateAtividade/busca';
+import { Atividade, Fila, bancosFila, diferenca, dataCorreta } from '../../Components/updateAtividade/config';
+import { buscarFila, buscarGeral } from '../../Components/updateAtividade/busca';
 import { iniciar, voltar, problema, finalizar } from '../../Components/updateAtividade/estrutura';
 
 const AppContext = createContext({})
@@ -15,60 +15,80 @@ export function AppProvider(props) {
     const [ObsFinal, setObsFinal] = useState('')
     const [fila, setFila] = useState(Fila)
     const [atividade, setAtividade] = useState(Atividade)
-    
-    
+
+
     async function busca() {
         const banco = await buscarFila()
 
-        setState({ 
+        setState({
             listarFila: banco.dadoLista,
             listIni: banco.dadoIni,
             listFim: banco.dadoFim
         })
     }
 
+    async function buscarRegistroAntigo(mes, ano) {
+        const banco = await buscarGeral(mes, ano)
+        let dado = []
+
+        banco.map(registro => {
+            dado.push({
+                id: registro.id,
+                Data: dataCorreta(registro.Data),
+                OS: registro.OS,
+                Cliente: registro.Cliente,
+                Equipamento: registro.Equipamento,
+                Modelo: registro.Modelo,
+                NS: registro.NS,
+                Servico: registro.Servico,
+            })
+        })
+
+        return dado
+    }
+
     function add() {
         setNovo(1)
     }
 
-    function inicio(){
+    function inicio() {
         setNovo(0)
     }
 
-    
+
 
     //#region Fila
-    function start(dado){
+    function start(dado) {
         iniciar(dado)
         add()
     }
 
-    function back(dado){
+    function back(dado) {
         voltar(dado)
         add()
     }
 
-    function problem(dado){
-        if(modalProblem === true){
+    function problem(dado) {
+        if (modalProblem === true) {
             setModalProblem(!modalProblem)
-        }else {
+        } else {
             setFila(dado)
             setObsProblem(dado.ProblemObs)
             setModalProblem(!modalProblem)
         }
     }
 
-    function mudarCampoProblem(event){
+    function mudarCampoProblem(event) {
         setObsProblem(event)
     }
-    
 
-    function sendProblem(){
+
+    function sendProblem() {
         fila.ProblemObs = ObsProblem
 
-        if(ObsProblem === undefined){
-            
-        }else{
+        if (ObsProblem === undefined) {
+
+        } else {
             problema(fila)
             add()
             setModalProblem(!modalProblem)
@@ -77,22 +97,22 @@ export function AppProvider(props) {
         }
     }
 
-    function finish(dado){
-        if(modalFinal === true){
+    function finish(dado) {
+        if (modalFinal === true) {
             setModalFinal(!modalFinal)
-        }else {
+        } else {
             setAtividade(dado)
             setObsFinal(dado.Observacao)
             tempoFinalRompido(dado)
         }
     }
 
-    function sendFinish(){
+    function sendFinish() {
         atividade.Observacao = ObsFinal
 
-        if(ObsFinal === undefined){
+        if (ObsFinal === undefined) {
 
-        }else {
+        } else {
             finalizar(atividade)
             add()
             setModalFinal(!modalFinal)
@@ -102,13 +122,13 @@ export function AppProvider(props) {
         }
     }
 
-    function tempoFinalRompido(dado){
+    function tempoFinalRompido(dado) {
         const filaData = dado
         const tempo = diferenca(filaData.DataInicialBruto, 'final')
 
-        if(tempo >= 3){
+        if (tempo >= 3) {
             setModalFinal(!modalFinal)
-        }else {
+        } else {
             finalizar(filaData)
             add()
             setObsFinal('')
@@ -117,7 +137,7 @@ export function AppProvider(props) {
         }
     }
 
-    function mudarCampoFinal(event){
+    function mudarCampoFinal(event) {
         setObsFinal(event)
     }
 
@@ -143,7 +163,8 @@ export function AppProvider(props) {
                 finish,
                 mudarCampoFinal,
                 sendFinish,
-                tempoFinalRompido
+                tempoFinalRompido,
+                buscarRegistroAntigo
             }}
         >
             {props.children}

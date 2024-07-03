@@ -21,7 +21,7 @@ export default function TabelaGnc(props) {
     return (
         <table className={`table table-bordered ${props.tb}`} id={props.id}>
             <thead className="table-dark">
-                <tr>
+                <tr className='fw-bold'>
                     {props.head}
                 </tr>
             </thead>
