@@ -10,6 +10,7 @@ export default function Entrada(props) {
                 value={props.valor}
                 readOnly={props.somenteLeitura ?? false}
                 onChange={props.mudou}
+                onKeyDown={props.keyD}
                 className={props.classe}
                 required={props.required ?? false}
                 placeholder={props.mensagem}

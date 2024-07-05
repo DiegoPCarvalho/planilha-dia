@@ -1,13 +1,18 @@
-import React from "react";
-import { initialState } from '../config';
+import React, { useEffect } from "react";
 import MenuItem from "../comp/MenuItem";
 import CardForm from '../../Card/CardForm';
+import UseAppData from "../../../data/hook/UseAppData";
 
+export default function Formulario(props){
+    const { mudarTela, carregando, setCarregando, setTab, setMudar } = UseAppData();
 
-export default class Formulario extends React.Component {
-    state = { ...initialState }
+    useEffect(() => {
+        if(carregando){
+            setCarregando(false)
+            mudarTela('table')
+        }
+    },[])
 
-    render() {
         return (
             <>
                 <div className="row">
@@ -23,11 +28,11 @@ export default class Formulario extends React.Component {
                             <div className="col-3 d-flex flex-column align-items-end justify-content-between">
                                 <MenuItem direita nome="Tablela" h="4" i="fa-2x"
                                     classe="fa fa-table fa-3x"
-                                    mudar={this.props.table}
+                                    mudar={props.table}
                                 />
                                 <MenuItem direita nome="Reg. Antiga" h="4" i="fa-2x"
                                     classe="fa fa-database fa-3x"
-                                    mudar={this.props.old}
+                                    mudar={props.old}
                                 />
                             </div>
                         </>
@@ -37,7 +42,7 @@ export default class Formulario extends React.Component {
                                 <MenuItem
                                     nome="Fila Técnica" h="4" i="fa-2x"
                                     classe="fa fa-list-alt fa-4x"
-                                    mudar={this.props.fila}
+                                    mudar={props.fila}
                                 />
                             </div>
                             <div className="col-6 d-flex justify-content-center align-items-center">
@@ -47,11 +52,11 @@ export default class Formulario extends React.Component {
                             <div className="col-3 d-flex flex-column align-items-end justify-content-between">
                                 <MenuItem direita nome="Tablela" h="4" i="fa-2x"
                                     classe="fa fa-table fa-3x"
-                                    mudar={this.props.table}
+                                    mudar={props.table}
                                 />
                                 <MenuItem direita nome="Reg. Antiga" h="4" i="fa-2x"
                                     classe="fa fa-database fa-3x"
-                                    mudar={this.props.old}
+                                    mudar={props.old}
                                 />  
                             </div>
                         </>
@@ -59,5 +64,4 @@ export default class Formulario extends React.Component {
                 </div>
             </>
         )
-    }
 }

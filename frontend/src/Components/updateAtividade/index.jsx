@@ -1,66 +1,61 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FilaTecnica from './FilaTecnica/FilaTecnica';
 import Formulario from './Form/Formulario';
 import Tabela from './Table/Tabela';
 import RegistroAntigo from './RegAntrigo/RegistroAntigo';
+import UseAppData from "../../data/hook/UseAppData";
 
-const initialState = {
-    mudar: 'fila'
-}
+export default function IndexHomeAtividade(){
+    const { mudar, mudarTela } = UseAppData();
 
-export default class IndexHomeAtividade extends React.Component {
-    
-    state = { ...initialState }
-
-    componentDidMount() {
+    useEffect(() => {
         if (localStorage.departamento == 'Limpeza Lab') {
-            return this.setState({ mudar: 'form' })
+            return mudarTela('form')
         }
-    }
+    },[])
+    
 
     //#region render setor
-    renderLimpeza() {
-        return this.state.mudar === 'form' ?
+    function renderLimpeza() {
+        return mudar === 'form' ?
             <Formulario
-                table={() => this.setState({ mudar: 'table' })}
-                old={() => this.setState({ mudar: 'antiga' })}
+                table={() => mudarTela('table')}
+                old={() => mudarTela('antiga')}
             />
-            : this.state.mudar === 'table' ?
+            : mudar === 'table' ?
                 <Tabela
-                    form={() => this.setState({ mudar: 'form' })}
-                    old={() => this.setState({ mudar: 'antiga' })}
+                    form={() => mudarTela('form')}
+                    old={() => mudarTela('antiga')}
                 /> : <RegistroAntigo
-                    table={() => this.setState({ mudar: 'table' })}
-                    form={() => this.setState({ mudar: 'form' })}
+                    table={() => mudarTela('table')}
+                    form={() => mudarTela('form')}
                 />
     }
 
-    renderLabo() {
-        return this.state.mudar === 'fila' ?
+    function renderLabo() {
+        return mudar === 'fila' ?
             <FilaTecnica
-                form={() => this.setState({ mudar: 'form' })}
-                table={() => this.setState({ mudar: 'table' })}
-                old={() => this.setState({ mudar: 'antiga' })}
-            /> : this.state.mudar === 'form' ? <Formulario
-                        fila={() => this.setState({ mudar: 'fila' })}
-                        table={() => this.setState({ mudar: 'table' })}
-                        old={() => this.setState({ mudar: 'antiga' })}
+                form={() => mudarTela('form')}
+                table={() => mudarTela('table')}
+                old={() => mudarTela('antiga')}
+            /> : mudar === 'form' ? <Formulario
+                        fila={() => mudarTela('fila')}
+                        table={() => mudarTela('table')}
+                        old={() => mudarTela('antiga')}
                     />
-                : this.state.mudar === 'table' ?
+                : mudar === 'table' ?
                     <Tabela 
-                        fila={() => this.setState({ mudar: 'fila' })}
-                        form={() => this.setState({ mudar: 'form' })}
-                        old={() => this.setState({ mudar: 'antiga' })}
+                        fila={() => mudarTela('fila')}
+                        form={() => mudarTela('form')}
+                        old={() => mudarTela('antiga')}
                     /> : <RegistroAntigo 
-                        fila={() => this.setState({ mudar: 'fila' })}
-                        form={() => this.setState({ mudar: 'form' })}
-                        table={() => this.setState({ mudar: 'table' })}
+                        fila={() => mudarTela('fila')}
+                        form={() => mudarTela('form')}
+                        table={() => mudarTela('table')}
                     />
     }
     //#endregion
 
 
-    render() {
-        return localStorage.departamento === 'Limpeza Lab' ? this.renderLimpeza() : this.renderLabo()
-    }
+        return localStorage.departamento === 'Limpeza Lab' ? renderLimpeza() : renderLabo()
 }

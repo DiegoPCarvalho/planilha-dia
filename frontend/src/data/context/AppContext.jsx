@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { Atividade, Fila, bancosFila, diferenca, dataCorreta } from '../../Components/updateAtividade/config';
 import { buscarFila, buscarGeral } from '../../Components/updateAtividade/busca';
-import { iniciar, voltar, problema, finalizar } from '../../Components/updateAtividade/estrutura';
+import { iniciar, voltar, problema, finalizar, remover } from '../../Components/updateAtividade/estrutura';
 
 const AppContext = createContext({})
 
@@ -15,7 +15,15 @@ export function AppProvider(props) {
     const [ObsFinal, setObsFinal] = useState('')
     const [fila, setFila] = useState(Fila)
     const [atividade, setAtividade] = useState(Atividade)
+    const [list, setList] = useState([])
+    const [mudar, setMudar] = useState('fila')
+    const [tab, setTab] = useState('')
+    const [carregando, setCarregando] = useState(false)
 
+    function mudarTela(dado){
+        setMudar(dado)
+        setTab('tabela')
+    }
 
     async function busca() {
         const banco = await buscarFila()
@@ -25,6 +33,16 @@ export function AppProvider(props) {
             listIni: banco.dadoIni,
             listFim: banco.dadoFim
         })
+    }
+
+    async function buscarGeralTabela(){
+        const data = new Date()
+        const mes = data.getMonth() + 1
+        const ano = data.getFullYear()
+
+        const tabela = await buscarGeral(mes, ano)
+
+        return setList(tabela)
     }
 
     async function buscarRegistroAntigo(mes, ano) {
@@ -54,8 +72,6 @@ export function AppProvider(props) {
     function inicio() {
         setNovo(0)
     }
-
-
 
     //#region Fila
     function start(dado) {
@@ -143,6 +159,21 @@ export function AppProvider(props) {
 
     //#endregion
 
+    //#region crud
+    function deletar(dado){
+        remover(dado,"Geral")
+        atualizarLista(dado, false, list)
+        setCarregando(true)
+        mudarTela('form')
+    }
+
+    function atualizarLista(Atividade, add = true, banco) {
+        const dado = banco.filter(a => a.id !== Atividade.id)
+        if (add) dado.push(Atividade)
+        setList(dado)
+    } 
+
+    //#endregion
     return (
         <AppContext.Provider
             value={{
@@ -152,6 +183,10 @@ export function AppProvider(props) {
                 ObsProblem,
                 ObsFinal,
                 modalFinal,
+                list,
+                mudar,
+                tab,
+                carregando,
                 busca,
                 add,
                 inicio,
@@ -164,7 +199,13 @@ export function AppProvider(props) {
                 mudarCampoFinal,
                 sendFinish,
                 tempoFinalRompido,
-                buscarRegistroAntigo
+                buscarRegistroAntigo,
+                buscarGeralTabela,
+                mudarTela,
+                deletar,
+                setTab,
+                setMudar,
+                setCarregando
             }}
         >
             {props.children}

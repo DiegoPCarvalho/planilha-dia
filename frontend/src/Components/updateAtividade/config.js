@@ -1,15 +1,5 @@
 import moment from "moment"
 
-export const initialState = {
-    ultimaOS: 0,
-    mudar: 'fila',
-    table_on: false,
-    mode: false,
-    modalToDo: false,
-    modalProblem: false,
-    teste: ''
-}
-
 export const bancosFila = {
     listarFila: [],
     listIni: [],

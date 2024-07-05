@@ -97,7 +97,7 @@ export function finalizar(registro) {
 
     
     salvar(Atividade,"Final")
-    remover(Fila)
+    remover(Fila, "FilaTecnica")
 
 }
 
@@ -109,8 +109,8 @@ function salvar(dado, modo) {
     axios[method](url, Data)
 }
 
-function remover(dado){
-    const bancoUrl = Url("FilaTecnica")
+export function remover(dado, banco){
+    const bancoUrl = Url(banco)
 
     axios.delete(`${bancoUrl}/${dado.id}`)
 }
