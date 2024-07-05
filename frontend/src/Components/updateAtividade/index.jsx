@@ -14,7 +14,6 @@ export default function IndexHomeAtividade(){
         }
     },[])
     
-
     //#region render setor
     function renderLimpeza() {
         return mudar === 'form' ?

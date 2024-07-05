@@ -165,6 +165,7 @@ export function AppProvider(props) {
         atualizarLista(dado, false, list)
         setCarregando(true)
         mudarTela('form')
+        setTab('')
     }
 
     function atualizarLista(Atividade, add = true, banco) {

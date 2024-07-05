@@ -8,8 +8,8 @@ export default function Formulario(props){
 
     useEffect(() => {
         if(carregando){
-            setCarregando(false)
             mudarTela('table')
+            setCarregando(false)
         }
     },[])
 
