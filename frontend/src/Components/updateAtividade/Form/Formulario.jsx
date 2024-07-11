@@ -2,15 +2,17 @@ import React, { useEffect } from "react";
 import MenuItem from "../comp/MenuItem";
 import CardForm from '../../Card/CardForm';
 import UseAppData from "../../../data/hook/UseAppData";
+import Campos from "./Campos";
 
 export default function Formulario(props){
-    const { mudarTela, carregando, setCarregando, setTab, setMudar } = UseAppData();
+    const { mudarTela, del, setDel, BuscaFormulario } = UseAppData();
 
     useEffect(() => {
-        if(carregando){
+        if(del){
             mudarTela('table')
-            setCarregando(false)
+            setDel(false)
         }
+        BuscaFormulario()
     },[])
 
         return (
@@ -61,6 +63,9 @@ export default function Formulario(props){
                             </div>
                         </>
                     )}
+                </div>
+                <div className="row mt-4">
+                    <Campos />
                 </div>
             </>
         )

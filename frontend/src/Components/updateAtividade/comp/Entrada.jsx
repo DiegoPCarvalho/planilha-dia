@@ -3,7 +3,7 @@ import React from 'react';
 export default function Entrada(props) {
     return props.modelo === 'input' ? (
         <div className={`form-group ${props.className}`}>
-            <label className="font-bold mb-2">{props.texto}</label>
+            <label className={`fw-bold mb-2 ${props.clst}`}>{props.texto}</label>
             <input
                 type={props.tipo ?? 'text'}
                 name={props.nome}
@@ -32,7 +32,7 @@ export default function Entrada(props) {
         </div>
     ) : (
         <div className={`form-group ${props.className}`}>
-            <label className='fw-bold'>{props.texto}</label>
+            <label className={`fw-bold mb-2 ${props.clst}`}>{props.texto}</label>
             <textarea 
                 name={props.nome}
                 value={props.valor}

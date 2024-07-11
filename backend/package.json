@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server db.json --port 5001 --host 192.168.15.251",
+    "start": "json-server db.json --port 5001 --host 192.168.1.227",
     "dev": "nodemon app.js"
   },
   "author": "Diego Carvalho",

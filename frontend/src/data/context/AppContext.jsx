@@ -1,7 +1,8 @@
 import React, { createContext, useState } from 'react';
-import { Atividade, Fila, bancosFila, diferenca, dataCorreta } from '../../Components/updateAtividade/config';
-import { buscarFila, buscarGeral } from '../../Components/updateAtividade/busca';
+import { Atividade, Fila, bancosFila, diferenca, dataCorreta, bancosFormulario } from '../../Components/updateAtividade/config';
+import { buscarFila, buscarGeral, BuscarForm } from '../../Components/updateAtividade/busca';
 import { iniciar, voltar, problema, finalizar, remover } from '../../Components/updateAtividade/estrutura';
+import $ from 'jquery';
 
 const AppContext = createContext({})
 
@@ -18,8 +19,10 @@ export function AppProvider(props) {
     const [list, setList] = useState([])
     const [mudar, setMudar] = useState('fila')
     const [tab, setTab] = useState('')
-    const [carregando, setCarregando] = useState(false)
+    const [del, setDel] = useState(false)
+    const [bancoForm, setBancoForm] = useState(bancosFormulario)
 
+    //#region busca e Estrutura
     function mudarTela(dado){
         setMudar(dado)
         setTab('tabela')
@@ -32,6 +35,16 @@ export function AppProvider(props) {
             listarFila: banco.dadoLista,
             listIni: banco.dadoIni,
             listFim: banco.dadoFim
+        })
+    }
+
+    async function BuscaFormulario(){
+        const banco = await BuscarForm()
+
+        setBancoForm({
+            listEquip: banco.listEquip,
+            listServ: banco.listServ,
+            listCont: banco.listCont
         })
     }
 
@@ -72,6 +85,8 @@ export function AppProvider(props) {
     function inicio() {
         setNovo(0)
     }
+
+    //#endregion
 
     //#region Fila
     function start(dado) {
@@ -163,18 +178,35 @@ export function AppProvider(props) {
     function deletar(dado){
         remover(dado,"Geral")
         atualizarLista(dado, false, list)
-        setCarregando(true)
+        setDel(true)
         mudarTela('form')
         setTab('')
+    }
+
+    function limpar(){
+        setAtividade(Atividade)
     }
 
     function atualizarLista(Atividade, add = true, banco) {
         const dado = banco.filter(a => a.id !== Atividade.id)
         if (add) dado.push(Atividade)
         setList(dado)
+    }
+    
+    function MudarCampoAtividade(event){
+        const Atividade = { ...atividade }
+        Atividade[event.target.name] = event.target.value
+        setAtividade(Atividade)
+    }
+
+    function mensagemSalvo() {
+        $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
+            $("div.success").fadeIn(300).delay(1500).fadeOut(400);
+        });
     } 
 
     //#endregion
+    
     return (
         <AppContext.Provider
             value={{
@@ -187,7 +219,9 @@ export function AppProvider(props) {
                 list,
                 mudar,
                 tab,
-                carregando,
+                del,
+                atividade,
+                bancoForm,
                 busca,
                 add,
                 inicio,
@@ -206,7 +240,11 @@ export function AppProvider(props) {
                 deletar,
                 setTab,
                 setMudar,
-                setCarregando
+                setDel,
+                MudarCampoAtividade,
+                limpar,
+                BuscaFormulario,
+                mensagemSalvo
             }}
         >
             {props.children}
