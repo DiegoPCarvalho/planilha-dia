@@ -1,11 +1,5 @@
 import moment from "moment"
 
-export const bancosFila = {
-    listarFila: [],
-    listIni: [],
-    listFim: [],
-}
-
 export const bancosFormulario = {
     listEquip: [],
     listServ: [],
@@ -73,9 +67,12 @@ export function servico(serv) {
 }
 
 export function formatarTempoLiq(tempo) {
-    let novo = tempo.replace(/(\d+):(\d+):(\d+)/, '$1 h : $2 m : $3 s')
-
-    return novo
+    if(tempo === undefined){
+        return "0 h : 0 m : 0 s"
+    }else{
+        let novo = tempo.replace(/(\d+):(\d+):(\d+)/, '$1 h : $2 m : $3 s')
+        return novo
+    }
 }
 
 export function formatarTempoBto(tempo) {

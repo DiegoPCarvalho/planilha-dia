@@ -1,9 +1,29 @@
-import React from "react"
-import { dataCorreta } from "../config"
-import UseAppData from "../../../data/hook/UseAppData"
+import React from "react";
+import { dataCorreta } from "../config";
+import UseAppData from "../../../data/hook/UseAppData";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function Linhas(props) {
-    const { deletar } = UseAppData();
+    const { deletar, load } = UseAppData();
+
+    function confirmarDelete(registro){
+        confirmAlert({
+            title: "Deletar",
+            message: "Deseja Realmente Excluir?",
+            buttons: [
+                {
+                    label: "Sim",
+                    className: "btn btn-success",
+                    onClick: () => deletar(registro)
+                },
+                {
+                    label: "Não",
+                    className: "btn btn-danger"
+                }
+            ]
+        })
+    }
 
     return props.list.map(registro => {
         return (
@@ -19,12 +39,12 @@ export default function Linhas(props) {
                 <td className="d-flex justify-content-around p-3">
                     {registro.Estagio === '' ? (<div className="d-flex justify-content-around align-items-center">
                         <button className="btn btn-warning mx-2"
-                        // onClick={() => load(registro)}
+                            onClick={() => load(registro)}
                         >
                             <i className="fa fa-pencil"></i>
                         </button>
                         <button className="btn btn-danger mx-2"
-                        // onClick={() => confirmar(registro)}
+                            onClick={() => confirmarDelete(registro)}
                         >
                             <i className="fa fa-trash"></i>
                         </button>
@@ -32,7 +52,7 @@ export default function Linhas(props) {
                     ) : (
                         <div className="d-flex align-items-center">
                             <button className="btn btn-danger mx-2"
-                                onClick={() => deletar(registro)}
+                                onClick={() => confirmarDelete(registro)}
                             >
                                 <i className="fa fa-trash"></i>
                             </button>

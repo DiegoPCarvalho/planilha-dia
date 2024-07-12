@@ -1,15 +1,16 @@
 import React, { createContext, useState } from 'react';
-import { Atividade, Fila, bancosFila, diferenca, dataCorreta, bancosFormulario } from '../../Components/updateAtividade/config';
+import { Atividade, Fila, diferenca, dataCorreta, bancosFormulario } from '../../Components/updateAtividade/config';
 import { buscarFila, buscarGeral, BuscarForm } from '../../Components/updateAtividade/busca';
-import { iniciar, voltar, problema, finalizar, remover } from '../../Components/updateAtividade/estrutura';
+import { iniciar, voltar, problema, finalizar, remover, salvar } from '../../Components/updateAtividade/estrutura';
 import $ from 'jquery';
 
 const AppContext = createContext({})
 
 export function AppProvider(props) {
 
-    const [state, setState] = useState(bancosFila)
-    const [novo, setNovo] = useState(0)
+    const [listFila, setListFila] = useState([])
+    const [listIni, setListIni] = useState([])
+    const [listFim, setListFim] = useState([])
     const [modalProblem, setModalProblem] = useState(false)
     const [ObsProblem, setObsProblem] = useState('')
     const [modalFinal, setModalFinal] = useState(false)
@@ -21,24 +22,25 @@ export function AppProvider(props) {
     const [tab, setTab] = useState('')
     const [del, setDel] = useState(false)
     const [bancoForm, setBancoForm] = useState(bancosFormulario)
+    const [tableOn, setTableOn] = useState(false)
 
     //#region busca e Estrutura
-    function mudarTela(dado){
+    function mudarTela(dado) {
         setMudar(dado)
         setTab('tabela')
+        setAtividade(Atividade)
+        setTableOn(false)
     }
 
     async function busca() {
         const banco = await buscarFila()
 
-        setState({
-            listarFila: banco.dadoLista,
-            listIni: banco.dadoIni,
-            listFim: banco.dadoFim
-        })
+        setListFila(banco.dadoLista)
+        setListIni(banco.dadoIni)
+        setListFim(banco.dadoFim)
     }
 
-    async function BuscaFormulario(){
+    async function BuscaFormulario() {
         const banco = await BuscarForm()
 
         setBancoForm({
@@ -48,7 +50,7 @@ export function AppProvider(props) {
         })
     }
 
-    async function buscarGeralTabela(){
+    async function buscarGeralTabela() {
         const data = new Date()
         const mes = data.getMonth() + 1
         const ano = data.getFullYear()
@@ -78,25 +80,44 @@ export function AppProvider(props) {
         return dado
     }
 
-    function add() {
-        setNovo(1)
-    }
-
-    function inicio() {
-        setNovo(0)
-    }
-
     //#endregion
 
     //#region Fila
+    function atualizarDado(Atividade, add = true, banco, modo) {
+        if (modo === 'fila') {
+            const dado = banco.filter(a => a.id !== Atividade.id)
+            if (add) dado.push(Atividade)
+            setListFila(dado)
+        } else if (modo === 'inicial') {
+            const dado = banco.filter(a => a.id !== Atividade.id)
+            if (add) dado.push(Atividade)
+            setListIni(dado)
+        } else {
+            const dado = banco.filter(a => a.id !== Atividade.id)
+            if (add) dado.push(Atividade)
+            setListFim(dado)
+        }
+    }
+
     function start(dado) {
-        iniciar(dado)
-        add()
+        try {
+            iniciar(dado)
+            atualizarDado(dado, false, listFila, 'fila')
+            atualizarDado(dado, true, listIni, 'inicial')
+        } catch (e) {
+            console.log("Erro: " + e)
+        }
     }
 
     function back(dado) {
-        voltar(dado)
-        add()
+        try {
+            voltar(dado)
+            atualizarDado(dado, false, listIni, 'inicial')
+            atualizarDado(dado, true, listFila, 'fila')
+
+        } catch (e) {
+            console.log("Erro: " + e)
+        }
     }
 
     function problem(dado) {
@@ -120,11 +141,16 @@ export function AppProvider(props) {
         if (ObsProblem === undefined) {
 
         } else {
-            problema(fila)
-            add()
-            setModalProblem(!modalProblem)
-            setObsProblem('')
-            setFila(Fila)
+            try {
+                problema(fila)
+                atualizarDado(fila, false, listIni, 'inicial')
+                atualizarDado(fila, true, listFila, 'fila')
+                setModalProblem(!modalProblem)
+                setObsProblem('')
+                setFila(Fila)
+            } catch (e) {
+                console.log("Erro: " + e)
+            }
         }
     }
 
@@ -144,12 +170,18 @@ export function AppProvider(props) {
         if (ObsFinal === undefined) {
 
         } else {
-            finalizar(atividade)
-            add()
-            setModalFinal(!modalFinal)
-            setObsFinal('')
-            setAtividade(Atividade)
-            setFila(Fila)
+            try {
+                finalizar(atividade)
+                atualizarDado(atividade, false, listIni, 'inicial')
+                atualizarDado(atividade, true, listFim, 'final')
+                setModalFinal(!modalFinal)
+                setObsFinal('')
+                setAtividade(Atividade)
+                setFila(Fila)
+
+            } catch (e) {
+                console.log("Erro: " + e)
+            }
         }
     }
 
@@ -160,11 +192,16 @@ export function AppProvider(props) {
         if (tempo >= 3) {
             setModalFinal(!modalFinal)
         } else {
-            finalizar(filaData)
-            add()
-            setObsFinal('')
-            setAtividade(Atividade)
-            setFila(Fila)
+            try {
+                finalizar(filaData)
+                atualizarDado(filaData, false, listIni, 'inicial')
+                setObsFinal('')
+                setAtividade(Atividade)
+                setFila(Fila)
+                atualizarDado(filaData, true, listFim, 'final')
+            } catch (e) {
+                console.log("Erro: " + e)
+            }
         }
     }
 
@@ -175,16 +212,21 @@ export function AppProvider(props) {
     //#endregion
 
     //#region crud
-    function deletar(dado){
-        remover(dado,"Geral")
+    function deletar(dado) {
+        remover(dado, "Geral")
         atualizarLista(dado, false, list)
         setDel(true)
         mudarTela('form')
         setTab('')
     }
 
-    function limpar(){
-        setAtividade(Atividade)
+    function limpar() {
+        if (tableOn) {
+            setTableOn(false)
+            mudarTela('table')
+        } else {
+            setAtividade(Atividade)
+        }
     }
 
     function atualizarLista(Atividade, add = true, banco) {
@@ -192,8 +234,8 @@ export function AppProvider(props) {
         if (add) dado.push(Atividade)
         setList(dado)
     }
-    
-    function MudarCampoAtividade(event){
+
+    function MudarCampoAtividade(event) {
         const Atividade = { ...atividade }
         Atividade[event.target.name] = event.target.value
         setAtividade(Atividade)
@@ -203,15 +245,72 @@ export function AppProvider(props) {
         $(document).ready(function () {  // A DIFERENÇA ESTA AQUI, EXECUTA QUANDO O DOCUMENTO ESTA "PRONTO"
             $("div.success").fadeIn(300).delay(1500).fadeOut(400);
         });
-    } 
+    }
+
+    function load(registro) {
+        setAtividade(registro)
+        setMudar("form")
+        setTableOn(true)
+    }
+
+    function save() {
+        if (tableOn) {
+            salvar(atividade, "")
+            mensagemSalvo()
+            atualizarLista(atividade, true, list)
+            mudarTela("table")
+        } else {
+            salvar(atividade, "")
+            mensagemSalvo()
+            atualizarLista(atividade, true, list)
+            setAtividade(Atividade)
+        }
+    }
+
+    function verificar() {
+        const {
+            Data,
+            OS,
+            Cliente,
+            Servico,
+            Equipamento,
+            Modelo,
+            NS,
+            Contrato
+        } = atividade
+
+        const data = new Date()
+
+        if (OS === "" || Cliente === "" || Servico === "" || Equipamento === "" || Modelo === "" || NS === "" || Contrato === "") {
+
+        } else {
+            if (Data === "") {
+                atividade.Data = data
+                atividade.Dia = data.getDate()
+                atividade.Mes = data.getMonth() + 1
+                atividade.Ano = data.getFullYear()
+
+                save()
+            } else {
+                const dt = new Date(Data)
+                atividade.Dia = dt.getDate()
+                atividade.Mes = dt.getMonth() + 1
+                atividade.Ano = dt.getFullYear()
+
+                save()
+            }
+
+        }
+    }
 
     //#endregion
-    
+
     return (
         <AppContext.Provider
             value={{
-                state,
-                novo,
+                listFila,
+                listIni,
+                listFim,
                 modalProblem,
                 ObsProblem,
                 ObsFinal,
@@ -222,9 +321,8 @@ export function AppProvider(props) {
                 del,
                 atividade,
                 bancoForm,
+                tableOn,
                 busca,
-                add,
-                inicio,
                 start,
                 back,
                 problem,
@@ -244,7 +342,8 @@ export function AppProvider(props) {
                 MudarCampoAtividade,
                 limpar,
                 BuscaFormulario,
-                mensagemSalvo
+                verificar,
+                load
             }}
         >
             {props.children}

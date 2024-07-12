@@ -101,16 +101,16 @@ export function finalizar(registro) {
 
 }
 
-function salvar(dado, modo) {
+export function salvar(dado, modo) {
     const Data = dado
     const bancoUrl = modo === "Fila" ? Url("FilaTecnica") : Url("Geral")
     const method = Data.id ? 'put' : 'post'
     const url = Data.id ? `${bancoUrl}/${Data.id}` : bancoUrl
-    axios[method](url, Data)
+    axios[method](url, Data).catch(e => console.log("Erro: " + e))
 }
 
 export function remover(dado, banco){
     const bancoUrl = Url(banco)
 
-    axios.delete(`${bancoUrl}/${dado.id}`)
+    axios.delete(`${bancoUrl}/${dado.id}`).catch(e => console.log("Erro: " + e))
 }

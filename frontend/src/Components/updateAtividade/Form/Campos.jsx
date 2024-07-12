@@ -6,7 +6,7 @@ import Lista from './Lista';
 
 export default function Campos() {
 
-    const { atividade, MudarCampoAtividade, mensagemSalvo, limpar, bancoForm } = UseAppData();
+    const { atividade, MudarCampoAtividade, limpar, bancoForm, verificar, tableOn } = UseAppData();
     const font = "h4"
     const classeForm = "form-control"
 
@@ -164,9 +164,9 @@ export default function Campos() {
                     <div class="success fw-bold p-2 rounded">Salvo com Sucesso!!!</div>
                 </div>
                 <div className="col-3 d-flex justify-content-end">
-                    <Botao className="btn btn-primary fw-bold mx-2"
-                        onClick={() => mensagemSalvo()}
-                        >Salvar</Botao>
+                    <Botao className={`btn btn-${tableOn ? "warning" : "primary"} fw-bold mx-2`}
+                        onClick={() => verificar()}
+                        >{tableOn ? 'Alterar' : 'Salvar'}</Botao>
                     <Botao className="btn btn-danger fw-bold"
                         onClick={() => limpar()}
                     >Cancelar</Botao>
