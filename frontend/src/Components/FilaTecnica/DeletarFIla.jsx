@@ -68,6 +68,7 @@ export default class DeletarFila extends React.Component {
                         value={this.state.Busca.Tecnico}
                         required>
                         <option selected disabled value="">Selecione...</option>
+                        {/* <option>CAUA BISPO</option> */}
                         {this.renderTec()}
                     </select>
                 </div>

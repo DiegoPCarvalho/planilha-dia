@@ -167,7 +167,7 @@ export default function Rotas() {
             </Route>
             <Route element={<Home />}>
                 <Route path="/Laboratorio" element={<CrudAtividade />}>
-                    <Route path="Atividade" element={<FormTable />} />                  
+                    <Route path="Atividade" element={<IndexHomeAtividade />} />                  
                     <Route path="Relatorio" element={<RelatorioPessoal />} />
                 </Route>
                 <Route path="/CentroCustoLab" element={<CentroCustoLab />}>

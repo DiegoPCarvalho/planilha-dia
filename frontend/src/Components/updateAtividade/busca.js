@@ -1,4 +1,6 @@
-import PuxarDados from "./estrutura"
+import PuxarDados from "./estrutura";
+import Url2 from '../Url/Url2';
+import axios from "axios";
 
 export async function buscarFila(){
     const obj = {
@@ -78,4 +80,10 @@ export async function BuscarForm(){
     
 
     return bancos
+}
+
+export async function BuscarBanco(){
+    const banco = await axios(Url2("")).then(resp => resp.data)
+
+    console.log(banco)
 }

@@ -3,6 +3,7 @@ import MenuItem from "../comp/MenuItem";
 import CardForm from '../../Card/CardForm';
 import UseAppData from "../../../data/hook/UseAppData";
 import Campos from "./Campos";
+import { BuscarBanco } from '../busca';
 
 export default function Formulario(props){
     const { mudarTela, del, setDel, BuscaFormulario } = UseAppData();
@@ -23,7 +24,7 @@ export default function Formulario(props){
                             <div className="col-3 d-flex justify-content-start">
                                 <i className="fa fa-address-card fa-4x"></i>
                             </div>
-                            <div className="col-6 d-flex justify-content-center align-items-center">
+                            <div className="col-6 d-flex justify-content-center align-items-center" onClick={() => BuscarBanco()} style={{ cursor: 'pointer'}}>
                                 <CardForm nomeTitulo="Ultima OS" icone="steam"
                                     dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
                             </div>
@@ -47,7 +48,7 @@ export default function Formulario(props){
                                     mudar={props.fila}
                                 />
                             </div>
-                            <div className="col-6 d-flex justify-content-center align-items-center">
+                            <div className="col-6 d-flex justify-content-center align-items-center" onClick={() => BuscarBanco()} style={{ cursor: 'pointer'}}>
                                 <CardForm nomeTitulo="Ultima OS" icone="steam"
                                     dado={localStorage.UltimaOS} bg="success" tipoTexto="text-light" />
                             </div>
