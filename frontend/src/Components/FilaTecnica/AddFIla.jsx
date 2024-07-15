@@ -94,7 +94,7 @@ export default class AddFila extends React.Component {
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
                     } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" 
-                    // && !reg.Equipamento.match(/IMPRESSORA/)
+                    && !reg.Equipamento.match(/IMPRESSORA/)
                     ) {
                         reg.Data = data
                         reg.dt = data
@@ -102,15 +102,14 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
+                    }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Fernando Freitas'
+                        this.saves(reg)
                     }
-                    // }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
-                    //     reg.Data = data
-                    //     reg.dt = data
-                    //     reg.Estagio = 'Enviado'
-                    //     reg.Problema = 'Não'
-                    //     reg.Tecnico = 'Anderson Rocha'
-                    //     this.saves(reg)
-                    // }
                     else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
@@ -142,7 +141,7 @@ export default class AddFila extends React.Component {
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
                     } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" 
-                        // && !reg.Equipamento.match(/IMPRESSORA/)
+                        && !reg.Equipamento.match(/IMPRESSORA/)
                     ) {
                         reg.Data = data
                         reg.dt = data
@@ -151,14 +150,14 @@ export default class AddFila extends React.Component {
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
                     }
-                    // else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
-                    //     reg.Data = data
-                    //     reg.dt = data
-                    //     reg.Estagio = 'Enviado'
-                    //     reg.Problema = 'Não'
-                    //     reg.Tecnico = 'Anderson Rocha'
-                    //     this.saves(reg)
-                    // }
+                    else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Fernando Freitas'
+                        this.saves(reg)
+                    }
                     else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
