@@ -6,12 +6,13 @@ import RegistroAntigo from './RegAntrigo/RegistroAntigo';
 import UseAppData from "../../data/hook/UseAppData";
 
 export default function IndexHomeAtividade(){
-    const { mudar, mudarTela } = UseAppData();
+    const { mudar, mudarTela, buscarDadosCosmos } = UseAppData();
 
     useEffect(() => {
         if (localStorage.departamento == 'Limpeza Lab') {
             return mudarTela('form')
         }
+        buscarDadosCosmos()
     },[])
     
     //#region render setor

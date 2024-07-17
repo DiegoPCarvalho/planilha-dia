@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { Atividade, Fila, diferenca, dataCorreta, bancosFormulario } from '../../Components/updateAtividade/config';
-import { buscarFila, buscarGeral, BuscarForm } from '../../Components/updateAtividade/busca';
+import { buscarFila, buscarGeral, BuscarForm, BuscarBanco } from '../../Components/updateAtividade/busca';
 import { iniciar, voltar, problema, finalizar, remover, salvar } from '../../Components/updateAtividade/estrutura';
 import $ from 'jquery';
 
@@ -23,6 +23,8 @@ export function AppProvider(props) {
     const [del, setDel] = useState(false)
     const [bancoForm, setBancoForm] = useState(bancosFormulario)
     const [tableOn, setTableOn] = useState(false)
+    const [dadoCosmos, setDadoCosmos] = useState([])
+    const [carregando, setCarregando] = useState(false)
 
     //#region busca e Estrutura
     function mudarTela(dado) {
@@ -80,6 +82,20 @@ export function AppProvider(props) {
         return dado
     }
 
+    async function buscarDadosCosmos(){
+        try{
+            setCarregando(true)
+            const banco = await BuscarBanco()
+    
+            setDadoCosmos(banco)
+            setCarregando(false)
+
+        }catch(e){
+            setCarregando(false)
+            console.log("Erro: " + e.message)
+        }
+    }
+
     //#endregion
 
     //#region Fila
@@ -105,7 +121,7 @@ export function AppProvider(props) {
             atualizarDado(dado, false, listFila, 'fila')
             atualizarDado(dado, true, listIni, 'inicial')
         } catch (e) {
-            console.log("Erro: " + e)
+            console.log("Erro: " + e.message)
         }
     }
 
@@ -116,7 +132,7 @@ export function AppProvider(props) {
             atualizarDado(dado, true, listFila, 'fila')
 
         } catch (e) {
-            console.log("Erro: " + e)
+            console.log("Erro: " + e.message)
         }
     }
 
@@ -149,7 +165,7 @@ export function AppProvider(props) {
                 setObsProblem('')
                 setFila(Fila)
             } catch (e) {
-                console.log("Erro: " + e)
+                console.log("Erro: " + e.message)
             }
         }
     }
@@ -180,7 +196,7 @@ export function AppProvider(props) {
                 setFila(Fila)
 
             } catch (e) {
-                console.log("Erro: " + e)
+                console.log("Erro: " + e.message)
             }
         }
     }
@@ -200,7 +216,7 @@ export function AppProvider(props) {
                 setFila(Fila)
                 atualizarDado(filaData, true, listFim, 'final')
             } catch (e) {
-                console.log("Erro: " + e)
+                console.log("Erro: " + e.message)
             }
         }
     }
@@ -322,6 +338,8 @@ export function AppProvider(props) {
                 atividade,
                 bancoForm,
                 tableOn,
+                dadoCosmos,
+                carregando,
                 busca,
                 start,
                 back,
@@ -334,6 +352,7 @@ export function AppProvider(props) {
                 tempoFinalRompido,
                 buscarRegistroAntigo,
                 buscarGeralTabela,
+                buscarDadosCosmos,
                 mudarTela,
                 deletar,
                 setTab,
@@ -343,6 +362,7 @@ export function AppProvider(props) {
                 limpar,
                 BuscaFormulario,
                 verificar,
+                setAtividade,
                 load
             }}
         >

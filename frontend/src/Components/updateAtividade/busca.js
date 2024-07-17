@@ -85,5 +85,5 @@ export async function BuscarForm(){
 export async function BuscarBanco(){
     const banco = await axios(Url2("")).then(resp => resp.data)
 
-    console.log(banco)
+    return banco
 }
