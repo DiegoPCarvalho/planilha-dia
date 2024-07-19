@@ -52,6 +52,7 @@ export default class AtividadeVHL extends React.Component {
     componentDidMount() {
         this.buscar()
         this.buscarTable()
+        this.setState({ Equipamento: [] })
     }
 
     buscar() {
