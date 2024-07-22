@@ -307,6 +307,8 @@ export function AppProvider(props) {
                 atividade.Ano = data.getFullYear()
 
                 save()
+                localStorage.UltimaOS = OS
+                
             } else {
                 const dt = new Date(Data)
                 atividade.Dia = dt.getDate()
@@ -314,6 +316,7 @@ export function AppProvider(props) {
                 atividade.Ano = dt.getFullYear()
 
                 save()
+                localStorage.UltimaOS = OS
             }
 
         }
