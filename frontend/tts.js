@@ -1,4 +1,4 @@
-const moment = require('moment');
+// const moment = require('moment');
 // const atividade = {
 //     enunciado: "COMFORME DIAGNOSTICO TECNICO, FOI DETECTADO QUE:",
 //     defeito: [],
@@ -115,8 +115,59 @@ const moment = require('moment');
 
 // console.log(novo)
 
-let teste = '00:00:00'
+// let teste = '00:00:00'
 
-var novo = teste.replace(/(\d*):(\d\d):(\d\d)/, '$1 h : $2 m : $3 s')
+// var novo = teste.replace(/(\d*):(\d\d):(\d\d)/, '$1 h : $2 m : $3 s')
 
-console.log(novo)
+// console.log(novo)
+
+const dado = ['100:34:01','250:25:59','300:00:25',"30:25:32"]
+let final = "00:00:00"
+
+dado.map(registro => {
+    let result = somartempos(final, registro)
+    final = result
+})
+
+
+function somartempos(tempo1, tempo2) {
+
+    var array1 = tempo1.split(':');
+    
+    var tempo_seg1 = (parseInt(array1[0]) * 3600) + (parseInt(array1[1]) * 60) + parseInt(array1[2]);
+    
+    var array2 = tempo2.split(':');
+    
+    var tempo_seg2 = (parseInt(array2[0]) * 3600) + (parseInt(array2[1]) * 60) + parseInt(array2[2]);
+    
+    var tempofinal = parseInt(tempo_seg1) + parseInt(tempo_seg2);
+    
+    var hours = Math.floor(tempofinal / (60 * 60));
+    
+    var divisorMinutos = tempofinal % (60 * 60);
+    
+    var minutes = Math.floor(divisorMinutos / 60);
+    
+    var divisorSeconds = divisorMinutos % 60;
+    
+    var seconds = Math.ceil(divisorSeconds);
+    
+    var contador = "";
+    
+    if (hours < 10) { contador = "0" + hours + ":"; } else { contador = "" + hours + ":"; }
+    
+    if (minutes < 10) { contador += "0" + minutes + ":"; } else { contador += "" + minutes + ":";}
+    
+    if (seconds < 10) { contador += "0" + seconds; } else { contador += "" + seconds; }
+   
+    // if (hours < 10) { contador = "0" + hours + ":"; } else { contador = hours + ":"; }
+    
+    // if (minutes < 10) { contador += "0" + minutes + ":"; } else { contador += minutes + ":"; }
+    
+    // if (seconds < 10) { contador += "0" + seconds; } else { contador += seconds; }
+    
+    return contador;
+    
+    }
+
+    console.log(final)
