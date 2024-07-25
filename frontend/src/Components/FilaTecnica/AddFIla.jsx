@@ -107,7 +107,7 @@ export default class AddFila extends React.Component {
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
-                        reg.Tecnico = 'Fernando Freitas'
+                        reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
                     }
                     else {
@@ -155,7 +155,7 @@ export default class AddFila extends React.Component {
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
-                        reg.Tecnico = 'Fernando Freitas'
+                        reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
                     }
                     else {
