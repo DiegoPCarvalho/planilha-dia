@@ -7,13 +7,20 @@ import ModalProblem from "../../Modal/ModalProblem";
 import ModalToDo from "../../Modal/ModalToDo";
 import FormularioProblema from "./FormProblem";
 import FormularioFinal from "./FormFinal";
+import SupGif from '../../../Assets/gifs/carregar.gif';
+
+const estilo = {
+    height: 70,
+    width: 70,
+    borderRadius: '50%'
+}
 
 export default function FilaTecnica(props) {
     const { listFila, listIni, listFim,
-        busca, problem, modalProblem, 
-        ObsProblem, mudarCampoProblem, sendProblem, 
+        busca, problem, modalProblem,
+        ObsProblem, mudarCampoProblem, sendProblem,
         mudarCampoFinal, ObsFinal, modalFinal, finish,
-        sendFinish } = UseAppData();
+        sendFinish, carregandoFila } = UseAppData();
 
     useEffect(() => {
         busca()
@@ -25,9 +32,16 @@ export default function FilaTecnica(props) {
                 <div className="col-3 d-flex align-items-center">
                     <i className="fa fa-list-alt fa-4x"></i>
                 </div>
-                <div className="col-6 d-flex justify-content-center align-items-center">
-                    <i className="fa fa-retweet fa-3x btn btn-success" style={{ cursor: 'pointer' }} onClick={() => busca()} />
-                </div>
+                {carregandoFila ? (
+                    <div className="col-6 d-flex justify-content-center align-items-center">
+                        <img src={SupGif} alt="" style={estilo} />
+                        <span className="fw-bold mx-2 h3">Carregando</span>
+                    </div>
+                ) : (
+                    <div className="col-6 d-flex justify-content-center align-items-center">
+                        <i className="fa fa-retweet fa-3x btn btn-success" style={{ cursor: 'pointer' }} onClick={() => busca()} />
+                    </div>
+                )}
                 <div className="col-3 flex-column d-flex justify-content-end align-items-end">
                     <MenuItem direita nome="Formulário" h="6"
                         classe="fa fa-address-card fa-2x"
@@ -54,10 +68,10 @@ export default function FilaTecnica(props) {
 
                     />} />
                 <ModalToDo modal={modalFinal} close={() => finish()} nome="Atividade" relatorio={<FormularioFinal
-                        valor={ObsFinal} mudou={(e) => mudarCampoFinal(e.target.value)}
-                        onClick={() => sendFinish()}
+                    valor={ObsFinal} mudou={(e) => mudarCampoFinal(e.target.value)}
+                    onClick={() => sendFinish()}
 
-                    />} />
+                />} />
             </div>
         </>
     )

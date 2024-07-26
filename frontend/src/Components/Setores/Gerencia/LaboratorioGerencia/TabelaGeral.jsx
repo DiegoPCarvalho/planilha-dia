@@ -182,7 +182,7 @@ export default class TabelaGeral extends React.Component {
                         <td>{Atividade.Equipamento}</td>
                         <td>{Atividade.Tecnico}</td>
                         <td>{this.tempo(Atividade.DataInicialBruto, Atividade.DataFinalBruto)}</td>
-                        <td>{Atividade.TempoLiquido}</td>
+                        <td>{Atividade.TempoLiquido ? Atividade.TempoLiquido : '00:00:00'}</td>
                         <td>{this.tempo(Atividade.DataInicialProblema, Atividade.DataFinalProblema)}</td>
                         <td>{Atividade.ProblemObs}</td>
                         <td>

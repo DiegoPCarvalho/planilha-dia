@@ -25,6 +25,7 @@ export function AppProvider(props) {
     const [tableOn, setTableOn] = useState(false)
     const [dadoCosmos, setDadoCosmos] = useState([])
     const [carregando, setCarregando] = useState(false)
+    const [carregandoFila, setCarregandoFila] = useState(false)
 
     //#region busca e Estrutura
     function mudarTela(dado) {
@@ -35,11 +36,18 @@ export function AppProvider(props) {
     }
 
     async function busca() {
-        const banco = await buscarFila()
-
-        setListFila(banco.dadoLista)
-        setListIni(banco.dadoIni)
-        setListFim(banco.dadoFim)
+        try{
+            setCarregandoFila(true)
+            const banco = await buscarFila().catch(e => console.log(e.message))
+    
+            setListFila(banco.dadoLista)
+            setListIni(banco.dadoIni)
+            setListFim(banco.dadoFim)
+            setCarregandoFila(false)
+        }catch(e){
+            setCarregandoFila(false)
+            console.log("Erro: " + e.message)
+        }
     }
 
     async function BuscaFormulario() {
@@ -343,6 +351,7 @@ export function AppProvider(props) {
                 tableOn,
                 dadoCosmos,
                 carregando,
+                carregandoFila,
                 busca,
                 start,
                 back,
