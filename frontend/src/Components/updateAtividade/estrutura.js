@@ -54,7 +54,7 @@ export function problema(registro) {
 
     Fila.Estagio = "Enviado"
     Fila.Problema = "Sim"
-    Fila.ContProblema = Fila.ContProblema + 1
+    Fila.ContProblema = Fila.ContProblema === null ? 1 : +Fila.ContProblema + 1
     Fila.DataInicialProblema = Fila.DataInicialProblema !== '' ? Fila.DataInicialProblema : data
 
     salvar(Fila, "Fila")    

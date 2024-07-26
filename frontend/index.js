@@ -183,7 +183,10 @@ function servico(serv, tipo) {
         return "Suporte Remoto"
     } else if ((serv === "Expedicao e Faturamento") && (tipo.match(/CONTRATO/) || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES" || tipo === "SUPORTE REMOTO" || tipo === "SUPORTE REMOTO - AMERICANAS" || tipo === "MANUTENCAO CORRETIVA LABORATORIO" || tipo === "BOTICARIO AVULSO - COLETORES")) {
         return "Limpeza"
+    }else {
+    	return "On-Site"
     }
+    
 }
 
 function equipamento(equip) {

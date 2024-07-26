@@ -93,8 +93,8 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" 
-                    && !reg.Equipamento.match(/IMPRESSORA/)
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"
+                        && !reg.Equipamento.match(/IMPRESSORA/)
                     ) {
                         reg.Data = data
                         reg.dt = data
@@ -102,12 +102,18 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
-                    }else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    }else if(reg.TipoOS === "Contrato B2W" && (reg.Cliente.match(/Lj/) || reg.Cliente.match(/LJ/) || reg.Cliente.match(/SHC/) || reg.Cliente.match(/lj/))){                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Rubens Vieira'
                         this.saves(reg)
                     }
                     else {
@@ -140,7 +146,7 @@ export default class AddFila extends React.Component {
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Gabriel Achcar'
                         this.saves(reg)
-                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" 
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"
                         && !reg.Equipamento.match(/IMPRESSORA/)
                     ) {
                         reg.Data = data
@@ -150,12 +156,19 @@ export default class AddFila extends React.Component {
                         reg.Tecnico = 'Marlon Fidelis'
                         this.saves(reg)
                     }
-                    else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)){
+                    else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)) {
                         reg.Data = data
                         reg.dt = data
                         reg.Estagio = 'Enviado'
                         reg.Problema = 'Não'
                         reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    }else if(reg.TipoOS === "Contrato B2W" && (reg.Cliente.match(/Lj/) || reg.Cliente.match(/LJ/) || reg.Cliente.match(/SHC/) || reg.Cliente.match(/lj/))){
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Rubens Vieira'
                         this.saves(reg)
                     }
                     else {
@@ -195,6 +208,8 @@ export default class AddFila extends React.Component {
             this.filtrarDados(estagio, tipo, bancoZhazSys)
         } else if (estagio !== '' && tipo !== '') {
             this.filtrarDados(estagio, tipo, bancoZhazSys)
+        } else if (estagio === '' && tipo !== '') {
+            this.filtrarDados(estagio, tipo, bancoZhazSys)
         }
     }
 
@@ -206,6 +221,10 @@ export default class AddFila extends React.Component {
                 listagem.push({ ...registro })
             } else if (estagio === registro.Servico && tipo === registro.TipoOS) {
                 listagem.push({ ...registro })
+            } else if (estagio === '' && tipo === registro.TipoOS) {
+                if (!registro.Servico) {
+                    listagem.push({ ...registro })
+                }
             }
         })
 
@@ -244,6 +263,7 @@ export default class AddFila extends React.Component {
                                 <option selected disabled value="">Selecione o Estágio</option>
                                 <option>Laudo</option>
                                 <option value={'Manutenção Concluída'}>Manutenção</option>
+                                {localStorage.AdmGeral === "1" ? <option>On-Site</option> : false}
                             </select>
                         </div>
                     </div>
@@ -307,7 +327,7 @@ export default class AddFila extends React.Component {
 
     renderRows() {
         return this.state.listagem.map(Atividade => {
-            if (Atividade.Estagio === "Em Aberto") {
+            if (Atividade.Estagio === "Em Aberto" || !Atividade.Estagio) {
                 return (
                     <tr className={Atividade.Problema === "Sim" ? 'table-danger' : ''} key={(Atividade.id)}>
                         <td className="col-1">{Atividade.id}</td>
