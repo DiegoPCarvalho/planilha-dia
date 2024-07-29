@@ -1,6 +1,8 @@
 import PuxarDados from '../Estrutura/PuxarDados';
+import { somartempos, tempo } from '../Tempo/estruturaTempo';
 import CondicionalGraficos from './CondicionalGraficos';
 import { ArrayObjeto, Drill, Series } from './Estrutura';
+
 
 const cond = new CondicionalGraficos();
 
@@ -89,12 +91,24 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
     let dadoNov = []
     let dadoDez = []
 
+    let tempBruto = []
+    let tempLiquido = []
+    let tempProblema = []
     //#endregion
 
     //#region API
     const tabela = await PuxarDados("Geral");
     const tab2 = await PuxarDados("Meta");
     //#endregion
+
+
+    function retornodads(dado){
+        if(dado === undefined || dado === ""){
+            return "00:00:00"
+        }else {
+            return dado
+        }
+    }
 
     //#region Array dos graficos
     for (let i = 0; i < tabela.length; i++) {
@@ -108,6 +122,9 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
+                tempLiquido = []
+                tempBruto = []
+                tempProblema = []
             }else //Geral ano
         if ((tecnico === "Todos") && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)) {
                 cond.dadosPro(tabela[i], totalServ, limpeza)
@@ -118,6 +135,9 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
             }else // geral mes e ano
         if ((tecnico === "Todos") && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) {
                 cond.dadosPro(tabela[i], totalServ, limpeza)
@@ -128,6 +148,9 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
             }else // geral dia, mes e ano
         if ((tecnico === "Todos") && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) { 
                 cond.dadosPro(tabela[i], totalServ, limpeza)
@@ -138,7 +161,10 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
-        }else// tecnico geral
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
+            }else// tecnico geral
         if ((tecnico === tabela[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === "Todos")) {
                 cond.dadosPro(tabela[i], totalServ, limpeza)
                 cond.dadosPorDia(tabela[i], d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31)
@@ -148,6 +174,9 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
             }else // tecnico ano
         if ((tecnico === tabela[i].Tecnico) && (dia === "Todos") && (mes === "Todos") && (ano === `${tabela[i].Ano}`)) {
                 cond.dadosPro(tabela[i], totalServ, limpeza)
@@ -158,6 +187,9 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
             }else // tecnico mes e ano
         if ((tecnico === tabela[i].Tecnico) && (dia === "Todos") && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) {
                 cond.dadosPro(tabela[i], totalServ, limpeza)
@@ -168,6 +200,9 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
             }else // tecnico dia, mes e ano
         if ((tecnico === tabela[i].Tecnico) && (dia === `${tabela[i].Dia}`) && (mes === `${tabela[i].Mes}`) && (ano === `${tabela[i].Ano}`)) { 
                 cond.dadosPro(tabela[i], totalServ, limpeza)
@@ -178,7 +213,10 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
                 cond.dadoPlaca(tabela[i], placa)
                 cond.dadoAvulsoCont(tabela[i], avulso, contrato, contratos)
                 cond.dadoProjecao(tabela[i], dadoJan, dadoFev, dadoMar, dadoAbr, dadoMai, dadoJun, dadoJul, dadoAgo, dadoSet, dadoOut, dadoNov, dadoDez )
-        }
+                tempLiquido.push(retornodads(tabela[i].TempoLiquido))
+                tempBruto.push(retornodads(tempo(tabela[i].DataInicialBruto, tabela[i].DataFinalBruto)))
+                tempProblema.push(retornodads(tempo(tabela[i].DataInicialProblema, tabela[i].DataFinalProblema)))
+            }
     }
 
     for(let i = 0; i < tab2.length; i++){
@@ -290,6 +328,25 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
 
     //#endregion
 
+    let finalTempLiquido = "00:00:00"
+    let finalTempBruto = "00:00:00"
+    let finalTempProblema = "00:00:00"
+
+    tempLiquido.map(registro => {
+        let result = somartempos(finalTempLiquido, registro)
+        finalTempLiquido = result
+    })
+
+    tempBruto.map(registro => {
+        let result = somartempos(finalTempBruto, registro)
+        finalTempBruto = result
+    })
+
+    tempProblema.map(registro => {
+        let result = somartempos(finalTempProblema, registro)
+        finalTempProblema = result
+    })
+
     //#region contrução do Objeto
     const objFinal = {
         totalOS: osSemRep.length,
@@ -305,10 +362,14 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
         totalPlaca: placa.length !== 0 ? placa.length : 0,
         avulsoContrato: dadoAvlCont,
         serieAvlCont: dadoC.length !== 0 ? serieAvloCont : dadoCont,
-        projecao: dadoAnual
+        projecao: dadoAnual,
+        tempBruto: finalTempBruto,
+        tempLiquido: finalTempLiquido,
+        tempProblema: finalTempProblema
     }
     //#endregion
 
+    console.log(objFinal.tempProblema)
     //retorno
     return objFinal
 }

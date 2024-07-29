@@ -51,7 +51,8 @@ export default class Filtro extends React.Component {
         this.props.dados(
             objF.totalOS, objF.totalServico, objF.totalLimpeza, objF.totalPorDia, objF.totalMeta,
             objF.servico, objF.servicoSerie, objF.totalTecnico, objF.totalEquip, objF.recPlaca,
-            objF.totalPlaca, objF.avulsoContrato, objF.serieAvlCont, objF.projecao
+            objF.totalPlaca, objF.avulsoContrato, objF.serieAvlCont, objF.projecao, objF.tempBruto,
+            objF.tempLiquido, objF.tempProblema
             )
     }
 
@@ -66,7 +67,8 @@ export default class Filtro extends React.Component {
         this.props.dados(
             objF.totalOS, objF.totalServico, objF.totalLimpeza, objF.totalPorDia, objF.totalMeta,
             objF.servico, objF.servicoSerie, objF.totalTecnico, objF.totalEquip, objF.recPlaca,
-            objF.totalPlaca, objF.avulsoContrato, objF.serieAvlCont, objF.projecao
+            objF.totalPlaca, objF.avulsoContrato, objF.serieAvlCont, objF.projecao, objF.tempBruto,
+            objF.tempLiquido, objF.tempProblema
             )
     }
 

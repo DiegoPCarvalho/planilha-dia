@@ -3,13 +3,14 @@ import Filtro from './Filtro/Filtro'
 import ServOsLimp from './ServicoOSLimpeza/ServOSLimp'
 import FotoTecnico from '../DashboardModel/Foto/FotoTecnico'
 import ProdDia from './ProdDiaria/ProdDiaria'
-import Meta from './Meta/Meta'
+// import Meta from './Meta/Meta'
 import GraficoTecnicos from './GraficoTecnicos/GraficoTecnicos'
 import RecPlaca from './GraficoPlacas/RecuperacaoPlaca'
 import Equipamento from './GraficoEquipamento/Equipamento'
 import ProjecaoAnual from './GraficoProjecao/GraficoPrejecao'
 import AvulsoContrato from './GraficoAvulsoContrato/AvulsoContrato'
 import Servico from './GraficoServico/Servico'
+import Tempo from './Tempo/TempoOS'
 
 
 const initialState = {
@@ -27,7 +28,10 @@ const initialState = {
     SavulsoContrato: [],
     ScontratoSerie: [],
     SservicoDado: [],
-    SservicoSerie: []
+    SservicoSerie: [],
+    StempBruto: "",
+    StempLiquido: "",
+    StempProblema: ""
 }
 
 export default class IndexDash extends React.Component {
@@ -41,7 +45,7 @@ export default class IndexDash extends React.Component {
     }
 
     receberDado = (totalOS, totalServico, limpeza, prodDiaria, meta, dadoServ, serieServ,
-        tecnico, equip, placa, totalPlc, avulsoContrato, serieCont, projAnual) => {
+        tecnico, equip, placa, totalPlc, avulsoContrato, serieCont, projAnual, tempBruto, tempLiquido, tempProblema) => {
         return this.setState({
             StotalOS: totalOS,
             StotalServico: totalServico,
@@ -56,7 +60,10 @@ export default class IndexDash extends React.Component {
             SrecTotalPlc: totalPlc,
             SavulsoContrato: avulsoContrato,
             ScontratoSerie: serieCont,
-            SprojAnual: projAnual
+            SprojAnual: projAnual,
+            StempBruto: tempBruto,
+            StempLiquido: tempLiquido,
+            StempProblema: tempProblema
         })
     }
 
@@ -70,8 +77,9 @@ export default class IndexDash extends React.Component {
                 </div>
                 <div className="row mt-3 d-flex justify-content-between">
                     <div className="col-1"><FotoTecnico Tecnico={this.state.Simagem} /></div>
-                    <div className="col-1  d-flex align-items-center flex-column justify-content-center">
+                    <div className="col-2  d-flex align-items-center flex-column justify-content-center">
                         <div className="row my-1"> <ProdDia dadosDia={this.state.SprodDiaria} /> </div>
+                        <div className="row my-1"> <Tempo dadosDia={''} bruto={this.state.StempBruto} liquido={this.state.StempLiquido} problema={this.state.StempProblema}/> </div>
                         {/* <div className="row my-1"> <Meta total={this.state.StotalServico} meta={this.state.Smeta} /></div> */}
                     </div>
                     <ServOsLimp

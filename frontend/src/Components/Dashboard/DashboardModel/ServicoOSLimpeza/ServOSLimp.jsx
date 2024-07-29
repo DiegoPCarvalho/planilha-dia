@@ -8,8 +8,8 @@ export default class ServOsLimp extends React.Component {
     render() {
         return (
             <>
-                <div className="col-3  d-flex align-items-center justify-content-center"> <CardOS bg="dark" nomeTitulo="Total OS" dado={this.props.TotalOS} icone="clone" tipoTexto="text-light" /> </div>
-                <div className="col-3  d-flex align-items-center justify-content-center"> <CardOS bg="success" nomeTitulo="Total Serviço" dado={this.props.TotalServico} icone="briefcase" tipoTexto="text-light" /></div>
+                <div className="col-3  d-flex align-items-center justify-content-center"> <CardOS bg="dark" nomeTitulo="OS" dado={this.props.TotalOS} icone="clone" tipoTexto="text-light" /> </div>
+                <div className="col-3  d-flex align-items-center justify-content-center"> <CardOS bg="success" nomeTitulo="Serviço" dado={this.props.TotalServico} icone="briefcase" tipoTexto="text-light" /></div>
                 <div className="col-3  d-flex align-items-center justify-content-center"> <CardOS bg="primary" nomeTitulo="Limpeza" dado={this.props.Limpeza} icone="paint-brush" tipoTexto="text-light" /></div>
             </>
         )

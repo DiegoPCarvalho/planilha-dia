@@ -14,15 +14,13 @@ export default function ModalAtendimento(props) {
                 <span className={props.classe}>{props.nomeBotao}</span>
             </Button>
 
-            <Modal show={show} onHide={handleClose} size={props.tamanho}>
-                <Modal.Header closeButton>
+            <Modal show={show} onHide={handleClose} size={props.tamanho} style={props.styles}>
+                <Modal.Header closeButton className={props.class} closeVariant={props.crb}>
                     <Modal.Title>{props.nomeBotao}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className='row d-flex justify-content-center'>
-                        <div className="col-12">
-                            {props.Relatorio}
-                        </div>
+                    <div className='row'>
+                        {props.Relatorio}
                     </div>
                 </Modal.Body>
             </Modal>
