@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { Atividade, Fila, diferenca, dataCorreta, bancosFormulario } from '../../Components/updateAtividade/config';
 import { buscarFila, buscarGeral, BuscarForm, BuscarBanco } from '../../Components/updateAtividade/busca';
-import { iniciar, voltar, problema, finalizar, remover, salvar } from '../../Components/updateAtividade/estrutura';
+import { iniciar, voltar, problema, finalizar, remover, salvar, tirarFila } from '../../Components/updateAtividade/estrutura';
 import $ from 'jquery';
 
 const AppContext = createContext({})
@@ -36,15 +36,15 @@ export function AppProvider(props) {
     }
 
     async function busca() {
-        try{
+        try {
             setCarregandoFila(true)
             const banco = await buscarFila().catch(e => console.log(e.message))
-    
+
             setListFila(banco.dadoLista)
             setListIni(banco.dadoIni)
             setListFim(banco.dadoFim)
             setCarregandoFila(false)
-        }catch(e){
+        } catch (e) {
             setCarregandoFila(false)
             console.log("Erro: " + e.message)
         }
@@ -90,15 +90,15 @@ export function AppProvider(props) {
         return dado
     }
 
-    async function buscarDadosCosmos(){
-        try{
+    async function buscarDadosCosmos() {
+        try {
             setCarregando(true)
             const banco = await BuscarBanco()
-    
+
             setDadoCosmos(banco)
             setCarregando(false)
 
-        }catch(e){
+        } catch (e) {
             setCarregando(false)
             console.log("Erro: " + e.message)
         }
@@ -134,14 +134,25 @@ export function AppProvider(props) {
     }
 
     function back(dado) {
-        try {
-            voltar(dado)
-            atualizarDado(dado, false, listIni, 'inicial')
-            atualizarDado(dado, true, listFila, 'fila')
+        const tempo = diferenca(Fila.DataInicialBruto)
 
-        } catch (e) {
-            console.log("Erro: " + e.message)
+        if (tempo >= 3) {
+
+        } else {
+            try {
+                voltar(dado)
+                atualizarDado(dado, false, listIni, 'inicial')
+                atualizarDado(dado, true, listFila, 'fila')
+
+            } catch (e) {
+                console.log("Erro: " + e.message)
+            }
         }
+    }
+
+    function removerDaFila(dado){
+        tirarFila(dado)
+        atualizarDado(dado, false, listFila, 'fila')
     }
 
     function problem(dado) {
@@ -316,7 +327,7 @@ export function AppProvider(props) {
 
                 save()
                 localStorage.UltimaOS = OS
-                
+
             } else {
                 const dt = new Date(Data)
                 atividade.Dia = dt.getDate()
@@ -375,7 +386,8 @@ export function AppProvider(props) {
                 BuscaFormulario,
                 verificar,
                 setAtividade,
-                load
+                load,
+                removerDaFila
             }}
         >
             {props.children}

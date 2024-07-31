@@ -8,7 +8,7 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function(props){
-    const { start, back, problem, finish } = UseAppData();
+    const { start, back, problem, finish, removerDaFila } = UseAppData();
 
     function confirmarFinalizar(registro){
         confirmAlert({
@@ -19,6 +19,24 @@ export default function(props){
                     label: "Sim",
                     className: "btn btn-success",
                     onClick: () => finish(registro)
+                },
+                {
+                    label: "Não",
+                    className: "btn btn-danger"
+                }
+            ]
+        })
+    }
+
+    function confirmarRemoverDaFila(registro){
+        confirmAlert({
+            title: "Remover",
+            message: "Deseja Realmente Remover da sua Fila?",
+            buttons: [
+                {
+                    label: "Sim",
+                    className: "btn btn-success",
+                    onClick: () => removerDaFila(registro)
                 },
                 {
                     label: "Não",
@@ -46,6 +64,8 @@ export default function(props){
                                         Servico={servico(registro.Servico)}
                                         corInicial={registro.Problema === "Não" ? (registro.Servico === "Laudo" ? '#0047AB' : '#006400') : '#dc3545'}
                                         pb={registro.Problema}
+                                        novo
+                                        remover={() => confirmarRemoverDaFila(registro)}
                                         Problema={registro.ProblemObs}
                                         final={registro.Estagio}
                                         icone="play-circle"

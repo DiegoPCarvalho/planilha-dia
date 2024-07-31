@@ -131,13 +131,15 @@ function CardFilaTecnica(props) {
                             </div>
                             <div className="row d-flex justify-content-around align-items-center mt-3">
                                 {props.iniciado ? (
-                                    <div className="col-3">
-                                        <div onClick={props.voltar} className={`btn btn-${props.corBotao2} fw-bold`}
-                                            style={{ fontSize: 25 }}
-                                        >
-                                            <i className={`fa fa-${props.icone2}`}></i>
+                                    <>
+                                        <div className="col-3">
+                                            <div onClick={props.voltar} className={`btn btn-${props.corBotao2} fw-bold`}
+                                                style={{ fontSize: 25 }}
+                                            >
+                                                <i className={`fa fa-${props.icone2}`}></i>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </>
                                 ) : false}
                                 <div className="col-3">
                                     <OverlayTrigger placement='right' overlay={popoverDados}>
@@ -150,13 +152,16 @@ function CardFilaTecnica(props) {
                                             <i className='fa fa-clock fa-2x btn btn-primary' />
                                         </OverlayTrigger>
                                     </div>
-                                ) : props.problem ? (
+                                ) : props.novo ? (
                                     <>
                                         <div className="col-3">
-                                            <OverlayTrigger placement='left' overlay={popoverTempo}>
-                                                <i className='fa fa-clock fa-2x btn btn-primary' />
-                                            </OverlayTrigger>
+                                            <div onClick={props.remover} className={`btn btn-${props.pb === "Sim" ? 'warning' : 'danger'} fw-bold`}
+                                                style={{ fontSize: 25 }}
+                                            >
+                                                <i className={`fa fa-trash fw-bold`}></i>
+                                            </div>
                                         </div>
+                                        
                                         <div className="col-3">
                                             <div onClick={props.abrir} className={`btn btn-${props.corBotao} fw-bold`}
                                                 style={{ fontSize: 25 }}
@@ -164,6 +169,7 @@ function CardFilaTecnica(props) {
                                                 <i className={`fa fa-${props.icone}`}></i>
                                             </div>
                                         </div>
+
                                     </>
                                 ) : (
                                     <>
@@ -174,6 +180,7 @@ function CardFilaTecnica(props) {
                                                 <i className={`fa fa-${props.icone}`}></i>
                                             </div>
                                         </div>
+
                                     </>
                                 )}
 

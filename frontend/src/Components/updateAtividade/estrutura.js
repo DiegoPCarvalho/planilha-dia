@@ -37,15 +37,17 @@ export function iniciar(dado) {
 
 export function voltar(dado) {
     const Fila = dado
-    const tempo = diferenca(Fila.DataInicialBruto)
+    Fila.Estagio = "Enviado"
 
-    if (tempo >= 3) {
+    salvar(Fila, "Fila")
+}
 
-    } else {
-        Fila.Estagio = "Enviado"
+export function tirarFila(dado){
+    const Fila = dado
 
-        salvar(Fila, "Fila")
-    }
+    Fila.Tecnico = "Deletar"
+
+    salvar(Fila, "Fila")
 }
 
 export function problema(registro) {

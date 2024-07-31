@@ -485,6 +485,7 @@ export default class AddFila extends React.Component {
                             required>
                             <option selected disabled value="">Selecione...</option>
                             {this.renderTec()}
+                            <option>Deletar</option>
                         </select>
                     </div>
                 </div>

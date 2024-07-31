@@ -94,6 +94,7 @@ export default class FilaTecnica extends React.Component {
                         required>
                         <option selected disabled value="">Selecione...</option>
                         {this.renderTec()}
+                        <option>Deletar</option>
                     </select>
                 </div>
                 <div className="col-3 d-flex align-items-end">
@@ -368,6 +369,7 @@ export default class FilaTecnica extends React.Component {
                             required>
                             <option selected disabled value="">Selecione...</option>
                             {this.renderTec()}
+                            <option>Deletar</option>
                         </select>
                     </div>
                 </div>

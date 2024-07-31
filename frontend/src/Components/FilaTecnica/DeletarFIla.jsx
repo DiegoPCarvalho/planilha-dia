@@ -70,6 +70,7 @@ export default class DeletarFila extends React.Component {
                         <option selected disabled value="">Selecione...</option>
                         {/* <option>CAUA BISPO</option> */}
                         {this.renderTec()}
+                        <option>Deletar</option>
                     </select>
                 </div>
                 <div className="col-3 d-flex align-items-end">
