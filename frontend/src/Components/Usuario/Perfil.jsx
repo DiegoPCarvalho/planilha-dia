@@ -456,7 +456,7 @@ export default class PageAdmin extends React.Component {
         })
     }
 
-    validarAdmin(admin) {
+    validarAdmin() {
         if (localStorage.AdmGeral === "1") {
             return this.renderAdmin()
         } else if (localStorage.AdmGeral === "0") {

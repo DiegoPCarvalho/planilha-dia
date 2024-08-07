@@ -25,7 +25,7 @@ import EmBreveSmart from "../Components/EmBreve/EmBreveSmart";
 import FilaTecnica from '../Components/FilaTecnica/index';
 
 //Perfil
-import Perfil from '../Components/Usuario/Perfil';
+// import Perfil from '../Components/Usuario/Perfil';
 
 //Ramais
 import Ramal from '../Components/Ramais/Ramais';
@@ -82,6 +82,7 @@ import FinalizadosLab from "../Components/Setores/Laboratorio/FinalizadosLab";
 import PainelSuporte from '../Components/PainelSuporte/Index';
 import Avulso from '../Components/PainelSuporte/Avulso/Avulso';
 import Contrato from '../Components/PainelSuporte/Contrato/Contrato';
+import HomePerfil from "../Components/Usuario";
 
 
 export default function Rotas() {
@@ -186,7 +187,7 @@ export default function Rotas() {
                 <Route path="/Contratos" element={<Contratos/>}/>
             </Route>
             <Route path="/Usuario" element={<Home />}>
-                <Route index element={<Perfil />} />
+                <Route index element={<HomePerfil />} />
             </Route>
             <Route element={<Home />}>
                 <Route path="/Painel%20Suporte" element={<PainelSuporte />}>
