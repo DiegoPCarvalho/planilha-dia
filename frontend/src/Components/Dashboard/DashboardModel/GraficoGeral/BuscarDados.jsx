@@ -369,7 +369,6 @@ export default async function BuscarDados(tecnico, dia, mes, ano){
     }
     //#endregion
 
-    console.log(objFinal.tempProblema)
     //retorno
     return objFinal
 }

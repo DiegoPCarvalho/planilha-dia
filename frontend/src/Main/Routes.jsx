@@ -83,6 +83,7 @@ import PainelSuporte from '../Components/PainelSuporte/Index';
 import Avulso from '../Components/PainelSuporte/Avulso/Avulso';
 import Contrato from '../Components/PainelSuporte/Contrato/Contrato';
 import HomePerfil from "../Components/Usuario";
+import { PerfilProvider } from "../data/context/PerfilContext";
 
 
 export default function Rotas() {
@@ -187,7 +188,7 @@ export default function Rotas() {
                 <Route path="/Contratos" element={<Contratos/>}/>
             </Route>
             <Route path="/Usuario" element={<Home />}>
-                <Route index element={<HomePerfil />} />
+                <Route index element={<PerfilProvider><HomePerfil /></PerfilProvider>} />
             </Route>
             <Route element={<Home />}>
                 <Route path="/Painel%20Suporte" element={<PainelSuporte />}>

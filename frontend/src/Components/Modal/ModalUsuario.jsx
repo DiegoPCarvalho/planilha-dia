@@ -2,13 +2,13 @@ import React from 'react';
 
 import Modal from 'react-bootstrap/Modal';
 
-export default function ModalAtendimento(props) {
+export default function ModalUser(props) {
 
     return (
         <>
             <Modal show={props.isShow} onHide={props.close} size={props.tamanho}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.nomeBotao}</Modal.Title>
+                <Modal.Header closeButton closeVariant='white' className='bg-dark'>
+                    <Modal.Title className='text-white fw-bold'>{props.nomeBotao}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className='row d-flex justify-content-center'>
