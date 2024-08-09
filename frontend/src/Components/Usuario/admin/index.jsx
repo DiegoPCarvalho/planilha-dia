@@ -2,9 +2,9 @@ import React from "react";
 import UsePerfilData from '../../../data/hook/UsePerfilData';
 import Logo from '../../../Assets/Imgs/logoZhaz.png';
 import { BuscarFoto } from '../../Dashboard/DashboardModel/Foto/FotoTecnico';
-import Usuarios from "../../Admin/Usuarios";
 import './AdminCadastro.css';
-
+import Usuario from "./Usuarios/Index";
+import User from "../../Admin/Usuarios"
 export default function Admin(){
 
     const {tela, setTela} = UsePerfilData()
@@ -14,8 +14,8 @@ export default function Admin(){
     }
 
     function mudarTela(mudar){
-        return mudar === 'user' ? <div>user</div>
-            : mudar === 'equip' ? <div>equip</div>
+        return mudar === 'user' ? <Usuario />
+            : mudar === 'equip' ? <User />
             : mudar === 'serv' ? <div>serv</div>
             : mudar === 'cont' ? <div>cont</div>
             : mudar === 'depa' ? <div>depa</div>
