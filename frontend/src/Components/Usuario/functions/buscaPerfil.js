@@ -18,3 +18,19 @@ export async function buscarDadoUser(banco) {
 
     return tabela
 }
+
+export async function buscarDadoBanco(banco) {
+    const tabela = await axios(Url(banco)).then(resp => {
+            let tab = resp.data
+            let dado = []
+
+            tab.map(registro => {
+                dado.push({...registro})
+            })
+
+            return dado
+        }
+    )
+
+    return tabela
+}

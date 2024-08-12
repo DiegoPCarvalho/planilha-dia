@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FormUserAdmin from "./FormUserAdmin";
-
+import UsePerfilData from '../../../../data/hook/UsePerfilData';
 
 export default function Usuario() {
+    const { buscarDepar } = UsePerfilData()
+
+    useEffect(() => {
+        buscarDepar()
+    }, [])
+    
     return (
         <div className="container-fluid">
             <div className="row mt-3">
