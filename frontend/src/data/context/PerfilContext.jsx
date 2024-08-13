@@ -30,7 +30,7 @@ export function PerfilProvider(props) {
     }
 
     async function buscarAdminUsers() {
-        const result = await buscarDadoUser("LoginUsuario")
+        const result = await buscarDadoBanco("LoginUsuario")
 
         return setDadosAdmin(result)
     }
@@ -110,6 +110,7 @@ export function PerfilProvider(props) {
             value={{
                 mudar,
                 dadosUser,
+                dadosAdmin,
                 modalUser,
                 usuario,
                 tela,

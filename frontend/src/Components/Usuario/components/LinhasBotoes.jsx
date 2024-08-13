@@ -3,7 +3,7 @@ import UsePerfilData from "../../../data/hook/UsePerfilData";
 import Botao from '../components/Botao';
 
 export default function LinhaBotoes(props) {
-    const { btnAlter, Limpar } = UsePerfilData()
+    const { btnAlter, Limpar, buscarAdminUsers } = UsePerfilData()
 
     return (
         <div className="col-3 d-flex justify-content-evenly">
