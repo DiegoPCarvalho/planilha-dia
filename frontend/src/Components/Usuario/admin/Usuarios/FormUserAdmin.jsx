@@ -26,7 +26,7 @@ export default function FormUserAdmin() {
                             classe={classeForm}
                             nome="nomeCompleto"
                             valor={usuario.nomeCompleto}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                             mensagem="Nome e Sobrenome..."
                             required
                         />
@@ -40,7 +40,7 @@ export default function FormUserAdmin() {
                             classe={classeForm}
                             nome="email"
                             valor={usuario.email}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                             mensagem="E-mail..."
                             required
                         />
@@ -54,7 +54,7 @@ export default function FormUserAdmin() {
                             classe={classeForm}
                             nome="senha"
                             valor={usuario.senha}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                             mensagem="Senha..."
                             required
                         />
@@ -68,7 +68,7 @@ export default function FormUserAdmin() {
                             classe={"form-select"}
                             nome="departamento"
                             valor={usuario.departamento}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                             required
                         >
                             <option selected disabled value="">Selecione...</option>
@@ -86,7 +86,7 @@ export default function FormUserAdmin() {
                             classe={"form-select"}
                             nome="AdmDiretoria"
                             valor={usuario.AdmDiretoria}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                         >
                             <option selected>0</option>
                             <option>1</option>
@@ -101,7 +101,7 @@ export default function FormUserAdmin() {
                             classe={"form-select"}
                             nome="AdmGerencia"
                             valor={usuario.AdmGerencia}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                         >
                             <option selected>0</option>
                             <option>1</option>
@@ -116,7 +116,7 @@ export default function FormUserAdmin() {
                             classe={"form-select"}
                             nome="AdmLaboratorio"
                             valor={usuario.AdmLaboratorio}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                         >
                             <option selected>0</option>
                             <option>1</option>
@@ -131,7 +131,7 @@ export default function FormUserAdmin() {
                             classe={"form-select"}
                             nome="AdmGeral"
                             valor={usuario.AdmGeral}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                         >
                             <option selected>0</option>
                             <option>1</option>
@@ -146,7 +146,7 @@ export default function FormUserAdmin() {
                             classe={"form-select"}
                             nome="AdmLider"
                             valor={usuario.AdmLider}
-                            mudou={e => AtualizarCampo(e, "user")}
+                            mudou={e => AtualizarCampo(e)}
                         >
                             <option selected>0</option>
                             <option>1</option>
@@ -154,7 +154,7 @@ export default function FormUserAdmin() {
                     </div>
                 </div>
                 <div className={`row mt-5 d-flex ${noticias ? "justify-content-between" : "justify-content-end"}`}>
-                    {noticias ? <Mensagem className={btnAlter ? "bg-warning" : "bg-info text-light"}
+                    {noticias ? <Mensagem className={btnAlter ? "bg-warning" : "bg-success text-light"}
                         msg={btnAlter ? "Alterado com Sucesso!!!" : "Salvo com Sucesso!!!"} /> : false}
                     <LinhaBotoes salvarAlterar={() => save("Admin", "LoginUsuario")} />
                 </div>

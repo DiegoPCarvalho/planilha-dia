@@ -5,6 +5,9 @@ import { BuscarFoto } from '../../Dashboard/DashboardModel/Foto/FotoTecnico';
 import './AdminCadastro.css';
 import Usuario from "./Usuarios/Index";
 import User from "../../Admin/Usuarios"
+import Equipamentos from "./Equipamentos";
+import Test from "./Test";
+
 export default function Admin(){
 
     const {tela, setTela} = UsePerfilData()
@@ -14,15 +17,16 @@ export default function Admin(){
     }
 
     function mudarTela(mudar){
-        return mudar === 'user' ? <Usuario />
-            : mudar === 'equip' ? <User />
+        return mudar === 'users' ? <Usuario />
+            : mudar === 'equip' ? <Equipamentos />
             : mudar === 'serv' ? <div>serv</div>
             : mudar === 'cont' ? <div>cont</div>
             : mudar === 'depa' ? <div>depa</div>
             : mudar === 'ldc' ? <div>LDC</div>
+            : mudar === 'test' ? <Test />
             : false
     }
-
+    
     return (
         <>
         <div className="container-fluid overflow-auto">
@@ -36,7 +40,7 @@ export default function Admin(){
                 </div>
                 <div className="mt-5 ">
                     <div className='row text-light hv'>
-                        <div onClick={() => setTela('user')} className="rounded-start col-2 fw-bold bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Usuários</div>
+                        <div onClick={() => setTela('users')} className="rounded-start col-2 fw-bold bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Usuários</div>
                         <div onClick={() => setTela('equip')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Equipamentos</div>
                         <div onClick={() => setTela('serv')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Servico</div>
                         <div onClick={() => setTela('cont')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Contrato</div>

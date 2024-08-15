@@ -15,6 +15,9 @@ export function PerfilProvider(props) {
     const [depar, setDepar] = useState([])
     const [btnAlter, setBtnAlter] = useState(false)
     const [noticias, setNoticias] = useState(false)
+    const [tab, setTab] = useState('tb_admin')
+    const [carregarTable, setCarregarTable] = useState(false)
+    const [modoTab, setModoTab] = useState('')
 
     //#region busca
     async function buscarUser() {
@@ -53,25 +56,42 @@ export function PerfilProvider(props) {
         }
     }
 
+    function carregando() {
+        setCarregarTable(!carregarTable)
+    }
     //#endregion
 
     //#region crud
     function load(dado) {
-        setUsuario(dado)
-        estadoModal()
+        if (tela === "users") {
+            setUsuario(dado)
+            estadoModal()
+        }
+        else {
+            setUsuario(dado)
+            estadoModal()
+        }
     }
 
-    function save(modo, banco) {
+   function save(modo, banco) {
         try {
             if (modo === "userSingle") {
                 salvar(usuario, "LoginUsuario")
                 estadoModal()
                 atualizarLista(usuario, true, dadosUser, setDadosUser)
             } else {
-                salvar(usuario, banco)
-                atualizarLista(usuario, true, selecioneLista(banco), selecionarSet(banco))
-                notificacao()
-                Limpar()
+                try {
+                    setModoTab('')
+                    salvar(usuario, banco)
+                    atualizarLista(usuario, true, selecioneLista(banco), selecionarSet(banco))
+                    notificacao()
+                    Limpar()
+                    setModoTab(tela)
+                    setTela('test')
+                    setTab('tb_admin')                   
+                } catch (e) {
+                    console.log("Erro:" + e.message)
+                }
             }
 
         } catch (e) {
@@ -92,8 +112,8 @@ export function PerfilProvider(props) {
         modo(dado)
     }
 
-    function AtualizarCampo(event, modo) {
-        if (modo === 'user') {
+    function AtualizarCampo(event) {
+        if (tela === 'users') {
             const User = { ...usuario }
             User[event.target.name] = event.target.value
             setUsuario(User)
@@ -117,6 +137,10 @@ export function PerfilProvider(props) {
                 depar,
                 btnAlter,
                 noticias,
+                tab,
+                carregarTable,
+                modoTab,
+                setTab,
                 setTela,
                 setMudar,
                 estadoModal,
@@ -127,7 +151,8 @@ export function PerfilProvider(props) {
                 buscarDepar,
                 setBtnAlter,
                 Limpar,
-                buscarAdminUsers
+                buscarAdminUsers,
+                carregando
             }}
         >
             {props.children}

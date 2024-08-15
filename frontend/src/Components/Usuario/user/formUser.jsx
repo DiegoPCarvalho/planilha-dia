@@ -34,7 +34,7 @@ export default function FormUser() {
                             name="senha"
                             className="form-control"
                             value={usuario.senha}
-                            onChange={(e) => AtualizarCampo(e, 'user')}
+                            onChange={(e) => AtualizarCampo(e)}
                             required
                         />
                     </div>

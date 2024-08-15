@@ -6,32 +6,34 @@ import { pagination } from "../../functions/estrutura";
 
 
 export default function Usuario() {
-    const { buscarDepar, buscarAdminUsers} = UsePerfilData()
+    const { buscarDepar, buscarAdminUsers, tab, setTab, setTela, tela } = UsePerfilData()
 
     useEffect(() => {
+        setTab('tb_admin')
         buscarDepar()
         busca()
     }, [])
-    
-    async function busca(){
+
+    async function busca() {
         await buscarAdminUsers()
         setTimeout(() => {
-            pagination("tb-user")
-        }, 500)
+            pagination(tab)
+            setTab('')
+        }, 100)
     }
 
     return (
         <div className="container-fluid">
             <div className="row mt-3">
                 <div className="col-3">
-                   <i className="fa fa-user-plus fa-4x"></i>
+                    <i className="fa fa-user-plus fa-4x"></i>
                 </div>
             </div>
             <div className="row mt-3">
                 <FormUserAdmin />
             </div>
             <div className="row mt-5">
-                <Tabela />
+                { tela === "users" ? <Tabela /> : false}
             </div>
         </div>
     )

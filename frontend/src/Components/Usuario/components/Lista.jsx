@@ -1,7 +1,11 @@
 import React from "react";
 import Botao from "./Botao";
+import UsePerfilData from '../../../data/hook/UsePerfilData';
 
 export default function Lista(props) {
+
+    const { load } = UsePerfilData()    
+
     return props.list.map(registro => {
         return (
             <tr key={registro.id}>
@@ -15,7 +19,7 @@ export default function Lista(props) {
                 ) : <td>{registro.nome}</td>}
                 <td>
                     <div className="d-flex justify-content-around align-items-center">
-                        <Botao classe="btn btn-warning fw-bold" click={props.load}>
+                        <Botao classe="btn btn-warning fw-bold" click={() => load(registro, )}>
                             <i className="fa fa-pencil"></i>
                         </Botao>
                         <Botao classe="btn btn-danger fw-bold" click={props.remove}>

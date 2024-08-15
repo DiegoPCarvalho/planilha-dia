@@ -6,10 +6,10 @@ import Lista from "../../components/Lista";
 
 export default function Tabela(){
 
-    const { dadosAdmin } = UsePerfilData()
+    const { dadosAdmin, tab } = UsePerfilData()
 
     return(
-        <TabelaGnc tb="table-striped" id="tb-user"
+        <TabelaGnc tb="table-striped" id={tab}
             head={<Cabecalho userAdmin/>}
         >
             <Lista list={dadosAdmin === undefined ? [] : dadosAdmin} userAdmin />
