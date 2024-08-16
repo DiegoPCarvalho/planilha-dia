@@ -15,3 +15,9 @@ export function pagination(tab) {
         language: { url: '//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json', },
     });
 }
+
+export function remover(dado, banco){
+    const bancoUrl = Url(banco)
+
+    axios.delete(`${bancoUrl}/${dado.id}`).catch(e => console.log("Erro: " + e))
+}

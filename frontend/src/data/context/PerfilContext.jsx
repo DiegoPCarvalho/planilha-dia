@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { buscarDadoUser, buscarDadoBanco } from '../../Components/Usuario/functions/buscaPerfil';
 import { Usuario } from '../../Components/Usuario/functions/config';
-import { salvar } from '../../Components/Usuario/functions/estrutura';
+import { salvar, remover } from '../../Components/Usuario/functions/estrutura';
 
 const PerfilContext = createContext({})
 
@@ -16,8 +16,9 @@ export function PerfilProvider(props) {
     const [btnAlter, setBtnAlter] = useState(false)
     const [noticias, setNoticias] = useState(false)
     const [tab, setTab] = useState('tb_admin')
-    const [carregarTable, setCarregarTable] = useState(false)
     const [modoTab, setModoTab] = useState('')
+    const [mensagem, setMensagem] = useState('')
+    const [del, setDel] = useState(false)
 
     //#region busca
     async function buscarUser() {
@@ -56,15 +57,13 @@ export function PerfilProvider(props) {
         }
     }
 
-    function carregando() {
-        setCarregarTable(!carregarTable)
-    }
     //#endregion
 
     //#region crud
     function load(dado) {
         if (tela === "users") {
             setUsuario(dado)
+            setBtnAlter(true)
             estadoModal()
         }
         else {
@@ -73,7 +72,7 @@ export function PerfilProvider(props) {
         }
     }
 
-   function save(modo, banco) {
+    function save(modo, banco) {
         try {
             if (modo === "userSingle") {
                 salvar(usuario, "LoginUsuario")
@@ -85,10 +84,14 @@ export function PerfilProvider(props) {
                     salvar(usuario, banco)
                     atualizarLista(usuario, true, selecioneLista(banco), selecionarSet(banco))
                     notificacao()
-                    Limpar()
+                    btnAlter ? setMensagem("Alterado com Sucesso !!!") : setMensagem("Salvo com Sucesso !!!")
                     setModoTab(tela)
-                    setTela('test')
-                    setTab('tb_admin')                   
+                    setTab('tb_admin')
+                    vazio()
+                    setTimeout(() => {
+                        setTela('test')
+                        setBtnAlter(false)
+                    }, 1000);
                 } catch (e) {
                     console.log("Erro:" + e.message)
                 }
@@ -99,11 +102,34 @@ export function PerfilProvider(props) {
         }
     }
 
+    function deletar(dado, banco) {
+        try {
+            setDel(true)
+            remover(dado, banco)
+            atualizarLista(dado, false, selecioneLista(banco), selecionarSet(banco))
+            notificacao()
+            setMensagem("Deletado com Sucesso !!!")
+            setModoTab(tela)
+            setTab('tb_admin')
+            vazio()
+            setTimeout(() => {
+                setTela('test')
+                setTimeout(() => {
+                    setBtnAlter(false)
+                    setDel(false)
+                }, 1000);
+            }, 1000);
+
+        } catch (e) {
+            console.log('Erro: ' + e.message)
+        }
+    }
+
     function notificacao() {
         setNoticias(true)
         setTimeout(() => {
             setNoticias(false)
-        }, 1000)
+        }, 900)
     }
 
     function atualizarLista(Usuario, add = true, banco, modo) {
@@ -122,7 +148,13 @@ export function PerfilProvider(props) {
 
     function Limpar() {
         setUsuario(Usuario)
+        setBtnAlter(false)
     }
+
+    function vazio(){
+        setUsuario(Usuario)
+    }
+
     //#endregion
 
     return (
@@ -138,8 +170,9 @@ export function PerfilProvider(props) {
                 btnAlter,
                 noticias,
                 tab,
-                carregarTable,
                 modoTab,
+                mensagem,
+                del,
                 setTab,
                 setTela,
                 setMudar,
@@ -152,7 +185,7 @@ export function PerfilProvider(props) {
                 setBtnAlter,
                 Limpar,
                 buscarAdminUsers,
-                carregando
+                deletar
             }}
         >
             {props.children}

@@ -6,7 +6,7 @@ import { pagination } from "../../functions/estrutura";
 
 
 export default function Usuario() {
-    const { buscarDepar, buscarAdminUsers, tab, setTab, setTela, tela } = UsePerfilData()
+    const { buscarDepar, buscarAdminUsers, tab, setTab,} = UsePerfilData()
 
     useEffect(() => {
         setTab('tb_admin')
@@ -33,7 +33,7 @@ export default function Usuario() {
                 <FormUserAdmin />
             </div>
             <div className="row mt-5">
-                { tela === "users" ? <Tabela /> : false}
+                 <Tabela />
             </div>
         </div>
     )
