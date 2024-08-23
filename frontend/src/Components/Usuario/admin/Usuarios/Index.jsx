@@ -6,7 +6,7 @@ import { pagination } from "../../functions/estrutura";
 
 
 export default function Usuario() {
-    const { buscarDepar, buscarAdminUsers, tab, setTab,} = UsePerfilData()
+    const { buscarDepar, buscarAdmin, tab, setTab} = UsePerfilData()
 
     useEffect(() => {
         setTab('tb_admin')
@@ -15,7 +15,7 @@ export default function Usuario() {
     }, [])
 
     async function busca() {
-        await buscarAdminUsers()
+        await buscarAdmin("LoginUsuario")
         setTimeout(() => {
             pagination(tab)
             setTab('')

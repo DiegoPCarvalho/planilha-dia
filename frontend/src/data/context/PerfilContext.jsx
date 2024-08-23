@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { buscarDadoUser, buscarDadoBanco } from '../../Components/Usuario/functions/buscaPerfil';
-import { Usuario } from '../../Components/Usuario/functions/config';
+import { Usuario, GNC, LDC } from '../../Components/Usuario/functions/config';
 import { salvar, remover } from '../../Components/Usuario/functions/estrutura';
 
 const PerfilContext = createContext({})
@@ -11,6 +11,8 @@ export function PerfilProvider(props) {
     const [dadosAdmin, setDadosAdmin] = useState([])
     const [modalUser, setModalUser] = useState(false)
     const [usuario, setUsuario] = useState(Usuario)
+    const [gnc, setGnc] = useState(GNC)
+    const [ldc, setLcd] = useState(LDC)
     const [tela, setTela] = useState("")
     const [depar, setDepar] = useState([])
     const [btnAlter, setBtnAlter] = useState(false)
@@ -19,6 +21,9 @@ export function PerfilProvider(props) {
     const [modoTab, setModoTab] = useState('')
     const [mensagem, setMensagem] = useState('')
     const [del, setDel] = useState(false)
+    const [tecnico, setTecnico] = useState([])
+    const [equipamento, setEquipamento] = useState([])
+    const [contrato, setContrato] = useState([])
 
     //#region busca
     async function buscarUser() {
@@ -33,10 +38,20 @@ export function PerfilProvider(props) {
         return setDepar(result)
     }
 
-    async function buscarAdminUsers() {
-        const result = await buscarDadoBanco("LoginUsuario")
+    async function buscarAdmin(banco) {
+        const result = await buscarDadoBanco(banco)
 
         return setDadosAdmin(result)
+    }
+
+    async function buscarLdc(){
+        const tec = await buscarDadoBanco("LoginUsuario")
+        const equip = await buscarDadoBanco("Equipamento")
+        const cont = await buscarDadoBanco("Contrato")
+
+        setTecnico(tec)
+        setEquipamento(equip)
+        setContrato(cont)
     }
     //#endregion
 
@@ -48,15 +63,23 @@ export function PerfilProvider(props) {
     function selecionarSet(banco) {
         if (banco === "LoginUsuario") {
             return setDadosAdmin
+        }else {
+            return setDadosAdmin
         }
     }
 
     function selecioneLista(lista) {
         if (lista === "LoginUsuario") {
             return dadosAdmin
+        }else {
+            return dadosAdmin
         }
     }
 
+    function mudarTelaON(tela){
+        setTela(tela)
+        setTab('tb_admin')
+    }
     //#endregion
 
     //#region crud
@@ -65,14 +88,16 @@ export function PerfilProvider(props) {
             setUsuario(dado)
             setBtnAlter(true)
             estadoModal()
-        }
-        else {
+        }else {
             setUsuario(dado)
+            setGnc(dado)
+            setBtnAlter(true)
+            setLcd(dado)
             estadoModal()
         }
     }
 
-    function save(modo, banco) {
+    function save(modo, banco, dado) {
         try {
             if (modo === "userSingle") {
                 salvar(usuario, "LoginUsuario")
@@ -81,8 +106,8 @@ export function PerfilProvider(props) {
             } else {
                 try {
                     setModoTab('')
-                    salvar(usuario, banco)
-                    atualizarLista(usuario, true, selecioneLista(banco), selecionarSet(banco))
+                    salvar(dado, banco)
+                    atualizarLista(dado, true, selecioneLista(banco), selecionarSet(banco))
                     notificacao()
                     btnAlter ? setMensagem("Alterado com Sucesso !!!") : setMensagem("Salvo com Sucesso !!!")
                     setModoTab(tela)
@@ -143,16 +168,28 @@ export function PerfilProvider(props) {
             const User = { ...usuario }
             User[event.target.name] = event.target.value
             setUsuario(User)
+        }else if (tela === 'ldc') {
+            const LDC = { ...ldc}
+            LDC[event.target.name] = event.target.value
+            setLcd(LDC)
+        }else {
+            const GNC = { ...gnc}
+            GNC[event.target.name] = event.target.value
+            setGnc(GNC)
         }
     }
 
     function Limpar() {
         setUsuario(Usuario)
+        setGnc(GNC)
+        setLcd(LDC)
         setBtnAlter(false)
     }
 
     function vazio(){
         setUsuario(Usuario)
+        setGnc(GNC)
+        setLcd(LDC)
     }
 
     //#endregion
@@ -173,8 +210,14 @@ export function PerfilProvider(props) {
                 modoTab,
                 mensagem,
                 del,
-                setTab,
+                gnc,
+                ldc,
+                tecnico,
+                equipamento,
+                contrato,
                 setTela,
+                setTab,
+                mudarTelaON,
                 setMudar,
                 estadoModal,
                 buscarUser,
@@ -184,8 +227,9 @@ export function PerfilProvider(props) {
                 buscarDepar,
                 setBtnAlter,
                 Limpar,
-                buscarAdminUsers,
-                deletar
+                buscarAdmin,
+                deletar,
+                buscarLdc
             }}
         >
             {props.children}

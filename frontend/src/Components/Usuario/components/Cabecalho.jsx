@@ -1,20 +1,23 @@
 import React from "react";
 
-export default function Cabecalho(props){
-    return props.userAdmin ? (
-            <>
-                <td>Id</td>
-                <td>Nome</td>
-                <td>E-mail</td>
-                <td>Departamento</td>
-                <td>Ações</td>
-            </>
-        ) : (
-            <>
-                <td>Id</td>
-                <td>Nome</td>
-                <td>Ações</td>
-            </>
-        ) 
-    
+export default function Cabecalho(props) {
+    return (
+        <>
+            <td>Id</td>
+            <td>{props.ldc ? "Técnico" : "Nome"}</td>
+            {props.userAdmin ? (
+                <>
+                    <td>E-mail</td>
+                    <td>Departamento</td>
+                </>
+            ) : props.ldc ? (
+                <>
+                    <td>Equipamento</td>
+                    <td>Contrato</td>
+                </>
+            ) : false}
+            <td>Ações</td>
+        </>
+    )
+
 }

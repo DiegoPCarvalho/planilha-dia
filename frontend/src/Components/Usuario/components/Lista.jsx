@@ -8,7 +8,7 @@ export default function Lista(props) {
 
     const { load, deletar } = UsePerfilData() 
     
-    function confirmarDelete(registro){
+    function confirmarDelete(registro, banco){
         confirmAlert({
             title: "Deletar",
             message: "Deseja Realmente Excluir?",
@@ -16,7 +16,7 @@ export default function Lista(props) {
                 {
                     label: "Sim",
                     className: "btn btn-success",
-                    onClick: () => deletar(registro, "LoginUsuario")
+                    onClick: () => deletar(registro, banco)
                 },
                 {
                     label: "Não",
@@ -36,13 +36,19 @@ export default function Lista(props) {
                         <td>{registro.email}</td>
                         <td>{registro.departamento}</td>
                     </>
+                ) : props.ldc ? (
+                    <>
+                        <td>{registro.tecnico}</td>
+                        <td>{registro.equipamento}</td>
+                        <td>{registro.contrato}</td>
+                    </>
                 ) : <td>{registro.nome}</td>}
                 <td>
                     <div className="d-flex justify-content-around align-items-center">
                         <Botao classe="btn btn-warning fw-bold" click={() => load(registro)}>
                             <i className="fa fa-pencil"></i>
                         </Botao>
-                        <Botao classe="btn btn-danger fw-bold" click={() => confirmarDelete(registro)}>
+                        <Botao classe="btn btn-danger fw-bold" click={() => confirmarDelete(registro, props.banco)}>
                             <i className="fa fa-trash"></i>
                         </Botao>
                     </div>

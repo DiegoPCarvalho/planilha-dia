@@ -18,3 +18,13 @@ export const Usuario = {
         AdmGeral: 0,
         AdmLider: 0,
 }
+
+export const GNC = {
+        nome: ""
+}
+
+export const LDC = {
+        tecnico: "",
+        equipamento: "",
+        contrato: ""
+}

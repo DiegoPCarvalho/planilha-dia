@@ -12,7 +12,7 @@ export default function Tabela(){
         <TabelaGnc tb="table-striped" id={tab}
             head={<Cabecalho userAdmin/>}
         >
-            <Lista list={dadosAdmin === undefined ? [] : dadosAdmin} userAdmin />
+            <Lista list={dadosAdmin === undefined ? [] : dadosAdmin} userAdmin banco="LoginUsuario" />
         </TabelaGnc>
     )
 }

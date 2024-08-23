@@ -4,13 +4,16 @@ import Logo from '../../../Assets/Imgs/logoZhaz.png';
 import { BuscarFoto } from '../../Dashboard/DashboardModel/Foto/FotoTecnico';
 import './AdminCadastro.css';
 import Usuario from "./Usuarios/Index";
-import User from "../../Admin/Usuarios"
 import Equipamentos from "./Equipamentos";
 import Test from "./Test";
+import Servico from "./Servico";
+import Contrato from "./Contrato";
+import Departamento from "./Departamento";
+import LDC from "./LDC";
 
 export default function Admin(){
 
-    const {tela, setTela} = UsePerfilData()
+    const {tela, mudarTelaON} = UsePerfilData()
 
     const styles = {
         cursor: 'pointer',
@@ -19,10 +22,10 @@ export default function Admin(){
     function mudarTela(mudar){
         return mudar === 'users' ? <Usuario />
             : mudar === 'equip' ? <Equipamentos />
-            : mudar === 'serv' ? <div>serv</div>
-            : mudar === 'cont' ? <div>cont</div>
-            : mudar === 'depa' ? <div>depa</div>
-            : mudar === 'ldc' ? <div>LDC</div>
+            : mudar === 'serv' ? <Servico />
+            : mudar === 'cont' ? <Contrato />
+            : mudar === 'depa' ? <Departamento />
+            : mudar === 'ldc' ? <LDC />
             : mudar === 'test' ? <Test />
             : false
     }
@@ -40,12 +43,12 @@ export default function Admin(){
                 </div>
                 <div className="mt-5 ">
                     <div className='row text-light hv'>
-                        <div onClick={() => setTela('users')} className="rounded-start col-2 fw-bold bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Usuários</div>
-                        <div onClick={() => setTela('equip')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Equipamentos</div>
-                        <div onClick={() => setTela('serv')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Servico</div>
-                        <div onClick={() => setTela('cont')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Contrato</div>
-                        <div onClick={() => setTela('depa')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Departamento</div>
-                        <div onClick={() => setTela('ldc')} className="rounded-end col-2 fw-bold bg-secondary p-2 d-flex justify-content-center h4" style={styles}>LDC</div>
+                        <div onClick={() => mudarTelaON('users')} className="rounded-start col-2 fw-bold bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Usuários</div>
+                        <div onClick={() => mudarTelaON('equip')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Equipamentos</div>
+                        <div onClick={() => mudarTelaON('serv')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Servico</div>
+                        <div onClick={() => mudarTelaON('cont')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Contrato</div>
+                        <div onClick={() => mudarTelaON('depa')} className="fw-bold col-2 bg-secondary p-2 d-flex justify-content-center h4" style={styles}>Departamento</div>
+                        <div onClick={() => mudarTelaON('ldc')} className="rounded-end col-2 fw-bold bg-secondary p-2 d-flex justify-content-center h4" style={styles}>LDC</div>
                     </div>
                     <div className="row">
                         {mudarTela(tela)}

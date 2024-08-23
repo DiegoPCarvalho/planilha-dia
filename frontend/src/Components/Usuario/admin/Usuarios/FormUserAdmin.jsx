@@ -156,7 +156,7 @@ export default function FormUserAdmin() {
                 <div className={`row mt-5 d-flex ${noticias ? "justify-content-between" : "justify-content-end"}`}>
                     {noticias ? <Mensagem className={del ? "bg-danger text-light" : btnAlter ? "bg-warning" : "bg-success text-light"}
                         msg={mensagem} /> : false}
-                    <LinhaBotoes salvarAlterar={() => save("Admin", "LoginUsuario")} />
+                    <LinhaBotoes salvarAlterar={() => save("Admin", "LoginUsuario", usuario)} />
                 </div>
             </div>
         </form>
