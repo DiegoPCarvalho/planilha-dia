@@ -8,7 +8,7 @@ import Mensagem from "../../components/Mensagem";
 
 export default function FormUserAdmin() {
 
-    const { depar, usuario, AtualizarCampo, save, btnAlter, noticias, mensagem, del } = UsePerfilData()
+    const { depar, usuario, AtualizarCampo, verificar, btnAlter, noticias, mensagem, del } = UsePerfilData()
 
     const font = "h4"
     const classeForm = "form-control"
@@ -156,7 +156,7 @@ export default function FormUserAdmin() {
                 <div className={`row mt-5 d-flex ${noticias ? "justify-content-between" : "justify-content-end"}`}>
                     {noticias ? <Mensagem className={del ? "bg-danger text-light" : btnAlter ? "bg-warning" : "bg-success text-light"}
                         msg={mensagem} /> : false}
-                    <LinhaBotoes salvarAlterar={() => save("Admin", "LoginUsuario", usuario)} />
+                    <LinhaBotoes salvarAlterar={() => verificar("Admin", "LoginUsuario", usuario)} />
                 </div>
             </div>
         </form>

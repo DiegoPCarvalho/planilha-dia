@@ -6,7 +6,7 @@ import Mensagem from '../../components/Mensagem';
 import LinhaBotoes from '../../components/LinhasBotoes';
 
 export default function FormLdc(){
-    const { ldc, tecnico, equipamento, contrato, AtualizarCampo, save, btnAlter, noticias, mensagem, del } = UsePerfilData();
+    const { ldc, tecnico, equipamento, contrato, AtualizarCampo, verificar, btnAlter, noticias, mensagem, del } = UsePerfilData();
 
     const font = "h4"
 
@@ -66,7 +66,7 @@ export default function FormLdc(){
                 <div className={`row mt-5 d-flex ${noticias ? "justify-content-between" : "justify-content-end"}`}>
                     {noticias ? <Mensagem className={del ? "bg-danger text-light" : btnAlter ? "bg-warning" : "bg-success text-light"}
                         msg={mensagem} /> : false}
-                    <LinhaBotoes salvarAlterar={() => save("Admin", "LDC", ldc)} />
+                    <LinhaBotoes salvarAlterar={() => verificar("Admin", "LDC", ldc)} />
                 </div>
             </div>
         </form>

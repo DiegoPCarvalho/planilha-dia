@@ -97,6 +97,34 @@ export function PerfilProvider(props) {
         }
     }
 
+    function verificar(modo, banco, dado){
+        if(tela === "users"){
+            const {nomeCompleto, email, senha, departamento } =  usuario
+
+            if(nomeCompleto === "" || email === "" || senha === "" || departamento === ""){
+
+            }else {
+                save(modo, banco, dado)
+            }
+        }else if(tela === "ldc"){
+            const { tecnico, equipamento, contrato } = ldc
+
+            if(tecnico === "" || equipamento === "" || contrato === ""){
+
+            }else {
+                save(modo, banco, dado)
+            }
+        }else if(tela !== "users" || tela !== "lcd"){
+            const { nome } = gnc
+
+            if(nome === ""){
+
+            }else {
+                save(modo, banco, dado)
+            }
+        }
+    }
+
     function save(modo, banco, dado) {
         try {
             if (modo === "userSingle") {
@@ -222,7 +250,7 @@ export function PerfilProvider(props) {
                 estadoModal,
                 buscarUser,
                 load,
-                save,
+                verificar,
                 AtualizarCampo,
                 buscarDepar,
                 setBtnAlter,

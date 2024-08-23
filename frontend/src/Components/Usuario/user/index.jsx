@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from '../../../Assets/Imgs/logoZhaz.png';
 import { BuscarFoto } from '../../Dashboard/DashboardModel/Foto/FotoTecnico';
 import CardUserPerfil from "./CardUserPerfil";
+import UsePerfilData from "../../../data/hook/UsePerfilData";
 
 
 export default function User() {
+    const { setTela } = UsePerfilData()
+    
+    useEffect(() =>{
+        setTela("users")
+    }, [])
 
     return (
         <div className="container-fluid overflow-auto">

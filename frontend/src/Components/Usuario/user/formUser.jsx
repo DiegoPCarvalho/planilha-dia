@@ -3,7 +3,7 @@ import UsePerfilData from "../../../data/hook/UsePerfilData";
 
 export default function FormUser() {
 
-    const { usuario, estadoModal, AtualizarCampo, save} = UsePerfilData()
+    const { usuario, estadoModal, AtualizarCampo, verificar} = UsePerfilData()
 
     return (
         <form className="row" action="javascript:myFunction(); return false;">
@@ -50,7 +50,7 @@ export default function FormUser() {
             </div>
             <div className="row d-flex justify-content-end">
                 <div className="col-6 d-flex flex-row justify-content-around">
-                    <button className="btn btn-primary fw-bold" onClick={() => save("userSingle", "")}>salvar</button>
+                    <button className="btn btn-primary fw-bold" onClick={() => verificar("userSingle", "")}>salvar</button>
                     <button className="btn btn-danger fw-bold" onClick={() => estadoModal()}>cancelar</button>
                 </div>
             </div>

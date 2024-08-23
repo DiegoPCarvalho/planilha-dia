@@ -6,7 +6,7 @@ import Entrada from './Entrada';
 
 export default function FormGnc(props) {
 
-    const { AtualizarCampo, save, del, btnAlter, noticias, mensagem, gnc } = UsePerfilData()
+    const { AtualizarCampo, verificar, del, btnAlter, noticias, mensagem, gnc } = UsePerfilData()
 
     const font = "h4"
     const classeForm = "form-control"
@@ -32,7 +32,7 @@ export default function FormGnc(props) {
             <div className={`row mt-5 d-flex ${noticias ? "justify-content-between" : "justify-content-end"}`}>
                 {noticias ? <Mensagem className={del ? "bg-danger text-light" : btnAlter ? "bg-warning" : "bg-success text-light"}
                     msg={mensagem} /> : false}
-                <LinhaBotoes salvarAlterar={() => save("Admin", props.banco, gnc)} />
+                <LinhaBotoes salvarAlterar={() => verificar("Admin", props.banco, gnc)} />
             </div>
         </form>
     )
