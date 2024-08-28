@@ -104,6 +104,19 @@ export function AppProvider(props) {
         }
     }
 
+    async function buscarFilas() {
+        try{
+            setCarregandoFila(true)
+            const banco = await buscarFila().catch(e => console.log(e.message))
+            setListFila(banco.dadoLista)
+            setCarregandoFila(false)
+
+        } catch (e) {
+            setCarregandoFila(false)
+            console.log("Erro: " + e.message)
+        }
+    }
+
     //#endregion
 
     //#region Fila
@@ -128,13 +141,16 @@ export function AppProvider(props) {
             iniciar(dado)
             atualizarDado(dado, false, listFila, 'fila')
             atualizarDado(dado, true, listIni, 'inicial')
+            setTimeout(() => {
+                buscarFilas()
+            }, 500);
         } catch (e) {
             console.log("Erro: " + e.message)
         }
     }
 
     function back(dado) {
-        const tempo = diferenca(Fila.DataInicialBruto)
+        const tempo = diferenca(dado.DataInicialBruto,'')
 
         if (tempo >= 3) {
 
@@ -387,7 +403,8 @@ export function AppProvider(props) {
                 verificar,
                 setAtividade,
                 load,
-                removerDaFila
+                removerDaFila,
+                buscarFilas
             }}
         >
             {props.children}

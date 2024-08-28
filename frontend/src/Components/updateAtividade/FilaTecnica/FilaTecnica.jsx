@@ -20,11 +20,19 @@ export default function FilaTecnica(props) {
         busca, problem, modalProblem,
         ObsProblem, mudarCampoProblem, sendProblem,
         mudarCampoFinal, ObsFinal, modalFinal, finish,
-        sendFinish, carregandoFila } = UseAppData();
+        sendFinish, carregandoFila, buscarFilas } = UseAppData();
 
     useEffect(() => {
         busca()
+        recarregarfila()
     }, [])
+
+    function recarregarfila(){
+        setInterval(() => {
+            buscarFilas()
+        }, 60000)   
+    }
+    
 
     return (
         <>
