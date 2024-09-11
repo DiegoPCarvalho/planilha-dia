@@ -30,7 +30,7 @@ export default function FilaTecnica(props) {
     function recarregarfila(){
         setInterval(() => {
             buscarFilas()
-        }, 60000)   
+        }, 300000)   
     }
     
 
