@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4cf3172f.css",
-    "main.js": "/static/js/main.c84e8e7f.js",
+    "main.js": "/static/js/main.f82af479.js",
     "static/media/telaFundoLogin.gif": "/static/media/telaFundoLogin.10c13698f9cffc876832.gif",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/VINICIUS GOMES .png": "/static/media/VINICIUS GOMES .1c50568ff13119b31be8.png",
@@ -21,10 +21,10 @@
     "static/media/logoZhaz.png": "/static/media/logoZhaz.f38c25782706b4691aa2.png",
     "index.html": "/index.html",
     "main.4cf3172f.css.map": "/static/css/main.4cf3172f.css.map",
-    "main.c84e8e7f.js.map": "/static/js/main.c84e8e7f.js.map"
+    "main.f82af479.js.map": "/static/js/main.f82af479.js.map"
   },
   "entrypoints": [
     "static/css/main.4cf3172f.css",
-    "static/js/main.c84e8e7f.js"
+    "static/js/main.f82af479.js"
   ]
 }

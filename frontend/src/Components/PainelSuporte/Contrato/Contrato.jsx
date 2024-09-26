@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import SupGif from '../../../Assets/gifs/tabSup.gif';
-import Url from '../../Url/Url';
+import Url2 from '../../Url/Url2';
 import CardSuporte from "../../Card/CardPainelSup";
 
 
@@ -9,7 +9,6 @@ const initialState = {
     coletores: [],
     leitores: [],
     impressoras: [],
-    banco: [],
     registros: []
 }
 
@@ -19,26 +18,19 @@ const estilo = {
     borderRadius: '50%'
 }
 
-const baseUrlBanco = Url("Banco");
+const baseUrlBanco = Url2("suporteContrato");
 
 export default class Contrato extends React.Component {
     state = { ...initialState }
 
     componentDidMount() {
-        axios(`${baseUrlBanco}`).then(resp => {
-            this.setState({ banco: resp.data })
+        axios(baseUrlBanco).then(resp => {
+                this.setState({ registros: resp.data })
         })
 
         setTimeout(() => {
-            axios(`http://${this.state.banco[0].nome}/suportecontrato`).then(resp => {
-                this.setState({ registros: resp.data })
-            })
-
-        }, 1000);
-
-        setTimeout(() => {
             this.buscarPorEquipamento()
-        }, 3000);
+        }, 1000);
 
         
 

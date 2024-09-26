@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import SupGif from '../../../Assets/gifs/tabSup.gif';
-import Url from '../../Url/Url';
+import Url2 from '../../Url/Url2';
 import CardSuporte from "../../Card/CardPainelSup";
 
 
@@ -9,7 +9,6 @@ const initialState = {
     coletores: [],
     leitores: [],
     impressoras: [],
-    banco: [],
     registros: []
 }
 
@@ -19,29 +18,20 @@ const estilo = {
     borderRadius: '50%'
 }
 
-const baseUrlBanco = Url("Banco");
+const baseUrlBanco = Url2("suporteAvulso");
 
 export default class Avulso extends React.Component {
 
     state = { ...initialState }
 
     componentDidMount() {
-        axios(`${baseUrlBanco}`).then(resp => {
-            this.setState({ banco: resp.data })
+        axios(baseUrlBanco).then(resp => {
+            this.setState({ registros: resp.data })
         })
 
         setTimeout(() => {
-            axios(`http://${this.state.banco[0].nome}/suporteAvulso`).then(resp => {
-                this.setState({ registros: resp.data })
-            })
-
-        }, 1000);
-
-        setTimeout(() => {
             this.buscarPorEquipamento()
-        }, 3000);
-
-        
+        }, 1000);
 
     }
 
@@ -80,11 +70,11 @@ export default class Avulso extends React.Component {
             impressoras,
             coletores,
             leitores
-        }) 
+        })
 
     }
 
-    formatarData = (data) =>{
+    formatarData = (data) => {
         const dt = new Date(data).toLocaleDateString()
         return dt
     }
@@ -113,12 +103,12 @@ export default class Avulso extends React.Component {
             return (
                 <tr className="d-flex">
                     <td key={i} className="flex-fill d-flex justify-content-center">
-                        <CardSuporte OS={equipamento.OS} Data={this.formatarData(equipamento.Data)} 
-                                Equipamento={equipamento.Equipamento} NS={equipamento.NS}
-                                Cliente={equipamento.Cliente} className={'p-1 rounded bg-success text-light fw-bold'}
-                                Agente={equipamento.AgenteComercial} Obs={equipamento.ObservacaoEquip}
-                            />
-                        
+                        <CardSuporte OS={equipamento.OS} Data={this.formatarData(equipamento.Data)}
+                            Equipamento={equipamento.Equipamento} NS={equipamento.NS}
+                            Cliente={equipamento.Cliente} className={'p-1 rounded bg-success text-light fw-bold'}
+                            Agente={equipamento.AgenteComercial} Obs={equipamento.ObservacaoEquip}
+                        />
+
                     </td>
                 </tr>
             )
