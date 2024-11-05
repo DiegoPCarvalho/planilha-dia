@@ -119,8 +119,13 @@ export default class AddFila extends React.Component {
                             reg.Problema = 'Não'
                             reg.Tecnico = 'Rubens Vieira'
                             this.saves(reg)
+                        }else if (reg.TipoOS === "Contrato Shopee") {
+                            reg.Estagio = 'Em Aberto'
+                            reg.Problema = 'Não'
+                            reg.Tecnico = ''
+                            dadosAvAP.push({ ...reg })
                         }
-                    } else if(reg.TipoOS === "Avulso"){
+                    } else if (reg.TipoOS === "Avulso") {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -175,9 +180,14 @@ export default class AddFila extends React.Component {
                             reg.Problema = 'Não'
                             reg.Tecnico = 'Rubens Vieira'
                             this.saves(reg)
+                        } else if (reg.TipoOS === "Contrato Shopee") {
+                            reg.Estagio = 'Em Aberto'
+                            reg.Problema = 'Não'
+                            reg.Tecnico = ''
+                            dadosAvAP.push({ ...reg })
                         }
                     }
-                    else if(reg.TipoOS === "Avulso"){
+                    else if (reg.TipoOS === "Avulso") {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
