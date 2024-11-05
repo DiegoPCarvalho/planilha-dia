@@ -42,12 +42,8 @@ export function voltar(dado) {
     salvar(Fila, "Fila")
 }
 
-export function tirarFila(dado){
-    const Fila = dado
-
-    Fila.Tecnico = "Deletar"
-
-    salvar(Fila, "Fila")
+export function tirarFila(dado, banco){
+    remover(dado, banco)
 }
 
 export function problema(registro) {

@@ -167,7 +167,7 @@ export function AppProvider(props) {
     }
 
     function removerDaFila(dado){
-        tirarFila(dado)
+        tirarFila(dado, "FilaTecnica")
         atualizarDado(dado, false, listFila, 'fila')
     }
 
