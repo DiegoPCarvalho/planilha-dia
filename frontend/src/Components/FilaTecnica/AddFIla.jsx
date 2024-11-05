@@ -9,6 +9,7 @@ import $ from 'jquery';
 
 const initialState = {
     list: [],
+    listDado: [],
     listagem: [],
     listCont: [],
     listTecnico: [],
@@ -64,6 +65,7 @@ export default class AddFila extends React.Component {
         const Aprovado = await axios(baseUrl2).then(resp => resp.data)
         const bancoZhazSys = await axios(bancoUrl).then(resp => resp.data)
         const data = new Date()
+        let dadosAvAP = []
 
         const lista = bancoZhazSys.map(registro => {
             return {
@@ -120,7 +122,7 @@ export default class AddFila extends React.Component {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
-                        this.saves(reg)
+                        dadosAvAP.push({ ...reg })
                     }
                 }
             }
@@ -175,11 +177,13 @@ export default class AddFila extends React.Component {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
-                        this.saves(reg)
+                        dadosAvAP.push({ ...reg })
                     }
                 }
             }
         })
+
+        this.setState({ listDado: dadosAvAP})
     }
 
     buscarLists() {
@@ -201,20 +205,22 @@ export default class AddFila extends React.Component {
 
         const estagio = this.state.Filtro.EstagioOS
         const tipo = this.state.Filtro.Tipo
+        const listDado = this.state.listDado
 
         if (estagio === '' && tipo === '') {
 
         } else if (estagio !== '' && tipo === '') {
-            this.filtrarDados(estagio, tipo, bancoZhazSys)
+            this.filtrarDados(estagio, tipo, bancoZhazSys, listDado)
         } else if (estagio !== '' && tipo !== '') {
-            this.filtrarDados(estagio, tipo, bancoZhazSys)
+            this.filtrarDados(estagio, tipo, bancoZhazSys, listDado)
         } else if (estagio === '' && tipo !== '') {
-            this.filtrarDados(estagio, tipo, bancoZhazSys)
+            this.filtrarDados(estagio, tipo, bancoZhazSys, listDado)
         }
     }
 
-    filtrarDados(estagio, tipo, banco) {
+    filtrarDados(estagio, tipo, banco, banco2) {
         let listagem = []
+        let listDado = []
 
         banco.map(registro => {
             if (estagio === registro.Servico && tipo === '') {
@@ -228,7 +234,21 @@ export default class AddFila extends React.Component {
             }
         })
 
-        return this.setState({ listagem })
+        banco2.map(registro => {
+            if (estagio === registro.Servico && tipo === '') {
+                listDado.push({ ...registro })
+            } else if (estagio === registro.Servico && tipo === registro.TipoOS) {
+                listDado.push({ ...registro })
+            } else if (estagio === '' && tipo === registro.TipoOS) {
+                if (!registro.Servico) {
+                    listDado.push({ ...registro })
+                }
+            }
+        })
+
+        const novoLista = listagem.concat(listDado)
+
+        return this.setState({ listagem: novoLista })
     }
 
     saves(Atividade) {
@@ -330,7 +350,6 @@ export default class AddFila extends React.Component {
             if (Atividade.Estagio === "Em Aberto" || !Atividade.Estagio) {
                 return (
                     <tr className={Atividade.Problema === "Sim" ? 'table-danger' : ''} key={(Atividade.id)}>
-                        <td className="col-1">{Atividade.id}</td>
                         <td className="col-1">{this.dataNova(Atividade.Data)}</td>
                         <td className="col-1">{Atividade.OS}</td>
                         <td className="col-4">{Atividade.Cliente}</td>
@@ -400,7 +419,7 @@ export default class AddFila extends React.Component {
 
     //gerar nova lista
     getUpdatedList(Atividade, add = true) {
-        const listagem = this.state.listagem.filter(a => a.id !== Atividade.id)
+        const listagem = this.state.listagem.filter(a => a.OS !== Atividade.OS)
         if (add) listagem.unshift(Atividade)
         return listagem
     }
