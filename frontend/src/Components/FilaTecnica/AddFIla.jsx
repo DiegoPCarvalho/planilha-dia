@@ -119,7 +119,7 @@ export default class AddFila extends React.Component {
                             reg.Problema = 'Não'
                             reg.Tecnico = 'Rubens Vieira'
                             this.saves(reg)
-                        }else if (reg.TipoOS === "Contrato Shopee") {
+                        }else {
                             reg.Estagio = 'Em Aberto'
                             reg.Problema = 'Não'
                             reg.Tecnico = ''
@@ -180,7 +180,7 @@ export default class AddFila extends React.Component {
                             reg.Problema = 'Não'
                             reg.Tecnico = 'Rubens Vieira'
                             this.saves(reg)
-                        } else if (reg.TipoOS === "Contrato Shopee") {
+                        } else {
                             reg.Estagio = 'Em Aberto'
                             reg.Problema = 'Não'
                             reg.Tecnico = ''
