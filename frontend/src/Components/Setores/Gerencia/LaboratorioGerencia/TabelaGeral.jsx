@@ -142,6 +142,7 @@ export default class TabelaGeral extends React.Component {
                         <th className='col-1'>OS</th>
                         <th className='col-1'>Cliente</th>
                         <th className='col-1'>Serviço</th>
+                        <th className='col-1'>Contrato</th>
                         <th className='col-1'>Rec. Placa</th>
                         <th className='col-1'>Equip.</th>
                         <th className='col-1'>Técnico</th>
@@ -178,6 +179,7 @@ export default class TabelaGeral extends React.Component {
                         <td>{Atividade.OS}</td>
                         <td>{Atividade.Cliente}</td>
                         <td>{Atividade.Servico}</td>
+                        <td>{Atividade.Contrato}</td>
                         <td>{Atividade.Placa}</td>
                         <td>{Atividade.Equipamento}</td>
                         <td>{Atividade.Tecnico}</td>
