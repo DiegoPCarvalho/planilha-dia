@@ -80,52 +80,45 @@ export default class AddFila extends React.Component {
             }
             else {
                 if (reg.Empresa === 1) {
-                    if (reg.TipoOS !== "Avulso") {
-                        if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/))
-                            && (!reg.Equipamento.match(/CELULAR/) && !reg.Equipamento.match(/LEITOR/))) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Eric Medeiros'
-                            this.saves(reg)
-                        } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento.match(/LEITOR/)) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Gabriel Achcar'
-                            this.saves(reg)
-                        } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"
-                            && !reg.Equipamento.match(/IMPRESSORA/)
-                        ) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Marlon Fidelis'
-                            this.saves(reg)
-                        } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Marlon Fidelis'
-                            this.saves(reg)
-                        } else if (reg.TipoOS === "Contrato B2W" && (reg.Cliente.match(/Lj/) || reg.Cliente.match(/LJ/) || reg.Cliente.match(/SHC/) || reg.Cliente.match(/lj/))) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Rubens Vieira'
-                            this.saves(reg)
-                        }else {
-                            reg.Estagio = 'Em Aberto'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = ''
-                            dadosAvAP.push({ ...reg })
-                        }
-                    } else if (reg.TipoOS === "Avulso") {
+                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/))
+                        && (!reg.Equipamento.match(/CELULAR/) && !reg.Equipamento.match(/LEITOR/))) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Eric Medeiros'
+                        this.saves(reg)
+                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento.match(/LEITOR/)) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Gabriel Achcar'
+                        this.saves(reg)
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"
+                        && !reg.Equipamento.match(/IMPRESSORA/)
+                    ) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    } else if (reg.TipoOS === "Contrato B2W" && (reg.Cliente.match(/Lj/) || reg.Cliente.match(/LJ/) || reg.Cliente.match(/SHC/) || reg.Cliente.match(/lj/))) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Rubens Vieira'
+                        this.saves(reg)
+                    } else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
@@ -140,54 +133,46 @@ export default class AddFila extends React.Component {
             }
             else {
                 if (reg.Empresa === 1) {
-                    if (reg.TipoOS !== "Avulso") {
-                        if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/))
-                            && (!reg.Equipamento.match(/CELULAR/) && !reg.Equipamento.match(/LEITOR/))) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Eric Medeiros'
-                            this.saves(reg)
-                        } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento.match(/LEITOR/)) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Gabriel Achcar'
-                            this.saves(reg)
-                        } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"
-                            && !reg.Equipamento.match(/IMPRESSORA/)
-                        ) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Marlon Fidelis'
-                            this.saves(reg)
-                        }
-                        else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Marlon Fidelis'
-                            this.saves(reg)
-                        } else if (reg.TipoOS === "Contrato B2W" && (reg.Cliente.match(/Lj/) || reg.Cliente.match(/LJ/) || reg.Cliente.match(/SHC/) || reg.Cliente.match(/lj/))) {
-                            reg.Data = data
-                            reg.dt = data
-                            reg.Estagio = 'Enviado'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = 'Rubens Vieira'
-                            this.saves(reg)
-                        } else {
-                            reg.Estagio = 'Em Aberto'
-                            reg.Problema = 'Não'
-                            reg.Tecnico = ''
-                            dadosAvAP.push({ ...reg })
-                        }
+                    if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/))
+                        && (!reg.Equipamento.match(/CELULAR/) && !reg.Equipamento.match(/LEITOR/))) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Eric Medeiros'
+                        this.saves(reg)
+                    } else if ((reg.Cliente.match(/ASSAI/) || reg.Cliente.match(/SENDAS/)) && reg.Equipamento.match(/LEITOR/)) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Gabriel Achcar'
+                        this.saves(reg)
+                    } else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A"
+                        && !reg.Equipamento.match(/IMPRESSORA/)
+                    ) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
                     }
-                    else if (reg.TipoOS === "Avulso") {
+                    else if (reg.Cliente.match(/C&A/) && reg.TipoOS === "Contrato C&A" && reg.Equipamento.match(/IMPRESSORA/)) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Marlon Fidelis'
+                        this.saves(reg)
+                    } else if (reg.TipoOS === "Contrato B2W" && (reg.Cliente.match(/Lj/) || reg.Cliente.match(/LJ/) || reg.Cliente.match(/SHC/) || reg.Cliente.match(/lj/))) {
+                        reg.Data = data
+                        reg.dt = data
+                        reg.Estagio = 'Enviado'
+                        reg.Problema = 'Não'
+                        reg.Tecnico = 'Rubens Vieira'
+                        this.saves(reg)
+                    } else {
                         reg.Estagio = 'Em Aberto'
                         reg.Problema = 'Não'
                         reg.Tecnico = ''
